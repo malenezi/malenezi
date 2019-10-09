@@ -1,0 +1,5 @@
+User-agent: *
+Sitemap: http://info.psu.edu.sa/psu/cis/malenezi/sitemap.xml
+Disallow: /img/
+Disallow: /images/
+Disallow: /files/

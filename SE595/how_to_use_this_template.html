@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head lang="en">
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>How to use this template</title>
+</head>
+
+<body>
+<div id="container">
+<div id="decorative">
+&nbsp;&nbsp;<br />
+</div>
+<div id="header">
+<h1> How to use this template </h1>
+</div>
+<div id="body">
+
+<p>This content template uses a CSS style sheet to format an HTML content topic. In order to view the template formatting you must save the TemplateFiles folder containing the stylesheet.css file and supporting images in the same root folder as  your HTML files and reference the CSS file appropriately.</p>
+<p>An easy way to use this template package is to:</p>
+<ol>
+      <li>Upload and unzip the template package to the appropriate folder in your course files.</li>
+      <li>Copy the <em>blank_template.htm</em> <em></em> file from the template directory and then paste it into the appropriate course folder. </li>
+      <li>Open the <em>blank_template.htm</em> file in the HTML editor and update the &lt;link&gt; path to point to your stylesheet.</li>
+      <li>Add your content to the page and save it.</li>
+      <li>Rename the<em> </em>file in order to differentiate it from other files.</li>
+    </ol>
+<p>If you want to modify the CSS style sheet, modify it within the TemplateFiles folder since the HTML files provided (and the files you create based on these files) reference this folder: 
+<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;TemplateFiles/stylesheet.css&quot; /&gt;</code>
+<p>If you want to replace the CSS style sheet, delete the existing style sheet and supporting images from the TemplateFiles folder and copy your replacement style sheet and supporting images into the folder (make sure you name the style sheet: stylesheet.css).  
+<p class="note"> <span class="note">Note</span> It is a good idea to have a backup copy of the template package in case you accidentally save over the sample files.</p>
+
+<h2>Headings</h2>
+<p class="note"> <span class="note">Note</span>  The Heading 1 style for this template is used for the &quot;How to use this template&quot; heading above. </p>
+<p>The first heading level,<code> </code>Heading 1, of any document (HTML file, MS Word document, Adobe PDF, etc.) should be the title of the main content. You should only use one Heading 1 in each  HTML topic. This heading, or title, helps readers understand the purpose of the topic. If you feel like you need more than one Heading 1 for your topic, consider breaking the content topic into multiple topics. Short,  consistently laid out topics help readers manage your content without being overwhelmed. This can be particularly important to individuals with cognitive disabilities.</p>
+<p>You should also define a title for your document that matches your Heading 1.</p>
+
+<h2>Heading 2</h2>
+<p>Sub-headings are important for a number of reasons:</p>
+<ul>
+	<li>They visually break up a page which makes it more interesting and reduces eye strain.</li>
+	<li>They help you logically order your content.</li>
+	<li>They  help learners identify and internalize transitions in information.</li>
+	<li>They provide an easy way for individuals using screen readers (and other assistive technologies that interact with HTML content) to skim the page and jump between content.</li>
+</ul>
+<p>All headings in your content topic should use proper heading tags. If you copy and paste the different heading elements in this template your headings should be tagged correctly. You can also use the formatting options available with most HTML editors (WYSIWYG editors) to select the appropriate heading level.</p>
+
+<h3>Heading 3</h3>
+<p>Your headings should be properly nested. For example, a<code> </code>Heading 3 element should only be used after a Heading 2 element or another Heading 3 element. Just as you shouldn't format a paragraph tag to look like a heading without actually using a heading tag, you shouldn't use a heading tag unless you are indicating a new section or sub-section of information.</p>
+
+<h4>Heading 4</h4>
+
+<p>A good design tip is to never use more than four levels of headings. If your  content topic uses more than four levels of headings, consider reorganizing. Chances are the content topic will be clearer and less intimidating to readers after you have reorganized it.</p>
+
+<p class="emphasis"><strong>Code samples:</strong><br />
+<code>&lt;title&gt;How to use this template&lt;/title&gt;<br />
+&lt;h1&gt;How to use this template&lt;/h1&gt;<br />
+&lt;h2&gt;Heading 2&lt;/h2&gt;<br />
+&lt;h3&gt;Heading 3&lt;/h3&gt;<br />
+&lt;h4&gt;Heading 4&lt;/h4&gt;</code></p>
+
+<h2>Main content</h2>
+<h3>Paragraphs</h3>
+<p>The<code> </code>paragraph element should be used for your main text. When formatting paragraph text you should ask yourself:</p>
+<ul>
+  <li>Is the text large enough and simple enough that most readers won't strain their eyes if they read multiple pages (or topics) of information?</li>
+  <li>Will the text still look good when readers use their browser's zoom functionality and screen magnifiers to increase the font size?</li>
+  <li>Is there a strong contrast between the text color and the page background?</li>
+</ul>
+<p>The default paragraph font in this template has been specifically chosen for online reading and  resizes well when zoomed.
+<h3>Paragraph formatting</h3>
+<p>The following is a list of alternative paragraph styles that can be used to draw attention to a paragraph or section of text.</p>
+<ul>
+  <li>A blockquote style:
+    <blockquote>What's in a name? That which we call a rose<br>
+  By any other name would smell as sweet</blockquote></li>
+  <li>A <span class="note">note</span> paragraph style:
+    <p class="note"> <span class="note">Important</span> Place essential information in a paragraph style with a background or border for visual emphasis.</p>
+  </li>
+  <li>An <em>emphasis</em> paragraph style:
+    <p class="emphasis"> Use this paragraph style to highlight or draw attention to an interesting paragraph or concept.</p>
+  </li>
+</ul>
+<p class="emphasis"><strong>Code samples:</strong><br />
+<code>&lt;p&gt;Paragraph text&lt;/p&gt;<br />
+&lt;blockquote&gt;What is a name? That which we call a rose&lt;br&gt;By any other name would smell as sweet&lt;/blockquote&gt;<br />
+&lt;p class=&quot;note&quot;&gt;&lt;span class=&quot;note&quot;&gt;Important&lt;/span&gt;Place essential information in a paragraph style with a background or border for visual emphasis.&lt;/p&gt;<br />
+&lt;p class=&quot;emphasis&quot;&gt;Use this paragraph style to highlight or draw attention to an interesting paragraph or concept.&lt;/p&gt;</code></p>
+ 
+<h3>List formatting</h3>
+<p>Lists are a great way of breaking up information on a page and drawing attention to key information and procedures. It is important that lists use the correct list tags and do not use breaks or empty paragraphs for formatting. Correctly tagging and formatting your lists ensures that non-visual readers can quickly assess how many items are in the list and readers who navigate by keyboard can move between list items without having to tab through empty paragraphs.</p>
+<p>The following examples show a properly formatted unordered list, ordered list and definition list.</p>
+<ul>
+	<li>List Item 1</li>
+	<ul>
+		<li>Sub-item 1</li>
+	    <li>Sub-item 2  </li>
+	</ul>
+	<li>List Item 2</li>
+</ul>
+<ol>
+	<li>Step 1 </li>
+		<ol type="a">
+			<li>Sub-step 1 </li>
+		    <li>Sub-step 2 </li>
+		</ol>
+	<li>Step 2</li>
+</ol>
+<dl>
+	<dt>Rose</dt>
+	<dd>Any wild or cultivated flower of the genus Rosa. Typical varieties include red, pink, white and yellow flowers with prickly stems and pinnate leaves. A shade of the color pink. Verb: To flush (in the face or cheeks).</dd>
+	<dt>Name</dt>
+	<dd>A word, or a combination of words, by which a person, place, thing, or class of things is designated, called, or known. </dd>
+</dl>
+
+<p class="emphasis"><strong>Code samples:</strong><br />
+<code>
+&lt;ul&gt;<br />
+&nbsp;  &lt;li&gt;List item 1&lt;/li&gt;<br />
+&nbsp;  &lt;ul&gt;<br />
+&nbsp;  &nbsp;  &lt;li&gt;Sub-item 1&lt;/li&gt;<br />
+&nbsp;  &nbsp;  &lt;li&gt;Sub-item 2&lt;/li&gt;<br />
+&nbsp;  &lt;/ul&gt;<br />
+&nbsp;  &lt;li&gt;List item 2&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+</code><br />
+<code>
+&lt;ol&gt;<br />
+&nbsp;  &lt;li&gt;Step 1&lt;/li&gt;<br />
+&nbsp;  &lt;ol type=&quot;a&quot;&gt;<br />
+&nbsp;  &nbsp;  &lt;li&gt;Sub-step 1&lt;/li&gt;<br />
+&nbsp;  &nbsp;  &lt;li&gt;Sub-step 2&lt;/li&gt;<br />
+&nbsp;  &lt;/ol&gt;<br />
+&nbsp;  &lt;li&gt;Step  2&lt;/li&gt;<br />
+&lt;/ol&gt;<br />
+</code><br />
+<code>
+&lt;dl&gt;<br />
+&nbsp;  &lt;dt&gt;Rose&lt;/dt&gt;<br />
+&nbsp;  &lt;dd&gt;Any wild or cultivated flower of the genus Rosa. Typical varieties include red, pink, white and yellow flowers with prickly stems and pinnate leaves. A shade of the color pink. Verb: To flush (in the face or cheeks).&lt;/dd&gt;<br />
+&nbsp;  &lt;dt&gt;Name&lt;/dt&gt;<br />
+&nbsp;  &lt;dd&gt;A word, or a combination of words, by which a person, place, thing, or class of things is designated, called, or known.&lt;/dd&gt;<br />
+&lt;/dl&gt;<br />
+</code>
+</p>
+
+<h3>Text formatting</h3>
+<p>Most word processing tools (such as MS Word) and HTML editors (such as Dreamweaver) provide simple interfaces for formatting paragraph text in order to add emphasis or call out the importance of a specific word, phrase or sentence. Typically this includes options to underline, bold, italicize, etc. Although these options are easy to use, they aren't always the best design choices. We suggest you use the formatted text options available in this template instead. 
+<p>Here is a list of text elements we have formatted for you:</p>
+<ul>
+  <li>A  <a href="www.desire2learn.com" title="Link to Desire2Learn Incorporated">link</a> style<code>:</code>
+  <p>This link is visually distinct from the normal paragraph text making it easy for readers to find. Three important tips to remember when creating links: a)  the text for each link should be unique and descriptive (never use ambiguous link text such as &quot;click here&quot;); b) if your link opens in a new window include a link title similar to the following: &quot;[link text] opens in a new window&quot;; c) if you are linking to a media file include a link title similar to the following: &quot;[link text] MS Word&quot; or &quot;[link text] MP3 file.&quot;</p>
+  </li>
+  <li>A <strong>strong</strong> style: 
+  <p>Use strong tags instead of bold tags if you are trying to emphasize the importance of a word or sentence in comparison to surrounding text. Screen readers and other assistive technologies should recognize the strong emphasis when reading or interpreting the text.</p>
+  </li>
+  <li>An <em>emphasis</em> style: 
+  <p>You can also use emphasis tags to emphasize the the importance of a word or sentence in comparison to surrounding text. Emphasis tags should be used in place of italics.</p>
+  </li>
+  <li>A <span class="note">note</span> style.</li>
+  <li>A <span class="new">New!</span> style.</li>
+</ul>
+<p class="emphasis"><strong>Code samples:</strong><br />
+<code>
+&lt;p&gt;A  &lt;a href=&quot;www.desire2learn.com&quot; title=&quot;Link to Desire2Learn Incorporated&quot;&gt;link&lt;/a&gt; style&lt;/p&gt;<br />
+&lt;p&gt;A &lt;strong&gt;strong&lt;/strong&gt; style:&lt;/p&gt;<br />
+&lt;p&gt;An &lt;em&gt;emphasis&lt;/em&gt; style:&lt;/p&gt;<br />
+&lt;p&gt;A &lt;span class=&quot;note&quot;&gt;note&lt;/span&gt; style.&lt;/p&gt;<br />
+&lt;p&gt;A &lt;span class=&quot;new&quot;&gt;New!&lt;/span&gt; style.&lt;/p&gt;
+</code>
+</p>
+<h2>Images</h2>
+<div class="imgRight">
+<img src="red_rose.jpg" alt="Red rose denoting love"/>
+<p class="caption">Red rose denoting love </p>
+</div>
+<p>From a design perspective, there  are two types of images used in HTML content: decorative images and informative images. </p>
+<dl>
+	<dt><strong>Decorative images</strong></dt>
+	<dd> Graphics that are used for layout and design purposes that do not contribute any meaning to the page, such as: spacers, box corners, dividing lines and subtle background images.</dd>
+	<dt><strong>Informative images</strong></dt>
+	<dd>Any other graphics on the page, such as: photos, line drawings, graphics and icons. Background images that include text or pictures that convey information or  mood are informative.</dd>
+</dl>
+<p>All images on a page, whether decorative or informative, need alternative text  so they can be recognized by assistive technologies that interpret HTML. Alternative text is defined using the alt attribute. For decorative images the alt attribute should be marked as "". This tells screen readers and other assistive technologies that the image is decorative and does not need to be read. This is often described as setting a null value for the image. For informative images the alternative text should concisely describe what the image is trying to communicate rather than describing its appearance.</p>
+<p>You should also  add an image caption  below your image. The caption should explain  the purpose of the image.
+ It may be the same or different than the alternative text.</p>
+<p>This style sheet uses a<code> </code>div element 
+ to float images to the left or right of your paragraph text. If you are copying code for an image, make sure you copy the opening and closing div tags.</p>
+<p class="emphasis"><strong>Code samples:</strong><br />
+<code>&lt;img src=&quot;blueline.jpg&quot; alt=&quot;&quot;/&gt;
+<br />
+<br />
+&lt;div class=&quot;imgRight&quot;&gt;<br />
+&nbsp;  &lt;img src=&quot;red_rose.jpg&quot; alt=&quot;Red rose denoting love&quot;/&gt;<br />
+&nbsp;  &lt;p class=&quot;caption&quot;&gt;Red rose denoting love&lt;/p&gt;<br />
+&lt;/div&gt;
+</code>
+</p>
+
+<h2 id="tables">Tables</h2>
+<p>From a design perspective, there are also two types of table: layout tables and data tables.</p>
+<dl>
+<dt><strong>Layout tables</strong></dt>
+<dd>Used to divide larger sections of information on a page into columns or segments for design purposes. Many designers consider layout tables a misuse of HTML tables; however, layout tables are very popular because they provide an easy way to group information in columns or panels. </dd>
+<dt><strong>Data tables</strong></dt>
+<dd>Use rows and columns  to present relationships between sets of information. They display information in a grid and use row and column headers to communicate how data in different cells relate.</dd>
+</dl>
+<p>Tables can be very difficult for non-visual readers to interpret since screen readers  and other assistive technologies always read the HTML code for a page from top to bottom, left to right (in a linear order). Therefore, in order for tables to make sense you must associate cells with the row and column headers and compare them to other cells so that non-visual readers can understand the context of a cell as their assistive technology reads cells from top to bottom, left to right. </p>
+<p>There are a number of things you can do to improve the accessibility of tables:</p>
+<ul>
+	<li>Keep your tables as simple as possible. Use paragraphs or lists to display information when possible.</li>
+	<li>Include a  table summary. The summary should explain the purpose of the table and a general description of its layout.</li>
+	<li>Use heading tags and the scope attribute to define row and column headers in simple tables. The scope attribute helps browsers and screen readers interpret how cells relate.</li>
+	<li>Use  headers and id attributes for tables that have more than one heading level (nested tables). Nested tables are difficult to make accessible using an HTML Editor. To set up an accessible nested table you must assign an id attribute to each of your headings and then define which headings apply to each cell using the source code.</p>
+	</li>	
+</ul>
+<p>The following examples show a simple and complex (nested) table with correct markup. You will need to apply the principles outlined in the sample code to your own tables.</p>
+
+<table cellspacing="0" cellpadding="0" summary=" A simple table listing the characters in Shakespeare's Romeo and Juliet, their family loyalty and whether they are alive at the end of the play.">
+<caption>
+Romeo and Juliet Characters simple table 
+</caption>
+<tr>
+<th scope="col">Character</th>
+<th scope="col">Family loyalty </th>
+<th scope="col">Living?</th>
+</tr>
+<tr>
+<th scope="row">Romeo</th>
+<td>Montague </td>
+<td>Deceased</td>
+</tr>
+<tr>
+  <th scope="row">Mercutio</th>
+  <td>Montague </td>
+  <td>Deceased</td>
+</tr>
+<tr>
+  <th scope="row">Benvolio</th>
+  <td>Montague </td>
+  <td>Living</td>
+</tr>
+<tr>
+  <th scope="row">Juliet</th>
+  <td>Capulet </td>
+  <td>Deceased</td>
+</tr>
+<tr>
+  <th scope="row">Tybalt</th>
+  <td>Capulet </td>
+  <td>Deceased</td>
+</tr>
+<tr>
+  <th scope="row">Nurse</th>
+  <td>Capulet </td>
+  <td>Living</td>
+</tr>
+<tr>
+  <th scope="row">Count Paris</th>
+  <td>Capulet </td>
+  <td>Deceased</td>
+</tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" summary="A table organized by famiily and then character showing which characters are alive at the end of Shakespeare's Romeo and Juliet.">
+<caption>
+Romeo and Juliet Characters nested table
+</caption>
+<tr>
+<td>&nbsp;</td>
+<th scope="col">Character</th>
+<th scope="col">Family loyalty </th>
+<th scope="col">Living?</th>
+</tr>
+<tr>
+<th rowspan="3" id="Montague">Montague</th>
+<th id="Romeo">Romeo</th>
+<td headers="Montague Romeo Relation">Son of Lord Montague</td>
+<td headers="Montague Romeo Living">Deceased</td>
+</tr>
+<tr>
+<th id="Mercutio">Mercutio</th>
+<td headers="Montague Mercutio Relation">Friend of Romeo</td>
+<td headers="Montague Mercutio Living">Deceased</td>
+</tr>
+<tr>
+<th id="Benvolio">Benvolio</th>
+<td headers="Montague Benvolio Relation">Cousin of Romeo</td>
+<td headers="Montague Benvolio Living">Living</td>
+</tr>
+<tr>
+<th rowspan="3" id="Capulet">Capulet</th>
+<th id="Juliet">Juliet</th>
+<td headers ="Capulet Juliet Relation">Daughter of Lord Capulet</td>
+<td headers="Capulet Juliet Living">Deceased</td>
+</tr>
+<tr>
+<th id="Tybalt">Tybalt</th>
+<td headers ="Capulet Tybalt Relation">Cousin of Juliet</td>
+<td headers="Capulet Tybalt Living">Deceased</td>
+</tr>
+<tr>
+<th id="Nurse">Nurse</th>
+<td headers ="Capulet Nurse Relation">Nurse to Juliet</td>
+<td headers="Capulet Nurse Living">Living</td>
+</tr>
+</table>
+<p class="emphasis"><strong>Code samples:</strong><br />
+<code>
+&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; summary=&quot; A simple table listing the characters in
+Shakespeare's Romeo and Juliet, their family loyalty and whether they are alive at the end of the play.&quot;&gt;<br />
+&nbsp;  &lt;caption&gt;Romeo and Juliet Characters simple table&lt;/caption&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;col&quot;&gt;Character&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;col&quot;&gt;Family loyalty &lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;col&quot;&gt;Living?&lt;/th&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Romeo&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Montague &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Mercutio&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Montague &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Benvolio&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Montague &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Living&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Juliet&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Capulet &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Tybalt&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Capulet &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Nurse&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Capulet &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Living&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;row&quot;&gt;Count Paris&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Capulet &lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+<br />
+&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; summary=&quot;A table organized by family and then character
+showing which characters are alive at the end of Shakespeare's Romeo and Juliet.&quot;&gt;<br />
+&nbsp;  &lt;caption&gt;Romeo and Juliet Characters nested table&lt;/caption&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;col&quot;&gt;Character&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;col&quot;&gt;Family loyalty &lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;th scope=&quot;col&quot;&gt;Living?&lt;/th&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th rowspan=&quot;3&quot; id=&quot;Montague&quot;&gt;Montague&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;th id=&quot;Romeo&quot;&gt;Romeo&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Montague Romeo Relation&quot;&gt;Son of Lord Montague&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Montague Romeo Living&quot;&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th id=&quot;Mercutio&quot;&gt;Mercutio&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Montague Mercutio Relation&quot;&gt;Friend of Romeo&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Montague Mercutio Living&quot;&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th id=&quot;Benvolio&quot;&gt;Benvolio&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Montague Benvolio Relation&quot;&gt;Cousin of Romeo&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Montague Benvolio Living&quot;&gt;Living&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th rowspan=&quot;3&quot; id=&quot;Capulet&quot;&gt;Capulet&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;th id=&quot;Juliet&quot;&gt;Juliet&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers =&quot;Capulet Juliet Relation&quot;&gt;Daughter of Lord Capulet&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Capulet Juliet Living&quot;&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th id=&quot;Tybalt&quot;&gt;Tybalt&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers =&quot;Capulet Tybalt Relation&quot;&gt;Cousin of Juliet&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Capulet Tybalt Living&quot;&gt;Deceased&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&nbsp;  &lt;tr&gt;<br />
+&nbsp;  &nbsp;  &lt;th id=&quot;Nurse&quot;&gt;Nurse&lt;/th&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers =&quot;Capulet Nurse Relation&quot;&gt;Nurse to Juliet&lt;/td&gt;<br />
+&nbsp;  &nbsp;  &lt;td headers=&quot;Capulet Nurse Living&quot;&gt;Living&lt;/td&gt;<br />
+&nbsp;  &lt;/tr&gt;<br />
+&lt;/table&gt;
+</code>
+</p>
+
+<h2>Helpful resources</h2>
+<ul>
+<li><a href="http://projectone.cannect.org/" title="Web Accessibility for Online Learning - opens in a new window" target="_blank">Web Accessibility for Online Learning</a> A well-organized tutorial on creating accessible courses  funded by the Sloan Foundation and CANnect, a consortium of schools and philanthropists committed to promoting accessible course design.</li>
+<li><a href="http://www.w3.org/WAI/" title="W3C Web Accessibility Iniative - opens in a new window" target="_blank">W3C Web Accessibility Initiative </a> The World Wide Web Consortium's Web Accessibility Initiative is the leading body for international web accessibility standards. Their site provides basic information about web accessibility as well as the Web Content Accessibility Guidelines, which are the basis of many accessibility compliance laws around the world.</li>
+<li><a href="http://www.webaim.org/intro/" title="Web Accessibility in Mind - opens in a new window" target="_blank">Web Accessibility in Mind (WebAIM) </a>A leading provider of accessibility resources and information. A great site for finding general information about accessibility issues and resources for solving specific accessibility problems.
+<li><a href="http://wave.webaim.org/toolbar" title="WAVE Toolbar - opens in a new window" target="_blank">WAVE Toolbar</a> A free Firefox extension from WebAIM for evaluating the accessibility compliance of web pages. This tool allows you to check the accessibility of your HTML files similar to   checking for spelling errors.</li>
+</ul>
+</div>
+<div id="footer"> Place copyright and general information about your course or organization in the footer.
+</div>
+</div>
+</body>
+</html>

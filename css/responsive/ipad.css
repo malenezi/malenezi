@@ -1,0 +1,148 @@
+
+@media only screen and (max-width: 900px) {
+
+	body, div, p, a, table, td {
+		-webkit-text-size-adjust: none;
+		letter-spacing: .015em;
+	}
+
+	.content.has-sidebar > .wrapper > .main-content,
+	.content.has-sidebar > .wrapper > #sidebar {
+		width: 100%!important;
+		float: none;
+	}
+
+	.content .panel > .p-title h2, #sidebar .widget > .w-title h3 {
+		font-size: 17px;
+		padding: 11px 22px;
+	}
+
+	.header-block .header-logo img {
+		width: 60%;
+	}
+
+	.banner-grid img {
+		width: 20%;
+		margin: 2%;
+		max-width: 125px;
+	}
+
+	#sidebar:before {
+		display: none;
+	}
+
+	.content.has-sidebar > .wrapper > .main-content,
+	.content.has-sidebar > .wrapper > #sidebar {
+		height: auto!important;
+	}
+
+	.paragraph-row > div {
+		width: 100%!important;
+		float: none;
+		margin-left: 0px;
+		margin-bottom: 20px;
+	}
+
+	#comments .comment-block .comment-text .time-stamp {
+		display: none;
+	}
+
+	#comments li li {
+		padding-left: 0px;
+	}
+
+	.about-author .about-header img,
+	.about-author .about-header {
+		width: 60px;
+		height: 60px;
+	}
+
+	.about-author .about-content h3 {
+		font-size: 15px;
+	}
+
+	.about-author .about-content {
+		margin-left: 80px;
+	}
+
+	.about-author .about-content .right {
+		display: none;
+	}
+
+	.w-gallery .w-photos .gallery-link-left {
+		left: 0px;
+	}
+
+	.w-gallery .w-photos .gallery-link-right {
+		right: 0px;
+	}
+
+	.w-gallery .w-photos .gallery-link-left,
+	.w-gallery .w-photos .gallery-link-right,
+	.video-carousel .carousel-left,
+	.video-carousel .carousel-right {
+		opacity: 100;
+		filter: alphap(opacity=100);
+	}
+
+	.social-buttons .social-thing {
+		margin-top: 0px; 
+		margin-bottom: 0px;
+	}
+
+	.photo-gallery-blocks .item {
+		width: 100%;
+		margin-left: 0px;
+		float: none;
+		margin-bottom: 20px;
+	}
+
+	.gallery-categories a {
+		font-size: 12px;
+	}
+
+	.gallery-thumbnail-list {
+		height: 72px!important;
+		margin-top: -17px;
+		margin-bottom: -17px;
+	}
+
+	.gallery-thumbnail-list .gallery-inner-layer {
+		position: relative!important;
+		left: 0px;
+		top: 0px;
+		white-space: nowrap;
+	}
+
+	.photo-gallery-single > .paragraph-row > .column2 {
+		position: relative;
+		height: auto;
+	}
+
+	.gallery-thumbnail-list .gallery-inner-layer .g-thumb {
+		display: inline-block;
+		float: none;
+		width: 18%;
+		margin-bottom: 0px;
+		margin-right: 4px!important;
+		margin-left: 0px!important;
+	}
+
+	.gallery-description h3 {
+		font-size: 20px;
+	}
+
+	.gallery-photo .gallery-alt-left,
+	.gallery-photo .gallery-alt-right {
+		display: none;
+	}
+
+	.main-menu .search-block {
+		display: none;
+	}
+
+	.demo-settings {
+		top: 30%;
+	}
+
+}

@@ -1,0 +1,1844 @@
+﻿/* begin Page */
+
+body
+{
+  margin: 0 auto;
+  padding: 0;
+  background-color: #E8E8E8;
+  background-image: url('images/Page-BgTexture.jpg');
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+  background-position: top left;
+  font-family:Helvetica, sans-serif;
+}
+
+.PostContent li{
+	margin-left:18px;
+	font-family:"Times New Roman", Times, serif;
+	font-size:16.8px;
+	}
+	
+.Main
+{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.PageBackgroundGlare
+{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.PageBackgroundGlareImage
+{
+  background-repeat: no-repeat;
+  height: 588px;
+  width: 592px;
+  margin: 0;
+}
+
+html:first-child .PageBackgroundGlare
+{
+  border: 1px solid transparent; /* Opera fix */
+}
+
+
+
+
+.cleared
+{
+  float: none;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size:1px;
+}
+
+/* end Page */
+
+/* begin Box, Sheet */
+.Sheet
+{
+  overflow: hidden;
+  min-width:55px;
+  min-height:55px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+  width: 900px;
+}
+
+
+.Sheet-body
+{
+  position: relative;
+  z-index: 0;
+  margin: 15px;
+}
+
+.Sheet-tl
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 41px;
+  height: 41px;
+  background-image: url('images/Sheet-s.png');
+}
+
+.Sheet-tr
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 41px;
+  height: 41px;
+}
+
+.Sheet-tr div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: -41px;
+  width: 82px;
+  height: 82px;
+  background-image: url('images/Sheet-s.png');
+}
+
+.Sheet-bl
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 41px;
+  height: 41px;
+}
+
+.Sheet-bl div
+{
+  position: absolute;
+  z-index: -1;
+  top: -41px;
+  left: 0;
+  width: 82px;
+  height: 82px;
+  background-image: url('images/Sheet-s.png');
+}
+
+.Sheet-br
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  width: 41px;
+  height: 41px;
+}
+
+.Sheet-br div
+{
+  position: absolute;
+  z-index: -1;
+  top: -41px;
+  left: -41px;
+  width: 82px;
+  height: 82px;
+  background-image: url('images/Sheet-s.png');
+}
+
+.Sheet-tc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 0;
+  left: 41px;
+  right: 41px;
+  height: 41px;
+}
+
+.Sheet-tc div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 82px;
+  background-image: url('images/Sheet-h.png');
+}
+
+.Sheet-bc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  bottom: 0;
+  left: 41px;
+  right: 41px;
+  height: 41px;
+}
+
+.Sheet-bc div
+{
+  position: absolute;
+  z-index: -1;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 82px;
+  background-image: url('images/Sheet-h.png');
+}
+
+.Sheet-cl
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 41px;
+  left: 0;
+  width: 41px;
+  bottom: 41px;
+}
+
+.Sheet-cl div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 82px;
+  height: 100%;
+  background-image: url('images/Sheet-v.png');
+}
+
+.Sheet-cr
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 41px;
+  right: 0;
+  width: 41px;
+  bottom: 41px;
+}
+
+.Sheet-cr div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -41px;
+  width: 82px;
+  height: 100%;
+  background-image: url('images/Sheet-v.png');
+}
+
+.Sheet-cc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -2;
+  top: 41px;
+  left: 41px;
+  right: 41px;
+  bottom: 41px;
+  background-image: url('images/Sheet-c.png');
+}
+
+
+.Sheet
+{
+  margin-top: -15px !important;
+}
+/* end Box, Sheet */
+
+/* begin Menu */
+/* menu structure */
+
+.artmenu a, .artmenu a:link, .artmenu a:visited, .artmenu a:hover
+{
+  text-align:left;
+  text-decoration:none;
+  outline:none;
+  letter-spacing:normal;
+  word-spacing:normal;
+}
+
+.artmenu, .artmenu ul
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style-type: none;
+  display: block;
+}
+
+.artmenu li
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  float: left;
+  position: relative;
+  z-index: 5;
+  background:none;
+}
+
+.artmenu li:hover
+{
+  z-index: 10000;
+  white-space: normal;
+}
+
+.artmenu li li
+{
+  float: none;
+}
+
+.artmenu ul
+{
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background:none;
+}
+
+.artmenu li:hover>ul
+{
+  visibility: visible;
+  top: 100%;
+}
+
+.artmenu li li:hover>ul
+{
+  top: 0;
+  left: 100%;
+}
+
+.artmenu:after, .artmenu ul:after
+{
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+  clear: both;
+}
+.artmenu, .artmenu ul
+{
+  min-height: 0;
+}
+
+.artmenu ul
+{
+  background-image: url(images/spacer.gif);
+  padding: 10px 30px 30px 30px;
+  margin: -10px 0 0 -30px;
+}
+
+.artmenu ul ul
+{
+  padding: 30px 30px 30px 10px;
+  margin: -30px 0 0 -10px;
+}
+
+
+/* menu structure */
+
+.nav
+{
+  position: relative;
+  margin: 0  auto;
+  width: 870px;
+  height: 32px;
+  z-index: 100;
+}
+
+.artmenu
+{
+  padding: 4px 4px 4px 4px;
+}
+
+
+.nav .l, .nav .r, .nav .r div
+{
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  height: 32px;
+}
+
+.nav .l
+{
+  left: 0;
+  right: 0px;
+}
+
+
+.nav .r
+{
+  right: 0;
+  width: 0px;
+}
+
+
+.nav .r div
+{
+  width: 870px;
+  right: 0;
+}
+
+
+.nav .l, .nav .r div
+{
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url('images/nav.png');
+}
+
+/* end Menu */
+
+/* begin MenuItem */
+.artmenu ul li
+{
+  clear: both;
+}
+
+.artmenu a , .artmenu a span
+{
+  height: 24px;
+  display: block;
+}
+
+
+.artmenu a
+{
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 4px;
+  margin-left: 4px;
+
+}
+.artmenu a
+{
+  background-image: url('images/item-left.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.artmenu a span
+{
+  background-image: url('images/item-right.png');
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+.artmenu a span span
+{
+  font-family: Helvetica, Sans-Serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #033B4F;
+  padding: 0 7px;
+  margin: 0 11px;
+  line-height: 24px;
+  text-align: center;
+  background-image: url('images/item-center.png');
+  background-position: left top;
+  background-repeat: repeat-x;
+
+}
+
+
+.artmenu a:hover
+{
+  background-position: left -24px;
+}
+
+.artmenu li:hover>a
+{
+  background-position: left -24px;
+}
+.artmenu li:hover a span
+{
+  background-position: right -24px;
+}
+
+.artmenu a:hover span
+{
+  background-position: right -24px;
+}
+
+
+.artmenu a:hover span span
+{
+  color: #C7E2F0;
+  background-position: left -24px;
+}
+
+.artmenu li:hover a span span
+{
+  color: #C7E2F0;
+  background-position: left -24px;
+}
+
+
+.artmenu a.active
+{
+  background-position: left -48px;
+}
+
+.artmenu a.active span
+{
+  background-position: right -48px;
+}
+
+.artmenu a.active span span
+{
+  color: #022836;
+  background-position: left -48px;
+}
+
+/* end MenuItem */
+
+/* begin MenuSeparator */
+.nav .separator
+{
+  display: block;
+  width: 1px;
+  height: 24px;
+  background-image: url('images/item-separator.png');
+}
+
+/* end MenuSeparator */
+
+/* begin MenuSubItem */
+.artmenu ul a
+{
+  display:block;
+  text-align: center;
+  white-space: nowrap;
+  height: 23px;
+  width: 191px;
+  overflow:hidden;
+  line-height: 23px;
+  margin-right: auto;
+
+
+  background-image: url('images/subitem-bg.png');
+  background-position: left top;
+  background-repeat: repeat-x;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #56A7D2;
+}
+
+.nav ul.artmenu ul span, .nav ul.artmenu ul span span
+{
+  display: inline;
+  float: none;
+  margin: inherit;
+  padding: inherit;
+  background-image: none;
+  text-align: inherit;
+  text-decoration: inherit;
+}
+
+.artmenu ul a, .artmenu ul a:link, .artmenu ul a:visited, .artmenu ul a:hover, .artmenu ul a:active, .nav ul.artmenu ul span, .nav ul.artmenu ul span span
+{
+  text-align: left;
+  text-indent: 12px;
+  text-decoration: none;
+  line-height: 23px;
+  color: #363636;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.artmenu ul ul a
+{
+  margin-left: auto;
+}
+
+.artmenu ul li a:hover
+{
+  color: #E6F8FE;
+  border-color: #56A7D2;
+  background-position: 0 -23px;
+}
+
+.artmenu ul li:hover>a
+{
+  color: #E6F8FE;
+  border-color: #56A7D2;
+  background-position: 0 -23px;
+}
+
+.nav .artmenu ul li a:hover span, .nav .artmenu ul li a:hover span span
+{
+  color: #E6F8FE;
+}
+
+.nav .artmenu ul li:hover>a span, .nav .artmenu ul li:hover>a span span
+{
+  color: #E6F8FE;
+}
+
+
+/* end MenuSubItem */
+
+/* begin ContentLayout */
+.contentLayout
+{
+  margin-bottom: 0px;
+  width: 870px;
+  position: relative;
+}
+/* end ContentLayout */
+
+/* begin Box, Block */
+.Block
+{
+	overflow: hidden;
+	min-width: 3px;
+	min-height: 3px;
+	position: relative;
+	z-index: 0;
+}
+
+
+.Block-body
+{
+  position: relative;
+  z-index: 0;
+  margin: 10px;
+}
+
+.Block-tl
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.Block-tr
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.Block-tr div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: -1px;
+  width: 2px;
+  height: 2px;
+}
+
+.Block-bl
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.Block-bl div
+{
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  left: 0;
+  width: 2px;
+  height: 2px;
+}
+
+.Block-br
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.Block-br div
+{
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  left: -1px;
+  width: 2px;
+  height: 2px;
+}
+
+.Block-tc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 0;
+  left: 1px;
+  right: 1px;
+  height: 1px;
+}
+
+.Block-tc div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: url('images/Block-h.png');
+}
+
+.Block-bc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  bottom: 0;
+  left: 1px;
+  right: 1px;
+  height: 1px;
+}
+
+.Block-bc div
+{
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: url('images/Block-h.png');
+}
+
+.Block-cl
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 1px;
+  left: 0;
+  width: 1px;
+  bottom: 1px;
+}
+
+.Block-cl div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-image: url('images/Block-v.png');
+}
+
+.Block-cr
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 1px;
+  right: 0;
+  width: 1px;
+  bottom: 1px;
+}
+
+.Block-cr div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -1px;
+  width: 2px;
+  height: 100%;
+  background-image: url('images/Block-v.png');
+}
+
+.Block-cc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -2;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+}
+
+
+.Block
+{
+}
+
+/* end Box, Block */
+
+/* begin BlockHeader */
+.BlockHeader
+{
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  z-index: 0;
+  line-height: 30px;
+  padding: 0 8px;
+  margin-bottom: 10px;
+
+}
+
+.BlockHeader-text
+{
+  white-space : nowrap;
+  color: #000000;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+
+
+.BlockHeader .l, .BlockHeader .r, .BlockHeader .r div
+{
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  height: 30px;
+}
+
+.BlockHeader .l
+{
+  left: 0;
+  right: 1px;
+}
+
+
+.BlockHeader .r
+{
+  right: 0;
+  width: 1px;
+}
+
+
+.BlockHeader .r div
+{
+  width: 876px;
+  right: 0;
+}
+
+
+.BlockHeader .l, .BlockHeader .r div
+{
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-image: url('images/BlockHeader.png');
+}
+
+
+
+.header-tag-icon
+{
+  display:inline-block;
+  background-position:left top;
+  background-image: url('images/BlockHeaderIcon.png');
+  padding:0 0 0 18px;
+  background-repeat: no-repeat;
+  min-height: 11px;
+  margin: 0 0 0 5px;
+}
+
+
+
+
+/* end BlockHeader */
+
+/* begin Box, BlockContent */
+.BlockContent
+{
+  overflow: hidden;
+  min-width:1px;
+  min-height:1px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+
+
+.BlockContent-body
+{
+  position: relative;
+  z-index: 0;
+  margin: 8px;
+}
+
+
+.BlockContent-body
+{
+  color:#363636;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+}
+
+.BlockContent-body a:link
+{
+  color: #067199;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+}
+
+.BlockContent-body a:visited, .BlockContent-body a.visited
+{
+  color: #858585;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+}
+
+.BlockContent-body a:hover, .BlockContent-body a.hover
+{
+  color: #079ACF;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+}
+
+
+.BlockContent-body ul
+{
+  list-style-type: none;
+  color: #4A4A4A;
+  margin:0;
+  padding:0;
+}
+
+.BlockContent-body li
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+}
+
+.BlockContent-body ul li
+{
+  padding:0px 0 0px 2px;
+  background-repeat:no-repeat;
+  margin:0.2em 0 0.2em 0;
+  line-height:1.2em;
+
+}
+
+/* end Box, BlockContent */
+
+/* begin Box, Post */
+.Post
+{
+  overflow: hidden;
+  min-width:29px;
+  min-height:29px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+
+
+.Post-body
+{
+  position: relative;
+  z-index: 0;
+  margin: 9px;
+}
+
+.Post-tl
+{
+	position: absolute;
+	overflow: hidden;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	background-image: url('images/Post-s.png');
+}
+
+.Post-tr
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.Post-tr div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  background-image: url('images/Post-s.png');
+}
+
+.Post-bl
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.Post-bl div
+{
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background-image: url('images/Post-s.png');
+}
+
+.Post-br
+{
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.Post-br div
+{
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  background-image: url('images/Post-s.png');
+}
+
+.Post-tc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 18px;
+}
+
+.Post-tc div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background-image: url('images/Post-h.png');
+}
+
+.Post-bc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+  height: 18px;
+}
+
+.Post-bc div
+{
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background-image: url('images/Post-h.png');
+}
+
+.Post-cl
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 18px;
+  left: 0;
+  width: 18px;
+  bottom: 18px;
+}
+
+.Post-cl div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 100%;
+  background-image: url('images/Post-v.png');
+}
+
+.Post-cr
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -1;
+  top: 18px;
+  right: 0;
+  width: 18px;
+  bottom: 18px;
+}
+
+.Post-cr div
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -18px;
+  width: 36px;
+  height: 100%;
+  background-image: url('images/Post-v.png');
+}
+
+.Post-cc
+{
+  position: absolute;
+  overflow:hidden;
+  z-index: -2;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  background-image: url('images/Post-c.png');
+}
+
+
+.Post
+{
+  margin: 7px;
+}
+
+
+/* Start images */
+a img
+{
+  border: 0;
+}
+
+.article img, img.article
+{
+  border-style: solid;
+  border-width: 0px;
+  border-color: #C7C7C7;
+  margin: 1em;
+}
+
+.metadata-icons img
+{
+  border: none;
+  vertical-align: middle;
+  margin:2px;
+}
+/* Finish images */
+
+/* Start tables */
+
+.article table, table.article
+{
+  border-collapse: collapse;
+  margin: 1px;
+  width:auto;
+}
+
+.article table, table.article .article tr, .article th, .article td
+{
+  background-color:Transparent;
+}
+
+.article th, .article td
+{
+  padding: 2px;
+  border: solid 1px #B5B5B5;
+  vertical-align: top;
+  text-align:left;
+}
+
+.article th
+{
+  text-align:center;
+  vertical-align:middle;
+  padding: 7px;
+}
+
+
+
+/* Finish tables */
+/* end Box, Post */
+
+/* begin PostHeaderIcon */
+.PostHeaderIcon-wrapper
+{
+  text-decoration:none;
+  margin: 0.2em 0;
+  padding: 0;
+  font-weight:normal;
+  font-style:normal;
+  letter-spacing:normal;
+  word-spacing:normal;
+  font-variant:normal;
+  text-decoration:none;
+  font-variant:normal;
+  text-transform:none;
+  text-align:left;
+  text-indent:0;
+  line-height:inherit;
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #04506C;
+}
+
+.PostHeaderIcon-wrapper, .PostHeaderIcon-wrapper a, .PostHeaderIcon-wrapper a:link, .PostHeaderIcon-wrapper a:visited, .PostHeaderIcon-wrapper a:hover
+{
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #04506C;
+}
+
+/* end PostHeaderIcon */
+
+/* begin PostHeader */
+.PostHeader a:link
+{
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #056385;
+}
+
+.PostHeader a:visited, .PostHeader a.visited
+{
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  text-decoration: none;
+  color: #5C5C5C;
+}
+
+.PostHeader a:hover, .PostHeader a.hovered
+{
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  text-decoration: underline;
+  color: #079ACF;
+}
+/* end PostHeader */
+
+/* begin PostContent */
+/* Content Text Font & Color (Default) */
+body
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  color: #242424;
+}
+
+.PostContent
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-align: justify;
+  color: #242424;
+}
+.PostContent p
+{
+margin-left:26px;
+  }
+
+
+/* Start Content link style */
+/*
+The right order of link pseudo-classes: Link-Visited-Hover-Focus-Active.
+http://www.w3schools.com/CSS/css_pseudo_classes.asp
+http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states/
+*/
+a
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  color: #06759D;
+}
+
+/* Adds special style to an unvisited link. */
+a:link
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  color: #06759D;
+}
+
+/* Adds special style to a visited link. */
+a:visited, a.visited
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  color: #525252;
+}
+
+/* :hover - adds special style to an element when you mouse over it. */
+a:hover, a.hover
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: #079ACF;
+}
+
+/* Finish Content link style */
+
+/* Resert some headings default style & links default style for links in headings*/
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited
+{
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
+/* Start Content headings Fonts & Colors  */
+h1, h1 a, h1 a:link, h1 a:visited, h1 a:hover
+{
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  font-size: 31px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #06759D;
+}
+
+h2, h2 a, h2 a:link, h2 a:visited, h2 a:hover
+{
+  font-family: "Comic Sans MS", Tahoma, Arial, Sans-Serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: left;
+  color: #079ACF;
+}
+
+h3, h3 a, h3 a:link, h3 a:visited, h3 a:hover
+{
+  font-family: "Century Gothic", "Trebuchet MS", Helvetica, Arial, Geneva, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #525252;
+}
+
+h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover
+{
+  font-family: "Century Gothic", "Trebuchet MS", Helvetica, Arial, Geneva, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #0787B6;
+}
+
+h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover
+{
+  font-family: "Century Gothic", "Trebuchet MS", Helvetica, Arial, Geneva, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #023345;
+}
+
+h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover
+{
+  font-family: "Century Gothic", "Trebuchet MS", Helvetica, Arial, Geneva, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #023345;
+}
+/* Finish Content headings Fonts & Colors  */
+
+/* end PostContent */
+
+/* begin PostBullets */
+/* Start Content list */
+
+ul
+{
+  list-style-type: none;
+  color: #383838;
+  margin:0;
+  padding:0;
+}
+
+li
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+  text-align: left;
+  margin-left: 12px;
+}
+
+
+
+.Post ul li
+{
+  padding:0px 0 0px 12px;
+  background-image: url('images/PostBullets.png');
+  background-repeat:no-repeat;
+  margin:0.5em 0 0.5em 0;
+  line-height:1.2em;
+}
+
+
+/* Finish Content list */
+/* end PostBullets */
+
+/* begin PostQuote */
+/* Start blockquote */
+
+blockquote p
+{
+  color:#061218;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-style: italic;
+  font-weight: normal;
+  text-align: left;
+}
+
+blockquote
+{
+  border-color:#70D5FA;
+  border-width: 1px;
+  border-style: solid;
+
+  margin:10px 10px 10px 50px;
+  padding:5px 5px 5px 38px;
+
+  background-color:#B5E9FC;
+
+  background-image:url('images/PostQuote.png');
+  background-position:left top;
+  background-repeat:no-repeat;
+}
+
+
+
+/* Finish blockuote */
+/* end PostQuote */
+
+/* begin Button */
+button.Button, a.Button
+{
+  position:relative;
+  display:inline-block;
+  width: auto;
+  outline:none;
+  border:none;
+  background:none;
+  line-height:36px;
+  margin:0;
+  padding:0;
+  overflow: visible;
+  cursor: default;
+  text-decoration: none !important;
+}
+
+
+/*This HACK needed for ie7 (button position)*/
+*:first-child+html button.Button, *:first-child+html a.Button
+{
+  display:list-item;
+  list-style-type:none;
+  float:left;
+}
+
+
+.Button .btn
+{
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: auto;
+  z-index: 0;
+  height: 40px;
+  margin-left:30px;
+  color: #1C1C1C;
+  white-space: nowrap;
+  float: left;
+}
+
+.Button .t
+{
+  height:36px;
+  white-space: normal;
+  padding: 0 26px;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 36px;
+  text-decoration: none !important;
+}
+
+input, select
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.Button .active
+{
+  color: #E6F8FE;
+}
+
+.Button .hover,  a.Button:hover
+{
+  color: #C7E2F0;
+  text-decoration: none !important;
+}
+
+.Button .active .r
+{
+  top: -72px;
+}
+
+.Button .hover .r
+{
+  top: -36px;
+}
+
+.Button .r
+{
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 108px;
+}
+
+
+.Button .r span
+{
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width:403px;
+  height: 108px;
+}
+
+
+.Button .active .l
+{
+  top: -72px;
+}
+
+.Button .hover .l
+{
+  top: -36px;
+}
+
+.Button .l
+{
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 7px;
+  height: 108px;
+}
+
+
+.Button .l, .Button .r span
+{
+  background-image: url('images/Button.png');
+}
+
+/* end Button */
+
+/* begin Footer */
+.Footer
+{
+  position:relative;
+  z-index:0;
+  overflow:hidden;
+  width: 870px;
+  margin: 5px auto 0px auto;
+}
+
+.Footer .Footer-inner
+{
+  height:1%;
+  position: relative;
+  z-index: 0;
+  padding: 15px;
+  text-align: center;
+}
+
+.Footer .Footer-background
+{
+  position:absolute;
+  z-index:-1;
+  background-repeat:no-repeat;
+  background-image: url('images/Footer.png');
+  width: 870px;
+  height: 100px;
+  bottom:0;
+  left:0;
+}
+
+
+
+.rss-tag-icon
+{
+  position: relative;
+  display:block;
+  float:left;
+  background-image: url('images/rssIcon.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  margin: 0 5px 0 0;
+  height: 27px;
+  width: 26px;
+}
+
+
+
+
+.Footer .Footer-text p
+{
+  margin: 0;
+}
+
+.Footer .Footer-text
+{
+  display:inline-block;
+  color:#034259;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.Footer .Footer-text a:link
+{
+  text-decoration: none;
+  color: #056A8F;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+}
+
+.Footer .Footer-text a:visited
+{
+  text-decoration: none;
+  color: #4A4A4A;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+}
+
+.Footer .Footer-text a:hover
+{
+  text-decoration: none;
+  color: #078FC0;
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+}
+/* end Footer */
+
+/* begin PageFooter */
+.page-footer, .page-footer a, .page-footer a:link, .page-footer a:visited, .page-footer a:hover
+{
+  font-family:Arial;
+  font-size:10px;
+  letter-spacing:normal;
+  word-spacing:normal;
+  font-style:normal;
+  font-weight:normal;
+  text-decoration:underline;
+  color:#0792C5;
+}
+
+.page-footer
+{
+  margin:1em;
+  text-align:center;
+  text-decoration:none;
+  color:#878787;
+}
+/* end PageFooter */
+
+/* begin LayoutCell */
+.contentLayout .sidebar1
+{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: left;
+  overflow: hidden;
+  width: 217px;
+}
+
+/* end LayoutCell */
+
+/* begin LayoutCell */
+.contentLayout .content
+{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: left;
+  overflow: hidden;
+  width: 652px;
+}
+/* end LayoutCell */
+
+#menu2 {
+	width: 150px;
+	margin: 7px;
+/*border-style: solid solid none solid;
+	border-color: #D8D5D1;*/
+	border-size: 1px;
+	font-family: Helvetica, sans-serif;
+}
+	
+#menu2 li a {
+	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	font-family: Helvetica, sans-serif;
+	}	
+	
+#menu2 li a:link, #menu2 li a:visited {
+	color: #3688BA;
+	display: block;
+	background:  url('images/menu2.gif');
+	padding: 8px 0 0 30px;
+	}
+	
+#menu2 li a:hover {
+	color: #3688BA;
+	background:  url('images/menu2.gif') 0 -32px;
+	padding: 8px 0 0 32px;
+	}
+	
+	
+ul#menu{ 
+	width: 86%;
+	height: 43px;
+	background: #FFF url("images/menu-bg.gif") top left repeat-x; 
+	font-size: 0.8em; 
+	font-family: "Lucida Grande", Verdana, sans-serif; 
+	font-weight: bold; 
+	list-style-type: none; 
+	margin-left: 98px; 
+	padding: 0; 
+	}
+ul#menu li {
+	display: block; 
+	float: left; 
+	margin: 0 0 0 5px; 
+	}
+ul#menu li a { 
+	height: 43px; 
+	color: #777; 
+	text-decoration: none; 
+	display: block; 
+	float: left; 
+	line-height: 200%; 
+	padding: 8px 15px 0; 
+	}
+ul#menu li a:hover { 
+	color: #333; 
+	}
+ul#menu li a.current{ 
+	color: #FFF; 
+	background: #FFF url("images/current-bg.gif") top left repeat-x; 
+	padding: 5px 15px 0; 
+	}

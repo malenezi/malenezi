@@ -1,0 +1,376 @@
+/*Desire2Learn Inc.*/
+/*Deskpaper Template*/
+/*May 2010*/
+
+/* Layout elements */
+
+html { 
+	background-color:#23110F; 
+	background-image:url("bg.png");
+	padding: 20pt;
+	padding-left: 50pt;
+	padding-right: 50pt;
+}
+	  
+#container {
+	border: 1px solid #DFDFDF;
+	background-image:url("container_bg.gif");
+	margin-bottom: 0px;
+	padding: 10pt 24pt;
+}
+
+#header{
+	margin: 0px;
+	padding: 0px;
+}
+
+#body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.img{
+	margin: 4pt 0 12pt 0;
+	padding: 0px;
+}
+
+.imgRight{
+	margin: 4pt 0 12pt 0;
+	padding: 0px;
+	float: right;
+	padding-left:20pt;
+}
+
+.imgLeft{
+	margin: 4pt 0 12pt 0;
+	padding: 0px;
+	float: left;
+	padding-right: 20pt;
+}
+
+#footer{
+	clear: both; 
+	margin: 0px;
+	padding: 0px;
+	padding-top: 20px;
+	text-align: center;
+}
+
+#footnotes{
+	border-top: dashed 1px #444;
+	border-bottom: dashed 1px #444;
+	clear: both; 
+	margin: 0px;
+	padding: 0px;
+	font-size: 10pt;
+}
+
+.footnote{
+	padding-bottom:2pt;
+	padding-left: 14pt;
+	padding-right:0pt;
+	padding-top:0pt;
+	font-size: 10pt;
+}
+
+/* Text elements */
+
+body {
+	background-color: #FFF; 
+	font-family:  Tahoma, Verdana, sans-serif;
+	font-size:12pt;
+	color: #23110F;
+	margin:0 auto; 
+	padding:0; 
+	text-align:left;
+}
+
+h1 {
+	margin-top: 0pt;
+	margin-bottom: 12pt;
+	margin-left: -24pt;
+	margin-right: -24pt;
+	padding-top: 10pt;
+	padding-left:10pt;
+	text-align: left;
+	text-indent: 0pt;
+	word-spacing: 0.125em;
+	font-family: Century Gothic, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size:22pt;
+	color: #F1F1EF;
+	letter-spacing: 0em;
+	text-decoration: none;
+	background-color: #314457;
+}
+	
+h2 {
+	margin-top: 24pt;
+	margin-bottom: 12pt;
+	margin-left: -24pt;
+	margin-right: -24pt;
+	padding-top: 3pt;
+	padding-left: 10pt;
+	padding-right: 10pt;
+	text-align: left;
+	text-indent: 0pt;
+	word-spacing: 0.125em;
+	font-family: Century Gothic, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16pt;
+	color: #23110F;
+	letter-spacing: 0em;
+	text-decoration: none;
+	background-color: #B5BED2;
+	clear: both;
+}
+	   
+h3 {
+	margin-top: 24pt;
+	margin-bottom: 6pt;
+	margin-left: -24pt;
+	margin-right: -24pt;
+	padding-top: 3pt;
+	padding-left: 10pt;
+	padding-right: 10pt;
+	text-align: left;
+	word-spacing: 0.125em;
+	font-family: Century Gothic, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14pt;
+	color: #23110F;
+	letter-spacing: 0em;
+	text-decoration: none;
+	background-color:#E9EEF4;
+	border-top: 1px solid #A4B0C8;
+	border-bottom: 1px solid #A4B0C8;
+	clear: both;
+}
+
+h4 {
+	margin-top: 18pt;
+	margin-bottom: 6pt;
+	text-align: left;
+	word-spacing: 0.250em;
+    font-family: Century Gothic, sans-serif; 
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12pt;
+	color: #23110F;
+	letter-spacing: 0.00em;
+	text-decoration: none;
+	text-transform: uppercase;
+	clear: both;
+}
+
+strong {
+	word-spacing: 0em;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+	font-weight: normal;
+	font-family: Georgia, serif;
+}
+
+code{
+	font-size: 11pt;
+}
+
+blockquote {
+	margin:22px 40px;
+	upadding:3px;
+	color:#000;
+	font-style: italic;
+	padding: 5px 50px;
+	background: transparent url("blockquote.png") no-repeat 0 0;
+}
+
+a:link { 
+	color: #983F2C;
+	text-decoration: none;
+}
+		
+a:visited { 
+	color: #983F2C;
+	text-decoration: none; 
+}
+		   
+a:hover { 
+	color:#3F5671; 
+	text-decoration: underline;
+}
+
+a:active { 
+	color:#3F5671;
+	text-decoration: underline; 
+}
+
+p {   
+	text-indent:0pt; 
+	margin-top:6pt; 
+	margin-bottom:12pt;  
+	line-height: 16pt;
+	font-style:normal; 
+	font-weight:normal; 
+	text-decoration:none; 
+}
+
+p.emphasis{
+	background-color: #FBFBFB;
+}
+
+p.caption {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10pt;
+	clear: both;
+}
+		
+p.note {
+	text-align: left;
+	text-indent: 0pt;
+	padding-top: 6pt;
+	padding-bottom: 6pt;
+	padding-left: 6pt;
+	padding-right: 6pt;
+	background-color: #E9E8E3;
+	font-size: 11pt;
+	text-decoration: none;
+	line-height: 14pt;
+}
+
+img { 
+	border:none;
+}
+
+/* Lists */
+
+ul {
+	text-align:left;
+	font-size:11pt;
+	list-style-type: disc;
+	list-style-position: outside;
+    padding-bottom:6pt; 
+    padding-top:2pt;
+}
+
+ol {
+	text-align:left;
+	font-size:11pt;
+	list-style-position: outside;
+	padding-bottom:6pt;
+	padding-top:2pt;
+	
+}
+	
+li {
+	margin-top:6px;
+	margin-bottom:6px;
+}
+
+dl {
+	text-align:left;
+	font-size:11pt;
+	padding-bottom:6pt; 
+    padding-right:0pt; 
+    padding-top:2pt;
+}
+
+dt {
+
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-weight: bold;
+}
+
+dd {
+
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+
+/* Spans */
+
+span.new { 
+	font-family: Arial, sans-serif;
+	font-size:10pt; 
+	color:#870000; 
+	letter-spacing:0em; 
+	font-style:bold; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+span.note { 
+	word-spacing: 0.250em;
+    font-family: Verdana, sans-serif; 
+	font-style: bold;
+	font-weight: bold;
+	font-size: 11pt;
+	color: #2B3C4D;
+	letter-spacing: 0.00em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* Tables */
+
+table {
+	margin-top: 6px;
+	margin-bottom: 12px;
+	width: 100%;
+	border-collapse: collapse;
+	border-bottom: 2px solid #23110F;
+}
+
+th {
+	background-color: #E9E8E3;
+	font-family: Century Gothic, sans-serif;
+	font-weight: normal;
+	vertical-align: top;
+	border-top: 1px solid #23110F;
+	border-bottom: 1px solid #23110F;
+	padding: 5px;
+	font-size: 11pt;
+	font-color: #000;
+}
+
+
+td {
+	border-collapse: collapse;
+	padding: 5px;
+	vertical-align: top;
+	border-top: 1px solid #23110F;
+	border-bottom: 1px solid #23110F;
+	font-size: 10pt;
+	color: #30302f;
+	width: auto;
+}
+
+tr {
+	border-collapse: collapse;
+	padding: 5px;
+	margin: 0;
+	vertical-align: top;
+
+}
+
+ul.table { 
+    padding-bottom:0pt; 
+    padding-left:0pt; 
+    padding-right:0pt;
+    padding-top:5pt;  }
+	
+
+ol.table {
+	padding-bottom:0pt;
+	padding-left:0pt;
+	padding-right:0pt;
+	padding-top:5pt;
+}
