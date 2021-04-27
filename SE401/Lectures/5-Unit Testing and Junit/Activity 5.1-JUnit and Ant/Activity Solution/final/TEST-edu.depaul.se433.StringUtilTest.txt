@@ -1,0 +1,71 @@
+Testsuite: edu.depaul.se433.StringUtilTest
+Tests run: 16, Failures: 5, Errors: 5, Time elapsed: 0.93 sec
+
+Testcase: testUncountable took 0.1 sec
+	FAILED
+expected:<water[]> but was:<water[s]>
+junit.framework.AssertionFailedError: expected:<water[]> but was:<water[s]>
+	at edu.depaul.se433.StringUtilTest.testUncountable(StringUtilTest.java:14)
+
+Testcase: testRegular took 0 sec
+	FAILED
+expected:<bo[y]s> but was:<bo[ie]s>
+junit.framework.AssertionFailedError: expected:<bo[y]s> but was:<bo[ie]s>
+	at edu.depaul.se433.StringUtilTest.testRegular(StringUtilTest.java:23)
+
+Testcase: testIrregular took 0 sec
+Testcase: testSpecialCases took 0 sec
+Testcase: testSpecialCases1 took 0 sec
+Testcase: testSpecialCases2 took 0 sec
+	FAILED
+expected:<da[y]s> but was:<da[ie]s>
+junit.framework.AssertionFailedError: expected:<da[y]s> but was:<da[ie]s>
+	at edu.depaul.se433.StringUtilTest.testSpecialCases2(StringUtilTest.java:51)
+
+Testcase: testSpecialCases3 took 0.1 sec
+	FAILED
+expected:<wi[v]es> but was:<wi[f]es>
+junit.framework.AssertionFailedError: expected:<wi[v]es> but was:<wi[f]es>
+	at edu.depaul.se433.StringUtilTest.testSpecialCases3(StringUtilTest.java:58)
+
+Testcase: testSpecialCases4 took 0 sec
+Testcase: testAddition took 0 sec
+	Caused an ERROR
+null
+java.lang.NullPointerException
+	at edu.depaul.se433.StringUtilTest.testAddition(StringUtilTest.java:74)
+
+Testcase: testException1 took 0 sec
+Testcase: testException2 took 0 sec
+Testcase: testException3 took 0 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.IllegalArgumentException> but was<org.junit.ComparisonFailure>
+	at edu.depaul.se433.StringUtilTest.testException3(StringUtilTest.java:90)
+
+Testcase: testException4 took 0.1 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.StringIndexOutOfBoundsException>
+java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.StringIndexOutOfBoundsException>
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.charAt(String.java:686)
+	at edu.depaul.se433.StringUtil.pluralize(StringUtil.java:38)
+	at edu.depaul.se433.StringUtilTest.testException4(StringUtilTest.java:94)
+
+Testcase: testException5 took 0 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.AssertionError>
+java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.AssertionError>
+Caused by: java.lang.AssertionError: expected:<Exception> but was:<null>
+	at edu.depaul.se433.StringUtilTest.testException5(StringUtilTest.java:98)
+
+Testcase: testException6 took 0.09 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.IllegalArgumentException> but was<org.junit.ComparisonFailure>
+	at edu.depaul.se433.StringUtilTest.testException6(StringUtilTest.java:102)
+
+Testcase: test2 took 0 sec
+	FAILED
+
+junit.framework.AssertionFailedError: 
+	at edu.depaul.se433.StringUtilTest.test2(StringUtilTest.java:108)
+

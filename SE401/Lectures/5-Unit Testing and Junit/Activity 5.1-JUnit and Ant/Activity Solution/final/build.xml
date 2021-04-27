@@ -1,0 +1,124 @@
+<project name="MyProject" default="run" basedir=".">
+    <description>
+        Ant build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="bin"/>
+
+  <property name="cobertura" location="C:\cobertura"/>
+  <property name="instrumented" location="instrumented"/>
+  <property name="coverage.xml" location="coverage-xml"/>
+  <property name="coverage.html" location="coverage-html"/>
+  
+  <path id="cobertura.classpath">
+  	<fileset dir="${cobertura}">
+  		<include name="cobertura.jar" />
+  		<include name="lib/**/*.jar" />
+  	</fileset>
+  </path>
+
+  <taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+  
+  <target name="compile" depends="init"
+          description="compile the source " >
+      <!-- Compile the java code from ${src} into ${build} -->
+      <javac srcdir="${src}" 
+	     destdir="${build}" 
+	     debug="on"/>
+  </target>
+   
+  <target name="test1" depends="compile"> 
+  	<junit printsummary="yes" fork="yes" haltonfailure="yes">
+  		<classpath location="${build}"/>
+  		<formatter type="plain"/>
+     		<test name="edu.depaul.se433.StringUtilTest"/>
+	</junit>
+  </target>   
+   
+  <target name="instrument" depends="init,compile">
+	<!--
+		Remove the coverage data file and any old instrumentation.
+	-->
+	<delete file="cobertura.ser"/>
+	<delete dir="${instrumented}" />
+
+	<!--
+		Instrument the application classes, writing the
+		instrumented classes into ${build.instrumented.dir}.
+	-->
+	<cobertura-instrument todir="${instrumented}">
+	<!--
+		The following line causes instrument to ignore any
+		source line containing a reference to log4j, for the
+		purposes of coverage reporting.
+	-->
+		<ignore regex="org.apache.log4j.*" />
+
+		<fileset dir="${build}">
+			<!--
+			Instrument all the application classes, but
+			don't instrument the test classes.
+			-->
+			<include name="**/*.class" />
+			<exclude name="**/*Test.class" />
+		</fileset>
+	</cobertura-instrument>
+  </target>
+
+  <target name="test2" depends="init,compile">
+	<junit fork="yes">
+	<!--
+		Note the classpath order: instrumented classes are before the
+		original (uninstrumented) classes.  This is important.
+	-->
+		<classpath location="${instrumented}" />
+		<classpath location="${build}" />
+
+	<!--
+		The instrumented classes reference classes used by the
+		Cobertura runtime, so Cobertura and its dependencies
+		must be on your classpath.
+	-->
+		<classpath refid="cobertura.classpath" />
+
+		<formatter type="plain" />
+		<test name="edu.depaul.se433.StringUtilTest"/>
+	</junit>
+  </target>
+
+  <target name="coverage-report-xml">
+	<!--
+		Generate an XML file containing the coverage data using
+		the "srcdir" attribute.
+	-->
+	<cobertura-report srcdir="${src}" destdir="${coverage.xml}" format="xml" />
+  </target>
+
+  <target name="coverage-report-html">
+	<!--
+		Generate a series of HTML files containing the coverage
+		data in a user-readable form using nested source filesets.
+	-->
+	<cobertura-report srcdir="${src}" destdir="${coverage.html}"/>
+  </target>
+
+  <target name="coverage" depends="compile,instrument,test2,coverage-report-xml,coverage-report-html" 
+  	description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
+
+  <target name="clean"
+          description="clean up" >
+      <!-- Delete the ${build} and ${dist} directory trees -->
+      <delete dir="${build}"/>
+      <delete dir="${instrumented}"/>
+  </target>
+  
+ 
+</project>
