@@ -1,0 +1,10 @@
+Testsuite: edu.depaul.se433.StringUtilTest
+Tests run: 2, Failures: 1, Errors: 0, Time elapsed: 0.03 sec
+
+Testcase: test took 0.02 sec
+	FAILED
+expected:<water[]> but was:<water[s]>
+junit.framework.AssertionFailedError: expected:<water[]> but was:<water[s]>
+	at edu.depaul.se433.StringUtilTest.test(StringUtilTest.java:12)
+
+Testcase: test2 took 0 sec

@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.9666666666666667" branch-rate="0.7666666666666667" lines-covered="29" lines-valid="30" branches-covered="23" branches-valid="30" complexity="22.0" version="1.9.4.1" timestamp="1288541662738">
+	<sources>
+		<source>C:/Users/Mamdouh/Desktop/Mines/DePaul/Fall-10-11/433/Labs/TestString/TestString/src</source>
+	</sources>
+	<packages>
+		<package name="edu.depaul.se433" line-rate="0.9666666666666667" branch-rate="0.7666666666666667" complexity="22.0">
+			<classes>
+				<class name="edu.depaul.se433.StringUtil" filename="edu/depaul/se433/StringUtil.java" line-rate="0.9666666666666667" branch-rate="0.7666666666666667" complexity="22.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="49" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+								<line number="76" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="3" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="pluralize" signature="(Ljava/lang/String;)Ljava/lang/String;" line-rate="1.0" branch-rate="0.7666666666666667">
+							<lines>
+								<line number="6" hits="24" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="7" hits="665" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="8" hits="645" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="9" hits="2" branch="false"/>
+								<line number="13" hits="20" branch="false"/>
+								<line number="14" hits="179" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="15" hits="160" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="16" hits="1" branch="false"/>
+								<line number="20" hits="19" branch="false"/>
+								<line number="21" hits="54" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="22" hits="37" branch="false"/>
+								<line number="23" hits="37" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="24" hits="2" branch="false"/>
+								<line number="28" hits="17" branch="false"/>
+								<line number="29" hits="296" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="30" hits="284" branch="false"/>
+								<line number="31" hits="284" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="32" hits="5" branch="false"/>
+								<line number="33" hits="5" branch="false"/>
+								<line number="37" hits="12" branch="false"/>
+								<line number="38" hits="12" branch="false"/>
+								<line number="39" hits="11" branch="false"/>
+								<line number="40" hits="11" branch="true" condition-coverage="41% (5/12)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="2" type="jump" coverage="50%"/>
+										<condition number="3" type="jump" coverage="0%"/>
+										<condition number="4" type="jump" coverage="0%"/>
+										<condition number="5" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="42" hits="6" branch="false"/>
+								<line number="44" hits="5" branch="false"/>
+								<line number="46" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="3" hits="0" branch="false"/>
+						<line number="6" hits="24" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="7" hits="665" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="8" hits="645" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="9" hits="2" branch="false"/>
+						<line number="13" hits="20" branch="false"/>
+						<line number="14" hits="179" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="15" hits="160" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="16" hits="1" branch="false"/>
+						<line number="20" hits="19" branch="false"/>
+						<line number="21" hits="54" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="22" hits="37" branch="false"/>
+						<line number="23" hits="37" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="24" hits="2" branch="false"/>
+						<line number="28" hits="17" branch="false"/>
+						<line number="29" hits="296" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="30" hits="284" branch="false"/>
+						<line number="31" hits="284" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="32" hits="5" branch="false"/>
+						<line number="33" hits="5" branch="false"/>
+						<line number="37" hits="12" branch="false"/>
+						<line number="38" hits="12" branch="false"/>
+						<line number="39" hits="11" branch="false"/>
+						<line number="40" hits="11" branch="true" condition-coverage="41% (5/12)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="2" type="jump" coverage="50%"/>
+								<condition number="3" type="jump" coverage="0%"/>
+								<condition number="4" type="jump" coverage="0%"/>
+								<condition number="5" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="42" hits="6" branch="false"/>
+						<line number="44" hits="5" branch="false"/>
+						<line number="46" hits="2" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="76" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
