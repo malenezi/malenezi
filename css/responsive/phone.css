@@ -18,7 +18,8 @@
 
 	.header-block .header-logo img {
 		width: auto;
-		max-width: 56%;
+		max-width: 100%;
+		height: auto;
 	}
 
 	.footer .footer-bottom p, .footer .footer-bottom,
