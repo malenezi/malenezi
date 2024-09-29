@@ -32,16 +32,6 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>https://malenezi.github.io/malenezi/Links.html</loc>
-  <lastmod>2016-04-09T21:23:36+00:00</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>https://malenezi.github.io/malenezi/Contact.html</loc>
-  <lastmod>2016-04-09T21:23:36+00:00</lastmod>
-  <changefreq>daily</changefreq>
-</url>
-<url>
   <loc>https://malenezi.github.io/malenezi/index-arabic.html</loc>
   <lastmod>2016-04-09T21:23:36+00:00</lastmod>
   <changefreq>daily</changefreq>
@@ -58,6 +48,16 @@
 </url>
 <url>
   <loc>https://malenezi.github.io/malenezi/SE489/</loc>
+  <lastmod>2016-04-09T21:23:36+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://malenezi.github.io/malenezi/SE495/</loc>
+  <lastmod>2016-04-09T21:23:36+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://malenezi.github.io/malenezi/IS466/</loc>
   <lastmod>2016-04-09T21:23:36+00:00</lastmod>
   <changefreq>daily</changefreq>
 </url>

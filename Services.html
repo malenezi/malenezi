@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>
-	Dr. Mamdouh Alenezi - Services
-</title>
-    <!-- Meta Tags -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Mamdouh Alenezi</title>
+	<!-- Meta Tags -->
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 		<!-- Favicon -->
@@ -27,137 +27,205 @@
 		<!-- <script type="text/javascript" src="jscript/demo-settings.js"></script> -->
 
 	<!-- END head -->
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --accent-color: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px 15px;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+        }
+        
+        .hero img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-left: 60px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .google-scholar { background-color: #4285F4; }
+        .orcid { background-color: #A6CE39; }
+        .scopus { background-color: #F36D00; }
+        .web-of-science { background-color: #000000; }
+        .dblp { background-color: #004F9F; }
+        .researchgate { background-color: #00CCBB; }
+        
+        .about-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .sidebar {
+            flex: 1;
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
+            
+            .hero img {
+                margin-bottom: 30px;
+            }
+            
+            .hero-content {
+                padding-left: 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form name="aspnetForm" method="post" action="About_Us.aspx" id="aspnetForm">
-<div>
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMDUyNjYzMjhkZJqX+ZwttopC4AWEI+/DiirBxLIbXbKYKsKmxjNJV6ru" />
-</div>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Research.html">Research</a></li>
+                    <li><a href="Teaching.html">Teaching</a></li>
+					<li><a href="Services.html">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div>
-        <!-- BEGIN .boxed -->
-		<div class="boxed">
-			
-			<!-- BEGIN .header -->
-			<header class="header">
-			<!--	
-                </br>
-                </br><div class="header-topmenu">
-					
-					<!-- BEGIN .wrapper -->
-				<!--	<div class="wrapper">
-
-						<ul class="le-first">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="shortcodes.html">About</a></li>
-							<li><a href="blog.html">Research</a>
-								<ul class="sub-menu">
-									<li><a href="blog-second.html">sd</a></li>
-									<li><a href="post.html">News & Events</a></li>
-									<li><a href="post-no-comments.html">Resources</a></li>
-									<li><a href="post-no-comments.html">Post page w/ review</a></li>
-								</ul>
-							</li>
-							<li><a href="post.html">Collaboration</a></li>
-							<li><a href="photo-gallery.html">News & Events</a></li>
-							<li><a href="full-width.html">Resources</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-						</ul>
-						
-					<!-- END .wrapper -->
-					<!--</div> -->
-
-				<!-- </div> -->
-				
-				<!-- BEGIN .wrapper -->
-				<div class="wrapperTitle">
-					
-					<div class="header-block">
-                        
-						<div class="header-logo">
-							<a href=""><img src= "images/MyLogo.png" alt="logo" /></a>
-							<!-- <h1><a href="index.html">NOVOMag</a></h1> -->
-						</div>
-						<!--<div class="header-banner">
-							<a href="#" target="_blank"><img src="images/no-banner-728x90.jpg" alt="ad" /></a>
-							
-						</div> -->
-					</div>
-					
-				<!-- END .wrapper -->
-				</div>
-
-
-				<nav class="main-menu">
-					
-					<!-- BEGIN .wrapper -->
-					<div class="wrapper">
-						
-						<ul class="menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="Research.html">Research</a></li>
-							<li><a href="Teaching.html">Teaching</a></li>
-							<li><a href="Services.html">Services</a></li>
-							<li><a href="Links.html">Links</a></li>
-							<li><a href="Contact.html">Contact</a></li>
-													</div>
-													<!--<div class="item-content">
-														<p>Sotheby’s in London is getting ready for another seasonal display of wealth, as some of world’s.</p>
-														<div class="article-icons">
-															<span class="article-icon">4 JAN, 2014</span>
-															<a href="post.html#comments" class="article-icon">3 COMMENTS</a>
-															<a href="blog.html" class="article-icon">Orange-Themes</a>
-														</div>
-													</div> -->
-												</div>
-											<!-- END .menu-block -->
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-								</ul>
-							</li>
-						
-						
-						</ul>
-
-						
-					<!-- END .wrapper -->
-					</div>
-
-				</nav>
-				
-			<!-- END .header -->
-			</header>
-
-            		<section class="content has-sidebar">
-				
-				<!-- BEGIN .wrapper -->
-				<div class="wrapper">
-
-					<!-- BEGIN .breaking-news -->
-					<div class="breaking-news">
-						
-					<!-- END .breaking-news -->
-					</div>
-
-				<!-- END .wrapper -->
-				</div>
-                        
-                        
-                        <!-- left side of the page -->
-                        
-                        				<!-- BEGIN .wrapper -->
-                        
-				<div class="wrapper">
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <img src="images/Prof. Alenezi.jpg" alt="Prof. Mamdouh Alenezi">
+                <div class="hero-content">
+                    <h1>Prof. Mamdouh Alenezi</h1>
+                    <p>Director of AI Academy at Tahakom, expert in software engineering and artificial intelligence.</p>
+                </div>
+            </div>
+        </section>
+        <div class="wrapper">
                     
 					
 					<div class="main-content">
-                        
-                        
-
-    <div class="panel">
+        <div class="panel">
 							<div class="p-title">
 								<h2>Services</h2>
 							</div>
@@ -296,168 +364,13 @@
 										</div>
 									</div>
 								</div>
+        <!-- Add more sections for Research, Teaching, etc. -->
+    </main>
 
-
-					</div>
-    
-                 
-<br/><br/><br/><br/><br/><br/><br/><br/>
-						
-						</div>
-	<br/><br/><br/><br/><br/><br/>					
-						</div>
-						
-                     
-						<!-- BEGIN .widget -->
-                        <!--
-						<div class="widget">
-							<div class="w-title">
-								<h3>Latest Reviews</h3>
-							</div>
-							<div class="review-list">
-								<a href="blog.html" class="upper-title">More Reviews<i class="fa fa-caret-right"></i></a>
-								
-								<div class="item">
-									<a href="post.html"><img src="images/photos/image-6.jpg" alt="" class="item-photo" /></a>
-									<div class="item-content">
-										<h3><a href="post.html">Vintage Clock GB15 Review</a></h3>
-										<span class="review-rating" itemprop="ratingValue">3.5</span>
-									</div>
-								</div>
-								
-								<div class="item">
-									<a href="post.html"><img src="images/photos/image-7.jpg" alt="" class="item-photo" /></a>
-									<div class="item-content">
-										<h3><a href="post.html">New and shiny iPhone5c review from Orange-Themes</a></h3>
-										<span class="review-rating" itemprop="ratingValue">5</span>
-									</div>
-								</div>
-								
-								<div class="item">
-									<a href="post.html"><img src="images/photos/image-8.jpg" alt="" class="item-photo" /></a>
-									<div class="item-content">
-										<h3><a href="post.html">Nokia Lumia 925 Review</a></h3>
-										<span class="review-rating" itemprop="ratingValue">75%</span>
-									</div>
-								</div>
-								
-								<div class="item">
-									<a href="post.html"><img src="images/photos/image-9.jpg" alt="" class="item-photo" /></a>
-									<div class="item-content">
-										<h3><a href="post.html">Samsung Galaxy Gear Watch Review by Maarcis</a></h3>
-										<span class="review-rating" itemprop="ratingValue">85%</span>
-									</div>
-								</div>
-								
-								<div class="item">
-									<a href="post.html"><img src="images/photos/image-10.jpg" alt="" class="item-photo" /></a>
-									<div class="item-content">
-										<h3><a href="post.html">Edgars BMW 530D M-Pack Test drive</a></h3>
-										<span class="review-rating" itemprop="ratingValue">100%</span>
-									</div>
-								</div>
-
-							</div> -->
-						<!-- END .widget -->
-						<!-- </div> -->
-						
-						<!-- BEGIN .widget -->
-                        <!--
-						<div class="widget">
-							<div class="w-title">
-								<h3>Photo Gallery</h3>
-							</div>
-							<div class="w-gallery">
-								<a href="photo-gallery.html" class="upper-title">More Galleries<i class="fa fa-caret-right"></i></a>
-								<div class="w-photos">
-									<a href="#" class="gallery-link-left"><i class="fa fa-chevron-left"></i></a>
-									<a href="#" class="gallery-link-right"><i class="fa fa-chevron-right"></i></a>
-									<div class="photo-images">
-										<a href="photo-gallery-single.html"><img src="images/photos/image-11.jpg" alt="" /></a>
-										<a href="photo-gallery-single.html"><img src="images/photos/image-12.jpg" alt="" /></a>
-										<a href="photo-gallery-single.html"><img src="images/photos/image-13.jpg" alt="" /></a>
-										<a href="photo-gallery-single.html"><img src="images/photos/image-14.jpg" alt="" /></a>
-									</div>
-								</div>
-							</div> -->
-						<!-- END .widget -->
-						<!--</div> -->
-						
-						<!-- BEGIN .widget -->
-                        <!--
-						<div class="widget">
-							<div class="w-title">
-								<h3>Tag Cloud</h3>
-							</div>
-							<div class="tagcloud">
-								<a href="blog.html">Omnes</a><a href="blog.html">definitionem</a><a href="blog.html">accommodare</a><a href="blog.html">intellegat</a><a href="blog.html">quas</a><a href="blog.html">theophrastus</a><a href="blog.html">commune</a><a href="blog.html">eleifend</a>
-								<a href="blog.html">Omnes</a><a href="blog.html">definitionem</a><a href="blog.html">intellegat</a><a href="blog.html">accommodare</a><a href="#">quas</a><a href="blog.html">commune</a><a href="blog.html">eleifend</a>
-							</div> -->
-						<!-- END .widget -->
-					<!--	</div> -->
-						
-						<!-- BEGIN .widget -->
-						<!--<div class="widget">
-							<div class="w-title">
-								<h3>Advertisement</h3>
-							</div>
-							<div class="banner banner-grid">
-								<a href="#" class="upper-title">PLACE YOUR AD HERE<i class="fa fa-caret-down"></i></a>
-								<a href="#" target="_blank"><img src="images/no-banner-125x125.jpg" alt="" /></a>
-								<a href="#" target="_blank"><img src="images/no-banner-125x125.jpg" alt="" /></a>
-								<a href="#" target="_blank"><img src="images/no-banner-125x125.jpg" alt="" /></a>
-								<a href="#" target="_blank"><img src="images/no-banner-125x125.jpg" alt="" /></a>
-							</div>
-						<!-- END .widget -->
-						 <!--</div> -->
-
-					</aside>
-					
-				<!-- END .wrapper -->
-				</div>
-				</div>
-			<!-- BEGIN .content -->
-			
-
-       <!----------------------------------------------------------------------------------------------------------------------->
-       <!----------------------------------------------------------------------------------------------------------------------->
-       <!----------------------------------------------------------------------------------------------------------------------->
-
-			<!-- BEGIN .footer -->
-			<footer class="footer">
-				
-				<!-- BEGIN .wrapper -->
-				<div class="wrapper">
-					
-					    
-					<!-- END .footer-widgets -->
-					</div>
-					
-				<!-- END .wrapper -->
-
-                    </div>
-                       
-
-                
-				<div class="footer-bottom">
-					<!-- BEGIN .wrapper -->
-					<div class="wrapper">
-
-						<p align="center">Copyright &copy; 2024 - <b> Dr. Mamdouh Alenezi</b></p>
-
-						<div class="clear-float"></div>
-						
-					<!-- END .wrapper -->
-					</div>
-				</div>
-				
-			<!-- END .footer -->
-			</footer>
-			
-		<!-- END .boxed -->
-		</div>
-
-    </form>
-    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prof. Mamdouh Alenezi. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
