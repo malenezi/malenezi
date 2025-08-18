@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Mamdouh Alenezi</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --accent-color: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px 15px;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+        }
+        
+        .hero img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-left: 60px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .google-scholar { background-color: #4285F4; }
+        .orcid { background-color: #A6CE39; }
+        .scopus { background-color: #F36D00; }
+        .web-of-science { background-color: #000000; }
+        .dblp { background-color: #004F9F; }
+        .researchgate { background-color: #00CCBB; }
+        
+        .about-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .sidebar {
+            flex: 1;
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
+            
+            .hero img {
+                margin-bottom: 30px;
+            }
+            
+            .hero-content {
+                padding-left: 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Research.html">Research</a></li>
+                    <li><a href="Teaching.html">Teaching</a></li>
+					<li><a href="Services.html">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <img src="images/Mine.png" alt="Prof. Mamdouh Alenezi">
+                <div class="hero-content">
+                    <h1>Prof. Mamdouh Alenezi</h1>
+                    <p>Director of AI Academy at Tahakom, expert in software engineering and artificial intelligence.</p>
+                    <div class="social-icons">
+                        <a href="http://scholar.google.com/citations?user=zH5wDBIAAAAJ&hl=en" class="icon-link">
+                            <span class="icon google-scholar">G</span>
+                            Google Scholar
+                        </a>
+                        <a href="https://orcid.org/0000-0001-6852-1206" class="icon-link">
+                            <span class="icon orcid">iD</span>
+                            ORCID
+                        </a>
+                        <a href="https://www.scopus.com/authid/detail.uri?authorId=55854089000" class="icon-link">
+                            <span class="icon scopus">S</span>
+                            Scopus
+                        </a>
+                        <a href="https://www.webofscience.com/wos/author/record/R-2639-2016" class="icon-link">
+                            <span class="icon web-of-science">W</span>
+                            Web of Science
+                        </a>
+                        <a href="https://dblp.org/pers/hd/a/Alenezi:Mamdouh" class="icon-link">
+                            <span class="icon dblp">DB</span>
+                            DBLP
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Mamdouh_Alenezi" class="icon-link">
+                            <span class="icon researchgate">RG</span>
+                            ResearchGate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Professor Mamdouh Alenezi is a distinguished professor of software engineering, a prolific researcher, and a visionary leader in technology governance and innovation. His career spans academia, applied research, and strategic leadership, with a focus on artificial intelligence, software quality, and institutional transformation. Renowned for blending academic excellence with real-world application, he consistently delivers meaningful impact across sectors. </p>
+						<p>Currently, Professor Alenezi serves as Director of the AI Academy at Tahakom, where he leads initiatives at the nexus of education, applied AI, and cross-sector collaboration. He designs and drives forward-thinking programs that integrate machine learning and intelligent systems into scalable, real-world solutions—bridging the critical gap between theory and practice. As an educator and mentor, he has empowered students, faculty, and industry professionals to thrive in fast-evolving technological landscapes. </p>
+						<p>He also serves as Acting Director of Technology Governance, bringing strategic foresight and deep expertise in enterprise architecture, digital transformation, and technology policy. A respected thought leader, Professor Alenezi has held influential roles such as Chief Information Technology Officer and Dean of Quality Assurance, where he helped institutions align IT strategy with ethical frameworks, risk management, and national digital goals. </p>
+						<p>His research spans software engineering, data mining, cybersecurity, and intelligent systems, earning him international recognition, competitive grant awards, and real-world deployment of tools that have advanced the field of software assurance. His ability to translate complex research into actionable, high-impact solutions has benefited both public institutions and private enterprises. </p>
+						<p>A recognized authority in digital governance, Professor Alenezi actively shapes conversations around ethical AI, digital policy, and institutional resilience. His contributions inform strategic roadmaps that prioritize accountability, inclusivity, and long-term value in technology adoption. </p>
+						<p>Through his multifaceted roles as researcher, educator, and executive leader, Professor Mamdouh Alenezi continues to shape the future of software engineering and digital governance—preparing the next generation of professionals to lead with integrity in a rapidly evolving digital world. </p>
+
+
+                    </div>
+                    <div class="sidebar">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="myCV.pdf">My Resume (PDF)</a></li>
+                            <li><a href="myblog/index.html">My Blog Posts</a></li>
+							<li>Email: enezi dot mamdouh at gmail dot com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Add more sections for Research, Teaching, etc. -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Prof. Mamdouh Alenezi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

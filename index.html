@@ -5,253 +5,445 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prof. Mamdouh Alenezi</title>
     <style>
+        /* --- General Styling & Resets --- */
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --text-color: #333;
-            --bg-color: #f9f9f9;
-            --accent-color: #e74c3c;
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --background-color: #ecf0f1; /* Light Gray */
+            --text-color: #34495e; /* Dark Gray */
+            --light-text-color: #ffffff;
+            --card-bg-color: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
         }
-        
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-        
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        header {
-            background-color: var(--secondary-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         
-        nav ul {
-            display: flex;
-            justify-content: flex-end;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
         }
-        
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 20px 15px;
-            transition: background-color 0.3s ease;
+
+        h2::after {
+            content: '';
             display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        
-        nav ul li a:hover {
-            background-color: var(--primary-color);
-        }
-        
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+
+        section {
             padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
         }
-        
-        .hero img {
-            border-radius: 50%;
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--card-bg-color);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: background-color var(--transition-speed);
         }
-        
-        .hero-content {
-            flex: 1;
-            padding-left: 60px;
-        }
-        
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .social-icons {
+
+        .navbar {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .icon-link {
-            display: inline-flex;
+            justify-content: space-between;
             align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
             text-decoration: none;
-            color: #fff;
-            font-family: 'Roboto', Arial, sans-serif;
-            font-size: 0.9em;
-            transition: transform 0.3s ease;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width var(--transition-speed) ease-in-out;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--secondary-color);
         }
         
-        .icon-link:hover {
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--primary-color);
+            transition: all var(--transition-speed) ease-in-out;
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://malenezi.github.io/malenezi/images/header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text-color);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-text-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            border: 1px solid var(--light-text-color);
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        /* --- About Section --- */
+        #about .container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        /* --- Services Section --- */
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Quick Links Section --- */
+        #links {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+        }
+
+        #links h2 {
+            color: var(--light-text-color);
+        }
+        
+        #links h2::after {
+            background: var(--light-text-color);
+        }
+
+        .quick-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text-color);
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .btn:hover {
+            background-color: #2980b9; /* Darker Blue */
             transform: translateY(-3px);
         }
         
-        .icon {
-            width: 30px;
-            height: 30px;
-            margin-right: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-text-color);
         }
         
-        .google-scholar { background-color: #4285F4; }
-        .orcid { background-color: #A6CE39; }
-        .scopus { background-color: #F36D00; }
-        .web-of-science { background-color: #000000; }
-        .dblp { background-color: #004F9F; }
-        .researchgate { background-color: #00CCBB; }
-        
-        .about-section {
-            padding: 60px 0;
-            background-color: #fff;
+        .btn-outline:hover {
+            background-color: var(--light-text-color);
+            color: var(--primary-color);
         }
-        
-        .about-content {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 2;
-        }
-        
-        .sidebar {
-            flex: 1;
-            background-color: var(--bg-color);
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
+
+        /* --- Footer --- */
         footer {
-            background-color: var(--secondary-color);
-            color: #fff;
+            background-color: var(--text-color);
+            color: #bdc3c7; /* Lighter gray for footer text */
             text-align: center;
-            padding: 20px 0;
+            padding: 2rem 0;
         }
         
+        footer p {
+            margin: 0;
+        }
+        
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            .hero {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
                 flex-direction: column;
+                background-color: var(--card-bg-color);
+                width: 100%;
                 text-align: center;
-                padding: 40px 0;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 2.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
             }
             
-            .hero img {
-                margin-bottom: 30px;
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            #home {
+                height: auto;
+                padding: 150px 0 100px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
             
-            .hero-content {
-                padding-left: 0;
-            }
-            
-            .about-content {
+            #about .container {
                 flex-direction: column;
+            }
+            
+            h2 {
+                font-size: 2rem;
             }
         }
+
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Research.html">Research</a></li>
-                    <li><a href="Teaching.html">Teaching</a></li>
-					<li><a href="Services.html">Services</a></li>
-                </ul>
-            </nav>
-        </div>
+
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="#home" class="nav-logo">Prof. Mamdouh Alenezi</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Expertise</a></li>
+                <li class="nav-item"><a href="#links" class="nav-link">Quick Links</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <img src="images/Mine.png" alt="Prof. Mamdouh Alenezi">
-                <div class="hero-content">
-                    <h1>Prof. Mamdouh Alenezi</h1>
-                    <p>Director of AI Academy at Tahakom, expert in software engineering and artificial intelligence.</p>
-                    <div class="social-icons">
-                        <a href="http://scholar.google.com/citations?user=zH5wDBIAAAAJ&hl=en" class="icon-link">
-                            <span class="icon google-scholar">G</span>
-                            Google Scholar
-                        </a>
-                        <a href="https://orcid.org/0000-0001-6852-1206" class="icon-link">
-                            <span class="icon orcid">iD</span>
-                            ORCID
-                        </a>
-                        <a href="https://www.scopus.com/authid/detail.uri?authorId=55854089000" class="icon-link">
-                            <span class="icon scopus">S</span>
-                            Scopus
-                        </a>
-                        <a href="https://www.webofscience.com/wos/author/record/R-2639-2016" class="icon-link">
-                            <span class="icon web-of-science">W</span>
-                            Web of Science
-                        </a>
-                        <a href="https://dblp.org/pers/hd/a/Alenezi:Mamdouh" class="icon-link">
-                            <span class="icon dblp">DB</span>
-                            DBLP
-                        </a>
-                        <a href="https://www.researchgate.net/profile/Mamdouh_Alenezi" class="icon-link">
-                            <span class="icon researchgate">RG</span>
-                            ResearchGate
-                        </a>
-                    </div>
+        <section id="home">
+            <div class="hero-content">
+                <h1>Prof. Mamdouh Alenezi</h1>
+                <p>Director of the AI Academy at Tahakom, Acting Director of Technology Governance, with Expertise in Software Engineering and Artificial Intelligence.</p>
+                <div class="social-links">
+                    <a href="http://scholar.google.com/citations?user=zH5wDBIAAAAJ&hl=en" target="_blank" title="Google Scholar">G</a>
+                    <a href="https://orcid.org/0000-0001-6852-1206" target="_blank" title="ORCID">iD</a>
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=55854089000" target="_blank" title="Scopus">S</a>
+                    <a href="https://www.webofscience.com/wos/author/record/R-2639-2016" target="_blank" title="Web of Science">W</a>
+                    <a href="https://dblp.org/pers/hd/a/Alenezi:Mamdouh" target="_blank" title="DBLP">DB</a>
+                    <a href="https://www.researchgate.net/profile/Mamdouh_Alenezi" target="_blank" title="ResearchGate">RG</a>
                 </div>
             </div>
         </section>
-        
-        <section id="about" class="about-section">
+
+        <section id="about">
             <div class="container">
-                <h2>About Me</h2>
                 <div class="about-content">
-                    <div class="about-text">
-                        <p>Professor Mamdouh Alenezi is a distinguished professor of software engineering, a prolific researcher, and a visionary leader in technology governance and innovation. His career spans academia, applied research, and strategic leadership, with a focus on artificial intelligence, software quality, and institutional transformation. Renowned for blending academic excellence with real-world application, he consistently delivers meaningful impact across sectors. </p>
-						<p>Currently, Professor Alenezi serves as Director of the AI Academy at Tahakom, where he leads initiatives at the nexus of education, applied AI, and cross-sector collaboration. He designs and drives forward-thinking programs that integrate machine learning and intelligent systems into scalable, real-world solutions—bridging the critical gap between theory and practice. As an educator and mentor, he has empowered students, faculty, and industry professionals to thrive in fast-evolving technological landscapes. </p>
-						<p>He also serves as Acting Director of Technology Governance, bringing strategic foresight and deep expertise in enterprise architecture, digital transformation, and technology policy. A respected thought leader, Professor Alenezi has held influential roles such as Chief Information Technology Officer and Dean of Quality Assurance, where he helped institutions align IT strategy with ethical frameworks, risk management, and national digital goals. </p>
-						<p>His research spans software engineering, data mining, cybersecurity, and intelligent systems, earning him international recognition, competitive grant awards, and real-world deployment of tools that have advanced the field of software assurance. His ability to translate complex research into actionable, high-impact solutions has benefited both public institutions and private enterprises. </p>
-						<p>A recognized authority in digital governance, Professor Alenezi actively shapes conversations around ethical AI, digital policy, and institutional resilience. His contributions inform strategic roadmaps that prioritize accountability, inclusivity, and long-term value in technology adoption. </p>
-						<p>Through his multifaceted roles as researcher, educator, and executive leader, Professor Mamdouh Alenezi continues to shape the future of software engineering and digital governance—preparing the next generation of professionals to lead with integrity in a rapidly evolving digital world. </p>
+                    <h2>About Me</h2>
+                    <p>Professor Mamdouh Alenezi is a distinguished professor of software engineering, a prolific researcher, and a visionary leader in technology governance and innovation. His career spans academia, applied research, and strategic leadership, with a focus on artificial intelligence, software quality, and institutional transformation. Renowned for blending academic excellence with real-world application, he consistently delivers meaningful impact across sectors.</p>
+                    <p>Currently, Professor Alenezi serves as Director of the AI Academy at Tahakom, where he leads initiatives at the nexus of education, applied AI, and cross-sector collaboration. He designs and drives forward-thinking programs that integrate machine learning and intelligent systems into scalable, real-world solutions—bridging the critical gap between theory and practice.</p>
+                    <p>His research spans software engineering, data mining, cybersecurity, and intelligent systems, earning him international recognition and competitive grant awards. A recognized authority in digital governance, Professor Alenezi actively shapes conversations around ethical AI, digital policy, and institutional resilience.</p>
+                </div>
+            </div>
+        </section>
 
-
+        <section id="services">
+            <div class="container">
+                <h2>Areas of Expertise</h2>
+                <div class="service-cards">
+                    <div class="card">
+                        <div class="card-icon">⚙️</div>
+                        <h3>Software Engineering</h3>
+                        <p>Leading research in software quality and assurance, developing tools that have advanced the field and seen real-world deployment.</p>
                     </div>
-                    <div class="sidebar">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="myCV.pdf">My Resume (PDF)</a></li>
-                            <li><a href="myblog/index.html">My Blog Posts</a></li>
-							<li>Email: enezi dot mamdouh at gmail dot com</li>
-                        </ul>
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Driving initiatives in applied AI, integrating machine learning and intelligent systems into scalable, practical solutions.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>Technology Governance</h3>
+                        <p>Shaping digital policy and ethical AI frameworks, aligning IT strategy with national goals and institutional resilience.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Add more sections for Research, Teaching, etc. -->
+
+        <section id="links">
+            <div class="container">
+                <h2>Quick Links</h2>
+                <div class="quick-links-container">
+                    <a href="myCV.pdf" class="btn">My Resume (PDF)</a>
+                    <a href="myblog/index.html" class="btn btn-outline">My Blog Posts</a>
+                    <a href="mailto:enezi.mamdouh@gmail.com" class="btn">Contact Me</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -259,5 +451,43 @@
             <p>&copy; 2025 Prof. Mamdouh Alenezi. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // --- Mobile Navigation ---
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // --- Active Nav Link on Scroll ---
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 75) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
