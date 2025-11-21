@@ -1,260 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prof. Mamdouh Alenezi — Software Engineering · Applied AI · Governance · Education</title>
-  <meta name="description" content="Prof. Mamdouh Alenezi — Software Engineering Leadership, Applied AI, Technology Governance, Education & Capacity Building." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #f6f8fb;
-      --card: rgba(255,255,255,0.8);
-      --glass-border: rgba(15,23,42,0.06);
-      --muted: #556070;
-      --text: #0b1220;
-      --accent: #0b6cff; /* gentle royal blue */
-      --accent-2: #0e9e7a; /* optional secondary green */
-      --radius: 14px;
-      --container: 1100px;
-      --shadow-soft: 0 8px 28px rgba(12,24,40,0.06);
-      --glass-blur: 10px;
-    }
-
-    /* Reset & base */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
-      background: linear-gradient(180deg,var(--bg), #ffffff 40%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-
-    /* Layout container */
-    .wrap{max-width:var(--container);margin:28px auto;padding:28px}
-
-    /* Header */
-    header{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      background:transparent;padding:6px 0;
-    }
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#fff,#f3f8ff);display:flex;align-items:center;justify-content:center;
-      border:1px solid var(--glass-border);box-shadow:var(--shadow-soft);
-      font-weight:800;color:var(--accent)
-    }
-    .brand h1{font-size:1rem;margin:0;font-weight:700}
-    .brand p{font-size:0.85rem;margin:0;color:var(--muted)}
-
-    nav.primary{display:flex;gap:10px;align-items:center}
-    .nav-link{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600}
-    .nav-link:hover{background:rgba(11,108,255,0.06);color:var(--accent)}
-    .btn-resume{background:linear-gradient(90deg,var(--accent),#6fb6ff);padding:9px 14px;border-radius:12px;color:white;font-weight:700;box-shadow:0 6px 18px rgba(11,108,255,0.08)}
-
-    /* Mobile */
-    .menu-btn{display:none;background:transparent;border:1px solid var(--glass-border);padding:8px;border-radius:10px}
-    @media (max-width:880px){
-      nav.primary{display:none}
-      .menu-btn{display:block}
-    }
-
-    /* Hero */
-    .hero{
-      display:grid;grid-template-columns:1fr;gap:22px;align-items:center;margin:8px 0 22px;
-      padding:24px;border-radius:18px;background:var(--card);backdrop-filter: blur(var(--glass-blur));
-      border:1px solid var(--glass-border);box-shadow:var(--shadow-soft)
-    }
-    .hero-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:6px 6px}
-    .profile-photo{
-      width:150px;height:150px;border-radius:20px;overflow:hidden;border:3px solid rgba(255,255,255,0.7);
-      box-shadow:0 10px 30px rgba(12,24,40,0.06);
-      background:linear-gradient(180deg,#fff,#f2f7ff);
-    }
-    .hero h2{font-size:1.8rem;margin:6px 0 6px}
-    .hero p.lead{max-width:70ch;color:var(--muted);margin:0 0 12px}
-    .hero .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-
-    /* Grid for expertise */
-    .grid{
-      display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px;
-    }
-    .card{
-      padding:18px;border-radius:14px;background:white;border:1px solid var(--glass-border);box-shadow:0 10px 24px rgba(12,24,40,0.04)
-    }
-    .card h3{margin:0;font-size:1.05rem;display:flex;align-items:center;justify-content:center;gap:10px}
-    .card p{color:var(--muted);margin:8px 0 0}
-    .points{margin-top:10px;color:#17374c;padding-left:18px}
-
-    @media (max-width:880px){
-      .grid{grid-template-columns:1fr}
-      .hero{padding:18px}
-      .profile-photo{width:120px;height:120px}
-      .wrap{padding:18px}
-    }
-
-    /* Work section */
-    .work{
-      display:flex;flex-direction:column;gap:10px;margin-top:22px;
-    }
-    .work .meta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--glass-border);background:#fff;font-weight:600;color:var(--muted)}
-
-    /* Footer */
-    footer{
-      margin-top:34px;padding:28px;border-radius:12px;background:transparent;color:var(--muted);
-      display:flex;flex-direction:column;align-items:center;gap:12px
-    }
-    .footer-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .footer small{color:var(--muted)}
-
-    /* Tiny utilities */
-    .muted{color:var(--muted)}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Mamdouh Alenezi</title>
+    <meta name="description" content="Professor Mamdouh Alenezi - Software Engineering, Applied AI, and Technology Governance.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1e293b', 900: '#0f172a' },
+                        gold: { 500: '#d4af37' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <div class="wrap" id="top">
-    <header>
-      <div class="brand" aria-label="Brand">
-        <div class="logo" aria-hidden="true">Prof</div>
-        <div>
-          <h1>Mamdouh Alenezi</h1>
-          <p class="muted">Software Engineering | Applied AI | Tech Governance | Education</p>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+            <a href="#" class="text-xl font-serif font-bold text-slate-900 tracking-wide">Prof. Alenezi</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-slate-900 transition">About</a>
+                <a href="#expertise" class="hover:text-slate-900 transition">Expertise</a>
+                <a href="mailto:enezi.mamdouh@gmail.com" class="text-slate-900 border-b-2 border-gold-500 pb-0.5 hover:text-gold-500 transition">Contact</a>
+            </div>
         </div>
-      </div>
-
-      <nav class="primary" aria-label="Primary navigation">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#expertise">Expertise</a>
-        <a class="nav-link" href="#work">Roles</a>
-        <a class="nav-link" href="#contact">Contact</a>
-        <a class="btn-resume" href="myCV.pdf" download>Resume</a>
-      </nav>
-
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">☰ <span class="sr-only">Open menu</span></button>
-    </header>
-
-    <!-- Mobile menu -->
-    <nav id="mobileMenu" style="display:none;margin-top:12px;">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#expertise">Expertise</a>
-        <a class="nav-link" href="#work">Roles</a>
-        <a class="nav-link" href="#contact">Contact</a>
-        <a class="btn-resume" href="myCV.pdf" download>Resume</a>
-      </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="about" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="profile-photo" aria-hidden="true">
-          <!-- Replace 'profile.jpg' with your photo (square or slightly rectangular). -->
-          <img src="images/newprofile.png" alt="Profile photo of Prof. Mamdouh Alenezi" />
+    <header id="about" class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-gold-500 font-semibold uppercase tracking-widest text-sm mb-4">Software Engineering & AI Leadership</p>
+                <h1 class="text-5xl lg:text-6xl font-serif font-bold text-slate-900 leading-tight mb-6">
+                    Bridging Research,<br>
+                    Strategy & <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500">Governance.</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
+                    I help organizations build secure and resilient software ecosystems, scale AI solutions from prototypes to production, and establish practical governance frameworks that ensure innovation, responsibility, and alignment with national priorities.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="myCV.pdf" class="px-8 py-3 bg-white text-slate-900 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition">
+                        Download Resume
+                    </a>
+					<a href="myblog/index.html" class="px-8 py-3 bg-white text-slate-900 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition">
+                        My Blog
+                    </a>
+					
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-gold-500/20 to-slate-200 rounded-full blur-2xl"></div>
+                <div class="relative w-72 h-72 lg:w-96 lg:h-96 mx-auto overflow-hidden rounded-full border-4 border-white shadow-2xl">
+                    <img src="images/newprofile.png" alt="Prof. Mamdouh Alenezi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+            </div>
         </div>
+    </header>
 
-        <h2 id="hero-title">Modern Leadership in Engineering, AI, and Governance</h2>
-        <p class="lead">Bridging research and practice to build secure software, scale AI solutions, and advance technology governance and talent development.</p>
+    <section id="expertise" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-16">
+                <h2 class="text-3xl font-serif font-bold text-slate-900 mb-4">Core Expertise</h2>
+                <div class="w-16 h-1 bg-gold-500"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-gold-500/30 transition duration-300 group">
+                    <div class="h-10 w-10 bg-slate-900 rounded-lg mb-6 flex items-center justify-center text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Software Engineering</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Architecture, secure development lifecycle, and QA for enterprise environments.</p>
+                </div>
 
-        <div class="actions" role="region" aria-label="Quick actions">
-          <a class="btn-resume" href="myCV.pdf" download>Download CV</a>
-          <a class="nav-link" href="#expertise">See Expertise</a>
-          <a class="nav-link" href="#work">Selected Roles</a>
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-gold-500/30 transition duration-300 group">
+                    <div class="h-10 w-10 bg-slate-900 rounded-lg mb-6 flex items-center justify-center text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Applied AI</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Applied AI solutions that transform data into actionable intelligence.</p>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-gold-500/30 transition duration-300 group">
+                    <div class="h-10 w-10 bg-slate-900 rounded-lg mb-6 flex items-center justify-center text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Governance</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">IT strategy, ethical AI frameworks, and compliance modeling.</p>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-gold-500/30 transition duration-300 group">
+                    <div class="h-10 w-10 bg-slate-900 rounded-lg mb-6 flex items-center justify-center text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Education</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Upskilling programs and academy curricula for future-ready talent.</p>
+                </div>
+            </div>
         </div>
-
-        <!-- expertise grid -->
-        <div id="expertise" class="grid" role="list" aria-label="Expertise areas">
-          <article class="card" role="listitem" aria-labelledby="e1">
-            <h3 id="e1">Software Engineering Leadership</h3>
-            <p>Deep experience in software architecture, secure development lifecycle, and quality assurance, practiced in enterprise and research environments.</p>
-          </article>
-
-          <article class="card" role="listitem" aria-labelledby="e2">
-            <h3 id="e2">Applied Artificial Intelligence</h3>
-            <p>Bridging machine learning, data mining and intelligent systems into production-ready solutions for mobility, public safety and industry.</p>
-          </article>
-
-          <article class="card" role="listitem" aria-labelledby="e3">
-            <h3 id="e3">Technology Governance & Digital Strategy</h3>
-            <p>Shaping IT strategy, ethical AI frameworks, and governance models that align innovation with national objectives and compliance requirements.</p>
-          </article>
-
-          <article class="card" role="listitem" aria-labelledby="e4">
-            <h3 id="e4">Education & Capacity Building</h3>
-            <p>Designing and delivering upskilling programs, academy curricula and industry-academia collaborations to prepare future-ready talent.</p>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <!-- Work -->
-    <section id="work" class="work" aria-labelledby="work-heading">
-      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
-        <div>
-          <h3 id="work-heading" style="margin:0">Current Roles</h3>
-          <p class="muted" style="margin:6px 0 0">Director, AI Academy — Tahakom | Acting Director, Technology Governance.</p>
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="font-serif text-white text-lg">Prof. Mamdouh Alenezi</p>
+                <p class="text-sm mt-1">© 2025. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://scholar.google.com/citations?user=zH5wDBIAAAAJ&hl=en" class="hover:text-white transition">Google Scholar</a>
+                <a href="https://sa.linkedin.com/in/mamdouhalenezi" class="hover:text-white transition">LinkedIn</a>
+                <a href="https://www.researchgate.net/profile/Mamdouh_Alenezi" class="hover:text-white transition">ResearchGate</a>
+            </div>
         </div>
-
-      </div>
-
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" style="margin-top:22px">
-      <h3 style="margin:0 0 8px">Contact</h3>
-      <p class="muted" style="margin:0 0 10px">For speaking, consulting, or collaboration: <a href="mailto:enezi.mamdouh@gmail.com" style="color:var(--accent);font-weight:700">enezi.mamdouh@gmail.com</a></p>
-      <div class="footer-links" style="margin-top:6px">
-        <a class="nav-link" href="https://scholar.google.com/citations?user=zH5wDBIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        <a class="nav-link" href="https://sa.linkedin.com/in/mamdouhalenezi" target="_blank" rel="noopener">LinkedIn</a>
-		<a class="nav-link" href="https://orcid.org/0000-0001-6852-1206" target="_blank" rel="noopener">ORCID</a>
-        <a class="nav-link" href="https://www.scopus.com/authid/detail.uri?authorId=55854089000" target="_blank"  rel="noopener">Scopus</a>
-        <a class="nav-link" href="https://www.webofscience.com/wos/author/record/R-2639-2016" target="_blank" rel="noopener">Web of Science</a>
-        <a class="nav-link" href="https://dblp.org/pers/hd/a/Alenezi:Mamdouh" target="_blank" rel="noopener">DBLP</a>
-        <a class="nav-link" href="https://www.researchgate.net/profile/Mamdouh_Alenezi" target="_blank" rel="noopener">ResearchGate</a>
-        <a class="nav-link" href="myblog/index.html">Blog</a>
-      </div>
-    </section>
-
-    <footer>
-      <div style="max-width:820px;text-align:center">
-        <small class="muted">© 2025 Prof. Mamdouh Alenezi</small>
-      </div>
     </footer>
-  </div>
 
-  <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn && menuBtn.addEventListener('click', () => {
-      const open = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!open));
-      mobileMenu.style.display = open ? 'none' : 'block';
-    });
-
-    // Smooth internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (ev) => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          ev.preventDefault();
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
-          // close mobile menu if open
-          if (window.getComputedStyle(mobileMenu).display !== 'none') {
-            mobileMenu.style.display = 'none';
-            menuBtn && menuBtn.setAttribute('aria-expanded','false');
-          }
-        }
-      });
-    });
-  </script>
 </body>
 </html>
