@@ -14,12 +14,6 @@ I work at the intersection of **software engineering**, and **artificial intelli
 - Software Engineering Education
 - Mining Software Repositories
 
-### 📚 Teaching
-
-I've taught and developed materials for graduate and undergraduate courses including:
-`SE401` `SE423` `SE489` `SE495` `SE499` `SE595` `IS466` — covering software engineering, software security, software design, and software project management.
-
-Course materials and slides are available in my pinned repositories.
 
 ### 🌱 Currently
 
