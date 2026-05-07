@@ -1,4 +1,4 @@
-# Hi, I'm Mamdouh Alenezi 👋
+# Hi, I'm Prof. Mamdouh Alenezi
 
 **Head of SDAIA Academy** at the Saudi Data and Artificial Intelligence Authority (SDAIA), based in Riyadh, Saudi Arabia.
 
