@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SDAIA Academy — Modular Catalog for Data & AI</title>
+<meta name="description" content="A stackable, role-mapped learning catalog for the National Data & AI workforce. 39 pathways. 172 programs. Three personas. Three levels." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,30..100,0..1&family=Geist:wght@300..700&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Brand */
+  --primary: #414486;
+  --primary-900: #2a2c5c;
+  --primary-700: #353878;
+  --primary-300: #8a8db8;
+  --primary-100: #e3e4ef;
+  --primary-50: #f3f3f8;
+
+  --secondary: #70C8F2;
+  --secondary-700: #2a9bcc;
+  --secondary-100: #e3f3fc;
+
+  --accent: #469A8A;
+  --accent-700: #2e6f63;
+  --accent-100: #def0ec;
+
+  /* Neutrals — warm paper tones to escape the generic "white" feel */
+  --paper: #f7f5f0;
+  --paper-soft: #efece4;
+  --ink: #18181b;
+  --ink-soft: #3f3f46;
+  --ink-mute: #71717a;
+  --rule: #d4d0c5;
+  --rule-soft: #e7e3d8;
+
+  /* Type */
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --mono: 'Geist Mono', 'SF Mono', Menlo, monospace;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+img, svg { display: block; max-width: 100%; }
+
+::selection { background: var(--secondary); color: var(--primary-900); }
+
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* -------- Layout primitives -------- */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 720px) { .wrap { padding: 0 20px; } }
+
+/* -------- Top utility bar -------- */
+.utility {
+  background: var(--primary-900);
+  color: #d8d9e8;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.utility-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  text-transform: uppercase;
+  font-family: var(--mono);
+}
+.utility-inner span { display: flex; align-items: center; gap: 8px; }
+.utility-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 3px rgba(70,154,138,0.25); }
+.utility a { color: #d8d9e8; transition: color 0.2s var(--ease); }
+.utility a:hover { color: var(--secondary); }
+.utility-links { display: flex; gap: 24px; }
+@media (max-width: 720px) {
+  .utility-links { display: none; }
+}
+
+/* -------- Header -------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule-soft);
+  backdrop-filter: saturate(180%) blur(8px);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.brand-mark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 50%, var(--secondary) 50%);
+  opacity: 0.5;
+}
+.brand-mark svg { position: relative; z-index: 1; }
+.brand-text { line-height: 1.1; }
+.brand-text .name {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  color: var(--primary-900);
+}
+.brand-text .tag {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  margin-top: 2px;
+}
+.nav { display: flex; align-items: center; gap: 36px; }
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  position: relative;
+  transition: color 0.2s var(--ease);
+}
+.nav-link:hover { color: var(--primary); }
+.nav-link.active { color: var(--primary); }
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -28px;
+  height: 2px;
+  background: var(--secondary);
+}
+.nav-cta {
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.nav-cta:hover { background: var(--primary-700); transform: translateY(-1px); }
+
+.menu-btn { display: none; }
+@media (max-width: 920px) {
+  .nav { display: none; }
+  .menu-btn {
+    display: grid;
+    place-items: center;
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    background: var(--paper-soft);
+  }
+}
+
+/* -------- Hero -------- */
+.hero {
+  position: relative;
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle at center, var(--secondary-100), transparent 60%);
+  z-index: 0;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: end;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 920px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 28px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--primary);
+}
+
+h1.hero-title {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(44px, 6vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--primary-900);
+  margin-bottom: 28px;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+}
+h1.hero-title em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+  color: var(--primary);
+}
+.hero-lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.25s var(--ease), transform 0.2s var(--ease), box-shadow 0.25s var(--ease);
+}
+.btn-primary:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(65,68,134,0.4);
+}
+.btn-ghost {
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--primary);
+  border-radius: 0;
+  transition: gap 0.2s var(--ease);
+}
+.btn-ghost:hover { gap: 12px; }
+
+/* Hero stat panel */
+.hero-stats {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+}
+.hero-stats::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 24px;
+  width: 60px; height: 3px;
+  background: var(--secondary);
+}
+.hero-stats-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 24px;
+}
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.stat .num {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  color: var(--primary-900);
+  line-height: 1;
+  font-variation-settings: 'opsz' 144;
+}
+.stat .label {
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-top: 8px;
+  font-family: var(--mono);
+}
+.hero-stats-foot {
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.hero-stats-foot strong {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* -------- Matrix section -------- */
+.matrix-section {
+  padding: 100px 0 60px;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
+  border-top: 1px solid var(--rule-soft);
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  align-items: end;
+}
+@media (max-width: 920px) { .section-head { grid-template-columns: 1fr; gap: 24px; } }
+
+.section-head h2 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--primary-900);
+  font-variation-settings: 'opsz' 144;
+}
+.section-head p {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* Persona/level matrix */
+.matrix {
+  display: grid;
+  grid-template-columns: 180px repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.matrix-corner {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+.matrix-corner span {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-mute);
+}
+.matrix-col-head {
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.matrix-col-head .level {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--primary-900);
+  font-variation-settings: 'opsz' 144;
+  font-style: italic;
+}
+.matrix-col-head .level-num {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+.matrix-row-head {
+  padding: 18px 0;
+  border-right: 1px solid var(--rule);
+}
+.matrix-row-head .persona {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--primary-900);
+  margin-bottom: 4px;
+  font-variation-settings: 'opsz' 144;
+}
+.matrix-row-head .persona-desc {
+  font-size: 12px;
+  color: var(--ink-mute);
+  line-height: 1.45;
+  font-family: var(--mono);
+}
+
+.cell {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.cell:hover {
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -12px rgba(65,68,134,0.2);
+}
+.cell.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+.cell.active .cell-count { color: var(--secondary); }
+.cell.active .cell-label { color: white; }
+.cell-count {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+  font-variation-settings: 'opsz' 144;
+  transition: color 0.25s var(--ease);
+}
+.cell-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+  transition: color 0.25s var(--ease);
+}
+.cell-desc {
+  font-size: 12px;
+  color: var(--ink-mute);
+  line-height: 1.4;
+}
+.cell.active .cell-desc { color: rgba(255,255,255,0.7); }
+
+@media (max-width: 920px) {
+  .matrix { grid-template-columns: 1fr; gap: 24px; }
+  .matrix-corner, .matrix-col-head { display: none; }
+  .matrix-row-head { border-right: none; border-bottom: 2px solid var(--primary); padding: 0 0 8px; }
+}
+
+/* -------- Catalog (filters + grid) -------- */
+.catalog {
+  padding: 60px 0 120px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule-soft);
+  flex-wrap: wrap;
+}
+.search {
+  flex: 1;
+  min-width: 240px;
+  position: relative;
+}
+.search input {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: white;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  color: var(--ink);
+}
+.search input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px var(--secondary-100);
+}
+.search-icon {
+  position: absolute;
+  left: 16px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-mute);
+  pointer-events: none;
+}
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.chip {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  transition: all 0.2s var(--ease);
+}
+.chip:hover { border-color: var(--primary-300); color: var(--primary); }
+.chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.results-info {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+.results-info b { color: var(--primary); font-weight: 500; }
+
+/* Program grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s var(--ease);
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--persona-color, var(--primary));
+  transform: translateX(-100%);
+  transition: transform 0.4s var(--ease);
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--persona-color, var(--primary-300));
+  box-shadow: 0 20px 40px -20px rgba(65,68,134,0.18);
+}
+.card:hover::before { transform: translateX(0); }
+
+.card[data-persona="citizen"]      { --persona-color: var(--secondary-700); }
+.card[data-persona="worker"]       { --persona-color: var(--accent); }
+.card[data-persona="professional"] { --persona-color: var(--primary); }
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.card-code {
+  color: var(--ink-mute);
+}
+.card-badges {
+  display: flex;
+  gap: 6px;
+}
+.badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.badge-persona {
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+}
+.badge-level {
+  background: var(--persona-color);
+  color: white;
+}
+
+.card h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--primary-900);
+  margin-bottom: 12px;
+  font-variation-settings: 'opsz' 144;
+}
+.card-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 24px;
+  flex: 1;
+}
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-soft);
+}
+.card-duration {
+  font-size: 13px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s var(--ease);
+}
+.card-link:hover { gap: 10px; }
+.card-link svg { transition: transform 0.2s var(--ease); }
+.card-link:hover svg { transform: translateX(2px); }
+
+.status-tag {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.status-existing { background: var(--accent); }
+.status-new { background: var(--secondary-700); }
+
+/* -------- Pathway showcase -------- */
+.pathways {
+  padding: 100px 0;
+  background: var(--primary-900);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.pathways::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -10%;
+  width: 60%; height: 200%;
+  background: radial-gradient(ellipse at center, rgba(112,200,242,0.08), transparent 50%);
+  pointer-events: none;
+}
+.pathways-head h2 { color: white; }
+.pathways-head p { color: rgba(255,255,255,0.7); }
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 720px) { .path-grid { grid-template-columns: 1fr; } }
+.path-card {
+  padding: 36px;
+  background: var(--primary-900);
+  transition: background 0.3s var(--ease);
+  cursor: pointer;
+}
+.path-card:hover { background: var(--primary-700); }
+.path-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.path-card-num {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--secondary);
+  letter-spacing: 0.1em;
+}
+.path-card-levels {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+}
+.path-card h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 26px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  font-variation-settings: 'opsz' 144;
+}
+.path-card .ar {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+  direction: rtl;
+  text-align: left;
+}
+.path-card .desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+.path-card-foot {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.06em;
+}
+.path-arrow {
+  color: var(--secondary);
+  transition: transform 0.25s var(--ease);
+}
+.path-card:hover .path-arrow { transform: translate(4px, -4px); }
+
+/* -------- Ladder (SDAIA levels) -------- */
+.ladder {
+  padding: 100px 0;
+}
+.ladder-wrap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--rule);
+}
+@media (max-width: 920px) { .ladder-wrap { grid-template-columns: 1fr; } }
+
+.rung {
+  padding: 28px 24px;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  position: relative;
+  transition: background 0.25s var(--ease);
+}
+.rung:last-child { border-right: none; }
+@media (max-width: 920px) { .rung { border-right: none; } }
+
+.rung:hover { background: var(--primary-50); }
+
+.rung-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.rung h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--primary-900);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+  font-variation-settings: 'opsz' 144;
+}
+.rung-ar {
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+  direction: rtl;
+  text-align: left;
+  font-family: var(--display);
+}
+.rung-sfia {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  background: var(--secondary-100);
+  color: var(--primary-700);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.rung-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* -------- CTA strip -------- */
+.cta-strip {
+  padding: 80px 0;
+  background: var(--paper-soft);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.cta-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 920px) { .cta-inner { grid-template-columns: 1fr; } }
+.cta-inner h2 {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--primary-900);
+  font-variation-settings: 'opsz' 144;
+}
+.cta-inner h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: 'opsz' 144, 'WONK' 1;
+}
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* -------- Footer -------- */
+.footer {
+  background: var(--paper);
+  padding: 80px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+@media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+.footer-brand {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--primary-900);
+  margin-bottom: 16px;
+  font-variation-settings: 'opsz' 144;
+}
+.footer-tag {
+  font-size: 14px;
+  color: var(--ink-mute);
+  line-height: 1.6;
+  max-width: 320px;
+}
+.footer h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.footer-list { list-style: none; }
+.footer-list li { margin-bottom: 10px; }
+.footer-list a {
+  font-size: 14px;
+  color: var(--ink-soft);
+  transition: color 0.2s var(--ease);
+}
+.footer-list a:hover { color: var(--primary); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+@media (max-width: 720px) {
+  .footer-bottom { flex-direction: column; gap: 12px; }
+}
+
+/* -------- Entrance animation -------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise {
+  animation: rise 0.8s var(--ease) both;
+}
+.rise-2 { animation-delay: 0.1s; }
+.rise-3 { animation-delay: 0.2s; }
+.rise-4 { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hidden state for filtered cards */
+.card.hidden { display: none; }
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--ink-mute);
+  font-family: var(--display);
+  font-size: 22px;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'WONK' 1;
+  display: none;
+}
+.empty.show { display: block; }
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  font-size: 14px;
+}
+.skip-link:focus { top: 0; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Utility bar -->
+<div class="utility">
+  <div class="wrap utility-inner">
+    <span><span class="utility-dot" aria-hidden="true"></span>National Data &amp; AI workforce program</span>
+    <div class="utility-links">
+      <a href="#">العربية</a>
+      <a href="#">For employers</a>
+      <a href="#">Sign in</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="wrap header-inner">
+    <a href="#" class="brand" aria-label="SDAIA Academy home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M11 2L2 7v8l9 5 9-5V7l-9-5z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M11 11L2 7M11 11l9-4M11 11v9" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="name">SDAIA Academy</span>
+        <span class="tag">أكاديمية سدايا</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#catalog" class="nav-link active">Catalog</a>
+      <a href="#pathways" class="nav-link">Pathways</a>
+      <a href="#ladder" class="nav-link">Levels</a>
+      <a href="#" class="nav-link">For organizations</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-cta">Apply now</a>
+    </nav>
+
+    <button class="menu-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h14M3 10h14M3 14h14" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow rise">Catalog · Version 1.0 · May 2026</span>
+      <h1 class="hero-title rise rise-2">A stackable learning path<br/>for <em>every</em> role in Data &amp; AI.</h1>
+      <p class="hero-lede rise rise-3">From AI literacy for every employee to frontier research for our principal scientists — built on the SDAIA professional framework, mapped to SFIA, aligned to Vision 2030.</p>
+      <div class="hero-actions rise rise-4">
+        <a href="#catalog" class="btn-primary">
+          Browse the catalog
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn-ghost">Download the framework</a>
+      </div>
+    </div>
+
+    <aside class="hero-stats rise rise-3" aria-label="Catalog at a glance">
+      <div class="hero-stats-label">At a glance</div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">172</div>
+          <div class="label">Programs</div>
+        </div>
+        <div class="stat">
+          <div class="num">39</div>
+          <div class="label">Pathways</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">7</div>
+          <div class="label">Portfolios</div>
+        </div>
+        <div class="stat">
+          <div class="num">3×3</div>
+          <div class="label">Personas × levels</div>
+        </div>
+      </div>
+      <div class="hero-stats-foot">
+        Anchored on <strong>six builder roles</strong> from the SDAIA professional framework, with explicit lateral bridges between every track.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Matrix -->
+<section class="matrix-section" id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Start where you are.<br/>Stack to where you're going.</h2>
+      <p>Every program in the catalog sits in one cell of the persona × level grid. Click a cell to filter the catalog below. Click again to clear.</p>
+    </div>
+
+    <div class="matrix" role="grid" aria-label="Persona by level filter">
+      <div class="matrix-corner"><span>Filter by persona × level</span></div>
+      <div class="matrix-col-head"><span class="level-num">L1</span><span class="level">Beginner</span></div>
+      <div class="matrix-col-head"><span class="level-num">L2</span><span class="level">Practitioner</span></div>
+      <div class="matrix-col-head"><span class="level-num">L3</span><span class="level">Expert</span></div>
+
+      <div class="matrix-row-head">
+        <div class="persona">Citizen</div>
+        <div class="persona-desc">All employees</div>
+      </div>
+      <button class="cell" data-persona="citizen" data-level="beginner">
+        <div class="cell-count">28</div>
+        <div class="cell-label">AI fluency</div>
+        <div class="cell-desc">Ethical daily use, deepfake spotting, productivity</div>
+      </button>
+      <button class="cell" data-persona="citizen" data-level="practitioner">
+        <div class="cell-count">14</div>
+        <div class="cell-label">Power users</div>
+        <div class="cell-desc">Personal agentic workflows, advanced prompting</div>
+      </button>
+      <button class="cell" data-persona="citizen" data-level="expert">
+        <div class="cell-count">6</div>
+        <div class="cell-label">AI champions</div>
+        <div class="cell-desc">Peer coaching, organizational advocacy</div>
+      </button>
+
+      <div class="matrix-row-head">
+        <div class="persona">Worker</div>
+        <div class="persona-desc">Analysts · PMs · domain experts</div>
+      </div>
+      <button class="cell" data-persona="worker" data-level="beginner">
+        <div class="cell-count">22</div>
+        <div class="cell-label">Data literacy</div>
+        <div class="cell-desc">SQL, BI fundamentals, statistical thinking</div>
+      </button>
+      <button class="cell" data-persona="worker" data-level="practitioner">
+        <div class="cell-count">19</div>
+        <div class="cell-label">AI product owners</div>
+        <div class="cell-desc">Sector AI use, data storytelling, change leadership</div>
+      </button>
+      <button class="cell" data-persona="worker" data-level="expert">
+        <div class="cell-count">11</div>
+        <div class="cell-label">AI strategists</div>
+        <div class="cell-desc">Portfolio governance, board briefings, AI strategy</div>
+      </button>
+
+      <div class="matrix-row-head">
+        <div class="persona">Professional</div>
+        <div class="persona-desc">Six builder roles</div>
+      </div>
+      <button class="cell" data-persona="professional" data-level="beginner">
+        <div class="cell-count">18</div>
+        <div class="cell-label">Bootcamps</div>
+        <div class="cell-desc">Python, SQL, ML basics — SDAIA L1 entry</div>
+      </button>
+      <button class="cell" data-persona="professional" data-level="practitioner">
+        <div class="cell-count">34</div>
+        <div class="cell-label">Role depth</div>
+        <div class="cell-desc">MLOps, RAG, pipelines — SDAIA L2 to L3</div>
+      </button>
+      <button class="cell" data-persona="professional" data-level="expert">
+        <div class="cell-count">20</div>
+        <div class="cell-label">Frontier work</div>
+        <div class="cell-desc">Foundation models, sovereign AI — SDAIA L4 to L5</div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Catalog -->
+<section class="catalog">
+  <div class="wrap">
+
+    <div class="toolbar">
+      <div class="search">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="M14 14l3 3" stroke-linecap="round"/></svg>
+        </span>
+        <input type="search" id="search" placeholder="Search 172 programs — try ‘RAG’, ‘NDMO’, ‘Arabic NLP’…" aria-label="Search the catalog"/>
+      </div>
+      <div class="filter-chips" id="portfolio-chips" role="toolbar" aria-label="Filter by portfolio">
+        <button class="chip active" data-portfolio="all">All portfolios</button>
+        <button class="chip" data-portfolio="fluency">AI fluency</button>
+        <button class="chip" data-portfolio="foundations">Foundations</button>
+        <button class="chip" data-portfolio="engineering">Engineering</button>
+        <button class="chip" data-portfolio="science">Science</button>
+        <button class="chip" data-portfolio="governance">Governance</button>
+      </div>
+    </div>
+
+    <div class="results-info" id="results-info">Showing <b><span id="result-count">12</span></b> of <b>172</b> programs</div>
+
+    <div class="grid" id="grid">
+
+      <!-- Cards -->
+      <article class="card" data-persona="citizen" data-level="beginner" data-portfolio="fluency">
+        <div class="card-meta">
+          <span class="card-code">P1.1.1</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Citizen</span>
+            <span class="badge badge-level">Beginner</span>
+          </div>
+        </div>
+        <h3>AI in Everyday Life: A Citizen's Guide</h3>
+        <p class="card-desc">A first-touch program for every employee. Builds situational awareness of AI's reach, its strengths, and what it cannot do — without any technical prerequisites.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-new"></span>1 day · 4h</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="citizen" data-level="beginner" data-portfolio="fluency">
+        <div class="card-meta">
+          <span class="card-code">P1.2.1</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Citizen</span>
+            <span class="badge badge-level">Beginner</span>
+          </div>
+        </div>
+        <h3>Boosting Productivity with Generative AI</h3>
+        <p class="card-desc">Two-week intensive on prompt engineering, generative content, AI ethics, and building productivity agents. Live on the Academy roster.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>2 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="worker" data-level="beginner" data-portfolio="foundations">
+        <div class="card-meta">
+          <span class="card-code">P2.1.3</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Worker</span>
+            <span class="badge badge-level">Beginner</span>
+          </div>
+        </div>
+        <h3>SQL &amp; Data Wrangling for Analysts</h3>
+        <p class="card-desc">Hands-on query writing, joins, window functions, and data cleaning. Auto-graded sandbox with a working warehouse — no setup required.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-new"></span>5 days</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="worker" data-level="practitioner" data-portfolio="foundations">
+        <div class="card-meta">
+          <span class="card-code">P2.2.1</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Worker</span>
+            <span class="badge badge-level">Practitioner</span>
+          </div>
+        </div>
+        <h3>Data Visualization &amp; Decision Intelligence with Power BI</h3>
+        <p class="card-desc">Build interactive dashboards that drive real decisions. Covers DAX, model design, and storytelling for executive audiences.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>2 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="professional" data-level="beginner" data-portfolio="engineering">
+        <div class="card-meta">
+          <span class="card-code">P5.1.1</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Professional</span>
+            <span class="badge badge-level">Beginner</span>
+          </div>
+        </div>
+        <h3>AI Programmers Bootcamp</h3>
+        <p class="card-desc">Four-week intensive: Python, data structures, APIs, UI, CI/CD. The shared bedrock for every Professional pathway — SDAIA L1 entry.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>4 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="professional" data-level="practitioner" data-portfolio="engineering">
+        <div class="card-meta">
+          <span class="card-code">P5.1.6</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Professional</span>
+            <span class="badge badge-level">Practitioner</span>
+          </div>
+        </div>
+        <h3>Production RAG Systems</h3>
+        <p class="card-desc">Move beyond demos. Design retrieval-augmented systems that handle real corpora, real latency budgets, and real evaluation harnesses.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-new"></span>2 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="professional" data-level="practitioner" data-portfolio="engineering">
+        <div class="card-meta">
+          <span class="card-code">P5.4.6</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Professional</span>
+            <span class="badge badge-level">Practitioner</span>
+          </div>
+        </div>
+        <h3>AI Agents Development Program (Groq-Accelerated)</h3>
+        <p class="card-desc">Six-week program with Groq: build voice and text agents on accelerated inference, with RAG, monitoring, and MCP integration.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>6 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="professional" data-level="expert" data-portfolio="science">
+        <div class="card-meta">
+          <span class="card-code">P6.3.4</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Professional</span>
+            <span class="badge badge-level">Expert</span>
+          </div>
+        </div>
+        <h3>Arabic NLP Experts Bootcamp</h3>
+        <p class="card-desc">Six-week deep dive into Arabic-specific architectures — from morphology and dialect handling to fine-tuning large models for sovereign deployment.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>6 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="professional" data-level="expert" data-portfolio="science">
+        <div class="card-meta">
+          <span class="card-code">P6.4.5</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Professional</span>
+            <span class="badge badge-level">Expert</span>
+          </div>
+        </div>
+        <h3>Computer Vision Experts Bootcamp</h3>
+        <p class="card-desc">From object detection to 3D vision and tracking. The capstone vision program in the AI Science portfolio, aligned to SDAIA L4 work.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>6 weeks</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="worker" data-level="beginner" data-portfolio="governance">
+        <div class="card-meta">
+          <span class="card-code">P7.1.2</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Worker</span>
+            <span class="badge badge-level">Beginner</span>
+          </div>
+        </div>
+        <h3>Data Classification &amp; Governance</h3>
+        <p class="card-desc">One day on NDMO standards, sensitivity tiers, and operational classification — a prerequisite for every Practitioner+ program in the catalog.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>1 day</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="professional" data-level="practitioner" data-portfolio="governance">
+        <div class="card-meta">
+          <span class="card-code">P7.1.7</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Professional</span>
+            <span class="badge badge-level">Practitioner</span>
+          </div>
+        </div>
+        <h3>Certified Data Management Professional (CDMP)</h3>
+        <p class="card-desc">Direct preparation for the DAMA CDMP exam. Anchors the Data Manager role at SDAIA L2 with international portability.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>1 week</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card" data-persona="worker" data-level="expert" data-portfolio="fluency">
+        <div class="card-meta">
+          <span class="card-code">P4.1.1</span>
+          <div class="card-badges">
+            <span class="badge badge-persona">Worker</span>
+            <span class="badge badge-level">Expert</span>
+          </div>
+        </div>
+        <h3>Executive Leadership Bootcamp in AI</h3>
+        <p class="card-desc">For senior leaders evaluating AI investments. Covers strategy, risk, governance, and Saudi-specific readiness — terminating in the L5 Chief track.</p>
+        <div class="card-foot">
+          <span class="card-duration"><span class="status-tag status-existing"></span>1 week</span>
+          <a href="#" class="card-link">View
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h8m0 0L8 4m3 3L8 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="empty" id="empty">No programs match those filters — try clearing one.</div>
+  </div>
+</section>
+
+<!-- Pathways -->
+<section class="pathways" id="pathways">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Eight role pathways.<br/>One coherent ladder.</h2>
+      <p>Every Professional-track pathway terminates at one of SDAIA's five professional levels. Lateral bridges connect them, so no learner is locked into a single trajectory.</p>
+    </div>
+
+    <div class="path-grid">
+      <a href="#" class="path-card">
+        <div class="path-card-head">
+          <span class="path-card-num">01</span>
+          <span class="path-card-levels">L1 — L5</span>
+        </div>
+        <h3>AI Engineer</h3>
+        <p class="ar">مهندس ذكاء اصطناعي</p>
+        <p class="desc">Builds, deploys, and operates AI systems in production. The largest Professional pathway with five sub-tracks: applications, MLOps, fine-tuning, agents, and infrastructure.</p>
+        <div class="path-card-foot">
+          <span>30 programs · 5 sub-tracks</span>
+          <svg class="path-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+
+      <a href="#" class="path-card">
+        <div class="path-card-head">
+          <span class="path-card-num">02</span>
+          <span class="path-card-levels">L2 — L5</span>
+        </div>
+        <h3>AI Researcher</h3>
+        <p class="ar">باحث ذكاء اصطناعي</p>
+        <p class="desc">Advances AI capability through original research. Master's entry. Covers ML foundations, deep learning, NLP/LLMs, computer vision, and reinforcement learning at frontier depth.</p>
+        <div class="path-card-foot">
+          <span>25 programs · master's entry</span>
+          <svg class="path-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+
+      <a href="#" class="path-card">
+        <div class="path-card-head">
+          <span class="path-card-num">03</span>
+          <span class="path-card-levels">L1 — L5</span>
+        </div>
+        <h3>Data Engineer</h3>
+        <p class="ar">مهندس بيانات</p>
+        <p class="desc">Builds the infrastructure every other role depends on. Lakehouses, streaming, orchestration, and petabyte-scale workloads for sovereign Saudi systems.</p>
+        <div class="path-card-foot">
+          <span>27 programs · 4 sub-tracks</span>
+          <svg class="path-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+
+      <a href="#" class="path-card">
+        <div class="path-card-head">
+          <span class="path-card-num">04</span>
+          <span class="path-card-levels">L1 — L5</span>
+        </div>
+        <h3>Data Scientist</h3>
+        <p class="ar">عالم بيانات</p>
+        <p class="desc">Leads end-to-end ML projects from problem framing to production. The bridge between business questions and statistical answers, with portfolio governance at L3+.</p>
+        <div class="path-card-foot">
+          <span>22 programs · ML emphasis</span>
+          <svg class="path-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+
+      <a href="#" class="path-card">
+        <div class="path-card-head">
+          <span class="path-card-num">05</span>
+          <span class="path-card-levels">L1 — L5</span>
+        </div>
+        <h3>Data Analyst</h3>
+        <p class="ar">محلل بيانات</p>
+        <p class="desc">Turns raw data into decision-grade narrative. The most common entry point into the Professional track, with bridges into Engineering and Science at L2.</p>
+        <div class="path-card-foot">
+          <span>16 programs · BI &amp; analytics</span>
+          <svg class="path-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+
+      <a href="#" class="path-card">
+        <div class="path-card-head">
+          <span class="path-card-num">06</span>
+          <span class="path-card-levels">L1 — L5</span>
+        </div>
+        <h3>Data Manager / Custodian</h3>
+        <p class="ar">مدير بيانات / أمين عُهدة بيانات</p>
+        <p class="desc">Accountable for governance, quality, classification, and stewardship at the organizational level. Tightly aligned with NDMO and PDPL requirements.</p>
+        <div class="path-card-foot">
+          <span>20 programs · DAMA-aligned</span>
+          <svg class="path-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Ladder -->
+<section class="ladder" id="ladder">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Aligned to the SDAIA<br/>professional ladder.</h2>
+      <p>Five levels, mapped from the official SDAIA framework. Every Professional-tier credential carries metadata for both SDAIA level and SFIA equivalent, so the workforce can be matched to job posts on either standard.</p>
+    </div>
+
+    <div class="ladder-wrap">
+      <article class="rung">
+        <div class="rung-num">Level 01</div>
+        <h3>Engineer</h3>
+        <p class="rung-ar">مهندس</p>
+        <span class="rung-sfia">SFIA 3 · Apply</span>
+        <p class="rung-desc">Executes defined work under guidance. Builds, ships, and iterates on assigned components. Typically a recent graduate or career-switcher.</p>
+      </article>
+
+      <article class="rung">
+        <div class="rung-num">Level 02</div>
+        <h3>Senior</h3>
+        <p class="rung-ar">متقدم</p>
+        <span class="rung-sfia">SFIA 4 · Enable</span>
+        <p class="rung-desc">Owns scoped problems, mentors juniors, and leads small project teams. Has shipped production work and can review peers' code and designs.</p>
+      </article>
+
+      <article class="rung">
+        <div class="rung-num">Level 03</div>
+        <h3>Principal</h3>
+        <p class="rung-ar">قائد</p>
+        <span class="rung-sfia">SFIA 5 · Ensure</span>
+        <p class="rung-desc">Sets technical direction for a domain. Authors architecture, owns multi-team outcomes, and advises leadership on technical strategy.</p>
+      </article>
+
+      <article class="rung">
+        <div class="rung-num">Level 04</div>
+        <h3>Expert</h3>
+        <p class="rung-ar">خبير</p>
+        <span class="rung-sfia">SFIA 6 · Initiate</span>
+        <p class="rung-desc">Drives innovation across the organization. Publishes, represents the kingdom in international fora, leads cross-domain research and development.</p>
+      </article>
+
+      <article class="rung">
+        <div class="rung-num">Level 05</div>
+        <h3>Chief</h3>
+        <p class="rung-ar">كبير</p>
+        <span class="rung-sfia">SFIA 7 · Strategy</span>
+        <p class="rung-desc">Defines enterprise AI vision. Accountable to the board for AI investment, policy, and national alignment with Vision 2030 priorities.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="wrap cta-inner">
+    <h2>Bring this catalog to your <em>organization</em>.</h2>
+    <div class="cta-actions">
+      <a href="#" class="btn-primary">Speak with our team
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="btn-ghost">Download the framework PDF</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">SDAIA Academy</div>
+        <p class="footer-tag">Building the national capability in Data &amp; AI, role by role, level by level, with stackable credentials that are recognized across the Saudi labor market.</p>
+      </div>
+      <div>
+        <h4>Catalog</h4>
+        <ul class="footer-list">
+          <li><a href="#">All programs</a></li>
+          <li><a href="#">By persona</a></li>
+          <li><a href="#">By level</a></li>
+          <li><a href="#">By sector</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pathways</h4>
+        <ul class="footer-list">
+          <li><a href="#">AI Engineer</a></li>
+          <li><a href="#">Data Scientist</a></li>
+          <li><a href="#">Data Engineer</a></li>
+          <li><a href="#">All eight roles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Academy</h4>
+        <ul class="footer-list">
+          <li><a href="#">For organizations</a></li>
+          <li><a href="#">For learners</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Saudi Data &amp; AI Authority</span>
+      <span>Riyadh · Kingdom of Saudi Arabia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const cells = document.querySelectorAll('.cell');
+  const chips = document.querySelectorAll('.chip');
+  const search = document.getElementById('search');
+  const cards = document.querySelectorAll('.card');
+  const count = document.getElementById('result-count');
+  const empty = document.getElementById('empty');
+
+  let activePersona = null;
+  let activeLevel = null;
+  let activePortfolio = 'all';
+  let activeSearch = '';
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(card => {
+      const matchPersona = !activePersona || card.dataset.persona === activePersona;
+      const matchLevel = !activeLevel || card.dataset.level === activeLevel;
+      const matchPortfolio = activePortfolio === 'all' || card.dataset.portfolio === activePortfolio;
+      const matchSearch = !activeSearch || card.textContent.toLowerCase().includes(activeSearch);
+
+      if (matchPersona && matchLevel && matchPortfolio && matchSearch) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    count.textContent = visible;
+    empty.classList.toggle('show', visible === 0);
+  }
+
+  cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+      const p = cell.dataset.persona;
+      const l = cell.dataset.level;
+      if (cell.classList.contains('active')) {
+        cell.classList.remove('active');
+        activePersona = null;
+        activeLevel = null;
+      } else {
+        cells.forEach(c => c.classList.remove('active'));
+        cell.classList.add('active');
+        activePersona = p;
+        activeLevel = l;
+      }
+      applyFilters();
+      document.getElementById('results-info').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activePortfolio = chip.dataset.portfolio;
+      applyFilters();
+    });
+  });
+
+  search.addEventListener('input', e => {
+    activeSearch = e.target.value.toLowerCase().trim();
+    applyFilters();
+  });
+})();
+</script>
+
+</body>
+</html>
