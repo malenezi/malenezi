@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أكاديمية سدايا · دورة حياة البرامج</title>
+  <meta name="description" content="عرض تنفيذي متدرّج محوره دورة حياة البرامج التدريبية لأكاديمية سدايا." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
+      <span class="t">أكاديمية سدايا<small>النموذج التشغيلي · LearningTree</small></span>
+    </div>
+    <button class="back" id="backBtn" type="button">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg> الرئيسية
+    </button>
+  </header>
+
+  <main class="app">
+    <!-- الشاشة الرئيسية -->
+    <section class="screen home active anim" id="home">
+      <img class="home__logo" src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
+      <h1>أكاديمية سدايا</h1>
+      <p>اختر المحور للانتقال إليه</p>
+      <div class="home__tiles">
+        <button class="tile lc" id="goLifecycle" type="button">
+          <span class="tile__ic" id="lcIcon"></span>
+          <h3>دورة حياة البرامج</h3>
+          <p>سبع مراحل متكاملة مع تفرّع الممكّنات</p>
+          <span class="go">افتح <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></span>
+        </button>
+        <button class="tile tr" id="goTracks" type="button">
+          <span class="tile__ic" id="trIcon"></span>
+          <h3>مسارات التدريب</h3>
+          <p>مهندس الذكاء الاصطناعي · عالم البيانات</p>
+          <span class="go">استعرض <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- شاشة مسارات التدريب -->
+    <section class="screen" id="tracks">
+      <div class="s-head">
+        <span class="ey">المخرجات</span>
+        <h2>مسارات التدريب</h2>
+        <p>كل مسار رحلة محطات تنتهي بشارة المحترف وفرص التوظيف.</p>
+      </div>
+      <div id="trackList"></div>
+    </section>
+  </main>
+
+  <!-- النافذة المنبثقة بملء الشاشة — دورة الحياة -->
+  <div class="overlay" id="lcOverlay" role="dialog" aria-modal="true" aria-label="دورة حياة البرامج">
+    <div class="ov-head">
+      <div class="ttl">
+        <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
+        <div><b>دورة حياة البرامج</b> <span>المسار التشغيلي</span></div>
+      </div>
+      <span class="ov-count" id="ovCount"></span>
+      <button class="ov-close" id="ovClose" type="button" aria-label="إغلاق">✕</button>
+    </div>
+
+    <div class="rail" id="rail"></div>
+
+    <div class="lc-stage">
+      <div class="stage-grid">
+        <div id="stageContent"></div>     <!-- التفاصيل / التفرّع (يسار) -->
+        <div class="node" id="node"></div> <!-- العقدة (يمين) -->
+      </div>
+    </div>
+
+    <div class="ov-nav">
+      <button id="prevBtn" type="button"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg> السابق</button>
+      <span class="count" id="count"></span>
+      <button id="nextBtn" class="primary" type="button">التالي <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    الهيئة السعودية للبيانات والذكاء الاصطناعي — أكاديمية سدايا · دورة حياة البرامج التدريبية
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
