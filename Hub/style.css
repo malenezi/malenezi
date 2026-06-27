@@ -171,7 +171,7 @@ button { font-family: inherit; cursor: pointer; }
 .enabler { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 12px; text-align: right; transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); opacity: 0; transform: translateX(-14px); min-width: 0; }
 .enabler::before { content: ""; position: absolute; right: -20px; top: 50%; width: 20px; height: 2.5px; background: var(--branch); }
 .branch-out.show .enabler { opacity: 1; transform: none; }
-.branch-out.show .enabler:nth-child(2){ transition-delay:.08s } .branch-out.show .enabler:nth-child(3){ transition-delay:.16s } .branch-out.show .enabler:nth-child(4){ transition-delay:.24s }
+.branch-out.show .enabler:nth-child(2){ transition-delay:.08s } .branch-out.show .enabler:nth-child(3){ transition-delay:.16s } .branch-out.show .enabler:nth-child(4){ transition-delay:.24s } .branch-out.show .enabler:nth-child(5){ transition-delay:.32s }
 .enabler:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--branch); }
 .enabler__ic { width: 44px; height: 44px; flex: none; border-radius: 8px; display: grid; place-items: center; font-size: 1.3rem; color: #fff; background: var(--branch); }
 .enabler h4 { font-size: 1.12rem; font-weight: 700; }
@@ -219,6 +219,158 @@ button { font-family: inherit; cursor: pointer; }
 .mile__d { font-size: .72rem; color: var(--ink-soft); margin-top: 3px; line-height: 1.22; }
 .track.t1 { --accent: var(--primary); --accent-bg: rgba(31,111,178,.1); }
 .track.t2 { --accent: var(--teal); --accent-bg: rgba(26,160,136,.12); }
+
+/* ============================================================
+   عروض المراحل المخصّصة (يسار المسرح)
+   ============================================================ */
+.cv { display: flex; flex-direction: column; gap: 11px; min-width: 0; }
+.cv.anim { animation: fadeUp .5s var(--ease); }
+.cv__lbl { display: inline-flex; align-items: center; gap: 7px; align-self: flex-start; font-size: .82rem; font-weight: 700; color: var(--primary); background: rgba(31,111,178,.08); border: 1px solid rgba(31,111,178,.18); padding: 5px 13px; border-radius: 999px; }
+.cv__lbl .ic { font-size: 1.05rem; }
+
+/* المرحلة 1 — سدايا وأذرعها */
+.sdaia-hero { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow-sm); border-right: 5px solid var(--primary); }
+.sdaia-hero__logo { height: 58px; width: auto; max-width: 150px; object-fit: contain; flex: none; filter: drop-shadow(0 8px 18px rgba(20,35,63,.14)); }
+.sdaia-hero__t b { font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+.sdaia-hero__t span { display: block; font-size: .9rem; color: var(--ink-soft); margin-top: 1px; }
+.arms-lbl { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 700; color: var(--muted); }
+.arms-lbl .ic { font-size: 1rem; }
+.arms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.arm { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 10px 8px; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease); }
+.arm:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--primary); }
+.arm__logo { height: 40px; width: auto; max-width: 100%; object-fit: contain; }
+.arm__b { font-family: "IBM Plex Sans Arabic", sans-serif; font-weight: 700; font-size: .94rem; letter-spacing: .5px; color: #fff; background: var(--primary); padding: 4px 12px; border-radius: 999px; align-items: center; }
+.arm:nth-child(2) .arm__b { background: var(--teal); }
+.arm:nth-child(3) .arm__b { background: var(--branch); }
+.arm__n { font-size: .76rem; color: var(--ink-soft); line-height: 1.2; }
+.signals { display: flex; flex-wrap: wrap; gap: 8px; }
+.sig { display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; font-weight: 600; color: var(--ink-soft); background: #fff; border: 1px solid var(--line); padding: 5px 11px; border-radius: 999px; }
+.sig .ic { font-size: .95rem; color: var(--primary); }
+
+/* المرحلة 2 — تقرير الفجوة ومصفوفة المهارات */
+.matrix { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; box-shadow: var(--shadow-sm); }
+.matrix__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 9px; margin-bottom: 9px; border-bottom: 1px solid var(--line); }
+.matrix__head > span:first-child { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 1.02rem; }
+.matrix__head .hint { display: inline-flex; align-items: center; gap: 5px; font-size: .76rem; font-weight: 600; color: var(--muted); }
+.matrix__head .ic { font-size: 1.1rem; color: var(--primary); }
+.mrow { display: grid; grid-template-columns: minmax(0,1.4fr) auto minmax(70px,1fr) auto; align-items: center; gap: 9px; padding: 6px 0; }
+.mrow + .mrow { border-top: 1px dashed var(--line); }
+.mrow__s { font-size: .92rem; font-weight: 600; min-width: 0; }
+.prio { font-size: .72rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.prio.p-crit { color: #c0392b; background: rgba(192,57,43,.1); }
+.prio.p-high { color: var(--primary); background: rgba(31,111,178,.1); }
+.prio.p-mid  { color: var(--muted); background: rgba(123,132,153,.12); }
+.bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--primary), var(--primary-d)); }
+.mrow__v { font-size: .82rem; font-weight: 700; color: var(--primary); min-width: 36px; text-align: left; }
+
+/* المرحلة 3 — الحقيبة الجاهزة */
+.pkg { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow-sm); border-right: 5px solid var(--teal); }
+.pkg__top { display: flex; align-items: center; gap: 13px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+.pkg__ic { width: 52px; height: 52px; flex: none; border-radius: 14px; display: grid; place-items: center; font-size: 1.7rem; color: #fff; background: var(--teal); box-shadow: 0 10px 22px rgba(26,160,136,.28); }
+.pkg__ttl b { font-size: 1.32rem; font-weight: 700; line-height: 1.1; }
+.ready { display: inline-flex; align-items: center; gap: 6px; margin-top: 5px; font-size: .82rem; font-weight: 700; color: var(--green); background: rgba(79,175,87,.12); padding: 3px 11px; border-radius: 999px; }
+.ready .ic { font-size: 1rem; }
+.pkg__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.pkgi { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 600; color: var(--ink-soft); background: var(--bg-soft); border: 1px solid var(--line); padding: 8px 11px; border-radius: var(--radius-sm); }
+.pkgi .ic { font-size: 1.05rem; color: var(--teal); flex: none; }
+
+/* المرحلة 5 — تقارير التقييم تُغذّي مرحلتين */
+.eval-src { display: flex; align-items: center; gap: 13px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 13px 15px; box-shadow: var(--shadow-sm); border-right: 5px solid var(--primary); }
+.eval-src__ic { width: 48px; height: 48px; flex: none; border-radius: 12px; display: grid; place-items: center; font-size: 1.5rem; color: #fff; background: var(--primary); box-shadow: 0 10px 22px rgba(31,111,178,.26); }
+.eval-src b { font-size: 1.22rem; font-weight: 700; line-height: 1.1; }
+.eval-src > div span { display: block; font-size: .86rem; color: var(--ink-soft); margin-top: 2px; }
+.feeds { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 11px; padding-top: 26px; }
+.feeds__lbl { position: absolute; top: 0; right: 0; display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 700; color: var(--teal); }
+.feeds__lbl .ic { font-size: 1rem; }
+.feeds::before { content: ""; position: absolute; top: 4px; right: 24%; left: 24%; height: 2.5px; background: var(--teal); opacity: .5; }
+.feed { position: relative; display: flex; align-items: center; gap: 11px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 11px 13px; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), border-color .3s var(--ease); }
+.feed::before { content: ""; position: absolute; top: -22px; right: 50%; width: 2.5px; height: 18px; background: var(--teal); opacity: .5; }
+.feed:hover { transform: translateY(-3px); border-color: var(--teal); }
+.feed__ic { width: 42px; height: 42px; flex: none; border-radius: 10px; display: grid; place-items: center; font-size: 1.25rem; color: #fff; background: var(--teal); }
+.feed b { font-size: 1.04rem; font-weight: 700; line-height: 1.1; }
+.feed > div span { display: block; font-size: .8rem; color: var(--ink-soft); margin-top: 2px; }
+
+/* المرحلة 6 — تقرير الأثر الشامل + التوصيات */
+.impact { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow-sm); border-right: 5px solid var(--primary); }
+.impact__top { display: flex; align-items: center; gap: 13px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+.impact__ic { width: 52px; height: 52px; flex: none; border-radius: 14px; display: grid; place-items: center; font-size: 1.7rem; color: #fff; background: var(--primary); box-shadow: 0 10px 22px rgba(31,111,178,.26); }
+.impact__ttl b { font-size: 1.3rem; font-weight: 700; line-height: 1.1; }
+.impact__ttl span { display: block; font-size: .86rem; color: var(--ink-soft); margin-top: 3px; }
+.impact__recs { display: flex; flex-direction: column; gap: 8px; }
+.recs-lbl { display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; font-weight: 700; color: var(--branch); margin-bottom: 2px; }
+.recs-lbl .ic { font-size: 1rem; }
+.rec { display: flex; align-items: center; gap: 10px; font-size: .94rem; font-weight: 600; color: var(--ink); background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 9px 12px; }
+.rec__ic { width: 30px; height: 30px; flex: none; border-radius: 8px; display: grid; place-items: center; font-size: 1rem; color: var(--branch); background: rgba(217,136,31,.12); }
+
+/* المرحلة 7 — إصدارات محسّنة + خارطة سنوية + دورة جديدة */
+.improve { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow-sm); border-right: 5px solid var(--teal); }
+.improve__top { display: flex; align-items: center; gap: 13px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+.improve__ic { width: 52px; height: 52px; flex: none; border-radius: 14px; display: grid; place-items: center; font-size: 1.7rem; color: #fff; background: var(--teal); box-shadow: 0 10px 22px rgba(26,160,136,.28); }
+.improve__ttl b { font-size: 1.3rem; font-weight: 700; line-height: 1.1; }
+.improve__ttl span { display: block; font-size: .86rem; color: var(--ink-soft); margin-top: 3px; }
+.improve__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ichip { display: flex; align-items: center; gap: 10px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 10px 12px; }
+.ichip.loop { border-color: rgba(26,160,136,.4); background: rgba(26,160,136,.06); }
+.ichip__ic { width: 36px; height: 36px; flex: none; border-radius: 9px; display: grid; place-items: center; font-size: 1.2rem; color: #fff; background: var(--teal); }
+.ichip b { font-size: .96rem; font-weight: 700; line-height: 1.12; }
+.ichip > div span { display: flex; align-items: center; gap: 5px; font-size: .76rem; color: var(--ink-soft); margin-top: 2px; }
+.ichip > div span .ic { font-size: .9rem; color: var(--teal); }
+
+/* استجابة العروض المخصّصة */
+@media (max-width: 920px) {
+  .cv { gap: 8px; }
+  .sdaia-hero { padding: 10px 12px; gap: 10px; }
+  .sdaia-hero img { height: 44px; }
+  .sdaia-hero__t b { font-size: 1.2rem; }
+  .sdaia-hero__t span { font-size: .74rem; }
+  .arms { gap: 7px; }
+  .arm { padding: 7px 5px; }
+  .arm__n { font-size: .64rem; }
+  .feeds { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .cv__lbl { font-size: .68rem; padding: 4px 10px; }
+  .sdaia-hero img { height: 38px; }
+  .sdaia-hero__t b { font-size: 1.05rem; }
+  .sdaia-hero__t span { font-size: .64rem; }
+  .arm__b { font-size: .76rem; padding: 3px 9px; }
+  .arm__n { font-size: .56rem; }
+  .sig { font-size: .66rem; padding: 4px 9px; }
+  .matrix { padding: 9px 11px; }
+  .matrix__head > span:first-child { font-size: .84rem; }
+  .matrix__head .hint { font-size: .62rem; }
+  .mrow { gap: 6px; padding: 5px 0; }
+  .mrow__s { font-size: .74rem; }
+  .prio { font-size: .58rem; padding: 1px 7px; }
+  .mrow__v { font-size: .68rem; min-width: 30px; }
+  .pkg { padding: 10px 12px; }
+  .pkg__ic { width: 42px; height: 42px; font-size: 1.35rem; }
+  .pkg__ttl b { font-size: 1.08rem; }
+  .ready { font-size: .68rem; }
+  .pkgi { font-size: .72rem; padding: 6px 8px; gap: 6px; }
+  .eval-src { padding: 10px 12px; gap: 10px; }
+  .eval-src__ic { width: 40px; height: 40px; font-size: 1.25rem; }
+  .eval-src b { font-size: 1.02rem; }
+  .eval-src > div span { font-size: .68rem; }
+  .feed { padding: 8px 10px; gap: 8px; }
+  .feed__ic { width: 34px; height: 34px; font-size: 1rem; }
+  .feed b { font-size: .84rem; }
+  .feed > div span { font-size: .64rem; }
+  .feeds__lbl { font-size: .66rem; }
+  .arm__logo { height: 30px; }
+  .impact, .improve { padding: 10px 12px; }
+  .impact__ic, .improve__ic { width: 40px; height: 40px; font-size: 1.3rem; }
+  .impact__ttl b, .improve__ttl b { font-size: 1.04rem; }
+  .impact__ttl span, .improve__ttl span { font-size: .68rem; }
+  .rec { font-size: .76rem; padding: 7px 9px; gap: 7px; }
+  .rec__ic { width: 26px; height: 26px; font-size: .85rem; }
+  .recs-lbl { font-size: .68rem; }
+  .ichip { padding: 8px 9px; gap: 7px; }
+  .ichip__ic { width: 30px; height: 30px; font-size: 1rem; }
+  .ichip b { font-size: .78rem; }
+  .ichip > div span { font-size: .6rem; }
+}
 
 /* ---------- التذييل ---------- */
 .footer { height: var(--footer-h); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 16px; color: var(--muted); font-size: .78rem; line-height: 1.2; border-top: 1px solid var(--line); overflow: hidden; }
