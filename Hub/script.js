@@ -93,8 +93,8 @@
   /* ---------- بيانات العروض المخصّصة للمراحل ---------- */
   const SDAIA_ARMS = [
     { ab:"NDMO", ar:"المكتب الوطني لإدارة البيانات", logo:"assets/logos/ndmo.png" },
-    { ab:"NIC",  ar:"المركز الوطني للمعلومات", logo:"assets/logos/nic.png" },
-    { ab:"NCAI", ar:"المركز الوطني للذكاء الاصطناعي", logo:"assets/logos/ncai.png" }
+    { ab:"NIC",  ar:"المركز الوطني للمعلومات", logo:"assets/logos/NIC.png" },
+    { ab:"NCAI", ar:"المركز الوطني للذكاء الاصطناعي", logo:"assets/logos/NCAI.png" }
   ];
   const IMPACT_RECS = [
     { ic:P.target, t:"مواءمة البرامج مع المستهدفات الوطنية" },
