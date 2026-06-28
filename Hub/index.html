@@ -49,7 +49,7 @@
       <div class="s-head">
         <span class="ey">المخرجات</span>
         <h2>مسارات التدريب</h2>
-        <p>كل مسار رحلة محطات تنتهي بشارة المحترف وفرص التوظيف.</p>
+        <p>وحدات تدريبية مكدّسة قابلة للتركيب — كل مسار ينتهي بشارة المحترف أو فرصة توظيف.</p>
       </div>
       <div id="trackList"></div>
     </section>
@@ -62,23 +62,35 @@
         <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
         <div><b>دورة حياة البرامج</b> <span>المسار التشغيلي</span></div>
       </div>
+      <button class="ov-back" id="ovToOverview" type="button"><span data-icon="layers"></span> كل المراحل</button>
       <span class="ov-count" id="ovCount"></span>
       <button class="ov-close" id="ovClose" type="button" aria-label="إغلاق"><span data-icon="x"></span></button>
     </div>
 
-    <div class="rail" id="rail"></div>
-
-    <div class="lc-stage">
-      <div class="stage-grid">
-        <div id="stageContent"></div>     <!-- التفاصيل / التفرّع (يسار) -->
-        <div class="node" id="node"></div> <!-- العقدة (يمين) -->
+    <!-- شاشة المقدمة: المراحل السبع -->
+    <div class="lc-overview show" id="lcOverview">
+      <div class="lco-head">
+        <span class="lco-ey"><span data-icon="refresh-cw"></span> المسار التشغيلي المتكامل</span>
+        <h2>دورة حياة البرامج التدريبية</h2>
+        <p>سبع مراحل متتابعة — من رصد الاحتياج حتى التحسين المستمر. اضغط على أي مرحلة لعرض تفاصيلها.</p>
       </div>
+      <div class="lco-grid"></div>
     </div>
 
-    <div class="ov-nav">
-      <button id="prevBtn" type="button"><span data-icon="chevron-right"></span> السابق</button>
-      <span class="count" id="count"></span>
-      <button id="nextBtn" class="primary" type="button">التالي <span data-icon="chevron-left"></span></button>
+    <!-- شاشة التفاصيل -->
+    <div class="lc-detail" id="lcDetail">
+      <div class="rail" id="rail"></div>
+      <div class="lc-stage" id="lcStage">
+        <div class="stage-grid">
+          <div class="node" id="node"></div>
+          <div id="stageContent"></div>
+        </div>
+      </div>
+      <div class="ov-nav">
+        <button id="prevBtn" type="button"><span data-icon="chevron-right"></span> السابق</button>
+        <span class="count" id="count"></span>
+        <button id="nextBtn" class="primary" type="button">التالي <span data-icon="chevron-left"></span></button>
+      </div>
     </div>
   </div>
 
