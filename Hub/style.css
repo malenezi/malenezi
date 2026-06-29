@@ -434,3 +434,123 @@ ul { list-style: none; }
   .flip:hover .flip__in, .flip:focus-visible .flip__in { transform: none; }
   .flip.flipped .flip__in { transform: rotateY(180deg); }
 }
+
+/* ============================================================
+   المسارات التدريبية — المعمارية المكدّسة القابلة للتركيب
+   ============================================================ */
+#tracks { overflow-y: auto; }
+#trackList { display: flex; flex-direction: column; gap: 18px; padding-bottom: 30px; }
+#trackList > div { opacity: 0; transform: translateY(20px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+#trackList > div.in { opacity: 1; transform: none; }
+
+/* بطاقة الوحدة — رأسية واضحة على نمط الموقع */
+.umod { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 7px; padding: 17px 11px 13px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: transform .32s var(--ease), box-shadow .32s var(--ease), border-color .32s var(--ease); cursor: default; }
+.umod::after { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; border-radius: var(--radius) var(--radius) 0 0; background: linear-gradient(90deg, var(--mc), color-mix(in srgb, var(--mc) 68%, #000)); }
+.umod:hover, .umod:focus-visible { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; outline: none; }
+.umod[data-lv="E"] { --mc: var(--branch); }
+.umod[data-lv="S"] { --mc: var(--accent, var(--primary)); }
+.umod__n { position: absolute; top: 9px; inset-inline-start: 10px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .76rem; font-weight: 700; color: #fff; background: var(--mc); }
+.umod__lv { position: absolute; top: 11px; inset-inline-end: 10px; font-size: .62rem; font-weight: 700; color: var(--mc); background: color-mix(in srgb, var(--mc) 13%, #fff); padding: 2px 9px; border-radius: 999px; }
+.umod__ic { width: 54px; height: 54px; margin-top: 10px; border-radius: 16px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, var(--mc), color-mix(in srgb, var(--mc) 70%, #000)); box-shadow: 0 10px 22px rgba(20,35,63,.14); }
+.umod__ic .ic { width: 28px; height: 28px; }
+.umod__t { font-size: .95rem; font-weight: 700; line-height: 1.32; color: var(--ink); display: flex; align-items: center; min-height: 2.6em; }
+.umod__foot { display: flex; align-items: center; justify-content: center; gap: 7px; flex-wrap: wrap; margin-top: 1px; }
+.umod__ref { font-size: .68rem; font-weight: 800; color: var(--mc); background: color-mix(in srgb, var(--mc) 13%, #fff); padding: 2px 10px; border-radius: 999px; letter-spacing: .3px; }
+.umod__h { display: inline-flex; align-items: center; gap: 4px; font-size: .7rem; font-weight: 700; color: var(--ink-soft); }
+.umod__h .ic { width: 13px; height: 13px; }
+
+/* شرح المفهوم */
+.ms-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ms-leg { display: flex; align-items: center; gap: 11px; padding: 12px 16px; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow-sm); font-size: .92rem; color: var(--ink-soft); line-height: 1.45; }
+.ms-leg .ic { width: 26px; height: 26px; flex: none; }
+.ms-leg b { color: var(--ink); }
+.ms-leg--mod { border-inline-start: 5px solid var(--primary); } .ms-leg--mod .ic { color: var(--primary); }
+.ms-leg--stk { border-inline-start: 5px solid var(--teal); } .ms-leg--stk .ic { color: var(--teal); }
+
+/* رؤوس الطبقات */
+.ms-layer__head { display: flex; align-items: center; gap: 12px; margin-bottom: 13px; flex-wrap: wrap; }
+.ms-layer__badge { font-size: .68rem; font-weight: 800; color: #fff; background: var(--ink-soft); padding: 3px 11px; border-radius: 999px; letter-spacing: .3px; }
+.ms-layer__ic { flex: none; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, var(--primary), var(--primary-d)); box-shadow: 0 10px 22px rgba(31,111,178,.2); }
+.ms-layer__ic .ic { width: 26px; height: 26px; }
+.ms-layer__ic.alt { background: linear-gradient(145deg, var(--teal), var(--teal-d)); box-shadow: 0 10px 22px rgba(20,160,138,.22); }
+.ms-layer__ic.alt2 { background: linear-gradient(145deg, var(--branch), var(--branch-d)); box-shadow: 0 10px 22px rgba(217,136,31,.22); }
+.ms-layer__head h3 { font-size: 1.2rem; font-weight: 700; line-height: 1.12; }
+.ms-layer__head h3 span { display: block; font-size: .74rem; color: var(--muted); font-weight: 600; }
+.ms-layer__pill { margin-inline-start: auto; font-size: .8rem; font-weight: 700; color: var(--primary-d); background: rgba(31,111,178,.08); border: 1px solid rgba(31,111,178,.2); padding: 6px 14px; border-radius: 999px; }
+
+.ms-foundation { position: relative; background: linear-gradient(180deg, rgba(31,111,178,.05), #fff); border: 1.5px solid rgba(31,111,178,.22); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-sm); }
+.ms-foundation .ms-layer__badge { background: var(--primary); }
+.ms-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.ms-foundation .umod { --accent: var(--primary); }
+
+/* التفرّع */
+.ms-split { display: flex; align-items: center; justify-content: center; position: relative; height: 30px; }
+.ms-split__line { position: absolute; inset-inline: 16%; top: 50%; height: 2px; background: repeating-linear-gradient(90deg, var(--line-2) 0 8px, transparent 8px 16px); }
+.ms-split__tag { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px; font-size: .85rem; font-weight: 700; color: var(--ink-soft); background: #fff; border: 1px solid var(--line-2); padding: 6px 18px; border-radius: 999px; box-shadow: var(--shadow-sm); }
+.ms-split__tag .ic { width: 18px; height: 18px; color: var(--branch); }
+
+/* المساران */
+.ms-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.ms-track { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 15px; box-shadow: var(--shadow-sm); border-top: 5px solid var(--accent); }
+.ms-track.t1 { --accent: var(--primary); --accent-d: var(--primary-d); --accent-bg: rgba(31,111,178,.1); }
+.ms-track.t2 { --accent: var(--teal); --accent-d: var(--teal-d); --accent-bg: rgba(20,160,138,.12); }
+.ms-track__head { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; padding-bottom: 11px; margin-bottom: 13px; border-bottom: 1px dashed var(--line); }
+.ms-track__head .ms-layer__badge { margin-inline-start: auto; background: var(--accent); }
+.ms-track__ic { flex: none; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, var(--accent), var(--accent-d)); box-shadow: 0 10px 22px var(--accent-bg); }
+.ms-track__ic .ic { width: 26px; height: 26px; }
+.ms-track__head h3 { font-size: 1.16rem; font-weight: 700; line-height: 1.12; }
+.ms-track__head .en { font-size: .72rem; color: var(--muted); }
+.ms-track .ms-seq { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.ms-track.t1 .umod[data-lv="S"] { --mc: var(--primary); }
+.ms-track.t2 .umod[data-lv="S"] { --mc: var(--teal); }
+.ms-cap { margin-top: 13px; position: relative; }
+.ms-cap::before { content: "مشروع التخرّج · شارة الإتمام"; position: absolute; top: -8px; inset-inline-end: 14px; z-index: 2; font-size: .64rem; font-weight: 800; color: #fff; background: var(--branch); padding: 2px 11px; border-radius: 999px; box-shadow: var(--shadow-sm); }
+.umod.is-cap { border: 1.5px solid var(--branch); background: linear-gradient(180deg, rgba(217,136,31,.07), #fff); }
+.umod.is-cap .umod__ic { margin-top: 4px; }
+.ms-cert { margin-top: 13px; display: flex; align-items: center; gap: 12px; padding: 13px 15px; border-radius: 13px; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-d)); box-shadow: 0 12px 26px var(--accent-bg); }
+.ms-cert__ic { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.2); }
+.ms-cert__ic .ic { width: 23px; height: 23px; }
+.ms-cert b { font-size: 1.02rem; display: block; line-height: 1.2; }
+.ms-cert span { font-size: .78rem; opacity: .92; }
+
+/* الشريط السفلي: تكديس + جسر */
+.ms-bottom { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }
+.ms-nest, .ms-bridge { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-sm); }
+.ms-card__h { display: flex; align-items: center; gap: 11px; margin-bottom: 13px; }
+.ms-card__h h3 { font-size: 1.08rem; font-weight: 700; }
+.ms-nest__viz { display: flex; flex-direction: column; }
+.nest-core { position: relative; z-index: 3; align-self: center; width: min(440px, 100%); text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: .92rem; font-weight: 700; color: #fff; background: linear-gradient(145deg, var(--primary), var(--primary-d)); padding: 11px 18px; border-radius: 11px; box-shadow: 0 10px 22px rgba(31,111,178,.22); }
+.nest-core .ic { width: 18px; height: 18px; }
+.nest-core span { font-size: .72rem; font-weight: 600; opacity: .88; }
+.nest-wrap { position: relative; margin-top: -6px; padding: 19px 16px 12px; border-radius: 13px; border: 1.5px dashed; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 5px; }
+.nest-ai { border-color: var(--primary); background: rgba(31,111,178,.05); }
+.nest-ds { border-color: var(--teal); background: rgba(20,160,138,.06); margin-top: 8px; }
+.nest-wrap__lbl { display: inline-flex; align-items: center; gap: 7px; font-size: .94rem; font-weight: 800; }
+.nest-wrap__lbl .ic { width: 18px; height: 18px; }
+.nest-ai .nest-wrap__lbl { color: var(--primary-d); }
+.nest-ds .nest-wrap__lbl { color: var(--teal-d); }
+.nest-add { font-size: .78rem; color: var(--ink-soft); }
+.nest-wrap::before { content: "يتضمّن الأساس"; position: absolute; top: -9px; inset-inline-start: 14px; font-size: .62rem; font-weight: 800; color: #fff; padding: 2px 10px; border-radius: 999px; }
+.nest-ai::before { background: var(--primary); }
+.nest-ds::before { background: var(--teal); }
+
+/* جسر التحويل */
+.brg { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; padding: 11px 13px; border-radius: 11px; background: var(--bg-soft); border: 1px solid var(--line); margin-bottom: 9px; font-size: .9rem; }
+.brg b { font-weight: 700; color: var(--ink); }
+.brg .ic { width: 18px; height: 18px; }
+.brg-ds2ai { border-inline-start: 5px solid var(--primary); }
+.brg-ai2ds { border-inline-start: 5px solid var(--teal); }
+.brg .ic:nth-of-type(2) { color: var(--branch); }
+.brg__add { margin-inline-start: auto; font-size: .8rem; font-weight: 800; color: var(--branch-d); background: rgba(217,136,31,.1); border: 1px solid rgba(217,136,31,.22); padding: 3px 11px; border-radius: 999px; }
+.ms-bridge__note { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+
+@media (max-width: 980px) {
+  .ms-tracks, .ms-bottom, .ms-legend { grid-template-columns: 1fr; }
+  .ms-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 620px) {
+  .ms-grid, .ms-track .ms-seq { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .ms-grid, .ms-track .ms-seq { grid-template-columns: 1fr; }
+}

@@ -43,7 +43,9 @@
     "blocks": '<rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/>',
     "square-play": '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 8 6 4-6 4Z"/>',
     "calendar-check": '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/>',
-    "x": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'
+    "x": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    "shield": '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+    "git-branch": '<line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>'
   };
   const P = {
     cycle:"refresh-cw", route:"route", grid:"layers",
@@ -55,7 +57,8 @@
     pencil:"pencil-ruler", target:"target", checks:"list-checks", filechk:"file-check",
     mega:"megaphone", brief:"briefcase",
     award:"award", blocks:"blocks", calc:"calendar-check",
-    next:"chevron-left", prev:"chevron-right", down:"chevron-down"
+    next:"chevron-left", prev:"chevron-right", down:"chevron-down",
+    search:"search-check", trend:"trending-up", shield:"shield", refresh:"refresh-cw", branch:"git-branch"
   };
   const svg = (name, cls) => '<svg class="' + (cls || "ic") + '" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (LUCIDE[name] || "") + '</svg>';
   const renderStaticIcons = (root) => {
@@ -65,12 +68,12 @@
   /* ====== بيانات المراحل السبع ====== */
   const STEPS = [
     {
-      ic:P.s1, ar:"رصد الاحتياج", en:"Need Sensing", color:"primary",
-      desc:"ننطلق من إشارات الطلب الحقيقية الواردة من سدايا وأذرعها لتحديد الاحتياج التدريبي.",
+      ic:P.s1, ar:"رصد الاحتياج", en:"Needs Sensing", color:"primary",
+      desc:"نرصد إشارات الطلب الحقيقية من سدايا وأذرعها والسوق، ونحوّلها إلى احتياج تدريبي معتمد.",
       type:"proc",
       proc:{
-        in:["الاحتياجات الحكومية والوطنية ذات الأولوية","احتياجات أذرع سدايا وأجهزتها","تقارير ودراسات مكتب الاستراتيجية","تقارير السوق والشركاء والاتجاهات العالمية"],
-        act:["تحليل التوجهات العالمية والتقنيات الناشئة","ورش عمل ومقابلات منظمة مع الجهات","تحليل الوظائف والمهارات وفق الإطار الوطني (الجدارات والمهارات)","دراسة احتياجات السوق المستقبلية"],
+        in:["الاحتياجات الحكومية والوطنية ذات الأولوية","احتياجات أذرع سدايا وأجهزتها","تقارير ودراسات الإدارة العامة للدراسات (مكتب إدارة الاستراتيجية)","تقارير السوق والشركاء والاتجاهات العالمية"],
+        act:["تحليل التوجهات العالمية والتقنيات الناشئة","ورش عمل ومقابلات منظمة مع الجهات","تحليل الوظائف والمهارات وفق الإطار الوطني للجدارات","دراسة احتياجات السوق المستقبلية"],
         out:["وثيقة الاحتياج التدريبي المعتمدة","قائمة الوظائف والفئات المستهدفة","خريطة المهارات المطلوبة"]
       }
     },
@@ -79,90 +82,100 @@
       desc:"نحوّل الفجوة بين الواقع والمستهدف إلى تقرير ومصفوفة مهارات مرتّبة بالأولوية.",
       type:"proc",
       proc:{
-        in:["مخرجات المرحلة الأولى (الاحتياج المعتمد)","خرائط المهارات الحالية للفئات المستهدفة","مرجعيات الإطار الوطني للمؤهلات"],
-        act:["قياس الفجوة بين المهارات الحالية والمستهدفة","تحديد مستوى النضج الرقمي للفئة","جلسات عمل تشاركية مع الجهات المستفيدة","ترتيب الأولويات وفق معياري الأثر × الإلحاح"],
+        in:["وثيقة الاحتياج التدريبي المعتمدة (مخرجات رصد الاحتياج)","خرائط المهارات الحالية للفئات المستهدفة","مرجعيات الإطار الوطني للمؤهلات"],
+        act:["قياس الفجوة بين المهارات الحالية والمستهدفة","تحديد مستوى النضج الرقمي للفئة المستهدفة","جلسات عمل تشاركية مع الجهات المستفيدة","ترتيب الأولويات وفق معياري الأثر والإلحاح"],
         out:["تقرير دراسة الفجوة الشامل","مصفوفة المهارات المستهدفة","قائمة الأولويات التدريبية المعتمدة"]
       }
     },
     {
-      ic:P.s3, ar:"التصميم والتطوير", en:"Design & Develop", color:"teal",
-      desc:"عملية ثلاثية: تصميم بالبيانات، تطوير بالذكاء الاصطناعي، وتهيئة للتطبيق حتى حقيبة جاهزة.",
-      type:"tri",
-      tri:[
-        { ic:P.pencil, t:"التصميم", items:["أهداف تعلم وفق Bloom's Taxonomy","مسارات تدريبية مخصصة (Personalized Paths)","أساليب تعلم مبنية على البيانات","مواءمة مع الأطر المرجعية","أدوات تقييم واختبارات ذكية"] },
-        { ic:P.spark, t:"التطوير", items:["إنتاج محتوى بالذكاء الاصطناعي (نص، عرض، فيديو)","محتوى تفاعلي ومحاكاة تعليمية","بنوك أسئلة متعددة المستويات","تدقيق آلي وبشري للجودة","حقائب تدريبية وفق المعايير الدولية"] },
-        { ic:P.gear, t:"التهيئة للتطبيق", items:["تهيئة بيئات التعلم","اختيار أساليب التقديم (حضوري، عن بُعد، مدمج)","إعداد أدلة المدربين والمتدربين","تجهيز فرق الدعم الفني والأكاديمي"] }
-      ],
-      out:{ t:"حقيبة تدريبية متكاملة جاهزة للإطلاق التشغيلي", items:["دليل المدرب","مادة المتدرب","بنك التقييمات","المعامل التطبيقية","العرض التفاعلي","معايير الاعتماد"] }
+      ic:P.s3, ar:"التصميم والتطوير", en:"Design & Development", color:"teal",
+      desc:"نصمم التجربة التعليمية بالبيانات، ونطوّر المحتوى بالذكاء الاصطناعي، ونهيّئ بيئة التطبيق — وفق المنهجيات المعيارية مثل نموذج ADDIE — حتى نصل إلى حقيبة تدريبية متكاملة.",
+      type:"proc",
+      proc:{
+        in:["تقرير دراسة الفجوة ومصفوفة المهارات المستهدفة","قائمة الأولويات التدريبية المعتمدة","الأطر المرجعية ومعايير الجودة (مثل نموذج ADDIE)"],
+        act:["التصميم: أهداف تعلم وفق تصنيف بلوم، ومسارات مخصّصة، وأدوات تقييم ذكية","التطوير: إنتاج محتوى بالذكاء الاصطناعي، ومحتوى تفاعلي ومحاكاة، وبنوك أسئلة متعددة المستويات","التهيئة للتطبيق: إعداد بيئات التعلم وأدلة المدربين والمتدربين وفرق الدعم","التدقيق الآلي والبشري للجودة وفق المعايير الدولية"],
+        out:["حقيبة تدريبية متكاملة جاهزة للإطلاق (دليل المدرب، مادة المتدرب، بنك التقييمات، المعامل التطبيقية)","العرض التفاعلي ومعايير الاعتماد"]
+      }
     },
     {
-      ic:P.s4, ar:"التقديم والتنفيذ", en:"Delivery", color:"branch",
-      desc:"استقطاب المتدربين ثم التنفيذ التدريبي بجودة معتمدة عبر مسارين متوازيين.",
-      type:"paths",
-      paths:[
-        { ic:P.mega, t:"مسار استقطاب المتدربين", steps:[
-          { t:"الإعلان والتسويق", d:"عبر القنوات المعتمدة" },
-          { t:"التسجيل", d:"عبر منصة أذكى X" },
-          { t:"الفرز", d:"وفق المعايير المعتمدة" },
-          { t:"اختيار المرشحين", d:"النهائيين للالتحاق" }
-        ] },
-        { ic:P.play, t:"مسار التنفيذ التدريبي", steps:[
-          { t:"التنفيذ المباشر عبر مدربي سدايا", d:"اختبار واعتماد المدربين الداخليين" },
-          { t:"التنفيذ عبر شركاء معتمدين", d:"اعتماد الشركاء والمواقع والمدربين الخارجيين" }
-        ] }
-      ]
+      ic:P.s4, ar:"التقديم والتنفيذ", en:"Delivery & Execution", color:"branch",
+      desc:"نستقطب المتدربين وننفّذ التدريب بجودة معتمدة عبر ثلاثة مسارات متكاملة: استقطاب المتدربين، والتنفيذ التدريبي، والعمليات التشغيلية المشتركة.",
+      type:"proc",
+      proc:{
+        in:["حقيبة تدريبية متكاملة جاهزة للإطلاق (مخرجات التصميم والتطوير)","المدربون والشركاء المعتمدون","بيئات ومنصات التعلم المهيأة"],
+        act:["مسار استقطاب المتدربين: الإعلان والتسويق، التسجيل عبر منصة أذكى، الفرز، اختيار المرشحين","مسار التنفيذ التدريبي: التنفيذ عبر مدربي سدايا أو عبر الشركاء المعتمدين","العمليات التشغيلية المشتركة: إدارة الجداول والقاعات والدعم الفني والأكاديمي"],
+        out:["برنامج تدريبي منفّذ","بيانات الأداء التشغيلي والتدريبي","سجلات حضور وإنجاز المتدربين"]
+      }
     },
     {
       ic:P.s5, ar:"التقييم", en:"Evaluation", color:"primary",
-      desc:"تقارير تقييم مباشرة تقيس الرضا والمعرفة وجودة التنفيذ وتُغذّي قياس الأثر والتحسين.",
+      desc:"نقيس الرضا والمعرفة وجودة التنفيذ عبر تقارير مباشرة تُغذّي قياس الأثر والتحسين.",
       type:"proc",
       proc:{
-        in:["بيانات التشغيل من المرحلة الرابعة","الاختبارات القبلية والبعدية","ملاحظات المدربين الفورية","بيانات سلوك المتدرب على المنصة"],
-        act:["قياس رضا المتدربين عبر مؤشر NPS","قياس اكتساب المعرفة عبر الاختبارات القبلية والبعدية","تقييم جودة المدربين والمحتوى التدريبي","جمع التغذية الراجعة الفورية وتحليلها للتحسين المستمر"],
-        out:["تقارير التقييم المباشر","إصدار الشهادات المهنية والتدريبية","تهيئة للشارة أو التوظيف","تغذية مرحلتي قياس الأثر والتحسين"]
+        in:["برنامج منفّذ مع بيانات الأداء التشغيلي والتدريبي (مخرجات التقديم والتنفيذ)","الاختبارات القبلية والبعدية","ملاحظات المدربين الفورية","بيانات سلوك المتدرب على المنصة"],
+        act:["قياس رضا المتدربين عبر مؤشر صافي الترشيح NPS","قياس اكتساب المعرفة عبر الاختبارات القبلية والبعدية","تقييم جودة المدربين والمحتوى التدريبي","جمع التغذية الراجعة الفورية وتحليلها"],
+        out:["تقارير التقييم المباشر","إصدار الشهادات المهنية والتدريبية","التهيئة للشارة أو التوظيف"]
       }
     },
     {
-      ic:P.s6, ar:"قياس الأثر", en:"Impact", color:"teal",
-      desc:"تقرير أثر شامل يقيس تطبيق المهارات والعائد المهني مع توصيات تطوير استراتيجية.",
+      ic:P.s6, ar:"قياس الأثر", en:"Impact Measurement", color:"teal",
+      desc:"نقيس تطبيق المهارات في بيئة العمل والعائد المهني عبر تقرير أثر شامل وتوصيات تطوير.",
       type:"proc",
       proc:{
-        in:["تقارير التقييم الفوري","بيانات جهات عمل المتدربين","بيانات السوق والتوظيف","بيانات الأداء بعد التدريب"],
+        in:["تقارير التقييم المباشر وإصدار الشهادات (مخرجات التقييم)","بيانات جهات عمل المتدربين","بيانات السوق والتوظيف","بيانات الأداء بعد التدريب"],
         act:["قياس تطبيق المهارات في بيئة العمل","استبيانات الأثر بعد 3 و6 و12 شهراً","مقابلات منظمة مع جهات العمل","تحليل المسار المهني للخريجين"],
-        out:["تقرير الأثر الشامل","توصيات التطوير الاستراتيجية","قصص النجاح والحالات المرجعية"]
+        out:["تقرير الأثر الشامل","توصيات التطوير الاستراتيجية","توثيق نماذج النجاح والأثر المهني للخريجين"]
       }
     },
     {
-      ic:P.s7, ar:"التحسين المستمر", en:"Continuous Imp.", color:"teal",
-      desc:"إصدارات محسّنة وخارطة سنوية معتمدة تُغذّي المرحلة الأولى في دورة جديدة.",
+      ic:P.s7, ar:"التحسين المستمر", en:"Continuous Improvement", color:"teal",
+      desc:"نطوّر إصدارات محسّنة وخارطة سنوية معتمدة تُغذّي مرحلة رصد الاحتياج في دورة جديدة.",
       type:"proc",
       proc:{
         in:["مخرجات مرحلتي التقييم وقياس الأثر","اتجاهات السوق والتقنيات المستجدة","بيانات أداء المنصات الرقمية","ملاحظات الشركاء والمدربين"],
         act:["تطوير المحتوى وفق التغذية الراجعة","تحسين أساليب التدريب والتنفيذ","تحديث البرامج وفق المستجدات","مراجعة الأهداف والمسارات التدريبية"],
-        out:["إصدارات محسّنة من البرامج","تغذية المرحلة الأولى لدورة جديدة","خارطة تطوير سنوية معتمدة"]
+        out:["إصدارات محسّنة من البرامج","خارطة تطوير سنوية معتمدة","تغذية مرحلة رصد الاحتياج لدورة جديدة"]
       }
     }
   ];
 
+  /* ====== الوحدات (من مصفوفة التتبّع الرسمية) ====== */
+  // lv: "S" أخصائي / "E" خبير
+  const SHARED = [
+    { ref:"SF-1", code:"P2.1.01", ic:P.db,    t:"أساسيات البيانات للذكاء الاصطناعي والتحليلات", en:"Data Foundations for AI & Analytics", h:15, lv:"S", comp:"AIE-C03 · DSC-C02" },
+    { ref:"SF-2", code:"P2.1.02", ic:P.cpu,   t:"أساسيات تعلّم الآلة التطبيقي", en:"Applied Machine Learning Essentials", h:15, lv:"S", comp:"AIE-C01 · DSC-C03" },
+    { ref:"SF-3", code:"P2.1.03", ic:P.checks,t:"تقييم النماذج والتحقّق منها", en:"Model Evaluation & Validation", h:12, lv:"S", comp:"AIE-C04 · DSC-C04" },
+    { ref:"SF-4", code:"P7.1.01", ic:P.badge, t:"الذكاء الاصطناعي المسؤول وحوكمة البيانات (نظام حماية البيانات وأخلاقيات سدايا)", en:"Responsible AI & Saudi Data Governance", h:12, lv:"S", comp:"AIE-C10 · DSC-C06" },
+    { ref:"SF-5", code:"P2.1.04", ic:P.mega,  t:"تأطير المشكلات والتواصل لحلول الذكاء الاصطناعي", en:"Problem Framing & Communication", h:10, lv:"S", comp:"AIE-C11 · DSC-C07" }
+  ];
+  const AE_TRACK = [
+    { ref:"AE-1", code:"P5.1.01", ic:P.layers, t:"التعلّم العميق والنماذج الأساسية", en:"Deep Learning & Foundation Models", h:15, lv:"S", comp:"AIE-C01" },
+    { ref:"AE-2", code:"P5.1.02", ic:P.search, t:"أنظمة التوليد المعزّز بالاسترجاع RAG", en:"Retrieval-Augmented Generation", h:15, lv:"S", comp:"AIE-C02" },
+    { ref:"AE-3", code:"P5.1.03", ic:P.spark,  t:"الذكاء الوكيلي وهندسة تطبيقات النماذج اللغوية", en:"Agentic AI & LLM App Engineering", h:15, lv:"E", comp:"AIE-C02 · C10" },
+    { ref:"AE-4", code:"P5.1.04", ic:P.flow,   t:"هندسة برمجيات الذكاء الاصطناعي وتكامل الأنظمة", en:"AI Software Engineering & Integration", h:15, lv:"S", comp:"AIE-C05" },
+    { ref:"AE-5", code:"P5.1.05", ic:P.gear,   t:"MLOps وLLMOps: النشر ودورة حياة النموذج", en:"MLOps & LLMOps", h:14, lv:"E", comp:"AIE-C06" },
+    { ref:"AE-6", code:"P5.1.06", ic:P.s1,     t:"المراقبة والموثوقية والاستجابة للحوادث", en:"Observability, Reliability & Incident Response", h:10, lv:"E", comp:"AIE-C07" },
+    { ref:"AE-7", code:"P5.1.07", ic:P.trend,  t:"الأداء وقابلية التوسّع وتحسين التكلفة", en:"Performance, Scalability & Cost", h:12, lv:"E", comp:"AIE-C08" },
+    { ref:"AE-8", code:"P5.1.08", ic:P.shield, t:"أمن الذكاء الاصطناعي والنماذج اللغوية", en:"AI & LLM Security", h:13, lv:"E", comp:"AIE-C09" }
+  ];
+  const AE_CAP = { ref:"AE-Cap", code:"P5.1.09", ic:P.cap, t:"مشروع التخرّج: أنظمة توليدية إنتاجية", en:"AI Engineering Capstone", h:15, lv:"E", comp:"تكاملي — كل الجدارات" };
+  const DS_TRACK = [
+    { ref:"DS-1", code:"P6.1.01", ic:P.bars,  t:"الأسس الإحصائية والاستدلال لعلم البيانات", en:"Statistical Foundations & Inference", h:15, lv:"S", comp:"DSC-C01" },
+    { ref:"DS-2", code:"P6.1.02", ic:P.flow,  t:"هندسة البيانات الحديثة للتحليلات واسعة النطاق", en:"Modern Data Engineering at Scale", h:14, lv:"S", comp:"DSC-C02" },
+    { ref:"DS-3", code:"P6.1.03", ic:P.cpu,   t:"تعلّم الآلة التطبيقي للأنظمة الذكية", en:"Applied ML for Intelligent Systems", h:15, lv:"S", comp:"DSC-C03" },
+    { ref:"DS-4", code:"P6.1.04", ic:P.target,t:"التجريب والاستدلال السببي", en:"Experimentation & Causal Inference", h:15, lv:"E", comp:"DSC-C04" },
+    { ref:"DS-5", code:"P6.1.05", ic:P.trend, t:"تصوير البيانات واستخلاص الرؤى ورواية البيانات", en:"Visualization, Insight & Storytelling", h:15, lv:"S", comp:"DSC-C05" },
+    { ref:"DS-6", code:"P6.1.06", ic:P.refresh,t:"علم البيانات القابل للتكرار وسير العمل المعزّز بالذكاء التوليدي", en:"Reproducible & GenAI-Assisted DS", h:12, lv:"E", comp:"DSC-C07" }
+  ];
+  const DS_CAP = { ref:"DS-Cap", code:"P6.1.07", ic:P.cap, t:"مشروع التخرّج: من السؤال إلى القرار", en:"Data Science Capstone", h:15, lv:"E", comp:"تكاملي — كل الجدارات" };
+
   const TRACKS = [
-    { cls:"t1", ic:P.cpu, ar:"مسار تدريب مهندس الذكاء الاصطناعي", en:"AI Engineer Track",
-      meta:["المدة: 12–16 أسبوعاً", "المستوى: متقدم", "5 وحدات تدريبية"],
-      mods:[
-        { ic:P.book,  t:"الأساسيات", d:"بايثون والرياضيات للذكاء الاصطناعي", u:4 },
-        { ic:P.s2,    t:"تعلّم الآلة", d:"الخوارزميات الإشرافية وتقييمها", u:5 },
-        { ic:P.layers,t:"التعلم العميق", d:"الشبكات العصبية والرؤية واللغة", u:5 },
-        { ic:P.gear,  t:"التشغيل MLOps", d:"أتمتة ونشر النماذج في الإنتاج", u:4 },
-        { ic:P.spark, t:"الذكاء التوليدي", d:"النماذج اللغوية وبناء الوكلاء", u:4 }
-      ] },
-    { cls:"t2", ic:P.db, ar:"مسار تدريب عالم البيانات", en:"Data Scientist Track",
-      meta:["المدة: 12–16 أسبوعاً", "المستوى: متوسط–متقدم", "5 وحدات تدريبية"],
-      mods:[
-        { ic:P.db,   t:"أساسيات البيانات", d:"الجمع والتنظيف والتهيئة", u:4 },
-        { ic:P.bars, t:"الإحصاء والتحليل", d:"التحليل الاستكشافي والاستدلالي", u:5 },
-        { ic:P.cpu,  t:"التعلم الآلي", d:"النمذجة التنبؤية والتقييم", u:5 },
-        { ic:P.flow, t:"هندسة البيانات", d:"خطوط البيانات والمستودعات", u:4 },
-        { ic:P.s6,   t:"التصور ودعم القرار", d:"لوحات المعلومات ورواية البيانات", u:4 }
-      ] }
+    { cls:"t1", ic:P.cpu, ar:"مهندس الذكاء الاصطناعي", en:"AI Engineer Track",
+      cert:"شهادة مهندس الذكاء الاصطناعي المهنية", certH:"١٨٨ ساعة · مستوى خبير",
+      mods:AE_TRACK, cap:AE_CAP, bridge:"+ ١٢٤ ساعة فقط قادمًا من مسار عالِم البيانات" },
+    { cls:"t2", ic:P.db, ar:"عالِم البيانات", en:"Data Scientist Track",
+      cert:"شهادة عالِم البيانات المهنية", certH:"١٦٥ ساعة · مستوى خبير",
+      mods:DS_TRACK, cap:DS_CAP, bridge:"+ ١٠١ ساعة فقط قادمًا من مسار مهندس الذكاء الاصطناعي" }
   ];
 
   /* ====== إدارة الشاشات والنافذة ====== */
@@ -324,44 +337,95 @@
     next.innerHTML = (i === STEPS.length - 1) ? "مسارات التدريب " + svg(P.route) : "التالي " + svg(P.next);
   }
 
-  /* ====== مسارات التدريب (وحدات مكدّسة) ====== */
+  /* ====== المسارات التدريبية — المعمارية المكدّسة القابلة للتركيب ====== */
+  const lvName = lv => lv === "E" ? "خبير" : "أخصائي";
+  function chip(m, n, cls) {
+    return '<div class="umod ' + (cls || "") + '" data-lv="' + m.lv + '" tabindex="0" ' +
+      'title="' + m.code + ' · ' + m.en + ' · ' + lvName(m.lv) + ' · جدارات: ' + m.comp + '">' +
+      (n ? '<span class="umod__n">' + n + '</span>' : '') +
+      '<span class="umod__lv">' + lvName(m.lv) + '</span>' +
+      '<span class="umod__ic">' + svg(m.ic) + '</span>' +
+      '<div class="umod__t">' + m.t + '</div>' +
+      '<div class="umod__foot"><span class="umod__ref">' + m.ref + '</span>' +
+        '<span class="umod__h">' + svg(P.calc) + ' ' + m.h + ' ساعة</span></div>' +
+    '</div>';
+  }
+
   function buildTracks() {
     const wrap = document.getElementById("trackList");
-    TRACKS.forEach(t => {
-      const d = document.createElement("div"); d.className = "track " + t.cls;
-      const mods = t.mods.map((m, k) =>
-        '<div class="mod">' +
-          '<span class="mod__n">' + (k + 1) + '</span>' +
-          '<span class="mod__b">' + svg(m.ic) + '</span>' +
-          '<div class="mod__t">' + m.t + '</div>' +
-          '<div class="mod__d">' + m.d + '</div>' +
-          '<span class="mod__u">' + svg(P.blocks) + ' ' + m.u + ' وحدات</span>' +
-        '</div>').join('<span class="mod__plus">+</span>');
-      d.innerHTML =
-        '<div class="track__head">' +
-          '<span class="track__ic">' + svg(t.ic) + '</span>' +
-          '<div><h3>' + t.ar + '</h3><span class="en">' + t.en + '</span></div>' +
-          '<div class="track__meta">' + t.meta.map(m => '<span class="m">' + m + '</span>').join("") + '</div>' +
+
+    /* (1) شرح المفهوم — شريط نحيف */
+    const legend =
+      '<div class="ms-legend">' +
+        '<span class="ms-leg ms-leg--mod">' + svg(P.blocks) + ' <b>Modular</b> · كل وحدة ١٠–١٥ ساعة = شارة دقيقة مستقلة</span>' +
+        '<span class="ms-leg ms-leg--stk">' + svg(P.layers) + ' <b>Stackable</b> · الشارات تتجمّع في شهادات متداخلة، والأساس يُحتسب مرة واحدة</span>' +
+      '</div>';
+
+    /* (2) طبقة الأساس المشترك */
+    const foundation =
+      '<div class="ms-layer ms-foundation">' +
+        '<div class="ms-layer__head">' +
+          '<span class="ms-layer__badge">الطبقة ١</span>' +
+          '<span class="ms-layer__ic">' + svg(P.book) + '</span>' +
+          '<div><h3>الأساس المشترك <span>Shared Foundation Core</span></h3></div>' +
+          '<span class="ms-layer__pill">٥ وحدات · ٦٤ ساعة · يُؤخذ مرة واحدة لكلا المسارين</span>' +
         '</div>' +
-        '<div class="stack">' +
-          '<div class="stack__mods">' + mods + '</div>' +
-          '<span class="stack__eq">' + svg(P.next) + '</span>' +
-          '<div class="outcome">' +
-            '<span class="outcome__lbl">' + svg(P.award) + ' المخرج النهائي</span>' +
-            '<div class="outcome__row">' +
-              '<span class="ob badge"><span class="ob__ic">' + svg(P.award) + '</span><b>شارة المحترف</b><span>اعتماد مهني معتمد</span></span>' +
-              '<span class="ob__or">أو</span>' +
-              '<span class="ob job"><span class="ob__ic">' + svg(P.brief) + '</span><b>فرصة توظيف</b><span>ربط مباشر بسوق العمل</span></span>' +
-            '</div>' +
+        '<div class="ms-grid">' + SHARED.map((m, i) => chip(m, i + 1)).join("") + '</div>' +
+      '</div>';
+
+    /* (3) التفرّع */
+    const split =
+      '<div class="ms-split">' +
+        '<span class="ms-split__line"></span>' +
+        '<span class="ms-split__tag">' + svg(P.branch) + ' يتفرّع إلى مسارين تخصّصيين</span>' +
+      '</div>';
+
+    /* (4) المساران */
+    const tracks = '<div class="ms-tracks">' + TRACKS.map(t => {
+      const seq = t.mods.map((m, i) => chip(m, i + 1)).join("");
+      return '<div class="ms-track ' + t.cls + '">' +
+        '<div class="ms-track__head">' +
+          '<span class="ms-track__ic">' + svg(t.ic) + '</span>' +
+          '<div><h3>' + t.ar + '</h3><span class="en">' + t.en + '</span></div>' +
+          '<span class="ms-layer__badge">الطبقة ٢ · ' + t.mods.length + ' وحدات</span>' +
+        '</div>' +
+        '<div class="ms-grid ms-seq">' + seq + '</div>' +
+        '<div class="ms-cap">' + chip(t.cap, "★", "is-cap") + '</div>' +
+        '<div class="ms-cert">' +
+          '<span class="ms-cert__ic">' + svg(P.award) + '</span>' +
+          '<div><b>' + t.cert + '</b><span>' + t.certH + '</span></div>' +
+        '</div>' +
+      '</div>';
+    }).join("") + '</div>';
+
+    /* (5) شريط سفلي: التكديس + جسر التحويل جنبًا إلى جنب */
+    const bottom =
+      '<div class="ms-bottom">' +
+        '<div class="ms-nest">' +
+          '<div class="ms-card__h"><span class="ms-layer__ic alt">' + svg(P.box) + '</span>' +
+            '<h3>تكدّس الشارات في شهادات متداخلة</h3></div>' +
+          '<div class="ms-nest__viz">' +
+            '<div class="nest-core">' + svg(P.book) + ' شهادة الأساسيات<span>٦٤ س</span></div>' +
+            '<div class="nest-wrap nest-ai"><span class="nest-wrap__lbl">' + svg(P.cpu) + ' مهندس الذكاء الاصطناعي</span><span class="nest-add">+ AE‑1…8 + التخرّج · ١٨٨ س</span></div>' +
+            '<div class="nest-wrap nest-ds"><span class="nest-wrap__lbl">' + svg(P.db) + ' عالِم البيانات</span><span class="nest-add">+ DS‑1…6 + التخرّج · ١٦٥ س</span></div>' +
           '</div>' +
-        '</div>';
-      wrap.appendChild(d);
-    });
+        '</div>' +
+        '<div class="ms-bridge">' +
+          '<div class="ms-card__h"><span class="ms-layer__ic alt2">' + svg(P.refresh) + '</span>' +
+            '<h3>جسر التحويل بين الدورين</h3></div>' +
+          '<div class="brg brg-ds2ai">' + svg(P.db) + '<b>عالِم بيانات</b>' + svg(P.next) + svg(P.cpu) + '<b>مهندس ذكاء اصطناعي</b><span class="brg__add">+ ١٢٤ س</span></div>' +
+          '<div class="brg brg-ai2ds">' + svg(P.cpu) + '<b>مهندس ذكاء اصطناعي</b>' + svg(P.next) + svg(P.db) + '<b>عالِم بيانات</b><span class="brg__add">+ ١٠١ س</span></div>' +
+          '<p class="ms-bridge__note">الأساس المشترك (٦٤ س) لا يُعاد عند نيل الشهادة الثانية.</p>' +
+        '</div>' +
+      '</div>';
+
+    wrap.innerHTML = legend + foundation + split + tracks + bottom;
   }
   function revealTracks() {
-    const els = document.querySelectorAll("#tracks .track");
+    const els = document.querySelectorAll("#tracks #trackList > div");
     if (reduce) { els.forEach(e => e.classList.add("in")); return; }
-    els.forEach((e, i) => setTimeout(() => e.classList.add("in"), 120 + i * 160));
+    els.forEach(e => e.classList.remove("in"));
+    els.forEach((e, i) => setTimeout(() => e.classList.add("in"), 80 + i * 110));
   }
 
   /* ====== التشغيل ====== */
