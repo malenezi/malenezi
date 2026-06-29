@@ -145,14 +145,14 @@
     { ref:"SF-1", code:"P2.1.01", ic:P.db,    t:"أساسيات البيانات للذكاء الاصطناعي والتحليلات", en:"Data Foundations for AI & Analytics", h:15, lv:"S", comp:"AIE-C03 · DSC-C02" },
     { ref:"SF-2", code:"P2.1.02", ic:P.cpu,   t:"أساسيات تعلّم الآلة التطبيقي", en:"Applied Machine Learning Essentials", h:15, lv:"S", comp:"AIE-C01 · DSC-C03" },
     { ref:"SF-3", code:"P2.1.03", ic:P.checks,t:"تقييم النماذج والتحقّق منها", en:"Model Evaluation & Validation", h:12, lv:"S", comp:"AIE-C04 · DSC-C04" },
-    { ref:"SF-4", code:"P7.1.01", ic:P.badge, t:"الذكاء الاصطناعي المسؤول وحوكمة البيانات (نظام حماية البيانات وأخلاقيات سدايا)", en:"Responsible AI & Saudi Data Governance", h:12, lv:"S", comp:"AIE-C10 · DSC-C06" },
-    { ref:"SF-5", code:"P2.1.04", ic:P.mega,  t:"تأطير المشكلات والتواصل لحلول الذكاء الاصطناعي", en:"Problem Framing & Communication", h:10, lv:"S", comp:"AIE-C11 · DSC-C07" }
+    { ref:"SF-4", code:"P7.1.01", ic:P.badge, t:"الذكاء الاصطناعي المسؤول وحوكمة البيانات", en:"Responsible AI & Saudi Data Governance", h:12, lv:"S", comp:"AIE-C10 · DSC-C06" },
+    { ref:"SF-5", code:"P2.1.04", ic:P.mega,  t:"تأطير المشكلات والتواصل", en:"Problem Framing & Communication", h:10, lv:"S", comp:"AIE-C11 · DSC-C07" }
   ];
   const AE_TRACK = [
     { ref:"AE-1", code:"P5.1.01", ic:P.layers, t:"التعلّم العميق والنماذج الأساسية", en:"Deep Learning & Foundation Models", h:15, lv:"S", comp:"AIE-C01" },
     { ref:"AE-2", code:"P5.1.02", ic:P.search, t:"أنظمة التوليد المعزّز بالاسترجاع RAG", en:"Retrieval-Augmented Generation", h:15, lv:"S", comp:"AIE-C02" },
-    { ref:"AE-3", code:"P5.1.03", ic:P.spark,  t:"الذكاء الوكيلي وهندسة تطبيقات النماذج اللغوية", en:"Agentic AI & LLM App Engineering", h:15, lv:"E", comp:"AIE-C02 · C10" },
-    { ref:"AE-4", code:"P5.1.04", ic:P.flow,   t:"هندسة برمجيات الذكاء الاصطناعي وتكامل الأنظمة", en:"AI Software Engineering & Integration", h:15, lv:"S", comp:"AIE-C05" },
+    { ref:"AE-3", code:"P5.1.03", ic:P.spark,  t:"الذكاء الوكيلي وهندسة تطبيقات LLM", en:"Agentic AI & LLM App Engineering", h:15, lv:"E", comp:"AIE-C02 · C10" },
+    { ref:"AE-4", code:"P5.1.04", ic:P.flow,   t:"هندسة برمجيات الذكاء الاصطناعي والتكامل", en:"AI Software Engineering & Integration", h:15, lv:"S", comp:"AIE-C05" },
     { ref:"AE-5", code:"P5.1.05", ic:P.gear,   t:"MLOps وLLMOps: النشر ودورة حياة النموذج", en:"MLOps & LLMOps", h:14, lv:"E", comp:"AIE-C06" },
     { ref:"AE-6", code:"P5.1.06", ic:P.s1,     t:"المراقبة والموثوقية والاستجابة للحوادث", en:"Observability, Reliability & Incident Response", h:10, lv:"E", comp:"AIE-C07" },
     { ref:"AE-7", code:"P5.1.07", ic:P.trend,  t:"الأداء وقابلية التوسّع وتحسين التكلفة", en:"Performance, Scalability & Cost", h:12, lv:"E", comp:"AIE-C08" },
@@ -161,11 +161,11 @@
   const AE_CAP = { ref:"AE-Cap", code:"P5.1.09", ic:P.cap, t:"مشروع التخرّج: أنظمة توليدية إنتاجية", en:"AI Engineering Capstone", h:15, lv:"E", comp:"تكاملي — كل الجدارات" };
   const DS_TRACK = [
     { ref:"DS-1", code:"P6.1.01", ic:P.bars,  t:"الأسس الإحصائية والاستدلال لعلم البيانات", en:"Statistical Foundations & Inference", h:15, lv:"S", comp:"DSC-C01" },
-    { ref:"DS-2", code:"P6.1.02", ic:P.flow,  t:"هندسة البيانات الحديثة للتحليلات واسعة النطاق", en:"Modern Data Engineering at Scale", h:14, lv:"S", comp:"DSC-C02" },
+    { ref:"DS-2", code:"P6.1.02", ic:P.flow,  t:"هندسة البيانات للتحليلات واسعة النطاق", en:"Modern Data Engineering at Scale", h:14, lv:"S", comp:"DSC-C02" },
     { ref:"DS-3", code:"P6.1.03", ic:P.cpu,   t:"تعلّم الآلة التطبيقي للأنظمة الذكية", en:"Applied ML for Intelligent Systems", h:15, lv:"S", comp:"DSC-C03" },
     { ref:"DS-4", code:"P6.1.04", ic:P.target,t:"التجريب والاستدلال السببي", en:"Experimentation & Causal Inference", h:15, lv:"E", comp:"DSC-C04" },
-    { ref:"DS-5", code:"P6.1.05", ic:P.trend, t:"تصوير البيانات واستخلاص الرؤى ورواية البيانات", en:"Visualization, Insight & Storytelling", h:15, lv:"S", comp:"DSC-C05" },
-    { ref:"DS-6", code:"P6.1.06", ic:P.refresh,t:"علم البيانات القابل للتكرار وسير العمل المعزّز بالذكاء التوليدي", en:"Reproducible & GenAI-Assisted DS", h:12, lv:"E", comp:"DSC-C07" }
+    { ref:"DS-5", code:"P6.1.05", ic:P.trend, t:"تصوير البيانات والرؤى ورواية البيانات", en:"Visualization, Insight & Storytelling", h:15, lv:"S", comp:"DSC-C05" },
+    { ref:"DS-6", code:"P6.1.06", ic:P.refresh,t:"علم البيانات القابل للتكرار والمعزّز بالذكاء التوليدي", en:"Reproducible & GenAI-Assisted DS", h:12, lv:"E", comp:"DSC-C07" }
   ];
   const DS_CAP = { ref:"DS-Cap", code:"P6.1.07", ic:P.cap, t:"مشروع التخرّج: من السؤال إلى القرار", en:"Data Science Capstone", h:15, lv:"E", comp:"تكاملي — كل الجدارات" };
 
@@ -386,14 +386,16 @@
       return '<div class="ms-track ' + t.cls + '">' +
         '<div class="ms-track__head">' +
           '<span class="ms-track__ic">' + svg(t.ic) + '</span>' +
-          '<div><h3>' + t.ar + '</h3><span class="en">' + t.en + '</span></div>' +
+          '<div><h3>' + t.ar + ' <span class="en">' + t.en + '</span></h3></div>' +
           '<span class="ms-layer__badge">الطبقة ٢ · ' + t.mods.length + ' وحدات</span>' +
         '</div>' +
-        '<div class="ms-grid ms-seq">' + seq + '</div>' +
-        '<div class="ms-cap">' + chip(t.cap, "★", "is-cap") + '</div>' +
-        '<div class="ms-cert">' +
-          '<span class="ms-cert__ic">' + svg(P.award) + '</span>' +
-          '<div><b>' + t.cert + '</b><span>' + t.certH + '</span></div>' +
+        '<div class="ms-seq">' + seq + '</div>' +
+        '<div class="ms-track__foot">' +
+          '<div class="ms-cap">' + chip(t.cap, "★", "is-cap") + '</div>' +
+          '<div class="ms-cert">' +
+            '<span class="ms-cert__ic">' + svg(P.award) + '</span>' +
+            '<div><b>' + t.cert + '</b><span>' + t.certH + '</span></div>' +
+          '</div>' +
         '</div>' +
       '</div>';
     }).join("") + '</div>';

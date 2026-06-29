@@ -340,8 +340,8 @@ ul { list-style: none; }
   .home__tiles { grid-template-columns: 1fr; }
   .stage-grid { grid-template-columns: 1fr; gap: 12px; align-content: start; }
   #stageContent { height: auto; overflow: visible; }
-  .node { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 3px 14px; text-align: right; }
-  .node__ic { grid-row: 1 / 4; width: 64px; height: 64px; margin: 0; border-radius: 14px; font-size: 1.75rem; }
+  .node { display: block; text-align: center; }
+  .node__ic { width: 72px; height: 72px; margin: 0 auto 10px; border-radius: 18px; font-size: 2rem; }
   .node .k { font-size: .8rem; }
   .node h3 { font-size: 1.3rem; line-height: 1.1; margin: 0; }
   .node h3 .en { font-size: .56em; margin-top: 1px; }
@@ -480,7 +480,7 @@ ul { list-style: none; }
 
 .ms-foundation { position: relative; background: linear-gradient(180deg, rgba(31,111,178,.05), #fff); border: 1.5px solid rgba(31,111,178,.22); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-sm); }
 .ms-foundation .ms-layer__badge { background: var(--primary); }
-.ms-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.ms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(196px, 1fr)); gap: 12px; }
 .ms-foundation .umod { --accent: var(--primary); }
 
 /* التفرّع */
@@ -489,25 +489,27 @@ ul { list-style: none; }
 .ms-split__tag { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px; font-size: .85rem; font-weight: 700; color: var(--ink-soft); background: #fff; border: 1px solid var(--line-2); padding: 6px 18px; border-radius: 999px; box-shadow: var(--shadow-sm); }
 .ms-split__tag .ic { width: 18px; height: 18px; color: var(--branch); }
 
-/* المساران */
-.ms-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
-.ms-track { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 15px; box-shadow: var(--shadow-sm); border-top: 5px solid var(--accent); }
+/* المساران — كل مسار بعرض كامل لتفادي الازدحام */
+.ms-tracks { display: flex; flex-direction: column; gap: 16px; }
+.ms-track { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow-sm); border-top: 5px solid var(--accent); }
 .ms-track.t1 { --accent: var(--primary); --accent-d: var(--primary-d); --accent-bg: rgba(31,111,178,.1); }
 .ms-track.t2 { --accent: var(--teal); --accent-d: var(--teal-d); --accent-bg: rgba(20,160,138,.12); }
 .ms-track__head { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; padding-bottom: 11px; margin-bottom: 13px; border-bottom: 1px dashed var(--line); }
 .ms-track__head .ms-layer__badge { margin-inline-start: auto; background: var(--accent); }
 .ms-track__ic { flex: none; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, var(--accent), var(--accent-d)); box-shadow: 0 10px 22px var(--accent-bg); }
 .ms-track__ic .ic { width: 26px; height: 26px; }
-.ms-track__head h3 { font-size: 1.16rem; font-weight: 700; line-height: 1.12; }
-.ms-track__head .en { font-size: .72rem; color: var(--muted); }
-.ms-track .ms-seq { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.ms-track__head h3 { font-size: 1.18rem; font-weight: 700; line-height: 1.12; }
+.ms-track__head h3 .en { font-size: .72rem; color: var(--muted); font-weight: 600; }
+.ms-seq { display: grid; grid-template-columns: repeat(auto-fit, minmax(196px, 1fr)); gap: 12px; }
 .ms-track.t1 .umod[data-lv="S"] { --mc: var(--primary); }
 .ms-track.t2 .umod[data-lv="S"] { --mc: var(--teal); }
-.ms-cap { margin-top: 13px; position: relative; }
+.ms-track__foot { display: grid; grid-template-columns: minmax(230px, 300px) 1fr; gap: 14px; align-items: stretch; margin-top: 16px; padding-top: 15px; border-top: 1px dashed var(--line); }
+.ms-cap { position: relative; }
 .ms-cap::before { content: "مشروع التخرّج · شارة الإتمام"; position: absolute; top: -8px; inset-inline-end: 14px; z-index: 2; font-size: .64rem; font-weight: 800; color: #fff; background: var(--branch); padding: 2px 11px; border-radius: 999px; box-shadow: var(--shadow-sm); }
+.ms-cap .umod { height: 100%; }
 .umod.is-cap { border: 1.5px solid var(--branch); background: linear-gradient(180deg, rgba(217,136,31,.07), #fff); }
 .umod.is-cap .umod__ic { margin-top: 4px; }
-.ms-cert { margin-top: 13px; display: flex; align-items: center; gap: 12px; padding: 13px 15px; border-radius: 13px; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-d)); box-shadow: 0 12px 26px var(--accent-bg); }
+.ms-cert { display: flex; align-items: center; gap: 13px; padding: 14px 18px; border-radius: 13px; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-d)); box-shadow: 0 12px 26px var(--accent-bg); }
 .ms-cert__ic { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.2); }
 .ms-cert__ic .ic { width: 23px; height: 23px; }
 .ms-cert b { font-size: 1.02rem; display: block; line-height: 1.2; }
@@ -545,12 +547,6 @@ ul { list-style: none; }
 .ms-bridge__note { font-size: .78rem; color: var(--muted); margin-top: 4px; }
 
 @media (max-width: 980px) {
-  .ms-tracks, .ms-bottom, .ms-legend { grid-template-columns: 1fr; }
-  .ms-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 620px) {
-  .ms-grid, .ms-track .ms-seq { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 420px) {
-  .ms-grid, .ms-track .ms-seq { grid-template-columns: 1fr; }
+  .ms-bottom, .ms-legend { grid-template-columns: 1fr; }
+  .ms-track__foot { grid-template-columns: 1fr; }
 }
