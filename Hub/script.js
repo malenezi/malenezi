@@ -89,7 +89,8 @@
     },
     {
       ic:P.s3, ar:"التصميم والتطوير", en:"Design & Development", color:"teal",
-      desc:"نصمم التجربة التعليمية بالبيانات، ونطوّر المحتوى بالذكاء الاصطناعي، ونهيّئ بيئة التطبيق — وفق المنهجيات المعيارية مثل نموذج ADDIE — حتى نصل إلى حقيبة تدريبية متكاملة.",
+      desc:"نصمم التجربة التعليمية بالبيانات، ونطوّر المحتوى بالذكاء الاصطناعي، ونهيّئ بيئة التطبيق حتى نصل إلى حقيبة تدريبية متكاملة.",
+      model:{ name:"ADDIE", steps:["تحليل","تصميم","تطوير","تطبيق","تقويم"] },
       type:"proc",
       proc:{
         in:["تقرير دراسة الفجوة ومصفوفة المهارات المستهدفة","قائمة الأولويات التدريبية المعتمدة","الأطر المرجعية ومعايير الجودة (مثل نموذج ADDIE)"],
@@ -245,7 +246,11 @@
     return '<span class="node__ic">' + svg(s.ic) + '</span>' +
       '<div class="k">المرحلة ' + (i + 1) + ' من 7</div>' +
       '<h3>' + s.ar + '<span class="en">' + s.en + '</span></h3>' +
-      '<p>' + s.desc + '</p>';
+      '<p>' + s.desc + '</p>' +
+      (s.model ? '<div class="node__model"><span class="node__model-lbl">' + svg(P.layers) + ' نموذج ' + s.model.name + '</span>' +
+        '<div class="node__model-row">' + s.model.steps.map((x, k) =>
+          '<span class="nms">' + x + '</span>' + (k < s.model.steps.length - 1 ? '<span class="nms-sep">' + svg(P.next) + '</span>' : "")
+        ).join("") + '</div></div>' : "");
   }
 
   function procHTML(s) {
@@ -354,6 +359,26 @@
   function buildTracks() {
     const wrap = document.getElementById("trackList");
 
+    /* (0) شريحة توضيحية + أرقام بارزة */
+    const stat = (ic, n, sub, l) =>
+      '<div class="hstat"><span class="hstat__ic">' + svg(ic) + '</span>' +
+        '<span class="hstat__n">' + n + (sub ? '<small>' + sub + '</small>' : '') + '</span>' +
+        '<span class="hstat__l">' + l + '</span></div>';
+    const hero =
+      '<div class="ms-hero">' +
+        '<div class="ms-hero__txt">' +
+          '<span class="ms-hero__ey">' + svg(P.route) + ' خريطة المسارات</span>' +
+          '<h3>مساران مهنيان على أساس مشترك واحد</h3>' +
+          '<p>بنية وحدات مكدّسة قابلة للتركيب — كل وحدة شارة دقيقة، والشارات تتجمّع في شهادات متداخلة.</p>' +
+        '</div>' +
+        '<div class="ms-hero__stats">' +
+          stat(P.blocks, "٢٢", "", "وحدة · شارة دقيقة") +
+          stat(P.layers, "٣", "", "طبقات متدرّجة") +
+          stat(P.book, "٦٤", "س", "الأساس المشترك") +
+          stat(P.award, "٢", "", "شهادتان مهنيتان") +
+        '</div>' +
+      '</div>';
+
     /* (1) شرح المفهوم — شريط نحيف */
     const legend =
       '<div class="ms-legend">' +
@@ -421,7 +446,7 @@
         '</div>' +
       '</div>';
 
-    wrap.innerHTML = legend + foundation + split + tracks + bottom;
+    wrap.innerHTML = hero + legend + foundation + split + tracks + bottom;
   }
   function revealTracks() {
     const els = document.querySelectorAll("#tracks #trackList > div");
