@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أكاديمية سدايا · دورة حياة البرامج التدريبية</title>
+<meta name="description" content="عرض تنفيذي تفاعلي لدورة حياة البرامج التدريبية لأكاديمية سدايا — سبع مراحل متكاملة ومساران مهنيان." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Markazi+Text:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Markazi Text"', '"IBM Plex Sans Arabic"', 'system-ui', 'sans-serif'],
+          display: ['"Markazi Text"', 'serif'],
+        },
+        colors: {
+          brand: {
+            50:'#eef4ff',100:'#dce7ff',200:'#bcd0ff',300:'#8fb0ff',
+            400:'#5b86fb',500:'#3563e9',600:'#244ed1',700:'#1d3da8',
+            800:'#1c3686',900:'#1c316b',950:'#141f44',
+          },
+          teal: {
+            400:'#2dd4bf',500:'#14b6a6',600:'#0d9488',700:'#0f766e',
+          },
+        },
+        boxShadow: {
+          card: '0 1px 2px rgba(16,24,40,.04), 0 8px 24px -12px rgba(16,24,40,.12)',
+          float: '0 24px 60px -28px rgba(28,49,107,.35)',
+        },
+        keyframes: {
+          'fade-up': { '0%':{opacity:'0',transform:'translateY(18px)'}, '100%':{opacity:'1',transform:'translateY(0)'} },
+          'fade-in': { '0%':{opacity:'0'}, '100%':{opacity:'1'} },
+          'ring-spin': { '0%':{transform:'rotate(0deg)'}, '100%':{transform:'rotate(360deg)'} },
+        },
+        animation: {
+          'fade-up':'fade-up .6s cubic-bezier(.21,.6,.35,1) both',
+          'fade-in':'fade-in .5s ease both',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { --bg:#f6f8fc; --paper:#ffffff; --ink:#0f1729; --muted:#5a657d; --line:#e6ebf3; --ring:#eef2f8; }
+  html.dark { --bg:#0b1120; --paper:#111a2e; --ink:#eef2fb; --muted:#9aa6be; --line:#1e2a42; --ring:#16233c; }
+
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { background: var(--bg); color: var(--ink); font-family:'Markazi Text','IBM Plex Sans Arabic',sans-serif; font-size: 1.06rem; line-height: 1.7; -webkit-font-smoothing:antialiased; transition: background .4s ease, color .3s ease; }
+  /* Markazi Text renders compact — nudge weights up for clarity */
+  h1,h2,h3,h4,.font-bold{ font-weight:700; }
+  p, li, span, a, button, div { letter-spacing: .1px; }
+
+  .paper { background: var(--paper); }
+  .ink { color: var(--ink); }
+  .muted { color: var(--muted); }
+  .bd { border-color: var(--line); }
+
+  /* soft ambient gradient mesh */
+  .mesh::before{ content:""; position:absolute; inset:-10% -10% auto -10%; height:520px; z-index:0;
+    background:
+      radial-gradient(48rem 28rem at 78% -8%, rgba(53,99,233,.16), transparent 60%),
+      radial-gradient(40rem 26rem at 8% 0%, rgba(20,182,166,.12), transparent 55%);
+    pointer-events:none; }
+  html.dark .mesh::before{ background:
+      radial-gradient(48rem 28rem at 78% -8%, rgba(53,99,233,.22), transparent 60%),
+      radial-gradient(40rem 26rem at 8% 0%, rgba(20,182,166,.14), transparent 55%); }
+
+  .grid-faint{ background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px; -webkit-mask-image:radial-gradient(60% 60% at 50% 30%,#000,transparent); mask-image:radial-gradient(60% 60% at 50% 30%,#000,transparent); opacity:.5; }
+
+  /* scroll reveal */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.21,.6,.35,1), transform .7s cubic-bezier(.21,.6,.35,1); }
+  .reveal.show{ opacity:1; transform:none; }
+
+  /* progress bar */
+  .scroll-prog{ position:fixed; top:0; right:0; height:3px; width:0%; z-index:60;
+    background:linear-gradient(90deg,#3563e9,#14b6a6); transition:width .12s linear; }
+
+  /* stepper rail dot */
+  .dot{ transition:all .35s cubic-bezier(.21,.6,.35,1); }
+
+  .step-card{ transition:transform .35s cubic-bezier(.21,.6,.35,1), box-shadow .35s ease, border-color .3s ease; }
+  .step-card:hover{ transform:translateY(-4px); }
+
+  .panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s cubic-bezier(.21,.6,.35,1), opacity .4s ease; opacity:0; }
+  .panel > div{ overflow:hidden; }
+  .step-card.open .panel{ grid-template-rows:1fr; opacity:1; }
+  .chev{ transition:transform .4s cubic-bezier(.21,.6,.35,1); }
+  .step-card.open .chev{ transform:rotate(-180deg); }
+
+  .io-item{ position:relative; padding-inline-start:1.15rem; }
+  .io-item::before{ content:""; position:absolute; inset-inline-start:0; top:.62em; width:7px; height:7px; border-radius:50%; }
+  .io-in::before{ background:#3563e9; } .io-act::before{ background:#14b6a6; } .io-out::before{ background:#8b5cf6; }
+
+  /* nav active */
+  .navlink.active{ color:var(--ink); }
+  .navlink.active::after{ width:100%; }
+  .navlink::after{ content:""; display:block; height:2px; width:0; margin-top:3px; border-radius:2px;
+    background:linear-gradient(90deg,#3563e9,#14b6a6); transition:width .3s ease; }
+
+  ::selection{ background:rgba(53,99,233,.18); }
+  ::-webkit-scrollbar{ width:11px; height:11px; }
+  ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:9px; border:3px solid var(--bg); }
+
+  @media (prefers-reduced-motion: reduce){ *{ animation:none!important; transition:none!important; scroll-behavior:auto!important; } .reveal{opacity:1;transform:none;} }
+</style>
+</head>
+
+<body class="font-sans antialiased">
+
+<div class="scroll-prog" id="scrollProg"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="sticky top-0 z-50 backdrop-blur-xl border-b bd" style="background:color-mix(in srgb, var(--paper) 78%, transparent);">
+  <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center gap-4">
+    <a href="#hero" class="flex items-center gap-3 shrink-0">
+      <span class="grid place-items-center w-11 h-11 rounded-xl paper border bd shadow-card p-1.5">
+        <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" class="w-full h-full object-contain" />
+      </span>
+      <span class="leading-tight">
+        <span class="block font-bold text-[15px] ink">أكاديمية سدايا</span>
+        <span class="block text-[11px] muted -mt-0.5">النموذج التشغيلي · LearningTree</span>
+      </span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-7 mr-auto ml-auto text-sm muted font-medium">
+      <a href="#hero" class="navlink transition-colors hover:text-brand-600">الرئيسية</a>
+      <a href="#lifecycle" class="navlink transition-colors hover:text-brand-600">دورة الحياة</a>
+      <a href="#tracks" class="navlink transition-colors hover:text-brand-600">المسارات</a>
+      <a href="#impact" class="navlink transition-colors hover:text-brand-600">الأثر</a>
+    </div>
+
+    <div class="flex items-center gap-2 ml-0 mr-auto lg:mr-0">
+      <!-- progress ring -->
+      <div class="hidden sm:grid place-items-center relative w-10 h-10" title="نسبة استعراض المراحل">
+        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 36 36">
+          <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--ring)" stroke-width="3"></circle>
+          <circle id="ringProg" cx="18" cy="18" r="15.5" fill="none" stroke="url(#rg)" stroke-width="3" stroke-linecap="round"
+                  stroke-dasharray="97.4" stroke-dashoffset="97.4"></circle>
+          <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3563e9"/><stop offset="1" stop-color="#14b6a6"/></linearGradient></defs>
+        </svg>
+        <span id="ringPct" class="absolute text-[10px] font-bold ink">0%</span>
+      </div>
+
+      <button id="themeToggle" class="grid place-items-center w-10 h-10 rounded-xl border bd paper hover:shadow-card transition" aria-label="تبديل المظهر">
+        <i data-lucide="moon" class="w-[18px] h-[18px]" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="relative mesh overflow-hidden">
+  <div class="absolute inset-0 grid-faint"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-16 pb-24 lg:pt-20 lg:pb-32 text-center">
+    <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا"
+         class="reveal mx-auto mb-7 h-24 lg:h-28 w-auto object-contain drop-shadow-[0_18px_40px_rgba(28,49,107,.25)]" />
+    <span class="reveal inline-flex items-center gap-2 rounded-full border bd paper px-4 py-1.5 text-xs font-semibold muted shadow-card">
+      <span class="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
+      الهيئة السعودية للبيانات والذكاء الاصطناعي
+    </span>
+
+    <h1 class="reveal mt-7 font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] ink">
+      دورة حياة البرامج
+      <span class="bg-gradient-to-l from-brand-600 to-teal-500 bg-clip-text text-transparent">التدريبية</span>
+    </h1>
+
+    <p class="reveal mt-6 max-w-2xl mx-auto text-lg muted leading-relaxed">
+      نموذج تشغيلي متكامل من سبع مراحل — من رصد الاحتياج حتى التحسين المستمر — يتفرّع إلى مسارَين مهنيين بثنتين وعشرين وحدة تدريبية مكدّسة.
+    </p>
+
+    <div class="reveal mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="#lifecycle" class="group inline-flex items-center gap-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 text-sm font-semibold shadow-float transition">
+        ابدأ الاستعراض
+        <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+      </a>
+      <a href="#tracks" class="inline-flex items-center gap-2 rounded-xl border bd paper px-6 py-3 text-sm font-semibold ink hover:shadow-card transition">
+        المسارات المهنية
+      </a>
+    </div>
+
+    <!-- stat strip -->
+    <div class="reveal mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div class="paper border bd rounded-2xl p-5 shadow-card">
+        <div class="flex items-center justify-center gap-2 text-brand-600"><i data-lucide="refresh-cw" class="w-5 h-5"></i></div>
+        <div class="mt-2 text-3xl font-bold ink" data-count="7">0</div>
+        <div class="text-xs muted mt-1">مراحل دورة الحياة</div>
+      </div>
+      <div class="paper border bd rounded-2xl p-5 shadow-card">
+        <div class="flex items-center justify-center gap-2 text-teal-600"><i data-lucide="blocks" class="w-5 h-5"></i></div>
+        <div class="mt-2 text-3xl font-bold ink" data-count="22">0</div>
+        <div class="text-xs muted mt-1">وحدة تدريبية مكدّسة</div>
+      </div>
+      <div class="paper border bd rounded-2xl p-5 shadow-card">
+        <div class="flex items-center justify-center gap-2 text-brand-600"><i data-lucide="award" class="w-5 h-5"></i></div>
+        <div class="mt-2 text-3xl font-bold ink" data-count="2">0</div>
+        <div class="text-xs muted mt-1">شهادتان مهنيتان</div>
+      </div>
+      <div class="paper border bd rounded-2xl p-5 shadow-card">
+        <div class="flex items-center justify-center gap-2 text-teal-600"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+        <div class="mt-2 text-3xl font-bold ink"><span data-count="100">0</span>٪</div>
+        <div class="text-xs muted mt-1">تغطية الجدارات</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFECYCLE ============ -->
+<section id="lifecycle" class="relative py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold text-brand-600 bg-brand-50 dark:bg-brand-950/60 rounded-full px-3 py-1">
+        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> المسار التشغيلي المتكامل
+      </span>
+      <h2 class="mt-4 font-display text-4xl lg:text-5xl font-bold ink">سبع مراحل متتابعة</h2>
+      <p class="mt-4 muted leading-relaxed">اضغط على أي مرحلة لعرض مدخلاتها وأنشطتها ومخرجاتها المعتمدة، أو تنقّل بأزرار «التالي / السابق».</p>
+    </div>
+
+    <!-- numbered stepper rail -->
+    <div class="reveal mt-12 overflow-x-auto pb-2">
+      <div id="stepperRail" class="flex items-center gap-0 min-w-max mx-auto w-fit px-2"></div>
+    </div>
+
+    <!-- cards -->
+    <div id="stepCards" class="mt-10 grid gap-5"></div>
+
+    <!-- nav buttons -->
+    <div class="mt-10 flex items-center justify-between gap-4">
+      <button id="prevStep" class="inline-flex items-center gap-2 rounded-xl border bd paper px-5 py-2.5 text-sm font-semibold ink hover:shadow-card transition disabled:opacity-40 disabled:cursor-not-allowed">
+        <i data-lucide="chevron-right" class="w-4 h-4"></i> المرحلة السابقة
+      </button>
+      <span id="stepCounter" class="text-sm muted font-medium"></span>
+      <button id="nextStep" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 text-sm font-semibold shadow-card transition disabled:opacity-40 disabled:cursor-not-allowed">
+        المرحلة التالية <i data-lucide="chevron-left" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACKS ============ -->
+<section id="tracks" class="relative py-20 lg:py-28 mesh overflow-hidden">
+  <div class="absolute inset-0 grid-faint"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold text-teal-600 bg-teal-50 dark:bg-teal-700/20 rounded-full px-3 py-1">
+        <i data-lucide="blocks" class="w-3.5 h-3.5"></i> Modular · Stackable
+      </span>
+      <h2 class="mt-4 font-display text-4xl lg:text-5xl font-bold ink">المسارات المهنية</h2>
+      <p class="mt-4 muted leading-relaxed">أساس مشترك واحد يتفرّع إلى مسارَي مهندس الذكاء الاصطناعي وعالِم البيانات — وحدات مكدّسة قابلة للتركيب، كل وحدة تمنح شارة تتجمّع في شهادات متداخلة.</p>
+    </div>
+
+    <!-- shared foundation -->
+    <div class="reveal mt-12">
+      <div class="paper border bd rounded-2xl p-6 shadow-card">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-teal-600 text-white"><i data-lucide="layers" class="w-5 h-5"></i></span>
+          <div>
+            <h3 class="font-bold ink">الأساس المشترك</h3>
+            <p class="text-xs muted">خمس وحدات تأسيسية تغذّي كلا المسارين</p>
+          </div>
+        </div>
+        <div id="sharedMods" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+      </div>
+    </div>
+
+    <!-- two tracks -->
+    <div id="trackCards" class="mt-6 grid lg:grid-cols-2 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section id="impact" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal rounded-3xl overflow-hidden border bd bg-gradient-to-br from-brand-700 to-brand-950 text-white shadow-float">
+      <div class="relative p-10 lg:p-16 text-center">
+        <div class="absolute inset-0 opacity-30 grid-faint"></div>
+        <div class="relative">
+          <h2 class="font-display text-3xl lg:text-5xl font-bold">من رصد الاحتياج إلى الأثر المهني</h2>
+          <p class="mt-4 max-w-2xl mx-auto text-white/80 leading-relaxed">دورة مغلقة تُغذّي نفسها: تقارير الأثر بعد ٣ و٦ و١٢ شهراً تعود لتشكّل خارطة التطوير السنوية ومرحلة رصد الاحتياج في الدورة التالية.</p>
+          <div class="mt-10 grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto text-right">
+            <div class="rounded-2xl bg-white/10 backdrop-blur p-5 border border-white/15">
+              <i data-lucide="target" class="w-6 h-6 text-teal-300"></i>
+              <div class="mt-3 font-bold">قياس مباشر</div>
+              <p class="mt-1 text-sm text-white/70">رضا المتدربين عبر مؤشر صافي الترشيح NPS واختبارات قبلية وبعدية.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 backdrop-blur p-5 border border-white/15">
+              <i data-lucide="trending-up" class="w-6 h-6 text-teal-300"></i>
+              <div class="mt-3 font-bold">أثر مهني</div>
+              <p class="mt-1 text-sm text-white/70">تتبّع تطبيق المهارات في بيئة العمل والمسار المهني للخريجين.</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 backdrop-blur p-5 border border-white/15">
+              <i data-lucide="refresh-cw" class="w-6 h-6 text-teal-300"></i>
+              <div class="mt-3 font-bold">تحسين مستمر</div>
+              <p class="mt-1 text-sm text-white/70">إصدارات محسّنة وخارطة تطوير سنوية معتمدة تغلق الحلقة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t bd paper">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="grid place-items-center w-10 h-10 rounded-lg paper border bd p-1.5"><img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" class="w-full h-full object-contain" /></span>
+      <div class="leading-tight">
+        <div class="font-bold text-sm ink">أكاديمية سدايا</div>
+        <div class="text-xs muted">الهيئة السعودية للبيانات والذكاء الاصطناعي</div>
+      </div>
+    </div>
+    <p class="text-xs muted text-center sm:text-left">دورة حياة البرامج التدريبية · النموذج التشغيلي LearningTree</p>
+  </div>
+</footer>
+
+<!-- back to top -->
+<button id="toTop" class="fixed bottom-6 left-6 z-50 grid place-items-center w-11 h-11 rounded-full bg-brand-600 text-white shadow-float opacity-0 translate-y-3 pointer-events-none transition-all hover:bg-brand-700" aria-label="العودة للأعلى">
+  <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
+
+<script>
+/* ======================= DATA ======================= */
+const STEPS = [
+  { ic:"radar", ar:"رصد الاحتياج", en:"Needs Sensing",
+    desc:"نرصد إشارات الطلب الحقيقية من سدايا وأذرعها والسوق، ونحوّلها إلى احتياج تدريبي معتمد.",
+    in:["الاحتياجات الحكومية والوطنية ذات الأولوية","احتياجات أذرع سدايا وأجهزتها","تقارير ودراسات الإدارة العامة للدراسات","تقارير السوق والشركاء والاتجاهات العالمية"],
+    act:["تحليل التوجهات العالمية والتقنيات الناشئة","ورش عمل ومقابلات منظمة مع الجهات","تحليل الوظائف والمهارات وفق الإطار الوطني للجدارات","دراسة احتياجات السوق المستقبلية"],
+    out:["وثيقة الاحتياج التدريبي المعتمدة","قائمة الوظائف والفئات المستهدفة","خريطة المهارات المطلوبة"],
+    timeline:"٢–٤ أسابيع", outcome:"احتياج تدريبي معتمد وقابل للقياس" },
+  { ic:"search-check", ar:"دراسة الفجوة", en:"Gap Analysis",
+    desc:"نحوّل الفجوة بين الواقع والمستهدف إلى تقرير ومصفوفة مهارات مرتّبة بالأولوية.",
+    in:["وثيقة الاحتياج التدريبي المعتمدة","خرائط المهارات الحالية للفئات المستهدفة","مرجعيات الإطار الوطني للمؤهلات"],
+    act:["قياس الفجوة بين المهارات الحالية والمستهدفة","تحديد مستوى النضج الرقمي للفئة المستهدفة","جلسات عمل تشاركية مع الجهات المستفيدة","ترتيب الأولويات وفق معياري الأثر والإلحاح"],
+    out:["تقرير دراسة الفجوة الشامل","مصفوفة المهارات المستهدفة","قائمة الأولويات التدريبية المعتمدة"],
+    timeline:"٢–٣ أسابيع", outcome:"خارطة أولويات تدريبية مبنية على الأدلة" },
+  { ic:"pencil-ruler", ar:"التصميم والتطوير", en:"Design & Development",
+    desc:"نصمم التجربة التعليمية بالبيانات، ونطوّر المحتوى بالذكاء الاصطناعي، ونهيّئ بيئة التطبيق حتى نصل إلى حقيبة تدريبية متكاملة.",
+    model:{ name:"ADDIE", steps:["تحليل","تصميم","تطوير","تطبيق","تقويم"] },
+    in:["تقرير دراسة الفجوة ومصفوفة المهارات المستهدفة","قائمة الأولويات التدريبية المعتمدة","الأطر المرجعية ومعايير الجودة (نموذج ADDIE)"],
+    act:["التصميم: أهداف تعلم وفق تصنيف بلوم ومسارات مخصّصة وأدوات تقييم ذكية","التطوير: إنتاج محتوى بالذكاء الاصطناعي ومحاكاة وبنوك أسئلة متعددة المستويات","التهيئة للتطبيق: إعداد بيئات التعلم وأدلة المدربين والمتدربين وفرق الدعم","التدقيق الآلي والبشري للجودة وفق المعايير الدولية"],
+    out:["حقيبة تدريبية متكاملة جاهزة للإطلاق (دليل المدرب، مادة المتدرب، بنك التقييمات، المعامل)","العرض التفاعلي ومعايير الاعتماد"],
+    timeline:"٦–١٠ أسابيع", outcome:"حقيبة تدريبية معتمدة جاهزة للإطلاق" },
+  { ic:"square-play", ar:"التقديم والتنفيذ", en:"Delivery & Execution",
+    desc:"نستقطب المتدربين وننفّذ التدريب بجودة معتمدة عبر ثلاثة مسارات: استقطاب المتدربين، والتنفيذ التدريبي، والعمليات التشغيلية المشتركة.",
+    in:["حقيبة تدريبية متكاملة جاهزة للإطلاق","المدربون والشركاء المعتمدون","بيئات ومنصات التعلم المهيأة"],
+    act:["مسار الاستقطاب: الإعلان والتسويق والتسجيل عبر منصة أذكى والفرز واختيار المرشحين","مسار التنفيذ: التنفيذ عبر مدربي سدايا أو الشركاء المعتمدين","العمليات المشتركة: إدارة الجداول والقاعات والدعم الفني والأكاديمي"],
+    out:["برنامج تدريبي منفّذ","بيانات الأداء التشغيلي والتدريبي","سجلات حضور وإنجاز المتدربين"],
+    timeline:"حسب البرنامج", outcome:"تنفيذ تدريبي عالي الجودة موثّق بالبيانات" },
+  { ic:"clipboard-check", ar:"التقييم", en:"Evaluation",
+    desc:"نقيس الرضا والمعرفة وجودة التنفيذ عبر تقارير مباشرة تُغذّي قياس الأثر والتحسين.",
+    in:["برنامج منفّذ مع بيانات الأداء","الاختبارات القبلية والبعدية","ملاحظات المدربين الفورية","بيانات سلوك المتدرب على المنصة"],
+    act:["قياس رضا المتدربين عبر مؤشر صافي الترشيح NPS","قياس اكتساب المعرفة عبر الاختبارات القبلية والبعدية","تقييم جودة المدربين والمحتوى التدريبي","جمع التغذية الراجعة الفورية وتحليلها"],
+    out:["تقارير التقييم المباشر","إصدار الشهادات المهنية والتدريبية","التهيئة للشارة أو التوظيف"],
+    timeline:"١–٢ أسبوع", outcome:"شهادات صادرة ومؤشرات تقييم موثّقة" },
+  { ic:"trending-up", ar:"قياس الأثر", en:"Impact Measurement",
+    desc:"نقيس تطبيق المهارات في بيئة العمل والعائد المهني عبر تقرير أثر شامل وتوصيات تطوير.",
+    in:["تقارير التقييم المباشر وإصدار الشهادات","بيانات جهات عمل المتدربين","بيانات السوق والتوظيف","بيانات الأداء بعد التدريب"],
+    act:["قياس تطبيق المهارات في بيئة العمل","استبيانات الأثر بعد ٣ و٦ و١٢ شهراً","مقابلات منظمة مع جهات العمل","تحليل المسار المهني للخريجين"],
+    out:["تقرير الأثر الشامل","توصيات التطوير الاستراتيجية","توثيق نماذج النجاح والأثر المهني للخريجين"],
+    timeline:"٣–١٢ شهراً", outcome:"دليل أثر مهني قابل للتنفيذ" },
+  { ic:"refresh-cw", ar:"التحسين المستمر", en:"Continuous Improvement",
+    desc:"نطوّر إصدارات محسّنة وخارطة سنوية معتمدة تُغذّي مرحلة رصد الاحتياج في دورة جديدة.",
+    in:["مخرجات مرحلتي التقييم وقياس الأثر","اتجاهات السوق والتقنيات المستجدة","بيانات أداء المنصات الرقمية","ملاحظات الشركاء والمدربين"],
+    act:["تطوير المحتوى وفق التغذية الراجعة","تحسين أساليب التدريب والتنفيذ","تحديث البرامج وفق المستجدات","مراجعة الأهداف والمسارات التدريبية"],
+    out:["إصدارات محسّنة من البرامج","خارطة تطوير سنوية معتمدة","تغذية مرحلة رصد الاحتياج لدورة جديدة"],
+    timeline:"دورة سنوية", outcome:"حلقة تحسين مغلقة ومستدامة" },
+];
+
+const SHARED = [
+  { code:"P2.1.01", ic:"database", t:"أساسيات البيانات للذكاء الاصطناعي والتحليلات", h:15 },
+  { code:"P2.1.02", ic:"cpu", t:"أساسيات تعلّم الآلة التطبيقي", h:15 },
+  { code:"P2.1.03", ic:"list-checks", t:"تقييم النماذج والتحقّق منها", h:12 },
+  { code:"P7.1.01", ic:"badge-check", t:"الذكاء الاصطناعي المسؤول وحوكمة البيانات", h:12 },
+  { code:"P2.1.04", ic:"megaphone", t:"تأطير المشكلات والتواصل", h:10 },
+];
+
+const TRACKS = [
+  { cls:"brand", ic:"cpu", ar:"مهندس الذكاء الاصطناعي", en:"AI Engineer Track",
+    cert:"شهادة مهندس الذكاء الاصطناعي المهنية", certH:"١٨٨ ساعة · مستوى خبير",
+    bridge:"+ ١٢٤ ساعة فقط للعبور إلى مسار عالِم البيانات",
+    mods:[
+      { ic:"layers", t:"التعلّم العميق والنماذج الأساسية", h:15 },
+      { ic:"search-check", t:"أنظمة التوليد المعزّز بالاسترجاع RAG", h:15 },
+      { ic:"sparkles", t:"الذكاء الوكيلي وهندسة تطبيقات LLM", h:15 },
+      { ic:"workflow", t:"هندسة برمجيات الذكاء الاصطناعي والتكامل", h:15 },
+      { ic:"settings", t:"MLOps وLLMOps: النشر ودورة حياة النموذج", h:14 },
+      { ic:"radar", t:"المراقبة والموثوقية والاستجابة للحوادث", h:10 },
+      { ic:"trending-up", t:"الأداء وقابلية التوسّع وتحسين التكلفة", h:12 },
+      { ic:"shield", t:"أمن الذكاء الاصطناعي والنماذج اللغوية", h:13 },
+    ],
+    cap:{ ic:"graduation-cap", t:"مشروع التخرّج: أنظمة توليدية إنتاجية", h:15 } },
+  { cls:"teal", ic:"database", ar:"عالِم البيانات", en:"Data Scientist Track",
+    cert:"شهادة عالِم البيانات المهنية", certH:"١٦٥ ساعة · مستوى خبير",
+    bridge:"+ ١٠١ ساعة فقط للعبور إلى مسار مهندس الذكاء الاصطناعي",
+    mods:[
+      { ic:"bar-chart-3", t:"الأسس الإحصائية والاستدلال لعلم البيانات", h:15 },
+      { ic:"workflow", t:"هندسة البيانات للتحليلات واسعة النطاق", h:14 },
+      { ic:"cpu", t:"تعلّم الآلة التطبيقي للأنظمة الذكية", h:15 },
+      { ic:"target", t:"التجريب والاستدلال السببي", h:15 },
+      { ic:"trending-up", t:"تصوير البيانات والرؤى ورواية البيانات", h:15 },
+      { ic:"refresh-cw", t:"علم البيانات القابل للتكرار والمعزّز بالذكاء التوليدي", h:12 },
+    ],
+    cap:{ ic:"graduation-cap", t:"مشروع التخرّج: من السؤال إلى القرار", h:15 } },
+];
+
+/* ======================= HELPERS ======================= */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const AR = n => n.toLocaleString('ar-EG');
+
+/* ======================= STEPPER RAIL ======================= */
+const rail = $("#stepperRail");
+STEPS.forEach((s,i)=>{
+  if(i>0){ const ln=document.createElement("span"); ln.className="h-px w-8 sm:w-12 bg-[var(--line)] shrink-0"; rail.appendChild(ln); }
+  const b=document.createElement("button");
+  b.className="dot group shrink-0 flex flex-col items-center gap-2 px-1";
+  b.dataset.i=i;
+  b.innerHTML=`
+    <span class="num grid place-items-center w-11 h-11 rounded-full border-2 bd paper font-bold text-sm muted transition-all">${AR(i+1)}</span>
+    <span class="lbl text-[11px] font-medium muted max-w-[72px] text-center leading-tight transition-colors">${s.ar}</span>`;
+  b.addEventListener("click",()=>focusStep(i,true));
+  rail.appendChild(b);
+});
+
+/* ======================= STEP CARDS ======================= */
+const wrap = $("#stepCards");
+STEPS.forEach((s,i)=>{
+  const card=document.createElement("article");
+  card.className="step-card reveal paper border bd rounded-2xl shadow-card overflow-hidden";
+  card.dataset.i=i;
+  const model = s.model ? `
+    <div class="mt-4 flex flex-wrap items-center gap-1.5">
+      <span class="text-xs font-semibold text-brand-600 ml-1">نموذج ${s.model.name}:</span>
+      ${s.model.steps.map((x,k)=>`<span class="inline-flex items-center gap-1.5">
+        <span class="text-xs px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 font-medium">${x}</span>
+        ${k<s.model.steps.length-1?'<i data-lucide="chevron-left" class="w-3 h-3 muted"></i>':''}</span>`).join("")}
+    </div>` : "";
+
+  card.innerHTML=`
+    <button class="head w-full text-right p-6 flex items-start gap-4 hover:bg-[var(--ring)]/40 transition-colors">
+      <span class="shrink-0 grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500/10 to-teal-500/10 text-brand-600 ring-1 ring-inset ring-brand-500/20">
+        <i data-lucide="${s.ic}" class="w-6 h-6"></i>
+      </span>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-white bg-brand-600 rounded-full w-6 h-6 grid place-items-center shrink-0">${AR(i+1)}</span>
+          <h3 class="font-bold text-lg ink truncate">${s.ar}</h3>
+          <span class="text-xs muted hidden sm:inline">· ${s.en}</span>
+        </div>
+        <p class="mt-1.5 text-sm muted leading-relaxed">${s.desc}</p>
+      </div>
+      <i data-lucide="chevron-down" class="chev w-5 h-5 muted shrink-0 mt-1"></i>
+    </button>
+    <div class="panel"><div><div class="px-6 pb-6 pt-1">
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="rounded-xl border bd p-4">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="inbox" class="w-4 h-4 text-brand-600"></i><span class="font-semibold text-sm ink">المدخلات</span></div>
+          <ul class="space-y-2 text-[13px] muted leading-relaxed">${s.in.map(x=>`<li class="io-item io-in">${x}</li>`).join("")}</ul>
+        </div>
+        <div class="rounded-xl border bd p-4">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="activity" class="w-4 h-4 text-teal-600"></i><span class="font-semibold text-sm ink">الأنشطة</span></div>
+          <ul class="space-y-2 text-[13px] muted leading-relaxed">${s.act.map(x=>`<li class="io-item io-act">${x}</li>`).join("")}</ul>
+        </div>
+        <div class="rounded-xl border bd p-4">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="package-check" class="w-4 h-4 text-violet-500"></i><span class="font-semibold text-sm ink">المخرجات</span></div>
+          <ul class="space-y-2 text-[13px] muted leading-relaxed">${s.out.map(x=>`<li class="io-item io-out">${x}</li>`).join("")}</ul>
+        </div>
+      </div>
+      ${model}
+      <div class="mt-4 grid sm:grid-cols-2 gap-3">
+        <div class="flex items-center gap-3 rounded-xl bg-[var(--ring)]/60 p-3.5">
+          <i data-lucide="calendar-check" class="w-5 h-5 text-brand-600 shrink-0"></i>
+          <div><div class="text-[11px] muted">المدة التقديرية</div><div class="text-sm font-semibold ink">${s.timeline}</div></div>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl bg-[var(--ring)]/60 p-3.5">
+          <i data-lucide="flag" class="w-5 h-5 text-teal-600 shrink-0"></i>
+          <div><div class="text-[11px] muted">المحصّلة</div><div class="text-sm font-semibold ink">${s.outcome}</div></div>
+        </div>
+      </div>
+    </div></div></div>`;
+  $(".head",card).addEventListener("click",()=>toggleStep(i));
+  wrap.appendChild(card);
+});
+
+/* ======================= STEP STATE ======================= */
+const cards = $$(".step-card");
+const dots = $$("#stepperRail .dot");
+let openIdx = -1;
+const seen = new Set();
+
+function paintRail(active){
+  dots.forEach((d,i)=>{
+    const num=$(".num",d), lbl=$(".lbl",d);
+    const done = i<active, on = i===active;
+    num.className="num grid place-items-center w-11 h-11 rounded-full border-2 font-bold text-sm transition-all "+
+      (on ? "bg-brand-600 border-brand-600 text-white scale-110 shadow-card"
+          : done ? "bg-teal-600 border-teal-600 text-white"
+          : "bd paper muted");
+    lbl.style.color = (on||done) ? "var(--ink)" : "var(--muted)";
+  });
+}
+function toggleStep(i){
+  const card=cards[i], isOpen=card.classList.contains("open");
+  if(isOpen){ card.classList.remove("open"); openIdx=-1; return; }
+  cards.forEach(c=>c.classList.remove("open"));
+  card.classList.add("open"); openIdx=i;
+  paintRail(i); updateNav(i);
+  seen.add(i); updateRing();
+}
+function focusStep(i,open){
+  if(open) toggleStep(i);
+  cards[i].scrollIntoView({behavior:"smooth",block:"center"});
+  paintRail(i); updateNav(i);
+}
+function updateNav(i){
+  $("#prevStep").disabled = i<=0;
+  $("#nextStep").disabled = i>=STEPS.length-1;
+  $("#stepCounter").textContent = `المرحلة ${AR(i+1)} من ${AR(STEPS.length)}`;
+}
+$("#nextStep").addEventListener("click",()=>{ const t=(openIdx<0?0:Math.min(openIdx+1,STEPS.length-1)); if(!cards[t].classList.contains("open"))toggleStep(t); cards[t].scrollIntoView({behavior:"smooth",block:"center"}); });
+$("#prevStep").addEventListener("click",()=>{ const t=(openIdx<0?0:Math.max(openIdx-1,0)); if(!cards[t].classList.contains("open"))toggleStep(t); cards[t].scrollIntoView({behavior:"smooth",block:"center"}); });
+updateNav(0);
+
+/* progress ring = % stages opened */
+const CIRC=97.4;
+function updateRing(){
+  const pct=Math.round(seen.size/STEPS.length*100);
+  $("#ringProg").style.strokeDashoffset = CIRC*(1-pct/100);
+  $("#ringPct").textContent = AR(pct)+"٪";
+}
+
+/* ======================= TRACKS RENDER ======================= */
+const modChip = (m,accent)=>`
+  <div class="group flex items-center gap-3 rounded-xl border bd p-3 hover:shadow-card hover:-translate-y-0.5 transition">
+    <span class="grid place-items-center w-9 h-9 rounded-lg ${accent} shrink-0"><i data-lucide="${m.ic}" class="w-4 h-4"></i></span>
+    <div class="min-w-0 flex-1"><div class="text-[13px] font-medium ink leading-snug">${m.t}</div>
+      <div class="text-[11px] muted mt-0.5">${m.code?m.code+" · ":""}${AR(m.h)} ساعة</div></div>
+  </div>`;
+
+$("#sharedMods").innerHTML = SHARED.map(m=>modChip(m,"bg-brand-50 dark:bg-brand-950/60 text-brand-600")).join("");
+
+$("#trackCards").innerHTML = TRACKS.map(tr=>{
+  const isBrand = tr.cls==="brand";
+  const accent = isBrand ? "bg-brand-50 dark:bg-brand-950/60 text-brand-600" : "bg-teal-50 dark:bg-teal-700/20 text-teal-600";
+  const grad = isBrand ? "from-brand-600 to-brand-800" : "from-teal-600 to-teal-700";
+  const totalH = tr.mods.reduce((a,m)=>a+m.h,0)+tr.cap.h;
+  return `
+  <div class="reveal paper border bd rounded-2xl shadow-card overflow-hidden flex flex-col">
+    <div class="bg-gradient-to-br ${grad} text-white p-6">
+      <div class="flex items-center gap-3">
+        <span class="grid place-items-center w-11 h-11 rounded-xl bg-white/15"><i data-lucide="${tr.ic}" class="w-5 h-5"></i></span>
+        <div><h3 class="font-bold text-lg">${tr.ar}</h3><p class="text-xs text-white/70">${tr.en}</p></div>
+      </div>
+      <div class="mt-4 flex items-center gap-2 text-sm"><i data-lucide="award" class="w-4 h-4"></i><span class="font-medium">${tr.cert}</span></div>
+      <div class="mt-1 text-xs text-white/70">${tr.certH}</div>
+    </div>
+    <div class="p-5 grid gap-3 flex-1">${tr.mods.map(m=>modChip(m,accent)).join("")}</div>
+    <div class="px-5 pb-5 grid gap-3">
+      <div class="flex items-center gap-3 rounded-xl border-2 border-dashed bd p-3">
+        <span class="grid place-items-center w-9 h-9 rounded-lg ${accent} shrink-0"><i data-lucide="${tr.cap.ic}" class="w-4 h-4"></i></span>
+        <div class="min-w-0 flex-1"><div class="text-[13px] font-semibold ink leading-snug">${tr.cap.t}</div>
+          <div class="text-[11px] muted mt-0.5">مشروع تخرّج · ${AR(tr.cap.h)} ساعة</div></div>
+      </div>
+      <div class="flex items-center gap-2 rounded-xl ${accent} p-3 text-xs font-medium">
+        <i data-lucide="git-branch" class="w-4 h-4 shrink-0"></i><span>${tr.bridge}</span>
+      </div>
+    </div>
+  </div>`;
+}).join("");
+
+/* ======================= THEME ======================= */
+const root=document.documentElement, tIcon=$("#themeIcon");
+function setTheme(dark){
+  root.classList.toggle("dark",dark);
+  tIcon.setAttribute("data-lucide",dark?"sun":"moon");
+  lucide.createIcons();
+}
+let dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+$("#themeToggle").addEventListener("click",()=>{ dark=!dark; setTheme(dark); });
+setTheme(dark);
+
+/* ======================= REVEAL ON SCROLL ======================= */
+const io=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target);} }); },{threshold:.12});
+$$(".reveal").forEach(el=>io.observe(el));
+
+/* ======================= COUNT-UP ======================= */
+const cio=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(!e.isIntersecting)return; const el=e.target,to=+el.dataset.count; let n=0; const step=Math.max(1,Math.round(to/40));
+  const t=setInterval(()=>{ n+=step; if(n>=to){n=to;clearInterval(t);} el.textContent=AR(n); },28); cio.unobserve(el); }); },{threshold:.6});
+$$("[data-count]").forEach(el=>cio.observe(el));
+
+/* ======================= SCROLL PROGRESS + NAV + TOP ======================= */
+const prog=$("#scrollProg"), toTop=$("#toTop"), navlinks=$$(".navlink"), secs=["hero","lifecycle","tracks","impact"];
+window.addEventListener("scroll",()=>{
+  const h=document.documentElement, sc=h.scrollTop/(h.scrollHeight-h.clientHeight);
+  prog.style.width=(sc*100)+"%";
+  toTop.classList.toggle("opacity-0",h.scrollTop<400);
+  toTop.classList.toggle("pointer-events-none",h.scrollTop<400);
+  toTop.classList.toggle("translate-y-3",h.scrollTop<400);
+  let cur=secs[0];
+  for(const id of secs){ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<=140) cur=id; }
+  navlinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+cur));
+},{passive:true});
+$("#toTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+/* ======================= INIT ICONS ======================= */
+lucide.createIcons();
+</script>
+</body>
+</html>
