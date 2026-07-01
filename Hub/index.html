@@ -3,107 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>أكاديمية سدايا · دورة حياة البرامج</title>
-  <meta name="description" content="عرض تنفيذي متدرّج محوره دورة حياة البرامج التدريبية لأكاديمية سدايا." />
+  <title>أكاديمية سدايا · النموذج التشغيلي — عرض تنفيذي</title>
+  <meta name="description" content="عرض تنفيذي تفاعلي للنموذج التشغيلي لأكاديمية سدايا: دورة حياة البرامج التدريبية بسبع مراحل، ومساران مهنيان مبنيان على الإطار الوطني للمؤهلات." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/academy-icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="brand">
-      <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
-      <span class="t">أكاديمية سدايا<small>النموذج التشغيلي · LearningTree</small></span>
+  <!-- مؤشر التقدّم -->
+  <div class="scroll-prog" id="scrollProg"></div>
+
+  <!-- ============ الشريط العلوي ============ -->
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__mark"><img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" /></span>
+        <span>
+          <b>أكاديمية سدايا</b>
+          <small>النموذج التشغيلي · LearningTree</small>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="التنقل الرئيسي">
+        <a href="#hero">الرئيسية</a>
+        <a href="#lifecycle">دورة الحياة</a>
+        <a href="#tracks">المسارات</a>
+        <a href="#support">الفعاليات</a>
+        <a href="#impact">الأثر</a>
+      </nav>
+
+      <div class="nav__tools">
+        <div class="nav__ring" title="نسبة استعراض المراحل">
+          <svg width="44" height="44" viewBox="0 0 44 44" style="transform:rotate(-90deg)">
+            <circle cx="22" cy="22" r="18" fill="none" stroke="var(--line)" stroke-width="3.5"></circle>
+            <circle id="ringProg" cx="22" cy="22" r="18" fill="none" stroke="url(#rg)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="113" stroke-dashoffset="113"></circle>
+            <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c6fb4"/><stop offset="1" stop-color="#12a08a"/></linearGradient></defs>
+          </svg>
+          <span id="ringPct">0٪</span>
+        </div>
+        <button class="icon-btn" id="themeToggle" aria-label="تبديل المظهر"><span data-icon="moon"></span></button>
+      </div>
     </div>
-    <button class="back" id="backBtn" type="button">
-      <span data-icon="chevron-left"></span> الرئيسية
-    </button>
   </header>
 
-  <main class="app">
-    <!-- الشاشة الرئيسية -->
-    <section class="screen home active anim" id="home">
-      <img class="home__logo" src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
-      <h1>أكاديمية سدايا</h1>
-      <p>اختر المحور للانتقال إليه</p>
-      <div class="home__tiles">
-        <button class="tile lc" id="goLifecycle" type="button">
-          <span class="tile__ic" id="lcIcon"></span>
-          <h3>دورة حياة البرامج</h3>
-          <p>سبع مراحل متكاملة مع تفرّع الممكّنات</p>
-          <span class="go">افتح <span data-icon="chevron-left"></span></span>
-        </button>
-        <button class="tile tr" id="goTracks" type="button">
-          <span class="tile__ic" id="trIcon"></span>
-          <h3>مسارات التدريب</h3>
-          <p>مهندس الذكاء الاصطناعي · عالم البيانات</p>
-          <span class="go">استعرض <span data-icon="chevron-left"></span></span>
-        </button>
+  <!-- ============ الهيرو ============ -->
+  <section class="hero mesh" id="hero">
+    <div class="grid-faint"></div>
+    <div class="wrap">
+      <div class="hero__logos reveal">
+        <img class="invertable" src="assets/logos/sdaia.png" alt="الهيئة السعودية للبيانات والذكاء الاصطناعي" />
+        <span class="hero__sep"></span>
+        <img src="assets/academy-icon.png" alt="أكاديمية سدايا" style="height:clamp(48px,6vw,70px)" />
       </div>
-      <div class="home__stats" aria-label="أبرز الأرقام">
-        <div class="hs"><span class="hs__ic" data-icon="refresh-cw"></span><b>٧</b><span>مراحل دورة الحياة</span></div>
-        <div class="hs"><span class="hs__ic" data-icon="blocks"></span><b>٢٢</b><span>وحدة تدريبية مكدّسة</span></div>
-        <div class="hs"><span class="hs__ic" data-icon="award"></span><b>٢</b><span>شهادتان مهنيتان</span></div>
-        <div class="hs"><span class="hs__ic" data-icon="badge-check"></span><b>١٠٠٪</b><span>تغطية الجدارات</span></div>
-      </div>
-    </section>
 
-    <!-- شاشة مسارات التدريب -->
-    <section class="screen" id="tracks">
-      <div class="s-head">
-        <span class="ey"><span data-icon="blocks"></span> Modular · Stackable</span>
-        <h2>المسارات التدريبية</h2>
-        <p>أساس مشترك واحد يتفرّع إلى مسارَي مهندس الذكاء الاصطناعي وعالِم البيانات — ٢٢ وحدة مكدّسة قابلة للتركيب، كل وحدة تمنح شارة دقيقة تتجمّع في شهادات متداخلة.</p>
-      </div>
-      <div id="trackList"></div>
-    </section>
-  </main>
+      <div class="hero__center">
+        <span class="hero__badge reveal d1"><span class="dot"></span> الهيئة السعودية للبيانات والذكاء الاصطناعي — أكاديمية سدايا</span>
+        <h1 class="reveal d1">النموذج التشغيلي لأكاديمية سدايا<br><span class="grad-text">من رصد الاحتياج إلى الأثر المهني</span></h1>
+        <p class="hero__sub reveal d2">إطار متكامل من سبع مراحل لدورة حياة البرامج التدريبية، يتفرّع إلى مسارَين مهنيين مبنيَّين على الإطار الوطني للمؤهلات، بثنتين وعشرين وحدة مكدَّسة قابلة للتركيب.</p>
 
-  <!-- النافذة المنبثقة بملء الشاشة — دورة الحياة -->
-  <div class="overlay" id="lcOverlay" role="dialog" aria-modal="true" aria-label="دورة حياة البرامج">
-    <div class="ov-head">
-      <div class="ttl">
-        <img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" />
-        <div><b>دورة حياة البرامج</b> <span>المسار التشغيلي</span></div>
-      </div>
-      <button class="ov-back" id="ovToOverview" type="button"><span data-icon="layers"></span> كل المراحل</button>
-      <span class="ov-count" id="ovCount"></span>
-      <button class="ov-close" id="ovClose" type="button" aria-label="إغلاق"><span data-icon="x"></span></button>
-    </div>
-
-    <!-- شاشة المقدمة: المراحل السبع -->
-    <div class="lc-overview show" id="lcOverview">
-      <div class="lco-head">
-        <span class="lco-ey"><span data-icon="refresh-cw"></span> المسار التشغيلي المتكامل</span>
-        <h2>دورة حياة البرامج التدريبية</h2>
-        <p>سبع مراحل متتابعة — من رصد الاحتياج حتى التحسين المستمر. اضغط على أي مرحلة لعرض تفاصيلها.</p>
-      </div>
-      <div class="lco-grid"></div>
-    </div>
-
-    <!-- شاشة التفاصيل -->
-    <div class="lc-detail" id="lcDetail">
-      <div class="rail" id="rail"></div>
-      <div class="lc-stage" id="lcStage">
-        <div class="stage-grid">
-          <div class="node" id="node"></div>
-          <div id="stageContent"></div>
+        <div class="hero__cta reveal d3">
+          <a href="#lifecycle" class="btn btn--primary">ابدأ العرض <span data-icon="arrow-left"></span></a>
+          <a href="#tracks" class="btn btn--ghost">المسارات المهنية <span data-icon="route"></span></a>
         </div>
       </div>
-      <div class="ov-nav">
-        <button id="prevBtn" type="button"><span data-icon="chevron-right"></span> السابق</button>
-        <span class="count" id="count"></span>
-        <button id="nextBtn" class="primary" type="button">التالي <span data-icon="chevron-left"></span></button>
+    </div>
+  </section>
+
+  <!-- ============ دورة حياة البرامج ============ -->
+  <section class="section section--soft" id="lifecycle">
+    <div class="wrap">
+      <div class="s-head reveal">
+        <span class="eyebrow"><span data-icon="refresh-cw"></span> المسار التشغيلي المتكامل</span>
+        <h2>دورة حياة البرامج التدريبية</h2>
+        <p>سبع مراحل متتابعة من رصد الاحتياج حتى التحسين المستمر. اضغط على أي بطاقة لقلبها واستعراض مكوّناتها، أو تنقّل عبر شريط المراحل والأزرار.</p>
+      </div>
+
+      <!-- شريط المراحل -->
+      <div class="stepper reveal d1">
+        <div class="stepper__in" id="stepperRail"></div>
+      </div>
+
+      <!-- لوحة تفاصيل المرحلة المحددة -->
+      <div class="stage-panel reveal d1" id="stagePanel">
+        <div class="stage-node" id="stageNode"></div>
+        <div class="stage-body">
+          <div class="stage-flow" id="stageFlow"></div>
+          <div class="stage-meta" id="stageMeta"></div>
+        </div>
+      </div>
+
+      <!-- تنقّل المراحل -->
+      <div class="lc-nav reveal">
+        <button class="nav-btn" id="prevStage"><span data-icon="chevron-right"></span> المرحلة السابقة</button>
+        <span class="lc-nav__c" id="stageCounter"></span>
+        <button class="nav-btn nav-btn--primary" id="nextStage">المرحلة التالية <span data-icon="chevron-left"></span></button>
+      </div>
+
+      <div class="cycle-note reveal"><span data-icon="refresh-cw"></span> دورة مغلقة: مخرجات التحسين المستمر تُغذّي رصد الاحتياج في الدورة التالية</div>
+    </div>
+  </section>
+
+  <!-- ============ المسارات التدريبية ============ -->
+  <section class="section mesh" id="tracks">
+    <div class="grid-faint"></div>
+    <div class="wrap">
+      <div class="s-head reveal">
+        <span class="eyebrow is-teal"><span data-icon="blocks"></span> Modular · Stackable</span>
+        <h2>المسارات المهنية</h2>
+        <p>الإطار الوطني للمؤهلات هو نقطة الدخول التي تنطلق منها المسارات: أساس مشترك واحد يتفرّع إلى مسارَي مهندس الذكاء الاصطناعي وعالِم البيانات.</p>
+      </div>
+
+      <!-- بوابة الإطار الوطني للمؤهلات -->
+      <div class="nqf reveal d1">
+        <div class="grid-faint" style="opacity:.25"></div>
+        <div class="nqf__inner">
+          <span class="nqf__badge"><span data-icon="landmark"></span> نقطة الدخول الرئيسية</span>
+          <h3>الإطار الوطني للمؤهلات</h3>
+          <p class="nqf__lead">مرجعية وطنية موحّدة تُبنى عليها جميع البرامج: تحدّد مستويات المؤهلات ومخرجات التعلّم والجدارات المستهدفة، فتضمن أن كل وحدة وشارة وشهادة تصدر عن الأكاديمية معترف بها ومواءَمة للمعايير الوطنية.</p>
+          <div class="nqf__grid" id="nqfGrid"></div>
+        </div>
+      </div>
+      <div class="nqf__flow-down"><span data-icon="chevron-down"></span></div>
+
+      <!-- شرح المفهوم -->
+      <div class="legend reveal d1">
+        <div class="legend__c mod"><span data-icon="blocks"></span><span><b>Modular</b> — كل وحدة ١٠–١٥ ساعة تُمثّل شارة دقيقة مستقلّة قابلة للاعتماد.</span></div>
+        <div class="legend__c stk"><span data-icon="layers"></span><span><b>Stackable</b> — الشارات تتجمّع في شهادات متداخلة، والأساس المشترك يُحتسب مرّة واحدة.</span></div>
+      </div>
+
+      <!-- الأساس المشترك -->
+      <div class="layer layer--foundation reveal d1">
+        <div class="layer__head">
+          <span class="layer__tag">الطبقة ١</span>
+          <span class="layer__ic"><span data-icon="book-open"></span></span>
+          <div><h3>الأساس المشترك <span>Shared Foundation Core</span></h3></div>
+          <span class="layer__pill">٥ وحدات · ٦٤ ساعة · يُؤخذ مرّة واحدة لكلا المسارين</span>
+        </div>
+        <div class="mods" id="sharedMods"></div>
+      </div>
+
+      <!-- التفرّع -->
+      <div class="split reveal">
+        <span class="split__line"></span>
+        <span class="split__tag"><span data-icon="git-branch"></span> يتفرّع إلى مسارين تخصّصيين</span>
+      </div>
+
+      <!-- المساران -->
+      <div class="tracks reveal d1" id="trackList"></div>
+
+      <!-- التكديس + الجسر -->
+      <div class="stack-bridge">
+        <div class="panel-card reveal d1">
+          <div class="panel-card__h"><span class="layer__ic alt"><span data-icon="package"></span></span><h3>تكدّس الشارات في شهادات متداخلة</h3></div>
+          <div class="nest">
+            <div class="nest-core"><span data-icon="book-open"></span> شهادة الأساسيات <small>٦٤ ساعة</small></div>
+            <div class="nest-wrap nest-ai"><span class="nest-wrap__lbl"><span data-icon="cpu"></span> مهندس الذكاء الاصطناعي</span><span class="nest-add">+ AE‑1…8 + التخرّج · ١٨٨ ساعة</span></div>
+            <div class="nest-wrap nest-ds"><span class="nest-wrap__lbl"><span data-icon="database"></span> عالِم البيانات</span><span class="nest-add">+ DS‑1…6 + التخرّج · ١٦٥ ساعة</span></div>
+          </div>
+        </div>
+        <div class="panel-card reveal d2">
+          <div class="panel-card__h"><span class="layer__ic alt2"><span data-icon="refresh-cw"></span></span><h3>جسر التحويل بين الدورين</h3></div>
+          <div class="brg brg-ds2ai"><span data-icon="database"></span><b>عالِم بيانات</b><span class="ic arrow" data-icon="arrow-left"></span><span data-icon="cpu"></span><b>مهندس ذكاء اصطناعي</b><span class="brg__add">+ ١٢٤ ساعة</span></div>
+          <div class="brg brg-ai2ds"><span data-icon="cpu"></span><b>مهندس ذكاء اصطناعي</b><span class="ic arrow" data-icon="arrow-left"></span><span data-icon="database"></span><b>عالِم بيانات</b><span class="brg__add">+ ١٠١ ساعة</span></div>
+          <p class="brg-note">الأساس المشترك (٦٤ ساعة) لا يُعاد احتسابه عند نيل الشهادة الثانية.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- ============ الفعاليات الداعمة ============ -->
+  <section class="section section--soft" id="support">
+    <div class="wrap">
+      <div class="s-head reveal">
+        <span class="eyebrow is-gold"><span data-icon="megaphone"></span> عناصر داعمة للتعلّم</span>
+        <h2>ندوات وفعاليات مواءَمة للسوق</h2>
+        <p>عناصر إثرائية ترافق المسارات وتربط المتدرّب بواقع السوق السعودي: ندوات وويبينار مع خبراء من الجهات والشركات المحلية، ومشاريع تخرّج مستمدّة من احتياجات فعلية.</p>
+      </div>
+
+      <div class="support reveal d1" id="supportGrid"></div>
+
+      <div class="market-note reveal d1">
+        <span class="market-note__ic"><span data-icon="target"></span></span>
+        <div>
+          <b>مشاريع التخرّج مستمدّة من احتياجات السوق السعودي</b>
+          <p>يُبنى كل مشروع تخرّج على تحدٍّ حقيقي مرصود من الجهات الحكومية وأذرع سدايا والشركات المحلية، فيتحوّل التقييم النهائي إلى حلٍّ قابل للتطبيق يخدم أولويات السوق ورؤية المملكة ٢٠٣٠.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ الأثر ============ -->
+  <section class="section" id="impact">
+    <div class="wrap">
+      <div class="impact-card reveal">
+        <div class="grid-faint" style="opacity:.2"></div>
+        <div class="impact-card__in">
+          <h2>من رصد الاحتياج إلى الأثر المهني</h2>
+          <p class="impact-card__lead">دورة مغلقة تُغذّي نفسها: تقارير الأثر بعد ٣ و٦ و١٢ شهراً تعود لتشكّل خارطة التطوير السنوية ومرحلة رصد الاحتياج في الدورة التالية.</p>
+          <div class="impact-grid">
+            <div class="icard"><span class="icard__ic" data-icon="target"></span><b>قياس مباشر</b><p>رضا المتدربين عبر مؤشر صافي الترشيح NPS واختبارات قبلية وبعدية.</p></div>
+            <div class="icard"><span class="icard__ic" data-icon="trending-up"></span><b>أثر مهني</b><p>تتبّع تطبيق المهارات في بيئة العمل والمسار المهني للخريجين.</p></div>
+            <div class="icard"><span class="icard__ic" data-icon="refresh-cw"></span><b>تحسين مستمر</b><p>إصدارات محسّنة وخارطة تطوير سنوية معتمدة تُغلق الحلقة.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ التذييل ============ -->
   <footer class="footer">
-    الهيئة السعودية للبيانات والذكاء الاصطناعي — أكاديمية سدايا · دورة حياة البرامج التدريبية
+    <div class="wrap footer__in">
+      <div class="footer__brand">
+        <img class="invertable" src="assets/logos/sdaia.png" alt="سدايا" />
+        <div>
+          <b>أكاديمية سدايا</b>
+          <span>الهيئة السعودية للبيانات والذكاء الاصطناعي</span>
+        </div>
+      </div>
+      <div class="footer__logos">
+        <img src="assets/logos/ncai.png" alt="المركز الوطني للذكاء الاصطناعي" />
+        <img src="assets/logos/nic.png" alt="المركز الوطني للمعلومات" />
+        <img src="assets/logos/ndmo.png" alt="مكتب إدارة البيانات الوطنية" />
+      </div>
+      <p class="footer__note">النموذج التشغيلي · دورة حياة البرامج التدريبية — LearningTree</p>
+    </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <button class="to-top" id="toTop" aria-label="العودة للأعلى"><span data-icon="arrow-up"></span></button>
+
+  <script src="js/app.js" defer></script>
 </body>
 </html>
