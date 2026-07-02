@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>أكاديمية سدايا · النموذج التشغيلي — عرض تنفيذي</title>
-  <meta name="description" content="عرض تنفيذي تفاعلي للنموذج التشغيلي لأكاديمية سدايا: دورة حياة البرامج التدريبية بسبع مراحل، ومساران مهنيان مبنيان على الإطار الوطني للمؤهلات." />
+  <meta name="description" content="عرض تنفيذي تفاعلي للنموذج التشغيلي لأكاديمية سدايا: دورة حياة البرامج التدريبية بسبع مراحل، ومساران مهنيان مبنيان على الإطار الوطني للمعايير المهنية للبيانات والذكاء الاصطناعي." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,11 +21,7 @@
   <header class="nav">
     <div class="wrap nav__in">
       <a href="#hero" class="nav__brand">
-        <span class="nav__mark"><img src="assets/academy-icon.png" alt="شعار أكاديمية سدايا" /></span>
-        <span>
-          <b>أكاديمية سدايا</b>
-          <small>النموذج التشغيلي · LearningTree</small>
-        </span>
+        <img class="nav__logo invertable" src="assets/logos/academy-full.png" alt="أكاديمية سدايا — SDAIA Academy" />
       </a>
 
       <nav class="nav__links" aria-label="التنقل الرئيسي">
@@ -33,7 +29,6 @@
         <a href="#lifecycle">دورة الحياة</a>
         <a href="#tracks">المسارات</a>
         <a href="#support">الفعاليات</a>
-        <a href="#impact">الأثر</a>
       </nav>
 
       <div class="nav__tools">
@@ -57,13 +52,12 @@
       <div class="hero__logos reveal">
         <img class="invertable" src="assets/logos/sdaia.png" alt="الهيئة السعودية للبيانات والذكاء الاصطناعي" />
         <span class="hero__sep"></span>
-        <img src="assets/academy-icon.png" alt="أكاديمية سدايا" style="height:clamp(48px,6vw,70px)" />
+        <img class="invertable" src="assets/logos/academy-full.png" alt="أكاديمية سدايا — SDAIA Academy" style="height:clamp(52px,7vw,78px)" />
       </div>
 
       <div class="hero__center">
         <span class="hero__badge reveal d1"><span class="dot"></span> الهيئة السعودية للبيانات والذكاء الاصطناعي — أكاديمية سدايا</span>
-        <h1 class="reveal d1">النموذج التشغيلي لأكاديمية سدايا<br><span class="grad-text">من رصد الاحتياج إلى الأثر المهني</span></h1>
-        <p class="hero__sub reveal d2">إطار متكامل من سبع مراحل لدورة حياة البرامج التدريبية، يتفرّع إلى مسارَين مهنيين مبنيَّين على الإطار الوطني للمؤهلات، بثنتين وعشرين وحدة مكدَّسة قابلة للتركيب.</p>
+        <h1 class="reveal d1">النموذج التشغيلي لأكاديمية سدايا</h1>
 
         <div class="hero__cta reveal d3">
           <a href="#lifecycle" class="btn btn--primary">ابدأ العرض <span data-icon="arrow-left"></span></a>
@@ -92,7 +86,6 @@
         <div class="stage-node" id="stageNode"></div>
         <div class="stage-body">
           <div class="stage-flow" id="stageFlow"></div>
-          <div class="stage-meta" id="stageMeta"></div>
         </div>
       </div>
 
@@ -114,20 +107,8 @@
       <div class="s-head reveal">
         <span class="eyebrow is-teal"><span data-icon="blocks"></span> Modular · Stackable</span>
         <h2>المسارات المهنية</h2>
-        <p>الإطار الوطني للمؤهلات هو نقطة الدخول التي تنطلق منها المسارات: أساس مشترك واحد يتفرّع إلى مسارَي مهندس الذكاء الاصطناعي وعالِم البيانات.</p>
+        <p>مساران مهنيان مبنيان على الإطار الوطني للمعايير المهنية للبيانات والذكاء الاصطناعي: أساس مشترك واحد يتفرّع إلى مسارَي مهندس الذكاء الاصطناعي وعالِم البيانات.</p>
       </div>
-
-      <!-- بوابة الإطار الوطني للمؤهلات -->
-      <div class="nqf reveal d1">
-        <div class="grid-faint" style="opacity:.25"></div>
-        <div class="nqf__inner">
-          <span class="nqf__badge"><span data-icon="landmark"></span> نقطة الدخول الرئيسية</span>
-          <h3>الإطار الوطني للمؤهلات</h3>
-          <p class="nqf__lead">مرجعية وطنية موحّدة تُبنى عليها جميع البرامج: تحدّد مستويات المؤهلات ومخرجات التعلّم والجدارات المستهدفة، فتضمن أن كل وحدة وشارة وشهادة تصدر عن الأكاديمية معترف بها ومواءَمة للمعايير الوطنية.</p>
-          <div class="nqf__grid" id="nqfGrid"></div>
-        </div>
-      </div>
-      <div class="nqf__flow-down"><span data-icon="chevron-down"></span></div>
 
       <!-- شرح المفهوم -->
       <div class="legend reveal d1">
@@ -191,24 +172,6 @@
         <div>
           <b>مشاريع التخرّج مستمدّة من احتياجات السوق السعودي</b>
           <p>يُبنى كل مشروع تخرّج على تحدٍّ حقيقي مرصود من الجهات الحكومية وأذرع سدايا والشركات المحلية، فيتحوّل التقييم النهائي إلى حلٍّ قابل للتطبيق يخدم أولويات السوق ورؤية المملكة ٢٠٣٠.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ الأثر ============ -->
-  <section class="section" id="impact">
-    <div class="wrap">
-      <div class="impact-card reveal">
-        <div class="grid-faint" style="opacity:.2"></div>
-        <div class="impact-card__in">
-          <h2>من رصد الاحتياج إلى الأثر المهني</h2>
-          <p class="impact-card__lead">دورة مغلقة تُغذّي نفسها: تقارير الأثر بعد ٣ و٦ و١٢ شهراً تعود لتشكّل خارطة التطوير السنوية ومرحلة رصد الاحتياج في الدورة التالية.</p>
-          <div class="impact-grid">
-            <div class="icard"><span class="icard__ic" data-icon="target"></span><b>قياس مباشر</b><p>رضا المتدربين عبر مؤشر صافي الترشيح NPS واختبارات قبلية وبعدية.</p></div>
-            <div class="icard"><span class="icard__ic" data-icon="trending-up"></span><b>أثر مهني</b><p>تتبّع تطبيق المهارات في بيئة العمل والمسار المهني للخريجين.</p></div>
-            <div class="icard"><span class="icard__ic" data-icon="refresh-cw"></span><b>تحسين مستمر</b><p>إصدارات محسّنة وخارطة تطوير سنوية معتمدة تُغلق الحلقة.</p></div>
-          </div>
         </div>
       </div>
     </div>
