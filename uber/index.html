@@ -167,6 +167,20 @@ const Icon = ({ name, className = "w-6 h-6", stroke = 1.6 }) => {
     search: <><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="m8.4 11 1.9 1.9 3.4-3.7"/></>,
     trend: <><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></>,
     refresh: <><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></>,
+    radar: <><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01"/><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 1 8.23 7.75"/><path d="M12 18h.01"/><path d="M17.99 11.66A6 6 0 0 0 15.77 8.23"/><path d="M12 12h.01"/></>,
+    ruler: <><path d="m15 5 4 4"/><path d="M13 7 8 2 2 8l5 5"/><path d="m14 6 6 6"/><path d="m4 16 4 4"/><path d="m17 11 5 5-6 6-5-5Z"/></>,
+    play: <><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m10 8 6 4-6 4Z"/></>,
+    clipboard: <><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></>,
+    inbox: <><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></>,
+    activity: <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>,
+    badge: <><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></>,
+    route: <><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></>,
+    package: <><path d="m16 16 2 2 4-4"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></>,
+    barchart: <><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></>,
+    award: <><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></>,
+    sparkles: <><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0Z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></>,
+    settings: <><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></>,
+    layers: <><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.91a1 1 0 0 0 0-1.83Z"/><path d="m22 12.5-9.17 4.17a2 2 0 0 1-1.66 0L2 12.5"/><path d="m22 17.5-9.17 4.17a2 2 0 0 1-1.66 0L2 17.5"/></>,
   };
   return <svg {...common}>{P[name] || P.hub}</svg>;
 };
@@ -193,7 +207,7 @@ const NODES = [
     id: "learners", title: "المتدربون", icon: "cap", color: "#1f6fb2",
     tag: "أفراد وجهات",
     purpose: "الأفراد والجهات الذين يبنون قدرات الذكاء الاصطناعي ويحوّلونها إلى قيمة مهنية ومؤسسية.",
-    who: ["الأفراد", "الموظفون", "الجهات الحكومية", "جهات القطاع الخاص"],
+    who: ["حديثو التخرج", "الجهات الحكومية", "جهات القطاع الخاص", "المختصون"],
     responsibilities: ["التسجيل في البرامج", "بناء المهارات", "الحصول على الشهادات", "تطوير المسار المهني"],
     inputs: ["مسارات تعلّم مصمَّمة", "برامج معتمدة", "إرشاد مهني"],
     outputs: ["كوادر مؤهَّلة", "شهادات مكتسَبة", "بيانات تقدّم التعلّم"],
@@ -203,7 +217,7 @@ const NODES = [
     id: "trainers", title: "المدربون المعتمدون", icon: "present", color: "#14a08a",
     tag: "خبرة التنفيذ",
     purpose: "خبراء معتمدون ينفّذون التدريب وينقلون الخبرة التطبيقية في الذكاء الاصطناعي على مستوى وطني.",
-    who: ["خبراء معتمدون في المجال", "ممارسون من الصناعة", "مدربون رئيسيون"],
+    who: ["خبراء معتمدون في المجال", "مدربو الأكاديمية", "أعضاء هيئة التدريس", "مختصون من السوق"],
     responsibilities: ["تنفيذ التدريب", "نقل الخبرة", "الحفاظ على جودة التدريب", "الالتزام بمعايير الاعتماد"],
     inputs: ["معايير الاعتماد", "المناهج والمواد التدريبية", "مجموعات المتدربين"],
     outputs: ["تنفيذ عالي الجودة", "تغذية راجعة تدريبية", "تقييمات للمهارات"],
@@ -213,7 +227,7 @@ const NODES = [
     id: "universities", title: "جامعات ومعاهد وأكاديميات", icon: "university", color: "#5b5ea6",
     tag: "شركاء تنفيذ استراتيجيون",
     purpose: "شركاء استراتيجيون يشاركون في تطوير المناهج والبحث والبرامج المشتركة لتعميق قاعدة الكوادر الوطنية.",
-    who: ["الجامعات", "المعاهد التقنية", "الأكاديميات المتخصصة"],
+    who: ["جامعات", "مراكز تدريبية", "معاهد", "شركاء"],
     responsibilities: ["شراكات تنفيذ استراتيجية", "تطوير المناهج", "التعاون البحثي", "خبراء المجال", "برامج مشتركة"],
     inputs: ["الأولويات التدريبية الوطنية", "أطر الاعتماد", "ذكاء المهارات"],
     outputs: ["برامج مشتركة", "بحوث ومناهج", "خريجون مؤهَّلون"],
@@ -223,7 +237,7 @@ const NODES = [
     id: "labor", title: "جهات سوق العمل", icon: "briefcase", color: "#d9881f",
     tag: "القطاعان الحكومي والخاص",
     purpose: "جهات التوظيف التي تُبدي الطلب الحقيقي على القوى العاملة وتستوعب الخريجين في أدوار منتجة.",
-    who: ["الجهات الحكومية", "جهات القطاع الخاص", "البرامج الوطنية"],
+    who: ["أذرع سدايا", "الجهات الحكومية", "جهات القطاع الخاص"],
     responsibilities: ["تحديد الطلب على القوى العاملة", "تحديد فجوات القدرات", "توفير التدريب التعاوني", "توظيف الخريجين", "قياس الأثر على القوى العاملة"],
     inputs: ["خريجون جاهزون للعمل", "بيانات عرض المهارات", "روافد المواهب"],
     outputs: ["إشارات الطلب", "فجوات القدرات", "تدريب تعاوني ووظائف", "أدلة الأثر"],
@@ -233,17 +247,17 @@ const NODES = [
     id: "accreditation", title: "منظومة الاعتماد", icon: "shield", color: "#4faf57",
     tag: "الجودة والشهادات",
     purpose: "الجهات التي تعتمد البرامج وتصادق على الشهادات وفق معايير التأهيل الوطنية.",
-    who: ["جهات الاعتماد", "هيئات التأهيل", "شركاء ضمان الجودة"],
+    who: ["الإطار الوطني للمعايير المهنية", "الإطار الأكاديمي السعودي لمؤهلات تخصصات البيانات والذكاء الاصطناعي", "الإطار الوطني للمعايير التدريبية في البيانات والذكاء الاصطناعي"],
     responsibilities: ["اعتماد البرامج", "المصادقة على الشهادات", "المواءمة مع الإطار الوطني للمؤهلات", "ضمان الجودة"],
     inputs: ["البرامج والمناهج", "أدلة التنفيذ", "بيانات التقييم"],
     outputs: ["برامج معتمدة", "شهادات مصادَق عليها", "ضمان الجودة"],
     relationship: "تُضمّن أكاديمية سدايا الاعتماد في كل برنامج؛ لتكون الشهادات موثوقة وقابلة للنقل ومعترَفاً بها وطنياً.",
   },
   {
-    id: "intelligence", title: "ذكاء المهارات وتحليلات سوق العمل", icon: "brain", color: "#16578d",
-    tag: "رؤى مبنية على الذكاء الاصطناعي", chart: true,
-    purpose: "المحرّك المدعوم بالذكاء الاصطناعي الذي يقرأ سوق العمل ويتنبأ بالمهارات التي تحتاجها البلاد مستقبلاً.",
-    who: ["فرق التحليلات والبيانات", "نماذج التنبؤ بالذكاء الاصطناعي", "مراصد سوق العمل"],
+    id: "intelligence", title: "دراسة الاحتياج", icon: "brain", color: "#16578d",
+    tag: "مصادر تحديد الاحتياج الوطني", chart: true,
+    purpose: "الأساس المبني على الأدلة الذي يقرأ الاحتياجات الوطنية وأولويات الجهات ليحدّد المهارات التي تحتاجها البلاد مستقبلاً.",
+    who: ["الاحتياجات الحكومية والوطنية ذات الأولوية", "احتياجات أذرع سدايا والأجهزة التقنية", "تقارير ودراسات مكتب الاستراتيجية", "تقارير السوق والشركاء والاتجاهات العالمية"],
     responsibilities: ["تحليل بيانات سوق العمل", "تحديد المهارات المستقبلية", "رصد فجوات القدرات", "التنبؤ باحتياجات القوى العاملة المستقبلية", "دعم القرار المبني على الأدلة"],
     inputs: ["بيانات سوق العمل", "إشارات طلب جهات التوظيف", "بيانات التعلّم والمخرجات"],
     outputs: ["تنبؤات المهارات المستقبلية", "تحليلات الفجوات", "أدلة لاتخاذ القرار"],
@@ -297,7 +311,7 @@ const Nav = () => (
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate2">
           <a href="#network" className="hover:text-brand transition">المنظومة</a>
           <a href="#flow" className="hover:text-brand transition">النموذج التشغيلي</a>
-          <a href="#message" className="hover:text-brand transition">دورنا</a>
+          <a href="#tracks" className="hover:text-brand transition">المسارات المهنية</a>
         </nav>
         <div className="flex items-center gap-3">
           <a href="index.html" className="hidden sm:inline-flex text-xs font-semibold text-slate2 hover:text-brand transition border border-hair rounded-full px-3 py-1.5">EN</a>
@@ -333,7 +347,7 @@ const Hero = () => (
       <Reveal delay={0.16}>
         <p className="mt-6 mx-auto max-w-3xl text-slate2 text-base sm:text-lg leading-relaxed">
           تُنسّق أكاديمية سدايا المنظومة الوطنية لتطوير القدرات عبر ربط احتياجات سوق العمل،
-          وجهات التدريب، والاعتماد، والمتدربين، وذكاء سوق العمل؛ لتحقيق مخرجات قوى عاملة
+          وجهات التدريب، والاعتماد، والمتدربين، ودراسة الاحتياج؛ لتحقيق مخرجات قوى عاملة
           قابلة للقياس.
         </p>
       </Reveal>
@@ -343,8 +357,8 @@ const Hero = () => (
             استكشف المنظومة
             <Icon name="arrow" className="w-5 h-5 -scale-x-100 group-hover:-translate-x-1 transition-transform" />
           </a>
-          <a href="#message" className="inline-flex items-center gap-2 rounded-full border border-hair text-slate2 font-semibold px-7 py-3.5 hover:border-brand hover:text-brand transition">
-            دورنا
+          <a href="#tracks" className="inline-flex items-center gap-2 rounded-full border border-hair text-slate2 font-semibold px-7 py-3.5 hover:border-brand hover:text-brand transition">
+            المسارات المهنية
           </a>
         </div>
       </Reveal>
@@ -640,96 +654,259 @@ const SidePanel = ({ selected, onClose }) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* النموذج التشغيلي — سبع مراحل (مطابقة لمسمّيات المشروع)               */
+/* النموذج التشغيلي — دورة حياة البرامج التدريبية (سبع مراحل بالتفصيل)   */
 /* ------------------------------------------------------------------ */
 const FLOW = [
-  { label: "رصد الاحتياج", icon: "target", color: "#1f6fb2",
-    desc: "نرصد إشارات الطلب الحقيقية ونحوّلها إلى احتياج تدريبي معتمد." },
-  { label: "دراسة الفجوة", icon: "search", color: "#14a08a",
-    desc: "نحوّل الفجوة بين الواقع والمستهدف إلى خارطة أولويات مبنية على الأدلة." },
-  { label: "التصميم والتطوير", icon: "present", color: "#d9881f",
-    desc: "نصمّم التجربة بالبيانات ونطوّر المحتوى حتى حقيبة تدريبية متكاملة." },
-  { label: "التقديم والتنفيذ", icon: "hub", color: "#1f6fb2", hub: true,
-    desc: "نستقطب المتدربين وننفّذ التدريب بجودة معتمدة عبر مسارات متكاملة." },
-  { label: "التقييم", icon: "check", color: "#5b5ea6",
-    desc: "نقيس الرضا والمعرفة وجودة التنفيذ عبر تقارير مباشرة وموثّقة." },
-  { label: "قياس الأثر", icon: "trend", color: "#0f7e6d",
-    desc: "نقيس تطبيق المهارات في بيئة العمل والعائد المهني للخريجين." },
-  { label: "التحسين المستمر", icon: "refresh", color: "#45516d",
-    desc: "نطوّر إصدارات محسّنة وخارطة سنوية تُغذّي دورة جديدة." },
+  { key: "needs", label: "رصد الاحتياج", en: "Needs Sensing", icon: "radar", color: "#1f6fb2",
+    desc: "نرصد إشارات الطلب الحقيقية من سدايا وأذرعها والسوق، ونحوّلها إلى احتياج تدريبي معتمد.",
+    inputs: ["الأولويات الحكومية والوطنية", "احتياجات أذرع سدايا", "تقارير السوق والشركاء"],
+    activities: ["تحليل الاتجاهات العالمية", "ورش ومقابلات منظّمة", "تحليل الوظائف وفق الجدارات"],
+    outIcon: "badge", outcome: "احتياج تدريبي معتمد وقابل للقياس" },
+  { key: "gap", label: "دراسة الفجوة", en: "Gap Analysis", icon: "search", color: "#14a08a",
+    desc: "نحوّل الفجوة بين الواقع والمستهدف إلى تقرير ومصفوفة مهارات مرتّبة بالأولوية.",
+    activities: ["قياس الفجوة بين الواقع والمستهدف", "تحديد النضج الرقمي", "ترتيب الأولويات بالأثر والإلحاح"],
+    outIcon: "route", outcome: "خارطة أولويات مبنية على الأدلة" },
+  { key: "design", label: "التصميم والتطوير", en: "Design & Development", icon: "ruler", color: "#d9881f",
+    desc: "نصمّم التجربة بالبيانات، ونطوّر المحتوى بالذكاء الاصطناعي، حتى نصل إلى حقيبة تدريبية متكاملة.",
+    model: { name: "ADDIE", steps: ["تحليل", "تصميم", "تطوير", "تطبيق", "تقويم"] },
+    bloom: true,
+    activities: ["تصميم أهداف التعلّم وفق تصنيف بلوم", "إنتاج المحتوى بالذكاء الاصطناعي والمحاكاة", "تهيئة بيئة التدريب"],
+    outIcon: "package", outcome: "حقيبة معتمدة جاهزة للإطلاق" },
+  { key: "deliver", label: "التقديم والتنفيذ", en: "Delivery & Execution", icon: "play", color: "#5b5ea6", hub: true,
+    desc: "نستقطب المتدربين وننفّذ التدريب بجودة معتمدة عبر ثلاثة مسارات متكاملة.",
+    grid: [
+      { icon: "sparkles", t: "منصة أذكىX", d: "الاستقطاب والتسجيل" },
+      { icon: "cap", t: "التنفيذ عبر المدربين والشركاء", d: "جامعات ومعاهد وأكاديميات" },
+      { icon: "settings", t: "العمليات المشتركة والحوكمة", d: "جودة موحّدة عبر جميع القنوات" },
+    ],
+    outIcon: "barchart", outcome: "تنفيذ عالي الجودة موثّق بالبيانات" },
+  { key: "eval", label: "التقييم", en: "Evaluation", icon: "clipboard", color: "#1f6fb2",
+    desc: "نقيس الرضا والمعرفة وجودة التنفيذ عبر تقارير مباشرة تُغذّي قياس الأثر والتحسين.",
+    activities: ["قياس الرضا عبر مؤشر NPS", "قياس اكتساب المعرفة (قبلي/بعدي)", "تقييم جودة المدرب والمحتوى"],
+    outIcon: "award", outcome: "شهادات صادرة ومؤشرات موثّقة" },
+  { key: "impact", label: "قياس الأثر", en: "Impact Measurement", icon: "trend", color: "#0f7e6d",
+    desc: "نقيس تطبيق المهارات في بيئة العمل والعائد المهني عبر تقرير أثر شامل وتوصيات تطوير.",
+    activities: ["قياس تطبيق المهارات في بيئة العمل", "استبيانات بعد ٣ و٦ و١٢ شهراً", "تحليل المسار المهني للخريجين"],
+    outIcon: "trend", outcome: "دليل أثر مهني قابل للتنفيذ" },
+  { key: "improve", label: "التحسين المستمر", en: "Continuous Improvement", icon: "refresh", color: "#45516d",
+    desc: "نطوّر إصدارات محسّنة وخارطة سنوية معتمدة تُغذّي مرحلة رصد الاحتياج في دورة جديدة.",
+    activities: ["تطوير المحتوى وتحديث البرامج", "تحسين أساليب التنفيذ", "مراجعة الأهداف والمؤشرات"],
+    outIcon: "refresh", outcome: "حلقة تحسين مغلقة ومستدامة" },
 ];
 
+const BLOOM = ["إبداع", "تقييم", "تحليل", "تطبيق", "فهم", "تذكّر"];
+
+const Bullets = ({ items, color }) => (
+  <ul className="space-y-1.5">
+    {items.map((x, i) => (
+      <li key={i} className="flex items-start gap-2 text-[13px] text-navy">
+        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: color }} />
+        <span className="leading-snug">{x}</span>
+      </li>
+    ))}
+  </ul>
+);
+
 const FlowSection = () => {
+  const [active, setActive] = useState(0);
+  const [seen, setSeen] = useState(() => new Set([0]));
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const go = (i) => {
+    if (i < 0 || i > FLOW.length - 1) return;
+    setActive(i);
+    setSeen((p) => new Set(p).add(i));
+  };
+
+  useEffect(() => {
+    const onKey = (e) => {
+      const el = document.getElementById("flow");
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const visible = r.top < window.innerHeight * 0.6 && r.bottom > window.innerHeight * 0.4;
+      if (!visible) return;
+      if (e.key === "ArrowLeft") go(active + 1);
+      else if (e.key === "ArrowRight") go(active - 1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [active]);
+
+  const s = FLOW[active];
+  const prev = active > 0 ? FLOW[active - 1] : null;
+  const pct = Math.round((seen.size / FLOW.length) * 100);
+
   return (
     <section id="flow" className="relative py-16 sm:py-24 bg-mist/60">
-      <div className="max-w-3xl mx-auto px-6 text-center mb-10">
+      <div className="max-w-3xl mx-auto px-6 text-center mb-8">
         <Reveal>
           <p className="text-brand font-semibold tracking-wide text-sm">النموذج التشغيلي</p>
-          <h2 className="mt-3 font-display font-bold text-navy text-3xl sm:text-4xl">الاحتياج يتحوّل إلى قدرة… ثم تعود الحلقة</h2>
-          <p className="mt-4 text-slate2">تدفّق مستمر مبني على الأدلة، من احتياج السوق إلى الأثر المهني، ثم يعود ليُغذّي دورة جديدة.</p>
-          <p className="mt-2 text-xs text-brand font-semibold">مرّر المؤشر فوق أي مرحلة (أو انقرها) لعرض وصفها المختصر.</p>
+          <h2 className="mt-3 font-display font-bold text-navy text-3xl sm:text-4xl">دورة حياة البرامج التدريبية</h2>
+          <p className="mt-4 text-slate2">سبع مراحل متتابعة من رصد الاحتياج حتى التحسين المستمر — كل مرحلة تتغذّى من مخرجات سابقتها. اختر أي مرحلة لاستعراض مدخلاتها وأنشطتها ومخرجاتها.</p>
         </Reveal>
       </div>
 
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="flex gap-3 sm:gap-2 overflow-x-auto no-scrollbar pb-4 sm:justify-center sm:flex-wrap">
-          {FLOW.map((s, i) => (
-            <React.Fragment key={i}>
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
+      <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* شريط المراحل */}
+        <div className="flex gap-1 sm:gap-2 overflow-x-auto no-scrollbar pb-3 sm:justify-center">
+          {FLOW.map((f, i) => {
+            const isActive = i === active;
+            const isDone = i < active;
+            return (
+              <motion.button key={f.key} onClick={() => go(i)}
+                initial={{ opacity: 0, y: 14 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="shrink-0 w-[136px] sm:w-[140px]">
-                <div className="flip h-[168px] w-full" tabIndex={0} role="button"
-                  aria-label={`المرحلة ${AR(i + 1)}: ${s.label} — ${s.desc}`}>
-                  <div className="flip-inner">
-                    {/* الوجه الأمامي */}
-                    <div className={`flip-face flex flex-col items-center justify-center text-center p-3.5 border ${s.hub ? "glass-blue border-brand/30 shadow-glow" : "bg-white border-hair shadow-soft"}`}>
-                      <span className="grid place-items-center w-11 h-11 rounded-xl mb-2"
-                        style={{ color: s.color, background: `${s.color}14` }}>
-                        <Icon name={s.icon} className="w-6 h-6" />
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="group relative shrink-0 flex flex-col items-center gap-2 px-1.5 focus:outline-none"
+                style={{ width: "clamp(80px, 12vw, 112px)" }}
+                aria-label={`المرحلة ${AR(i + 1)}: ${f.label}`}>
+                <span className="relative grid place-items-center rounded-full transition-all duration-300"
+                  style={{
+                    width: 46, height: 46,
+                    background: isActive ? f.color : (isDone ? `${f.color}1f` : "#ffffff"),
+                    color: isActive ? "#ffffff" : f.color,
+                    boxShadow: isActive ? `0 12px 26px -8px ${f.color}` : "0 0 0 1px #e6eaf2",
+                  }}>
+                  <Icon name={f.icon} className="w-6 h-6" />
+                  <span className="absolute -top-1.5 -right-1.5 grid place-items-center w-5 h-5 rounded-full text-[10px] font-bold text-white shadow-soft"
+                    style={{ background: f.color }}>{AR(i + 1)}</span>
+                </span>
+                <span className={`text-center leading-tight text-[10.5px] sm:text-[11.5px] font-semibold transition ${isActive ? "text-navy" : "text-slate2/70"}`}>{f.label}</span>
+              </motion.button>
+            );
+          })}
+        </div>
+
+        {/* مؤشر التقدّم */}
+        <div className="mt-1 mb-6 mx-auto max-w-md h-1.5 rounded-full bg-hair overflow-hidden">
+          <motion.div className="h-full rounded-full" style={{ background: "linear-gradient(90deg,#1f6fb2,#14a08a)" }}
+            animate={{ width: `${pct}%` }} transition={{ duration: 0.4 }} />
+        </div>
+
+        {/* لوحة تفاصيل المرحلة */}
+        <div className="rounded-2xl bg-white border border-hair shadow-glow overflow-hidden">
+          <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${s.color}, #1f6fb2)` }} />
+          <AnimatePresence mode="wait">
+            <motion.div key={s.key}
+              initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3 }}
+              className="p-6 sm:p-8">
+
+              {/* ترويسة المرحلة */}
+              <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                <span className="grid place-items-center w-14 h-14 rounded-2xl shrink-0" style={{ color: s.color, background: `${s.color}14` }}>
+                  <Icon name={s.icon} className="w-8 h-8" />
+                </span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[11px] font-semibold rounded-full px-2.5 py-0.5" style={{ color: s.color, background: `${s.color}12` }}>المرحلة {AR(active + 1)} من ٧</span>
+                    {s.model && (
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate2/70">
+                        <Icon name="layers" className="w-3.5 h-3.5" /> نموذج {s.model.name}
                       </span>
-                      <p className={`text-[13px] leading-tight font-semibold ${s.hub ? "text-brand-dark" : "text-navy"}`}>{s.label}</p>
-                      <span className="mt-2 block text-[11px] font-semibold text-slate2/50">{AR(String(i + 1).padStart(2, "0"))}</span>
-                      <span className="absolute top-2 left-2 text-slate2/35" aria-hidden="true">
-                        <Icon name="refresh" className="w-3.5 h-3.5" />
-                      </span>
+                    )}
+                  </div>
+                  <h3 className="mt-1.5 font-display font-bold text-navy text-xl leading-tight">{s.label} <span className="text-slate2/50 text-sm font-medium">{s.en}</span></h3>
+                  <p className="mt-1.5 text-sm text-slate2 leading-relaxed">{s.desc}</p>
+
+                  {prev && (
+                    <div className="mt-3 inline-flex items-center gap-2 rounded-xl px-3 py-2" style={{ background: `${prev.color}0d`, border: `1px solid ${prev.color}22` }}>
+                      <Icon name={prev.outIcon} className="w-4 h-4 shrink-0" style={{ color: prev.color }} />
+                      <span className="text-[11px] text-slate2 leading-tight">المدخل — من مخرجات «{prev.label}»: <b className="text-navy">{prev.outcome}</b></span>
                     </div>
-                    {/* الوجه الخلفي — وصف مختصر */}
-                    <div className="flip-face flip-back flex flex-col justify-center text-center p-3.5 text-white shadow-glow"
-                      style={{ background: `linear-gradient(155deg, ${s.color}, ${s.color}d9)` }}>
-                      <span className="text-[11px] font-bold mb-1.5 opacity-90">{s.label}</span>
-                      <p className="text-[11.5px] leading-relaxed">{s.desc}</p>
+                  )}
+
+                  {s.model && (
+                    <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                      {s.model.steps.map((x, k) => (
+                        <React.Fragment key={k}>
+                          <span className="rounded-lg text-[11px] font-semibold px-2.5 py-1" style={{ color: s.color, background: `${s.color}12` }}>{x}</span>
+                          {k < s.model.steps.length - 1 && <Icon name="arrow" className="w-3 h-3 text-slate2/40 -scale-x-100" />}
+                        </React.Fragment>
+                      ))}
                     </div>
+                  )}
+                </div>
+              </div>
+
+              {/* التدفّق: المدخلات ← الأنشطة ← المخرجات */}
+              <div className="mt-6 grid md:grid-cols-[1fr_auto_1.5fr_auto_1fr] gap-3 items-stretch">
+                {/* المدخلات */}
+                <div className="rounded-xl border border-hair bg-mist/50 p-4">
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold text-slate2/70 mb-2"><Icon name="inbox" className="w-4 h-4" /> المدخلات</p>
+                  {s.inputs ? (
+                    <Bullets items={s.inputs} color={s.color} />
+                  ) : (
+                    <div className="flex items-start gap-2 text-[13px]">
+                      <Icon name={prev.outIcon} className="w-4 h-4 shrink-0 mt-0.5" style={{ color: prev.color }} />
+                      <span className="text-navy leading-snug">{prev.outcome}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="hidden md:grid place-items-center text-slate2/30"><Icon name="arrow" className="w-5 h-5 -scale-x-100" /></div>
+
+                {/* الأنشطة */}
+                <div className="rounded-xl border border-hair bg-white p-4">
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold text-slate2/70 mb-2"><Icon name="activity" className="w-4 h-4" /> الأنشطة</p>
+                  {s.grid ? (
+                    <div className="grid sm:grid-cols-3 gap-2">
+                      {s.grid.map((g, i) => (
+                        <div key={i} className="rounded-lg border border-hair p-2.5 text-center">
+                          <span className="grid place-items-center w-8 h-8 mx-auto rounded-lg mb-1.5" style={{ color: s.color, background: `${s.color}12` }}><Icon name={g.icon} className="w-5 h-5" /></span>
+                          <b className="block text-[12px] text-navy leading-tight">{g.t}</b>
+                          <small className="block text-[10.5px] text-slate2/70 mt-0.5 leading-tight">{g.d}</small>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <Bullets items={s.activities} color={s.color} />
+                  )}
+                  {s.bloom && (
+                    <div className="mt-3 rounded-lg bg-mist/60 p-2.5">
+                      <p className="flex items-center gap-1.5 text-[10.5px] font-semibold text-slate2/70 mb-1.5"><Icon name="layers" className="w-3.5 h-3.5" /> تصنيف بلوم لأهداف التعلّم</p>
+                      <div className="flex flex-col items-center gap-0.5">
+                        {BLOOM.map((l, k) => (
+                          <span key={k} className="text-[10px] font-semibold text-white rounded text-center py-0.5"
+                            style={{ width: `${40 + k * 12}%`, background: `${s.color}${["ff", "e0", "cc", "b3", "99", "80"][k]}` }}>{l}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="hidden md:grid place-items-center text-slate2/30"><Icon name="arrow" className="w-5 h-5 -scale-x-100" /></div>
+
+                {/* المخرجات */}
+                <div className="rounded-xl p-4" style={{ background: `${s.color}0d`, border: `1px solid ${s.color}22` }}>
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold mb-2" style={{ color: s.color }}><Icon name={s.outIcon} className="w-4 h-4" /> المخرجات</p>
+                  <div className="flex items-start gap-2">
+                    <span className="grid place-items-center w-9 h-9 rounded-lg shrink-0" style={{ color: s.color, background: `${s.color}18` }}><Icon name={s.outIcon} className="w-5 h-5" /></span>
+                    <b className="text-[13px] text-navy leading-snug">{s.outcome}</b>
                   </div>
                 </div>
-              </motion.div>
-              {i < FLOW.length - 1 && (
-                <motion.div
-                  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
-                  transition={{ delay: i * 0.12 + 0.08 }}
-                  className="shrink-0 self-center text-brand/50">
-                  <Icon name="arrow" className="w-5 h-5 -scale-x-100" />
-                </motion.div>
-              )}
-            </React.Fragment>
-          ))}
-          {/* حلقة العودة */}
-          <motion.div
-            initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: FLOW.length * 0.12 }}
-            className="shrink-0 self-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full glass-blue text-brand-dark text-[11px] font-semibold px-3 py-2">
-              <Icon name="refresh" className="w-4 h-4" /> تعود إلى رصد الاحتياج
-            </span>
-          </motion.div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* التنقّل بين المراحل */}
+          <div className="flex items-center justify-between gap-3 border-t border-hair px-5 sm:px-6 py-4">
+            <button onClick={() => go(active - 1)} disabled={active === 0}
+              className="inline-flex items-center gap-1.5 rounded-full border border-hair px-4 py-2 text-sm font-semibold text-slate2 hover:border-brand hover:text-brand transition disabled:opacity-40 disabled:pointer-events-none">
+              <Icon name="arrow" className="w-4 h-4" /> السابقة
+            </button>
+            <span className="text-xs font-semibold text-slate2">المرحلة {AR(active + 1)} من ٧</span>
+            <button onClick={() => go(active + 1)} disabled={active === FLOW.length - 1}
+              className="inline-flex items-center gap-1.5 rounded-full bg-brand text-white px-4 py-2 text-sm font-semibold hover:bg-brand-dark transition disabled:opacity-40 disabled:pointer-events-none">
+              التالية <Icon name="arrow" className="w-4 h-4 -scale-x-100" />
+            </button>
+          </div>
         </div>
-        <Reveal delay={0.2}>
+
+        {/* ملاحظة الحلقة المغلقة */}
+        <Reveal delay={0.1}>
           <div className="mt-6 flex items-center justify-center gap-2 text-xs text-slate2 text-center">
-            <Icon name="flow" className="w-4 h-4 text-brand shrink-0 -scale-x-100" />
-            <span>تُغذّي مرحلة التحسين المستمر مرحلة رصد الاحتياج في دورة جديدة — الحلقة لا تُغلق، بل تتحسّن.</span>
+            <Icon name="refresh" className="w-4 h-4 text-brand shrink-0" />
+            <span>دورة مغلقة: مخرجات «التحسين المستمر» تُغذّي مرحلة «رصد الاحتياج» في الدورة التالية — الحلقة لا تُغلق، بل تتحسّن.</span>
           </div>
         </Reveal>
       </div>
@@ -738,48 +915,203 @@ const FlowSection = () => {
 };
 
 /* ------------------------------------------------------------------ */
-/* الرسالة الجوهرية والمؤشرات                                          */
+/* المسارات المهنية — مسارات تعليمية تراكمية قابلة للتجميع              */
 /* ------------------------------------------------------------------ */
-const KeyMessage = () => (
-  <section id="message" className="relative py-20 sm:py-28 overflow-hidden">
-    <div className="aurora floaty w-[30rem] h-[30rem] top-0 left-0" style={{background:"radial-gradient(circle,#14a08a,transparent 60%)"}} />
-    <div className="relative max-w-5xl mx-auto px-6">
+const PATH_FOUNDATION = {
+  id: "foundation", title: "المسار التأسيسي", en: "Foundation Core", icon: "spark", color: "#1f6fb2",
+  meta: "٥ برامج · ١٧ يوماً تدريبياً",
+  desc: "نقطة البداية الإلزامية للمسارات التقنية؛ يبني الأساس المعرفي والمهاري في الذكاء الاصطناعي وعلوم البيانات.",
+  programs: [
+    "الثقافة في البيانات والذكاء الاصطناعي",
+    "الذكاء الاصطناعي التوليدي وهندسة الأوامر (Prompt Engineering)",
+    "البرمجة بلغة Python",
+    "معالجة البيانات وSQL والتحليل الاستكشافي",
+    "الذكاء الاصطناعي المسؤول وحوكمة البيانات",
+  ],
+};
+
+const PATH_TECH = [
+  {
+    id: "ai", title: "مهندس الذكاء الاصطناعي", en: "AI Engineer Track", icon: "brain", color: "#14a08a",
+    meta: "١٥ برنامجاً + مشروع تخرّج",
+    desc: "يستهدف المهندسين والمطورين لتصميم وبناء وتشغيل حلول الذكاء الاصطناعي على مستوى الإنتاج.",
+    levels: [
+      { lv: "Practitioner", ar: "الممارس", items: ["أساسيات تعلّم الآلة", "التعلّم العميق باستخدام PyTorch", "هندسة البرمجيات لأنظمة الذكاء الاصطناعي"] },
+      { lv: "Specialist", ar: "الأخصائي", items: ["معالجة اللغة الطبيعية", "الرؤية الحاسوبية", "هندسة تطبيقات النماذج اللغوية الكبيرة (LLMs)", "بناء أنظمة RAG", "تخصيص وضبط النماذج (Fine-Tuning)", "MLOps ونشر النماذج"] },
+      { lv: "Expert", ar: "الخبير", items: ["هندسة الأنظمة الوكيلية (Agentic AI)", "LLMOps ومراقبة الأنظمة", "أمن الذكاء الاصطناعي والاختبارات الهجومية", "تحسين الأداء والتكلفة", "هندسة الحلول المؤسسية", "مشروع تخرّج: نظام GenAI متكامل"] },
+    ],
+  },
+  {
+    id: "ds", title: "عالِم البيانات", en: "Data Scientist Track", icon: "trend", color: "#5b5ea6",
+    meta: "١١ برنامجاً + مشروع تخرّج",
+    desc: "يركّز على التحليل المتقدّم والنمذجة الإحصائية واستخراج القيمة من البيانات لدعم القرار.",
+    levels: [
+      { lv: "Practitioner", ar: "الممارس", items: ["الأسس الإحصائية", "تصوّر البيانات وسرد القصص بالبيانات"] },
+      { lv: "Specialist", ar: "الأخصائي", items: ["تعلّم الآلة المتقدّم", "تحليل السلاسل الزمنية", "التجارب وA/B Testing والاستدلال السببي", "هندسة البيانات الحديثة", "البيانات الضخمة باستخدام Spark"] },
+      { lv: "Expert", ar: "الخبير", items: ["علوم القرار والتحسين", "سير عمل علوم البيانات المدعومة بالذكاء التوليدي", "تحليل البيانات اللحظي (Streaming Analytics)", "مشروع تخرّج: من البيانات إلى القرار"] },
+    ],
+  },
+];
+
+const PATH_NONTECH = {
+  id: "nontech", title: "مسار الموظفين غير التقنيين", en: "Non-Technical Workforce", icon: "users", color: "#d9881f",
+  meta: "١٠ برامج مستقلة · ٢٦ يوماً (١٣٠ ساعة)",
+  desc: "موجّه لجميع الموظفين دون خلفية تقنية، ويمكن دراسة كل برنامج بشكل مستقل.",
+  groups: [
+    { g: "الذكاء الاصطناعي", items: ["أساسيات الذكاء الاصطناعي في بيئة العمل", "الذكاء الاصطناعي التوليدي للإنتاجية", "هندسة الأوامر للمحترفين", "أتمتة الأعمال بدون برمجة (No-Code AI)", "الاستخدام الآمن والمسؤول للذكاء الاصطناعي"] },
+    { g: "البيانات", items: ["الثقافة في البيانات", "مهارات البيانات باستخدام الجداول الإلكترونية", "اتخاذ القرار المبني على البيانات", "لوحات المعلومات وسرد البيانات", "حماية البيانات والخصوصية (PDPL)"] },
+  ],
+};
+
+const PROFICIENCY = [
+  { k: "Practitioner", ar: "الممارس", d: "يساهم في تنفيذ المشاريع تحت الإشراف." },
+  { k: "Specialist", ar: "الأخصائي", d: "ينفّذ حلولاً إنتاجية بشكل مستقل." },
+  { k: "Expert", ar: "الخبير", d: "يصمّم ويقود الأنظمة الوطنية واسعة النطاق ويقود الفرق الفنية." },
+];
+
+const ProgramItem = ({ children, color }) => (
+  <li className="flex items-start gap-2 text-[13px] text-navy">
+    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: color }} />
+    <span className="leading-snug">{children}</span>
+  </li>
+);
+
+const LevelBlock = ({ lv, color }) => (
+  <div className="rounded-xl border border-hair bg-white/70 p-3.5">
+    <div className="flex items-center gap-2 mb-2">
+      <span className="text-[11px] font-bold text-white rounded-full px-2 py-0.5" style={{ background: color }}>{lv.ar}</span>
+      <span className="text-[10px] font-semibold tracking-wide text-slate2/55">{lv.lv}</span>
+    </div>
+    <ul className="space-y-1.5">
+      {lv.items.map((it, i) => (<ProgramItem key={i} color={color}>{it}</ProgramItem>))}
+    </ul>
+  </div>
+);
+
+const TracksSection = () => (
+  <section id="tracks" className="relative py-16 sm:py-24 bg-mist/40">
+    <div className="max-w-3xl mx-auto px-6 text-center mb-10">
       <Reveal>
-        <div className="relative rounded-3xl overflow-hidden shadow-glow"
-          style={{ background: "linear-gradient(135deg,#16578d 0%,#1f6fb2 45%,#14a08a 120%)" }}>
-          <div className="absolute inset-0 opacity-20"
-            style={{ backgroundImage: "radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px)", backgroundSize: "26px 26px" }} />
-          <div className="relative p-8 sm:p-14 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white/90 px-4 py-1.5 text-xs font-semibold tracking-wide">
-              <Icon name="hub" className="w-4 h-4" /> نموذج المنسّق
+        <p className="text-brand font-semibold tracking-wide text-sm">المسارات المهنية</p>
+        <h2 className="mt-3 font-display font-bold text-navy text-3xl sm:text-4xl">مسارات تعليمية تراكمية قابلة للتجميع</h2>
+        <p className="mt-4 text-slate2">صُمّمت المنظومة على شكل مسارات تراكمية (Modular &amp; Stackable) تخدم ثلاث فئات من المتعلمين؛ يتدرّج المتدرب من الأساسيات إلى الاحتراف أو يختار وحدات مستقلة حسب احتياجه.</p>
+      </Reveal>
+    </div>
+
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+
+      {/* المسار التأسيسي */}
+      <Reveal>
+        <div className="rounded-2xl glass-blue border border-brand/20 shadow-soft p-6 sm:p-7">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: PATH_FOUNDATION.color, background: `${PATH_FOUNDATION.color}14` }}>
+              <Icon name={PATH_FOUNDATION.icon} className="w-6 h-6" />
             </span>
-            <p className="mt-6 text-white font-display font-semibold text-xl sm:text-3xl leading-relaxed max-w-4xl mx-auto">
-              تعمل أكاديمية سدايا بوصفها المنسّق الوطني لتطوير القدرات في الذكاء الاصطناعي — تربط
-              احتياجات سوق العمل، والمتدربين، وجهات التدريب، وجهات الاعتماد، وذكاء المهارات في منظومة
-              واحدة متكاملة تحقّق مخرجات قوى عاملة عالية الجودة وقابلة للقياس.
-            </p>
+            <div className="flex-1 min-w-[200px]">
+              <h3 className="font-display font-bold text-navy text-lg leading-tight">{PATH_FOUNDATION.title} <span className="text-slate2/55 text-sm font-medium">{PATH_FOUNDATION.en}</span></h3>
+              <p className="text-sm text-slate2 mt-0.5">{PATH_FOUNDATION.desc}</p>
+            </div>
+            <span className="rounded-full bg-white/85 text-brand-dark font-semibold text-xs px-3 py-1.5 shrink-0">{PATH_FOUNDATION.meta}</span>
           </div>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+            {PATH_FOUNDATION.programs.map((p, i) => (<ProgramItem key={i} color={PATH_FOUNDATION.color}>{p}</ProgramItem>))}
+          </ul>
         </div>
       </Reveal>
 
-      <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {[
-          { k: "١", l: "منسّق وطني", ic: "hub" },
-          { k: "٦", l: "شركاء منظومة مترابطون", ic: "users" },
-          { k: "٣٦٠°", l: "حلقة تغذية راجعة مبنية على الأدلة", ic: "flow" },
-          { k: "٧", l: "مراحل تشغيلية معتمدة وقابلة للقياس", ic: "refresh" },
-        ].map((s, i) => (
-          <Reveal key={i} delay={i * 0.08}>
-            <div className="h-full rounded-2xl bg-white border border-hair shadow-soft p-5 text-center">
-              <span className="grid place-items-center w-10 h-10 mx-auto rounded-xl bg-brand/10 text-brand mb-3">
-                <Icon name={s.ic} className="w-6 h-6" />
-              </span>
-              <p className="font-display font-extrabold text-navy text-2xl sm:text-3xl">{s.k}</p>
-              <p className="mt-1 text-xs text-slate2 leading-snug">{s.l}</p>
+      {/* التفرّع */}
+      <div className="flex items-center gap-3 justify-center text-slate2/70">
+        <span className="h-px w-16 bg-hair" />
+        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-dark">
+          <Icon name="hub" className="w-4 h-4" /> يتفرّع إلى مسارين تخصّصيين
+        </span>
+        <span className="h-px w-16 bg-hair" />
+      </div>
+
+      {/* المساران التقنيان */}
+      <div className="grid lg:grid-cols-2 gap-6">
+        {PATH_TECH.map((t, idx) => (
+          <Reveal key={t.id} delay={idx * 0.1}>
+            <div className="h-full rounded-2xl bg-white border border-hair shadow-soft p-6" style={{ borderTop: `3px solid ${t.color}` }}>
+              <div className="flex items-center gap-3 mb-1.5">
+                <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: t.color, background: `${t.color}14` }}>
+                  <Icon name={t.icon} className="w-6 h-6" />
+                </span>
+                <div className="flex-1">
+                  <h3 className="font-display font-bold text-navy text-lg leading-tight">{t.title}</h3>
+                  <span className="text-xs text-slate2/55 font-medium">{t.en}</span>
+                </div>
+                <span className="rounded-full font-semibold text-[11px] px-2.5 py-1 shrink-0 text-center leading-tight" style={{ color: t.color, background: `${t.color}12` }}>{t.meta}</span>
+              </div>
+              <p className="text-sm text-slate2 mb-4">{t.desc}</p>
+              <div className="space-y-3">
+                {t.levels.map((lv, i) => (<LevelBlock key={i} lv={lv} color={t.color} />))}
+              </div>
             </div>
           </Reveal>
         ))}
       </div>
+
+      {/* الموظفون غير التقنيين */}
+      <Reveal>
+        <div className="rounded-2xl bg-white border border-hair shadow-soft p-6 sm:p-7" style={{ borderTop: `3px solid ${PATH_NONTECH.color}` }}>
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: PATH_NONTECH.color, background: `${PATH_NONTECH.color}14` }}>
+              <Icon name={PATH_NONTECH.icon} className="w-6 h-6" />
+            </span>
+            <div className="flex-1 min-w-[200px]">
+              <h3 className="font-display font-bold text-navy text-lg leading-tight">{PATH_NONTECH.title} <span className="text-slate2/55 text-sm font-medium">{PATH_NONTECH.en}</span></h3>
+              <p className="text-sm text-slate2 mt-0.5">{PATH_NONTECH.desc}</p>
+            </div>
+            <span className="rounded-full font-semibold text-xs px-3 py-1.5 shrink-0" style={{ color: PATH_NONTECH.color, background: `${PATH_NONTECH.color}12` }}>{PATH_NONTECH.meta}</span>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {PATH_NONTECH.groups.map((grp, i) => (
+              <div key={i} className="rounded-xl border border-hair bg-mist/50 p-4">
+                <p className="text-sm font-bold text-navy mb-2.5">{grp.g}</p>
+                <ul className="space-y-1.5">
+                  {grp.items.map((it, k) => (<ProgramItem key={k} color={PATH_NONTECH.color}>{it}</ProgramItem>))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* مستويات الكفاءة */}
+      <Reveal>
+        <p className="text-center text-sm font-semibold text-slate2 mb-1">مستويات الكفاءة في المسارات التقنية</p>
+      </Reveal>
+      <div className="grid sm:grid-cols-3 gap-4 -mt-4">
+        {PROFICIENCY.map((p, i) => (
+          <Reveal key={i} delay={i * 0.08}>
+            <div className="h-full rounded-2xl bg-white border border-hair shadow-soft p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="grid place-items-center w-8 h-8 rounded-lg bg-brand/10 text-brand shrink-0"><Icon name="check" className="w-5 h-5" /></span>
+                <div>
+                  <p className="font-display font-bold text-navy text-sm leading-none">{p.ar}</p>
+                  <span className="text-[10px] text-slate2/55 font-semibold">{p.k}</span>
+                </div>
+              </div>
+              <p className="text-[13px] text-slate2 leading-relaxed">{p.d}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      {/* الشهادات التراكمية */}
+      <Reveal>
+        <div className="rounded-2xl overflow-hidden shadow-glow" style={{ background: "linear-gradient(135deg,#16578d,#1f6fb2 55%,#14a08a)" }}>
+          <div className="p-6 sm:p-8 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white/90 px-4 py-1.5 text-xs font-semibold">
+              <Icon name="shield" className="w-4 h-4" /> شهادات تراكمية (Stackable Certificates)
+            </span>
+            <p className="mt-4 text-white text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+              يحصل المتدرب على شهادة بعد كل مستوى، ثم يتدرّج حتى شهادة احترافية متقدمة، مع إمكانية التخصص في مجالات دقيقة مثل هندسة تطبيقات GenAI، وأنظمة RAG، والأنظمة الوكيلية، وهندسة البيانات، وأمن الذكاء الاصطناعي، وعلوم القرار.
+            </p>
+          </div>
+        </div>
+      </Reveal>
     </div>
   </section>
 );
@@ -806,7 +1138,7 @@ const App = () => {
         <Hero />
         <NetworkSection onSelect={setSelected} />
         <FlowSection />
-        <KeyMessage />
+        <TracksSection />
       </main>
       <Footer />
       <SidePanel selected={selected} onClose={() => setSelected(null)} />
