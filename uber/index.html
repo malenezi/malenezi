@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>أكاديمية سدايا — المنظومة الوطنية لتطوير القدرات في الذكاء الاصطناعي</title>
+<title>أكاديمية سدايا — المنظومة الوطنية لبناء القدرات في البيانات والذكاء الاصطناعي</title>
 <meta name="description" content="أكاديمية سدايا: المنسّق الوطني لمنظومة تطوير القدرات في الذكاء الاصطناعي." />
 
 <!-- Fonts (Arabic) -->
@@ -192,13 +192,13 @@ const CENTER = {
   title: "أكاديمية سدايا",
   role: "المنسّق الوطني",
   responsibilities: [
-    "مواءمة أصحاب المصلحة في المنظومة",
-    "تحديد الأولويات التدريبية الوطنية",
-    "ضمان الجودة",
-    "تنسيق التنفيذ",
-    "إدارة رحلات المتدربين",
-    "ربط العرض بالطلب في سوق العمل",
-    "قياس الأثر الوطني",
+    { t: "مواءمة أصحاب المصلحة في المنظومة", icon: "hub" },
+    { t: "تحديد الأولويات التدريبية الوطنية", icon: "target" },
+    { t: "ضمان الجودة", icon: "shield" },
+    { t: "تنسيق التنفيذ", icon: "settings" },
+    { t: "إدارة رحلات المتدربين", icon: "route" },
+    { t: "ربط العرض بالطلب في سوق العمل", icon: "briefcase" },
+    { t: "قياس الأثر الوطني", icon: "trend" },
   ],
 };
 
@@ -207,7 +207,12 @@ const NODES = [
     id: "learners", title: "المتدربون", icon: "cap", color: "#1f6fb2",
     tag: "أفراد وجهات",
     purpose: "الأفراد والجهات الذين يبنون قدرات الذكاء الاصطناعي ويحوّلونها إلى قيمة مهنية ومؤسسية.",
-    who: ["حديثو التخرج", "الجهات الحكومية", "جهات القطاع الخاص", "المختصون"],
+    who: [
+      { t: "حديثو التخرج", icon: "cap" },
+      { t: "الجهات الحكومية", icon: "university" },
+      { t: "جهات القطاع الخاص", icon: "briefcase" },
+      { t: "المختصون", icon: "badge" },
+    ],
     responsibilities: ["التسجيل في البرامج", "بناء المهارات", "الحصول على الشهادات", "تطوير المسار المهني"],
     inputs: ["مسارات تعلّم مصمَّمة", "برامج معتمدة", "إرشاد مهني"],
     outputs: ["كوادر مؤهَّلة", "شهادات مكتسَبة", "بيانات تقدّم التعلّم"],
@@ -217,7 +222,12 @@ const NODES = [
     id: "trainers", title: "المدربون المعتمدون", icon: "present", color: "#14a08a",
     tag: "خبرة التنفيذ",
     purpose: "خبراء معتمدون ينفّذون التدريب وينقلون الخبرة التطبيقية في الذكاء الاصطناعي على مستوى وطني.",
-    who: ["خبراء معتمدون في المجال", "مدربو الأكاديمية", "أعضاء هيئة التدريس", "مختصون من السوق"],
+    who: [
+      { t: "خبراء معتمدون في المجال", icon: "badge" },
+      { t: "مدربو الأكاديمية", icon: "present" },
+      { t: "أعضاء هيئة التدريس", icon: "university" },
+      { t: "مختصون من السوق", icon: "briefcase" },
+    ],
     responsibilities: ["تنفيذ التدريب", "نقل الخبرة", "الحفاظ على جودة التدريب", "الالتزام بمعايير الاعتماد"],
     inputs: ["معايير الاعتماد", "المناهج والمواد التدريبية", "مجموعات المتدربين"],
     outputs: ["تنفيذ عالي الجودة", "تغذية راجعة تدريبية", "تقييمات للمهارات"],
@@ -227,7 +237,12 @@ const NODES = [
     id: "universities", title: "جامعات ومعاهد وأكاديميات", icon: "university", color: "#5b5ea6",
     tag: "شركاء تنفيذ استراتيجيون",
     purpose: "شركاء استراتيجيون يشاركون في تطوير المناهج والبحث والبرامج المشتركة لتعميق قاعدة الكوادر الوطنية.",
-    who: ["جامعات", "مراكز تدريبية", "معاهد", "شركاء"],
+    who: [
+      { t: "جامعات", icon: "university" },
+      { t: "مراكز تدريبية", icon: "present" },
+      { t: "معاهد", icon: "layers" },
+      { t: "شركاء", icon: "users" },
+    ],
     responsibilities: ["شراكات تنفيذ استراتيجية", "تطوير المناهج", "التعاون البحثي", "خبراء المجال", "برامج مشتركة"],
     inputs: ["الأولويات التدريبية الوطنية", "أطر الاعتماد", "ذكاء المهارات"],
     outputs: ["برامج مشتركة", "بحوث ومناهج", "خريجون مؤهَّلون"],
@@ -236,8 +251,12 @@ const NODES = [
   {
     id: "labor", title: "جهات سوق العمل", icon: "briefcase", color: "#d9881f",
     tag: "القطاعان الحكومي والخاص",
-    purpose: "جهات التوظيف التي تُبدي الطلب الحقيقي على القوى العاملة وتستوعب الخريجين في أدوار منتجة.",
-    who: ["أذرع سدايا", "الجهات الحكومية", "جهات القطاع الخاص"],
+    purpose: "جهات التوظيف التي تعكس الطلب الحقيقي على القوى العاملة وتستوعب الخريجين في أدوار منتجة.",
+    who: [
+      { t: "أذرع سدايا", icon: "hub" },
+      { t: "الجهات الحكومية", icon: "university" },
+      { t: "جهات القطاع الخاص", icon: "briefcase" },
+    ],
     responsibilities: ["تحديد الطلب على القوى العاملة", "تحديد فجوات القدرات", "توفير التدريب التعاوني", "توظيف الخريجين", "قياس الأثر على القوى العاملة"],
     inputs: ["خريجون جاهزون للعمل", "بيانات عرض المهارات", "روافد المواهب"],
     outputs: ["إشارات الطلب", "فجوات القدرات", "تدريب تعاوني ووظائف", "أدلة الأثر"],
@@ -247,7 +266,11 @@ const NODES = [
     id: "accreditation", title: "منظومة الاعتماد", icon: "shield", color: "#4faf57",
     tag: "الجودة والشهادات",
     purpose: "الجهات التي تعتمد البرامج وتصادق على الشهادات وفق معايير التأهيل الوطنية.",
-    who: ["الإطار الوطني للمعايير المهنية", "الإطار الأكاديمي السعودي لمؤهلات تخصصات البيانات والذكاء الاصطناعي", "الإطار الوطني للمعايير التدريبية في البيانات والذكاء الاصطناعي"],
+    who: [
+      { t: "الإطار الوطني للمعايير المهنية", icon: "shield" },
+      { t: "الإطار الأكاديمي السعودي لمؤهلات تخصصات البيانات والذكاء الاصطناعي", icon: "award" },
+      { t: "الإطار الوطني للمعايير التدريبية في البيانات والذكاء الاصطناعي", icon: "badge" },
+    ],
     responsibilities: ["اعتماد البرامج", "المصادقة على الشهادات", "المواءمة مع الإطار الوطني للمؤهلات", "ضمان الجودة"],
     inputs: ["البرامج والمناهج", "أدلة التنفيذ", "بيانات التقييم"],
     outputs: ["برامج معتمدة", "شهادات مصادَق عليها", "ضمان الجودة"],
@@ -257,7 +280,12 @@ const NODES = [
     id: "intelligence", title: "دراسة الاحتياج", icon: "brain", color: "#16578d",
     tag: "مصادر تحديد الاحتياج الوطني", chart: true,
     purpose: "الأساس المبني على الأدلة الذي يقرأ الاحتياجات الوطنية وأولويات الجهات ليحدّد المهارات التي تحتاجها البلاد مستقبلاً.",
-    who: ["الاحتياجات الحكومية والوطنية ذات الأولوية", "احتياجات أذرع سدايا والأجهزة التقنية", "تقارير ودراسات مكتب الاستراتيجية", "تقارير السوق والشركاء والاتجاهات العالمية"],
+    who: [
+      { t: "الاحتياجات الحكومية والوطنية ذات الأولوية", icon: "target" },
+      { t: "احتياجات أذرع سدايا والأجهزة التقنية", icon: "hub" },
+      { t: "تقارير ودراسات مكتب الاستراتيجية", icon: "clipboard" },
+      { t: "تقارير السوق والشركاء والاتجاهات العالمية", icon: "trend" },
+    ],
     responsibilities: ["تحليل بيانات سوق العمل", "تحديد المهارات المستقبلية", "رصد فجوات القدرات", "التنبؤ باحتياجات القوى العاملة المستقبلية", "دعم القرار المبني على الأدلة"],
     inputs: ["بيانات سوق العمل", "إشارات طلب جهات التوظيف", "بيانات التعلّم والمخرجات"],
     outputs: ["تنبؤات المهارات المستقبلية", "تحليلات الفجوات", "أدلة لاتخاذ القرار"],
@@ -341,7 +369,7 @@ const Hero = () => (
       </Reveal>
       <Reveal delay={0.08}>
         <h1 className="mt-6 font-display font-extrabold tracking-tight text-navy leading-[1.15] text-3xl sm:text-5xl">
-          المنظومة الوطنية لتطوير القدرات<br className="hidden sm:block" /> في الذكاء الاصطناعي
+          المنظومة الوطنية لبناء القدرات<br className="hidden sm:block" /> في البيانات والذكاء الاصطناعي
         </h1>
       </Reveal>
       <Reveal delay={0.16}>
@@ -597,54 +625,16 @@ const SidePanel = ({ selected, onClose }) => {
                   className="shrink-0 grid place-items-center w-9 h-9 rounded-full border border-hair text-slate2 hover:bg-mist transition">✕</button>
               </div>
 
-              {isCenter ? (
-                <div className="mt-7 space-y-7">
-                  <p className="text-slate2 leading-relaxed">
-                    تقع أكاديمية سدايا في قلب المنظومة — لا بوصفها جهة تدريب، بل بوصفها المنسّق الوطني
-                    الذي يواءم جميع أصحاب المصلحة حول مخرجات قوى عاملة قابلة للقياس.
-                  </p>
-                  <Field label="المسؤوليات الأساسية" items={CENTER.responsibilities} color={color} />
-                  <div className="glass-blue rounded-xl p-4">
-                    <p className="text-sm font-semibold text-brand-dark flex items-center gap-2">
-                      <Icon name="target" className="w-4 h-4" /> التفويض
-                    </p>
-                    <p className="mt-1.5 text-sm text-slate2 leading-relaxed">
-                      ربط العرض بالطلب في سوق العمل، وقياس الأثر الوطني على مستوى المنظومة بأكملها.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="mt-7 space-y-6">
-                  <div>
-                    <p className="text-[11px] font-semibold text-slate2/80 mb-1.5">الغرض</p>
-                    <p className="text-navy leading-relaxed text-sm">{node.purpose}</p>
-                  </div>
-                  {node.who && (
-                    <div className="flex flex-wrap gap-2">
-                      {node.who.map((w, i) => (
-                        <span key={i} className="rounded-full text-xs font-medium px-3 py-1" style={{ color, background: `${color}12` }}>{w}</span>
-                      ))}
-                    </div>
-                  )}
-                  <Field label="المسؤوليات" items={node.responsibilities} color={color} />
-                  <div className="grid grid-cols-1 gap-6">
-                    <Field label="المدخلات" items={node.inputs} color={color} />
-                    <Field label="المخرجات" items={node.outputs} color={color} />
-                  </div>
-                  {node.chart && (
-                    <div className="glass rounded-xl border border-hair p-4">
-                      <p className="text-[11px] font-semibold text-slate2/80 mb-2">مؤشر مهارات حيّ</p>
-                      <MiniChart color={color} className="w-full h-16" />
-                    </div>
-                  )}
-                  <div className="rounded-xl p-4" style={{ background: `${color}0d`, border: `1px solid ${color}22` }}>
-                    <p className="text-sm font-semibold flex items-center gap-2" style={{ color }}>
-                      <Icon name="hub" className="w-4 h-4" /> العلاقة مع أكاديمية سدايا
-                    </p>
-                    <p className="mt-1.5 text-sm text-slate2 leading-relaxed">{node.relationship}</p>
-                  </div>
-                </div>
-              )}
+              <ul className="mt-7 space-y-2.5">
+                {(isCenter ? CENTER.responsibilities : node.who).map((w, i) => (
+                  <li key={i} className="flex items-center gap-3 rounded-xl border border-hair bg-mist/40 px-4 py-3">
+                    <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color, background: `${color}14` }}>
+                      <Icon name={w.icon} className="w-6 h-6" />
+                    </span>
+                    <span className="text-navy font-semibold text-[15px] leading-snug">{w.t}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.aside>
         </>
@@ -749,7 +739,7 @@ const FlowSection = () => {
 
       <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* شريط المراحل */}
-        <div className="flex gap-1 sm:gap-2 overflow-x-auto no-scrollbar pb-3 sm:justify-center">
+        <div className="flex gap-1.5 sm:gap-3 overflow-x-auto no-scrollbar pt-4 pb-3 sm:justify-center">
           {FLOW.map((f, i) => {
             const isActive = i === active;
             const isDone = i < active;
@@ -759,20 +749,20 @@ const FlowSection = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="group relative shrink-0 flex flex-col items-center gap-2 px-1.5 focus:outline-none"
-                style={{ width: "clamp(80px, 12vw, 112px)" }}
+                style={{ width: "clamp(90px, 13vw, 128px)" }}
                 aria-label={`المرحلة ${AR(i + 1)}: ${f.label}`}>
                 <span className="relative grid place-items-center rounded-full transition-all duration-300"
                   style={{
-                    width: 46, height: 46,
+                    width: 64, height: 64,
                     background: isActive ? f.color : (isDone ? `${f.color}1f` : "#ffffff"),
                     color: isActive ? "#ffffff" : f.color,
                     boxShadow: isActive ? `0 12px 26px -8px ${f.color}` : "0 0 0 1px #e6eaf2",
                   }}>
-                  <Icon name={f.icon} className="w-6 h-6" />
-                  <span className="absolute -top-1.5 -right-1.5 grid place-items-center w-5 h-5 rounded-full text-[10px] font-bold text-white shadow-soft"
+                  <Icon name={f.icon} className="w-8 h-8" />
+                  <span className="absolute -top-2 -right-2 grid place-items-center w-7 h-7 rounded-full text-[13px] font-bold text-white shadow-soft ring-2 ring-white"
                     style={{ background: f.color }}>{AR(i + 1)}</span>
                 </span>
-                <span className={`text-center leading-tight text-[10.5px] sm:text-[11.5px] font-semibold transition ${isActive ? "text-navy" : "text-slate2/70"}`}>{f.label}</span>
+                <span className={`text-center leading-tight text-[11px] sm:text-[12.5px] font-semibold transition ${isActive ? "text-navy" : "text-slate2/70"}`}>{f.label}</span>
               </motion.button>
             );
           })}
@@ -922,7 +912,7 @@ const PATH_FOUNDATION = {
   meta: "٥ برامج · ١٧ يوماً تدريبياً",
   desc: "نقطة البداية الإلزامية للمسارات التقنية؛ يبني الأساس المعرفي والمهاري في الذكاء الاصطناعي وعلوم البيانات.",
   programs: [
-    "الثقافة في البيانات والذكاء الاصطناعي",
+    "التوعية في البيانات والذكاء الاصطناعي",
     "الذكاء الاصطناعي التوليدي وهندسة الأوامر (Prompt Engineering)",
     "البرمجة بلغة Python",
     "معالجة البيانات وSQL والتحليل الاستكشافي",
@@ -959,7 +949,7 @@ const PATH_NONTECH = {
   desc: "موجّه لجميع الموظفين دون خلفية تقنية، ويمكن دراسة كل برنامج بشكل مستقل.",
   groups: [
     { g: "الذكاء الاصطناعي", items: ["أساسيات الذكاء الاصطناعي في بيئة العمل", "الذكاء الاصطناعي التوليدي للإنتاجية", "هندسة الأوامر للمحترفين", "أتمتة الأعمال بدون برمجة (No-Code AI)", "الاستخدام الآمن والمسؤول للذكاء الاصطناعي"] },
-    { g: "البيانات", items: ["الثقافة في البيانات", "مهارات البيانات باستخدام الجداول الإلكترونية", "اتخاذ القرار المبني على البيانات", "لوحات المعلومات وسرد البيانات", "حماية البيانات والخصوصية (PDPL)"] },
+    { g: "البيانات", items: ["التوعية في البيانات", "مهارات البيانات باستخدام الجداول الإلكترونية", "اتخاذ القرار المبني على البيانات", "لوحات المعلومات وسرد البيانات", "حماية البيانات والخصوصية (PDPL)"] },
   ],
 };
 
@@ -994,11 +984,27 @@ const TracksSection = () => (
       <Reveal>
         <p className="text-brand font-semibold tracking-wide text-sm">المسارات المهنية</p>
         <h2 className="mt-3 font-display font-bold text-navy text-3xl sm:text-4xl">مسارات تعليمية تراكمية قابلة للتجميع</h2>
-        <p className="mt-4 text-slate2">صُمّمت المنظومة على شكل مسارات تراكمية (Modular &amp; Stackable) تخدم ثلاث فئات من المتعلمين؛ يتدرّج المتدرب من الأساسيات إلى الاحتراف أو يختار وحدات مستقلة حسب احتياجه.</p>
+        <p className="mt-4 text-slate2">صُمّمت المنظومة على شكل مسارات تراكمية (Modular &amp; Stackable) تخدم ثلاث فئات من المتدربين؛ يتدرّج المتدرب من الأساسيات إلى الاحتراف أو يختار وحدات مستقلة حسب احتياجه.</p>
       </Reveal>
     </div>
 
     <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+
+      {/* أساس المسارات: الإطار الوطني */}
+      <Reveal>
+        <div className="rounded-2xl border border-brand/25 shadow-soft p-5 sm:p-6 flex items-start gap-4"
+          style={{ background: "linear-gradient(105deg, rgba(31,111,178,0.08), rgba(20,160,138,0.05))" }}>
+          <span className="grid place-items-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl shrink-0 bg-brand/10 text-brand">
+            <Icon name="shield" className="w-7 h-7 sm:w-8 sm:h-8" />
+          </span>
+          <div>
+            <p className="text-[11px] font-semibold text-brand tracking-wide mb-1">أساس المسارات</p>
+            <p className="text-navy font-semibold leading-relaxed text-[15px] sm:text-lg">
+              تستند جميع المسارات المهنية إلى <span className="font-bold text-brand-dark">«الإطار الوطني للمعايير المهنية للبيانات والذكاء الاصطناعي»</span>؛ لضمان مواءمة مخرجاتها مع المعايير الوطنية المعتمدة وربطها بالجدارات المطلوبة في سوق العمل.
+            </p>
+          </div>
+        </div>
+      </Reveal>
 
       {/* المسار التأسيسي */}
       <Reveal>
