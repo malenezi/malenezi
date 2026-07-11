@@ -237,12 +237,11 @@ const NODES = [
     id: "universities", title: "جامعات ومعاهد وأكاديميات", icon: "university", color: "#5b5ea6",
     tag: "شركاء تنفيذ استراتيجيون",
     purpose: "شركاء استراتيجيون يشاركون في تطوير المناهج والبحث والبرامج المشتركة لتعميق قاعدة الكوادر الوطنية.",
-    who: [
-      { t: "جامعات", icon: "university" },
-      { t: "مراكز تدريبية", icon: "present" },
-      { t: "معاهد", icon: "layers" },
-      { t: "شركاء", icon: "users" },
+    images: [
+      { src: "assets/academies.png", alt: "المعاهد والأكاديميات الشريكة" },
+      { src: "assets/universities-logos.png", alt: "الجامعات الشريكة" },
     ],
+    who: [],
     responsibilities: ["شراكات تنفيذ استراتيجية", "تطوير المناهج", "التعاون البحثي", "خبراء المجال", "برامج مشتركة"],
     inputs: ["الأولويات التدريبية الوطنية", "أطر الاعتماد", "ذكاء المهارات"],
     outputs: ["برامج مشتركة", "بحوث ومناهج", "خريجون مؤهَّلون"],
@@ -252,6 +251,7 @@ const NODES = [
     id: "labor", title: "جهات سوق العمل", icon: "briefcase", color: "#d9881f",
     tag: "القطاعان الحكومي والخاص",
     purpose: "جهات التوظيف التي تعكس الطلب الحقيقي على القوى العاملة وتستوعب الخريجين في أدوار منتجة.",
+    imgBefore: { src: "assets/companies.png", alt: "شركات وجهات سوق العمل" },
     who: [
       { t: "أذرع سدايا", icon: "hub" },
       { t: "الجهات الحكومية", icon: "university" },
@@ -266,8 +266,9 @@ const NODES = [
     id: "accreditation", title: "منظومة الاعتماد", icon: "shield", color: "#4faf57",
     tag: "الجودة والشهادات",
     purpose: "الجهات التي تعتمد البرامج وتصادق على الشهادات وفق معايير التأهيل الوطنية.",
+    imgBefore: { src: "assets/frameworks.png", alt: "الأطر الوطنية للبيانات والذكاء الاصطناعي" },
     who: [
-      { t: "الإطار الوطني للمعايير المهنية", icon: "shield" },
+      { t: "الإطار الوطني للمعايير المهنية للبيانات والذكاء الاصطناعي", icon: "shield" },
       { t: "الإطار الأكاديمي السعودي لمؤهلات تخصصات البيانات والذكاء الاصطناعي", icon: "award" },
       { t: "الإطار الوطني للمعايير التدريبية في البيانات والذكاء الاصطناعي", icon: "badge" },
     ],
@@ -282,7 +283,7 @@ const NODES = [
     purpose: "الأساس المبني على الأدلة الذي يقرأ الاحتياجات الوطنية وأولويات الجهات ليحدّد المهارات التي تحتاجها البلاد مستقبلاً.",
     who: [
       { t: "الاحتياجات الحكومية والوطنية ذات الأولوية", icon: "target" },
-      { t: "احتياجات أذرع سدايا والأجهزة التقنية", icon: "hub" },
+      { img: "assets/sdaia-arms.png", alt: "احتياجات أذرع سدايا والأجهزة التقنية" },
       { t: "تقارير ودراسات مكتب الاستراتيجية", icon: "clipboard" },
       { t: "تقارير السوق والشركاء والاتجاهات العالمية", icon: "trend" },
     ],
@@ -625,14 +626,37 @@ const SidePanel = ({ selected, onClose }) => {
                   className="shrink-0 grid place-items-center w-9 h-9 rounded-full border border-hair text-slate2 hover:bg-mist transition">✕</button>
               </div>
 
-              <ul className="mt-7 space-y-2.5">
+              {!isCenter && node.imgBefore && (
+                <div className="mt-7 rounded-xl border border-hair bg-white px-4 py-4">
+                  <img src={node.imgBefore.src} alt={node.imgBefore.alt} loading="lazy"
+                    className="w-full h-auto max-h-72 object-contain" />
+                </div>
+              )}
+
+              {!isCenter && node.images && (
+                <div className={`${node.imgBefore ? "mt-4" : "mt-7"} space-y-4`}>
+                  {node.images.map((im, i) => (
+                    <div key={i} className="rounded-xl border border-hair bg-white px-4 py-4">
+                      <img src={im.src} alt={im.alt} loading="lazy" className="w-full h-auto object-contain" />
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <ul className={`${!isCenter && (node.imgBefore || node.images) ? "mt-4" : "mt-7"} space-y-2.5`}>
                 {(isCenter ? CENTER.responsibilities : node.who).map((w, i) => (
-                  <li key={i} className="flex items-center gap-3 rounded-xl border border-hair bg-mist/40 px-4 py-3">
-                    <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color, background: `${color}14` }}>
-                      <Icon name={w.icon} className="w-6 h-6" />
-                    </span>
-                    <span className="text-navy font-semibold text-[15px] leading-snug">{w.t}</span>
-                  </li>
+                  w.img ? (
+                    <li key={i} className="rounded-xl border border-hair bg-white px-4 py-4">
+                      <img src={w.img} alt={w.alt} loading="lazy" className="w-full h-auto max-h-64 object-contain" />
+                    </li>
+                  ) : (
+                    <li key={i} className="flex items-center gap-3 rounded-xl border border-hair bg-mist/40 px-4 py-3">
+                      <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color, background: `${color}14` }}>
+                        <Icon name={w.icon} className="w-6 h-6" />
+                      </span>
+                      <span className="text-navy font-semibold text-[15px] leading-snug">{w.t}</span>
+                    </li>
+                  )
                 ))}
               </ul>
             </div>
