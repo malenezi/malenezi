@@ -57,9 +57,10 @@
     border:1px solid rgba(255,255,255,0.7);
   }
   .glass-blue{
-    background:linear-gradient(160deg, rgba(31,111,178,0.10), rgba(20,160,138,0.06));
+    /* هوية أكاديمية سدايا: أزرق سماوي → أزرق فولاذي */
+    background:linear-gradient(160deg, rgba(112,200,240,0.18), rgba(104,144,200,0.09));
     backdrop-filter:blur(14px);
-    border:1px solid rgba(31,111,178,0.16);
+    border:1px solid rgba(104,144,200,0.22);
   }
 
   .aurora{position:absolute;border-radius:9999px;filter:blur(70px);opacity:.5;pointer-events:none;}
@@ -140,6 +141,12 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 
 /* أرقام عربية */
 const AR = (n) => String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+
+/* ألوان هوية أكاديمية سدايا (مستخرجة من الشعار) */
+const BRAND = {
+  sky: "#70c8f0", steel: "#6890c8", indigo: "#6058a0",
+  deep: "#384080", orange: "#f08840", green: "#68b870", teal: "#409088",
+};
 
 /* ------------------------------------------------------------------ */
 /* مجموعة الأيقونات (خطية موحّدة)                                       */
@@ -461,7 +468,7 @@ const NetworkSection = ({ onSelect }) => {
 
           {/* المركز */}
           <button
-            onClick={() => onSelect("center")}
+            onClick={(e) => onSelect("center", e.currentTarget.getBoundingClientRect())}
             onMouseEnter={() => setHover("center")} onMouseLeave={() => setHover(null)}
             className="group absolute -translate-x-1/2 -translate-y-1/2 z-20 focus:outline-none"
             style={{ left: "50%", top: `${(CY / VBH) * 100}%` }}
@@ -491,7 +498,7 @@ const NetworkSection = ({ onSelect }) => {
               <div key={n.id} className="absolute -translate-x-1/2 -translate-y-1/2 z-10"
                 style={{ left: `${n.leftPct}%`, top: `${n.topPct}%` }}>
                 <motion.button
-                  onClick={() => onSelect(n.id)}
+                  onClick={(e) => onSelect(n.id, e.currentTarget.getBoundingClientRect())}
                   onMouseEnter={() => setHover(n.id)} onMouseLeave={() => setHover(null)}
                   initial={{ scale: 0.4, opacity: 0 }}
                   animate={inView ? { scale: 1, opacity: dim ? 0.4 : 1 } : {}}
@@ -573,7 +580,7 @@ const Field = ({ label, items, color }) => (
   </div>
 );
 
-const SidePanel = ({ selected, onClose }) => {
+const SidePanel = ({ selected, anchor, onClose }) => {
   const isCenter = selected === "center";
   const node = isCenter ? null : positioned.find((n) => n.id === selected);
   const open = !!selected;
@@ -585,21 +592,49 @@ const SidePanel = ({ selected, onClose }) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  /* موضع النافذة: فوق العنصر المحدّد مباشرة، أو متمركزة عليه عند ضيق المساحة */
+  const place = React.useMemo(() => {
+    if (!open) return null;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const W = Math.min(620, vw - 24);
+    const a = anchor || { left: vw / 2, top: vh / 2, width: 0, height: 0 };
+    const cx = a.left + a.width / 2;
+    const cy = a.top + a.height / 2;
+    const left = Math.min(Math.max(cx - W / 2, 12), Math.max(vw - W - 12, 12));
+    const arrowX = Math.min(Math.max(cx - left, 20), W - 20);
+    const GAP = 16;
+    const spaceAbove = a.top - GAP - 12;
+    if (spaceAbove >= vh * 0.55) {
+      return { mode: "above", W, left, arrowX, bottom: vh - a.top + GAP, maxH: Math.min(spaceAbove, vh * 0.88) };
+    }
+    const maxH = Math.min(vh * 0.88, vh - 24);
+    const top = Math.min(Math.max(cy - maxH / 2, 12), Math.max(vh - maxH - 12, 12));
+    return { mode: "center", W, left, arrowX, top, maxH };
+  }, [open, anchor]);
+
   return (
     <AnimatePresence>
-      {open && (
+      {open && place && (
         <>
           <motion.div className="fixed inset-0 z-50 bg-navy/40 backdrop-blur-sm"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={onClose} />
           <motion.aside
             role="dialog" aria-modal="true" aria-label={isCenter ? CENTER.title : node.title}
-            className="fixed left-0 top-0 z-50 h-full w-full sm:w-[440px] bg-white shadow-2xl overflow-y-auto"
-            initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }}
-            transition={{ type: "spring", stiffness: 260, damping: 30 }}>
+            className="fixed z-50 rounded-2xl bg-white shadow-glow border border-hair flex flex-col"
+            style={{
+              left: place.left, width: place.W, maxHeight: place.maxH,
+              ...(place.mode === "above" ? { bottom: place.bottom } : { top: place.top }),
+              transformOrigin: `${place.arrowX}px ${place.mode === "above" ? "100%" : "50%"}`,
+            }}
+            initial={{ opacity: 0, scale: 0.82, y: place.mode === "above" ? 12 : 0 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: place.mode === "above" ? 8 : 0 }}
+            transition={{ type: "spring", stiffness: 320, damping: 30 }}>
 
-            <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${color}, #1f6fb2)` }} />
-            <div className="p-6 sm:p-8">
+            <div className="h-1.5 w-full shrink-0 rounded-t-2xl" style={{ background: `linear-gradient(90deg, ${color}, ${BRAND.steel})` }} />
+            <div className="flex-1 min-h-0 overflow-y-auto rounded-b-2xl">
+            <div className="p-6 sm:p-8" style={{ background: `linear-gradient(180deg, ${BRAND.sky}24, #ffffff 42%)` }}>
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <span className="grid place-items-center w-12 h-12 rounded-xl shrink-0" style={{ color, background: `${color}14` }}>
@@ -652,6 +687,13 @@ const SidePanel = ({ selected, onClose }) => {
                 ))}
               </ul>
             </div>
+            </div>
+
+            {place.mode === "above" && (
+              <span aria-hidden="true"
+                className="absolute -bottom-1.5 w-3 h-3 rotate-45 bg-white border-b border-r border-hair"
+                style={{ left: place.arrowX - 6 }} />
+            )}
           </motion.aside>
         </>
       )}
@@ -797,7 +839,8 @@ const FlowSection = () => {
             <motion.div key={s.key}
               initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3 }}
-              className="p-6 sm:p-8">
+              className="p-6 sm:p-8"
+              style={{ background: `linear-gradient(165deg, ${BRAND.sky}1f, ${BRAND.indigo}0d 55%, #ffffff)` }}>
 
               {/* ترويسة المرحلة */}
               <div className="flex flex-col sm:flex-row sm:items-start gap-4">
@@ -1009,7 +1052,7 @@ const TracksSection = () => (
       {/* أساس المسارات: الإطار الوطني */}
       <Reveal>
         <div className="rounded-2xl border border-brand/25 shadow-soft p-5 sm:p-6 flex items-start gap-4"
-          style={{ background: "linear-gradient(105deg, rgba(31,111,178,0.08), rgba(20,160,138,0.05))" }}>
+          style={{ background: `linear-gradient(105deg, ${BRAND.sky}29, ${BRAND.indigo}14)` }}>
           <span className="grid place-items-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl shrink-0 bg-brand/10 text-brand">
             <Icon name="shield" className="w-7 h-7 sm:w-8 sm:h-8" />
           </span>
@@ -1054,7 +1097,8 @@ const TracksSection = () => (
       <div className="grid lg:grid-cols-2 gap-6">
         {PATH_TECH.map((t, idx) => (
           <Reveal key={t.id} delay={idx * 0.1}>
-            <div className="h-full rounded-2xl bg-white border border-hair shadow-soft p-6" style={{ borderTop: `3px solid ${t.color}` }}>
+            <div className="h-full rounded-2xl border border-hair shadow-soft p-6"
+              style={{ borderTop: `3px solid ${t.color}`, background: `linear-gradient(180deg, ${t.id === "ai" ? BRAND.teal : BRAND.indigo}1a, #ffffff 55%)` }}>
               <div className="flex items-center gap-3 mb-1.5">
                 <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: t.color, background: `${t.color}14` }}>
                   <Icon name={t.icon} className="w-6 h-6" />
@@ -1076,7 +1120,8 @@ const TracksSection = () => (
 
       {/* الموظفون غير التقنيين */}
       <Reveal>
-        <div className="rounded-2xl bg-white border border-hair shadow-soft p-6 sm:p-7" style={{ borderTop: `3px solid ${PATH_NONTECH.color}` }}>
+        <div className="rounded-2xl border border-hair shadow-soft p-6 sm:p-7"
+          style={{ borderTop: `3px solid ${PATH_NONTECH.color}`, background: `linear-gradient(180deg, ${BRAND.orange}1a, #ffffff 55%)` }}>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: PATH_NONTECH.color, background: `${PATH_NONTECH.color}14` }}>
               <Icon name={PATH_NONTECH.icon} className="w-6 h-6" />
@@ -1123,8 +1168,8 @@ const TracksSection = () => (
 
       {/* الشهادات التراكمية */}
       <Reveal>
-        <div className="rounded-2xl overflow-hidden shadow-glow" style={{ background: "linear-gradient(135deg,#16578d,#1f6fb2 55%,#14a08a)" }}>
-          <div className="p-6 sm:p-8 text-center">
+        <div className="rounded-2xl overflow-hidden shadow-glow">
+          <div className="p-6 sm:p-8 text-center" style={{ background: `linear-gradient(135deg, ${BRAND.deep}, ${BRAND.indigo} 45%, ${BRAND.teal})` }}>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white/90 px-4 py-1.5 text-xs font-semibold">
               <Icon name="shield" className="w-4 h-4" /> شهادات تراكمية (Stackable Certificates)
             </span>
@@ -1158,12 +1203,12 @@ const App = () => {
       <Nav />
       <main>
         <Hero />
-        <NetworkSection onSelect={setSelected} />
+        <NetworkSection onSelect={(id, rect) => setSelected({ id, rect })} />
         <FlowSection />
         <TracksSection />
       </main>
       <Footer />
-      <SidePanel selected={selected} onClose={() => setSelected(null)} />
+      <SidePanel selected={selected?.id ?? null} anchor={selected?.rect ?? null} onClose={() => setSelected(null)} />
     </div>
   );
 };
