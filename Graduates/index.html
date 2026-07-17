@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خريجو أكاديمية سدايا — السجل الشامل الموثّق (2021–2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+:root{
+  --navy:#1C355E; --ink:#101820; --white:#FFFFFF;
+  --n80:#3D5480; --n60:#6478A0; --n40:#93A3BF; --n20:#C4CDDE; --n08:#EDF0F6; --n04:#F6F8FB;
+  --line:rgba(28,53,94,.18); --line2:rgba(28,53,94,.10);
+  --r:14px; --sh:0 2px 10px rgba(16,24,32,.05);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Markazi Text',serif;background:var(--white);color:var(--ink);font-size:20px;line-height:1.55;text-align:right}
+a{color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+svg.ic{width:1em;height:1em;vertical-align:-.12em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ── Top nav ── */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:24px;color:var(--navy);white-space:nowrap}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:17px;font-weight:700;letter-spacing:.5px}
+.nav-links{display:flex;gap:4px;margin-inline-start:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{text-decoration:none;font-size:19px;font-weight:500;color:var(--ink);padding:6px 12px;border-radius:8px;white-space:nowrap}
+.nav-links a:hover{background:var(--n08);color:var(--navy)}
+
+/* ── Hero ── */
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--line2);position:relative;overflow:hidden}
+.hero::after{content:"٧٠+";position:absolute;left:-10px;top:-40px;font-size:340px;font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--n20);pointer-events:none;user-select:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:600;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:4px 16px;background:var(--n04)}
+.hero h1{font-size:clamp(38px,5.4vw,62px);font-weight:700;color:var(--navy);line-height:1.15;margin:18px 0 10px;max-width:820px;position:relative;z-index:1}
+.hero p.lead{font-size:22px;max-width:780px;color:var(--ink);position:relative;z-index:1}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:18px;color:var(--n60)}
+.hero .meta b{color:var(--ink);font-weight:600}
+
+/* ── KPI grid ── */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:34px 0 8px}
+.kpi{border:1px solid var(--line2);border-radius:var(--r);padding:18px 18px 14px;box-shadow:var(--sh);position:relative}
+.kpi::before{content:"";position:absolute;inset-inline-start:0;top:14px;bottom:14px;width:4px;border-radius:0 4px 4px 0;background:var(--navy)}
+.kpi .ico{width:40px;height:40px;border-radius:10px;background:var(--n08);color:var(--navy);display:grid;place-items:center;margin-bottom:8px}
+.kpi .ico svg{width:20px;height:20px}
+.kpi .num{font-size:42px;font-weight:700;color:var(--navy);line-height:1}
+.kpi .lbl{font-size:19px;font-weight:500;margin-top:4px}
+.kpi .sub{font-size:16px;color:var(--n60);line-height:1.35}
+
+/* ── Sections ── */
+section{padding:52px 0 24px}
+.sec-head{margin-bottom:26px}
+.sec-kicker{font-size:18px;font-weight:600;color:var(--n60);letter-spacing:.02em}
+.sec-head h2{font-size:38px;font-weight:700;color:var(--navy);line-height:1.15}
+.sec-head p{max-width:820px;font-size:20px;margin-top:6px}
+hr.sep{border:none;border-top:1px solid var(--line2);margin:28px 0 0}
+
+/* ── Legend ── */
+.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.lg{border:1px solid var(--line2);border-radius:var(--r);padding:16px;box-shadow:var(--sh)}
+.lg .chip{margin-bottom:8px}
+.lg b{display:block;font-size:21px;color:var(--navy)}
+.lg span{font-size:17px;line-height:1.4;display:block;color:var(--ink)}
+.note-strip{margin-top:16px;border:1px dashed var(--line);border-radius:var(--r);background:var(--n04);padding:14px 18px;font-size:18px}
+.note-strip li{margin-inline-start:22px;margin-top:2px}
+
+/* ── Chips ── */
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:16px;font-weight:600;padding:2px 12px;border-radius:999px;line-height:1.5;white-space:nowrap}
+.chip .dot{width:9px;height:9px;border-radius:50%;background:currentColor}
+.c-high{background:var(--navy);color:#fff}
+.c-internal{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.c-mid{background:var(--n20);color:var(--navy)}
+.c-low{background:var(--n08);color:var(--n80)}
+.c-inferred{background:#fff;color:var(--n60);border:1.5px dashed var(--n40)}
+.c-excluded{background:var(--ink);color:#fff}
+
+/* ── Charts ── */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chart-card{border:1px solid var(--line2);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.chart-card h3{font-size:24px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px}
+.chart-card .hint{font-size:16px;color:var(--n60);margin-bottom:10px}
+.chart-box{position:relative;height:300px}
+.chart-tall{height:380px}
+
+/* ── Registry controls ── */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font-family:inherit;font-size:18px;font-weight:600;padding:6px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.15s}
+.tab:hover{border-color:var(--navy);color:var(--navy)}
+.tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.search{margin-inline-start:auto;position:relative}
+.search input{font-family:inherit;font-size:18px;padding:8px 40px 8px 16px;border:1px solid var(--line);border-radius:999px;width:250px;background:#fff;color:var(--ink);outline:none}
+.search input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(28,53,94,.12)}
+.search svg{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--n60)}
+.count-line{font-size:18px;color:var(--n60);margin-bottom:14px}
+
+/* ── Cards grid ── */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line2);border-radius:var(--r);box-shadow:var(--sh);background:#fff;display:flex;flex-direction:column;overflow:hidden;border-inline-start:5px solid var(--n40)}
+.card.lv-high{border-inline-start-color:var(--navy)}
+.card.lv-internal{border-inline-start-color:var(--n80)}
+.card.lv-mid{border-inline-start-color:var(--n60)}
+.card.lv-low{border-inline-start-color:var(--n40)}
+.card.lv-inferred{border-inline-start-color:var(--n20)}
+.card.lv-excluded{border-inline-start-color:var(--ink)}
+.card-h{padding:16px 18px 10px;display:flex;gap:12px;align-items:flex-start}
+.card-num{width:38px;height:38px;flex:none;border-radius:10px;background:var(--n08);color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:19px}
+.card-h .nm{font-size:24px;font-weight:700;color:var(--navy);line-height:1.2}
+.card-h .en{font-size:16px;color:var(--n60);direction:ltr;text-align:right;display:block}
+.card-h .chip{margin-inline-start:auto}
+.card-b{padding:0 18px 14px;flex:1}
+.row{display:flex;gap:9px;font-size:18px;margin-top:7px;align-items:baseline}
+.row svg{color:var(--navy);position:relative;top:2px}
+.row .k{font-weight:600;color:var(--navy);white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{font-size:15px;font-weight:500;background:var(--n08);color:var(--navy);border-radius:7px;padding:1px 10px}
+.warn{margin-top:10px;font-size:16px;background:var(--n04);border:1px dashed var(--n40);border-radius:9px;padding:6px 12px;display:flex;gap:7px;color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.links a{display:inline-flex;align-items:center;gap:5px;font-size:16px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:2px 12px;transition:.15s}
+.links a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ledger{border-top:1px solid var(--line2);background:var(--n04);padding:10px 18px;font-size:16px;line-height:1.45}
+.ledger .ok{color:var(--navy);font-weight:600}
+.ledger .no{color:var(--n60)}
+
+/* ── Tables ── */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line2);border-radius:var(--r);box-shadow:var(--sh)}
+table{width:100%;border-collapse:collapse;font-size:18px;min-width:840px}
+thead th{background:var(--navy);color:#fff;font-weight:600;padding:10px 14px;text-align:right;white-space:nowrap;font-size:18px}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--line2);vertical-align:top}
+tbody tr:nth-child(even){background:var(--n04)}
+tbody tr:hover{background:var(--n08)}
+td.score{font-weight:700;color:var(--navy);font-size:20px}
+.bar{height:7px;background:var(--n08);border-radius:99px;overflow:hidden;min-width:80px;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--navy);border-radius:99px}
+.pill{display:inline-block;font-size:15px;font-weight:600;border-radius:999px;padding:0 10px}
+.pill.hi{background:var(--navy);color:#fff}
+.pill.md{background:var(--n20);color:var(--navy)}
+
+/* ── Demos strip ── */
+.demos{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.demos a{display:inline-flex;align-items:center;gap:6px;font-size:17px;font-weight:600;text-decoration:none;background:var(--n08);border-radius:999px;padding:4px 14px;color:var(--navy)}
+.demos a:hover{background:var(--navy);color:#fff}
+
+/* ── Methodology ── */
+.meth{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.meth .box{border:1px solid var(--line2);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.meth h3{font-size:24px;color:var(--navy);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.meth li{margin-inline-start:20px;margin-top:6px;font-size:18px}
+.reco{margin-top:16px;border:1px solid var(--line2);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.reco ol{counter-reset:rc;list-style:none}
+.reco li{counter-increment:rc;display:flex;gap:12px;margin-top:10px;font-size:19px}
+.reco li::before{content:counter(rc);flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:17px}
+
+/* ── Footer ── */
+footer{margin-top:56px;border-top:1px solid var(--line2);background:var(--n04);padding:40px 0 30px}
+.src-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.src-grid h4{font-size:21px;color:var(--navy);margin-bottom:6px}
+.src-grid a{font-size:17px;display:inline-block;margin:1px 0;text-decoration:none}
+.src-grid a:hover{text-decoration:underline}
+.ethic{margin-top:26px;border:1px solid var(--line);border-radius:var(--r);background:#fff;padding:16px 20px;font-size:18px;display:flex;gap:10px}
+.copyline{margin-top:22px;font-size:16px;color:var(--n60);text-align:center}
+
+@media(max-width:980px){
+  .kpis,.legend{grid-template-columns:repeat(2,1fr)}
+  .grid,.meth{grid-template-columns:1fr 1fr}
+  .charts{grid-template-columns:1fr}
+  .hero::after{font-size:200px}
+}
+@media(max-width:640px){
+  body{font-size:19px}
+  .grid,.meth,.src-grid{grid-template-columns:1fr}
+  .kpis,.legend{grid-template-columns:1fr 1fr}
+  .search{margin-inline-start:0;width:100%}
+  .search input{width:100%}
+  .hero::after{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="brand"><span class="brand-mark">س</span>سجل خريجي أكاديمية سدايا</span>
+    <div class="nav-links">
+      <a href="#stats">لمحة رقمية</a>
+      <a href="#charts">الرسوم البيانية</a>
+      <a href="#registry">سجل الخريجين</a>
+      <a href="#projects">المشاريع</a>
+      <a href="#programs">البرامج</a>
+      <a href="#method">المنهجية</a>
+      <a href="#sources">المصادر</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/></svg>
+      تقرير مصادر مفتوحة موثّق · 2021 – يونيو 2026
+    </span>
+    <h1>خريجو أكاديمية سدايا<br>السجل الشامل الموثّق</h1>
+    <p class="lead">تجميع وتوحيد كامل لجميع ملفات المشروع — قاعدة البيانات الرئيسية (63 سجلًا)، سجلات الأفراد المرشحة، ملف المشاريع المرتّبة، وقصص النجاح الداخلية — المبنية على نحو 180 استعلام مصادر مفتوحة بالعربية والإنجليزية ومسح معمّق لمنصتَي GitHub وHugging Face، دون تسجيل دخول أو كشط لأي منصة.</p>
+    <div class="meta">
+      <span><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> تاريخ الإعداد: <b>17 يوليو 2026</b></span>
+      <span><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg> المنهجية: <b>OSINT + مسح GitHub / Hugging Face</b></span>
+      <span><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/></svg> النطاق: <b>2021 – يونيو 2026</b></span>
+    </div>
+  </div>
+</header>
+
+<section id="stats">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">لمحة رقمية</div>
+      <h2>أرقام العيّنة المرصودة</h2>
+      <p>الأرقام أدناه أعداد على العيّنة المرصودة فقط؛ لا يمكن حساب نسب توظيف سكانية لعدم نشر أعداد الدفعات (لا مقام إحصائي).</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="num">70+</div><div class="lbl">خريجًا/متدربًا بالاسم</div><div class="sub">60 من المسح المفتوح + 10 من قصص النجاح وLinkedIn، إضافة إلى ~15 عضو فريق</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div><div class="num">44+</div><div class="lbl">مشاركة مؤكدة بالبرنامج</div><div class="sub">مصدر ذاتي: مستودعات، مواقع شخصية، منشورات إتمام</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="num">22+</div><div class="lbl">توظيفًا/وظيفة جديدة</div><div class="sub">مرصودة في العيّنة، بينها حالات موثّقة بالتواريخ</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div><div class="num">4</div><div class="lbl">مناصب قيادية</div><div class="sub">رئاسة قطاع وقسم ومناصب «أولى» موثّقة أو مؤشَّرة</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div><div class="num">25</div><div class="lbl">مشروع ذكاء اصطناعي</div><div class="sub">موثّقة بمقاييس أداء ومرتّبة بدرجات /100</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div class="num">11</div><div class="lbl">نموذجًا وعرضًا حيًّا</div><div class="sub">على Hugging Face وGoogle Cloud وYouTube</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="num">2</div><div class="lbl">بحثان منشوران</div><div class="sub">IEEE CSDGAIS 2024 · ALLaM/ICLR 2025 (للمستبعد)</div></div>
+      <div class="kpi"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13l1.5 8-5-3-5 3 1.5-8"/></svg></div><div class="num">2+</div><div class="lbl">جوائز ومسابقات</div><div class="sub">جائزة «ذكاء/منشآت» + أفضل 3 مشاريع بالمعسكر</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="legend">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">دليل القراءة</div>
+      <h2>مستويات التوثيق</h2>
+    </div>
+    <div class="legend">
+      <div class="lg"><span class="chip c-high"><span class="dot"></span>مرتفع</span><b>توثيق مرتفع</b><span>الانتساب للبرنامج <b>و</b>النتيجة المهنية موثّقان بتواريخ من مصادر مستقلة.</span></div>
+      <div class="lg"><span class="chip c-mid"><span class="dot"></span>متوسط</span><b>توثيق متوسط</b><span>انتساب واضح + نتيجة، لكن التوقيت أو أحد الروابط غير مكتمل التوثيق.</span></div>
+      <div class="lg"><span class="chip c-low"><span class="dot"></span>منخفض</span><b>توثيق منخفض</b><span>مؤشر واحد (مقتطف مفهرس/مجمّع بيانات)، أو انتساب مؤكد دون نتيجة علنية.</span></div>
+      <div class="lg"><span class="chip c-internal"><span class="dot"></span>داخلي</span><b>قصص النجاح الداخلية</b><span>موثّق داخليًا بالبرنامج والمؤهل وجهة العمل؛ لا رابط تحقق علني مرفق في الملفات.</span></div>
+    </div>
+    <div class="note-strip">
+      <b>ملاحظات تنطبق على كل السجلات:</b>
+      <ul>
+        <li><b>حالة الانتساب:</b> «مؤكد» = أثبته الشخص بنفسه (مستودع، موقع شخصي، منشور إتمام) · «مستنتج» = من تطابق فهرسة بحث فقط ويتطلب تحققًا موثقًا قبل أي استخدام مؤثر.</li>
+        <li><b>براءات الاختراع:</b> لم تُرصد أي براءة منشورة لأي خريج في نطاق البحث (بحث 17 يوليو 2026).</li>
+        <li>الحقول غير الموثّقة علنًا تُكتب «غير موثّق علنًا» ولا تُخمَّن.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="charts">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">إنفوجرافيك تفاعلي</div>
+      <h2>الرسوم البيانية</h2>
+    </div>
+    <div class="charts">
+      <div class="chart-card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path d="M21.2 15.9A10 10 0 1 1 8 2.8"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg> توزيع السجلات حسب مستوى التوثيق</h3>
+        <div class="hint">72 سجلًا مرقّمًا + حالة استبعاد موثّقة واحدة</div>
+        <div class="chart-box"><canvas id="chLevels"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg> النتائج المهنية المرصودة على العيّنة</h3>
+        <div class="hint">أعداد على العيّنة المرصودة فقط — ليست نسبًا سكانية</div>
+        <div class="chart-box"><canvas id="chOutcomes"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg> أفضل 10 مشاريع بالدرجة (/100)</h3>
+        <div class="hint">من سجل المشاريع الكامل المرتّب (25 مشروعًا)</div>
+        <div class="chart-box chart-tall"><canvas id="chTop10"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10h-10z"/></svg> المجالات التقنية للمشاريع الـ 25</h3>
+        <div class="hint">حسب المجال الرئيسي لكل مشروع</div>
+        <div class="chart-box"><canvas id="chDomains"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="registry">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">السجل الكامل</div>
+      <h2>سجل الخريجين والمتدربين</h2>
+      <p>71 بطاقة تغطي السجلات الـ 72 المرقّمة في التقرير وحالة الاستبعاد الموثّقة — تصفّح حسب القسم أو ابحث بالاسم أو الجهة.</p>
+    </div>
+    <div class="controls">
+      <div class="tabs" id="tabs" role="tablist">
+        <button class="tab active" data-f="all">الكل</button>
+        <button class="tab" data-f="s1">توثيق مرتفع</button>
+        <button class="tab" data-f="s2">قصص النجاح الداخلية</button>
+        <button class="tab" data-f="s3">شهادات NVIDIA</button>
+        <button class="tab" data-f="s4">توثيق متوسط</button>
+        <button class="tab" data-f="s5">انتساب مؤكد دون نتيجة</button>
+        <button class="tab" data-f="s6">انتساب مستنتج</button>
+        <button class="tab" data-f="s7">مستبعد</button>
+      </div>
+      <label class="search">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" id="q" placeholder="ابحث بالاسم أو الجهة أو البرنامج…" aria-label="بحث في السجل">
+      </label>
+    </div>
+    <div class="count-line" id="countLine"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">القسم الثامن</div>
+      <h2>سجل المشاريع الكامل مرتّبًا (25 مشروعًا)</h2>
+      <p>مشاريع تخرج وأعمال تطبيقية موثّقة بمقاييس أداء منشورة، مرتّبة تنازليًا بالدرجة من 100.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table id="projTable">
+        <thead><tr><th>#</th><th>المشروع</th><th>الفريق/المالك</th><th>المجال</th><th>الدرجة</th><th>التحقق</th><th>أبرز المؤشرات</th><th>الرابط</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <h3 style="font-size:26px;color:var(--navy);margin-top:28px">النماذج والعروض الحية المنشورة (11)</h3>
+    <div class="demos">
+      <a href="https://huggingface.co/spaces/M12ths/ADEL_app" target="_blank" rel="noopener">🤖 ADEL على Hugging Face</a>
+      <a href="https://huggingface.co/spaces/TheKnight115/T5_final_project" target="_blank" rel="noopener">🛵 RASYD على Hugging Face</a>
+      <a href="https://huggingface.co/TheKnight115/Finetuned_MarBERT_Arabic_Emotional_Analysis" target="_blank" rel="noopener">🧠 Finetuned MarBERT</a>
+      <a href="https://huggingface.co/TheKnight115/Arsarcasm" target="_blank" rel="noopener">💬 Arsarcasm</a>
+      <a href="https://huggingface.co/TheKnight115/fine-tuned-bert-base-uncased" target="_blank" rel="noopener">🔤 fine-tuned BERT</a>
+      <a href="https://github.com/TheKnight909/Emotional-analysis" target="_blank" rel="noopener">☁️ خدمة مشاعر على Cloud Run</a>
+      <a href="https://github.com/samaalharbi2/AGRONA-Plant-Disease-Detection" target="_blank" rel="noopener">🌿 AGRONA (Gradio)</a>
+      <a href="https://youtu.be/LgCqOEWqY0A" target="_blank" rel="noopener">▶️ عرض RASYD</a>
+      <a href="https://youtu.be/NUNaUCcmvRw" target="_blank" rel="noopener">▶️ عرض ADEL</a>
+      <a href="https://youtu.be/6R8ChxJuhqk" target="_blank" rel="noopener">▶️ عرض توكلنا</a>
+      <a href="https://waadalsaif1-beep.github.io/DAICO-website/index.html" target="_blank" rel="noopener">🌐 موقع DAICO الحي</a>
+    </div>
+    <div class="note-strip" style="margin-top:20px">
+      <b>⚠️ مستودعات موسومة sdaia بانتساب غير مؤكد (للاكتمال):</b>
+      pdpl-scanner · govrag-copilot · KSA-Privacy-Policy-Analysis · Nafath-Platform-Analysis · datasitr-scc-verifier · aigrc-imf · basira-program · ksa-ai-evals — قد تتعلق بأنظمة سدايا التنظيمية لا بخريجيها.
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">القسم التاسع</div>
+      <h2>السياق البرامجي والإحصاءات المجمعة (2021–2026)</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>البرنامج</th><th>الفترة</th><th>أبرز الحقائق الموثّقة</th><th>المصدر</th></tr></thead>
+        <tbody>
+          <tr><td>أول معسكر علوم بيانات بالأكاديمية</td><td>أُطلق يوليو 2021؛ تخرّج 22 أكتوبر 2021</td><td><b>35 خريجًا</b> بالدفعة الأولى؛ مستهدف 2021: 900+ خريج بيانات وذكاء اصطناعي</td><td><a href="https://www.arabnews.com/node/1953841/saudi-arabia" target="_blank" rel="noopener">Arab News</a></td></tr>
+          <tr><td>برنامج تطوير الخريجين المنتهي بالتوظيف (سدايا المستقبل)</td><td>دورات 2023–2025</td><td>معسكر 4 أشهر + تدريب عملي شهران مع شركة تقنية عالمية؛ <b>المجتازون يُعيَّنون في سدايا مباشرة</b> — أعلى ارتباط هيكلي بالتوظيف؛ لا أسماء منشورة</td><td><a href="https://www.middleeastainews.com/p/sdaia-targets-top-potential-ai-talent" target="_blank" rel="noopener">Middle East AI News</a></td></tr>
+          <tr><td>معسكرات T5 لعلوم البيانات والذكاء الاصطناعي (منصة طويق)</td><td>دورات متجددة 2021 → 2026</td><td>3–4 أشهر دراسة + ~شهرا تدريب عملي (OJT)؛ المرحلة 3: <b>250 متدربًا</b> (2024)؛ رواتب بدء مُبلّغة من طرف ثالث 12–18 ألف ريال (غير متحقق)</td><td><a href="https://www.spa.gov.sa/N2041248" target="_blank" rel="noopener">واس</a> · <a href="https://sdaia.tuwaiq.edu.sa/" target="_blank" rel="noopener">الموقع الرسمي</a></td></tr>
+          <tr><td>معسكر تقنيات إدارة الزحام</td><td>تخرّج بحلول 31 أكتوبر 2024</td><td><b>194 خريجًا</b> · 360 ساعة تدريبية · 50 مشروعًا</td><td><a href="https://www.spa.gov.sa/N2199008" target="_blank" rel="noopener">واس</a></td></tr>
+          <tr><td>معسكر حديثي التخرج (مع طويق)</td><td>بدأ 13 أغسطس 2023 (~6 أسابيع)</td><td><b>40 مقبولًا من 6,000 متقدم</b>؛ هدف صريح: التأهيل لسوق العمل</td><td><a href="https://www.spa.gov.sa/en/6954929da1q" target="_blank" rel="noopener">واس</a></td></tr>
+          <tr><td>برنامج Elevate (سدايا + Google Cloud — نساء)</td><td>المرحلة 1: مايو–أغسطس 2023؛ نسخة ثانية 2025</td><td><b>1,000 امرأة أتممن المرحلة الأولى</b> (28 دولة، 340 ساعة)؛ مستهدف 25,000 امرأة في 5 سنوات؛ 1,900+ امرأة حصلن على شهادات تقنية متقدمة</td><td><a href="https://www.spa.gov.sa/en/11dfb64817e" target="_blank" rel="noopener">واس</a> · <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/Prizes/Details/17066205172883328" target="_blank" rel="noopener">ITU/WSIS</a> · <a href="https://saudigazette.com.sa/article/641082" target="_blank" rel="noopener">Saudi Gazette</a></td></tr>
+          <tr><td>معسكر محترفي الذكاء الاصطناعي / الذكاء الاصطناعي التطبيقي</td><td>تسجيل نوفمبر–ديسمبر 2025؛ دفعات من الربع الأول 2026</td><td>مكثّف شهران بالرياض: هندسة بيانات، ML/DL، ذكاء توليدي/LLMs، RAG — حديث جدًا على النتائج</td><td><a href="https://www.spa.gov.sa/N2451052" target="_blank" rel="noopener">واس</a></td></tr>
+          <tr><td>برنامج سدايا للابتعاث في الذكاء الاصطناعي</td><td>نشط؛ دورة 2026 فُتحت فبراير 2026</td><td>لا أسماء عائدين بمناصب موثّقة علنًا بعد</td><td><a href="https://sdaia.gov.sa/ar/Sectors/BuildingCapacity/Pages/ScholarshipProgram.aspx" target="_blank" rel="noopener">الصفحة الرسمية</a></td></tr>
+          <tr><td>إجمالي التدريب</td><td>2023 / بحلول 2025</td><td><b>46,000+ متدرب في 2023</b> (واس)؛ «590,000+ بحلول 2025» (مصدر ثانوي غير متحقق)</td><td><a href="https://www.spa.gov.sa/w1885966" target="_blank" rel="noopener">واس</a></td></tr>
+          <tr><td>تدريب النساء في البيانات والذكاء الاصطناعي</td><td>سنة واحدة، تقرير مارس 2026</td><td><b>666,000+ امرأة</b> (مؤشر ستانفورد للذكاء الاصطناعي 2025)؛ المملكة الأولى عالميًا في تمكين المرأة بالذكاء الاصطناعي</td><td><a href="https://www.arabnews.com/node/2637817/amp" target="_blank" rel="noopener">Arab News</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">القسم العاشر</div>
+      <h2>المنهجية والقيود والتوصيات</h2>
+    </div>
+    <div class="meth">
+      <div class="box">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> ما هو مؤكد</h3>
+        <ul>
+          <li>المشاركة البرامجية لـ <b>44+ فردًا</b> (مصادر ذاتية: مستودعات، مواقع شخصية، منشورات إتمام).</li>
+          <li><b>25 مشروع ذكاء اصطناعي</b> بمقاييس أداء منشورة و<b>11 نموذجًا/عرضًا حيًّا</b>.</li>
+          <li>حالة توظيف واحدة كاملة التوثيق بالتواريخ داخل نافذة 6–8 أشهر (خالد الدويسان)، وحالات 2025 موثّقة داخليًا، وحالات LinkedIn بشهادات NVIDIA.</li>
+          <li><b>ورقتان بحثيتان</b> مرتبطتان بالعيّنة (IEEE CSDGAIS 2024 · ALLaM/ICLR 2025 للمستبعد).</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg> ما هو غير مؤكد</h3>
+        <ul>
+          <li><b>لا براءة اختراع مرصودة</b> لأي خريج (قد توجد وغير مفهرسة علنًا).</li>
+          <li>لم تُرصد مقابلات إعلامية شخصية؛ التغطية كلها على مستوى البرامج.</li>
+          <li>أغلب جهات العمل والتواريخ للمؤكدين برامجيًا غير ظاهرة علنًا (حجب LinkedIn هو القيد الحاكم).</li>
+          <li>سجلات القسم السادس كلها <b>مستنتجة</b> وتتطلب تحققًا قبل أي استخدام.</li>
+          <li>لا يمكن حساب نسب توظيف سكانية — لا مقام إحصائي؛ رقم «85%» يخص أكاديمية خاصة (Olo) لا سدايا وغير متحقق.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg> تصحيحات موثّقة (نزاهة البيانات)</h3>
+        <ul>
+          <li><b>إياس بارود:</b> موظف مبكر في «علو» وليس مؤسسها (المؤسسان: فيصل الشهري ومحمد شلبي).</li>
+          <li><b>WATEER (يزيد زيدان):</b> منتج فواتير رقمية لا توصيل مياه؛ ادعاءا التأسيس وصلة سدايا غير مثبتين.</li>
+          <li><b>هشام اليحيى وفهد الحربي:</b> أُعيد تصنيفهما (موظف لا خريج / خارج نافذة OSINT الأصلية — لكن فهد أُدرج هنا لأن نطاق التقرير يبدأ من 2021).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="reco">
+      <h3 style="font-size:26px;color:var(--navy)">التوصيات لرفع مستوى التوثيق</h3>
+      <ol>
+        <li>التحقق عبر حساب LinkedIn موثَّق من الـ 44+ مؤكّدي البرنامج — نوافذ دفعات 2024 (6–8 أشهر) أصبحت مغلقة وقابلة للفحص الآن.</li>
+        <li>طلب بيانات الدفعات وإحصاءات التوظيف (مجهولة الهوية) من أكاديمية سدايا مباشرة — الأكاديمية تدير برامج منتهية بالتوظيف وتتتبع التوظيف داخليًا في الغالب.</li>
+        <li>إرفاق روابط LinkedIn لقصص النجاح الداخلية الخمس وتأكيد برامج حاملي شهادات NVIDIA الخمسة.</li>
+        <li>متابعة دفعات 2026 (الوكلاء، هندسة البيانات، الذكاء التطبيقي) للنتائج لاحقًا، وتأكيد جائزة «ذكاء/منشآت» للينا العنزي من مصدر رسمي.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer id="sources">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:20px">
+      <div class="sec-kicker">فهرس المصادر الرئيسية</div>
+      <h2 style="font-size:32px">المصادر والتحقق</h2>
+    </div>
+    <div class="src-grid">
+      <div>
+        <h4>الصحافة الرسمية</h4>
+        <a href="https://www.spa.gov.sa/N2199008" target="_blank" rel="noopener">واس N2199008</a><br>
+        <a href="https://www.spa.gov.sa/en/6954929da1q" target="_blank" rel="noopener">واس 6954929da1q</a><br>
+        <a href="https://www.spa.gov.sa/N2041248" target="_blank" rel="noopener">واس N2041248</a><br>
+        <a href="https://www.spa.gov.sa/N2451052" target="_blank" rel="noopener">واس N2451052</a><br>
+        <a href="https://www.arabnews.com/node/2635982/saudi-arabia" target="_blank" rel="noopener">Arab News 2635982</a><br>
+        <a href="https://www.arabnews.com/node/1953841/saudi-arabia" target="_blank" rel="noopener">Arab News 1953841</a><br>
+        <a href="https://www.arabnews.com/node/2120596/saudi-arabia" target="_blank" rel="noopener">Arab News 2120596</a>
+      </div>
+      <div>
+        <h4>مواقع رسمية وأوراق علمية</h4>
+        <a href="https://sdaia.tuwaiq.edu.sa/" target="_blank" rel="noopener">sdaia.tuwaiq.edu.sa</a><br>
+        <a href="https://sdaia.gov.sa/ar/Sectors/BuildingCapacity/Pages/ScholarshipProgram.aspx" target="_blank" rel="noopener">برنامج الابتعاث</a><br>
+        <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/Prizes/Details/17066205172883328" target="_blank" rel="noopener">ITU/WSIS</a><br>
+        <a href="https://www.proceedings.com/content/081/081108webtoc.pdf" target="_blank" rel="noopener">IEEE CSDGAIS 2024</a><br>
+        <a href="https://iclr.cc/virtual/2025/poster/29915" target="_blank" rel="noopener">ICLR 2025 (ALLaM)</a><br>
+        <a href="https://academy.kaust.edu.sa/alumni/iyas-baroud/" target="_blank" rel="noopener">أكاديمية كاوست — الخريجون</a>
+      </div>
+      <div>
+        <h4>مستودعات ومواقع شخصية</h4>
+        <a href="https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD" target="_blank" rel="noopener">RASYD</a><br>
+        <a href="https://github.com/AhmedBashmmakh/Sum-T5-Capstone" target="_blank" rel="noopener">Sum</a><br>
+        <a href="https://github.com/iwm10/ADEL-System" target="_blank" rel="noopener">ADEL</a><br>
+        <a href="https://github.com/lujainbgh/Nabeeh-System" target="_blank" rel="noopener">Nabeeh</a><br>
+        <a href="https://github.com/topics/sdaia-academy" target="_blank" rel="noopener">وسم sdaia-academy على GitHub</a><br>
+        <a href="https://duwaysan.github.io/portfolio/" target="_blank" rel="noopener">duwaysan.github.io</a><br>
+        <a href="https://lenaalenazi.carrd.co/" target="_blank" rel="noopener">lenaalenazi.carrd.co</a><br>
+        <span style="font-size:16px;color:var(--n60)">مجمعات بيانات (تتطلب حذرًا): RocketReach · ZoomInfo · theorg.com · GetLatka</span>
+      </div>
+    </div>
+    <div class="ethic">
+      <svg class="ic" viewBox="0 0 24 24" style="width:26px;height:26px;flex:none;color:var(--navy)"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+      <span><b>إخلاء أخلاقي:</b> جميع البيانات من مصادر متاحة للعامة نشرها الأفراد بأنفسهم أو وردت في الصحافة؛ دون كشط خلف تسجيل دخول ودون جمع بيانات تواصل. يلزم التحقق قبل أي استخدام مؤثر (توظيف، تواصل، نشر).</span>
+    </div>
+    <div class="copyline">خريجو أكاديمية سدايا — السجل الشامل الموثّق · تاريخ الإعداد 17 يوليو 2026 · تقرير مصادر مفتوحة (OSINT)</div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════ بيانات السجل ═══════════ */
+const SEC = {
+  s1:{t:"القسم الأول — توثيق مرتفع",   lv:"high",    chip:"مرتفع"},
+  s2:{t:"القسم الثاني — قصص النجاح الداخلية (2025)", lv:"internal", chip:"داخلي"},
+  s3:{t:"القسم الثالث — LinkedIn / شهادات NVIDIA",   lv:"internal", chip:"داخلي 🟡"},
+  s4:{t:"القسم الرابع — توثيق متوسط",  lv:"mid",     chip:"متوسط"},
+  s5:{t:"القسم الخامس — انتساب مؤكد، النتيجة غير معروفة", lv:"low", chip:"منخفض"},
+  s6:{t:"القسم السادس — انتساب مستنتج (غير متحقق)",  lv:"inferred", chip:"مستنتج"},
+  s7:{t:"القسم السابع — مستبعد موثّق", lv:"excluded", chip:"مستبعد"}
+};
+const P = [
+{n:"1",s:"s1",ar:"خالد الدويسان",en:"Khaled Alduwaysan",prog:"معسكر T5 لعلوم البيانات والذكاء الاصطناعي — يوليو–أكتوبر 2024",job:"أكاديمية الملك سلمان العالمية للغة العربية — مطوّر ذكاء اصطناعي (يناير–يونيو 2025)، ثم معسكر هندسة البرمجيات بالأكاديمية السعودية الرقمية (أغسطس 2025–)",tags:["أقوى حالة موثّقة","توظيف خلال ~3 أشهر","نظام «رقيم» (OCR + LLM)","مشروع RASYD (mAP50=0.711)"],links:[["الموقع الشخصي","https://duwaysan.github.io/portfolio/"],["GitHub","https://github.com/Duwaysan"],["مستودع RASYD","https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD"]],ok:"البرنامج، تاريخ التخرج، الوظيفة وتاريخها، المشروع",no:"الشهادات المهنية، أي ترقيات"},
+{n:"2",s:"s2",ar:"جهاد الجازي",en:"Jehad Aljazi",prog:"معسكر هندسة البيانات — أكاديمية سدايا (2025) · بكالوريوس علوم حاسب — جامعة أم القرى (2024)",job:"GOSI (المؤسسة العامة للتأمينات الاجتماعية) — مهندس بيانات (2025)",tags:["5 شهادات احترافية من Microsoft"],links:[],ok:"داخليًا: البرنامج، التوظيف، الشهادات",no:"علنًا: الكل — يلزم رابط تحقق"},
+{n:"3",s:"s2",ar:"مجد الزيادي",en:"Majd Alziyadi",prog:"معسكر مطوري أنظمة ServiceNow — أكاديمية سدايا (2025) · بكالوريوس علوم حاسب — جامعة الباحة (2024)",job:"IBM — مطوّر تطبيقات (2025)",tags:["ServiceNow CAD","ServiceNow CSA"],links:[],ok:"داخليًا: البرنامج، التوظيف، الشهادتان",no:"علنًا: الكل"},
+{n:"4",s:"s2",ar:"حسين محسن",en:"Hussein Mohsen",prog:"معسكر هندسة البيانات — أكاديمية سدايا (2025) · بكالوريوس ذكاء اصطناعي — جامعة الإمام عبدالرحمن بن فيصل (2024)",job:"أكاديمية كاوست (KAUST Academy) — مساعد تدريس ذكاء اصطناعي (2025)",tags:["5 شهادات احترافية من Microsoft"],links:[],ok:"داخليًا: البرنامج، التوظيف، الشهادات",no:"علنًا: الكل"},
+{n:"5",s:"s2",ar:"هند الحجيلان",en:"Hind Alhujailan",prog:"معسكر مطوري أنظمة ServiceNow — أكاديمية سدايا (2025) · بكالوريوس تقنية معلومات — جامعة المجمعة (2024)",job:"سدايا (SDAIA) — مسؤولة تميز خدمات الحوسبة السحابية (2025)",tags:["ServiceNow CAD","ServiceNow CSA"],links:[],ok:"داخليًا: البرنامج، التوظيف، الشهادتان",no:"علنًا: الكل"},
+{n:"6",s:"s2",ar:"أمل المبارك",en:"Amal Almubarak",prog:"معسكر هندسة البيانات — أكاديمية سدايا (2025) · بكالوريوس علوم حاسب — جامعة الملك سعود (2024)",job:"GOSI — أخصائية ذكاء اصطناعي (2025)",tags:["5 شهادات احترافية من Microsoft"],links:[],ok:"داخليًا: البرنامج، التوظيف، الشهادات",no:"علنًا: الكل"},
+{n:"7",s:"s3",ar:"جواهر السرحان (الغامدي)، دكتوراه",en:"Jawaher A. Alserhan, PhD",prog:"الانتساب لبرنامج محدد غير منصوص — قرينة الإدراج في ملف المشروع",job:"أستاذة مساعدة بجامعة الملك خالد (KKU) · مهندسة NLP/ML · ذكاء توليدي ووكيلي",tags:["NVIDIA-CA: Generative AI Multimodal (06/2025)","NVIDIA-CA: Generative AI LLMs (06/2025)","AWS AI/ML Scholar","زمالة مسك"],links:[["LinkedIn","https://www.linkedin.com/in/jawaheralghamdi/"]],ok:"الوظيفة الأكاديمية والشهادتان (LinkedIn)",no:"برنامج سدايا المحدد ودفعته"},
+{n:"8",s:"s3",ar:"الجوهرة بن طمران",en:"Aljawharah Bin Tamran",prog:"الانتساب لبرنامج محدد غير منصوص",job:"HUMAIN — مهندسة ذكاء اصطناعي أولى (Senior AI Engineer)، الرياض",tags:["NVIDIA-CA: Multimodal (06/2024–06/2026)","NVIDIA-CA: LLMs (05/2024–05/2026)","مسمّى Senior قائم"],links:[],ok:"الوظيفة والشهادتان (LinkedIn)",no:"برنامج سدايا المحدد، رابط الملف"},
+{n:"9",s:"s3",ar:"وضحى المطر، دكتوراه",en:"Wadha M. Almattar, PhD",prog:"الانتساب لبرنامج محدد غير منصوص",job:"جامعة الإمام عبدالرحمن بن فيصل — أستاذة مساعدة (12/2024–) ← رئيسة قسم هندسة الحاسب (08/2025–)",tags:["ترقية قيادية موثّقة بالتواريخ","أطلقت برنامج بكالوريوس علوم الذكاء الاصطناعي","خريجة KFUPM","NVIDIA-CA ×2 (02/2025–02/2027)"],links:[["LinkedIn","https://www.linkedin.com/in/wadha-m-almattar-phd-93b92a186/"]],ok:"المنصبان بالتواريخ والشهادتان (LinkedIn)",no:"برنامج سدايا المحدد ودفعته"},
+{n:"10",s:"s3",ar:"شهد الحجري",en:"Shahad Alhajri",prog:"الانتساب لبرنامج محدد غير منصوص · بكالوريوس علوم الذكاء الاصطناعي",job:"متدربة علوم بيانات — شركة علم (01–05/2025) ← AI DEDP Officer — شركة الدرعية (11/2025–)، الرياض",tags:["NVIDIA-CA: Generative AI and LLMs (12/2025)"],links:[["LinkedIn","https://www.linkedin.com/in/shahad-alhajri/"]],ok:"التدرج الوظيفي بالتواريخ والشهادة (LinkedIn)",no:"برنامج سدايا المحدد ودفعته"},
+{n:"11",s:"s3",ar:"محمد السليم",en:"Mohammed AL Saleem",prog:"الانتساب لبرنامج محدد غير منصوص",job:"سدايا (SDAIA) — مهندس وباحث ذكاء اصطناعي (06/2024–؛ 2.7 سنة بالجهة)، الرياض",tags:["علم بيانات إحصائي · رؤية حاسوبية · NLP · وكلاء","NVIDIA-CA: LLMs (12/2024)","NVIDIA-CA: Multimodal (12/2024)"],links:[["LinkedIn","https://www.linkedin.com/in/m-alsaleem/"]],ok:"الوظيفة والشهادتان (LinkedIn)",no:"برنامج سدايا المحدد ودفعته"},
+{n:"12",s:"s4",ar:"مها الطلق",en:"Maha Altalak",prog:"معسكر T5 لعلوم البيانات — الدفعة غير معروفة (مستودعات الأقران 2021–2022)",job:"وزارة الصحة — مستشفى صحة الافتراضي: رئيسة قطاع نمذجة الذكاء الاصطناعي (منصب قيادي)",tags:["مشروع التنبؤ بأسعار العقارات (5,946 صفقة)","Random Forest / SVM"],links:[["GitHub","https://github.com/Maha-Altalak"],["المستودع","https://github.com/Maha-Altalak/SDAIA-T5-Bootcamp"]],ok:"مشاركة T5 (مصدر ذاتي)، المشروع",no:"تاريخ التخرج وتاريخ تولي المنصب؛ المنصب من مجمّع بيانات قد يكون قديمًا"},
+{n:"13",s:"s4",ar:"لينا العنزي",en:"Lena Alenazi",prog:"معسكر T5 لعلوم البيانات والذكاء الاصطناعي — 2024",job:"جهة العمل غير موثّقة علنًا · محللة/مهندسة بيانات وذكاء اصطناعي",tags:["🏆 جائزة مركز «ذكاء» (منشآت) — CLQC","GreenGuard ضمن أفضل 3 مشاريع","AWS Data Engineer + Cloud Practitioner","Google Data Analytics"],links:[["الموقع الشخصي","https://lenaalenazi.carrd.co/"],["GitHub","https://github.com/lenaAlenazi"]],ok:"البرنامج، المشاريع، الشهادات (مصدر ذاتي)",no:"جهة العمل الحالية؛ الجائزة دون صفحة رسمية بعد"},
+{n:"14",s:"s4",ar:"أحمد صميلي",en:"Ahmed Somili",prog:"معسكر T5 (جازان) — الدفعة غير معروفة",job:"جهة العمل غير ظاهرة علنًا · مهندس بيانات | تحليل بيانات | BI (وصف ذاتي)",tags:["CAMP-AI (رؤية حاسوبية)","منصة إرشاد أكاديمي"],links:[["LinkedIn","https://sa.linkedin.com/in/7iz7"],["CAMP-AI","https://github.com/7iz7/CAMP-AI"]],ok:"T5 (مصدران ذاتيان)",no:"جهة العمل، التواريخ"},
+{n:"15",s:"s4",ar:"عبدالله الربيعان",en:"Abdullah Alrobaiaan",prog:"أبطال صيف الذكاء الاصطناعي (مع Coursera وFutureX) — 17 يوليو–17 سبتمبر 2022",job:"شركة البواني القابضة — مدقق داخلي (وظيفة غير تقنية، غير مؤرّخة)",tags:["شهادة معتمدة من سدايا في الذكاء الاصطناعي"],links:[["منشور الإتمام","https://lr.linkedin.com/posts/abdullah-alrobaiaan-9ba0921a1_glad-to-share-that-i-finished-sdaia-%D8%B3%D8%AF%D8%A7%D9%8A%D8%A7-activity-6975397400563564544-ZNnv"]],ok:"إتمام البرنامج وتاريخه (3 مصادر)",no:"تاريخ الوظيفة وعلاقتها الزمنية بالبرنامج"},
+{n:"16",s:"s4",ar:"أسيل بن طلحة",en:"Aseel Bin Talhah",prog:"T5 (مستنتج، غير مؤكد) — الدفعة غير معروفة، قد تسبق النطاق",job:"سمة (SIMAH) — أخصائية ذكاء أعمال؛ مؤشر «أخصائية أولى» (ترقية غير مؤرّخة)",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/aseel-bin-talhah-3257b417b/"]],ok:"التوظيف (مصدران)",no:"انتسابها لسدايا أصلًا، التواريخ، الترقية",warn:"الانتساب مستنتج من تطابق فهرسة فقط"},
+{n:"17",s:"s4",ar:"معاذ الغامدي",en:"Muath A. Al-Ghamdi",prog:"T5 (مستنتج، غير مؤكد)",job:"مصرف الراجحي — أخصائي تسعير ومحفظة وتحليلات؛ مؤشر «أول/Senior» غير مؤرّخ",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/muath-al-ghamdi/"]],ok:"التوظيف (مصدران)",no:"انتساب سدايا، التواريخ، الترقية",warn:"الانتساب مستنتج من تطابق فهرسة فقط"},
+{n:"18",s:"s4",ar:"إياس بارود",en:"Iyas Baroud",prog:"انتماؤه الموثّق: أكاديمية كاوست — لا صلة موثّقة بأكاديمية سدايا",job:"Olo | علو (شركة ناشئة بالرياض) — مهندس برمجيات (موظّف مبكر)",tags:["تصحيح موثّق: ليس مؤسِّسًا — المؤسسان فيصل الشهري ومحمد شلبي"],links:[["LinkedIn","https://www.linkedin.com/in/iyas-baroud/"],["خريجو كاوست","https://academy.kaust.edu.sa/alumni/iyas-baroud/"]],ok:"عمله في علو، خريج كاوست",no:"أي صلة بأكاديمية سدايا (لم تُعثر في أي مصدر)",warn:"صلة سدايا: توثيق منخفض 🔴"},
+{n:"19",s:"s5",ar:"ناصر الصقر",en:"Nasser Alsaqer",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق RASYD",job:"قائد فريق مشروع RASYD ومالك المستودع",tags:["رصد مخالفات دراجات التوصيل — mAP50=0.711"],links:[["GitHub","https://github.com/NasserAlsaqer"],["المستودع","https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD"]],ok:"البرنامج والمشروع والقيادة",no:"كل النتائج المهنية"},
+{n:"20",s:"s5",ar:"عبدالرحمن الغامدي",en:"Abdulrahman Alghamdi",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق RASYD",job:"IT / تحليل بيانات (وصف ذاتي)",tags:[],links:[["GitHub","https://github.com/AbdulrhmanBakrgh"]],ok:"البرنامج والمشروع",no:"النتائج المهنية (اسم شائع — خطر التباس)"},
+{n:"21",s:"s5",ar:"فارس الطوخي",en:"Fares Altoukhi",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق RASYD",job:"أغنى ملف مفتوح المصدر في العيّنة",tags:["Finetuned MarBERT لتحليل المشاعر العربية","Arsarcasm لكشف السخرية","خدمة REST حية على Cloud Run (SVM 89% · F1=0.83)","رخصة MIT"],links:[["GitHub","https://github.com/TheKnight909"],["Hugging Face","https://huggingface.co/TheKnight115"]],ok:"البرنامج، مشروع RASYD، النماذج المنشورة",no:"النتائج المهنية"},
+{n:"22",s:"s5",ar:"الهنوف الحميد",en:"Alhanouf Alhumid",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق RASYD",job:"ملف GitHub بسيط",tags:[],links:[["GitHub","https://github.com/alhanoufalh"]],ok:"البرنامج والمشروع",no:"كل شيء آخر"},
+{n:"23",s:"s5",ar:"ماجد المدني",en:"Majid Almadani",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «سُم»",job:"قائد الفريق · خريج علوم حاسب (علم بيانات وتحليلات)",tags:["إدارة مرور وتسعير ديناميكي — YOLOv8 دقة 88%"],links:[["GitHub","https://github.com/MajidAlmadani"]],ok:"البرنامج، قيادة المشروع",no:"النتائج المهنية"},
+{n:"24",s:"s5",ar:"عبدالعزيز كوجا",en:"Abdulaziz Koja",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «سُم»",job:"«مهندس ذكاء اصطناعي» (وصف ذاتي، دون جهة عمل مسماة)",tags:[],links:[["GitHub","https://github.com/Abdulazizkoja1"]],ok:"البرنامج والمشروع",no:"جهة العمل"},
+{n:"25",s:"s5",ar:"زياد قطب",en:"Ziyad Qutub",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «سُم»",job:"مستودعات مقررات KFUPM (غالبًا طالب)",tags:[],links:[["GitHub","https://github.com/ZiyadQutub"]],ok:"البرنامج والمشروع",no:"الوضع المهني"},
+{n:"26",s:"s5",ar:"أحمد باشماخ",en:"Ahmed Bashmmakh",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «سُم»",job:"مالك مستودع المشروع",tags:[],links:[["GitHub","https://github.com/AhmedBashmmakh"],["المستودع","https://github.com/AhmedBashmmakh/Sum-T5-Capstone"]],ok:"البرنامج والمشروع",no:"النتائج المهنية"},
+{n:"27",s:"s5",ar:"سارة الكنهل",en:"Sarah Alkanhal",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «سُم»",job:"ملف GitHub بسيط",tags:[],links:[["GitHub","https://github.com/sarahmkk11"]],ok:"البرنامج والمشروع",no:"كل شيء آخر"},
+{n:"28",s:"s5",ar:"محمد المالكي",en:"Mohammed Al Malki",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «عادل» ADEL",job:"مالك مستودع المشروع · «علوم بيانات» (وصف ذاتي)",tags:["إشارات مرور ذكية — دقة كشف 92% · أعلى درجة 88/100"],links:[["GitHub","https://github.com/iwm10"],["المستودع","https://github.com/iwm10/ADEL-System"]],ok:"البرنامج والمشروع",no:"النتائج المهنية"},
+{n:"29",s:"s5",ar:"محمد الرويس",en:"Mohammed Alrowais",prog:"فريق «عادل» ADEL — عضو مذكور في README المشروع فقط",job:"—",tags:[],links:[],ok:"المشروع",no:"كل شيء آخر"},
+{n:"30",s:"s5",ar:"خالد الغامدي",en:"Khaled AlGhamdi",prog:"فريق «عادل» ADEL — عضو مذكور في README فقط (اسم شائع)",job:"—",tags:[],links:[],ok:"المشروع",no:"كل شيء آخر"},
+{n:"31",s:"s5",ar:"وليد الإخوان",en:"Waleed Al Ikhwan",prog:"معسكر T5 — دفعة أكتوبر 2024 · فريق «عادل» ADEL",job:"مالك نسخة من مستودع المشروع",tags:[],links:[["GitHub","https://github.com/Waleed-ikh72"]],ok:"البرنامج والمشروع",no:"النتائج المهنية"},
+{n:"32",s:"s5",ar:"لجين بكر الغامدي",en:"Lujain Bakr Alghamdi",prog:"معسكر سدايا/طويق — دفعة أكتوبر 2024 · فريق «نبيه»",job:"قائدة الفريق ومالكة المستودع",tags:["كشف الحوادث المرورية آنيًا — ~3,500 مقطع فيديو"],links:[["GitHub","https://github.com/lujainbgh"],["المستودع","https://github.com/lujainbgh/Nabeeh-System"]],ok:"البرنامج، قيادة المشروع",no:"النتائج المهنية"},
+{n:"33–35",s:"s5",ar:"نوف المطيري · منار الطلحي · مريم السلمي",en:"Nouf Almutairi · Manar Altalhi · Maryam Alsulami",prog:"فريق «نبيه» — عضوات مذكورات في README المشروع فقط",job:"—",tags:[],links:[],ok:"المشروع",no:"كل شيء آخر (نوف: اسم شائع جدًا دون معرّف)"},
+{n:"36",s:"s5",ar:"دانة المستادي",en:"Dana Almestadi",prog:"معسكر T5 — أكتوبر 2024",job:"مهندسة برمجيات (خريجة جامعة جدة)",tags:["RHCSA — Red Hat","التنبؤ بتصادم المركبات (عمق+كشف)","تدفق المرور (LSTM/ARIMA/TimeGPT)","كشف مخالفات الإشارة الحمراء"],links:[["GitHub","https://github.com/Danalmestadi"],["المستودع","https://github.com/Danalmestadi/SDAIA-T5-Capstone-Project"]],ok:"البرنامج، المشاريع، الشهادة",no:"جهة عمل (مستودعات لاحقة تلمّح لتوظيف محتمل غير موثّق)"},
+{n:"37",s:"s5",ar:"جيهان حمدان",en:"Jehan Hamdan",prog:"T5 (مع طويق) — يوليو–أكتوبر 2024",job:"مع هيا المالكي وجيهان المطيري وحنان محمد",tags:["كشف الحوادث المرورية — mAP@0.5=93% على ~12,500 صورة","تنبيهات Twilio · 185 commit"],links:[["GitHub","https://github.com/Je-97"],["المستودع","https://github.com/Je-97/Project-Accident-Detection"]],ok:"البرنامج والمشروع",no:"النتائج المهنية"},
+{n:"38",s:"s5",ar:"ريم البلوي",en:"Reem Albalawi",prog:"معسكر T5 — أكتوبر 2024 · ماجستير علوم حاسب (ذكاء اصطناعي) + تدريس جامعي",job:"جهة العمل الحالية غير موثّقة",tags:["تحليل المرور بالفعاليات الكبرى — YOLOv8 + LLMs + LSTM · 87 commit"],links:[["GitHub","https://github.com/ReemAlbluwi"]],ok:"البرنامج والمشروع والمؤهل",no:"جهة العمل الحالية"},
+{n:"39",s:"s5",ar:"زينة الشهري",en:"Zainah Alshehri",prog:"علوم البيانات والذكاء الاصطناعي — ~2024",job:"«عالمة بيانات مبتدئة في أكاديمية سدايا (تتعلم حاليًا)» = وضع تدريبي، ليس توظيفًا",tags:["التعرف على الوجوه لتطبيق توكلنا (400 صورة)","تحليل تغريدات خدمة عملاء STC"],links:[["GitHub","https://github.com/ZainahAlshehri"],["LinkedIn","https://www.linkedin.com/in/zainahalshehri/"]],ok:"الانتساب والمشاريع",no:"أي توظيف لاحق"},
+{n:"40",s:"s5",ar:"رغد الناصر (مع شيماء الزهراني)",en:"Raghad Alnasser · Shaima Alzahrani",prog:"T5 لعلوم البيانات — دفعة 2022",job:"—",tags:["وصف الصور بالصوت لذوي الإعاقة البصرية (Inception-v3 + gTTS)","أثر اجتماعي"],links:[["GitHub","https://github.com/EngrRaghad"],["المستودع","https://github.com/EngrRaghad/T5-Bootcamp-DeepLearning-project"]],ok:"البرنامج والمشاريع",no:"النتائج المهنية (لكلتيهما)"},
+{n:"41",s:"s5",ar:"عبدالإله الدوسري",en:"Abdulelah Al-Dossari",prog:"T5 (2021–2023، الدفعة غير محددة)",job:"عالم بيانات (وصف ذاتي)",tags:["توسيم صور طبية (أشعة صدرية)","أذرع روبوتية (2-DOF بـ7★ · 3-DOF بـ4★)"],links:[["GitHub","https://github.com/a-dossari"]],ok:"البرنامج والمشاريع",no:"جهة العمل"},
+{n:"42",s:"s5",ar:"روابي المطيري",en:"Rawabi Almutairi",prog:"T5 (مستودعات موسومة sdaia-academy)",job:"عالمة بيانات (وصف ذاتي)",tags:["فعالية الطب عن بُعد أثناء كوفيد-19 (~1,040 استبانة)","ارتفاع الزيارات 102→801/يوم"],links:[["GitHub","https://github.com/thisisrawabi"]],ok:"البرنامج والمشروع",no:"جهة العمل"},
+{n:"43",s:"s5",ar:"مها الحرقان",en:"Maha AlHarqan",prog:"T5",job:"عالمة بيانات مبتدئة (وصف ذاتي)",tags:["كشف المركبات بلا لوحات بالتعلم العميق"],links:[["GitHub","https://github.com/MahaAlHarqan"]],ok:"البرنامج",no:"النتائج المهنية"},
+{n:"44",s:"s5",ar:"إلهام الزهراني (مع نوف الخالدي وعبدالرحيم الشهري)",en:"Elham Alzahrani",prog:"T5 — دفعة ~يناير 2022",job:"محللة بيانات مبتدئة (وصف ذاتي)",tags:["كشف إشارات المرور بـ CNN (GTSRB: 50,000+ صورة)","التنبؤ بأمراض القلب"],links:[["GitHub","https://github.com/infoielham"]],ok:"البرنامج والمشاريع",no:"النتائج المهنية (وكذلك لزميليها)"},
+{n:"45",s:"s5",ar:"سما الحربي (مع دانة العنزي وفاطمة الحيري ولجين عبدالله)",en:"Sama Alharbi",prog:"T5 — ~2024",job:"—",tags:["AGRONA — كشف أمراض النبات (ConvNeXt 69.92% · HF Gradio)","مراقبة المسافات الآمنة بين المركبات"],links:[["GitHub","https://github.com/samaalharbi2"]],ok:"البرنامج والمشاريع",no:"النتائج المهنية (للأربع جميعًا)"},
+{n:"46",s:"s5",ar:"سعد الزهراني",en:"Saad Alzahrani",prog:"معسكر الذكاء الاصطناعي وعلوم البيانات (12 أسبوعًا) — أكتوبر 2024",job:"—",tags:["مشروع تخرج الأسبوع 12"],links:[["GitHub","https://github.com/Saadzh71"]],ok:"البرنامج",no:"النتائج المهنية"},
+{n:"47",s:"s5",ar:"سديم عسيري",en:"Sadeem Asiri",prog:"معسكر تعلم الآلة — 2024 (أتمّته وهي طالبة نظم معلومات بجامعة الملك خالد)",job:"—",tags:["واجبات معسكر ML"],links:[["GitHub","https://github.com/Sadcem"]],ok:"البرنامج",no:"أي نتيجة لاحقة"},
+{n:"48",s:"s5",ar:"العنود العتيبي (مع ريم الشثري وود السيف وهند الدلبحي)",en:"Alanoud Alotaibi",prog:"ورشة Vibe Coding — أكاديمية سدايا (~2025–2026) · طالبة بجامعة الملك سعود",job:"—",tags:["موقع DAICO (منشور حيًّا)","نموذج Roaya لمنصة مسارات مهنية"],links:[["GitHub","https://github.com/Alanoud-Alotaibi"],["DAICO الحي","https://waadalsaif1-beep.github.io/DAICO-website/index.html"]],ok:"الورشة والنماذج",no:"النماذج ليست شركات مسجلة؛ لا نتائج مهنية"},
+{n:"49",s:"s5",ar:"رائد الشمري",en:"Rayid Alshammari",prog:"معسكر أكاديمية سدايا — دفعة ديسمبر 2025",job:"«مهندس ذكاء اصطناعي» (وصف ذاتي)",tags:["أداة تحليل CSV إحصائية CLI + GUI"],links:[["GitHub","https://github.com/RayidAlshammari"]],ok:"البرنامج",no:"جهة العمل (دفعة حديثة)"},
+{n:"50",s:"s5",ar:"مروج الراجحي",en:"Morooj Alrajhi",prog:"برنامج وكلاء الذكاء الاصطناعي (AI Agents) — أبريل 2026 · خريجة علوم حاسب",job:"—",tags:["نظام القرار المهني الذكي — 5 وكلاء LangGraph + GPT-4o-mini"],links:[["GitHub","https://github.com/morooj66"],["المستودع","https://github.com/morooj66/Smart-Career-Decision-System"]],ok:"البرنامج والمشروع",no:"النتائج (البرنامج حديث جدًا)"},
+{n:"51",s:"s5",ar:"ريم العمري",en:"Reem Alamri",prog:"هندسة البيانات الحديثة للذكاء الاصطناعي — يوليو 2026 (قيد الإتمام)",job:"—",tags:["منصة ذكاء دعم العملاء Lakehouse RAG (8,469 حدثًا · 9/9 فحوص)"],links:[["GitHub","https://github.com/Reem-Alamri"],["المستودع","https://github.com/Reem-Alamri/customer-support-intelligence-platform"]],ok:"البرنامج والمشروع",no:"النتائج (قيد الإتمام — تُتابع مستقبلًا)"},
+{n:"52",s:"s5",ar:"زياد المنيف",en:"Ziyad Almoneef",prog:"هندسة البيانات الحديثة للذكاء الاصطناعي — يوليو 2026 (قيد الإتمام)",job:"—",tags:["منصة دعم العملاء Streaming RAG — Kafka + Delta Lake + Qdrant + Airflow","اتفاق حَكم LLM بنسبة 97.8%"],links:[["GitHub","https://github.com/ZiyadAlmoneef"],["المستودع","https://github.com/ZiyadAlmoneef/support-intelligence-platform"]],ok:"البرنامج والمشروع",no:"النتائج (قيد الإتمام)"},
+{n:"53",s:"s5",ar:"عبدالعزيز الموسى",en:"Abdulaziz Almousa",prog:"معسكر الذكاء الاصطناعي التطبيقي (AAI) — ربيع 2026",job:"—",tags:["مستودع المعسكر"],links:[["GitHub","https://github.com/az1800"]],ok:"البرنامج",no:"النتائج (دفعة حديثة)"},
+{n:"54",s:"s5",ar:"صالح التويجري",en:"Saleh Altuwaijri",prog:"T5 — التحق ~يوليو 2024 · يعرّف نفسه بـ «SDAIA T5»",job:"—",tags:[],links:[["منشور الالتحاق","https://ae.linkedin.com/posts/saleh-altuwaijri_grateful-to-join-t5-bootcamp-by-sdaia-academy-activity-7220784109793509376-bJch"]],ok:"الالتحاق بالبرنامج (منشور ذاتي)",no:"أي نتيجة توظيف"},
+{n:"55",s:"s5",ar:"لين السقيهي",en:"Leen AlSogaihi",prog:"برنامج بيانات تابع لسدايا (الاسم مبتور) — ~أكتوبر 2023",job:"—",tags:[],links:[["منشور الإتمام","https://www.linkedin.com/posts/leen-alsogaihi_i-am-delighted-to-announce-that-i-have-successfully-activity-7114845096339988480-hpqV"]],ok:"إتمام برنامج",no:"اسم البرنامج الكامل، أي نتيجة"},
+{n:"56",s:"s5",ar:"زهراء سمير",en:"Zahra Sameer",prog:"أبطال صيف الذكاء الاصطناعي — ~أكتوبر 2022 (دفعة الربيعان)",job:"—",tags:[],links:[["منشور الإتمام","https://by.linkedin.com/posts/zahra-sameer-6b6a87210_ai-sdaia-ai-activity-6982782824110043136-SpKj"]],ok:"إتمام البرنامج",no:"كل شيء آخر",warn:"نطاق «by.» يوحي بالبحرين — جغرافية الانتساب غير مؤكدة"},
+{n:"57",s:"s5",ar:"فهد الحربي ⭐",en:"Fahad Alharbi",prog:"معسكر T5 — ~نوفمبر 2021 (ضمن نطاق التقرير 2021–2026)",job:"هيئة كفاءة الإنفاق والمشروعات الحكومية (EXPRO) — دور مرتبط بالبيانات (المسمى غير محدد)",tags:["أقدم حالة ضمن النطاق (2021)"],links:[["منشور T5","https://www.linkedin.com/posts/fahad-alharbi77_datascience-sdaia-t5bootcamp-activity-6863753616277176320-oGzx"]],ok:"إتمام T5 نوفمبر 2021، الالتحاق لاحقًا بـ EXPRO",no:"المسمى الوظيفي، تاريخ التوظيف وعلاقته الزمنية بالمعسكر"},
+{n:"58",s:"s6",ar:"ريان دحلاوي",en:"Rayan Dahlawi",prog:"معسكر النماذج اللغوية الكبيرة (LLM) — ~ديسمبر 2023 (مؤكد عبر وسوم منشوره)",job:"ALJUF — أخصائي ذكاء اصطناعي (الكيان غير محسوم؛ غالبًا منطقة/جهة بالجوف)",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/rayan-dahlawi"],["منشور المعسكر","https://www.linkedin.com/posts/rayan-dahlawi_llmbootcamp-ai-sdaia-activity-7139361304338710528-fzmC"]],ok:"المشاركة بالمعسكر",no:"هل الوظيفة تلت المعسكر؛ ماهية ALJUF"},
+{n:"59",s:"s6",ar:"يزيد زيدان",en:"Yazeed Zaidan",prog:"انتساب سدايا غير مثبت",job:"مؤسس مشارك وCTO في WATEER (مزعوم)",tags:[],links:[["LinkedIn","https://sa.linkedin.com/in/yazeed-zaidan"]],ok:"—",no:"كل شيء",warn:"wateer.sa منتج فواتير رقمية لا توصيل مياه؛ سجل theorg لكيان بإسبانيا غير متحقق — ادعاءا التأسيس والانتساب غير مثبتين"},
+{n:"60",s:"s6",ar:"سارة الشهري",en:"Sarah S. AlShehri",prog:"مستنتج — الملف الوحيد المفهرس الذي يجمع «Data & AI | Tech | Entrepreneur»",job:"تأسيس محتمل",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/sarahsalshehri/"]],ok:"—",no:"اسم المشروع/الشركة، التواريخ، الانتساب (أسماء مشابهة تستدعي توثيق الهوية)"},
+{n:"61",s:"s6",ar:"رفيدة هنبظاظة",en:"Rofidah Hanbzazah",prog:"عنوانها المفهرس: «Data Science & AI T5 bootcamp» + انتساب حالي لسدايا",job:"أقوى مؤشر توظيف من نوعه (نمط معسكر ← توظيف بسدايا)",tags:[],links:[["LinkedIn","https://sa.linkedin.com/in/rofidah-hanbzazah"]],ok:"—",no:"الدفعة، تاريخ التوظيف، المسمى"},
+{n:"62",s:"s6",ar:"طاهر يحيى متنبك",en:"Taher Mutanbak",prog:"جهة العمل المفهرسة: سدايا",job:"مؤلف مشارك في ورقة محكّمة — IEEE CSDGAIS 2024 (كشف التصيّد الإلكتروني ومنعه)",tags:["بحث منشور ✅"],links:[["LinkedIn","https://www.linkedin.com/in/taher-yahya-mutanbak/"],["وقائع المؤتمر","https://www.proceedings.com/content/081/081108webtoc.pdf"]],ok:"الورقة البحثية",no:"هل هو خريج أكاديمية أم موظف سدايا"},
+{n:"63",s:"s6",ar:"مروان الزبيدي",en:"Marwan Alzubaidy",prog:"مؤشر: «معسكر سدايا» + توظيف بسدايا",job:"—",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/malzubaidy/"]],ok:"—",no:"غير مؤكد بالكامل"},
+{n:"64",s:"s6",ar:"في بوعيشة",en:"Fai Bu Ayesha",prog:"مؤشر: «معسكر سدايا»",job:"أرامكو السعودية — جهة عالية القيمة إن تأكدت",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/fai-bu-ayesha-a35a91291/"]],ok:"—",no:"غير مؤكد بالكامل"},
+{n:"65",s:"s6",ar:"أماني السبيعي",en:"Amani AlSubaie",prog:"مؤشر: «معسكر سدايا»",job:"مطوّرة Full-stack بأكاديمية طويق",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/amani-alsubaie-753b4b113/"]],ok:"—",no:"غير محسوم",warn:"قد تكون خريجة تحولت لموظفة أو موظفة أدارت المعسكر"},
+{n:"66",s:"s6",ar:"العنود الزهراني",en:"Alanoud Alzahrani",prog:"مؤشر: «معسكر سدايا»",job:"تكامل القابضة (Takamol)",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/alanoud-alzahrani-100709187/"]],ok:"—",no:"غير مؤكد (اسم شائع)"},
+{n:"67",s:"s6",ar:"خلود عواجي",en:"Kholoud Awaji",prog:"ذكر سدايا قد يكون سطر شهادة فقط",job:"Athlocity (شركة ناشئة رياضية-تقنية) — مديرة منطقة (دور غير تقني)",tags:["انضمام لشركة ناشئة"],links:[["LinkedIn","https://www.linkedin.com/in/kholoud-awaji-44774a28a/"]],ok:"—",no:"الانتساب والتواريخ"},
+{n:"68",s:"s6",ar:"نور عثمان",en:"Nour Othman",prog:"مؤشر: «معسكر سدايا»",job:"مساعدة باحث بجامعة سانتياغو دي كومبوستيلا (إسبانيا) — مسار بحثي بالخارج، نتيجة غير نمطية إن تأكدت",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/nour-othman-35b061137/"]],ok:"—",no:"غير مؤكد"},
+{n:"69",s:"s6",ar:"أسماء الزهراني",en:"Asma Alzahrani",prog:"مؤشر غير مؤكد",job:"مهندسة تعلم آلة بسدايا (اسم شائع جدًا — خطر التباس مرتفع)",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/asma-alzahrani-/"]],ok:"—",no:"كل شيء"},
+{n:"70",s:"s6",ar:"عبدالله الحويشل",en:"Abdullah AL-Huwaishel",prog:"ظهر في 3 استعلامات منفصلة لأكاديمية سدايا",job:"ILF Consulting Engineers — محلل بيانات",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/abdullah-huwaishel/"]],ok:"—",no:"الانتساب ما يزال مستنتجًا"},
+{n:"71",s:"s6",ar:"منصور الغامدي",en:"Mansour Alghamdi",prog:"صلة سدايا ضعيفة (اسم شائع جدًا)",job:"محلل إدارة بيانات — جهة حكومية سرية",tags:[],links:[["LinkedIn","https://www.linkedin.com/in/mansour-alghamdi-030204220/"]],ok:"—",no:"كل شيء"},
+{n:"72",s:"s6",ar:"مشاركون مؤكدون إضافيون",en:"TalalMJ · Shroaq Abdullah · Aljwharah-h · Aa-Devv",prog:"مستودعات موسومة، دون مشروع بارز أو نتيجة",job:"طلال (3 مشاريع T5) · شروق عبدالله (مشروع T5 الأول) · الجوهرة (برنامج وكلاء الذكاء الاصطناعي) · متدرب سدايا–كاوست (تصنيف حروف عربية >95% على Kaggle)",tags:["مشاركة مؤكدة بالبرامج"],links:[["TalalMJ","https://github.com/TalalMJ"],["Shroaq","https://github.com/shroaqabdullah/MTA-Shroaq"],["Aljwharah","https://github.com/Aljwharah-h/SDAIA-AI-Agents-System-program"],["Kaggle","https://www.kaggle.com/competitions/sdaia-kaust-ai-bootcamp"]],ok:"المشاركة بالبرامج",no:"كل النتائج المهنية"},
+{n:"⛔",s:"s7",ar:"هشام اليحيى",en:"Hisham Alyahya",prog:"مستبعد: مهندس ذكاء اصطناعي موظف في سدايا (فريق ALLaM) وليس متدربًا بالأكاديمية",job:"أسس Avrio (avrio.sa) عام 2021 بتمويل ذاتي · مؤلف مشارك في ALLaM (ملصق ICLR 2025)",tags:["الفائدة المنهجية: يوثّق الفرق بين «موظف سدايا» و«خريج الأكاديمية»"],links:[["ICLR 2025","https://iclr.cc/virtual/2025/poster/29915"]],ok:"—",no:"—",warn:"أعمال رسمية مستبعدة أيضًا: ALLaM-7B-Instruct-preview · @sdaia-ds/tokens · sdaia-ui (نظام تصميم مؤسسي)"}
+];
+
+/* ═══════════ بيانات المشاريع ═══════════ */
+const PR = [
+[1,"ADEL — إشارات مرور ذكية","فريق عادل (4)","رؤية حاسوبية",88,"مرتفع","دقة كشف 92%؛ تطبيق حي + SUMO","https://github.com/iwm10/ADEL-System"],
+[2,"RASYD — مخالفات دراجات التوصيل","فريق RASYD (5)","رؤية حاسوبية",84,"مرتفع","mAP50=0.711؛ 6,772 صورة؛ HF","https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD"],
+[3,"كشف الحوادث (نبيه/طويق)","هيا المالكي، جيهان المطيري، حنان محمد","رؤية حاسوبية",82,"مرتفع","mAP@0.5=93%؛ ~12,500 صورة؛ Twilio","https://github.com/Je-97/Project-Accident-Detection"],
+[4,"تحليل المشاعر بالعربية","فارس الطوخي","NLP عربي",80,"مرتفع","SVM 89%؛ MARBERTv2 F1=0.83؛ Cloud Run","https://github.com/TheKnight909/Emotional-analysis"],
+[5,"سُم — إدارة مرور وتسعير ديناميكي","فريق سُم (5)","رؤية + سلاسل زمنية",78,"مرتفع","YOLOv8 دقة 88%؛ 7 طرق بالرياض","https://github.com/AhmedBashmmakh/Sum-T5-Capstone"],
+[6,"منصة دعم عملاء Streaming RAG","زياد المنيف","LLM/RAG",75,"مرتفع","اتفاق حَكم 97.8%؛ Kafka+Delta+Qdrant","https://github.com/ZiyadAlmoneef/support-intelligence-platform"],
+[7,"منصة ذكاء دعم العملاء Lakehouse","ريم العمري","LLM/RAG",70,"مرتفع","8,469 حدثًا؛ 9/9 فحوص جودة","https://github.com/Reem-Alamri/customer-support-intelligence-platform"],
+[8,"نبيه — كشف الحوادث","فريق نبيه (4)","رؤية حاسوبية",68,"مرتفع","~3,500 مقطع؛ YOLOv9","https://github.com/lujainbgh/Nabeeh-System"],
+[9,"وصف الصور بالصوت للمكفوفين","شيماء الزهراني، رغد الناصر","CV+NLP",66,"مرتفع","Flickr8K؛ أثر اجتماعي","https://github.com/EngrRaghad/T5-Bootcamp-DeepLearning-project"],
+[10,"AGRONA — أمراض النبات","فريق AGRONA (4)","رؤية (زراعة)",63,"متوسط","ConvNeXt 69.92%؛ HF Gradio","https://github.com/samaalharbi2/AGRONA-Plant-Disease-Detection"],
+[11,"نظام القرار المهني (وكلاء)","مروج الراجحي","LLM/وكلاء",62,"متوسط","5 وكلاء LangGraph","https://github.com/morooj66/Smart-Career-Decision-System"],
+[12,"سُم (نسخة ماجد المدني)","ماجد المدني","رؤية حاسوبية",62,"مرتفع","نفس نتائج سُم","https://github.com/MajidAlmadani/Sum---"],
+[13,"توكلنا (وجوه) + تحليل STC","زينة الشهري","CV+NLP",59,"متوسط","400 صورة؛ عرض YouTube","https://github.com/ZainahAlshehri"],
+[14,"التنبؤ بأسعار العقارات","مها الطلق","ML جدولي",56,"متوسط","5,946 صفقة","https://github.com/Maha-Altalak/SDAIA-T5-Bootcamp"],
+[15,"تحليل المرور بالفعاليات الكبرى","ريم البلوي","CV+TS",56,"متوسط","87 commit","https://github.com/ReemAlbluwi/SDAIA-T5-BootCamp"],
+[16,"التنبؤ بتصادم المركبات","دانة المستادي","رؤية حاسوبية",54,"متوسط","عمق + كشف","https://github.com/Danalmestadi/SDAIA-T5-Capstone-Project"],
+[17,"إطار كشف التصيّد (ورقة IEEE)","طاهر متنبك +7","أمن سيبراني/ML",54,"متوسط","IEEE CSDGAIS 2024","https://www.proceedings.com/content/081/081108webtoc.pdf"],
+[18,"توسيم صور طبية + روبوتات","عبدالإله الدوسري","تصوير طبي",53,"متوسط","أذرع 7★ و4★","https://github.com/a-dossari/Medical_Image_Annotation_Job"],
+[19,"كشف إشارات المرور CNN","إلهام الزهراني +2","رؤية حاسوبية",50,"متوسط","GTSRB 50k+ صورة","https://github.com/infoielham/Deep-Learning-Traffic-Sign-Detection"],
+[20,"الطب عن بُعد وكوفيد-19","روابي المطيري","تحليل صحي/NLP",48,"متوسط","~1,040 استبانة","https://github.com/thisisrawabi/Effectiveness-of-Telehealth-in-Saudi-Arabia-During-COVID-19-Pandemic"],
+[21,"CAMP-AI + إرشاد أكاديمي","أحمد صميلي","رؤية + LLM",46,"متوسط","—","https://github.com/7iz7/CAMP-AI"],
+[22,"مسابقة سدايا–كاوست","متدربو الدفعة","ML (مسابقة)",46,"متوسط","حروف عربية >95%","https://www.kaggle.com/competitions/sdaia-kaust-ai-bootcamp"],
+[23,"موقع DAICO (Vibe Coding)","فريق الورشة (4)","وكلاء/ويب",45,"متوسط","منشور حيًّا","https://github.com/Alanoud-Alotaibi/DAICO-website"],
+[24,"أداة تحليل CSV","رائد الشمري","أدوات بيانات",41,"متوسط","CLI+GUI","https://github.com/RayidAlshammari/SDAIA-Academy-Bootcamp-Week-1-Project"],
+[25,"مشروع تخرج الأسبوع 12","سعد الزهراني","ML/DS",38,"متوسط","—","https://github.com/Saadzh71/AI-DataScience-Week12-Capstone"]
+];
+
+/* ═══════════ عرض البطاقات والتصفية ═══════════ */
+const grid=document.getElementById('grid'),countLine=document.getElementById('countLine');
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const icons={
+prog:'<svg class="ic" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>',
+job:'<svg class="ic" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+link:'<svg class="ic" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>',
+warn:'<svg class="ic" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>'
+};
+const chipCls={high:'c-high',internal:'c-internal',mid:'c-mid',low:'c-low',inferred:'c-inferred',excluded:'c-excluded'};
+function cardHTML(p){
+  const sec=SEC[p.s];
+  return `<article class="card lv-${sec.lv}">
+    <div class="card-h">
+      <span class="card-num">${esc(p.n)}</span>
+      <div><div class="nm">${esc(p.ar)}</div><span class="en">${esc(p.en)}</span></div>
+      <span class="chip ${chipCls[sec.lv]}"><span class="dot"></span>${esc(sec.chip)}</span>
+    </div>
+    <div class="card-b">
+      <div class="row">${icons.prog}<span><span class="k">البرنامج:</span> ${esc(p.prog)}</span></div>
+      ${p.job&&p.job!=='—'?`<div class="row">${icons.job}<span><span class="k">الجهة / الدور:</span> ${esc(p.job)}</span></div>`:''}
+      ${p.tags.length?`<div class="tags">${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}
+      ${p.warn?`<div class="warn">${icons.warn}<span>${esc(p.warn)}</span></div>`:''}
+      ${p.links.length?`<div class="links">${p.links.map(l=>`<a href="${esc(l[1])}" target="_blank" rel="noopener">${icons.link}${esc(l[0])}</a>`).join('')}</div>`:''}
+    </div>
+    <div class="ledger">
+      ${p.ok&&p.ok!=='—'?`<div><span class="ok">✅ مؤكد:</span> ${esc(p.ok)}</div>`:''}
+      ${p.no&&p.no!=='—'?`<div><span class="no">❓ غير مؤكد:</span> ${esc(p.no)}</div>`:''}
+    </div>
+  </article>`;
+}
+let filter='all',query='';
+function render(){
+  const list=P.filter(p=>(filter==='all'||p.s===filter)&&(!query||(p.ar+' '+p.en+' '+p.prog+' '+p.job+' '+p.tags.join(' ')).toLowerCase().includes(query)));
+  grid.innerHTML=list.map(cardHTML).join('');
+  const label=filter==='all'?'جميع الأقسام':SEC[filter].t;
+  countLine.textContent=`عرض ${list.length} بطاقة — ${label}${query?` · بحث: «${query}»`:''}`;
+}
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('.tab'); if(!b)return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  b.classList.add('active'); filter=b.dataset.f; render();
+});
+document.getElementById('q').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render();});
+render();
+
+/* ═══════════ جدول المشاريع ═══════════ */
+document.querySelector('#projTable tbody').innerHTML=PR.map(r=>`<tr>
+  <td>${r[0]}</td><td><b>${esc(r[1])}</b></td><td>${esc(r[2])}</td><td>${esc(r[3])}</td>
+  <td class="score">${r[4]}<div class="bar"><i style="width:${r[4]}%"></i></div></td>
+  <td><span class="pill ${r[5]==='مرتفع'?'hi':'md'}">${esc(r[5])}</span></td>
+  <td>${esc(r[6])}</td>
+  <td><a href="${esc(r[7])}" target="_blank" rel="noopener">الرابط ↗</a></td>
+</tr>`).join('');
+
+/* ═══════════ الرسوم البيانية (Chart.js) ═══════════ */
+const NAVY='#1C355E',INK='#101820',SH=['#1C355E','#3D5480','#6478A0','#93A3BF','#C4CDDE','#101820'];
+Chart.defaults.font.family="'Markazi Text', serif";
+Chart.defaults.font.size=17;
+Chart.defaults.color=INK;
+const tt={rtl:true,textDirection:'rtl',backgroundColor:INK,titleFont:{size:18},bodyFont:{size:17},padding:10,cornerRadius:8};
+const legendCfg={position:'bottom',rtl:true,textDirection:'rtl',labels:{padding:14,boxWidth:14,boxHeight:14,font:{size:17}}};
+
+new Chart(document.getElementById('chLevels'),{type:'doughnut',
+ data:{labels:['🟢 توثيق مرتفع','📁 داخلي + NVIDIA','🟡 توثيق متوسط','🔴 انتساب مؤكد دون نتيجة','🔴 انتساب مستنتج','⛔ مستبعد'],
+ datasets:[{data:[1,10,7,39,15,1],backgroundColor:SH,borderColor:'#fff',borderWidth:2}]},
+ options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:legendCfg,tooltip:tt}}});
+
+new Chart(document.getElementById('chOutcomes'),{type:'bar',
+ data:{labels:['توظيف / وظائف جديدة','مناصب قيادية','تأسيس / ناشئة (مرشح)','انضمام لشركة ناشئة','ترقيات (مؤشرات)','جوائز / مسابقات','أبحاث منشورة'],
+ datasets:[{data:[22,4,3,2,2,2,2],backgroundColor:[NAVY,'#3D5480','#3D5480','#6478A0','#6478A0','#93A3BF','#93A3BF'],borderRadius:7,maxBarThickness:46}]},
+ options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:tt},
+ scales:{x:{ticks:{font:{size:15}},grid:{display:false}},y:{position:'right',beginAtZero:true,ticks:{stepSize:5},grid:{color:'rgba(28,53,94,.08)'}}}}});
+
+new Chart(document.getElementById('chTop10'),{type:'bar',
+ data:{labels:PR.slice(0,10).map(r=>r[1]),datasets:[{data:PR.slice(0,10).map(r=>r[4]),backgroundColor:PR.slice(0,10).map((r,i)=>i===0?INK:NAVY),borderRadius:6,maxBarThickness:26}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:tt},
+ scales:{x:{reverse:true,beginAtZero:true,max:100,position:'bottom',grid:{color:'rgba(28,53,94,.08)'}},
+ y:{position:'right',ticks:{font:{size:16},crossAlign:'far'},grid:{display:false}}}}});
+
+new Chart(document.getElementById('chDomains'),{type:'doughnut',
+ data:{labels:['رؤية حاسوبية','LLM / RAG / وكلاء','تعلم آلة وبيانات','معالجة اللغة (NLP)','أمن سيبراني'],
+ datasets:[{data:[14,4,4,2,1],backgroundColor:SH,borderColor:'#fff',borderWidth:2}]},
+ options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:legendCfg,tooltip:tt}}});
+</script>
+</body>
+</html>
