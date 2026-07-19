@@ -139,8 +139,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
-/* أرقام عربية */
-const AR = (n) => String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+/* أرقام عربية (0123456789) — تُعرض القيم بالأرقام العربية مع بقاء القيم البرمجية كما هي */
+const AR = (n) => String(n).replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d));
 
 /* ألوان هوية أكاديمية سدايا (مستخرجة من الشعار) */
 const BRAND = {
@@ -337,6 +337,7 @@ const Nav = () => (
       <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
         <img src="assets/academy-full.png" alt="أكاديمية سدايا" className="h-8 sm:h-9 w-auto" />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate2">
+          <a href="#outputs" className="hover:text-brand transition">المخرجات</a>
           <a href="#network" className="hover:text-brand transition">المنظومة</a>
           <a href="#flow" className="hover:text-brand transition">النموذج التشغيلي</a>
           <a href="#tracks" className="hover:text-brand transition">المسارات المهنية</a>
@@ -394,6 +395,125 @@ const Hero = () => (
         <p className="mt-10 text-xs tracking-[0.15em] text-slate2/70">
           من جهة تدريب &nbsp;←&nbsp; إلى منسّق وطني
         </p>
+      </Reveal>
+    </div>
+  </section>
+);
+
+/* ------------------------------------------------------------------ */
+/* مخرجات أكاديمية سدايا                                               */
+/* ------------------------------------------------------------------ */
+const FMT = (n) => AR(n.toLocaleString("en-US"));
+
+const OUTPUTS = [
+  {
+    id: "beginners", title: "المبتدئون", icon: "cap", color: "#1f6fb2",
+    y2025: 1138165, y2026: 32786, total: 1539127,
+    target: 1654609, targetNote: "40٪",
+  },
+  {
+    id: "specialists", title: "المختصون", icon: "badge", color: "#14a08a",
+    y2025: 2442, y2026: 1855, total: 12873,
+    target: 20000,
+  },
+  {
+    id: "experts", title: "الخبراء", icon: "award", color: "#5b5ea6",
+    y2025: 131, y2026: 39, total: 340,
+    target: 600,
+  },
+];
+
+const CountUp = ({ value, dur = 1.8, className = "", style }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    let raf, t0;
+    const step = (t) => {
+      if (!t0) t0 = t;
+      const p = Math.min((t - t0) / (dur * 1000), 1);
+      const e = 1 - Math.pow(1 - p, 3); // ease-out
+      setV(Math.round(value * e));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, value]);
+  return <span ref={ref} className={className} style={style}>{FMT(v)}</span>;
+};
+
+const OutputCard = ({ o, delay }) => {
+  const pct = Math.min(Math.round((o.total / o.target) * 100), 100);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return (
+    <Reveal delay={delay} className="h-full">
+      <div ref={ref} className="h-full rounded-2xl border border-hair shadow-soft p-6 flex flex-col"
+        style={{ borderTop: `3px solid ${o.color}`, background: `linear-gradient(180deg, ${o.color}14, #ffffff 45%)` }}>
+
+        {/* الترويسة */}
+        <div className="flex items-center gap-3">
+          <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: o.color, background: `${o.color}14` }}>
+            <Icon name={o.icon} className="w-6 h-6" />
+          </span>
+          <h3 className="font-display font-bold text-navy text-lg leading-tight">{o.title}</h3>
+        </div>
+
+        {/* المنجز التراكمي */}
+        <div className="mt-5 text-center rounded-xl glass-blue border border-brand/15 py-4 px-3">
+          <p className="text-[11px] font-semibold text-slate2/80">المنجز التراكمي لكافة السنوات</p>
+          <CountUp value={o.total} className="block mt-1 font-display font-extrabold text-4xl sm:text-[2.75rem] leading-tight" style={{ color: o.color }} />
+        </div>
+
+        {/* حسب السنة */}
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          <div className="rounded-xl border border-hair bg-mist/50 p-3 text-center">
+            <p className="text-[11px] font-semibold text-slate2/70">2025</p>
+            <p className="mt-0.5 font-display font-bold text-navy text-xl sm:text-2xl">{FMT(o.y2025)}</p>
+          </div>
+          <div className="rounded-xl border border-hair bg-mist/50 p-3 text-center">
+            <p className="text-[11px] font-semibold text-slate2/70">2026 <span className="text-slate2/50">(يناير – مايو)</span></p>
+            <p className="mt-0.5 font-display font-bold text-navy text-xl sm:text-2xl">{FMT(o.y2026)}</p>
+          </div>
+        </div>
+
+        {/* مستهدف 2030 */}
+        <div className="mt-4 pt-4 border-t border-hair">
+          <div className="flex items-center justify-between text-[11px] font-semibold">
+            <span className="inline-flex items-center gap-1.5 text-slate2/80"><span style={{ color: o.color }}><Icon name="target" className="w-3.5 h-3.5" /></span> مستهدف عام 2030</span>
+            <span className="text-navy font-display font-bold text-lg">{FMT(o.target)}{o.targetNote && <span className="text-slate2/60 font-medium text-xs"> ({o.targetNote})</span>}</span>
+          </div>
+          <div className="mt-2 h-2 rounded-full bg-hair overflow-hidden">
+            <motion.div className="h-full rounded-full"
+              style={{ background: `linear-gradient(90deg, ${o.color}, ${BRAND.steel})` }}
+              initial={{ width: 0 }}
+              animate={inView ? { width: `${pct}%` } : {}}
+              transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} />
+          </div>
+          <p className="mt-1.5 text-xs text-slate2/70">المنجز يمثّل <b className="text-navy text-base">{AR(pct)}٪</b> من مستهدف 2030</p>
+        </div>
+      </div>
+    </Reveal>
+  );
+};
+
+const OutputsSection = () => (
+  <section id="outputs" className="relative py-16 sm:py-24">
+    <div className="max-w-3xl mx-auto px-6 text-center mb-10">
+      <Reveal>
+        <p className="text-brand font-semibold tracking-wide text-sm">المخرجات</p>
+        <h2 className="mt-3 font-display font-bold text-navy text-3xl sm:text-4xl">مخرجات أكاديمية سدايا</h2>
+        <p className="mt-4 text-slate2">أرقام موثّقة لمخرجات الأكاديمية عبر ثلاث فئات — المبتدئون والمختصون والخبراء — من المنجز السنوي إلى المنجز التراكمي، مقابل مستهدفات عام 2030.</p>
+      </Reveal>
+    </div>
+
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="grid md:grid-cols-3 gap-6 items-stretch">
+        {OUTPUTS.map((o, i) => (<OutputCard key={o.id} o={o} delay={i * 0.1} />))}
+      </div>
+      <Reveal delay={0.2}>
+        <p className="mt-6 text-center text-xs text-slate2/70">بيانات عام 2026 تشمل الفترة من يناير إلى مايو.</p>
       </Reveal>
     </div>
   </section>
@@ -596,7 +716,8 @@ const SidePanel = ({ selected, anchor, onClose }) => {
   const place = React.useMemo(() => {
     if (!open) return null;
     const vw = window.innerWidth, vh = window.innerHeight;
-    const W = Math.min(620, vw - 24);
+    /* نافذة أوسع: تستغل مساحة أكبر من الشاشة مع بقائها متجاوبة على الشاشات الصغيرة */
+    const W = Math.min(Math.max(920, vw * 0.6), vw - 24);
     const a = anchor || { left: vw / 2, top: vh / 2, width: 0, height: 0 };
     const cx = a.left + a.width / 2;
     const cy = a.top + a.height / 2;
@@ -605,9 +726,9 @@ const SidePanel = ({ selected, anchor, onClose }) => {
     const GAP = 16;
     const spaceAbove = a.top - GAP - 12;
     if (spaceAbove >= vh * 0.55) {
-      return { mode: "above", W, left, arrowX, bottom: vh - a.top + GAP, maxH: Math.min(spaceAbove, vh * 0.88) };
+      return { mode: "above", W, left, arrowX, bottom: vh - a.top + GAP, maxH: Math.min(spaceAbove, vh * 0.92) };
     }
-    const maxH = Math.min(vh * 0.88, vh - 24);
+    const maxH = Math.min(vh * 0.92, vh - 24);
     const top = Math.min(Math.max(cy - maxH / 2, 12), Math.max(vh - maxH - 12, 12));
     return { mode: "center", W, left, arrowX, top, maxH };
   }, [open, anchor]);
@@ -656,7 +777,7 @@ const SidePanel = ({ selected, anchor, onClose }) => {
               {!isCenter && node.imgBefore && (
                 <div className="mt-7 rounded-xl border border-hair bg-white px-4 py-4">
                   <img src={node.imgBefore.src} alt={node.imgBefore.alt} loading="lazy"
-                    className="w-full h-auto max-h-72 object-contain" />
+                    className="w-full h-auto max-h-[26rem] object-contain" />
                 </div>
               )}
 
@@ -674,7 +795,7 @@ const SidePanel = ({ selected, anchor, onClose }) => {
                 {(isCenter ? CENTER.responsibilities : node.who).map((w, i) => (
                   w.img ? (
                     <li key={i} className="rounded-xl border border-hair bg-white px-4 py-4">
-                      <img src={w.img} alt={w.alt} loading="lazy" className="w-full h-auto max-h-64 object-contain" />
+                      <img src={w.img} alt={w.alt} loading="lazy" className="w-full h-auto max-h-96 object-contain" />
                     </li>
                   ) : (
                     <li key={i} className="flex items-center gap-3 rounded-xl border border-hair bg-mist/40 px-4 py-3">
@@ -734,7 +855,7 @@ const FLOW = [
     outIcon: "award", outcome: "شهادات صادرة ومؤشرات موثّقة" },
   { key: "impact", label: "قياس الأثر", en: "Impact Measurement", icon: "trend", color: "#0f7e6d",
     desc: "نقيس تطبيق المهارات في بيئة العمل والعائد المهني عبر تقرير أثر شامل وتوصيات تطوير.",
-    activities: ["قياس تطبيق المهارات في بيئة العمل", "استبيانات بعد ٣ و٦ و١٢ شهراً", "تحليل المسار المهني للخريجين"],
+    activities: ["قياس تطبيق المهارات في بيئة العمل", "استبيانات بعد 3 و6 و12 شهراً", "تحليل المسار المهني للخريجين"],
     outIcon: "trend", outcome: "دليل أثر مهني قابل للتنفيذ" },
   { key: "improve", label: "التحسين المستمر", en: "Continuous Improvement", icon: "refresh", color: "#45516d",
     desc: "نطوّر إصدارات محسّنة وخارطة سنوية معتمدة تُغذّي مرحلة رصد الاحتياج في دورة جديدة.",
@@ -849,7 +970,7 @@ const FlowSection = () => {
                 </span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[11px] font-semibold rounded-full px-2.5 py-0.5" style={{ color: s.color, background: `${s.color}12` }}>المرحلة {AR(active + 1)} من ٧</span>
+                    <span className="text-[11px] font-semibold rounded-full px-2.5 py-0.5" style={{ color: s.color, background: `${s.color}12` }}>المرحلة {AR(active + 1)} من 7</span>
                     {s.model && (
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate2/70">
                         <Icon name="layers" className="w-3.5 h-3.5" /> نموذج {s.model.name}
@@ -943,7 +1064,7 @@ const FlowSection = () => {
               className="inline-flex items-center gap-1.5 rounded-full border border-hair px-4 py-2 text-sm font-semibold text-slate2 hover:border-brand hover:text-brand transition disabled:opacity-40 disabled:pointer-events-none">
               <Icon name="arrow" className="w-4 h-4" /> السابقة
             </button>
-            <span className="text-xs font-semibold text-slate2">المرحلة {AR(active + 1)} من ٧</span>
+            <span className="text-xs font-semibold text-slate2">المرحلة {AR(active + 1)} من 7</span>
             <button onClick={() => go(active + 1)} disabled={active === FLOW.length - 1}
               className="inline-flex items-center gap-1.5 rounded-full bg-brand text-white px-4 py-2 text-sm font-semibold hover:bg-brand-dark transition disabled:opacity-40 disabled:pointer-events-none">
               التالية <Icon name="arrow" className="w-4 h-4 -scale-x-100" />
@@ -968,7 +1089,7 @@ const FlowSection = () => {
 /* ------------------------------------------------------------------ */
 const PATH_FOUNDATION = {
   id: "foundation", title: "المسار التأسيسي", en: "Foundation Core", icon: "spark", color: "#1f6fb2",
-  meta: "٥ برامج · ١٧ يوماً تدريبياً",
+  meta: "5 برامج · 17 يوماً تدريبياً",
   desc: "نقطة البداية الإلزامية للمسارات التقنية؛ يبني الأساس المعرفي والمهاري في الذكاء الاصطناعي وعلوم البيانات.",
   programs: [
     "التوعية في البيانات والذكاء الاصطناعي",
@@ -982,7 +1103,7 @@ const PATH_FOUNDATION = {
 const PATH_TECH = [
   {
     id: "ai", title: "مهندس الذكاء الاصطناعي", en: "AI Engineer Track", icon: "brain", color: "#14a08a",
-    meta: "١٥ برنامجاً + مشروع تخرّج",
+    meta: "15 برنامجاً + مشروع تخرّج",
     desc: "يستهدف المهندسين والمطورين لتصميم وبناء وتشغيل حلول الذكاء الاصطناعي على مستوى الإنتاج.",
     levels: [
       { lv: "Practitioner", ar: "الممارس", items: ["أساسيات تعلّم الآلة", "التعلّم العميق باستخدام PyTorch", "هندسة البرمجيات لأنظمة الذكاء الاصطناعي"] },
@@ -992,7 +1113,7 @@ const PATH_TECH = [
   },
   {
     id: "ds", title: "عالِم البيانات", en: "Data Scientist Track", icon: "trend", color: "#5b5ea6",
-    meta: "١١ برنامجاً + مشروع تخرّج",
+    meta: "11 برنامجاً + مشروع تخرّج",
     desc: "يركّز على التحليل المتقدّم والنمذجة الإحصائية واستخراج القيمة من البيانات لدعم القرار.",
     levels: [
       { lv: "Practitioner", ar: "الممارس", items: ["الأسس الإحصائية", "تصوّر البيانات وسرد القصص بالبيانات"] },
@@ -1004,7 +1125,7 @@ const PATH_TECH = [
 
 const PATH_NONTECH = {
   id: "nontech", title: "مسار الموظفين غير التقنيين", en: "Non-Technical Workforce", icon: "users", color: "#d9881f",
-  meta: "١٠ برامج مستقلة · ٢٦ يوماً (١٣٠ ساعة)",
+  meta: "10 برامج مستقلة · 26 يوماً (130 ساعة)",
   desc: "موجّه لجميع الموظفين دون خلفية تقنية، ويمكن دراسة كل برنامج بشكل مستقل.",
   groups: [
     { g: "الذكاء الاصطناعي", items: ["أساسيات الذكاء الاصطناعي في بيئة العمل", "الذكاء الاصطناعي التوليدي للإنتاجية", "هندسة الأوامر للمحترفين", "أتمتة الأعمال بدون برمجة (No-Code AI)", "الاستخدام الآمن والمسؤول للذكاء الاصطناعي"] },
@@ -1203,6 +1324,7 @@ const App = () => {
       <Nav />
       <main>
         <Hero />
+        <OutputsSection />
         <NetworkSection onSelect={(id, rect) => setSelected({ id, rect })} />
         <FlowSection />
         <TracksSection />
