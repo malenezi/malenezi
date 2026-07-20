@@ -296,7 +296,10 @@ const NODES = [
 /* الهندسة: سداسي حول المركز — مشترك بين SVG والنسب المئوية */
 const VBW = 1000, VBH = 820, CX = 500, CY = 400, RX = 372, RY = 300;
 const ANGLES = [-90, -30, 30, 90, 150, 210];
-const positioned = NODES.map((n, i) => {
+/* ترتيب العقد حول المركز: فوق ← أعلى اليمين ← أسفل اليمين ← تحت ← أسفل اليسار ← أعلى اليسار */
+const NODE_ORDER = ["intelligence", "labor", "accreditation", "universities", "trainers", "learners"];
+const orderedNodes = NODE_ORDER.map((id) => NODES.find((n) => n.id === id));
+const positioned = orderedNodes.map((n, i) => {
   const a = (ANGLES[i] * Math.PI) / 180;
   const sx = CX + RX * Math.cos(a);
   const sy = CY + RY * Math.sin(a);
@@ -338,6 +341,7 @@ const Nav = () => (
         <img src="assets/academy-full.png" alt="أكاديمية سدايا" className="h-8 sm:h-9 w-auto" />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate2">
           <a href="#outputs" className="hover:text-brand transition">المخرجات</a>
+          <a href="#impact" className="hover:text-brand transition">أثر الأكاديمية</a>
           <a href="#network" className="hover:text-brand transition">المنظومة</a>
           <a href="#flow" className="hover:text-brand transition">النموذج التشغيلي</a>
           <a href="#tracks" className="hover:text-brand transition">المسارات المهنية</a>
@@ -515,6 +519,77 @@ const OutputsSection = () => (
       <Reveal delay={0.2}>
         <p className="mt-6 text-center text-xs text-slate2/70">بيانات عام 2026 تشمل الفترة من يناير إلى مايو.</p>
       </Reveal>
+    </div>
+  </section>
+);
+
+/* ------------------------------------------------------------------ */
+/* مؤشرات أثر الأكاديمية                                               */
+/* ------------------------------------------------------------------ */
+const IMPACT = [
+  {
+    id: "employment", title: "التوظيف المرتبط بالتخصص", icon: "briefcase", color: "#1f6fb2",
+    value: 56,
+    desc: "يقيس نسبة خريجي الأكاديمية الذين حصلوا على وظائف في مجالات البيانات والذكاء الاصطناعي أو المجالات ذات الصلة خلال ستة أشهر من التخرج، بما يعكس مواءمة البرامج التدريبية مع احتياجات سوق العمل.",
+  },
+  {
+    id: "mobility", title: "جودة التوظيف والحراك الوظيفي", icon: "trend", color: "#14a08a",
+    value: 48,
+    desc: "يقيس جودة الأثر المهني للتدريب من خلال نسبة الخريجين الذين شغلوا وظائف متخصصة، أو حصلوا على ترقية، أو انتقلوا إلى أدوار ذات قيمة أعلى بعد إتمام البرنامج التدريبي.",
+  },
+  {
+    id: "innovation", title: "التنافسية والابتكار", icon: "award", color: "#d9881f",
+    value: 22, note: "نمو سنوي",
+    desc: "يقيس قدرة خريجي الأكاديمية على تحقيق إنجازات تنافسية، مثل الفوز بالمسابقات والهاكاثونات، وتطوير المشاريع والابتكارات التي تعكس جودة المخرجات التدريبية.",
+  },
+  {
+    id: "footprint", title: "البصمة التقنية المفتوحة", icon: "activity", color: "#5b5ea6",
+    value: 41,
+    desc: "يقيس استمرارية الأثر التقني للخريجين من خلال مساهماتهم في المنصات التقنية المفتوحة مثل GitHub وHugging Face وKaggle، بما يعكس تطبيق المعرفة وإنتاج حلول ومشاريع قابلة للتحقق بعد التخرج.",
+  },
+];
+
+const ImpactCard = ({ m, delay }) => (
+  <Reveal delay={delay} className="h-full">
+    <div className="h-full rounded-2xl border border-hair shadow-soft p-6 flex flex-col"
+      style={{ borderTop: `3px solid ${m.color}`, background: `linear-gradient(180deg, ${m.color}14, #ffffff 45%)` }}>
+
+      {/* الترويسة */}
+      <div className="flex items-center gap-3">
+        <span className="grid place-items-center w-11 h-11 rounded-xl shrink-0" style={{ color: m.color, background: `${m.color}14` }}>
+          <Icon name={m.icon} className="w-6 h-6" />
+        </span>
+        <h3 className="font-display font-bold text-navy text-lg leading-tight">{m.title}</h3>
+      </div>
+
+      {/* المؤشر المحقق */}
+      <div className="mt-5 text-center rounded-xl glass-blue border border-brand/15 py-4 px-3">
+        <p className="text-[11px] font-semibold text-slate2/80">{m.note ? `المؤشر المحقق — ${m.note}` : "المؤشر المحقق"}</p>
+        <p className="mt-1 font-display font-extrabold text-4xl sm:text-[2.75rem] leading-tight" style={{ color: m.color }}>
+          <CountUp value={m.value} />٪
+        </p>
+      </div>
+
+      {/* الوصف */}
+      <p className="mt-4 text-sm text-slate2 leading-relaxed">{m.desc}</p>
+    </div>
+  </Reveal>
+);
+
+const ImpactSection = () => (
+  <section id="impact" className="relative py-16 sm:py-24 bg-mist/40">
+    <div className="max-w-3xl mx-auto px-6 text-center mb-10">
+      <Reveal>
+        <p className="text-brand font-semibold tracking-wide text-sm">أثر الأكاديمية</p>
+        <h2 className="mt-3 font-display font-bold text-navy text-3xl sm:text-4xl">مؤشرات أثر الأكاديمية</h2>
+        <p className="mt-4 text-slate2">مؤشرات تقيس الأثر الفعلي للتدريب بعد التخرج — من الالتحاق بسوق العمل والحراك الوظيفي إلى التنافسية والبصمة التقنية المفتوحة.</p>
+      </Reveal>
+    </div>
+
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        {IMPACT.map((m, i) => (<ImpactCard key={m.id} m={m} delay={i * 0.1} />))}
+      </div>
     </div>
   </section>
 );
@@ -1325,6 +1400,7 @@ const App = () => {
       <main>
         <Hero />
         <OutputsSection />
+        <ImpactSection />
         <NetworkSection onSelect={(id, rect) => setSelected({ id, rect })} />
         <FlowSection />
         <TracksSection />
