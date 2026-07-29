@@ -1,0 +1,28 @@
+# GitHub Pages configuration for this site.
+#
+# WHY THIS FILE EXISTS
+# --------------------
+# GitHub Pages runs every build through Jekyll. By default, the
+# jekyll-optional-front-matter plugin turns every Markdown (.md) file
+# WITHOUT YAML front matter into a Jekyll "page": the file is run through
+# the Liquid template engine and converted to .html.
+#
+# The course-package .md files in /Expand and /Catalog contain dbt/Jinja
+# and prompt-template code such as {% snapshot %}, {% endsnapshot %},
+# {% if is_incremental() %} and {{ config(...) }}. Liquid does not know
+# these tags, so the build failed with:
+#     Liquid syntax error (line 3090): Unknown tag 'endsnapshot'
+#
+# Converting these files to HTML would ALSO break the site: index.html in
+# /Expand and /Catalog links directly to the .md files ("Download .md"
+# buttons), which would 404 once Jekyll renamed them to .html.
+#
+# THE FIX
+# -------
+# Disabling optional front matter makes Jekyll treat Markdown files that
+# have no front matter as plain static files: they are copied to the site
+# verbatim (no Liquid, no conversion) and stay downloadable at their .md
+# URLs. Nothing else on this site uses front matter, layouts, or Liquid,
+# so no other page is affected.
+optional_front_matter:
+  enabled: false
