@@ -3060,7 +3060,7 @@ Narrate this (5 minutes). Baseerah's regulator requested a restatement of the Al
 -- billing CRM's updated_at is unreliable -- 12% of rows carry the migration
 -- date rather than a real change date.
 
-{% snapshot scd2_customer %}
+{`snapshot`}
 {{
     config(
       target_schema='mart',
