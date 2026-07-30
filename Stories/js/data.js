@@ -75,7 +75,7 @@ const STORIES = [
   },
   {
     rank: 2, id: 'maha-thafar',
-    name: 'د. مها ثفار', nameEn: 'Dr. Maha Thafar',
+    name: 'د. مها ظفر', nameEn: 'Dr. Maha Thafar',
     photo: null,
     role: 'أستاذة مساعدة — قسم علوم الحاسب',
     org: 'جامعة الطائف', orgLogo: 'assets/taif-university.png',
