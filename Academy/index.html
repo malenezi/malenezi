@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بوابة أكاديمية سدايا | SDAIA Academy Portal</title>
+<meta name="description" content="البوابة الموحّدة لأكاديمية سدايا: الكاتالوج التدريبي والمسارات التعليمية، بوابة الخريجين، قصص النجاح، الإحصاءات والموارد — SDAIA Academy unified portal.">
+<link rel="icon" type="image/png" href="assets/academy-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10233B; --ink-2:#41566E; --ink-3:#7A8CA0;
+  --brand:#1F6FB2; --brand-d:#164F80; --brand-l:#E9F2FA;
+  --teal:#0E7C86; --teal-d:#0A4E57; --teal-l:#E7F4F5; --teal-m:#2E96A3;
+  --accent:#C75B1E; --accent-l:#FBEFE7;
+  --green:#1C7C43; --green-l:#E8F4EC;
+  --bg:#F6F9FC; --card:#FFFFFF; --line:#E2EAF2; --line-2:#D3DCE4;
+  --r:14px; --shadow:0 1px 2px rgba(15,42,74,.05),0 8px 24px rgba(15,42,74,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+html[lang="en"] body{font-family:'Inter','IBM Plex Sans Arabic',sans-serif}
+.container{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:14px;padding:12px 0}
+.hd img{height:44px;width:auto}
+.hd .brand-name{font-weight:700;font-size:17px;line-height:1.3}
+.hd .brand-sub{font-size:12px;color:var(--ink-3)}
+nav.top{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap;align-items:center}
+nav.top a{padding:8px 12px;border-radius:9px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
+nav.top a:hover{background:var(--teal-l);color:var(--teal-d);text-decoration:none}
+.lang-btn{border:1px solid var(--line-2);background:var(--card);border-radius:9px;padding:7px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--brand-d);cursor:pointer}
+.lang-btn:hover{background:var(--brand-l)}
+
+/* ===== Hero ===== */
+.hero{background:linear-gradient(135deg,var(--teal-d) 0%,#0F3F63 55%,var(--brand-d) 100%);color:#fff;padding:64px 0 56px}
+.hero .kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 16px;font-size:13px;font-weight:600;letter-spacing:.3px;margin-bottom:18px}
+.hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.25;max-width:19em}
+.hero p.lead{margin-top:14px;font-size:16.5px;max-width:44em;color:rgba(255,255,255,.88)}
+.hero .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:11px;padding:12px 22px;font-weight:600;font-size:14.5px;transition:transform .12s ease}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn.primary{background:#fff;color:var(--teal-d)}
+.btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+
+/* ===== Stat tiles ===== */
+.stats{margin-top:-34px;position:relative;z-index:5}
+.stats .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 16px;box-shadow:var(--shadow)}
+.tile .num{font-size:30px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .num small{font-size:16px;font-weight:600;color:var(--ink-3)}
+.tile .lbl{margin-top:4px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.tile .note{font-size:12px;color:var(--ink-3);margin-top:2px}
+.tile::before{content:"";display:block;width:34px;height:4px;border-radius:2px;background:var(--teal);margin-bottom:12px}
+.tile:nth-child(2)::before{background:var(--brand)}
+.tile:nth-child(3)::before{background:var(--teal-m)}
+.tile:nth-child(4)::before{background:var(--accent)}
+.tile:nth-child(5)::before{background:var(--green)}
+.tile:nth-child(6)::before{background:var(--brand-d)}
+
+/* ===== Sections ===== */
+section{padding:52px 0 8px}
+.sec-head{margin-bottom:24px}
+.sec-head h2{font-size:24px;font-weight:700}
+.sec-head p{color:var(--ink-2);font-size:14.5px;margin-top:6px;max-width:52em}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.6px;color:var(--teal);text-transform:uppercase}
+
+/* ===== Cards grid ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .12s ease,border-color .12s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--teal-m)}
+.card .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;background:var(--teal-l);color:var(--teal-d)}
+.card.c-blue .ic{background:var(--brand-l);color:var(--brand-d)}
+.card.c-orange .ic{background:var(--accent-l);color:var(--accent)}
+.card.c-green .ic{background:var(--green-l);color:var(--green)}
+.card h3{font-size:16.5px;font-weight:700}
+.card p{font-size:13.5px;color:var(--ink-2);margin-top:6px;flex:1}
+.card .links{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.card .links a{font-size:13px;font-weight:600;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 12px;color:var(--brand-d)}
+.card .links a:hover{background:var(--brand-l);text-decoration:none}
+.badge{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 10px;background:var(--teal-l);color:var(--teal-d);margin-inline-start:8px;vertical-align:middle}
+
+/* ===== Overview ===== */
+.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start}
+@media(max-width:860px){.overview{grid-template-columns:1fr}}
+.overview .txt p{margin-bottom:12px;color:var(--ink-2);font-size:14.5px}
+.tracks{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.tracks .row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);font-size:13.5px}
+.tracks .row:last-child{border-bottom:none}
+.tracks .row b{font-weight:600}
+.tracks .row .n{color:var(--ink-3);font-size:12.5px;white-space:nowrap}
+.tracks .row .dot{width:9px;height:9px;border-radius:50%;flex:none}
+
+/* ===== Downloads ===== */
+.dl-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.dl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.dl h3{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dl ul{list-style:none}
+.dl li{border-bottom:1px dashed var(--line);padding:8px 0}
+.dl li:last-child{border-bottom:none}
+.dl a{font-size:13.5px;font-weight:500}
+.dl .ft{font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 7px;margin-inline-end:8px;color:#fff;display:inline-block;min-width:38px;text-align:center}
+.ft.xlsx{background:var(--green)} .ft.docx{background:var(--brand)} .ft.pptx{background:var(--accent)} .ft.pdf{background:#A8352E} .ft.md{background:var(--ink-2)} .ft.html{background:var(--teal)}
+
+/* ===== Structure map ===== */
+.map{background:var(--ink);color:#DCE6F0;border-radius:var(--r);padding:24px 26px;font-family:'Consolas','Menlo',monospace;font-size:13px;line-height:1.9;direction:ltr;text-align:left;overflow-x:auto;white-space:pre}
+.map .d{color:#7FD1DB;font-weight:700}
+.map .f{color:#AFC3D8}
+.map .c{color:#6E859E}
+
+/* ===== Footer ===== */
+footer{margin-top:56px;border-top:1px solid var(--line);background:var(--card);padding:26px 0 34px;color:var(--ink-3);font-size:13px}
+footer .frow{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+
+@media(max-width:640px){
+  .hd .brand-sub{display:none}
+  nav.top{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container hd">
+    <img src="assets/academy-logo.png" alt="SDAIA Academy">
+    <div>
+      <div class="brand-name t" data-ar="بوابة أكاديمية سدايا" data-en="SDAIA Academy Portal"></div>
+      <div class="brand-sub t" data-ar="المصدر الموحّد لجميع أصول الأكاديمية" data-en="The unified home of all Academy assets"></div>
+    </div>
+    <nav class="top">
+      <a href="#overview" class="t" data-ar="نبذة" data-en="Overview"></a>
+      <a href="#sites" class="t" data-ar="المواقع" data-en="Sites"></a>
+      <a href="#stats" class="t" data-ar="الإحصاءات" data-en="Statistics"></a>
+      <a href="#downloads" class="t" data-ar="الموارد" data-en="Resources"></a>
+      <a href="#structure" class="t" data-ar="البنية" data-en="Structure"></a>
+      <button id="langToggle" class="lang-btn" type="button">English</button>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <span class="kicker t" data-ar="منظومة الأكاديمية الموحّدة · 2021 – 2026" data-en="The unified Academy ecosystem · 2021 – 2026"></span>
+    <h1 class="t" data-ar="أكاديمية سدايا — بوابة واحدة لكل الأصول والبيانات والمواقع" data-en="SDAIA Academy — one portal for every asset, dataset and site"></h1>
+    <p class="lead t" data-ar="من هذه البوابة تصل إلى الكاتالوج التدريبي والمسارات التعليمية، وبوابة الخريجين التفاعلية، وموقع قصص النجاح، والحقائب التدريبية للمدرّبين، وجميع الملفات والتقارير القابلة للتنزيل — في مكان واحد متّسق." data-en="From here you can reach the training catalog and learning paths, the interactive graduates portal, the success-stories website, instructor training packages, and every downloadable file and report — in one consistent place."></p>
+    <div class="cta">
+      <a class="btn primary t" href="Catalog/index.html" data-ar="استكشف الكاتالوج التدريبي" data-en="Explore the Training Catalog"></a>
+      <a class="btn ghost t" href="Graduates/index.html" data-ar="بوابة الخريجين" data-en="Graduates Portal"></a>
+      <a class="btn ghost t" href="SuccessStories/website/index.html" data-ar="قصص النجاح" data-en="Success Stories"></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== KPI tiles ===== -->
+<div class="stats" id="stats">
+  <div class="container">
+    <div class="grid">
+      <div class="tile">
+        <div class="num">2,549</div>
+        <div class="lbl t" data-ar="خريجًا موثّقًا" data-en="Documented graduates"></div>
+        <div class="note t" data-ar="بعد إزالة التكرار · 2021 – 2026" data-en="De-duplicated individuals · 2021 – 2026"></div>
+      </div>
+      <div class="tile">
+        <div class="num">86</div>
+        <div class="lbl t" data-ar="قصة نجاح موثّقة" data-en="Verified success stories"></div>
+        <div class="note t" data-ar="مرتبة حسب سنة التخرج" data-en="Organized by graduation year"></div>
+      </div>
+      <div class="tile">
+        <div class="num">62</div>
+        <div class="lbl t" data-ar="جهة عمل" data-en="Employers"></div>
+        <div class="note t" data-ar="حكومية وخاصة وعالمية" data-en="Government, private &amp; global"></div>
+      </div>
+      <div class="tile">
+        <div class="num">25</div>
+        <div class="lbl t" data-ar="برنامجًا مترابطًا" data-en="Interlocking programs"></div>
+        <div class="note t" data-ar="مساران مهنيان + أساس مشترك" data-en="Two role tracks + shared core"></div>
+      </div>
+      <div class="tile">
+        <div class="num">27</div>
+        <div class="lbl t" data-ar="حقيبة مدرّب جاهزة" data-en="Instructor packages"></div>
+        <div class="note t" data-ar="عبر ثلاثة مسارات تدريبية" data-en="Across three training tracks"></div>
+      </div>
+      <div class="tile">
+        <div class="num">6</div>
+        <div class="lbl t" data-ar="دفعات خريجين" data-en="Graduate cohorts"></div>
+        <div class="note t" data-ar="منذ التأسيس 2021" data-en="Since founding in 2021"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Overview ===== -->
+<section id="overview">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow t" data-ar="نبذة عن الأكاديمية" data-en="Academy overview"></div>
+      <h2 class="t" data-ar="منظومة واحدة متكاملة بدل مشاريع متفرقة" data-en="One integrated ecosystem instead of scattered projects"></h2>
+    </div>
+    <div class="overview">
+      <div class="txt">
+        <p class="t"
+           data-ar="تبني أكاديمية سدايا القدرات الوطنية في البيانات والذكاء الاصطناعي عبر كاتالوج تدريبي حديث يضم مسارين مهنيين قائمَين على الأدوار — مهندس الذكاء الاصطناعي وعالِم البيانات — يقومان على أساس مشترك من خمسة برامج تأسيسية، إضافة إلى مستوى تمهيدي للمبتدئين، وثلاثة مستويات وطنية، وخمسة وعشرين برنامجًا مترابطًا."
+           data-en="SDAIA Academy builds national data &amp; AI capability through a modern training catalog: two role-based professional tracks — AI Engineer and Data Scientist — standing on a shared five-program foundation core, plus a beginner level, three national levels, and twenty-five interlocking programs."></p>
+        <p class="t"
+           data-ar="تجمع هذه البوابة كل أصول الأكاديمية في مساحة عمل واحدة: قاعدة بيانات الخريجين الموثّقة (2,549 فردًا منذ 2021)، وتقرير التوظيف المبكر، وموقع قصص النجاح (86 قصة عبر 62 جهة عمل)، والحقائب التدريبية الكاملة للمدرّبين، وملفات البرامج التفصيلية."
+           data-en="This portal gathers every Academy asset into a single workspace: the verified graduates database (2,549 individuals since 2021), the first-employment report, the success-stories website (86 stories across 62 employers), full instructor training packages, and detailed program files."></p>
+        <p class="t"
+           data-ar="جميع الروابط في هذه الصفحة نسبية داخل مجلد Academy — يمكن نقل المجلد كاملًا أو مشاركته أو رفعه على أي خادم دون أن ينكسر أي رابط."
+           data-en="Every link on this page is relative within the Academy folder — the whole folder can be moved, shared or hosted anywhere without breaking a single link."></p>
+      </div>
+      <div class="tracks">
+        <div class="row"><span class="dot" style="background:var(--teal)"></span><b class="t" data-ar="الأساس المشترك (Foundation Core)" data-en="Foundation Core"></b><span class="n t" data-ar="5 برامج" data-en="5 programs"></span></div>
+        <div class="row"><span class="dot" style="background:var(--brand)"></span><b class="t" data-ar="مسار مهندس الذكاء الاصطناعي" data-en="AI Engineer Track"></b><span class="n t" data-ar="15 حقيبة مدرّب" data-en="15 instructor packages"></span></div>
+        <div class="row"><span class="dot" style="background:var(--teal-m)"></span><b class="t" data-ar="مسار عالِم البيانات" data-en="Data Scientist Track"></b><span class="n t" data-ar="7 حقائب مدرّب" data-en="7 instructor packages"></span></div>
+        <div class="row"><span class="dot" style="background:var(--accent)"></span><b class="t" data-ar="المستوى التمهيدي (المبتدئون)" data-en="Beginner Level (L0)"></b><span class="n t" data-ar="6 برامج · ذكاء اصطناعي وبيانات" data-en="6 programs · AI &amp; Data"></span></div>
+        <div class="row"><span class="dot" style="background:var(--green)"></span><b class="t" data-ar="ملفات البرامج (AthkaX)" data-en="Program Files (AthkaX)"></b><span class="n t" data-ar="37 ملف برنامج" data-en="37 program files"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Sites & sections ===== -->
+<section id="sites">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow t" data-ar="مكوّنات البوابة" data-en="Portal components"></div>
+      <h2 class="t" data-ar="المواقع والأقسام الرئيسية" data-en="Main sites &amp; sections"></h2>
+      <p class="t" data-ar="كل بطاقة تفتح موقعًا أو قسمًا قائمًا بذاته داخل مساحة عمل الأكاديمية." data-en="Each card opens a self-contained site or section inside the Academy workspace."></p>
+    </div>
+    <div class="cards">
+
+      <div class="card c-blue">
+        <div class="ic">📚</div>
+        <h3 class="t" data-ar="الكاتالوج التدريبي والمسارات التعليمية" data-en="Training Catalog &amp; Learning Paths"></h3>
+        <p class="t" data-ar="الكاتالوج التفاعلي الكامل: 25 برنامجًا مترابطًا، مصفوفة البرامج، المستويات الوطنية الثلاثة، ومسارا مهندس الذكاء الاصطناعي وعالِم البيانات." data-en="The full interactive catalog: 25 interlocking programs, the programs matrix, three national levels, and the AI Engineer &amp; Data Scientist tracks."></p>
+        <div class="links">
+          <a href="Catalog/index.html" class="t" data-ar="فتح الكاتالوج التفاعلي" data-en="Open interactive catalog"></a>
+          <a href="Catalog/Levels.pdf" class="t" data-ar="المستويات (PDF)" data-en="Levels (PDF)"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ic">🎓</div>
+        <h3 class="t" data-ar="بوابة الخريجين" data-en="Graduates Portal"></h3>
+        <p class="t" data-ar="قاعدة بيانات تفاعلية موثّقة لـ 2,549 خريجًا منذ 2021، بدرجات ثقة ومصادر علنية، مع لوحات إحصائية وتقرير التوظيف المبكر 2021–2026." data-en="A verified interactive database of 2,549 graduates since 2021, with confidence grades and public sources, plus statistical dashboards and the 2021–2026 first-employment report."></p>
+        <div class="links">
+          <a href="Graduates/index.html" class="t" data-ar="فتح بوابة الخريجين" data-en="Open graduates portal"></a>
+          <a href="Graduates/Graduates_Database.xlsx" class="t" data-ar="قاعدة البيانات (Excel)" data-en="Database (Excel)"></a>
+        </div>
+      </div>
+
+      <div class="card c-green">
+        <div class="ic">🌟</div>
+        <h3 class="t" data-ar="قصص النجاح" data-en="Success Stories"></h3>
+        <p class="t" data-ar="86 قصة نجاح موثّقة لخريجي الأكاديمية في 62 جهة عمل حكومية وخاصة وعالمية، مرتبة حسب سنة التخرج 2021 – 2026." data-en="86 verified graduate success stories across 62 government, private and global employers, organized by graduation year 2021 – 2026."></p>
+        <div class="links">
+          <a href="SuccessStories/website/index.html" class="t" data-ar="فتح موقع قصص النجاح" data-en="Open success stories site"></a>
+          <a href="SuccessStories/website/sdaia-success-stories-standalone.html" class="t" data-ar="نسخة ملف واحد" data-en="Single-file version"></a>
+        </div>
+      </div>
+
+      <div class="card c-orange">
+        <div class="ic">🧰</div>
+        <h3 class="t" data-ar="الحقائب التدريبية للمدرّبين" data-en="Instructor Training Materials"></h3>
+        <p class="t" data-ar="27 حقيبة مدرّب كاملة (INSTRUCTOR_PACKAGE) عبر مسارات مهندس الذكاء الاصطناعي وعالِم البيانات والأساس المشترك، مع عروض تدريبية وملفات برامج AthkaX التفصيلية." data-en="27 complete instructor packages across the AI Engineer, Data Scientist and Foundation Core tracks, with training decks and detailed AthkaX program files."></p>
+        <div class="links">
+          <a href="Catalog/TrainingMaterials/" class="t" data-ar="تصفح مجلد الحقائب" data-en="Browse materials folder"></a>
+          <a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pdf" class="t" data-ar="عرض المسارات v4 (PDF)" data-en="Paths deck v4 (PDF)"></a>
+        </div>
+      </div>
+
+      <div class="card c-blue">
+        <div class="ic">📊</div>
+        <h3 class="t" data-ar="الإحصاءات ولوحات المعلومات" data-en="Statistics &amp; Dashboards"></h3>
+        <p class="t" data-ar="المؤشرات الرئيسية أعلى هذه الصفحة، ولوحات تفصيلية تفاعلية (التوظيف، الدفعات، الجهات) داخل بوابة الخريجين وموقع قصص النجاح." data-en="Headline KPIs at the top of this page, with detailed interactive dashboards (employment, cohorts, employers) inside the Graduates Portal and Success Stories site."></p>
+        <div class="links">
+          <a href="#stats" class="t" data-ar="المؤشرات الرئيسية" data-en="Headline KPIs"></a>
+          <a href="Graduates/index.html" class="t" data-ar="لوحات الخريجين" data-en="Graduates dashboards"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ic">🗂️</div>
+        <h3 class="t" data-ar="البرامج والمبادرات" data-en="Programs &amp; Initiatives"></h3>
+        <p class="t" data-ar="تفاصيل البرامج والمعسكرات والمبادرات — من برامج المستوى التمهيدي إلى برامج الإتقان والمشاريع التطبيقية الختامية — موثّقة في الكاتالوج وملفات البرامج." data-en="Program, bootcamp and initiative details — from beginner-level programs to mastery courses and capstones — documented in the catalog and program files."></p>
+        <div class="links">
+          <a href="Catalog/index.html" class="t" data-ar="مصفوفة البرامج" data-en="Programs matrix"></a>
+          <a href="Catalog/TrainingMaterials/Program%20Files%20(AthkaX)/" class="t" data-ar="ملفات البرامج (AthkaX)" data-en="Program files (AthkaX)"></a>
+        </div>
+      </div>
+
+      <div class="card c-green">
+        <div class="ic">⬇️</div>
+        <h3 class="t" data-ar="التنزيلات والموارد" data-en="Downloads &amp; Resources"></h3>
+        <p class="t" data-ar="جميع الملفات القابلة للتنزيل: الكاتالوج بصيغ Word وExcel وPDF، والعروض التقديمية، وقاعدة بيانات الخريجين، والتقارير — مجمّعة في قسم واحد أدناه." data-en="Every downloadable file: the catalog in Word, Excel and PDF, presentation decks, the graduates database, and reports — gathered in one section below."></p>
+        <div class="links">
+          <a href="#downloads" class="t" data-ar="الانتقال إلى الموارد" data-en="Go to resources"></a>
+        </div>
+      </div>
+
+      <div class="card c-orange">
+        <div class="ic">🧭</div>
+        <h3 class="t" data-ar="بنية مساحة العمل" data-en="Workspace Structure"></h3>
+        <p class="t" data-ar="خريطة مجلد Academy الكاملة — أين يقع كل موقع وكل ملف، وكيف تضيف مشاريع مستقبلية دون كسر البنية." data-en="The full Academy folder map — where every site and file lives, and how to add future projects without breaking the structure."></p>
+        <div class="links">
+          <a href="#structure" class="t" data-ar="عرض الخريطة" data-en="View the map"></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Downloads ===== -->
+<section id="downloads">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow t" data-ar="التنزيلات والموارد" data-en="Downloads &amp; resources"></div>
+      <h2 class="t" data-ar="الملفات والتقارير القابلة للتنزيل" data-en="Downloadable files &amp; reports"></h2>
+      <p class="t" data-ar="روابط مباشرة لأهم الملفات داخل مساحة العمل، مجمّعة حسب القسم." data-en="Direct links to the key files in the workspace, grouped by section."></p>
+    </div>
+    <div class="dl-groups">
+
+      <div class="dl">
+        <h3><span>📚</span><span class="t" data-ar="الكاتالوج والمسارات" data-en="Catalog &amp; Learning Paths"></span></h3>
+        <ul>
+          <li><span class="ft docx">DOCX</span><a href="Catalog/SDAIA_Learning_Catalog_v2.docx" class="t" data-ar="كاتالوج التعلم v2" data-en="Learning Catalog v2"></a></li>
+          <li><span class="ft pdf">PDF</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Catalog_v2.pdf" class="t" data-ar="كاتالوج التعلم v2 (PDF)" data-en="Learning Catalog v2 (PDF)"></a></li>
+          <li><span class="ft docx">DOCX</span><a href="Catalog/SDAIA_Learning_Paths_Catalog.docx" class="t" data-ar="كاتالوج المسارات التعليمية" data-en="Learning Paths Catalog"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Academy_Learning_Catalog.xlsx" class="t" data-ar="كاتالوج التعلم (Excel)" data-en="Learning Catalog (Excel)"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Academy_Module_Catalog_v2.xlsx" class="t" data-ar="كاتالوج الوحدات v2 (Excel)" data-en="Module Catalog v2 (Excel)"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Learning_Paths_Traceability_Matrix.xlsx" class="t" data-ar="مصفوفة التتبع للمسارات" data-en="Paths Traceability Matrix"></a></li>
+          <li><span class="ft pdf">PDF</span><a href="Catalog/Levels.pdf" class="t" data-ar="المستويات الوطنية" data-en="National Levels"></a></li>
+        </ul>
+      </div>
+
+      <div class="dl">
+        <h3><span>🖥️</span><span class="t" data-ar="العروض التقديمية" data-en="Presentation decks"></span></h3>
+        <ul>
+          <li><span class="ft pptx">PPTX</span><a href="Catalog/SDAIA_Learning_Paths_Executive_Deck_2026.pptx" class="t" data-ar="العرض التنفيذي للمسارات 2026" data-en="Executive Paths Deck 2026"></a></li>
+          <li><span class="ft pptx">PPTX</span><a href="Catalog/SDAIA_Learning_Paths_Deck_v2.pptx" class="t" data-ar="عرض المسارات v2" data-en="Learning Paths Deck v2"></a></li>
+          <li><span class="ft pptx">PPTX</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pptx" class="t" data-ar="عرض المسارات v4" data-en="Learning Paths Deck v4"></a></li>
+          <li><span class="ft pdf">PDF</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pdf" class="t" data-ar="عرض المسارات v4 (PDF)" data-en="Paths Deck v4 (PDF)"></a></li>
+          <li><span class="ft docx">DOCX</span><a href="Catalog/Two_Existing_Programs.docx" class="t" data-ar="البرنامجان القائمان" data-en="Two Existing Programs"></a></li>
+        </ul>
+      </div>
+
+      <div class="dl">
+        <h3><span>🎓</span><span class="t" data-ar="الخريجون والتوظيف" data-en="Graduates &amp; employment"></span></h3>
+        <ul>
+          <li><span class="ft xlsx">XLSX</span><a href="Graduates/Graduates_Database.xlsx" class="t" data-ar="قاعدة بيانات الخريجين (Excel)" data-en="Graduates Database (Excel)"></a></li>
+          <li><span class="ft md">MD</span><a href="Graduates/Graduates_Database.md" class="t" data-ar="قاعدة بيانات الخريجين (تقرير)" data-en="Graduates Database (report)"></a></li>
+          <li><span class="ft md">MD</span><a href="Graduates/SDAIA_Graduates_First_Employment_By_Year_2021-2026_2026-08-02.md" class="t" data-ar="تقرير التوظيف المبكر 2021–2026" data-en="First-Employment Report 2021–2026"></a></li>
+          <li><span class="ft md">MD</span><a href="SuccessStories/Top20_Success_Stories_2026-07-30.md" class="t" data-ar="أفضل 20 قصة نجاح" data-en="Top 20 Success Stories"></a></li>
+        </ul>
+      </div>
+
+      <div class="dl">
+        <h3><span>🧰</span><span class="t" data-ar="ملفات البرامج والمواد" data-en="Program files &amp; materials"></span></h3>
+        <ul>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/TrainingMaterials/SDAIA_Learning_Paths_Catalog.xlsx" class="t" data-ar="كاتالوج المسارات (Excel)" data-en="Paths Catalog (Excel)"></a></li>
+          <li><span class="ft html">DIR</span><a href="Catalog/TrainingMaterials/Program%20Files%20(AthkaX)/" class="t" data-ar="ملفات البرامج AthkaX (37 ملفًا)" data-en="AthkaX program files (37 files)"></a></li>
+          <li><span class="ft html">DIR</span><a href="Catalog/TrainingMaterials/AI%20Engineer%20Track/" class="t" data-ar="حقائب مسار مهندس الذكاء الاصطناعي" data-en="AI Engineer Track packages"></a></li>
+          <li><span class="ft html">DIR</span><a href="Catalog/TrainingMaterials/Data%20Scientist%20Track/" class="t" data-ar="حقائب مسار عالِم البيانات" data-en="Data Scientist Track packages"></a></li>
+          <li><span class="ft html">DIR</span><a href="Catalog/TrainingMaterials/Foundation%20Core%20Track/" class="t" data-ar="حقائب الأساس المشترك" data-en="Foundation Core packages"></a></li>
+          <li><span class="ft html">DIR</span><a href="Catalog/TrainingMaterials/Level-0-Begineers/" class="t" data-ar="برامج المستوى التمهيدي" data-en="Beginner-level programs"></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Structure map ===== -->
+<section id="structure">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow t" data-ar="بنية مساحة العمل" data-en="Workspace structure"></div>
+      <h2 class="t" data-ar="خريطة مجلد Academy" data-en="The Academy folder map"></h2>
+      <p class="t" data-ar="بنية معيارية قابلة للتوسّع — أضف أي مشروع مستقبلي كمجلد جديد بجانب الأقسام القائمة، ثم أضف بطاقته في هذه الصفحة." data-en="A modular, extensible structure — add any future project as a new folder beside the existing sections, then add its card to this page."></p>
+    </div>
+    <div class="map">
+<span class="d">Academy/</span>
+├── <span class="f">index.html</span>                    <span class="c">← this portal (bilingual AR/EN)</span>
+├── <span class="d">assets/</span>                       <span class="c">← shared brand assets (academy logos)</span>
+├── <span class="d">Graduates/</span>                    <span class="c">← graduates database & interactive portal</span>
+│   ├── <span class="f">index.html</span>                <span class="c">← graduates portal + dashboards</span>
+│   └── <span class="f">Graduates_Database.xlsx / .md · employment report</span>
+├── <span class="d">SuccessStories/</span>               <span class="c">← success-stories website + media</span>
+│   └── <span class="d">website/</span>  <span class="f">index.html · css/ · js/ · assets/ · standalone.html</span>
+└── <span class="d">Catalog/</span>                      <span class="c">← training catalog, paths & materials</span>
+    ├── <span class="f">index.html</span>                <span class="c">← interactive learning catalog</span>
+    ├── <span class="f">catalog docs (docx · xlsx · pptx · pdf)</span>
+    └── <span class="d">TrainingMaterials/</span>        <span class="c">← instructor packages & program files</span>
+        ├── <span class="d">AI Engineer Track/</span>  <span class="d">Data Scientist Track/</span>  <span class="d">Foundation Core Track/</span>
+        ├── <span class="d">Level-0-Begineers/</span>  <span class="d">Program Files (AthkaX)/</span>
+        └── <span class="d">Programs Details and Paths/</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container frow">
+    <div>
+      <span class="t" data-ar="أكاديمية سدايا — بوابة موحّدة · تم التجميع في 2 أغسطس 2026" data-en="SDAIA Academy — unified portal · assembled 2 August 2026"></span>
+    </div>
+    <div>
+      <a href="#overview" class="t" data-ar="العودة إلى الأعلى" data-en="Back to top"></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+(function(){
+  var lang = 'ar';
+  var btn = document.getElementById('langToggle');
+  function apply(){
+    var isAr = lang === 'ar';
+    document.documentElement.setAttribute('lang', isAr ? 'ar' : 'en');
+    document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+    var nodes = document.querySelectorAll('.t');
+    for (var i = 0; i < nodes.length; i++){
+      var el = nodes[i];
+      var txt = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      if (txt !== null) el.innerHTML = txt;
+    }
+    btn.textContent = isAr ? 'English' : 'العربية';
+    document.title = isAr ? 'بوابة أكاديمية سدايا | SDAIA Academy Portal' : 'SDAIA Academy Portal | بوابة أكاديمية سدايا';
+  }
+  btn.addEventListener('click', function(){ lang = (lang === 'ar') ? 'en' : 'ar'; apply(); });
+  apply();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDAIA Academy — Learning Catalog | كاتالوج أكاديمية سدايا</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','IBM Plex Sans Arabic','sans-serif'],ar:['IBM Plex Sans Arabic','Inter','sans-serif']},
+colors:{ink:'#0F2A4A',brand:'#1F6FB2',teal:'#2E8B9E',green:'#3DBA8C',amber:'#E8743B'}}}}
+</script>
+<style>
+:root{--bg:#f6f9fc;--surface:#ffffff;--surface2:#f0f5fa;--text:#13233a;--muted:#5b6b7e;--line:#e2eaf2;--ink:#0F2A4A;--brand:#1F6FB2;--accent:#2E8B9E;--shadow:0 1px 2px rgba(15,42,74,.05),0 8px 24px rgba(15,42,74,.06)}
+html.dark{--bg:#0b1626;--surface:#10203a;--surface2:#142844;--text:#e8eef6;--muted:#9fb0c6;--line:#21385a;--ink:#bcd4ee;--brand:#5aa9e6;--accent:#46c6b0;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
+*{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);transition:background .4s,color .4s;font-feature-settings:"cv11";}
+html[dir=rtl] body{font-family:'IBM Plex Sans Arabic',Inter,sans-serif}
+.surface{background:var(--surface)}
+.muted{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(15,42,74,.12);border-color:var(--brand)}
+.hairline{border-color:var(--line)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.grad-text{background:linear-gradient(100deg,#1F6FB2,#2E8B9E 55%,#3DBA8C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip{border:1px solid var(--line);background:var(--surface2)}
+.btn{transition:all .25s}.btn:hover{transform:translateY(-1px)}
+.expandable{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)}
+.expandable.open{grid-template-rows:1fr}
+.expandable>div{overflow:hidden}
+.nav-blur{backdrop-filter:saturate(160%) blur(12px);background:color-mix(in srgb,var(--surface) 82%,transparent)}
+.dot{width:8px;height:8px;border-radius:50%}
+.step-circle{transition:all .35s}
+.fade-swap{animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--brand);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring-bg{stroke:var(--line)}.ring-fg{stroke:url(#rg);stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.2,.7,.2,1)}
+::selection{background:#2E8B9E33}
+.lvlbar{height:4px;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--accent))}
+.hide{display:none!important}
+.scrollx::-webkit-scrollbar{height:8px}.scrollx::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+table.mx td,table.mx th{border:1px solid var(--line)}
+.t-en{display:inline}.t-ar{display:none}
+html[dir=rtl] .t-en{display:none}html[dir=rtl] .t-ar{display:inline}
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<!-- Loading overlay -->
+<div id="loader" class="fixed inset-0 z-[100] grid place-items-center surface">
+  <div class="text-center">
+    <div id="loaderlogo" class="mx-auto mb-5 w-[120px]"></div>
+    <div class="spinner mx-auto"></div>
+    <p class="muted mt-4 text-sm tracking-wide">Loading catalog… · جارٍ تحميل الكاتالوج…</p>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 nav-blur border-b hairline">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+    <a href="#top" class="flex items-center gap-3 shrink-0">
+      <span id="navlogo" class="w-9"></span>
+      <span class="leading-tight">
+        <span class="block font-bold text-[15px] tracking-tight" style="color:var(--ink)"><span class="t-en">SDAIA Academy</span><span class="t-ar">أكاديمية سدايا</span></span>
+        <span class="block text-[10px] muted -mt-0.5"><span class="t-en">Learning Catalog</span><span class="t-ar">الكاتالوج التدريبي</span></span>
+      </span>
+    </a>
+    <div class="hidden lg:flex items-center gap-1 text-sm" id="navlinks"></div>
+    <div class="flex items-center gap-2">
+      <button id="langBtn" class="btn chip rounded-lg px-3 py-1.5 text-sm font-semibold" style="color:var(--ink)">عربي</button>
+      <button id="themeBtn" class="btn chip rounded-lg w-9 h-9 grid place-items-center" aria-label="theme"><i data-lucide="moon" class="w-4 h-4"></i></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-28 pb-20 px-4 sm:px-6">
+  <div class="absolute inset-0 -z-10" style="background:radial-gradient(60% 50% at 70% 0%,#2E8B9E18,transparent),radial-gradient(50% 40% at 10% 20%,#1F6FB214,transparent)"></div>
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 reveal">
+      <div class="inline-flex items-center gap-2 chip rounded-full px-3 py-1 text-xs font-semibold mb-5" style="color:var(--accent)">
+        <span class="dot" style="background:var(--accent)"></span>
+        <span class="t-en">Modular · Stackable · Competency-based</span><span class="t-ar">معيارية · تراكمية · قائمة على الجدارات</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        <span class="t-en">The <span class="grad-text">Learning Architecture</span><br>for National AI Talent</span>
+        <span class="t-ar">بنية <span class="grad-text">التعلّم</span> لكوادر<br>الذكاء الاصطناعي الوطنية</span>
+      </h1>
+      <p class="muted text-lg mt-5 max-w-xl">
+        <span class="t-en">A modular, stackable catalog that grows engineers and scientists from practitioner to expert — two role-based tracks, three national levels, twenty-five interlocking programs.</span>
+        <span class="t-ar">كاتالوج معياري تراكمي ينمّي المهندسين والعلماء من ممارس إلى خبير — مساران قائمان على الأدوار، وثلاثة مستويات وطنية، وخمسة وعشرون برنامجًا مترابطًا.</span>
+      </p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="#journey" class="btn rounded-xl px-5 py-3 font-semibold text-white" style="background:var(--ink)"><span class="t-en">Explore the Journey</span><span class="t-ar">استكشف الرحلة</span></a>
+        <a href="#catalog" class="btn rounded-xl px-5 py-3 font-semibold chip" style="color:var(--ink)"><span class="t-en">Browse Programs</span><span class="t-ar">تصفّح البرامج</span></a>
+      </div>
+      <div id="herostats" class="grid grid-cols-4 gap-3 mt-10 max-w-lg"></div>
+    </div>
+    <div class="lg:col-span-5 reveal flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 blur-3xl -z-10" style="background:conic-gradient(from 200deg,#1F6FB230,#2E8B9E30,#3DBA8C30,#E8743B25,#1F6FB230)"></div>
+        <div id="herologo" class="w-[300px] sm:w-[360px] drop-shadow-xl"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section id="tracks" class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-10"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">01 — Pathways</span><span class="t-ar">01 — المسارات</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Two role-based tracks, one shared gateway</span><span class="t-ar">مساران قائمان على الأدوار وبوابة مشتركة</span></h2></div>
+    <div id="trackgrid" class="grid md:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section id="levels" class="py-16 px-4 sm:px-6" style="background:var(--surface2)">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-10"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">02 — Progression</span><span class="t-ar">02 — التدرّج</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Three levels, aligned to SDAIA's national classification</span><span class="t-ar">ثلاثة مستويات وفق التصنيف الوطني لسدايا</span></h2></div>
+    <div id="levelgrid" class="grid md:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- JOURNEY / STEPPER -->
+<section id="journey" class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-8">
+      <div><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">03 — Guided Journey</span><span class="t-ar">03 — الرحلة الموجّهة</span></span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Stackable Learning Journey</span><span class="t-ar">رحلة التعلّم التراكمية</span></h2>
+        <p class="muted mt-2 max-w-xl"><span class="t-en">Step through the catalog in sequence. Each program stacks a credential toward the Track Professional Certificate.</span><span class="t-ar">تنقّل عبر الكاتالوج بالتسلسل. كل برنامج يضيف شهادة تتراكم نحو شهادة المسار المهنية.</span></p>
+      </div>
+      <!-- progress ring -->
+      <div class="flex items-center gap-4 card rounded-2xl px-5 py-4">
+        <svg width="86" height="86" viewBox="0 0 86 86" class="-rotate-90">
+          <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F6FB2"/><stop offset=".5" stop-color="#2E8B9E"/><stop offset="1" stop-color="#3DBA8C"/></linearGradient></defs>
+          <circle class="ring-bg" cx="43" cy="43" r="36" fill="none" stroke-width="8"/>
+          <circle id="ring" class="ring-fg" cx="43" cy="43" r="36" fill="none" stroke-width="8" stroke-dasharray="226" stroke-dashoffset="226"/>
+        </svg>
+        <div><div class="text-2xl font-extrabold" id="pct">0%</div>
+          <div class="text-xs muted"><span class="t-en">completed</span><span class="t-ar">مكتمل</span></div>
+          <div class="text-xs muted mt-0.5"><span id="donecount">0</span>/<span id="totalcount">25</span></div></div>
+      </div>
+    </div>
+
+    <!-- stepper rail -->
+    <div class="scrollx overflow-x-auto pb-3 mb-7"><div id="rail" class="flex items-center gap-1 min-w-max"></div></div>
+
+    <!-- active step -->
+    <div id="stepcard" class="card rounded-3xl p-6 sm:p-8"></div>
+
+    <div class="flex items-center justify-between mt-6">
+      <button id="prevBtn" class="btn chip rounded-xl px-5 py-3 font-semibold flex items-center gap-2" style="color:var(--ink)"><i data-lucide="arrow-left" class="w-4 h-4 ltr-ic"></i><span class="t-en">Previous</span><span class="t-ar">السابق</span></button>
+      <span class="text-sm muted"><span class="t-en">Step</span><span class="t-ar">الخطوة</span> <b id="stepnum">1</b> / 25</span>
+      <button id="nextBtn" class="btn rounded-xl px-5 py-3 font-semibold text-white flex items-center gap-2" style="background:var(--ink)"><span class="t-en">Next</span><span class="t-ar">التالي</span><i data-lucide="arrow-right" class="w-4 h-4 ltr-ic"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog" class="py-16 px-4 sm:px-6" style="background:var(--surface2)">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-7"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">04 — Catalog</span><span class="t-ar">04 — الكاتالوج</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">The full program catalog</span><span class="t-ar">الكاتالوج الكامل للبرامج</span></h2></div>
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <div class="flex flex-wrap gap-1 chip rounded-xl p-1" id="trackFilter"></div>
+      <div class="flex flex-wrap gap-1 chip rounded-xl p-1" id="levelFilter"></div>
+      <div class="relative grow min-w-[200px] max-w-xs ms-auto">
+        <i data-lucide="search" class="w-4 h-4 absolute top-1/2 -translate-y-1/2 start-3 muted"></i>
+        <input id="search" class="w-full chip rounded-xl py-2 ps-9 pe-3 text-sm bg-transparent outline-none focus:border-brand" placeholder="Search… بحث…">
+      </div>
+    </div>
+    <div id="catgrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+    <p id="emptymsg" class="muted text-center py-10 hide"><span class="t-en">No programs match your filters.</span><span class="t-ar">لا توجد برامج مطابقة.</span></p>
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section id="skills" class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-7"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">05 — Competencies</span><span class="t-ar">05 — الجدارات</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Skills × Programs matrix</span><span class="t-ar">مصفوفة المهارات × البرامج</span></h2>
+      <p class="muted mt-2"><span class="t-en">Proficiency built per program — I Introduced · D Developed · M Mastered.</span><span class="t-ar">مستوى الإتقان لكل برنامج — I تعريف · D تطوير · M إتقان.</span></p></div>
+    <div class="card rounded-2xl p-3 scrollx overflow-x-auto"><div id="matrix"></div></div>
+  </div>
+</section>
+
+<!-- NAMING + RECOMMENDATIONS -->
+<section id="design" class="py-16 px-4 sm:px-6" style="background:var(--surface2)">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+    <div class="reveal">
+      <span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">06 — Naming Convention</span><span class="t-ar">06 — اصطلاح التسمية</span></span>
+      <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-5"><span class="t-en">A unified, reference-grade code</span><span class="t-ar">ترميز موحّد بمستوى مرجعي</span></h2>
+      <div class="card rounded-2xl p-6">
+        <div class="font-mono text-lg font-bold mb-4" style="color:var(--brand)">SDA&#8209;<span style="color:var(--accent)">AIE</span>&#8209;<span style="color:var(--green)">2</span><span class="muted">01</span></div>
+        <div id="naming" class="space-y-3 text-sm"></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">07 — Future Improvement</span><span class="t-ar">07 — التحسين المستقبلي</span></span>
+      <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-5"><span class="t-en">Built to extend</span><span class="t-ar">مبنية للتوسّع</span></h2>
+      <div id="recs" class="space-y-3"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t hairline py-12 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span id="footlogo" class="w-10"></span>
+      <div><div class="font-bold" style="color:var(--ink)"><span class="t-en">SDAIA Academy</span><span class="t-ar">أكاديمية سدايا</span></div>
+        <div class="text-xs muted"><span class="t-en">National reference academy for Data & AI</span><span class="t-ar">الأكاديمية المرجعية الوطنية للبيانات والذكاء الاصطناعي</span></div></div>
+    </div>
+    <p class="text-xs muted text-center"><span class="t-en">Modular Stackable Learning Architecture · Catalog v2026.1 · Branding placeholder</span><span class="t-ar">بنية تعلّم تراكمية معيارية · إصدار الكاتالوج 2026.1 · شعار توضيحي</span></p>
+  </div>
+</footer>
+
+<button id="toTop" class="fixed bottom-6 end-6 z-40 btn rounded-full w-11 h-11 grid place-items-center text-white shadow-lg hide" style="background:var(--ink)"><i data-lucide="arrow-up" class="w-5 h-5"></i></button>
+
+<script id="catalog-data" type="application/json">{
+ "academy": {
+  "name_en": "SDAIA Academy",
+  "name_ar": "أكاديمية سدايا",
+  "subtitle_en": "Modular Stackable Learning Architecture — AI Engineer & Data Scientist Tracks",
+  "subtitle_ar": "بنية تعلّم تراكمية معيارية — مساري مهندس الذكاء الاصطناعي وعالم البيانات"
+ },
+ "tracks": [
+  {
+   "id": "FND",
+   "name_en": "Foundation Gateway",
+   "name_ar": "البوابة التأسيسية",
+   "desc_en": "A shared cross-track on-ramp that establishes a common language of AI, data and responsible-use literacy before learners branch into a specialised track.",
+   "desc_ar": "بوابة مشتركة بين المسارين تبني لغة موحدة لمحو أمية الذكاء الاصطناعي والبيانات والاستخدام المسؤول قبل أن يتفرع المتدرب إلى مسار متخصص.",
+   "goal_en": "Build organisation-wide fluency and feed both specialised tracks.",
+   "goal_ar": "بناء طلاقة معرفية على مستوى المنظومة وتغذية المسارين المتخصصين.",
+   "audience_en": "All professionals, decision-makers, students, fresh graduates.",
+   "audience_ar": "جميع المهنيين وصناع القرار والطلاب وحديثي التخرج.",
+   "roles_en": "Business Professional, Domain Expert, Analyst (entry).",
+   "roles_ar": "مهني الأعمال، خبير المجال، محلل (مبتدئ).",
+   "skills_en": "AI/Data literacy, responsible AI awareness, data-driven thinking.",
+   "skills_ar": "محو أمية الذكاء الاصطناعي والبيانات، الوعي بالذكاء المسؤول، التفكير القائم على البيانات.",
+   "prereq_en": "None — open entry point.",
+   "prereq_ar": "لا يوجد — نقطة دخول مفتوحة."
+  },
+  {
+   "id": "AIE",
+   "name_en": "AI Engineer Track",
+   "name_ar": "مسار مهندس الذكاء الاصطناعي",
+   "desc_en": "A role-based progression that develops engineers who design, build, secure, deploy and operate production-grade AI and Generative-AI systems — from classical ML to agentic architectures and enterprise LLMOps.",
+   "desc_ar": "تدرّج قائم على الدور يُكوّن مهندسين قادرين على تصميم وبناء وتأمين ونشر وتشغيل أنظمة ذكاء اصطناعي وذكاء توليدي بمستوى الإنتاج — من تعلم الآلة الكلاسيكي إلى المعماريات الوكيلية وإدارة عمليات النماذج اللغوية في المؤسسات.",
+   "goal_en": "Produce engineers who can take an AI idea from prototype to a reliable, governed, scalable production service.",
+   "goal_ar": "إعداد مهندسين قادرين على نقل فكرة الذكاء الاصطناعي من النموذج الأولي إلى خدمة إنتاجية موثوقة ومحوكمة وقابلة للتوسع.",
+   "audience_en": "Software Engineers, Developers, ML practitioners, AI practitioners, technical graduates.",
+   "audience_ar": "مهندسو البرمجيات، المطورون، ممارسو تعلم الآلة، ممارسو الذكاء الاصطناعي، الخريجون التقنيون.",
+   "roles_en": "AI Engineer, ML Engineer, GenAI Engineer, LLMOps Engineer, AI Solution Architect.",
+   "roles_ar": "مهندس ذكاء اصطناعي، مهندس تعلم آلة، مهندس ذكاء توليدي، مهندس عمليات نماذج لغوية، معماري حلول الذكاء الاصطناعي.",
+   "skills_en": "ML/DL engineering, LLM & RAG application engineering, agentic system design, MLOps/LLMOps, AI security, solution architecture.",
+   "skills_ar": "هندسة تعلم الآلة والتعلم العميق، هندسة تطبيقات النماذج اللغوية والاسترجاع المعزز، تصميم الأنظمة الوكيلية، إدارة عمليات النماذج، أمن الذكاء الاصطناعي، معمارية الحلول.",
+   "prereq_en": "Foundation Gateway (or equivalent) + basic programming.",
+   "prereq_ar": "البوابة التأسيسية (أو ما يعادلها) + أساسيات البرمجة."
+  },
+  {
+   "id": "DSC",
+   "name_en": "Data Scientist Track",
+   "name_ar": "مسار عالم البيانات",
+   "desc_en": "A role-based progression that develops scientists who turn data into validated insight, predictive models and decision intelligence — from statistical foundations and modern data engineering to advanced ML, experimentation and augmented analytics.",
+   "desc_ar": "تدرّج قائم على الدور يُكوّن علماء بيانات يحولون البيانات إلى رؤى موثوقة ونماذج تنبؤية وذكاء قرار — من الأسس الإحصائية وهندسة البيانات الحديثة إلى تعلم الآلة المتقدم والتجريب والتحليلات المعزّزة.",
+   "goal_en": "Produce scientists who can frame a business problem, engineer trustworthy data, model it rigorously and communicate decisions.",
+   "goal_ar": "إعداد علماء بيانات قادرين على صياغة مشكلة العمل، وهندسة بيانات موثوقة، ونمذجتها بدقة، والتواصل لاتخاذ القرار.",
+   "audience_en": "Data Analysts, Statisticians, Data Engineers, BI professionals, quantitative graduates.",
+   "audience_ar": "محللو البيانات، الإحصائيون، مهندسو البيانات، محترفو ذكاء الأعمال، خريجو التخصصات الكمية.",
+   "roles_en": "Data Scientist, Data Engineer, Decision Scientist, Analytics Lead, Applied Researcher.",
+   "roles_ar": "عالم بيانات، مهندس بيانات، عالم قرار، قائد تحليلات، باحث تطبيقي.",
+   "skills_en": "Statistics & experimentation, data engineering, advanced ML & feature engineering, forecasting, big-data analytics, augmented analytics, data storytelling.",
+   "skills_ar": "الإحصاء والتجريب، هندسة البيانات، تعلم الآلة المتقدم وهندسة الخصائص، التنبؤ، تحليلات البيانات الضخمة، التحليلات المعزّزة، سرد البيانات.",
+   "prereq_en": "Foundation Gateway (or equivalent) + comfort with numbers/spreadsheets.",
+   "prereq_ar": "البوابة التأسيسية (أو ما يعادلها) + إلمام بالأرقام والجداول."
+  }
+ ],
+ "levels": [
+  {
+   "id": "L1",
+   "name_en": "Practitioner (Beginner)",
+   "name_ar": "ممارس (المبتدئون)",
+   "tech_en": "Low technical skills",
+   "tech_ar": "مهارات فنية منخفضة",
+   "desc_en": "Entry tier per SDAIA's national classification. Builds core technical and functional foundations and the working vocabulary of the role.",
+   "desc_ar": "المستوى التأسيسي وفق التصنيف الوطني لسدايا. يبني الأسس الفنية والوظيفية الجوهرية ومفردات العمل للدور.",
+   "credential_en": "Level 1 Certificate (stack of badges)",
+   "credential_ar": "شهادة المستوى الأول (تراكم شارات)"
+  },
+  {
+   "id": "L2",
+   "name_en": "Specialist",
+   "name_ar": "متخصص (المتخصصون)",
+   "tech_en": "Intermediate technical skills",
+   "tech_ar": "مهارات فنية متوسطة",
+   "desc_en": "Mid tier for practitioners with intermediate skills who deliver real projects, apply advanced methods and own components end-to-end.",
+   "desc_ar": "المستوى المتوسط للممارسين ذوي المهارات المتوسطة الذين ينفذون مشاريع حقيقية، ويطبقون أساليب متقدمة، ويمتلكون مكونات كاملة.",
+   "credential_en": "Level 2 Specialist Certificate (stackable)",
+   "credential_ar": "شهادة المتخصص للمستوى الثاني (تراكمية)"
+  },
+  {
+   "id": "L3",
+   "name_en": "Expert",
+   "name_ar": "خبير (الخبراء)",
+   "tech_en": "Advanced technical skills",
+   "tech_ar": "مهارات فنية متقدمة",
+   "desc_en": "Top tier for experts who architect national-scale systems, set standards, lead teams and assure security, governance and responsible AI.",
+   "desc_ar": "المستوى الأعلى للخبراء الذين يصممون أنظمة بمقياس وطني، ويضعون المعايير، ويقودون الفرق، ويضمنون الأمن والحوكمة والذكاء المسؤول.",
+   "credential_en": "Level 3 Expert / Track Professional Certificate",
+   "credential_ar": "شهادة الخبير للمستوى الثالث / شهادة المسار المهني"
+  }
+ ],
+ "skill_families": [
+  {
+   "key": "SE",
+   "en": "Programming & Software Engineering",
+   "ar": "البرمجة وهندسة البرمجيات"
+  },
+  {
+   "key": "ML",
+   "en": "Machine Learning",
+   "ar": "تعلم الآلة"
+  },
+  {
+   "key": "DL",
+   "en": "Deep Learning",
+   "ar": "التعلم العميق"
+  },
+  {
+   "key": "NLP",
+   "en": "NLP & Large Language Models",
+   "ar": "معالجة اللغة والنماذج اللغوية"
+  },
+  {
+   "key": "CV",
+   "en": "Computer Vision",
+   "ar": "الرؤية الحاسوبية"
+  },
+  {
+   "key": "GA",
+   "en": "Generative & Agentic AI",
+   "ar": "الذكاء التوليدي والوكيلي"
+  },
+  {
+   "key": "OPS",
+   "en": "MLOps / LLMOps",
+   "ar": "إدارة عمليات النماذج"
+  },
+  {
+   "key": "DE",
+   "en": "Data Engineering & Pipelines",
+   "ar": "هندسة البيانات والمسارات"
+  },
+  {
+   "key": "ST",
+   "en": "Statistics & Experimentation",
+   "ar": "الإحصاء والتجريب"
+  },
+  {
+   "key": "DV",
+   "en": "Data Analysis & Visualization",
+   "ar": "تحليل البيانات والتصور"
+  },
+  {
+   "key": "BD",
+   "en": "Big Data & Distributed Computing",
+   "ar": "البيانات الضخمة والحوسبة الموزعة"
+  },
+  {
+   "key": "RAI",
+   "en": "Responsible AI & Security",
+   "ar": "الذكاء المسؤول والأمن"
+  },
+  {
+   "key": "SA",
+   "en": "Solution Architecture",
+   "ar": "معمارية الحلول"
+  },
+  {
+   "key": "COM",
+   "en": "Communication & Storytelling",
+   "ar": "التواصل وسرد البيانات"
+  }
+ ],
+ "programs": [
+  {
+   "code": "SDA-FND-001",
+   "track": "FND",
+   "level": "L1",
+   "name_en": "AI & Data Literacy for Professionals",
+   "name_ar": "محو أمية الذكاء الاصطناعي والبيانات للمهنيين",
+   "type": "Workshop",
+   "delivery": "Self-paced",
+   "hours": 12,
+   "duration_en": "1–2 weeks",
+   "duration_ar": "1–2 أسبوع",
+   "desc_en": "An executive on-ramp that builds a shared language across AI, data and responsible use, so every professional can read, question and act on AI initiatives. The gateway feeds both specialised tracks.",
+   "desc_ar": "بوابة تنفيذية تبني لغة مشتركة حول الذكاء الاصطناعي والبيانات والاستخدام المسؤول، لتمكين كل مهني من فهم مبادرات الذكاء الاصطناعي ومساءلتها والتصرف بناءً عليها. وهي تغذي المسارين المتخصصين.",
+   "audience_en": "Business Professionals, Decision-makers, Students, Fresh Graduates",
+   "audience_ar": "مهنيو الأعمال، صناع القرار، الطلاب، حديثو التخرج",
+   "prereq_en": "None — open entry point. Basic digital literacy.",
+   "prereq_ar": "لا يوجد — نقطة دخول مفتوحة. إلمام رقمي أساسي.",
+   "outcomes_en": [
+    "Explain core AI, ML and Generative-AI concepts in plain language",
+    "Identify high-value AI and data use cases in a government or enterprise context",
+    "Interpret data and dashboards to support decisions",
+    "Recognise risks of bias, privacy and misuse and apply responsible-AI principles",
+    "Evaluate when (and when not) to apply AI to a problem"
+   ],
+   "outcomes_ar": [
+    "شرح المفاهيم الجوهرية للذكاء الاصطناعي وتعلم الآلة والذكاء التوليدي بلغة مبسطة",
+    "تحديد حالات الاستخدام عالية القيمة للذكاء الاصطناعي والبيانات في السياق الحكومي والمؤسسي",
+    "تفسير البيانات ولوحات المعلومات لدعم القرارات",
+    "إدراك مخاطر التحيز والخصوصية وإساءة الاستخدام وتطبيق مبادئ الذكاء المسؤول",
+    "تقييم متى يُطبَّق الذكاء الاصطناعي على المشكلة ومتى لا يُطبَّق"
+   ],
+   "topics_en": [
+    "AI / ML / GenAI landscape and terminology",
+    "The data value chain and data-driven decisions",
+    "Reading dashboards and basic analytics",
+    "Responsible AI: bias, privacy, transparency",
+    "Identifying and prioritising use cases",
+    "Working effectively with AI tools and assistants"
+   ],
+   "topics_ar": [
+    "مشهد الذكاء الاصطناعي وتعلم الآلة والذكاء التوليدي ومصطلحاته",
+    "سلسلة قيمة البيانات والقرارات القائمة على البيانات",
+    "قراءة لوحات المعلومات والتحليلات الأساسية",
+    "الذكاء المسؤول: التحيز والخصوصية والشفافية",
+    "تحديد حالات الاستخدام وترتيب أولوياتها",
+    "العمل بفعالية مع أدوات الذكاء الاصطناعي والمساعدات"
+   ],
+   "tech_en": "AI literacy, data literacy, responsible-AI awareness",
+   "tools": "No-code AI tools, BI dashboards, AI assistants",
+   "assessment_en": "Quizzes; Case Studies",
+   "assessment_ar": "اختبارات قصيرة؛ دراسات حالة",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "—",
+   "next": "SDA-AIE-101 / SDA-DSC-101",
+   "stack_en": "Entry badge. Counts toward both the AI Engineer and Data Scientist Level-1 certificates.",
+   "stack_ar": "شارة الدخول. تُحتسب ضمن شهادتي المستوى الأول لمساري مهندس الذكاء الاصطناعي وعالم البيانات.",
+   "industry_en": "Government AI, Responsible AI, Data Analytics",
+   "industry_ar": "الذكاء الاصطناعي الحكومي، الذكاء المسؤول، تحليلات البيانات",
+   "skills": {
+    "ML": "I",
+    "DV": "I",
+    "RAI": "I",
+    "COM": "I"
+   }
+  },
+  {
+   "code": "SDA-AIE-101",
+   "track": "AIE",
+   "level": "L1",
+   "name_en": "Python Programming for AI Engineering",
+   "name_ar": "برمجة بايثون لهندسة الذكاء الاصطناعي",
+   "type": "Bootcamp",
+   "delivery": "Instructor Led",
+   "hours": 40,
+   "duration_en": "2 weeks (10 days)",
+   "duration_ar": "أسبوعان (10 أيام)",
+   "desc_en": "An intensive coding bootcamp that turns programming basics into the disciplined software-engineering practices AI work demands: clean Python, scientific libraries, version control and reproducible environments. It is the technical gateway to the AI Engineer track.",
+   "desc_ar": "معسكر برمجي مكثّف يحوّل أساسيات البرمجة إلى ممارسات هندسة برمجيات منضبطة يتطلبها عمل الذكاء الاصطناعي: بايثون نظيفة، ومكتبات علمية، وإدارة الإصدارات، وبيئات قابلة لإعادة الإنتاج. وهو البوابة التقنية لمسار مهندس الذكاء الاصطناعي.",
+   "audience_en": "Developers, Software Engineers, technical Fresh Graduates",
+   "audience_ar": "المطورون، مهندسو البرمجيات، حديثو التخرج التقنيون",
+   "prereq_en": "SDA-FND-001 (recommended) + basic programming logic.",
+   "prereq_ar": "SDA-FND-001 (مُوصى به) + منطق برمجي أساسي.",
+   "outcomes_en": [
+    "Build clean, modular Python applications using functions, classes and packages",
+    "Implement numerical and tabular workflows with NumPy and pandas",
+    "Apply version control and collaborative workflows with Git",
+    "Develop reproducible environments and manage dependencies",
+    "Write tested, documented code following engineering standards",
+    "Automate data-processing and scripting tasks"
+   ],
+   "outcomes_ar": [
+    "بناء تطبيقات بايثون نظيفة ومعيارية باستخدام الدوال والأصناف والحزم",
+    "تنفيذ سير عمل عددي وجدولي باستخدام NumPy وpandas",
+    "تطبيق إدارة الإصدارات وسير العمل التعاوني باستخدام Git",
+    "تطوير بيئات قابلة لإعادة الإنتاج وإدارة الاعتماديات",
+    "كتابة كود مُختبَر وموثَّق وفق معايير الهندسة",
+    "أتمتة مهام معالجة البيانات والبرمجة النصية"
+   ],
+   "topics_en": [
+    "Python core: data structures, functions, OOP",
+    "Scientific stack: NumPy, pandas, Matplotlib",
+    "Git, GitHub and collaborative workflows",
+    "Virtual environments, packaging, dependency management",
+    "Testing, debugging and clean-code practices",
+    "APIs, files and automation scripting"
+   ],
+   "topics_ar": [
+    "جوهر بايثون: هياكل البيانات، الدوال، البرمجة كائنية التوجه",
+    "المكدس العلمي: NumPy وpandas وMatplotlib",
+    "Git وGitHub وسير العمل التعاوني",
+    "البيئات الافتراضية والتحزيم وإدارة الاعتماديات",
+    "الاختبار والتنقيح وممارسات الكود النظيف",
+    "واجهات البرمجة والملفات والبرمجة النصية للأتمتة"
+   ],
+   "tech_en": "Python software engineering, scientific computing, version control",
+   "tools": "Python, NumPy, pandas, Git/GitHub, VS Code, pytest",
+   "assessment_en": "Labs; Assignments; Quizzes",
+   "assessment_ar": "مختبرات؛ تكليفات؛ اختبارات قصيرة",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-FND-001",
+   "next": "SDA-AIE-102",
+   "stack_en": "First AI-Engineer badge. Prerequisite for all Level-1 AI-Engineer programs.",
+   "stack_ar": "أول شارة في مسار مهندس الذكاء الاصطناعي. متطلب سابق لجميع برامج المستوى الأول.",
+   "industry_en": "Government AI, Generative AI, MLOps",
+   "industry_ar": "الذكاء الاصطناعي الحكومي، الذكاء التوليدي، إدارة عمليات النماذج",
+   "skills": {
+    "SE": "D",
+    "ML": "I",
+    "DE": "I"
+   }
+  },
+  {
+   "code": "SDA-AIE-102",
+   "track": "AIE",
+   "level": "L1",
+   "name_en": "Applied Machine Learning Foundations",
+   "name_ar": "أسس تعلم الآلة التطبيقي",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 48,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "A hands-on foundation in supervised and unsupervised learning that teaches engineers to frame problems, train and validate models correctly, and avoid the classic traps of leakage and overfitting — the bedrock for everything that follows.",
+   "desc_ar": "أساس عملي في التعلم الخاضع للإشراف وغير الخاضع للإشراف يعلّم المهندسين صياغة المشكلات وتدريب النماذج والتحقق منها بشكل صحيح وتجنّب مزالق التسرّب والإفراط في الملاءمة — وهو حجر الأساس لكل ما يليه.",
+   "audience_en": "Developers, Software Engineers, aspiring AI practitioners",
+   "audience_ar": "المطورون، مهندسو البرمجيات، الطامحون لممارسة الذكاء الاصطناعي",
+   "prereq_en": "SDA-AIE-101 (Python) + basic statistics.",
+   "prereq_ar": "SDA-AIE-101 (بايثون) + إحصاء أساسي.",
+   "outcomes_en": [
+    "Frame business problems as supervised or unsupervised learning tasks",
+    "Build classification and regression models with scikit-learn",
+    "Apply feature engineering, cross-validation and hyperparameter tuning",
+    "Evaluate models with appropriate metrics and avoid data leakage",
+    "Interpret models and communicate trade-offs",
+    "Develop an end-to-end ML pipeline on a real dataset"
+   ],
+   "outcomes_ar": [
+    "صياغة مشكلات العمل كمهام تعلّم خاضعة أو غير خاضعة للإشراف",
+    "بناء نماذج تصنيف وانحدار باستخدام scikit-learn",
+    "تطبيق هندسة الخصائص والتحقق المتقاطع وضبط المعاملات الفائقة",
+    "تقييم النماذج بمقاييس مناسبة وتجنّب تسرّب البيانات",
+    "تفسير النماذج وإيصال المفاضلات",
+    "تطوير مسار تعلّم آلة متكامل على بيانات حقيقية"
+   ],
+   "topics_en": [
+    "ML problem framing and the modelling workflow",
+    "Supervised learning: regression and classification",
+    "Unsupervised learning: clustering and dimensionality reduction",
+    "Feature engineering and data preparation",
+    "Model evaluation, validation and selection",
+    "Bias–variance, regularisation and pipelines"
+   ],
+   "topics_ar": [
+    "صياغة مشكلة تعلّم الآلة وسير عمل النمذجة",
+    "التعلم الخاضع للإشراف: الانحدار والتصنيف",
+    "التعلم غير الخاضع للإشراف: العنقدة وتقليل الأبعاد",
+    "هندسة الخصائص وإعداد البيانات",
+    "تقييم النماذج والتحقق والاختيار",
+    "المفاضلة بين التحيز والتباين والتنظيم والمسارات"
+   ],
+   "tech_en": "Supervised/unsupervised ML, feature engineering, model evaluation",
+   "tools": "scikit-learn, pandas, Jupyter, Matplotlib/Seaborn",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-AIE-101",
+   "next": "SDA-AIE-103",
+   "stack_en": "Core ML badge. Required before Deep Learning and all Level-2 programs.",
+   "stack_ar": "شارة تعلّم الآلة الجوهرية. مطلوبة قبل التعلم العميق وجميع برامج المستوى الثاني.",
+   "industry_en": "Predictive Modeling, Government AI, Data Analytics",
+   "industry_ar": "النمذجة التنبؤية، الذكاء الاصطناعي الحكومي، تحليلات البيانات",
+   "skills": {
+    "SE": "D",
+    "ML": "D",
+    "ST": "I",
+    "DV": "I"
+   }
+  },
+  {
+   "code": "SDA-AIE-103",
+   "track": "AIE",
+   "level": "L1",
+   "name_en": "Deep Learning Systems Essentials",
+   "name_ar": "أساسيات أنظمة التعلم العميق",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 40,
+   "duration_en": "3 weeks",
+   "duration_ar": "3 أسابيع",
+   "desc_en": "A practical introduction to neural networks that takes engineers from the mechanics of backpropagation to training convolutional and sequence models with a modern deep-learning framework, building the intuition needed for NLP, vision and Generative AI.",
+   "desc_ar": "مدخل عملي للشبكات العصبية ينقل المهندسين من آليات الانتشار الخلفي إلى تدريب النماذج الالتفافية والتسلسلية باستخدام إطار تعلّم عميق حديث، لبناء الحدس اللازم لمعالجة اللغة والرؤية والذكاء التوليدي.",
+   "audience_en": "AI practitioners, Developers who completed Applied ML",
+   "audience_ar": "ممارسو الذكاء الاصطناعي، المطورون الذين أنهوا تعلّم الآلة التطبيقي",
+   "prereq_en": "SDA-AIE-102 (Applied ML).",
+   "prereq_ar": "SDA-AIE-102 (تعلم الآلة التطبيقي).",
+   "outcomes_en": [
+    "Explain neural-network architecture, loss functions and backpropagation",
+    "Build and train deep models with PyTorch (or TensorFlow)",
+    "Implement CNNs for image tasks and RNN/Transformers for sequences",
+    "Apply regularisation, optimisation and transfer learning",
+    "Diagnose and resolve training problems (overfitting, vanishing gradients)",
+    "Develop a deep-learning model and evaluate it rigorously"
+   ],
+   "outcomes_ar": [
+    "شرح بنية الشبكة العصبية ودوال الخسارة والانتشار الخلفي",
+    "بناء وتدريب نماذج عميقة باستخدام PyTorch (أو TensorFlow)",
+    "تنفيذ الشبكات الالتفافية لمهام الصور والشبكات التكرارية/المحوّلات للتسلسلات",
+    "تطبيق التنظيم والتحسين والتعلّم بالنقل",
+    "تشخيص ومعالجة مشكلات التدريب (الإفراط في الملاءمة، تلاشي التدرجات)",
+    "تطوير نموذج تعلّم عميق وتقييمه بدقة"
+   ],
+   "topics_en": [
+    "Neural networks, activations and backpropagation",
+    "Training loops, optimisers and regularisation",
+    "Convolutional networks for vision",
+    "Sequence models and an intro to Transformers",
+    "Transfer learning and fine-tuning",
+    "GPU training and experiment tracking"
+   ],
+   "topics_ar": [
+    "الشبكات العصبية ودوال التفعيل والانتشار الخلفي",
+    "حلقات التدريب والمُحسِّنات والتنظيم",
+    "الشبكات الالتفافية للرؤية",
+    "النماذج التسلسلية ومدخل إلى المحوّلات",
+    "التعلّم بالنقل والضبط الدقيق",
+    "التدريب على معالجات الرسوميات وتتبع التجارب"
+   ],
+   "tech_en": "Deep learning, neural network training, transfer learning",
+   "tools": "PyTorch, TensorFlow/Keras, CUDA, Weights & Biases",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-AIE-102",
+   "next": "SDA-AIE-104",
+   "stack_en": "Deep-learning badge. Gateway to NLP, Computer Vision and GenAI specialisations.",
+   "stack_ar": "شارة التعلم العميق. بوابة لتخصصات معالجة اللغة والرؤية الحاسوبية والذكاء التوليدي.",
+   "industry_en": "Computer Vision, NLP, Generative AI",
+   "industry_ar": "الرؤية الحاسوبية، معالجة اللغة، الذكاء التوليدي",
+   "skills": {
+    "DL": "D",
+    "ML": "D",
+    "CV": "I",
+    "NLP": "I"
+   }
+  },
+  {
+   "code": "SDA-AIE-104",
+   "track": "AIE",
+   "level": "L1",
+   "name_en": "Generative AI & LLM Application Foundations",
+   "name_ar": "أسس تطبيقات الذكاء التوليدي والنماذج اللغوية",
+   "type": "Workshop",
+   "delivery": "Instructor Led",
+   "hours": 24,
+   "duration_en": "3 days",
+   "duration_ar": "3 أيام",
+   "desc_en": "A focused workshop on building applications on top of large language models — prompt engineering, embeddings and a first retrieval-augmented prototype — giving engineers the practical entry point into the Generative-AI economy.",
+   "desc_ar": "ورشة مركّزة على بناء تطبيقات فوق النماذج اللغوية الكبيرة — هندسة الأوامر والتضمينات وأول نموذج أولي للاسترجاع المعزّز — تمنح المهندسين نقطة دخول عملية إلى اقتصاد الذكاء التوليدي.",
+   "audience_en": "Developers, AI practitioners, Software Engineers",
+   "audience_ar": "المطورون، ممارسو الذكاء الاصطناعي، مهندسو البرمجيات",
+   "prereq_en": "SDA-AIE-101 (Python). SDA-AIE-103 recommended.",
+   "prereq_ar": "SDA-AIE-101 (بايثون). يُوصى بـ SDA-AIE-103.",
+   "outcomes_en": [
+    "Explain how LLMs, tokens and embeddings work",
+    "Design effective prompts and structured outputs",
+    "Integrate LLM APIs into applications",
+    "Build a basic retrieval-augmented generation (RAG) prototype",
+    "Evaluate quality, cost and latency trade-offs",
+    "Recognise hallucination, safety and prompt-injection risks"
+   ],
+   "outcomes_ar": [
+    "شرح آلية عمل النماذج اللغوية والرموز والتضمينات",
+    "تصميم أوامر فعّالة ومخرجات منظّمة",
+    "دمج واجهات النماذج اللغوية في التطبيقات",
+    "بناء نموذج أولي أساسي للتوليد المعزّز بالاسترجاع (RAG)",
+    "تقييم مفاضلات الجودة والتكلفة والكمون",
+    "إدراك مخاطر الهلوسة والأمان وحقن الأوامر"
+   ],
+   "topics_en": [
+    "LLM fundamentals: tokens, context, embeddings",
+    "Prompt engineering and structured outputs",
+    "Working with LLM APIs and SDKs",
+    "Vector stores and basic RAG",
+    "Evaluation: quality, cost, latency",
+    "GenAI risks and safe-use basics"
+   ],
+   "topics_ar": [
+    "أساسيات النماذج اللغوية: الرموز والسياق والتضمينات",
+    "هندسة الأوامر والمخرجات المنظّمة",
+    "العمل مع واجهات وحزم النماذج اللغوية",
+    "مخازن المتجهات والاسترجاع المعزّز الأساسي",
+    "التقييم: الجودة والتكلفة والكمون",
+    "مخاطر الذكاء التوليدي وأساسيات الاستخدام الآمن"
+   ],
+   "tech_en": "LLM application development, prompt engineering, basic RAG",
+   "tools": "OpenAI/Anthropic APIs, LangChain, vector DB (FAISS/Chroma)",
+   "assessment_en": "Labs; Project",
+   "assessment_ar": "مختبرات؛ مشروع",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-AIE-103",
+   "next": "SDA-AIE-201",
+   "stack_en": "Completes Level-1. Unlocks the Specialist GenAI/Agentic programs.",
+   "stack_ar": "يُكمل المستوى الأول. يفتح برامج المتخصص في الذكاء التوليدي والوكيلي.",
+   "industry_en": "Generative AI, Government AI, NLP",
+   "industry_ar": "الذكاء التوليدي، الذكاء الاصطناعي الحكومي، معالجة اللغة",
+   "skills": {
+    "GA": "D",
+    "NLP": "D",
+    "SE": "D",
+    "RAI": "I"
+   }
+  },
+  {
+   "code": "SDA-AIE-201",
+   "track": "AIE",
+   "level": "L2",
+   "name_en": "Advanced Agentic AI Systems Engineering",
+   "name_ar": "هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة",
+   "type": "Bootcamp",
+   "delivery": "Instructor Led",
+   "hours": 40,
+   "duration_en": "5 days",
+   "duration_ar": "5 أيام",
+   "desc_en": "An advanced program that enables participants to design, build, secure, optimise, monitor and deploy enterprise agentic AI systems capable of planning, reasoning, tool-use, memory management and multi-step workflows. It covers modern agentic architectures, multi-agent orchestration, state and data-flow management, guardrails, adversarial testing, and performance, cost and production monitoring — culminating in a deployable capstone.",
+   "desc_ar": "برنامج متقدم يمكّن المشاركين من تصميم وبناء وتأمين وتحسين ومراقبة ونشر أنظمة ذكاء اصطناعي وكيلية مؤسسية قادرة على التخطيط والاستدلال واستخدام الأدوات وإدارة الذاكرة وتنفيذ سير عمل متعدد الخطوات. يغطي المعماريات الوكيلية الحديثة وأنماط التنسيق بين الوكلاء وإدارة الحالة وتدفق البيانات والحواجز الوقائية واختبار المقاومة وتحسين الأداء والتكلفة ومراقبة الإنتاج، ويُتوّج بمشروع قابل للنشر.",
+   "audience_en": "AI practitioners, AI Engineers, Software Engineers, System Architects",
+   "audience_ar": "ممارسو الذكاء الاصطناعي، مهندسو الذكاء الاصطناعي، مهندسو البرمجيات، معماريو الأنظمة",
+   "prereq_en": "SDA-AIE-104 (GenAI Foundations) + Python proficiency.",
+   "prereq_ar": "SDA-AIE-104 (أسس الذكاء التوليدي) + إتقان بايثون.",
+   "outcomes_en": [
+    "Understand modern agentic-AI architectures and their core components",
+    "Design complex agentic systems using advanced architectural patterns",
+    "Build integrated agentic workflows with effective state and data-flow management",
+    "Apply planning and reasoning patterns such as ReAct, Plan-and-Execute and Reflexion",
+    "Build multi-agent systems based on orchestration and task delegation",
+    "Use short- and long-term memory and vector databases for context and retrieval",
+    "Employ tools, APIs and integration protocols such as MCP in agentic systems",
+    "Build automated guardrails and run adversarial / red-team testing",
+    "Optimise performance and cost and monitor systems in production",
+    "Deploy a final agentic AI system in a simulated enterprise environment"
+   ],
+   "outcomes_ar": [
+    "فهم معماريات أنظمة الذكاء الاصطناعي الوكيلي الحديثة ومكوناتها الأساسية",
+    "تصميم أنظمة وكيلية معقدة باستخدام أنماط معمارية متقدمة",
+    "بناء سير عمل وكيلي متكامل يدعم إدارة الحالة وتدفق البيانات بفعالية",
+    "تطبيق أنماط التخطيط والاستدلال مثل ReAct وPlan-and-Execute وReflexion",
+    "بناء أنظمة متعددة الوكلاء تعتمد على التنسيق وتوزيع المهام",
+    "استخدام الذاكرة قصيرة وطويلة المدى وقواعد البيانات المتجهية للسياق والاسترجاع",
+    "توظيف الأدوات وواجهات البرمجة وبروتوكولات التكامل مثل MCP",
+    "بناء حواجز وقائية آلية واختبار مقاومة الأنظمة للهجمات",
+    "تحسين الأداء والتكلفة ومراقبة الأنظمة في بيئات الإنتاج",
+    "تنفيذ ونشر مشروع نظام ذكاء اصطناعي وكيلي في بيئة محاكاة مؤسسية"
+   ],
+   "topics_en": [
+    "Introduction to agentic AI systems",
+    "Modern agentic AI architectures",
+    "Planning and reasoning in agentic systems",
+    "Tool use and API integration",
+    "Memory and state management",
+    "Single-agent and multi-agent architectures",
+    "Advanced agentic design patterns (ReAct, Plan-and-Execute, Reflexion)",
+    "Hierarchical delegation and task distribution",
+    "Model Context Protocol (MCP) and tool integration",
+    "Flow engineering vs. prompt engineering",
+    "Guardrails, security and adversarial testing",
+    "Monitoring, performance and cost optimisation",
+    "Final applied capstone project"
+   ],
+   "topics_ar": [
+    "مقدمة في أنظمة الذكاء الاصطناعي الوكيلي",
+    "معماريات الذكاء الاصطناعي الوكيلي الحديثة",
+    "التخطيط والاستدلال في الأنظمة الوكيلية",
+    "استخدام الأدوات وواجهات البرمجة",
+    "إدارة الذاكرة والحالة",
+    "معمارية الوكيل الواحد والأنظمة متعددة الوكلاء",
+    "أنماط التصميم الوكيلية المتقدمة (ReAct وPlan-and-Execute وReflexion)",
+    "التفويض الهرمي وتوزيع المهام",
+    "بروتوكول MCP ودمج الأدوات",
+    "هندسة التدفقات بدل هندسة الأوامر",
+    "الحواجز الوقائية والأمن واختبار المقاومة",
+    "المراقبة وتحسين الأداء والتكلفة",
+    "المشروع التطبيقي النهائي"
+   ],
+   "tech_en": "Agentic architecture, multi-agent orchestration, tool-use, guardrails",
+   "tools": "LangGraph, LangChain, MCP, vector DBs, OpenAI/Anthropic, LangSmith",
+   "assessment_en": "Labs; Case Studies; Capstone; Presentations",
+   "assessment_ar": "مختبرات؛ دراسات حالة؛ مشروع تتويجي؛ عروض",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-AIE-104",
+   "next": "SDA-AIE-202",
+   "stack_en": "Anchor Specialist program. Builds on GenAI Foundations; feeds Enterprise LLMOps (L3).",
+   "stack_ar": "البرنامج المتخصص المرتكز. يبني على أسس الذكاء التوليدي ويغذي إدارة عمليات النماذج المؤسسية (المستوى الثالث).",
+   "industry_en": "Generative AI, Government AI, MLOps, Responsible AI",
+   "industry_ar": "الذكاء التوليدي، الذكاء الاصطناعي الحكومي، إدارة عمليات النماذج، الذكاء المسؤول",
+   "skills": {
+    "GA": "M",
+    "NLP": "D",
+    "SE": "D",
+    "OPS": "D",
+    "RAI": "D",
+    "SA": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-202",
+   "track": "AIE",
+   "level": "L2",
+   "name_en": "Production NLP & Large Language Model Engineering",
+   "name_ar": "هندسة معالجة اللغة والنماذج اللغوية في الإنتاج",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 48,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "A specialist program on engineering language systems for production — from classical NLP pipelines to fine-tuning, advanced RAG and evaluation — so engineers can ship Arabic-capable, reliable LLM features at scale.",
+   "desc_ar": "برنامج متخصص في هندسة أنظمة اللغة للإنتاج — من مسارات معالجة اللغة الكلاسيكية إلى الضبط الدقيق والاسترجاع المعزّز المتقدم والتقييم — لتمكين المهندسين من إطلاق مزايا لغوية موثوقة وداعمة للعربية على نطاق واسع.",
+   "audience_en": "AI Engineers, AI practitioners, NLP developers",
+   "audience_ar": "مهندسو الذكاء الاصطناعي، ممارسو الذكاء الاصطناعي، مطورو معالجة اللغة",
+   "prereq_en": "SDA-AIE-104 + SDA-AIE-103 (Deep Learning).",
+   "prereq_ar": "SDA-AIE-104 + SDA-AIE-103 (التعلم العميق).",
+   "outcomes_en": [
+    "Build NLP pipelines for classification, NER and retrieval",
+    "Implement advanced RAG with re-ranking and evaluation",
+    "Fine-tune and adapt LLMs (LoRA/PEFT) for domain tasks",
+    "Handle Arabic NLP challenges and multilingual data",
+    "Design rigorous LLM evaluation and guardrails",
+    "Deploy and optimise an NLP/LLM service for production"
+   ],
+   "outcomes_ar": [
+    "بناء مسارات معالجة لغة للتصنيف واستخراج الكيانات والاسترجاع",
+    "تنفيذ استرجاع معزّز متقدم مع إعادة الترتيب والتقييم",
+    "الضبط الدقيق وتكييف النماذج اللغوية (LoRA/PEFT) للمهام المجالية",
+    "معالجة تحديات اللغة العربية والبيانات متعددة اللغات",
+    "تصميم تقييم صارم للنماذج اللغوية وحواجز وقائية",
+    "نشر وتحسين خدمة معالجة لغة/نموذج لغوي للإنتاج"
+   ],
+   "topics_en": [
+    "NLP pipelines: tokenisation, embeddings, classification, NER",
+    "Transformers and the Hugging Face ecosystem",
+    "Advanced RAG: chunking, hybrid search, re-ranking",
+    "Fine-tuning and parameter-efficient adaptation (LoRA/PEFT)",
+    "Arabic & multilingual NLP considerations",
+    "LLM evaluation, guardrails and deployment"
+   ],
+   "topics_ar": [
+    "مسارات معالجة اللغة: التقطيع والتضمين والتصنيف واستخراج الكيانات",
+    "المحوّلات ومنظومة Hugging Face",
+    "الاسترجاع المعزّز المتقدم: التقطيع والبحث الهجين وإعادة الترتيب",
+    "الضبط الدقيق والتكييف الكفء بالمعاملات (LoRA/PEFT)",
+    "اعتبارات معالجة اللغة العربية ومتعددة اللغات",
+    "تقييم النماذج اللغوية والحواجز الوقائية والنشر"
+   ],
+   "tech_en": "NLP engineering, fine-tuning, advanced RAG, LLM evaluation",
+   "tools": "Hugging Face, PyTorch, LangChain, vector DBs, PEFT/LoRA",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-AIE-201",
+   "next": "SDA-AIE-203",
+   "stack_en": "Specialist NLP module. Feeds Enterprise LLMOps and AI Solution Architecture (L3).",
+   "stack_ar": "وحدة المتخصص في معالجة اللغة. تغذي إدارة عمليات النماذج المؤسسية ومعمارية الحلول (المستوى الثالث).",
+   "industry_en": "NLP, Generative AI, Government AI",
+   "industry_ar": "معالجة اللغة، الذكاء التوليدي، الذكاء الاصطناعي الحكومي",
+   "skills": {
+    "NLP": "M",
+    "GA": "D",
+    "DL": "D",
+    "OPS": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-203",
+   "track": "AIE",
+   "level": "L2",
+   "name_en": "Computer Vision Systems Engineering",
+   "name_ar": "هندسة أنظمة الرؤية الحاسوبية",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 40,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "A specialist program on building production vision systems — detection, segmentation and modern vision transformers — applied to real use cases such as smart cities, public safety and document intelligence.",
+   "desc_ar": "برنامج متخصص في بناء أنظمة رؤية إنتاجية — الكشف والتجزئة ومحوّلات الرؤية الحديثة — مطبّقة على حالات استخدام واقعية مثل المدن الذكية والسلامة العامة وذكاء الوثائق.",
+   "audience_en": "AI Engineers, AI practitioners, vision developers",
+   "audience_ar": "مهندسو الذكاء الاصطناعي، ممارسو الذكاء الاصطناعي، مطورو الرؤية",
+   "prereq_en": "SDA-AIE-103 (Deep Learning).",
+   "prereq_ar": "SDA-AIE-103 (التعلم العميق).",
+   "outcomes_en": [
+    "Build image classification, detection and segmentation models",
+    "Apply transfer learning and modern vision transformers",
+    "Engineer image data pipelines and augmentation",
+    "Optimise models for edge and real-time inference",
+    "Evaluate vision systems for accuracy, robustness and bias",
+    "Deploy a computer-vision service for a real use case"
+   ],
+   "outcomes_ar": [
+    "بناء نماذج تصنيف وكشف وتجزئة للصور",
+    "تطبيق التعلّم بالنقل ومحوّلات الرؤية الحديثة",
+    "هندسة مسارات بيانات الصور والتوسيع",
+    "تحسين النماذج للاستدلال الطرفي واللحظي",
+    "تقييم أنظمة الرؤية للدقة والمتانة والتحيز",
+    "نشر خدمة رؤية حاسوبية لحالة استخدام واقعية"
+   ],
+   "topics_en": [
+    "CNNs and vision transformers",
+    "Object detection and segmentation",
+    "Image data pipelines and augmentation",
+    "Transfer learning and model optimisation",
+    "Edge and real-time inference",
+    "Evaluation, robustness and responsible vision"
+   ],
+   "topics_ar": [
+    "الشبكات الالتفافية ومحوّلات الرؤية",
+    "كشف الأجسام والتجزئة",
+    "مسارات بيانات الصور والتوسيع",
+    "التعلّم بالنقل وتحسين النماذج",
+    "الاستدلال الطرفي واللحظي",
+    "التقييم والمتانة والرؤية المسؤولة"
+   ],
+   "tech_en": "Computer vision, detection/segmentation, model optimisation",
+   "tools": "PyTorch, OpenCV, YOLO, Detectron2, ONNX/TensorRT",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-AIE-202",
+   "next": "SDA-AIE-204",
+   "stack_en": "Specialist vision module. Optional depth feeding the Capstone (L3).",
+   "stack_ar": "وحدة المتخصص في الرؤية. تعمّق اختياري يغذي المشروع التتويجي (المستوى الثالث).",
+   "industry_en": "Computer Vision, Smart Cities, Healthcare AI",
+   "industry_ar": "الرؤية الحاسوبية، المدن الذكية، الذكاء الاصطناعي الصحي",
+   "skills": {
+    "CV": "M",
+    "DL": "D",
+    "OPS": "I",
+    "SE": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-204",
+   "track": "AIE",
+   "level": "L2",
+   "name_en": "MLOps & Model Deployment Engineering",
+   "name_ar": "هندسة إدارة عمليات النماذج ونشرها",
+   "type": "Bootcamp",
+   "delivery": "Instructor Led",
+   "hours": 40,
+   "duration_en": "5 days",
+   "duration_ar": "5 أيام",
+   "desc_en": "An intensive bootcamp on operationalising models — packaging, CI/CD, serving, monitoring and automated retraining — turning notebook experiments into reliable, observable production services.",
+   "desc_ar": "معسكر مكثّف على تشغيل النماذج — التحزيم والتكامل/النشر المستمر والخدمة والمراقبة وإعادة التدريب الآلي — يحوّل تجارب الدفاتر إلى خدمات إنتاجية موثوقة وقابلة للمراقبة.",
+   "audience_en": "AI Engineers, ML Engineers, DevOps engineers",
+   "audience_ar": "مهندسو الذكاء الاصطناعي، مهندسو تعلم الآلة، مهندسو DevOps",
+   "prereq_en": "SDA-AIE-102 (Applied ML) + Python/Git.",
+   "prereq_ar": "SDA-AIE-102 (تعلم الآلة التطبيقي) + بايثون/Git.",
+   "outcomes_en": [
+    "Package and version models and data reproducibly",
+    "Build CI/CD pipelines for ML systems",
+    "Serve models via containers and scalable APIs",
+    "Implement monitoring, drift detection and alerting",
+    "Automate retraining and rollback strategies",
+    "Deploy an end-to-end MLOps pipeline on the cloud"
+   ],
+   "outcomes_ar": [
+    "تحزيم النماذج والبيانات وإصدارها بشكل قابل لإعادة الإنتاج",
+    "بناء مسارات تكامل/نشر مستمر لأنظمة تعلّم الآلة",
+    "خدمة النماذج عبر الحاويات وواجهات قابلة للتوسع",
+    "تنفيذ المراقبة وكشف الانحراف والتنبيه",
+    "أتمتة إعادة التدريب واستراتيجيات التراجع",
+    "نشر مسار MLOps متكامل على السحابة"
+   ],
+   "topics_en": [
+    "MLOps lifecycle and maturity",
+    "Model & data versioning (MLflow, DVC)",
+    "Containers, CI/CD and serving",
+    "Monitoring, drift and observability",
+    "Automated retraining and feature stores",
+    "Cloud deployment patterns"
+   ],
+   "topics_ar": [
+    "دورة حياة MLOps ومستويات النضج",
+    "إصدار النماذج والبيانات (MLflow وDVC)",
+    "الحاويات والتكامل/النشر المستمر والخدمة",
+    "المراقبة والانحراف وقابلية الرصد",
+    "إعادة التدريب الآلي ومخازن الخصائص",
+    "أنماط النشر السحابي"
+   ],
+   "tech_en": "MLOps, CI/CD, model serving, monitoring",
+   "tools": "Docker, Kubernetes, MLflow, FastAPI, GitHub Actions, cloud ML",
+   "assessment_en": "Labs; Project; Capstone",
+   "assessment_ar": "مختبرات؛ مشروع؛ مشروع تتويجي",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-AIE-203",
+   "next": "SDA-AIE-301",
+   "stack_en": "Completes Specialist level. Direct prerequisite for Enterprise LLMOps (L3).",
+   "stack_ar": "يُكمل مستوى المتخصص. متطلب مباشر لإدارة عمليات النماذج المؤسسية (المستوى الثالث).",
+   "industry_en": "MLOps, Government AI, Generative AI",
+   "industry_ar": "إدارة عمليات النماذج، الذكاء الاصطناعي الحكومي، الذكاء التوليدي",
+   "skills": {
+    "OPS": "M",
+    "SE": "D",
+    "SA": "D",
+    "DE": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-301",
+   "track": "AIE",
+   "level": "L3",
+   "name_en": "Enterprise LLMOps & GenAI Platform Engineering",
+   "name_ar": "إدارة عمليات النماذج اللغوية وهندسة منصات الذكاء التوليدي",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 48,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "An expert program on operating Generative-AI at enterprise scale — LLM gateways, evaluation harnesses, cost and latency governance, observability and safety — to run reliable GenAI platforms across an organisation.",
+   "desc_ar": "برنامج خبير على تشغيل الذكاء التوليدي بمقياس مؤسسي — بوابات النماذج اللغوية ومنصات التقييم وحوكمة التكلفة والكمون وقابلية الرصد والأمان — لتشغيل منصات ذكاء توليدي موثوقة عبر المنظمة.",
+   "audience_en": "Senior AI Engineers, LLMOps Engineers, Platform Engineers",
+   "audience_ar": "كبار مهندسي الذكاء الاصطناعي، مهندسو عمليات النماذج اللغوية، مهندسو المنصات",
+   "prereq_en": "SDA-AIE-204 (MLOps) + SDA-AIE-201 (Agentic).",
+   "prereq_ar": "SDA-AIE-204 (MLOps) + SDA-AIE-201 (الوكيلي).",
+   "outcomes_en": [
+    "Architect LLM gateways, routing and caching at scale",
+    "Build automated LLM evaluation and regression harnesses",
+    "Govern cost, latency, quota and model lifecycle",
+    "Implement observability, tracing and incident response for GenAI",
+    "Enforce safety, privacy and policy guardrails in production",
+    "Design a multi-tenant GenAI platform reference architecture"
+   ],
+   "outcomes_ar": [
+    "تصميم بوابات النماذج اللغوية والتوجيه والتخزين المؤقت على نطاق واسع",
+    "بناء منصات تقييم وانحدار آلية للنماذج اللغوية",
+    "حوكمة التكلفة والكمون والحصص ودورة حياة النموذج",
+    "تنفيذ قابلية الرصد والتتبع والاستجابة للحوادث للذكاء التوليدي",
+    "فرض حواجز الأمان والخصوصية والسياسات في الإنتاج",
+    "تصميم معمارية مرجعية لمنصة ذكاء توليدي متعددة المستأجرين"
+   ],
+   "topics_en": [
+    "LLM gateways, routing, caching and quotas",
+    "Automated evaluation and regression testing",
+    "Cost, latency and capacity governance",
+    "Observability, tracing and incident response",
+    "Safety, privacy and policy enforcement",
+    "Multi-tenant GenAI platform architecture"
+   ],
+   "topics_ar": [
+    "بوابات النماذج اللغوية والتوجيه والتخزين المؤقت والحصص",
+    "التقييم الآلي واختبار الانحدار",
+    "حوكمة التكلفة والكمون والسعة",
+    "قابلية الرصد والتتبع والاستجابة للحوادث",
+    "فرض الأمان والخصوصية والسياسات",
+    "معمارية منصة ذكاء توليدي متعددة المستأجرين"
+   ],
+   "tech_en": "LLMOps, GenAI platform engineering, observability, governance",
+   "tools": "LangSmith, vLLM, Kubernetes, Prometheus/Grafana, guardrail frameworks",
+   "assessment_en": "Labs; Case Studies; Capstone",
+   "assessment_ar": "مختبرات؛ دراسات حالة؛ مشروع تتويجي",
+   "credential_en": "Expert Certificate (stackable to Track Professional)",
+   "credential_ar": "شهادة خبير (تراكمية نحو شهادة المسار المهني)",
+   "prev": "SDA-AIE-204",
+   "next": "SDA-AIE-302",
+   "stack_en": "Expert capstone-track module. Combines with L3 peers toward the AI-Engineer Professional Certificate.",
+   "stack_ar": "وحدة خبير في مسار التتويج. تتكامل مع نظيراتها لنيل شهادة مهندس الذكاء الاصطناعي المهنية.",
+   "industry_en": "Generative AI, MLOps, Government AI, Responsible AI",
+   "industry_ar": "الذكاء التوليدي، إدارة عمليات النماذج، الذكاء الاصطناعي الحكومي، الذكاء المسؤول",
+   "skills": {
+    "OPS": "M",
+    "GA": "M",
+    "SA": "M",
+    "RAI": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-302",
+   "track": "AIE",
+   "level": "L3",
+   "name_en": "AI Security, Red-Teaming & Responsible AI Assurance",
+   "name_ar": "أمن الذكاء الاصطناعي واختبار المقاومة وضمان الذكاء المسؤول",
+   "type": "Lab",
+   "delivery": "Instructor Led",
+   "hours": 32,
+   "duration_en": "4 days",
+   "duration_ar": "4 أيام",
+   "desc_en": "A hands-on expert lab on securing and assuring AI systems — adversarial attacks, LLM red-teaming, privacy, and the governance frameworks that make national AI trustworthy and compliant.",
+   "desc_ar": "مختبر خبير عملي على تأمين وضمان أنظمة الذكاء الاصطناعي — الهجمات العدائية واختبار مقاومة النماذج اللغوية والخصوصية وأطر الحوكمة التي تجعل الذكاء الاصطناعي الوطني جديرًا بالثقة وممتثلًا.",
+   "audience_en": "Senior AI Engineers, AI security specialists, risk & governance leads",
+   "audience_ar": "كبار مهندسي الذكاء الاصطناعي، أخصائيو أمن الذكاء الاصطناعي، قادة المخاطر والحوكمة",
+   "prereq_en": "SDA-AIE-201 (Agentic) or SDA-AIE-202 (NLP).",
+   "prereq_ar": "SDA-AIE-201 (الوكيلي) أو SDA-AIE-202 (معالجة اللغة).",
+   "outcomes_en": [
+    "Identify the AI threat landscape and attack surfaces",
+    "Execute adversarial and LLM red-team test plans",
+    "Mitigate prompt injection, data poisoning and model exfiltration",
+    "Implement privacy-preserving and access-control measures",
+    "Evaluate fairness, bias and explainability",
+    "Produce a responsible-AI assurance and governance report"
+   ],
+   "outcomes_ar": [
+    "تحديد مشهد تهديدات الذكاء الاصطناعي وأسطح الهجوم",
+    "تنفيذ خطط اختبار عدائية واختبار مقاومة النماذج اللغوية",
+    "التخفيف من حقن الأوامر وتسميم البيانات وتسريب النموذج",
+    "تنفيذ تدابير حفظ الخصوصية والتحكم بالوصول",
+    "تقييم العدالة والتحيز وقابلية التفسير",
+    "إنتاج تقرير ضمان وحوكمة للذكاء المسؤول"
+   ],
+   "topics_en": [
+    "AI threat modelling and attack surfaces",
+    "Adversarial ML and LLM red-teaming",
+    "Prompt injection, jailbreaks and data poisoning",
+    "Privacy, PII and access control",
+    "Fairness, bias, explainability",
+    "Responsible-AI governance and assurance"
+   ],
+   "topics_ar": [
+    "نمذجة تهديدات الذكاء الاصطناعي وأسطح الهجوم",
+    "تعلّم الآلة العدائي واختبار مقاومة النماذج اللغوية",
+    "حقن الأوامر والاختراقات وتسميم البيانات",
+    "الخصوصية والبيانات الشخصية والتحكم بالوصول",
+    "العدالة والتحيز وقابلية التفسير",
+    "حوكمة وضمان الذكاء المسؤول"
+   ],
+   "tech_en": "AI security, red-teaming, responsible AI, governance",
+   "tools": "Garak, PyRIT, ART, privacy/XAI toolkits, policy frameworks",
+   "assessment_en": "Labs; Case Studies; Project",
+   "assessment_ar": "مختبرات؛ دراسات حالة؛ مشروع",
+   "credential_en": "Expert Certificate (stackable to Track Professional)",
+   "credential_ar": "شهادة خبير (تراكمية نحو شهادة المسار المهني)",
+   "prev": "SDA-AIE-301",
+   "next": "SDA-AIE-303",
+   "stack_en": "Expert assurance module. Required quality gate before the Capstone.",
+   "stack_ar": "وحدة ضمان الخبير. بوابة جودة مطلوبة قبل المشروع التتويجي.",
+   "industry_en": "Cybersecurity AI, Responsible AI, Government AI",
+   "industry_ar": "أمن الذكاء الاصطناعي، الذكاء المسؤول، الذكاء الاصطناعي الحكومي",
+   "skills": {
+    "RAI": "M",
+    "GA": "D",
+    "NLP": "D",
+    "SA": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-303",
+   "track": "AIE",
+   "level": "L3",
+   "name_en": "AI Solution Architecture for National-Scale Systems",
+   "name_ar": "معمارية حلول الذكاء الاصطناعي للأنظمة بمقياس وطني",
+   "type": "Program",
+   "delivery": "Instructor Led",
+   "hours": 40,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "An expert program that develops the architectural judgement to design secure, scalable, cost-aware AI solutions for national and enterprise mandates — translating strategy into reference architectures, trade-offs and delivery roadmaps.",
+   "desc_ar": "برنامج خبير ينمّي الحكم المعماري لتصميم حلول ذكاء اصطناعي آمنة وقابلة للتوسع وواعية بالتكلفة للتفويضات الوطنية والمؤسسية — يحوّل الاستراتيجية إلى معماريات مرجعية ومفاضلات وخرائط تنفيذ.",
+   "audience_en": "AI Solution Architects, senior AI Engineers, technical leads",
+   "audience_ar": "معماريو حلول الذكاء الاصطناعي، كبار المهندسين، القادة التقنيون",
+   "prereq_en": "SDA-AIE-204 (MLOps) + one Specialist module.",
+   "prereq_ar": "SDA-AIE-204 (MLOps) + وحدة متخصص واحدة.",
+   "outcomes_en": [
+    "Translate business and national mandates into AI architectures",
+    "Design reference architectures with clear trade-offs",
+    "Evaluate build-vs-buy, cloud, sovereignty and cost factors",
+    "Embed security, governance and responsible-AI by design",
+    "Plan scalable delivery roadmaps and team structures",
+    "Defend an architecture decision record to stakeholders"
+   ],
+   "outcomes_ar": [
+    "ترجمة التفويضات المؤسسية والوطنية إلى معماريات ذكاء اصطناعي",
+    "تصميم معماريات مرجعية بمفاضلات واضحة",
+    "تقييم عوامل البناء مقابل الشراء والسحابة والسيادة والتكلفة",
+    "تضمين الأمن والحوكمة والذكاء المسؤول بالتصميم",
+    "تخطيط خرائط تنفيذ قابلة للتوسع وهياكل الفرق",
+    "الدفاع عن سجل قرار معماري أمام أصحاب المصلحة"
+   ],
+   "topics_en": [
+    "From strategy to AI reference architecture",
+    "Scalability, reliability and cost architecture",
+    "Cloud, hybrid and data-sovereignty patterns",
+    "Security, governance and compliance by design",
+    "Build-vs-buy and vendor strategy",
+    "Architecture decision records and roadmaps"
+   ],
+   "topics_ar": [
+    "من الاستراتيجية إلى المعمارية المرجعية للذكاء الاصطناعي",
+    "معمارية القابلية للتوسع والموثوقية والتكلفة",
+    "أنماط السحابة والهجين وسيادة البيانات",
+    "الأمن والحوكمة والامتثال بالتصميم",
+    "البناء مقابل الشراء واستراتيجية الموردين",
+    "سجلات قرارات المعمارية وخرائط الطريق"
+   ],
+   "tech_en": "AI solution architecture, cloud, governance, cost optimisation",
+   "tools": "Cloud reference architectures, IaC, architecture frameworks",
+   "assessment_en": "Case Studies; Project; Presentations",
+   "assessment_ar": "دراسات حالة؛ مشروع؛ عروض",
+   "credential_en": "Expert Certificate (stackable to Track Professional)",
+   "credential_ar": "شهادة خبير (تراكمية نحو شهادة المسار المهني)",
+   "prev": "SDA-AIE-302",
+   "next": "SDA-AIE-304",
+   "stack_en": "Expert architecture module. Frames the Capstone solution design.",
+   "stack_ar": "وحدة معمارية الخبير. تؤطّر تصميم حل المشروع التتويجي.",
+   "industry_en": "Government AI, Smart Cities, MLOps, Responsible AI",
+   "industry_ar": "الذكاء الاصطناعي الحكومي، المدن الذكية، إدارة عمليات النماذج، الذكاء المسؤول",
+   "skills": {
+    "SA": "M",
+    "OPS": "D",
+    "RAI": "D",
+    "COM": "D"
+   }
+  },
+  {
+   "code": "SDA-AIE-304",
+   "track": "AIE",
+   "level": "L3",
+   "name_en": "Capstone — Production AI System Engineering",
+   "name_ar": "المشروع التتويجي — هندسة نظام ذكاء اصطناعي إنتاجي",
+   "type": "Capstone",
+   "delivery": "Hybrid",
+   "hours": 60,
+   "duration_en": "6 weeks",
+   "duration_ar": "6 أسابيع",
+   "desc_en": "A mentored capstone in which engineers conceive, build, secure, deploy and operate a complete AI/GenAI system against a realistic national use case — the integrative proof of the AI Engineer Professional Certificate.",
+   "desc_ar": "مشروع تتويجي بإشراف يصمّم فيه المهندسون نظام ذكاء اصطناعي/توليدي متكاملًا ويبنونه ويؤمّنونه وينشرونه ويشغّلونه على حالة استخدام وطنية واقعية — وهو البرهان التكاملي لشهادة مهندس الذكاء الاصطناعي المهنية.",
+   "audience_en": "AI Engineers completing the Expert level",
+   "audience_ar": "مهندسو الذكاء الاصطناعي المكملون لمستوى الخبير",
+   "prereq_en": "All AIE-L3 modules (SDA-AIE-301/302/303).",
+   "prereq_ar": "جميع وحدات المستوى الثالث (SDA-AIE-301/302/303).",
+   "outcomes_en": [
+    "Design a full AI solution architecture for a real use case",
+    "Build and integrate model, data and serving components",
+    "Implement security, evaluation and responsible-AI guardrails",
+    "Deploy with CI/CD, monitoring and cost controls",
+    "Evaluate the system against measurable success criteria",
+    "Present and defend the solution to an expert panel"
+   ],
+   "outcomes_ar": [
+    "تصميم معمارية حل ذكاء اصطناعي كاملة لحالة استخدام واقعية",
+    "بناء ودمج مكونات النموذج والبيانات والخدمة",
+    "تنفيذ حواجز الأمن والتقييم والذكاء المسؤول",
+    "النشر مع التكامل/النشر المستمر والمراقبة وضوابط التكلفة",
+    "تقييم النظام وفق معايير نجاح قابلة للقياس",
+    "عرض الحل والدفاع عنه أمام لجنة خبراء"
+   ],
+   "topics_en": [
+    "Problem framing and solution architecture",
+    "Implementation and integration",
+    "Security, evaluation and guardrails",
+    "Deployment, monitoring and cost",
+    "Documentation and ADRs",
+    "Final defence and demo day"
+   ],
+   "topics_ar": [
+    "صياغة المشكلة ومعمارية الحل",
+    "التنفيذ والتكامل",
+    "الأمن والتقييم والحواجز الوقائية",
+    "النشر والمراقبة والتكلفة",
+    "التوثيق وسجلات القرارات المعمارية",
+    "الدفاع النهائي ويوم العرض"
+   ],
+   "tech_en": "End-to-end AI engineering, integration, deployment",
+   "tools": "Full AIE toolchain (Python, PyTorch, LLM stack, Docker/K8s, cloud)",
+   "assessment_en": "Capstone; Presentations",
+   "assessment_ar": "مشروع تتويجي؛ عروض",
+   "credential_en": "AI Engineer Professional Certificate (Track)",
+   "credential_ar": "شهادة مهندس الذكاء الاصطناعي المهنية (المسار)",
+   "prev": "SDA-AIE-303",
+   "next": "—",
+   "stack_en": "Terminal program. Converts all stacked AIE badges into the AI Engineer Professional Certificate.",
+   "stack_ar": "البرنامج الختامي. يحوّل جميع الشارات المتراكمة إلى شهادة مهندس الذكاء الاصطناعي المهنية.",
+   "industry_en": "Government AI, Generative AI, MLOps, Smart Cities",
+   "industry_ar": "الذكاء الاصطناعي الحكومي، الذكاء التوليدي، إدارة عمليات النماذج، المدن الذكية",
+   "skills": {
+    "SA": "M",
+    "OPS": "M",
+    "GA": "M",
+    "RAI": "D",
+    "COM": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-101",
+   "track": "DSC",
+   "level": "L1",
+   "name_en": "Statistical Foundations for Data Science",
+   "name_ar": "الأسس الإحصائية لعلم البيانات",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 40,
+   "duration_en": "3 weeks",
+   "duration_ar": "3 أسابيع",
+   "desc_en": "A rigorous foundation in probability, statistics and exploratory analysis in Python, teaching scientists to reason about uncertainty, test hypotheses and let evidence — not intuition — drive conclusions.",
+   "desc_ar": "أساس صارم في الاحتمالات والإحصاء والتحليل الاستكشافي ببايثون، يعلّم العلماء الاستدلال حول عدم اليقين واختبار الفرضيات وترك الأدلة — لا الحدس — تقود الاستنتاجات.",
+   "audience_en": "Data Analysts, Statisticians, quantitative graduates",
+   "audience_ar": "محللو البيانات، الإحصائيون، خريجو التخصصات الكمية",
+   "prereq_en": "SDA-FND-001 (recommended) + basic algebra.",
+   "prereq_ar": "SDA-FND-001 (مُوصى به) + جبر أساسي.",
+   "outcomes_en": [
+    "Apply probability and distributions to data problems",
+    "Perform exploratory data analysis in Python",
+    "Formulate and test hypotheses correctly",
+    "Quantify uncertainty with confidence intervals",
+    "Interpret correlation, effect size and significance",
+    "Communicate statistical findings clearly"
+   ],
+   "outcomes_ar": [
+    "تطبيق الاحتمالات والتوزيعات على مشكلات البيانات",
+    "إجراء تحليل استكشافي للبيانات ببايثون",
+    "صياغة الفرضيات واختبارها بشكل صحيح",
+    "قياس عدم اليقين بفترات الثقة",
+    "تفسير الارتباط وحجم الأثر والدلالة",
+    "إيصال النتائج الإحصائية بوضوح"
+   ],
+   "topics_en": [
+    "Probability and distributions",
+    "Descriptive statistics and EDA",
+    "Sampling and the central limit theorem",
+    "Hypothesis testing and p-values",
+    "Confidence intervals and effect size",
+    "Correlation vs. causation"
+   ],
+   "topics_ar": [
+    "الاحتمالات والتوزيعات",
+    "الإحصاء الوصفي والتحليل الاستكشافي",
+    "المعاينة ونظرية النهاية المركزية",
+    "اختبار الفرضيات وقيم p",
+    "فترات الثقة وحجم الأثر",
+    "الارتباط مقابل السببية"
+   ],
+   "tech_en": "Probability, inferential statistics, EDA",
+   "tools": "Python, pandas, NumPy, SciPy, statsmodels, Seaborn",
+   "assessment_en": "Quizzes; Labs; Assignments",
+   "assessment_ar": "اختبارات قصيرة؛ مختبرات؛ تكليفات",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-FND-001",
+   "next": "SDA-DSC-102",
+   "stack_en": "First Data-Scientist badge. Statistical prerequisite for the whole track.",
+   "stack_ar": "أول شارة في مسار عالم البيانات. متطلب إحصائي للمسار بأكمله.",
+   "industry_en": "Data Analytics, Predictive Modeling, Government AI",
+   "industry_ar": "تحليلات البيانات، النمذجة التنبؤية، الذكاء الاصطناعي الحكومي",
+   "skills": {
+    "ST": "D",
+    "DV": "D",
+    "SE": "I",
+    "COM": "I"
+   }
+  },
+  {
+   "code": "SDA-DSC-102",
+   "track": "DSC",
+   "level": "L1",
+   "name_en": "SQL & Analytical Data Wrangling",
+   "name_ar": "SQL ومعالجة البيانات التحليلية",
+   "type": "Workshop",
+   "delivery": "Instructor Led",
+   "hours": 24,
+   "duration_en": "3 days",
+   "duration_ar": "3 أيام",
+   "desc_en": "A practical workshop on sourcing and shaping data — advanced SQL, joins, window functions and reproducible cleaning workflows — so analysts can reliably get from raw tables to analysis-ready datasets.",
+   "desc_ar": "ورشة عملية على استخراج البيانات وتشكيلها — SQL المتقدمة والدمج ودوال النوافذ وسير عمل تنظيف قابل لإعادة الإنتاج — لتمكين المحللين من الانتقال الموثوق من الجداول الخام إلى مجموعات بيانات جاهزة للتحليل.",
+   "audience_en": "Data Analysts, BI professionals, Data Engineers (entry)",
+   "audience_ar": "محللو البيانات، محترفو ذكاء الأعمال، مهندسو البيانات (مبتدئ)",
+   "prereq_en": "SDA-FND-001 (recommended).",
+   "prereq_ar": "SDA-FND-001 (مُوصى به).",
+   "outcomes_en": [
+    "Write advanced SQL queries with joins and aggregations",
+    "Apply window functions and CTEs for analytics",
+    "Clean and reshape data reproducibly in pandas",
+    "Combine multiple sources into analysis-ready datasets",
+    "Validate data quality and handle missing values",
+    "Document and automate a wrangling workflow"
+   ],
+   "outcomes_ar": [
+    "كتابة استعلامات SQL متقدمة بالدمج والتجميع",
+    "تطبيق دوال النوافذ وتعبيرات CTE للتحليلات",
+    "تنظيف وإعادة تشكيل البيانات بشكل قابل لإعادة الإنتاج في pandas",
+    "دمج مصادر متعددة في مجموعات بيانات جاهزة للتحليل",
+    "التحقق من جودة البيانات ومعالجة القيم المفقودة",
+    "توثيق وأتمتة سير عمل المعالجة"
+   ],
+   "topics_en": [
+    "Relational data and SQL essentials",
+    "Joins, aggregations, subqueries",
+    "Window functions and CTEs",
+    "Data cleaning and reshaping with pandas",
+    "Data quality and validation",
+    "Reproducible wrangling workflows"
+   ],
+   "topics_ar": [
+    "البيانات العلائقية وأساسيات SQL",
+    "الدمج والتجميع والاستعلامات الفرعية",
+    "دوال النوافذ وتعبيرات CTE",
+    "تنظيف وإعادة تشكيل البيانات بـ pandas",
+    "جودة البيانات والتحقق",
+    "سير عمل معالجة قابل لإعادة الإنتاج"
+   ],
+   "tech_en": "SQL, data wrangling, data quality",
+   "tools": "PostgreSQL, SQL, pandas, dbt (intro)",
+   "assessment_en": "Labs; Assignments",
+   "assessment_ar": "مختبرات؛ تكليفات",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-DSC-101",
+   "next": "SDA-DSC-103",
+   "stack_en": "Data-wrangling badge. Feeds Modern Data Engineering (L2).",
+   "stack_ar": "شارة معالجة البيانات. تغذي هندسة البيانات الحديثة (المستوى الثاني).",
+   "industry_en": "Data Analytics, Government AI, Predictive Modeling",
+   "industry_ar": "تحليلات البيانات، الذكاء الاصطناعي الحكومي، النمذجة التنبؤية",
+   "skills": {
+    "DE": "D",
+    "SE": "D",
+    "DV": "I"
+   }
+  },
+  {
+   "code": "SDA-DSC-103",
+   "track": "DSC",
+   "level": "L1",
+   "name_en": "Data Visualization & Decision Storytelling",
+   "name_ar": "تصور البيانات وسرد القرارات",
+   "type": "Workshop",
+   "delivery": "Hybrid",
+   "hours": 24,
+   "duration_en": "3 days",
+   "duration_ar": "3 أيام",
+   "desc_en": "A workshop on turning analysis into influence — principled visual design, dashboards and narrative structure — so data scientists can drive decisions, not just produce charts.",
+   "desc_ar": "ورشة على تحويل التحليل إلى تأثير — تصميم بصري مبني على المبادئ ولوحات معلومات وبنية سردية — لتمكين علماء البيانات من قيادة القرارات لا مجرد إنتاج الرسوم.",
+   "audience_en": "Data Analysts, Data Scientists, BI professionals",
+   "audience_ar": "محللو البيانات، علماء البيانات، محترفو ذكاء الأعمال",
+   "prereq_en": "SDA-DSC-101 (Statistics).",
+   "prereq_ar": "SDA-DSC-101 (الإحصاء).",
+   "outcomes_en": [
+    "Apply visual-perception principles to chart design",
+    "Select the right visualisation for the question",
+    "Build interactive dashboards",
+    "Structure a data narrative for an audience",
+    "Communicate uncertainty honestly",
+    "Design an executive-ready data story"
+   ],
+   "outcomes_ar": [
+    "تطبيق مبادئ الإدراك البصري على تصميم الرسوم",
+    "اختيار التصور المناسب للسؤال",
+    "بناء لوحات معلومات تفاعلية",
+    "هيكلة سرد بياني يناسب الجمهور",
+    "إيصال عدم اليقين بأمانة",
+    "تصميم قصة بيانات جاهزة للقيادة التنفيذية"
+   ],
+   "topics_en": [
+    "Principles of visual perception",
+    "Chart selection and design",
+    "Interactive dashboards",
+    "Narrative structure for data",
+    "Communicating uncertainty",
+    "Executive storytelling"
+   ],
+   "topics_ar": [
+    "مبادئ الإدراك البصري",
+    "اختيار الرسوم وتصميمها",
+    "لوحات المعلومات التفاعلية",
+    "البنية السردية للبيانات",
+    "إيصال عدم اليقين",
+    "السرد التنفيذي"
+   ],
+   "tech_en": "Data visualization, dashboards, data storytelling",
+   "tools": "Python (Plotly/Matplotlib), Power BI / Tableau",
+   "assessment_en": "Labs; Project; Presentations",
+   "assessment_ar": "مختبرات؛ مشروع؛ عروض",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-DSC-102",
+   "next": "SDA-DSC-104",
+   "stack_en": "Communication badge. Storytelling skills carry through every later DSC program.",
+   "stack_ar": "شارة التواصل. تنتقل مهارات السرد عبر كل برامج المسار اللاحقة.",
+   "industry_en": "Data Analytics, Government AI, Smart Cities",
+   "industry_ar": "تحليلات البيانات، الذكاء الاصطناعي الحكومي، المدن الذكية",
+   "skills": {
+    "DV": "M",
+    "COM": "M",
+    "ST": "I"
+   }
+  },
+  {
+   "code": "SDA-DSC-104",
+   "track": "DSC",
+   "level": "L1",
+   "name_en": "Predictive Modeling Foundations",
+   "name_ar": "أسس النمذجة التنبؤية",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 48,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "A hands-on foundation in applied machine learning for data scientists — building, validating and interpreting predictive models with correct methodology and an emphasis on business impact.",
+   "desc_ar": "أساس عملي في تعلّم الآلة التطبيقي لعلماء البيانات — بناء النماذج التنبؤية والتحقق منها وتفسيرها بمنهجية صحيحة مع التركيز على الأثر التجاري.",
+   "audience_en": "Data Analysts, aspiring Data Scientists",
+   "audience_ar": "محللو البيانات، الطامحون لعلم البيانات",
+   "prereq_en": "SDA-DSC-101 (Statistics) + Python basics.",
+   "prereq_ar": "SDA-DSC-101 (الإحصاء) + أساسيات بايثون.",
+   "outcomes_en": [
+    "Build regression and classification models with scikit-learn",
+    "Apply cross-validation and hyperparameter tuning",
+    "Engineer features and handle imbalanced data",
+    "Evaluate models with business-aligned metrics",
+    "Interpret models and explain predictions",
+    "Deliver an end-to-end predictive-modeling project"
+   ],
+   "outcomes_ar": [
+    "بناء نماذج انحدار وتصنيف باستخدام scikit-learn",
+    "تطبيق التحقق المتقاطع وضبط المعاملات الفائقة",
+    "هندسة الخصائص ومعالجة البيانات غير المتوازنة",
+    "تقييم النماذج بمقاييس متوائمة مع العمل",
+    "تفسير النماذج وشرح التنبؤات",
+    "تسليم مشروع نمذجة تنبؤية متكامل"
+   ],
+   "topics_en": [
+    "Supervised learning workflow",
+    "Regression and classification models",
+    "Feature engineering and selection",
+    "Cross-validation and tuning",
+    "Model evaluation and interpretability",
+    "Imbalanced data and leakage"
+   ],
+   "topics_ar": [
+    "سير عمل التعلم الخاضع للإشراف",
+    "نماذج الانحدار والتصنيف",
+    "هندسة الخصائص واختيارها",
+    "التحقق المتقاطع والضبط",
+    "تقييم النماذج وقابلية التفسير",
+    "البيانات غير المتوازنة والتسرّب"
+   ],
+   "tech_en": "Applied ML, feature engineering, model evaluation",
+   "tools": "scikit-learn, pandas, XGBoost, SHAP",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Digital Badge (Micro-credential)",
+   "credential_ar": "شارة رقمية (اعتماد مصغّر)",
+   "prev": "SDA-DSC-103",
+   "next": "SDA-DSC-201",
+   "stack_en": "Completes DSC Level-1. Prerequisite for Advanced ML (L2).",
+   "stack_ar": "يُكمل المستوى الأول. متطلب سابق لتعلّم الآلة المتقدم (المستوى الثاني).",
+   "industry_en": "Predictive Modeling, Data Analytics, Healthcare AI",
+   "industry_ar": "النمذجة التنبؤية، تحليلات البيانات، الذكاء الاصطناعي الصحي",
+   "skills": {
+    "ML": "D",
+    "ST": "D",
+    "DV": "I",
+    "SE": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-201",
+   "track": "DSC",
+   "level": "L2",
+   "name_en": "Modern Data Engineering for AI Systems",
+   "name_ar": "هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي",
+   "type": "Bootcamp",
+   "delivery": "Instructor Led",
+   "hours": 40,
+   "duration_en": "5 days",
+   "duration_ar": "5 أيام",
+   "desc_en": "This program enables participants to understand and build modern, scalable, secure, production-ready data architectures that power AI systems and intelligent analytics. It focuses on the evolution of modern data engineering — the move from warehouses and lakes to the Lakehouse — and covers Delta Lake, ACID transactions, compute–storage separation, real-time streaming, data quality, monitoring and governance, with a hands-on build of a local Mini-Lakehouse using Delta Lake.",
+   "desc_ar": "يمكّن هذا البرنامج المشاركين من فهم وبناء معماريات بيانات حديثة قابلة للتوسع وآمنة وجاهزة للإنتاج تشغّل أنظمة الذكاء الاصطناعي والتحليلات الذكية. يركز على تطور هندسة البيانات الحديثة — الانتقال من المستودعات والبحيرات إلى معمارية Lakehouse — ويغطي Delta Lake ومعاملات ACID وفصل الحوسبة عن التخزين والتدفق اللحظي وجودة البيانات والمراقبة والحوكمة، مع تطبيق عملي لبناء Mini-Lakehouse محلي باستخدام Delta Lake.",
+   "audience_en": "Data Engineers, Data Scientists, System Architects, AI Architects, data-infrastructure leads",
+   "audience_ar": "مهندسو البيانات، علماء البيانات، معماريو الأنظمة، معماريو الذكاء الاصطناعي، قادة البنية التحتية للبيانات",
+   "prereq_en": "SDA-DSC-102 (SQL & Wrangling) + Python.",
+   "prereq_ar": "SDA-DSC-102 (SQL والمعالجة) + بايثون.",
+   "outcomes_en": [
+    "Understand the modern data-engineering ecosystem and its role in AI and analytics",
+    "Distinguish data warehouses, data lakes and the Lakehouse by use, benefits and limits",
+    "Explain compute–storage separation and its role in flexibility, cost and scalability",
+    "Differentiate ETL from ELT and the role of ELT in modern cloud data",
+    "Describe real-time streaming systems and event-driven architectures",
+    "Understand data-quality, data-monitoring and governance principles",
+    "Explain Delta Lake and how it turns lakes into reliable, structured environments",
+    "Understand ACID transactions and their importance for data integrity",
+    "Implement a hands-on Mini-Lakehouse using Delta Lake and PySpark",
+    "Connect modern data-architecture components to AI, reporting and analytics needs"
+   ],
+   "outcomes_ar": [
+    "فهم منظومة هندسة البيانات الحديثة ودورها في الذكاء الاصطناعي والتحليلات",
+    "التمييز بين المستودعات والبحيرات ومعمارية Lakehouse من حيث الاستخدام والمزايا والقيود",
+    "شرح فصل الحوسبة عن التخزين ودوره في المرونة والتكلفة وقابلية التوسع",
+    "التمييز بين ETL وELT ودور ELT في بيئات البيانات السحابية الحديثة",
+    "وصف أنظمة التدفق اللحظي والمعماريات القائمة على الأحداث",
+    "فهم مبادئ جودة البيانات ومراقبتها وحوكمتها",
+    "شرح Delta Lake ودوره في تحويل البحيرات إلى بيئات موثوقة ومنظمة",
+    "فهم معاملات ACID وأهميتها لسلامة البيانات",
+    "تنفيذ تطبيق عملي لبناء Mini-Lakehouse باستخدام Delta Lake وPySpark",
+    "ربط مكونات معمارية البيانات الحديثة باحتياجات الذكاء الاصطناعي والتقارير والتحليلات"
+   ],
+   "topics_en": [
+    "Evolution of modern data engineering",
+    "Warehouses, lakes and the Lakehouse",
+    "Compute–storage separation",
+    "ETL vs. ELT in the cloud",
+    "Real-time streaming and event-driven architectures",
+    "Data quality, monitoring and governance",
+    "Delta Lake and ACID transactions",
+    "Hands-on: building a Mini-Lakehouse with Delta Lake & PySpark"
+   ],
+   "topics_ar": [
+    "تطور هندسة البيانات الحديثة",
+    "المستودعات والبحيرات ومعمارية Lakehouse",
+    "فصل الحوسبة عن التخزين",
+    "ETL مقابل ELT في السحابة",
+    "التدفق اللحظي والمعماريات القائمة على الأحداث",
+    "جودة البيانات والمراقبة والحوكمة",
+    "Delta Lake ومعاملات ACID",
+    "تطبيق عملي: بناء Mini-Lakehouse باستخدام Delta Lake وPySpark"
+   ],
+   "tech_en": "Modern data engineering, Lakehouse, streaming, data governance",
+   "tools": "Delta Lake, PySpark, Spark, Kafka, dbt, cloud object storage",
+   "assessment_en": "Labs; Case Studies; Project",
+   "assessment_ar": "مختبرات؛ دراسات حالة؛ مشروع",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-DSC-104",
+   "next": "SDA-DSC-202",
+   "stack_en": "Anchor Specialist program. Foundation for Big Data Analytics and the DSC Capstone (L3).",
+   "stack_ar": "البرنامج المتخصص المرتكز. أساس لتحليلات البيانات الضخمة والمشروع التتويجي (المستوى الثالث).",
+   "industry_en": "Data Analytics, MLOps, Government AI, Smart Cities",
+   "industry_ar": "تحليلات البيانات، إدارة عمليات النماذج، الذكاء الاصطناعي الحكومي، المدن الذكية",
+   "skills": {
+    "DE": "M",
+    "BD": "D",
+    "SE": "D",
+    "SA": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-202",
+   "track": "DSC",
+   "level": "L2",
+   "name_en": "Advanced Machine Learning & Feature Engineering",
+   "name_ar": "تعلم الآلة المتقدم وهندسة الخصائص",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 48,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "A specialist program on squeezing real performance from data — ensembles, gradient boosting, advanced feature engineering and disciplined model selection — for high-stakes predictive problems.",
+   "desc_ar": "برنامج متخصص على استخلاص أداء حقيقي من البيانات — التجميعات والتعزيز التدرّجي وهندسة الخصائص المتقدمة والاختيار المنضبط للنماذج — للمشكلات التنبؤية عالية المخاطر.",
+   "audience_en": "Data Scientists, ML practitioners",
+   "audience_ar": "علماء البيانات، ممارسو تعلم الآلة",
+   "prereq_en": "SDA-DSC-104 (Predictive Modeling).",
+   "prereq_ar": "SDA-DSC-104 (النمذجة التنبؤية).",
+   "outcomes_en": [
+    "Build ensemble and gradient-boosting models",
+    "Engineer advanced features for tabular data",
+    "Tune models systematically and avoid overfitting",
+    "Handle imbalanced, missing and leaky data",
+    "Interpret complex models with SHAP/permutation importance",
+    "Optimise a model for a high-stakes business metric"
+   ],
+   "outcomes_ar": [
+    "بناء نماذج تجميعية وتعزيز تدرّجي",
+    "هندسة خصائص متقدمة للبيانات الجدولية",
+    "ضبط النماذج منهجيًا وتجنّب الإفراط في الملاءمة",
+    "معالجة البيانات غير المتوازنة والمفقودة والمتسرّبة",
+    "تفسير النماذج المعقدة بـ SHAP/أهمية التبديل",
+    "تحسين نموذج وفق مقياس عمل عالي المخاطر"
+   ],
+   "topics_en": [
+    "Ensembles, bagging and boosting",
+    "Gradient boosting (XGBoost/LightGBM)",
+    "Advanced feature engineering",
+    "Hyperparameter optimisation",
+    "Imbalanced and leaky data",
+    "Model interpretability"
+   ],
+   "topics_ar": [
+    "التجميعات والتعبئة والتعزيز",
+    "التعزيز التدرّجي (XGBoost/LightGBM)",
+    "هندسة الخصائص المتقدمة",
+    "تحسين المعاملات الفائقة",
+    "البيانات غير المتوازنة والمتسرّبة",
+    "قابلية تفسير النماذج"
+   ],
+   "tech_en": "Advanced ML, ensembles, feature engineering, interpretability",
+   "tools": "scikit-learn, XGBoost, LightGBM, Optuna, SHAP",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-DSC-201",
+   "next": "SDA-DSC-203",
+   "stack_en": "Core Specialist ML module. Feeds MLOps for Data Science (L3).",
+   "stack_ar": "وحدة المتخصص الجوهرية في تعلّم الآلة. تغذي إدارة العمليات لعلم البيانات (المستوى الثالث).",
+   "industry_en": "Predictive Modeling, Data Analytics, Healthcare AI",
+   "industry_ar": "النمذجة التنبؤية، تحليلات البيانات، الذكاء الاصطناعي الصحي",
+   "skills": {
+    "ML": "M",
+    "ST": "D",
+    "DV": "D",
+    "OPS": "I"
+   }
+  },
+  {
+   "code": "SDA-DSC-203",
+   "track": "DSC",
+   "level": "L2",
+   "name_en": "Time Series Forecasting & Demand Analytics",
+   "name_ar": "التنبؤ بالسلاسل الزمنية وتحليلات الطلب",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 40,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "A specialist program on modelling time — classical, ML and deep forecasting methods — applied to demand, capacity and resource planning for government and enterprise operations.",
+   "desc_ar": "برنامج متخصص على نمذجة الزمن — أساليب التنبؤ الكلاسيكية وتعلّم الآلة والعميقة — مطبّقة على التخطيط للطلب والسعة والموارد للعمليات الحكومية والمؤسسية.",
+   "audience_en": "Data Scientists, demand & operations analysts",
+   "audience_ar": "علماء البيانات، محللو الطلب والعمليات",
+   "prereq_en": "SDA-DSC-104 (Predictive Modeling) + statistics.",
+   "prereq_ar": "SDA-DSC-104 (النمذجة التنبؤية) + إحصاء.",
+   "outcomes_en": [
+    "Decompose and analyse time-series data",
+    "Build classical models (ARIMA, ETS) and ML forecasters",
+    "Apply deep models for sequence forecasting",
+    "Handle seasonality, holidays and exogenous variables",
+    "Evaluate forecasts and quantify uncertainty",
+    "Deliver a demand-forecasting solution"
+   ],
+   "outcomes_ar": [
+    "تفكيك وتحليل بيانات السلاسل الزمنية",
+    "بناء نماذج كلاسيكية (ARIMA وETS) ومتنبئات تعلّم آلة",
+    "تطبيق نماذج عميقة للتنبؤ التسلسلي",
+    "معالجة الموسمية والعطلات والمتغيرات الخارجية",
+    "تقييم التنبؤات وقياس عدم اليقين",
+    "تسليم حل للتنبؤ بالطلب"
+   ],
+   "topics_en": [
+    "Time-series components and decomposition",
+    "ARIMA, ETS and statistical forecasting",
+    "ML and deep forecasting",
+    "Seasonality and exogenous features",
+    "Forecast evaluation and intervals",
+    "Demand and capacity planning"
+   ],
+   "topics_ar": [
+    "مكونات السلاسل الزمنية وتفكيكها",
+    "ARIMA وETS والتنبؤ الإحصائي",
+    "التنبؤ بتعلّم الآلة والعميق",
+    "الموسمية والخصائص الخارجية",
+    "تقييم التنبؤ والفترات",
+    "تخطيط الطلب والسعة"
+   ],
+   "tech_en": "Time-series forecasting, demand analytics",
+   "tools": "statsmodels, Prophet, sktime, PyTorch Forecasting",
+   "assessment_en": "Labs; Assignments; Project",
+   "assessment_ar": "مختبرات؛ تكليفات؛ مشروع",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-DSC-202",
+   "next": "SDA-DSC-204",
+   "stack_en": "Specialist forecasting module. Optional depth feeding the DSC Capstone.",
+   "stack_ar": "وحدة المتخصص في التنبؤ. تعمّق اختياري يغذي المشروع التتويجي.",
+   "industry_en": "Predictive Modeling, Smart Cities, Data Analytics",
+   "industry_ar": "النمذجة التنبؤية، المدن الذكية، تحليلات البيانات",
+   "skills": {
+    "ST": "M",
+    "ML": "D",
+    "DL": "I",
+    "DV": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-204",
+   "track": "DSC",
+   "level": "L2",
+   "name_en": "Experimentation, Causal Inference & A/B Testing",
+   "name_ar": "التجريب والاستدلال السببي واختبار A/B",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 32,
+   "duration_en": "3 weeks",
+   "duration_ar": "3 أسابيع",
+   "desc_en": "A specialist program on measuring cause, not just correlation — experimental design, A/B testing and causal-inference methods — so scientists can prove what truly drives outcomes.",
+   "desc_ar": "برنامج متخصص على قياس السبب لا الارتباط فقط — تصميم التجارب واختبار A/B وأساليب الاستدلال السببي — لتمكين العلماء من إثبات ما يحرّك النتائج فعلًا.",
+   "audience_en": "Data Scientists, decision scientists, product analysts",
+   "audience_ar": "علماء البيانات، علماء القرار، محللو المنتجات",
+   "prereq_en": "SDA-DSC-101 (Statistics).",
+   "prereq_ar": "SDA-DSC-101 (الإحصاء).",
+   "outcomes_en": [
+    "Design valid experiments and A/B tests",
+    "Compute power, sample size and significance",
+    "Analyse experiments and avoid common pitfalls",
+    "Apply causal-inference methods to observational data",
+    "Estimate treatment effects and interpret them",
+    "Recommend decisions from experimental evidence"
+   ],
+   "outcomes_ar": [
+    "تصميم تجارب واختبارات A/B صحيحة",
+    "حساب القوة وحجم العينة والدلالة",
+    "تحليل التجارب وتجنّب المزالق الشائعة",
+    "تطبيق أساليب الاستدلال السببي على البيانات الرصدية",
+    "تقدير آثار المعالجة وتفسيرها",
+    "التوصية بالقرارات من الأدلة التجريبية"
+   ],
+   "topics_en": [
+    "Experimental design and randomisation",
+    "Power, sample size and significance",
+    "A/B testing analysis",
+    "Causal inference fundamentals",
+    "Observational methods (matching, IV, DiD)",
+    "From evidence to decision"
+   ],
+   "topics_ar": [
+    "تصميم التجارب والعشوائية",
+    "القوة وحجم العينة والدلالة",
+    "تحليل اختبار A/B",
+    "أساسيات الاستدلال السببي",
+    "الأساليب الرصدية (المطابقة، المتغيرات الأداتية، الفروق في الفروق)",
+    "من الدليل إلى القرار"
+   ],
+   "tech_en": "Experimentation, A/B testing, causal inference",
+   "tools": "Python, statsmodels, DoWhy, EconML",
+   "assessment_en": "Labs; Case Studies; Project",
+   "assessment_ar": "مختبرات؛ دراسات حالة؛ مشروع",
+   "credential_en": "Certificate of Completion (Specialist credit)",
+   "credential_ar": "شهادة إجتياز (رصيد المتخصص)",
+   "prev": "SDA-DSC-203",
+   "next": "SDA-DSC-301",
+   "stack_en": "Completes Specialist level. Strengthens rigour for the Expert level.",
+   "stack_ar": "يُكمل مستوى المتخصص. يعزّز الصرامة لمستوى الخبير.",
+   "industry_en": "Data Analytics, Government AI, Healthcare AI",
+   "industry_ar": "تحليلات البيانات، الذكاء الاصطناعي الحكومي، الذكاء الاصطناعي الصحي",
+   "skills": {
+    "ST": "M",
+    "DV": "D",
+    "COM": "D",
+    "ML": "I"
+   }
+  },
+  {
+   "code": "SDA-DSC-301",
+   "track": "DSC",
+   "level": "L3",
+   "name_en": "Big Data Analytics with Spark & Distributed Computing",
+   "name_ar": "تحليلات البيانات الضخمة بـ Spark والحوسبة الموزعة",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 48,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "An expert program on analytics at scale — distributed processing with Spark, scalable feature pipelines and distributed ML — for datasets that exceed a single machine.",
+   "desc_ar": "برنامج خبير على التحليلات بمقياس واسع — المعالجة الموزعة بـ Spark ومسارات الخصائص القابلة للتوسع وتعلّم الآلة الموزع — للبيانات التي تتجاوز جهازًا واحدًا.",
+   "audience_en": "Senior Data Scientists, Data Engineers, analytics leads",
+   "audience_ar": "كبار علماء البيانات، مهندسو البيانات، قادة التحليلات",
+   "prereq_en": "SDA-DSC-201 (Data Engineering) + SDA-DSC-202 (Advanced ML).",
+   "prereq_ar": "SDA-DSC-201 (هندسة البيانات) + SDA-DSC-202 (تعلم الآلة المتقدم).",
+   "outcomes_en": [
+    "Process large datasets with Spark and distributed frameworks",
+    "Engineer scalable feature pipelines",
+    "Train distributed and out-of-core ML models",
+    "Optimise jobs for performance and cost",
+    "Analyse streaming and batch data at scale",
+    "Deliver a big-data analytics solution"
+   ],
+   "outcomes_ar": [
+    "معالجة مجموعات بيانات كبيرة بـ Spark والأطر الموزعة",
+    "هندسة مسارات خصائص قابلة للتوسع",
+    "تدريب نماذج تعلّم آلة موزعة وخارج الذاكرة",
+    "تحسين المهام للأداء والتكلفة",
+    "تحليل بيانات التدفق والدفعات على نطاق واسع",
+    "تسليم حل تحليلات بيانات ضخمة"
+   ],
+   "topics_en": [
+    "Distributed computing and Spark architecture",
+    "Spark SQL and DataFrames at scale",
+    "Scalable feature pipelines",
+    "Distributed ML (Spark MLlib)",
+    "Batch vs. streaming analytics",
+    "Performance and cost tuning"
+   ],
+   "topics_ar": [
+    "الحوسبة الموزعة ومعمارية Spark",
+    "Spark SQL وDataFrames على نطاق واسع",
+    "مسارات الخصائص القابلة للتوسع",
+    "تعلّم الآلة الموزع (Spark MLlib)",
+    "تحليلات الدفعات مقابل التدفق",
+    "ضبط الأداء والتكلفة"
+   ],
+   "tech_en": "Big data, Spark, distributed ML",
+   "tools": "Apache Spark, PySpark, Databricks, Delta Lake",
+   "assessment_en": "Labs; Project; Capstone",
+   "assessment_ar": "مختبرات؛ مشروع؛ مشروع تتويجي",
+   "credential_en": "Expert Certificate (stackable to Track Professional)",
+   "credential_ar": "شهادة خبير (تراكمية نحو شهادة المسار المهني)",
+   "prev": "SDA-DSC-204",
+   "next": "SDA-DSC-302",
+   "stack_en": "Expert scale module. Combines with L3 peers toward the Data-Scientist Professional Certificate.",
+   "stack_ar": "وحدة الخبير للمقياس. تتكامل مع نظيراتها لنيل شهادة عالم البيانات المهنية.",
+   "industry_en": "Data Analytics, Smart Cities, Government AI",
+   "industry_ar": "تحليلات البيانات، المدن الذكية، الذكاء الاصطناعي الحكومي",
+   "skills": {
+    "BD": "M",
+    "DE": "D",
+    "ML": "D",
+    "OPS": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-302",
+   "track": "DSC",
+   "level": "L3",
+   "name_en": "MLOps & Model Monitoring for Data Science",
+   "name_ar": "إدارة العمليات ومراقبة النماذج لعلم البيانات",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 40,
+   "duration_en": "4 weeks",
+   "duration_ar": "4 أسابيع",
+   "desc_en": "An expert program that operationalises data-science models — deployment, monitoring, drift detection and governance — so models keep delivering value reliably after they ship.",
+   "desc_ar": "برنامج خبير يشغّل نماذج علم البيانات — النشر والمراقبة وكشف الانحراف والحوكمة — لضمان استمرار النماذج في تقديم القيمة بموثوقية بعد إطلاقها.",
+   "audience_en": "Senior Data Scientists, ML Engineers",
+   "audience_ar": "كبار علماء البيانات، مهندسو تعلم الآلة",
+   "prereq_en": "SDA-DSC-202 (Advanced ML) + Python/Git.",
+   "prereq_ar": "SDA-DSC-202 (تعلم الآلة المتقدم) + بايثون/Git.",
+   "outcomes_en": [
+    "Package and deploy data-science models to production",
+    "Build monitoring for performance, data and concept drift",
+    "Automate retraining and model governance",
+    "Implement model registries and reproducibility",
+    "Set up alerting and incident response",
+    "Operate a monitored model service"
+   ],
+   "outcomes_ar": [
+    "تحزيم ونشر نماذج علم البيانات للإنتاج",
+    "بناء مراقبة للأداء وانحراف البيانات والمفهوم",
+    "أتمتة إعادة التدريب وحوكمة النماذج",
+    "تنفيذ سجلات النماذج وقابلية إعادة الإنتاج",
+    "إعداد التنبيه والاستجابة للحوادث",
+    "تشغيل خدمة نموذج مُراقَبة"
+   ],
+   "topics_en": [
+    "Model packaging and deployment",
+    "Monitoring and drift detection",
+    "Automated retraining and governance",
+    "Model registries and reproducibility",
+    "Alerting and incident response",
+    "Cost and reliability"
+   ],
+   "topics_ar": [
+    "تحزيم النماذج ونشرها",
+    "المراقبة وكشف الانحراف",
+    "إعادة التدريب الآلي والحوكمة",
+    "سجلات النماذج وقابلية إعادة الإنتاج",
+    "التنبيه والاستجابة للحوادث",
+    "التكلفة والموثوقية"
+   ],
+   "tech_en": "MLOps, model monitoring, drift detection, governance",
+   "tools": "MLflow, Docker, FastAPI, Evidently, cloud ML",
+   "assessment_en": "Labs; Project",
+   "assessment_ar": "مختبرات؛ مشروع",
+   "credential_en": "Expert Certificate (stackable to Track Professional)",
+   "credential_ar": "شهادة خبير (تراكمية نحو شهادة المسار المهني)",
+   "prev": "SDA-DSC-301",
+   "next": "SDA-DSC-303",
+   "stack_en": "Expert operations module. Required quality gate before the DSC Capstone.",
+   "stack_ar": "وحدة عمليات الخبير. بوابة جودة مطلوبة قبل المشروع التتويجي.",
+   "industry_en": "MLOps, Data Analytics, Government AI",
+   "industry_ar": "إدارة عمليات النماذج، تحليلات البيانات، الذكاء الاصطناعي الحكومي",
+   "skills": {
+    "OPS": "M",
+    "ML": "D",
+    "DE": "D",
+    "SA": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-303",
+   "track": "DSC",
+   "level": "L3",
+   "name_en": "Generative AI for Augmented Analytics",
+   "name_ar": "الذكاء التوليدي للتحليلات المعزّزة",
+   "type": "Program",
+   "delivery": "Hybrid",
+   "hours": 32,
+   "duration_en": "3 weeks",
+   "duration_ar": "3 أسابيع",
+   "desc_en": "An expert program on applying Generative AI to the analytics workflow — natural-language querying, automated insight generation and LLM-assisted data science — to multiply analyst productivity responsibly.",
+   "desc_ar": "برنامج خبير على تطبيق الذكاء التوليدي في سير عمل التحليلات — الاستعلام باللغة الطبيعية وتوليد الرؤى الآلي وعلم البيانات المدعوم بالنماذج اللغوية — لمضاعفة إنتاجية المحلل بمسؤولية.",
+   "audience_en": "Senior Data Scientists, analytics leads",
+   "audience_ar": "كبار علماء البيانات، قادة التحليلات",
+   "prereq_en": "SDA-DSC-202 (Advanced ML); GenAI literacy.",
+   "prereq_ar": "SDA-DSC-202 (تعلم الآلة المتقدم)؛ إلمام بالذكاء التوليدي.",
+   "outcomes_en": [
+    "Build natural-language-to-SQL/analytics interfaces",
+    "Use LLMs for automated EDA and insight generation",
+    "Implement RAG over enterprise data for analytics",
+    "Evaluate GenAI outputs for accuracy and bias",
+    "Embed responsible-AI controls in analytics",
+    "Deliver an augmented-analytics prototype"
+   ],
+   "outcomes_ar": [
+    "بناء واجهات من اللغة الطبيعية إلى SQL/التحليلات",
+    "استخدام النماذج اللغوية للتحليل الاستكشافي الآلي وتوليد الرؤى",
+    "تنفيذ الاسترجاع المعزّز على بيانات المؤسسة للتحليلات",
+    "تقييم مخرجات الذكاء التوليدي للدقة والتحيز",
+    "تضمين ضوابط الذكاء المسؤول في التحليلات",
+    "تسليم نموذج أولي للتحليلات المعزّزة"
+   ],
+   "topics_en": [
+    "LLMs in the analytics workflow",
+    "Natural-language to SQL/analytics",
+    "Automated EDA and insight generation",
+    "RAG over enterprise data",
+    "Evaluation and responsible use",
+    "Augmented BI patterns"
+   ],
+   "topics_ar": [
+    "النماذج اللغوية في سير عمل التحليلات",
+    "من اللغة الطبيعية إلى SQL/التحليلات",
+    "التحليل الاستكشافي الآلي وتوليد الرؤى",
+    "الاسترجاع المعزّز على بيانات المؤسسة",
+    "التقييم والاستخدام المسؤول",
+    "أنماط ذكاء الأعمال المعزّز"
+   ],
+   "tech_en": "Generative AI for analytics, NL2SQL, RAG",
+   "tools": "LLM APIs, LangChain, vector DBs, BI tools",
+   "assessment_en": "Labs; Project; Presentations",
+   "assessment_ar": "مختبرات؛ مشروع؛ عروض",
+   "credential_en": "Expert Certificate (stackable to Track Professional)",
+   "credential_ar": "شهادة خبير (تراكمية نحو شهادة المسار المهني)",
+   "prev": "SDA-DSC-302",
+   "next": "SDA-DSC-304",
+   "stack_en": "Expert GenAI module. Bridges to the AI-Engineer track and feeds the Capstone.",
+   "stack_ar": "وحدة الخبير في الذكاء التوليدي. تجسر نحو مسار مهندس الذكاء الاصطناعي وتغذي المشروع التتويجي.",
+   "industry_en": "Generative AI, Data Analytics, Government AI",
+   "industry_ar": "الذكاء التوليدي، تحليلات البيانات، الذكاء الاصطناعي الحكومي",
+   "skills": {
+    "GA": "D",
+    "NLP": "D",
+    "DV": "D",
+    "RAI": "D"
+   }
+  },
+  {
+   "code": "SDA-DSC-304",
+   "track": "DSC",
+   "level": "L3",
+   "name_en": "Capstone — End-to-End Data Science Solution",
+   "name_ar": "المشروع التتويجي — حل علم بيانات متكامل",
+   "type": "Capstone",
+   "delivery": "Hybrid",
+   "hours": 60,
+   "duration_en": "6 weeks",
+   "duration_ar": "6 أسابيع",
+   "desc_en": "A mentored capstone in which scientists take a real problem from data engineering through modelling, validation, deployment and decision communication — the integrative proof of the Data Scientist Professional Certificate.",
+   "desc_ar": "مشروع تتويجي بإشراف ينقل فيه العلماء مشكلة واقعية من هندسة البيانات عبر النمذجة والتحقق والنشر وإيصال القرار — وهو البرهان التكاملي لشهادة عالم البيانات المهنية.",
+   "audience_en": "Data Scientists completing the Expert level",
+   "audience_ar": "علماء البيانات المكملون لمستوى الخبير",
+   "prereq_en": "All DSC-L3 modules (SDA-DSC-301/302/303).",
+   "prereq_ar": "جميع وحدات المستوى الثالث (SDA-DSC-301/302/303).",
+   "outcomes_en": [
+    "Frame a business problem and success metrics",
+    "Engineer and validate the data foundation",
+    "Build, tune and interpret the model rigorously",
+    "Deploy and monitor the solution",
+    "Quantify impact and uncertainty",
+    "Present and defend the solution to an expert panel"
+   ],
+   "outcomes_ar": [
+    "صياغة مشكلة عمل ومقاييس النجاح",
+    "هندسة أساس البيانات والتحقق منه",
+    "بناء النموذج وضبطه وتفسيره بدقة",
+    "نشر الحل ومراقبته",
+    "قياس الأثر وعدم اليقين",
+    "عرض الحل والدفاع عنه أمام لجنة خبراء"
+   ],
+   "topics_en": [
+    "Problem framing and metrics",
+    "Data engineering and validation",
+    "Modelling and interpretation",
+    "Deployment and monitoring",
+    "Impact and uncertainty",
+    "Final defence and demo day"
+   ],
+   "topics_ar": [
+    "صياغة المشكلة والمقاييس",
+    "هندسة البيانات والتحقق",
+    "النمذجة والتفسير",
+    "النشر والمراقبة",
+    "الأثر وعدم اليقين",
+    "الدفاع النهائي ويوم العرض"
+   ],
+   "tech_en": "End-to-end data science, deployment, communication",
+   "tools": "Full DSC toolchain (Python, Spark, ML stack, MLflow, BI)",
+   "assessment_en": "Capstone; Presentations",
+   "assessment_ar": "مشروع تتويجي؛ عروض",
+   "credential_en": "Data Scientist Professional Certificate (Track)",
+   "credential_ar": "شهادة عالم البيانات المهنية (المسار)",
+   "prev": "SDA-DSC-303",
+   "next": "—",
+   "stack_en": "Terminal program. Converts all stacked DSC badges into the Data Scientist Professional Certificate.",
+   "stack_ar": "البرنامج الختامي. يحوّل جميع الشارات المتراكمة إلى شهادة عالم البيانات المهنية.",
+   "industry_en": "Data Analytics, Predictive Modeling, Government AI, Healthcare AI",
+   "industry_ar": "تحليلات البيانات، النمذجة التنبؤية، الذكاء الاصطناعي الحكومي، الذكاء الاصطناعي الصحي",
+   "skills": {
+    "ML": "M",
+    "DE": "M",
+    "OPS": "D",
+    "COM": "M"
+   }
+  }
+ ]
+}</script>
+<script>
+const CATALOG = JSON.parse(document.getElementById('catalog-data').textContent);
+const T = (en,ar)=> `<span class="t-en">${en}</span><span class="t-ar">${ar}</span>`;
+const $ = (s,e=document)=>e.querySelector(s); const $$=(s,e=document)=>[...e.querySelectorAll(s)];
+let LANG = 'en';
+const TRACKMETA = {FND:{c:'#2E8B9E',ic:'compass'},AIE:{c:'#1F6FB2',ic:'cpu'},DSC:{c:'#E8743B',ic:'bar-chart-3'}};
+const LVLMETA = {L1:{c:'#2E8B9E'},L2:{c:'#1F6FB2'},L3:{c:'#0F2A4A'}};
+const TYPEIC = {Program:'book-open',Bootcamp:'rocket',Workshop:'wrench',Lab:'flask-conical',Capstone:'trophy'};
+
+/* ---------- SDAIA isometric prism logo (faithful SVG recreation) ---------- */
+function logoSVG(){
+  const D=[ // cx,cy,leftColor,rightColor
+    [230,46,'#2E8B9E','#3DBA8C'],            // top accent
+    [140,118,'#7FCBF2','#4FA3DC'],           // A1 blue
+    [320,118,'#5B4A93','#B5474B'],           // A2 purple→red
+    [94,176,'#7FCBF2','#4FA3DC'],            // B1 blue
+    [186,176,'#6FBEEC','#4596D2'],           // B2 blue
+    [274,176,'#6E5BA6','#4C3F86'],           // B3 purple
+    [366,176,'#F2A85A','#E8743B'],           // B4 orange
+    [140,234,'#6FBEEC','#4596D2'],           // C1 blue
+    [320,234,'#F2A85A','#E8743B'],           // C2 orange
+    [230,292,'#46B07A','#8BC34A'],           // bottom accent green
+  ];
+  const w=44,h=34; let p='';
+  for(const[cx,cy,c1,c2] of D){
+    const L=`${cx-w},${cy} ${cx},${cy-h} ${cx},${cy+h}`;
+    const R=`${cx},${cy-h} ${cx+w},${cy} ${cx},${cy+h}`;
+    p+=`<polygon points="${L}" fill="${c1}"/><polygon points="${R}" fill="${c2}"/>`;
+  }
+  return `<svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" aria-label="SDAIA"><g stroke="var(--surface)" stroke-width="4" stroke-linejoin="round">${p}</g></svg>`;
+}
+
+/* ---------- ordered journey ---------- */
+const ORDER=[['FND','L1'],['AIE','L1'],['AIE','L2'],['AIE','L3'],['DSC','L1'],['DSC','L2'],['DSC','L3']];
+let JOURNEY=[]; ORDER.forEach(([t,l])=>CATALOG.programs.filter(p=>p.track===t&&p.level===l).forEach(p=>JOURNEY.push(p)));
+const TOTAL=JOURNEY.length;
+let cur=0; const done=new Set();
+try{const s=localStorage.getItem('sdaia_done'); if(s) JSON.parse(s).forEach(c=>done.add(c));}catch(e){}
+
+function trackName(id){const t=CATALOG.tracks.find(x=>x.id===id);return LANG==='ar'?t.name_ar:t.name_en;}
+function lvlName(id){const l=CATALOG.levels.find(x=>x.id===id);return LANG==='ar'?l.name_ar:l.name_en;}
+
+/* ---------- hero stats ---------- */
+function renderStats(){
+  const stats=[['25',T('Programs','برنامج')],['2',T('Tracks','مسار')],['3',T('Levels','مستويات')],['∞',T('Stackable','تراكمية')]];
+  $('#herostats').innerHTML=stats.map(([n,l])=>`<div class="card rounded-xl px-3 py-3 text-center"><div class="text-2xl font-extrabold grad-text">${n}</div><div class="text-[11px] muted mt-0.5">${l}</div></div>`).join('');
+}
+
+/* ---------- tracks ---------- */
+function renderTracks(){
+  $('#trackgrid').innerHTML=CATALOG.tracks.map(t=>{
+    const m=TRACKMETA[t.id];const nP=CATALOG.programs.filter(p=>p.track===t.id).length;
+    return `<div class="card rounded-2xl p-6 reveal">
+      <div class="flex items-center gap-3 mb-4"><span class="grid place-items-center w-11 h-11 rounded-xl text-white" style="background:${m.c}"><i data-lucide="${m.ic}" class="w-5 h-5"></i></span>
+        <div><div class="font-bold text-lg leading-tight">${T(t.name_en,t.name_ar)}</div><div class="text-xs muted">${nP} ${T('programs','برنامج')}</div></div></div>
+      <p class="muted text-sm mb-4">${T(t.desc_en,t.desc_ar)}</p>
+      <div class="space-y-2 text-sm">
+        ${row('target','Goal','الهدف',t.goal_en,t.goal_ar)}
+        ${row('users','Audience','الفئة',t.audience_en,t.audience_ar)}
+        ${row('briefcase','Roles','الوظائف',t.roles_en,t.roles_ar)}
+        ${row('sparkles','Skills','المهارات',t.skills_en,t.skills_ar)}
+        ${row('key-round','Prerequisites','المتطلبات',t.prereq_en,t.prereq_ar)}
+      </div></div>`;
+  }).join('');
+}
+function row(ic,le,la,ve,va){return `<div class="flex gap-2"><i data-lucide="${ic}" class="w-4 h-4 mt-0.5 shrink-0" style="color:var(--accent)"></i><div><span class="font-semibold">${T(le,la)}: </span><span class="muted">${T(ve,va)}</span></div></div>`}
+
+/* ---------- levels ---------- */
+function renderLevels(){
+  $('#levelgrid').innerHTML=CATALOG.levels.map((l,i)=>{
+    const aie=CATALOG.programs.filter(p=>p.track==='AIE'&&p.level===l.id).length;
+    const dsc=CATALOG.programs.filter(p=>p.track==='DSC'&&p.level===l.id).length;
+    return `<div class="card rounded-2xl p-6 reveal">
+      <div class="flex items-center justify-between mb-3"><span class="grid place-items-center w-10 h-10 rounded-full text-white font-bold" style="background:${LVLMETA[l.id].c}">${i+1}</span>
+        <span class="chip rounded-full px-3 py-1 text-xs font-semibold">${T(l.tech_en,l.tech_ar)}</span></div>
+      <div class="lvlbar mb-3" style="width:${(i+1)/3*100}%"></div>
+      <div class="font-bold text-lg">${T(l.name_en,l.name_ar)}</div>
+      <p class="muted text-sm mt-2 mb-4">${T(l.desc_en,l.desc_ar)}</p>
+      <div class="flex gap-2 text-xs"><span class="chip rounded-lg px-2 py-1">AIE · ${aie}</span><span class="chip rounded-lg px-2 py-1">DSC · ${dsc}</span></div>
+      <div class="mt-4 pt-3 border-t hairline text-sm flex gap-2"><i data-lucide="award" class="w-4 h-4 mt-0.5 shrink-0" style="color:var(--accent)"></i><span class="muted">${T(l.credential_en,l.credential_ar)}</span></div>
+    </div>`}).join('');
+}
+
+/* ---------- journey stepper ---------- */
+function renderRail(){
+  $('#rail').innerHTML=JOURNEY.map((p,i)=>{
+    const active=i===cur, fin=done.has(p.code); const c=TRACKMETA[p.track].c;
+    const bg=active?c:(fin?'var(--accent)':'var(--surface)');
+    const col=(active||fin)?'#fff':'var(--muted)';
+    const conn=i<TOTAL-1?`<span class="h-0.5 w-5 sm:w-7" style="background:var(--line)"></span>`:'';
+    return `<div class="flex items-center"><button data-i="${i}" class="railnode step-circle grid place-items-center rounded-full font-bold text-xs border" style="width:34px;height:34px;background:${bg};color:${col};border-color:${active?c:'var(--line)'}">${fin?'<i data-lucide=check class="w-4 h-4"></i>':i+1}</button>${conn}</div>`;
+  }).join('');
+  $('#totalcount').textContent=TOTAL;
+}
+function renderStep(){
+  const p=JOURNEY[cur]; const m=TRACKMETA[p.track]; const fin=done.has(p.code);
+  const list=(en,ar)=> (LANG==='ar'?ar:en).map(x=>`<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0" style="color:var(--accent)"></i><span>${x}</span></li>`).join('');
+  const tags=(s)=> (LANG==='ar'? '' : '')+(s||'').split(',').map(x=>x.trim()).filter(Boolean).map(x=>`<span class="chip rounded-md px-2 py-0.5 text-xs">${x}</span>`).join(' ');
+  $('#stepcard').innerHTML=`<div class="fade-swap">
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+      <div class="flex items-start gap-4">
+        <span class="grid place-items-center w-12 h-12 rounded-xl text-white shrink-0" style="background:${m.c}"><i data-lucide="${TYPEIC[p.type]||'book-open'}" class="w-6 h-6"></i></span>
+        <div><div class="flex items-center gap-2 flex-wrap text-xs mb-1">
+            <span class="font-mono font-bold" style="color:${m.c}">${p.code}</span>
+            <span class="chip rounded-md px-2 py-0.5">${trackName(p.track)}</span>
+            <span class="chip rounded-md px-2 py-0.5">${lvlName(p.level)}</span>
+            <span class="chip rounded-md px-2 py-0.5">${p.type}</span></div>
+          <h3 class="text-xl sm:text-2xl font-bold leading-tight">${T(p.name_en,p.name_ar)}</h3></div>
+      </div>
+      <button id="doneBtn" class="btn rounded-xl px-4 py-2 text-sm font-semibold flex items-center gap-2 ${fin?'text-white':'chip'}" style="${fin?'background:var(--accent)':'color:var(--ink)'}">
+        <i data-lucide="${fin?'check-circle-2':'circle'}" class="w-4 h-4"></i>${fin?T('Completed','مكتمل'):T('Mark complete','إتمام')}</button>
+    </div>
+    <p class="muted mb-6 max-w-3xl">${T(p.desc_en,p.desc_ar)}</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+      ${meta('signal','Delivery','النمط',p.delivery,p.delivery)}
+      ${meta('clock','Duration','المدة',`${p.hours}h · ${p.duration_en}`,`${p.hours} ساعة · ${p.duration_ar}`)}
+      ${meta('users','Audience','الفئة',p.audience_en,p.audience_ar)}
+      ${meta('award','Credential','الشهادة',p.credential_en,p.credential_ar)}
+    </div>
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div><h4 class="font-bold mb-3 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4" style="color:var(--accent)"></i>${T('Learning Outcomes','نواتج التعلّم')}</h4>
+        <ul class="space-y-1.5 text-sm muted">${list(p.outcomes_en,p.outcomes_ar)}</ul></div>
+      <div><h4 class="font-bold mb-3 flex items-center gap-2"><i data-lucide="list-tree" class="w-4 h-4" style="color:var(--accent)"></i>${T('Topics Covered','الموضوعات')}</h4>
+        <ul class="space-y-1.5 text-sm muted">${list(p.topics_en,p.topics_ar)}</ul></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-6 mt-6 pt-6 border-t hairline">
+      <div class="space-y-4">
+        <div><h4 class="font-bold mb-2 text-sm">${T('Prerequisites','المتطلبات السابقة')}</h4><p class="muted text-sm">${T(p.prereq_en,p.prereq_ar)}</p></div>
+        <div><h4 class="font-bold mb-2 text-sm">${T('Skills & Tools','المهارات والأدوات')}</h4>
+          <p class="muted text-sm mb-2">${T(p.tech_en,p.tech_en)}</p><div class="flex flex-wrap gap-1.5">${tags(p.tools)}</div></div>
+        <div><h4 class="font-bold mb-2 text-sm">${T('Assessment','التقييم')}</h4><p class="muted text-sm">${T(p.assessment_en,p.assessment_ar)}</p></div>
+      </div>
+      <div class="space-y-4">
+        <div><h4 class="font-bold mb-2 text-sm flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4" style="color:var(--accent)"></i>${T('Stackability','التراكمية')}</h4>
+          <p class="muted text-sm mb-3">${T(p.stack_en,p.stack_ar)}</p>
+          <div class="flex items-center gap-2 text-xs">
+            <span class="chip rounded-lg px-2 py-1">${T('Prev','السابق')}: <b>${p.prev}</b></span>
+            <i data-lucide="arrow-right" class="w-3 h-3 ltr-ic muted"></i>
+            <span class="chip rounded-lg px-2 py-1" style="border-color:${m.c}"><b>${p.code}</b></span>
+            <i data-lucide="arrow-right" class="w-3 h-3 ltr-ic muted"></i>
+            <span class="chip rounded-lg px-2 py-1">${T('Next','التالي')}: <b>${p.next}</b></span></div></div>
+        <div><h4 class="font-bold mb-2 text-sm flex items-center gap-2"><i data-lucide="building-2" class="w-4 h-4" style="color:var(--accent)"></i>${T('Industry Relevance','الصلة بالقطاع')}</h4>
+          <div class="flex flex-wrap gap-1.5">${(LANG==='ar'?p.industry_ar:p.industry_en).split(',').map(x=>`<span class="chip rounded-md px-2 py-0.5 text-xs">${x.trim()}</span>`).join(' ')}</div></div>
+      </div>
+    </div></div>`;
+  $('#stepnum').textContent=cur+1; $('#stepnum').parentElement && ($('#stepnum').textContent=cur+1);
+  $('#doneBtn').onclick=()=>{ done.has(p.code)?done.delete(p.code):done.add(p.code); persist(); renderRail(); renderStep(); updateProgress(); lucide.createIcons(); };
+  lucide.createIcons(); renderRail(); updateProgress();
+  document.querySelectorAll('.railnode').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;renderStep();});
+}
+function meta(ic,le,la,ve,va){return `<div class="chip rounded-xl p-3"><div class="flex items-center gap-1.5 text-[11px] font-semibold muted mb-1"><i data-lucide="${ic}" class="w-3.5 h-3.5"></i>${T(le,la)}</div><div class="text-sm font-medium leading-snug">${T(ve,va)}</div></div>`}
+function persist(){try{localStorage.setItem('sdaia_done',JSON.stringify([...done]))}catch(e){}}
+function updateProgress(){
+  const pc=Math.round(done.size/TOTAL*100);
+  $('#pct').textContent=pc+'%'; $('#donecount').textContent=done.size;
+  $('#ring').style.strokeDashoffset = 226-(226*pc/100);
+}
+
+/* ---------- catalog grid ---------- */
+let fTrack='all',fLevel='all',fQ='';
+function renderFilters(){
+  const tf=[['all',T('All tracks','كل المسارات')]].concat(CATALOG.tracks.map(t=>[t.id,T(t.name_en,t.name_ar)]));
+  $('#trackFilter').innerHTML=tf.map(([v,l])=>`<button data-t="${v}" class="ftab rounded-lg px-3 py-1.5 text-xs font-semibold ${v===fTrack?'text-white':''}" style="${v===fTrack?'background:var(--ink)':'color:var(--muted)'}">${l}</button>`).join('');
+  const lf=[['all',T('All levels','كل المستويات')]].concat(CATALOG.levels.map(l=>[l.id,T(l.name_en.split(' (')[0],l.name_ar.split(' (')[0])]));
+  $('#levelFilter').innerHTML=lf.map(([v,l])=>`<button data-l="${v}" class="ltab rounded-lg px-3 py-1.5 text-xs font-semibold ${v===fLevel?'text-white':''}" style="${v===fLevel?'background:var(--ink)':'color:var(--muted)'}">${l}</button>`).join('');
+  $$('.ftab').forEach(b=>b.onclick=()=>{fTrack=b.dataset.t;renderFilters();renderCatalog();});
+  $$('.ltab').forEach(b=>b.onclick=()=>{fLevel=b.dataset.l;renderFilters();renderCatalog();});
+}
+function renderCatalog(){
+  const q=fQ.toLowerCase();
+  const items=CATALOG.programs.filter(p=>(fTrack==='all'||p.track===fTrack)&&(fLevel==='all'||p.level===fLevel)&&
+    (!q||[p.code,p.name_en,p.name_ar,p.tech_en,p.tools,p.industry_en].join(' ').toLowerCase().includes(q)));
+  $('#emptymsg').classList.toggle('hide',items.length>0);
+  $('#catgrid').innerHTML=items.map(p=>{const m=TRACKMETA[p.track];
+    return `<div class="card rounded-2xl p-5 reveal in">
+      <div class="flex items-start justify-between gap-2 mb-3">
+        <span class="grid place-items-center w-10 h-10 rounded-lg text-white shrink-0" style="background:${m.c}"><i data-lucide="${TYPEIC[p.type]||'book-open'}" class="w-5 h-5"></i></span>
+        <span class="font-mono text-[11px] font-bold" style="color:${m.c}">${p.code}</span></div>
+      <h3 class="font-bold leading-tight mb-1">${T(p.name_en,p.name_ar)}</h3>
+      <div class="flex flex-wrap gap-1 text-[10px] mb-3"><span class="chip rounded px-1.5 py-0.5">${lvlName(p.level)}</span><span class="chip rounded px-1.5 py-0.5">${p.delivery}</span><span class="chip rounded px-1.5 py-0.5">${p.hours}h</span></div>
+      <p class="muted text-sm line-clamp-3">${T(p.desc_en,p.desc_ar)}</p>
+      <button class="cardtog mt-3 text-sm font-semibold flex items-center gap-1" style="color:var(--brand)" data-code="${p.code}"><span>${T('Details','التفاصيل')}</span><i data-lucide="chevron-down" class="w-4 h-4 chev transition-transform"></i></button>
+      <div class="expandable"><div class="pt-4 mt-1 border-t hairline space-y-3 text-sm">
+        <div><div class="font-semibold mb-1 text-xs uppercase tracking-wide muted">${T('Outcomes','النواتج')}</div><ul class="space-y-1 muted">${(LANG==='ar'?p.outcomes_ar:p.outcomes_en).slice(0,5).map(x=>`<li class="flex gap-1.5"><span style="color:var(--accent)">•</span>${x}</li>`).join('')}</ul></div>
+        <div><div class="font-semibold mb-1 text-xs uppercase tracking-wide muted">${T('Topics','الموضوعات')}</div><div class="flex flex-wrap gap-1">${(LANG==='ar'?p.topics_ar:p.topics_en).map(x=>`<span class="chip rounded px-1.5 py-0.5 text-xs">${x}</span>`).join('')}</div></div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="font-semibold text-xs uppercase tracking-wide muted mb-1">${T('Tools','الأدوات')}</div><p class="muted text-xs">${p.tools}</p></div>
+          <div><div class="font-semibold text-xs uppercase tracking-wide muted mb-1">${T('Assessment','التقييم')}</div><p class="muted text-xs">${T(p.assessment_en,p.assessment_ar)}</p></div></div>
+        <div><div class="font-semibold text-xs uppercase tracking-wide muted mb-1">${T('Stackability','التراكمية')}</div><p class="muted text-xs">${T(p.stack_en,p.stack_ar)}</p></div>
+        <div class="flex items-center gap-2 text-xs pt-1"><span class="chip rounded px-2 py-1">${p.prev}</span><i data-lucide="arrow-right" class="w-3 h-3 muted ltr-ic"></i><span class="chip rounded px-2 py-1" style="border-color:${m.c}">${p.code}</span><i data-lucide="arrow-right" class="w-3 h-3 muted ltr-ic"></i><span class="chip rounded px-2 py-1">${p.next}</span></div>
+        <a href="#journey" class="open-step inline-flex items-center gap-1 text-xs font-semibold" data-code="${p.code}" style="color:var(--brand)">${T('Open in journey','افتح في الرحلة')}<i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div></div></div>`}).join('');
+  lucide.createIcons();
+  $$('.cardtog').forEach(b=>b.onclick=()=>{const ex=b.nextElementSibling;ex.classList.toggle('open');b.querySelector('.chev').style.transform=ex.classList.contains('open')?'rotate(180deg)':'';});
+  $$('.open-step').forEach(a=>a.onclick=()=>{const i=JOURNEY.findIndex(p=>p.code===a.dataset.code);if(i>=0){cur=i;renderStep();}});
+}
+
+/* ---------- skills matrix ---------- */
+function renderMatrix(){
+  const codes=CATALOG.programs.map(p=>p.code);
+  const lc={I:['#D9E8F5','#13233a'],D:['#7FB2DA','#0F2A4A'],M:['#0F2A4A','#fff']};
+  let h='<table class="mx text-xs border-collapse"><thead><tr><th class="sticky start-0 surface p-2 text-start min-w-[180px] font-bold">'+T('Skill family','عائلة المهارة')+'</th>';
+  codes.forEach(c=>h+=`<th class="p-1 font-mono font-bold" style="writing-mode:vertical-rl;transform:rotate(180deg);height:96px;color:var(--brand)">${c}</th>`);
+  h+='</tr></thead><tbody>';
+  CATALOG.skill_families.forEach(f=>{
+    h+=`<tr><td class="sticky start-0 surface p-2 font-semibold text-start">${T(f.en,f.ar)}</td>`;
+    codes.forEach(c=>{const p=CATALOG.programs.find(x=>x.code===c);const v=(p.skills||{})[f.key];
+      h+=`<td class="text-center p-0"><div class="grid place-items-center h-7 font-bold" style="${v?`background:${lc[v][0]};color:${lc[v][1]}`:''}">${v||''}</div></td>`;});
+    h+='</tr>';
+  });
+  h+='</tbody></table>';
+  $('#matrix').innerHTML=h;
+}
+
+/* ---------- naming + recs ---------- */
+function renderNaming(){
+  const N=[['SDA',T('SDAIA Academy prefix','بادئة أكاديمية سدايا')],
+    ['TRACK',T('FND · AIE · DSC — new tracks plug in (APM, ASA, MLE, GAI)','FND · AIE · DSC — تُضاف مسارات جديدة')],
+    ['LEVEL',T('1 Practitioner · 2 Specialist · 3 Expert','1 ممارس · 2 متخصص · 3 خبير')],
+    ['SEQ',T('Two-digit order within track + level','ترتيب من رقمين داخل المسار والمستوى')],
+    ['TITLE',T('[Domain]+[Tech]+[Scope] · ≤7 words · no "Introduction to"','[المجال]+[التقنية]+[النطاق] · ≤7 كلمات')]];
+  $('#naming').innerHTML=N.map(([k,v])=>`<div class="flex gap-3"><span class="font-mono font-bold text-xs rounded-md px-2 py-1 chip shrink-0" style="color:var(--brand)">${k}</span><span class="muted">${v}</span></div>`).join('');
+}
+function renderRecs(){
+  const R=[['layers-3','Future tracks','مسارات مستقبلية','Add AI Product Manager, Solution Architect, ML Engineer & GenAI Specialist on the same scheme.','إضافة مسارات مدير المنتج ومعماري الحلول ومهندس تعلم الآلة وأخصائي الذكاء التوليدي بنفس النظام.'],
+   ['shuffle','Cross-track electives','مواد اختيارية متقاطعة','Let experts take one elective from the sister track to build T-shaped profiles.','السماح للخبراء بمادة اختيارية من المسار الشقيق لبناء ملفات على شكل T.'],
+   ['badge-check','Skills-based RPL','اعتراف بالتعلم السابق','Use the skills matrix for recognition of prior learning and placement tests.','استخدام مصفوفة المهارات للاعتراف بالتعلم السابق واختبارات تحديد المستوى.'],
+   ['languages','Arabic-first content','محتوى عربي أولًا','Prioritise Arabic NLP datasets, tooling and case studies across GenAI/NLP modules.','إعطاء الأولوية لبيانات وأدوات وحالات اللغة العربية في وحدات الذكاء التوليدي ومعالجة اللغة.'],
+   ['shield-check','Responsible-AI spine','عمود الذكاء المسؤول','Thread responsible-AI checkpoints through every level, not only the expert module.','تمرير نقاط تحقق الذكاء المسؤول عبر كل مستوى وليس وحدة الخبير فقط.'],
+   ['git-branch','Governed versioning','إصدارات محوكمة','Adopt vYYYY.R releases with a change log and an academic review board.','اعتماد إصدارات بترقيم محوكم مع سجل تغييرات ومجلس مراجعة أكاديمي.']];
+  $('#recs').innerHTML=R.map(([ic,te,ta,de,da])=>`<div class="card rounded-xl p-4 flex gap-3 reveal in"><span class="grid place-items-center w-9 h-9 rounded-lg shrink-0" style="background:var(--surface2);color:var(--accent)"><i data-lucide="${ic}" class="w-4 h-4"></i></span><div><div class="font-semibold text-sm">${T(te,ta)}</div><p class="muted text-sm mt-0.5">${T(de,da)}</p></div></div>`).join('');
+}
+
+/* ---------- nav links ---------- */
+function renderNav(){
+  const L=[['tracks','Pathways','المسارات'],['levels','Levels','المستويات'],['journey','Journey','الرحلة'],['catalog','Catalog','الكاتالوج'],['skills','Skills','المهارات'],['design','Design','التصميم']];
+  $('#navlinks').innerHTML=L.map(([id,e,a])=>`<a href="#${id}" class="rounded-lg px-3 py-1.5 font-medium hover:bg-[var(--surface2)] transition muted">${T(e,a)}</a>`).join('');
+}
+
+/* ---------- language / theme ---------- */
+function setLang(l){
+  LANG=l; const ar=l==='ar';
+  document.documentElement.lang=ar?'ar':'en'; document.documentElement.dir=ar?'rtl':'ltr';
+  $('#langBtn').textContent=ar?'EN':'عربي';
+  $$('.ltr-ic').forEach(i=>i.style.transform=ar?'scaleX(-1)':'');
+  try{localStorage.setItem('sdaia_lang',l)}catch(e){}
+  renderAll();
+}
+function setTheme(d){
+  document.documentElement.classList.toggle('dark',d);
+  $('#themeBtn').innerHTML=`<i data-lucide="${d?'sun':'moon'}" class="w-4 h-4"></i>`;
+  try{localStorage.setItem('sdaia_theme',d?'d':'l')}catch(e){}
+  lucide.createIcons();
+}
+
+function renderAll(){
+  renderStats();renderTracks();renderLevels();renderRail();renderStep();renderFilters();renderCatalog();renderMatrix();renderNaming();renderRecs();renderNav();
+  lucide.createIcons(); observeReveal();
+}
+
+/* ---------- reveal + misc ---------- */
+let io;
+function observeReveal(){
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  $$('.reveal').forEach(el=>io.observe(el));
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  // logos
+  const lg=logoSVG();
+  ['navlogo','herologo','footlogo','loaderlogo'].forEach(id=>$('#'+id).innerHTML=lg);
+  // restore prefs
+  let lang='en',theme=false;
+  try{lang=localStorage.getItem('sdaia_lang')||'en';theme=localStorage.getItem('sdaia_theme')==='d';}catch(e){}
+  document.documentElement.classList.toggle('dark',theme);
+  $('#themeBtn').innerHTML=`<i data-lucide="${theme?'sun':'moon'}" class="w-4 h-4"></i>`;
+  setLang(lang);
+  $('#langBtn').onclick=()=>setLang(LANG==='en'?'ar':'en');
+  $('#themeBtn').onclick=()=>setTheme(!document.documentElement.classList.contains('dark'));
+  $('#prevBtn').onclick=()=>{if(cur>0){cur--;renderStep();$('#journey').scrollIntoView({block:'start'});}};
+  $('#nextBtn').onclick=()=>{if(cur<TOTAL-1){cur++;renderStep();$('#journey').scrollIntoView({block:'start'});}};
+  $('#search').addEventListener('input',e=>{fQ=e.target.value;renderCatalog();});
+  // toTop
+  const tt=$('#toTop'); addEventListener('scroll',()=>tt.classList.toggle('hide',scrollY<600));
+  tt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  lucide.createIcons();
+  setTimeout(()=>{$('#loader').style.opacity=0;$('#loader').style.transition='opacity .5s';setTimeout(()=>$('#loader').classList.add('hide'),500);},500);
+});
+</script>
+</body>
+</html>

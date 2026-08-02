@@ -1,0 +1,2743 @@
+# قاعدة بيانات خريجي أكاديمية سدايا — Graduates Database
+
+**الإصدار:** 2 أغسطس 2026 · **النطاق:** منذ تأسيس الأكاديمية 2021 – 2 أغسطس 2026 (خط أساس دائم) · **الإجمالي:** **2,549 فردًا** بعد إزالة التكرار على مستوى الشخص
+
+> ملف موحّد يدمج جميع المصادر الداخلية والعلنية للمشروع. **لم تُنقل عناوين البريد الإلكتروني ولا أرقام الهوية** إلى هذا المخرج (قيد خصوصية حاكم). الحقول الفارغة تعني «غير موثّق علنًا» — لا تُخمَّن.
+
+---
+
+## جولة المسح العلني الموسّع — 2 أغسطس 2026
+
+مسح علني موسّع على ست مسارات متوازية (مستودعات GitHub وكشوف الفصول · مجمّعات السير الذاتية ZoomInfo/RocketReach/TheOrg · المصادر الأكاديمية والمؤتمرات · الويب والصحافة العربية · منصات المشاريع والمسابقات · إثراء السجلات القائمة)، ثم موجتان إضافيتان لاستنفاد أعلى المسارات إنتاجية. **النتائج:**
+
+- **351 مرشحًا خامًا** جُمعوا بأدلة علنية؛ بعد إزالة التكرار مقابل القاعدة القائمة والتطبيع العربي/الإنجليزي، و**استبعاد 10 مدرّبين** (ليسوا خريجين)، و**استبعاد 5 تطابقات تهجئة** (العطيان/عتيان، باقشير/باغشير، الفيدي/الفايدي، الزايد/الزيد، الفرج/الفراج)، و**استبعاد 9 سجلات دون دليل كافٍ** (اسم أول فقط، أو لقب مختصر، أو انتساب مستنتج) — بقي **271 فردًا جديدًا موثّقًا**.
+- **الإجمالي: 2,278 → 2,549 فردًا.** كل سجل جديد يحمل رابط مصدر تحقق علنيًا.
+- **أُثري 45 سجلًا قائمًا** بـ97 حقلًا جديدًا (روابط عامة، تخصص، تعليم، مسمى وظيفي).
+- **الهدف المطلوب كان 372 فردًا جديدًا؛ المحقق 271 — بعجز 101.** السبب البنيوي: معدل التكرار في الموجة الثالثة بلغ ~89–95%، أي أن المصادر العلنية المتاحة استُنفدت فعليًا ضمن هذه المنهجية. لم تُضف أي سجلات دون دليل مستقل للوصول إلى الرقم المستهدف.
+- **أهم اكتشافات المنهجية:** (1) `git clone --filter=blob:none` ثم `git log --format=%an` يكشف الأسماء الحقيقية لمعرّفات GitHub التي لا تنشر اسمًا — استُخدم لحل ~90 معرّفًا؛ (2) مجمّعات السير الذاتية تفهرس **المعسكر كمسمى وظيفي**، فالبحث بنص المسمى يكشف المتدربين مباشرة؛ (3) كتل «فريق العمل» في ملفات README تكشف أفرادًا لا مستودعات لهم.
+- **قيود موثّقة:** LinkedIn ونطاقات sdaia.gov.sa غير قابلة للجلب؛ الصحافة العربية الرسمية تنشر أعدادًا لا أسماء؛ ميزانية البحث النصي استُنفدت خلال الجولة.
+
+---
+
+## جولة التحقق العلني — فبراير–يوليو 2026 (نُفذت 24 يوليو 2026)
+
+مسح OSINT رباعي المسارات (GitHub · LinkedIn والصحافة العربية · Hugging Face/Kaggle/المدونات · الصحافة الإنجليزية والمؤتمرات) بأكثر من 80 استعلامًا ثنائي اللغة للفترة 1 فبراير – 24 يوليو 2026. **النتيجة:**
+
+- **صفر أفراد علنيين جدد** خارج ما هو موثّق مسبقًا؛ جميع من ظهر ضمن النافذة (فريق ورشة Vibe Coding الأربعة + صاحبة مستودع برنامج وكلاء الذكاء الاصطناعي) **موجودون في القاعدة منذ دمج 20 يوليو 2026، وأُعيد التحقق منهم اليوم** (موسومون بعلامة ✅).
+- السبب البنيوي الموثّق: سدايا تعلن الدفعات بأعداد لا بأسماء، وملفات LinkedIn خلف جدار تسجيل الدخول — التفاصيل في قسم المنهجية.
+- برامج ضمن النافذة مؤكدة مؤسسيًا (سياق، لا أسماء): معسكر محترفي الذكاء الاصطناعي (اختُتم ~منتصف فبراير 2026)، رؤية الحاسب للمطورين (مارس 2026)، الذكاء الاصطناعي التطبيقي (29 مارس – 21 مايو 2026)، معالجة اللغة العربية (مايو 2026)، هندسة أنظمة الذكاء الاصطناعي التوكيلي (يونيو–يوليو 2026)، صيف المستقبل (يوليو 2026) — **ومجتازو هذه البرامج مغطّون فعليًا عبر سجل الشهادات الداخلي 2025–2026 (651 مجتازًا)**.
+- مصادر مؤسسية ضمن النافذة: SPA N2532595 · N2623645 · N2626700 · N2626581 · N2637918 · Arab News node/2635982.
+
+---
+
+## جولة إثراء — 25 يوليو 2026 (بطاقات تعريفية)
+
+وردت بطاقات تعريفية (قصص خريجين) لأربعة أفراد؛ **جميعهم موجودون مسبقًا في القاعدة** ضمن «الملف الرسمي 2023» (مجموعتا سبتمبر وأكتوبر)، فأُثريت سجلاتهم دون إضافة أفراد جدد — الإجمالي ثابت عند 2,166:
+
+- **وئام عباس** (سبتمبر): تحديث المسمى إلى AI Engineer (2025، كان Data analyst 2024) + رابط الملف الشخصي على LinkedIn.
+- **نجلاء الساعدي** (أكتوبر): إضافة رابط الملف الشخصي على LinkedIn (تهجئة البطاقة: «الصاعدي»).
+- **مهند الدخيل** (سبتمبر): توثيق تعارض تسمية الجهة (البطاقة: «رامكو/Ramco» — الملف الرسمي: aramco) وذكر البطاقة معسكر تعلم آلة 2025.
+- **هيا البقمي** (سبتمبر): تأكيد البيانات القائمة (جامعة الطائف، مهندسة بيانات — هيئة الزكاة والضريبة والجمارك).
+
+---
+
+## جولة إثراء — 31 يوليو 2026 (بطاقات تعريفية)
+
+وردت بطاقات تعريفية (قصص خريجين) لأربعة أفراد؛ **جميعهم موجودون مسبقًا في القاعدة** ضمن «الملف الرسمي 2023» (مجموعتا سبتمبر وأكتوبر)، فأُثريت سجلاتهم دون إضافة أفراد جدد — الإجمالي ثابت عند 2,166:
+
+- **فيصل الهميزي** (أكتوبر): تصحيح التهجئة (كان: الحميزي)، إضافة LinkedIn، إضافة برنامج «شهادة مصغرة في علم البيانات»، وتحديث المسمى إلى Senior AI & Data Science Officer — مصرف الراجحي (يعضده ZoomInfo؛ كان: Assistant manager AI Innovation solutions). الثقة 80→85.
+- **نوال القرني** (سبتمبر): إضافة LinkedIn؛ البطاقة وZoomInfo يذكران Data Scientist @ DATA UNIVERSE مقابل Data Analyst @ SDAIA بالملف الرسمي — التسلسل غير محسوم، وُثّق التعارض بالملاحظات. الثقة 80→85.
+- **سعد القرني** (أكتوبر): إضافة LinkedIn وتحديث الجهة والمسمى إلى Associate Software Engineer — SAMI (يؤكده عنوان LinkedIn الحالي؛ كان: بيور الرقمية / Business Analyst). الثقة 80→85.
+- **عليا/علياء إبراهيم** (أكتوبر): تأكيد الجهة (EXPRO = هيئة كفاءة الإنفاق والمشروعات الحكومية)؛ تعارض المسمى (بطاقة: Business Intelligence Analyst — ملف رسمي: Data Science Specialist) وُثّق دون حسم.
+
+---
+
+---
+
+## الملخص الإحصائي
+
+| الطبقة / المصدر | العدد |
+|---|---|
+| توثيق مرتفع (علني) | 6 |
+| اكتشافات يوليو 2026 | 4 |
+| انتساب ذاتي مؤكد | 21 |
+| توثيق متوسط | 9 |
+| قصص داخلية | 5 |
+| فرق المشاريع | 22 |
+| الملف الرسمي 2023 | 101 |
+| المسح العلني الموسّع — أغسطس 2026 | 271 |
+| تقرير التوظيف المبكر 2021–2026 | 50 |
+| مسح GitHub يونيو–يوليو 2026 | 62 |
+| مستنتج | 17 |
+| قبل النطاق | 8 |
+| برامج NVIDIA | 211 |
+| معسكرات 2023 (القوائم الكاملة) | 329 |
+| سجلات 2024 الرسمية | 782 |
+| مجتازو 2026 (سجل الشهادات — اجتياز) | 651 |
+| **الإجمالي** | **2549** |
+
+**درجات الثقة:** مرتفع (≥75): 2,304 · متوسط (45–74): 221 · منخفض (<45): 24
+**سجلات بجهة عمل موثّقة:** 297 · **سجلات بروابط تحقق علنية:** 532
+
+**النتائج:** شهادات: 2,083 · مشروع: 367 · برنامج: 281 · توظيف: 257 · بحث: 37 · قيادة: 17 · ترقية: 16 · ناشئة: 12 · جائزة: 6
+
+---
+
+## الحقول المعيارية
+
+لكل سجل: الاسم العربي · الاسم الإنجليزي · البرنامج · الدفعة/تاريخ التخرج · جهة العمل · المسمى الوظيفي · الموقع · التعليم · LinkedIn · GitHub · Hugging Face · Kaggle · موقع/بورتفوليو · مصادر داعمة · الطبقة · درجة الثقة · ملاحظات. الموقع الافتراضي غير مثبت فرديًا (برامج الأكاديمية حضورية بالرياض غالبًا) ويُترك فارغًا ما لم يوثَّق.
+
+---
+
+---
+
+
+## توثيق مرتفع (علني) — 6 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | خالد الدويسان | Khaled Alduwaysan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | يوليو–أكتوبر 2024 | أكاديمية الملك سلمان العالمية للغة العربية | مطوّر ذكاء اصطناعي (يناير 2025) |  |  | https://github.com/Duwaysan · https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD |  |  | https://duwaysan.github.io/portfolio/ | 95 | أقوى حالة موثّقة في الدراسة: توظيف خلال ~3 أشهر من التخرج (ضمن نافذة 6–8 أشهر) موثّق بالتواريخ عبر موقعه الشخصي. بنى نظام «رقيم» لتصحيح النص العربي (OCR + LLM)، وعضو فريق مشروع التخرج RASYD المنشور كتطبيق حي. |
+| 2 | عبدالله العويد | Abdullah Alowayyid | معسكرات إدارة البيانات وتعلم الآلة + ممارس تعلم الآلة | 2023 | شركة سايت SITE | مهندس — مركز عمليات الشبكات (2025) | Information Technology — Qassim University — 2023 | https://www.linkedin.com/in/abdullah-alowayid/ |  |  |  |  | 92 | تطابق مستقل بين بيانات الأكاديمية والمقتطف العام لملفه (SITE، جامعة القصيم، الرياض) — توثيق مرتفع للوظيفة والجامعة. بكالوريوس تقنية معلومات، جامعة القصيم (2023). |
+| 3 | عبدالعزيز التميري | Abdulaziz Al-Thumairy | التدريب الاحترافي في النماذج اللغوية الكبيرة | 2024 | صندوق الاستثمارات العامة PIF | محلل أداء الاستثمارات — الشرق الأوسط وشمال أفريقيا (2025) | Computer Science — Majmaah University — 2023 | https://www.linkedin.com/in/abdulaziz-al-thumairy/ |  |  |  |  | 90 | العمل في PIF مؤكد عبر المقتطف العام لملفه. بكالوريوس علوم حاسب — جامعة المجمعة (2023). شارك في تنظيم فعالية PIF Digital & Technology Leaders Offsite 2026 بستاد لوسيل. |
+| 4 | رنا الحرصان | Rana al-Harsan | معسكر تقنيات إدارة الزحام + معسكر T5 | يوليو–أكتوبر 2024 | فضاء أجا لتقنية المعلومات | (المسمى غير منشور) |  | https://www.linkedin.com/in/rana-al-harsan-1792b1257/ |  |  |  | https://www.spa.gov.sa/N2199008 | 90 | خريجة موثّقة داخل النافذة الزمنية: حفل التخريج الرسمي لـ194 متدربًا في 31 أكتوبر 2024 (توثيق واس). مشروعها «رَكَّن» اختير ضمن أفضل المشاريع من بين 50 وعُرض في حفل التخرج. شهادة معتمدة من سدايا. |
+| 5 | ريان دحلاوي | Rayan Dahlawi | معسكر النماذج اللغوية الكبيرة LLM — شهادة LLMs Practitioner | ديسمبر 2023 | عبداللطيف جميل المتحدة للتمويل (ALJUF) | أخصائي علوم بيانات (AI/BI) | Artificial intelligent — University of Jeddah — 2023 | https://www.linkedin.com/posts/rayan-dahlawi_llmbootcamp-ai-sdaia-activity-7139361304338710528-fzmC · https://www.linkedin.com/in/rayan-dahlawi |  |  |  |  | 88 | ⬆️ رُقّي في إصدار 21 يوليو 2026: تقاطع الملف الرسمي للمجتازين مع منشوره الذاتي الموسوم حسم لغز «ALJUF» = عبداللطيف جميل المتحدة للتمويل (وليس جهة بالجوف). انتساب ونتيجة مؤكدان من مصدرين مستقلين. |
+| 6 | مها عبدالجبار ثفار | Maha Abduljabbar Thafar | Large Lngeuage models (LLMs) practitioner, Dec2023 | مجموعة أكتوبر | Taif University | Assistant Professor | Computer science — King AbdulAziz University |  | https://github.com/MahaThafar |  |  | https://tu.edu.sa/En/Computer-Science/243/Pages/21459/Faculty-Members · https://www.nature.com/articles/s41598-022-08787-9 · https://scholar.google.com/citations?user=QgCWtUQAAAAJ · https://cemse.kaust.edu.sa/cbrc/people/person/maha-thafar · https://doi.org/10.3390/mca29040059 | 88 | أستاذة مساعدة بقسم علوم الحاسب في جامعة الطائف — توثيق مرتفع عبر صفحة الجامعة الرسمية. دكتوراه من كاوست KAUST (مختبر المعلوماتية الحيوية)، وباحثة منشورة بأوراق مُحكّمة بارزة في التنبؤ الدوائي (Affinity2Vec في Scientific Reports 2022، وDTiGEMS+ وDTi2Vec). من الملف الرسمي لمجتازي برامج الأكاديمية: شهادة ممارس النماذج اللغوية الكبيرة (ديسمبر 2023). التخصص: Bioinformatics / computational biology — drug-target interaction and binding-affinity prediction; ML on text and graphs. |
+
+## اكتشافات يوليو 2026 — 4 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | وعد السيف | Waad Alsaif | ورشة Vibe Coding — أكاديمية سدايا مع DAICO/جامعة الملك سعود | ~يوليو 2026 |  |  | طالبة — جامعة الملك سعود |  | https://github.com/waadalsaif1-beep · https://github.com/waadalsaif1-beep/DAICO-website · https://github.com/Alanoud-Alotaibi/Roaya-Career-Platform |  |  |  | 78 | 🆕 اكتشاف 20 يوليو 2026: صاحبة المستودع الأصلي لموقع DAICO؛ شاركت في منصة «رؤيا» للإرشاد المهني. README ينص: «طُوّر خلال ورشة Vibe Coding في أكاديمية سدايا». ✅ أُعيد التحقق علنيًا في جولة 24 يوليو 2026. |
+| 2 | ريم الشثري | Reem Alshathri | ورشة Vibe Coding — أكاديمية سدايا | ~يوليو 2026 |  |  | طالبة — جامعة الملك سعود |  | https://github.com/Alanoud-Alotaibi/Roaya-Career-Platform |  |  |  | 68 | 🆕 عضوة فريقي DAICO وRoaya (المعرّف: ReemAlshathri74) — مسماة في README الفريق. ✅ أُعيد التحقق علنيًا في جولة 24 يوليو 2026. |
+| 3 | هند الدلبحي | Hind Aldalbahi | ورشة Vibe Coding — أكاديمية سدايا | ~يوليو 2026 |  |  | طالبة — جامعة الملك سعود |  | https://github.com/Alanoud-Alotaibi/Roaya-Career-Platform |  |  |  | 68 | 🆕 عضوة فريقي DAICO وRoaya — مسماة في README؛ لا معرّف شخصي مؤكد. ✅ أُعيد التحقق علنيًا في جولة 24 يوليو 2026. |
+| 4 | تركي (aaturki) | Turki | معسكر النماذج اللغوية الكبيرة (sdaia_LLM) + برنامج سحابي مع Google Cloud | غير محدد (~2023–2024) |  |  |  |  | https://github.com/aaturki · https://github.com/aaturki/sdaia_LLM |  |  |  | 55 | 🆕 انتساب معلن ذاتيًا عبر مستودعي sdaia_LLM (13 commit، 5 نجوم) وsdaia_clouders؛ تاريخ الدفعة تعذّر توثيقه. التخصص: GitHub Developer Program Member; 29 public repos incl. sdaia_LLM. |
+
+## انتساب ذاتي مؤكد — 21 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | فارس الطوخي | Fares Altoukhi | معسكر T5 — فريق RASYD | أكتوبر 2024 | غير موثّق علنًا | أغنى مساهمات مفتوحة المصدر في العيّنة |  |  | https://github.com/TheKnight909 · https://github.com/TheKnight909/Emotional-analysis |  | https://huggingface.co/TheKnight115 |  | 72 | نشر نموذج Finetuned MarBERT لتحليل المشاعر العربية (19 تنزيلًا/شهر) وArsarcasm لكشف السخرية وfine-tuned BERT على Hugging Face، وخدمة REST حية على Google Cloud Run (SVM دقة 89%، MARBERTv2 بمعامل F1=0.83). |
+| 2 | ناصر الصقر | Nasser Alsaqer | معسكر T5 — قائد فريق RASYD | أكتوبر 2024 | الهيئة العامة للإحصاء GASTAT | إحصائي (Statistician) — مسجّل 2024 حتى الآن |  | https://www.linkedin.com/in/nasser-alsaqer/ | https://github.com/NasserAlsaqer · https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD · https://github.com/NasserAlsaqer/SDAIA-T5-BootCamp |  |  | https://www.zoominfo.com/p/Nasser-Alsaqer/15765859823 | 80 | اكتشاف توظيف جديد (1 أغسطس 2026): سجل خبرة مفهرس يجمع في القيد نفسه «معسكر علوم البيانات والذكاء الاصطناعي بسدايا (2024)» ثم «إحصائي بالهيئة العامة للإحصاء (2024–حتى الآن)» — أي توظيف في سنة المعسكر نفسها. قائد فريق مشروع التخرج RASYD. بكالوريوس من جامعة الملك سعود. تنبيه: ملف «Nasser Alsaqer — أرامكو» شخص آخر؛ السجل المعتمد هو الحامل لتاريخ معسكر سدايا (ثقة متوسطة-عالية). |
+| 3 | ماجد المدني | Majid Almadani | معسكر T5 — قائد فريق «سُم» | أكتوبر 2024 | غير موثّق علنًا | قائد فريق · خريج علوم حاسب | Computer Science with a concentration in Data Science and Analytics (graduated) | https://www.linkedin.com/in/majidalmadani | https://github.com/MajidAlmadani · https://github.com/AhmedBashmmakh/Sum-T5-Capstone |  |  |  | 72 | قاد مشروع «سُم» لإدارة المرور والتسعير الديناميكي (YOLOv8 دقة 88%؛ يستهدف 7 طرق بالرياض) — 78/100 في الترتيب. |
+| 4 | محمد المالكي | Mohammed Al Malki | معسكر T5 — فريق «عادل» ADEL | أكتوبر 2024 | غير موثّق علنًا | مالك مستودع المشروع الأعلى تقييمًا |  | https://www.linkedin.com/in/mohammed-almalki-m2000 | https://github.com/iwm10/ADEL-System · https://github.com/iwm10 |  | https://huggingface.co/spaces/M12ths/ADEL_app |  | 72 | مشروع ADEL للإشارات المرورية الذكية: أعلى المشاريع تقييمًا (88/100)؛ دقة كشف مركبات 92%، محاكاة SUMO، وتطبيق حي على Hugging Face. التخصص: Data Science. |
+| 5 | لجين بكر الغامدي | Lujain Bakr Alghamdi | معسكر علوم البيانات والذكاء الاصطناعي — قائدة فريق «نبيه» | أكتوبر 2024 | غير موثّق علنًا | قائدة فريق ومالكة المستودع |  |  | https://github.com/lujainbgh/Nabeeh-System |  |  |  | 72 | نظام «نبيه» لكشف الحوادث المرورية آنيًا من كاميرات الطرق (YOLOv9m؛ قاعدة ~3,500 مقطع فيديو) مع زميلاتها نوف المطيري ومنار الطلحي ومريم السلمي. |
+| 6 | جيهان حمدان | Jehan Hamdan | معسكر T5 (مع طويق) | يوليو–أكتوبر 2024 | غير موثّق علنًا | مشروع كشف الحوادث |  |  | https://github.com/Je-97 · https://github.com/Je-97/Project-Accident-Detection · https://github.com/Je-97/SDAIA-T5-Tuwaiq |  |  |  | 54 | مؤكدة التخرج: مستودع SDAIA-T5-Tuwaiq أُنشئ 26 يوليو 2024 ويضم 185 commit عبر تسعة أسابيع من المنهج. تعريفها الذاتي «طالبة علوم بيانات»؛ لم يُعثر على جهة عمل. |
+| 7 | دانة المستادي | Dana Almestadi | معسكر T5 | أكتوبر 2024 | غير موثّق علنًا | مهندسة برمجيات — RHCSA | Software Engineering graduate — University of Jeddah | https://www.linkedin.com/in/dana-almestadi/ | https://github.com/Danalmestadi · https://github.com/Danalmestadi/SDAIA-T5-Capstone-Project |  |  | https://t.me/thisdana | 72 | خريجة هندسة برمجيات (جامعة جدة) حاصلة على شهادة Red Hat RHCSA. مشروع التخرج: التنبؤ بتصادم المركبات (عمق + كشف) آنيًا. التخصص: Linux, AI, computer vision, containers/OpenShift; RHCSA certified. |
+| 8 | ريم البلوي | Reem Albalawi | معسكر T5 | أكتوبر 2024 | ATS Travel | محللة بيانات أعمال (2025–حتى الآن) |  |  | https://github.com/ReemAlbluwi |  |  | https://rocketreach.co/reem-albalawi-email_506449863 | 76 | معسكر T5 لعلوم البيانات (تقنيات معالجة الازدحام) 2024 ← محللة بيانات أعمال بـATS Travel 2025، أي في السنة التالية مباشرة. الشهر غير مؤكد. تنبيه: شخص مختلف عن «ريم البلوّي» صاحبة مستودع المعسكر. |
+| 9 | زينة الشهري | Zainah Alshehri | علوم البيانات والذكاء الاصطناعي | ~2024 (متدربة) | أكاديمية سدايا (وضع تدريبي) | عالمة بيانات مبتدئة |  | https://www.linkedin.com/in/zainahalshehri/ | https://github.com/ZainahAlshehri |  |  | https://youtu.be/6R8ChxJuhqk | 72 | مشروعا: التحقق من هوية توكلنا بمطابقة الوجوه (400 صورة، عرض YouTube) وتحليل تغريدات خدمة عملاء STC بمعالجة اللغة. |
+| 10 | روابي المطيري | Rawabi Almutairi | معسكر T5 | غير معروفة | غير موثّق علنًا | عالمة بيانات (وصف ذاتي) |  | https://www.linkedin.com/in/rawabi-almutairi-884478222 | https://github.com/thisisrawabi |  |  |  | 72 | دراسة فعالية الطب عن بُعد أثناء كوفيد-19 (~1,040 استبانة؛ ارتفاع الزيارات من 102 إلى 801/يوم). |
+| 11 | سما الحربي | Sama Alharbi | معسكر T5 | ~2024 | غير موثّق علنًا | فريق AGRONA (4 عضوات) |  |  | https://github.com/samaalharbi2/AGRONA-Plant-Disease-Detection · https://github.com/samaalharbi2/SDAIA-T5-BootCamp · https://github.com/samaalharbi2 |  |  |  | 52 | مؤكدة التخرج: مستودع SDAIA-T5-BootCamp أُنشئ 26 يوليو 2024، ومن مشاريعه «مراقبة المركبات غير الملتزمة بمسافة الأمان» (YOLO + OCR). لم يُعثر على جهة عمل. |
+| 12 | مها الحرقان | Maha AlHarqan | معسكر T5 | غير معروفة | غير موثّق علنًا | عالمة بيانات مبتدئة |  |  | https://github.com/MahaAlHarqan |  |  |  | 72 | كشف المركبات بلا لوحات بالتعلم العميق + مشاريع انحدار وتصنيف وNLP. التخصص: Artificial intelligence; T5 bootcamp EDA/ML/NLP/DL project series. |
+| 13 | سديم عسيري | Sadeem Asiri | معسكر تعلم الآلة | 2024 | طالبة — جامعة الملك خالد | نظم معلومات | Information Systems student — King Khalid University | https://www.linkedin.com/in/sadeemasiri2003 | https://github.com/Sadcem/SDAIA-ML-Bootcamp · https://github.com/Sadcem |  |  | https://x.com/sadjmm | 72 | أتمّت معسكر تعلم الآلة أثناء دراستها الجامعية. التخصص: Data Science, Data Analysis, AI, ML. |
+| 14 | سعد الزهراني | Saad Alzahrani | معسكر الذكاء الاصطناعي وعلوم البيانات (12 أسبوعًا) | أكتوبر 2024 | مصرف الراجحي | أخصائي أول تقنيات مكافحة الاحتيال ومكتب إدارة المشاريع (2025–) |  |  | https://github.com/Saadzh71/AI-DataScience-Week12-Capstone |  |  | https://rocketreach.co/saad-alzahrani-email_801104584 | 78 | معسكر T5 لعلوم البيانات والذكاء الاصطناعي 2024 ← برنامج تطوير الخريجين لتقنية المعلومات بمصرف الراجحي 2025 ← أخصائي أول تقنيات مكافحة الاحتيال 2025. كون البرنامج مخصصًا لحديثي التخرج يعزز أوّلية التوظيف. |
+| 15 | العنود العتيبي | Alanoud Alotaibi | ورشة Vibe Coding | ~يوليو 2026 | طالبة — جامعة الملك سعود | مع ريم الشثري وود السيف وهند الدلبحي |  |  | https://github.com/Alanoud-Alotaibi · https://github.com/Alanoud-Alotaibi/DAICO-website · https://github.com/Alanoud-Alotaibi/Roaya-Career-Platform · https://github.com/Alanoud-Alotaibi/sdaia-capstone-data-pipeline |  |  | https://waadalsaif1-beep.github.io/DAICO-website/index.html | 72 | نموذجا DAICO (موقع منشور حيًّا بمنهج هندسة الوكلاء) وRoaya لمنصة مسارات مهنية. ✅ أُعيد التحقق 24 يوليو 2026: الملف الشخصي وREADME المستودعين يؤكدان الانتساب لورشة أكاديمية سدايا (آخر تحديث 4 يوليو 2026). 🔄 تحديث 29 يوليو 2026: نشرت مشروع تخرج جديدًا لبرنامج «هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO)» بشارة «Program-SDAIA Academy» (22–23 يوليو 2026) — برنامج ثانٍ موثّق. |
+| 16 | رائد الشمري | Rayid Alshammari | معسكر أكاديمية سدايا | ديسمبر 2025 | غير موثّق علنًا | «مهندس ذكاء اصطناعي» (وصف ذاتي) |  | https://www.linkedin.com/in/rayid-al-shammari-337272293 | https://github.com/RayidAlshammari |  |  |  | 72 | أداة تحليل إحصائي لملفات CSV بواجهتي سطر أوامر (Typer) ورسومية (Streamlit).  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي (2026-02-11) — سجل شهادات 2025–2026 (داخلي). التخصص: LLMs, RAG, Agentic AI, MLOps — production-oriented AI systems. |
+| 17 | مروج الراجحي | Morooj Alrajhi | برنامج وكلاء الذكاء الاصطناعي AI Agents | أبريل 2026 | غير موثّق علنًا (دفعة حديثة) | خريجة علوم حاسب | Computer Science graduate |  | https://github.com/morooj66/Smart-Career-Decision-System · https://github.com/morooj66 |  |  |  | 72 | نظام القرار المهني الذكي: خط أنابيب من 5 وكلاء (LangChain + LangGraph + GPT-4o-mini) ينتج درجات مطابقة مهنية 0–100.  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: البرمجة التوليدية (2026-06-24) — سجل شهادات 2025–2026 (داخلي). التخصص: Data & AI projects (CareerMind-AI, interior-designer-ai-app, SQL). |
+| 18 | ريم العمري | Reem Alamri | هندسة البيانات الحديثة للذكاء الاصطناعي | يوليو 2026 | — | — |  |  | https://github.com/Reem-Alamri/customer-support-intelligence-platform · https://github.com/Reem-Alamri/customer-support-intelligence-platform-v2 |  |  |  | 72 | منصة ذكاء دعم العملاء Lakehouse RAG: خط ابتلاع + بحيرة بيانات + بحث هجين (8,469 حدثًا؛ 4,829 مقطع RAG؛ 9/9 فحوص جودة ناجحة). 🔄 تحديث 29 يوليو 2026: اكتمل المشروع بنسخته الثانية (4 يوليو 2026) — أزيلت صفة «قيد الإتمام». |
+| 19 | زياد المنيف | Ziyad Almoneef | هندسة البيانات الحديثة للذكاء الاصطناعي | يوليو 2026 | — | — |  |  | https://github.com/ZiyadAlmoneef/support-intelligence-platform · https://github.com/ZiyadAlmoneef |  |  |  | 72 | منصة دعم العملاء الذكية Streaming RAG: بنية Kafka + Delta Lake + Qdrant + Airflow مع حَكم LLM معاير (اتفاق 97.8%). 🔄 تحديث 29 يوليو 2026: المستودع مكتمل (15–16 يوليو 2026). ✅ أُعيد التحقق في مسح 29 يوليو. التخصص: Machine learning / TensorFlow; built 'Lingalearn', an AI-powered English conversation tutor with live voice interaction. |
+| 20 | عبدالعزيز الموسى | Abdulaziz Almousa | معسكر الذكاء الاصطناعي التطبيقي AAI | ربيع 2026 | — | — |  |  | https://github.com/az1800/SDAIA-AAI-Bootcamp---Abdulaziz-Almousa-repo |  |  |  | 88 | دفعة حديثة — تُتابع نتائجها لاحقًا.  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: الذكاء الاصطناعي التطبيقي، حوكمة وجودة البيانات (2026-05-20 – 2026-06-06) — سجل شهادات 2025–2026 (داخلي). |
+| 21 | صالح التويجري | Saleh Altuwaijri | معسكر T5 | التحق ~يوليو 2024 | — | يعرّف نفسه بـ«SDAIA T5» |  | https://ae.linkedin.com/posts/saleh-altuwaijri_grateful-to-join-t5-bootcamp-by-sdaia-academy-activity-7220784109793509376-bJch |  |  |  |  | 72 | الالتحاق بالبرنامج مؤكد بمنشوره الذاتي؛ لا نتيجة توظيف ظاهرة بعد. |
+
+## توثيق متوسط — 9 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | لينا العنزي | Lena Alenazi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | غير موثّق علنًا | محللة/مهندسة بيانات وذكاء اصطناعي |  | https://www.linkedin.com/in/lena-alenazi/ | https://github.com/lenaAlenazi/Bootcamp-SDAIA-T5 · https://github.com/lenaAlenazi |  |  | https://lenaalenazi.carrd.co/ · https://orcid.org/0009-0002-7959-0674 | 58 | 🏆 جائزة مركز «ذكاء» (منشآت) عن مشروع CLQC لتصنيف أمراض أوراق البُن، ومشروع GreenGuard ضمن أفضل 3 مشاريع بالمعسكر (روبوت زراعي برؤية حاسوبية). شهادات: AWS Data Engineer وCloud Practitioner وGoogle Data Analytics. التخصص: Deep learning (coffee leaf disease classification), IoT. |
+| 2 | عبدالرحمن القناص | Abdulrahman Alqannas | ممارس النماذج اللغوية الكبيرة | 2023 | شركة علم Elm | أخصائي تعلم آلة وتحليلات متقدمة (2023) | Management information system — Al-Imam Muhammad Ibn Saud Islamic University — 2019 | https://www.linkedin.com/in/abdulrahman-alqannas/ |  | https://www.kaggle.com/abdulrahmanalqannas |  |  | 60 | أسرع أثر توظيفي في بيانات الأكاديمية: الالتحاق بعلم في سنة التخرج نفسها. بكالوريوس نظم معلومات إدارية — جامعة الإمام (2019). نشاطه في علوم البيانات مؤكد عبر Kaggle. |
+| 3 | أسماء الزهراني | Asma Alzahrani | معسكر النماذج اللغوية الكبيرة + معسكر ثلاثة أشهر | 2023–2024 | سدايا SDAIA | موظفة (2024) بعد تدريب تعاوني (2023) |  | https://www.linkedin.com/in/asma-alzahrani-/ |  |  |  |  | 33 | تحوّل موثّق بمنشوراتها العامة من متدربة تعاونية إلى موظفة في سدايا. عرضت بحثًا في ScholarCon 2025 عن ضبط XGBoost لكشف الاحتيال المالي. شهادة SysOps (طويق × AWS). |
+| 4 | هدى اسكندر | Huda Iskandar | ممارس تعلم الآلة + معسكر تعلم الآلة | 2023 | أرامكو السعودية | محللة مشاركة لأنظمة تقنية المعلومات (2025) | Artificial intelligent — The University of Manchester — 2025 | https://www.linkedin.com/in/huda-iskandar-73a1831b8/ |  |  |  |  | 60 | بكالوريوس ذكاء اصطناعي — جامعة مانشستر (2025). البيانات من مصدر الأكاديمية ويوصى بتحقق مباشر قبل النشر. |
+| 5 | عبدالرحمن الحاجي | Abdulrahman Alhaji | معسكر حوكمة البيانات | ~ديسمبر 2023 | stc | (وفق ترويسة ملفه العام) |  | https://www.linkedin.com/in/abdulrahman-alhaji/ |  |  |  |  | 60 | أتم معسكر حوكمة البيانات (شهر كامل) بتغطية أطر DAMA وNDMO وGDPR — منشور علني بنصه الكامل. |
+| 6 | أحمد صميلي | Ahmed Somili | معسكر T5 (جازان) | الدفعة غير معروفة | غير ظاهرة علنًا | مهندس بيانات / BI (وصف ذاتي) |  | https://sa.linkedin.com/in/7iz7 | https://github.com/7iz7 |  |  |  | 60 | انتساب مؤكد بمصدرين ذاتيين (GitHub + عنوان LinkedIn). مشاريع: CAMP-AI للرؤية الحاسوبية ومنصة إرشاد أكاديمي. التخصص: Based in Jazan (consistent with the Jazan T5 cohort recorded in the DB). |
+| 7 | أسيل بن طلحة | Aseel Bin Talhah | T5 (انتساب مستنتج) | غير معروفة | سمة SIMAH — السعودية للمعلومات الائتمانية | أخصائية ذكاء أعمال (theorg: «أولى») |  | https://www.linkedin.com/in/aseel-bin-talhah-3257b417b/ |  |  |  |  | 28 | التوظيف موثّق بمصدرين؛ مسمّى «أولى/Senior» مؤشر ترقية غير مؤرَّخ. انتساب سدايا من تطابق فهرسة فقط. |
+| 8 | معاذ الغامدي | Muath A. Al-Ghamdi | T5 (انتساب مستنتج) | غير معروفة | مصرف الراجحي | أخصائي تسعير ومحفظة وتحليلات (RocketReach: «أول») |  | https://www.linkedin.com/in/muath-al-ghamdi/ |  |  |  |  | 25 | التوظيف موثّق بمصدرين؛ مؤشر ترقية «Senior» غير مؤرَّخ. انتساب سدايا يتطلب تأكيدًا. |
+| 9 | إياس بارود | Iyas Baroud | صلة سدايا غير متحققة — خريج أكاديمية كاوست | — | علو Olo (ناشئة رياضية بالرياض، تأسست 2023) | مهندس برمجيات (موظف مبكر) |  | https://www.linkedin.com/in/iyas-baroud/ |  |  |  | https://academy.kaust.edu.sa/alumni/iyas-baroud/ | 60 | ⚠️ تصحيح موثّق: ليس مؤسسًا لعلو — المؤسسان فيصل الشهري ومحمد شلبي. انتماؤه الموثّق أكاديمية كاوست، ولم تُعثر صلة بسدايا في أي مصدر. |
+
+## قصص داخلية — 5 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | جهاد الجازي | Jehad Aljazi | معسكر هندسة البيانات | 2025 | المؤسسة العامة للتأمينات الاجتماعية GOSI | مهندس بيانات (2025) |  |  |  |  |  |  | 55 | بكالوريوس علوم حاسب — جامعة أم القرى (2024). حصل خلال المعسكر على 5 شهادات احترافية من Microsoft ثم التحق بـGOSI في العام نفسه. |
+| 2 | مجد الزيادي | Majd Alziyadi | معسكر مطوري أنظمة ServiceNow | 2025 | IBM | مطوّر تطبيقات (2025) |  |  |  |  |  |  | 55 | بكالوريوس علوم حاسب — جامعة الباحة (2024). حصل على شهادتي ServiceNow الاحترافيتين CAD وCSA ثم التحق بشركة IBM. |
+| 3 | حسين محسن | Hussein Mohsen | معسكر هندسة البيانات | 2025 | أكاديمية كاوست KAUST Academy | مساعد تدريس ذكاء اصطناعي (2025) |  |  |  |  |  |  | 55 | بكالوريوس ذكاء اصطناعي — جامعة الإمام عبدالرحمن بن فيصل (2024). 5 شهادات احترافية من Microsoft خلال المعسكر ثم مسار أكاديمي بحثي في كاوست. |
+| 4 | هند الحجيلان | Hind Alhujailan | معسكر مطوري أنظمة ServiceNow | 2025 | سدايا SDAIA | مسؤولة تميز خدمات الحوسبة السحابية (2025) |  |  |  |  |  |  | 55 | بكالوريوس تقنية المعلومات — جامعة المجمعة (2024). شهادتا ServiceNow (CAD + CSA) ثم توظيف مباشر في سدايا. |
+| 5 | أمل المبارك | Amal Almubarak | معسكر هندسة البيانات | 2025 | المؤسسة العامة للتأمينات الاجتماعية GOSI | أخصائية ذكاء اصطناعي (2025) |  | https://sa.linkedin.com/in/amal-almuarik |  |  |  |  | 55 | بكالوريوس علوم حاسب — جامعة الملك سعود (2024). 5 شهادات احترافية من Microsoft خلال معسكر هندسة البيانات ثم التحقت بـGOSI. |
+
+## فرق المشاريع — 22 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | عبدالرحمن الغامدي | Abdulrahman Alghamdi | فريق RASYD — T5 أكتوبر 2024 |  |  |  |  |  | https://github.com/AbdulrhmanBakrgh |  |  |  | 70 | IT/تحليل بيانات (وصف ذاتي) · اسم شائع التخصص: IT / data analysis. |
+| 2 | الهنوف الحميد | Alhanouf Alhumid | فريق RASYD — T5 أكتوبر 2024 |  |  |  |  |  | https://github.com/alhanoufalh · https://github.com/NasserAlsaqer/Detect-Violated-Motorbikes-Delivery-RASYD |  |  |  | 54 | عضوة خامسة في فريق مشروع التخرج RASYD (كشف مخالفات دراجات التوصيل) — اكتشاف جديد من قراءة ملف المشروع الرسمي. معسكر T5 أكتوبر 2024. لم يُعثر على جهة عمل. |
+| 3 | عبدالعزيز كوجا | Abdulaziz Koja | فريق سُم — T5 أكتوبر 2024 |  |  | AI Engineer (self-described) |  | https://www.linkedin.com/in/abdulazizkoja | https://github.com/Abdulazizkoja1 |  |  | https://x.com/abdulazizkhoja4 | 70 | «مهندس ذكاء اصطناعي» (وصف ذاتي) التخصص: Python, Pandas, NLP, Machine Learning, Computer Vision. |
+| 4 | زياد قطب | Ziyad Qutub | فريق سُم — T5 أكتوبر 2024 |  |  |  |  |  | https://github.com/ZiyadQutub |  |  |  | 68 | مستودعات مقررات KFUPM |
+| 5 | أحمد باشماخ | Ahmed Bashmmakh | فريق سُم — T5 أكتوبر 2024 |  |  |  |  |  | https://github.com/AhmedBashmmakh |  |  |  | 70 | مالك مستودع المشروع |
+| 6 | سارة الكنهل | Sarah Alkanhal | فريق سُم — T5 أكتوبر 2024 |  |  |  |  |  | https://github.com/sarahmkk11 |  |  |  | 68 | ملف بسيط |
+| 7 | محمد الرويس | Mohammed Alrowais | فريق ADEL — T5 أكتوبر 2024 |  |  |  |  |  |  |  |  |  | 60 | README المشروع فقط |
+| 8 | خالد الغامدي | Khaled AlGhamdi | فريق ADEL — T5 أكتوبر 2024 |  |  |  |  |  |  |  |  |  | 58 | README فقط · اسم شائع  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال (2026-04-14) — سجل شهادات 2025–2026 (داخلي). |
+| 9 | وليد الإخوان | Waleed Al Ikhwan | فريق ADEL — T5 أكتوبر 2024 |  |  |  |  |  | https://github.com/Waleed-ikh72 |  |  |  | 68 | مالك نسخة من المستودع |
+| 10 | نوف المطيري | Nouf Almutairi | فريق نبيه — أكتوبر 2024 |  |  |  |  |  |  |  |  |  | 58 | README فقط · اسم شائع جدًا  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: البرمجة التوليدية، حوكمة وجودة البيانات (2026-05-20 – 2026-06-24) — سجل شهادات 2025–2026 (داخلي). |
+| 11 | منار الطلحي | Manar Altalhi | فريق نبيه — أكتوبر 2024 |  |  |  |  |  |  |  |  |  | 60 | README فقط |
+| 12 | مريم السلمي | Maryam Alsulami | فريق نبيه — أكتوبر 2024 |  |  |  |  |  |  |  |  |  | 60 | README فقط |
+| 13 | هيا المالكي | Haya Almalki | فريق كشف الحوادث — T5/طويق 2024 |  |  |  |  |  | https://github.com/Je-97/Project-Accident-Detection |  |  |  | 65 | عضو فريق مشروع تخرج موثّق؛ كل النتائج المهنية غير موثّقة علنًا. |
+| 14 | جيهان المطيري | Jehan Almutairi | فريق كشف الحوادث — T5/طويق 2024 |  |  |  |  |  | https://github.com/Je-97/Project-Accident-Detection |  |  |  | 65 | عضو فريق مشروع تخرج موثّق؛ كل النتائج المهنية غير موثّقة علنًا. |
+| 15 | حنان محمد | Hanan Mohammed | فريق كشف الحوادث — T5/طويق 2024 |  |  |  |  |  | https://github.com/Je-97/Project-Accident-Detection |  |  |  | 65 | عضو فريق مشروع تخرج موثّق؛ كل النتائج المهنية غير موثّقة علنًا. |
+| 16 | دانة العنزي | Dana Alanazi | فريق AGRONA — T5 ~2024 |  |  |  |  |  | https://github.com/samaalharbi2/AGRONA-Plant-Disease-Detection |  |  |  | 65 | عضو فريق مشروع تخرج موثّق؛ كل النتائج المهنية غير موثّقة علنًا. |
+| 17 | فاطمة الحيري | Fatimah Alhairi | فريق AGRONA — T5 ~2024 |  |  |  |  |  | https://github.com/samaalharbi2/AGRONA-Plant-Disease-Detection |  |  |  | 65 | عضو فريق مشروع تخرج موثّق؛ كل النتائج المهنية غير موثّقة علنًا. |
+| 18 | لجين عبدالله | Lujain Abdullah | فريق AGRONA — T5 ~2024 |  |  |  |  |  | https://github.com/samaalharbi2/AGRONA-Plant-Disease-Detection |  |  |  | 65 | عضو فريق مشروع تخرج موثّق؛ كل النتائج المهنية غير موثّقة علنًا. |
+| 19 | طلال (TalalMJ) | Talal | مشاريع T5 — الدفعة غير محددة |  |  |  |  |  | https://github.com/TalalMJ |  |  | https://x.com/Alnujayman | 65 | مشاركة T5 مؤكدة ذاتيًا |
+| 20 | شروق عبدالله | Shroaq Abdullah | المشروع الأول لمعسكر T5 | 2021 |  |  |  |  | https://github.com/shroaqabdullah/MTA-Shroaq · https://github.com/shroaqabdullah |  |  |  | 52 | مؤكدة التخرج بمستودع MTA-Shroaq الموصوف «أول مشروع في معسكر T5 لعلوم البيانات» بتواريخ commits 1 أكتوبر – 23 نوفمبر 2021 (مؤكدة بالاستنساخ) — أي ضمن موجة خريف 2021. |
+| 21 | الجوهرة (Aljwharah-h) | Aljwharah | برنامج وكلاء الذكاء الاصطناعي — 2026 |  |  |  |  |  | https://github.com/Aljwharah-h/SDAIA-AI-Agents-System-program |  |  |  | 72 | 23 commit — LangChain وبحث دلالي ✅ أُعيد التحقق 24 يوليو 2026 (آخر تحديث للمستودع 10 يونيو 2026). |
+| 22 | متدرب سدايا–كاوست (Aa-Devv) | Aa-Devv | مسابقة سدايا–كاوست Kaggle — ~2022 |  |  |  |  |  |  | https://www.kaggle.com/competitions/sdaia-kaust-ai-bootcamp |  |  | 60 | تصنيف حروف عربية >95% |
+
+## الملف الرسمي 2023 — 101 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | أماني الرحيلي | Amani Alrehaili | Sdaia ML Bootcamp, Sep 2023 | مجموعة سبتمبر | Ministry of Human Resources and Social Development | Business Intelligence Analyst | Computer Science — Taibah University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Taibah University (2023). شهادات سدايا: Sdaia ML Bootcamp, Sep 2023. |
+| 2 | أريج شويل | Areej Showail | ML Practitioner, Nov 2023 Machine learning bootcamp, Oct 2023 | مجموعة سبتمبر | Synapse | Co-Founder | Artificial intelligent — University of Jeddah — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Artificial intelligent — University of Jeddah (2025). شهادات سدايا: ML Practitioner, Nov 2023 Machine learning bootcamp, Oct 2023. صفة «مؤسِّسة مشاركة» واردة في الملف الرسمي؛ لم يتسنَّ التحقق العلني منها بعد. |
+| 3 | بنان البدر | Benan Albadr | برامج الأكاديمية | مجموعة سبتمبر | Confidential Government | Cyber Security Specialist | Computer Science — Majmaah University — 2022 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Majmaah University (2022). |
+| 4 | فاطمة المحفوظ | Fatima Al Mahfoodh | ML Practitioner, Nov 2023 SDAIA ML Bootcamp, Oct 2023 | مجموعة سبتمبر | Plat4mation | Technical Consultant | Computer Science — Imam Abdulrahman Bin Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: ML Practitioner, Nov 2023 SDAIA ML Bootcamp, Oct 2023. |
+| 5 | فاطمة حزازي | Fatimah Hazzazi | برامج الأكاديمية | مجموعة سبتمبر | Private Company | Business analysis Team Lead | Management Information Systems — Imam Abdulrahman Bin Faisal University — 2016 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Management Information Systems — Imam Abdulrahman Bin Faisal University (2016). |
+| 6 | حمد الباقي | Hamad Albaqi | برامج الأكاديمية | مجموعة سبتمبر | NCGR - National Center for Government Resources Sys | Data & AI Engineer | Computer Science — Al-Imam Muhammad Ibn Saud Islamic University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Al-Imam Muhammad Ibn Saud Islamic University (2024). |
+| 7 | هتون الشكرة | Hatun Alshkrah | Quality Assurance Engineer, Mar 2023 ML Practitione, Nov 2023 Machine Learning Bootcamp, Oct 2023 | مجموعة سبتمبر | MIS - Al Moammar Information Systems Co | Quality Assurance Engineer Specialist | Information Technology — Al-Imam Muhammad Ibn Saud Islamic University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Information Technology — Al-Imam Muhammad Ibn Saud Islamic University (2023). شهادات سدايا: Quality Assurance Engineer, Mar 2023 ML Practitione, Nov 2023 Machine Learning Bootcamp, Oct 2023. |
+| 8 | هيا البقمي | Haya Albaqami | Machine learning Practitioner, Nov 2023 Sdaia ML Bootcamp, Sep 2023 | مجموعة سبتمبر | Zakat, Tax and Customs Authority | Data Engineer | Computer Science — Taif University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Taif University (2024). شهادات سدايا: Machine learning Practitioner, Nov 2023 Sdaia ML Bootcamp, Sep 2023. بطاقة تعريفية (25 يوليو 2026) تؤكد البيانات: بكالوريوس علوم الحاسب — جامعة الطائف، مهندسة بيانات لدى هيئة الزكاة والضريبة والجمارك. |
+| 9 | مهند الدخيل | Mohanad Al Dakheel | SDAIA ML BOOTCAMP, Oct 2023 | مجموعة سبتمبر | aramco | Artificial Intelligence Engineer | Computer Science — King AbdulAziz University — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — King AbdulAziz University (2025). شهادات سدايا: SDAIA ML BOOTCAMP, Oct 2023. بطاقة تعريفية (25 يوليو 2026): تذكر الجهة «رامكو (Ramco)» مقابل aramco في الملف الرسمي، وتذكر معسكرًا لتعلم الآلة في 2025 إضافة إلى معسكر 2023. |
+| 10 | نوال القرني | Nawal Alqarni | SDAIA ML Bootcamp, oct 2023 | مجموعة سبتمبر | SDAIA | Data Analyst | Data science and analytics — University of Jeddah — 2023 | https://www.linkedin.com/in/nawal-alqarni-446339209/ |  |  |  |  | 85 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Data science and analytics — University of Jeddah (2023). شهادات سدايا: SDAIA ML Bootcamp, oct 2023. بطاقة تعريفية (31 يوليو 2026): عالمة بيانات (Data Scientist) لدى DATA UNIVERSE منذ 2023 بعد المعسكر مباشرة — يعضده فهرس ZoomInfo (Data Scientist @ Data Universe، بريد datauniverse.ai)؛ مقابل SDAIA / Data Analyst في الملف الرسمي — التسلسل الزمني بين الجهتين غير محسوم، وأُبقي قيد الملف الرسمي في الأعمدة الرئيسة. أُضيف رابط LinkedIn من البطاقة. |
+| 11 | رغد القبالي | Raghad Alqobali | SDAIA ML BOOTCAMP, Oct 2023 LLMs Practitioner, Dec 2023 | مجموعة سبتمبر | SDAIA | AI Engineer | Computer Science — University of Tabuk — 2019 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — University of Tabuk (2019). شهادات سدايا: SDAIA ML BOOTCAMP, Oct 2023 LLMs Practitioner, Dec 2023. |
+| 12 | رغد العروان | Raghad Alorwan | ML Practitioner, Nov 2023 | مجموعة سبتمبر | DXC Technology | ERP Analyst | Computer Science — King Saud University — 2022 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — King Saud University (2022). شهادات سدايا: ML Practitioner, Nov 2023. |
+| 13 | رهف المزيني | Rahaf Almuzaini | ML Practitioner, Nov 2023 Machine learning bootcamp, Oct 2023 | مجموعة سبتمبر | WAJDLIFE MEDICAL | Software Specialist | Computer Science — Taibah University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Taibah University (2023). شهادات سدايا: ML Practitioner, Nov 2023 Machine learning bootcamp, Oct 2023. |
+| 14 | رنا المحمدي | Rana Almohammadi | ML Practitioner, Nov 2023 | مجموعة سبتمبر | aramco | IT Systems Analyst | Information Systems — Taibah University — 2017 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Information Systems — Taibah University (2017). شهادات سدايا: ML Practitioner, Nov 2023. |
+| 15 | روان الفجحان | Rawan Alfajhan | ML Practitioner, Nov 2023 | مجموعة سبتمبر | ALJABR FINANCE | Enterprise Risk&BCM Specialist | Applied Mathematics — Imam Abdulrahman Bin Faisal University — 2021 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Applied Mathematics — Imam Abdulrahman Bin Faisal University (2021). شهادات سدايا: ML Practitioner, Nov 2023. |
+| 16 | سارة العلوي | Sarah Alalawi | SDAIA ML BOOTCAMP, Oct 2023 | مجموعة سبتمبر | Confidential Government | Data Management Officer | Computer Science — Taibah University — 2018 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — Taibah University (2018). شهادات سدايا: SDAIA ML BOOTCAMP, Oct 2023. |
+| 17 | شذا الحربي | Shada F. Alharbi | ML Practitioner, Nov 2023 | مجموعة سبتمبر | EJADA | IT Support Engineer | Information Technology — Qassim University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Information Technology — Qassim University (2024). شهادات سدايا: ML Practitioner, Nov 2023. |
+| 18 | شهد محمد الشهري | Shahad Mohammed Alshehri | SDAIA ML BOOTCAMP, Nov 2023 | مجموعة سبتمبر | GOSI - General Organization for Social Insurance | Senior Software Develover | Computer Engineering — Taif University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Engineering — Taif University (2023). شهادات سدايا: SDAIA ML BOOTCAMP, Nov 2023. |
+| 19 | وئام عباس | weam Abas | SDAIA LLM Bootcamp, Dec 2023 SDAIA ML Bootcamp, Oct 2023 | مجموعة سبتمبر | أمانة عسير | AI Engineer | Computer Science — King Khalid University — 2024 | https://www.linkedin.com/in/weam-abbas2/ |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس Computer Science — King Khalid University (2024). شهادات سدايا: SDAIA LLM Bootcamp, Dec 2023 SDAIA ML Bootcamp, Oct 2023. بطاقة تعريفية (25 يوليو 2026): تدرّج وظيفي — محلل بيانات (2024) ← مهندس ذكاء اصطناعي (2025)؛ أُضيف رابط الملف الشخصي على LinkedIn. |
+| 20 | أحمد الغيث | Ahmed Alghaith | LLMs Practitioner, Nov 2023 | مجموعة أكتوبر | TAHAKOM | AI Developer | Software engineering — King Saud University — 2023 |  |  |  |  | https://www.zoominfo.com/p/Ahmed-Alghaith/9596612896 · https://theorg.com/org/tahakom/teams/ai-development | 84 | مؤكد بمصدرين علنيين مستقلين: مجمّع بيانات + كشف فريق تطوير الذكاء الاصطناعي على TheOrg. تخرج جامعي 2023 (هندسة برمجيات — جامعة الملك سعود) + معسكر أكتوبر 2023 + مسمى «مطوّر» (لا Senior) ⇒ اتساق قوي مع كونها الوظيفة الأولى. تاريخ البدء غير مؤكد. |
+| 21 | ديم القحطاني | Dime Alqahtani | LLMs Practitioner,Nov 2023 | مجموعة أكتوبر | Zakat,Tax and customs Authority | Risk analyst trainee | Computer science and engineering — University of Hafr albatin |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science and engineering — University of Hafr albatin. شهادات سدايا: LLMs Practitioner,Nov 2023. |
+| 22 | إيمان السلمي | Eman Alsalmi | Large Lngeuage model practitioner,Nov2023 | مجموعة أكتوبر | SAUDI AIRLINES | Analyst | Computer science — Umm Al-Qura University — 2019 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — Umm Al-Qura University (2019). شهادات سدايا: Large Lngeuage model practitioner,Nov2023. |
+| 23 | فيصل الهميزي | Faisal Alhumayzi | LLMs Practitioner,Nov 2023; Micro-Credential in Data Science | مجموعة أكتوبر | alrajhi bank | Senior AI & Data Science Officer | Computer software engineering — King Saud University — 2022 | https://www.linkedin.com/in/faisal-alhumayzi/ |  |  |  |  | 85 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer software engineering — King Saud University (2022). شهادات سدايا: LLMs Practitioner,Nov 2023. بطاقة تعريفية (31 يوليو 2026): مسؤول أول ذكاء اصطناعي وعلم بيانات (Senior AI & Data Science Officer) لدى مصرف الراجحي منذ 2023 — يعضده فهرس ZoomInfo (AI & Data Science Senior Specialist @ Al Rajhi Bank)؛ الملف الرسمي يذكر Assistant manager AI Innovation solutions (ترقية مرجّحة). البطاقة تضيف شهادة مصغرة في علم البيانات (Micro-Credential in Data Science) وتؤرخ البرنامجين 2022، مقابل Nov 2023 في سجل الشهادات الرسمي — اعتُمد تأريخ السجل الرسمي. تصحيح التهجئة: الهميزي (سابقًا: الحميزي) وفق البطاقة ومعرّف LinkedIn. |
+| 24 | فايز الجهني | Faiz Aljohani | LLMs Practitioner,Nov 2023 | مجموعة أكتوبر | Confidential l Government | Software Developer | Computer software engineering — King Fahd University of Petroleum & Minerals - KFUPM — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer software engineering — King Fahd University of Petroleum & Minerals - KFUPM (2024). شهادات سدايا: LLMs Practitioner,Nov 2023. |
+| 25 | غيداء الجابر | Ghaida Aljaber | Large Lngeuage models practitioner Cerificate ,Nov2023 Al assisted Programming with ChatGPT,Nov2023 | مجموعة أكتوبر | TAHAKOM | Software Developer | Computer software engineering — King Saud University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer software engineering — King Saud University (2024). شهادات سدايا: Large Lngeuage models practitioner Cerificate ,Nov2023 Al assisted Programming with ChatGPT,Nov2023. |
+| 26 | مها المعيثر | Maha Almuaythir | Large Lngeuage models practitioner Cerificate by SDAIA,Nov2023 | مجموعة أكتوبر | Ericsson | IT Engineering | Information Technology — King Saud University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Information Technology — King Saud University (2024). شهادات سدايا: Large Lngeuage models practitioner Cerificate by SDAIA,Nov2023. |
+| 27 | ندى الخريجي | Nada Alkhuraiji | LLMs Practitioner,Nov 2023 | مجموعة أكتوبر | وادي طيبة Taibah Valley | مهندسة ذكاء اصطناعي وسحابة أولى (2025–) | Computer science — Taibah University |  |  |  |  | https://rocketreach.co/nada-alkhuraiji-email_729524544 · https://www.zoominfo.com/p/Nada-Alkhuraiji/8351248525 | 45 | لا تستوفي معيار «أول توظيف بعد التخرج»: كانت بوادي طيبة منذ نحو 2022 — أي قبل معسكر 2023 — فالمعسكر لم ينتج توظيفها الأول، وإن كانت الترقية إلى Senior (2025) لاحقة له. مؤكدة بمصدرين علنيين. تُدرج للشفافية. |
+| 28 | نجلاء الساعدي | Najla Alsaedi | LLM Practitioner Certificates,Nov 2023 | مجموعة أكتوبر | Automated Trading | Lead Al Researcher | Computer science — Taibah University — 2019 | https://www.linkedin.com/in/najla-alsaedi-b53405198/ · https://www.linkedin.com/posts/najla-alsaedi-b53405198_huggingface-objectdetection-zeroshotlearning-activity-7186297521533554689-PLrO |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — Taibah University (2019). شهادات سدايا: LLM Practitioner Certificates,Nov 2023. نشاط تقني عام موثّق على LinkedIn (منشورات عن HuggingFace وكشف الكائنات). بطاقة تعريفية (25 يوليو 2026) تؤكد البيانات (تهجئة البطاقة: «الصاعدي»)؛ أُضيف رابط الملف الشخصي على LinkedIn. |
+| 29 | نورة الهجري | Noura Alhijri | Large Lngeuage models practitioner Cerificate,Nov 2023 | مجموعة أكتوبر | aramco | pet engrg system Analyst | Computer Science (Software Engineering Track) — King AbdulAziz University — 2019 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer Science (Software Engineering Track) — King AbdulAziz University (2019). شهادات سدايا: Large Lngeuage models practitioner Cerificate,Nov 2023. |
+| 30 | أمنية إبراهيم | Omniyyah Ibrahim | Large Lngeuage model practitioner certificate ,Nov 2023 | مجموعة أكتوبر | King Abdulaziz City for Science and Technology (KACST) | Researcher | Computer science — Taibah University — 2018 | https://www.linkedin.com/in/omniyyah-yahya/ |  |  |  | https://paperswithcode.com/author/omniyyah-ibrahim | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — Taibah University (2018). شهادات سدايا: Large Lngeuage model practitioner certificate ,Nov 2023. التخصص: AI research (indexed as a paper author). |
+| 31 | سعد القرني | Saad Algarny | LLMs Practitioner,Nov 2023 | مجموعة أكتوبر | SAMI Advanced Electronics — الشركة السعودية للصناعات العسكرية (سامي) | Associate Software Engineer | software engineering — King Fahd University of Petroleum & Minerals - KFUPM — 2024 | https://www.linkedin.com/in/saadalgarny/ |  |  |  |  | 85 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس software engineering — King Fahd University of Petroleum & Minerals - KFUPM (2024). شهادات سدايا: LLMs Practitioner,Nov 2023.  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: محترف إدارة البيانات المعتمد (2026-06-16) — سجل شهادات 2025–2026 (داخلي). بطاقة تعريفية (31 يوليو 2026): التحق ببرنامج LLM Practitioner أثناء دراسته الجامعية (2023)، وبعد تخرجه من كفوبم 2024 انضم إلى SAMI مهندس برمجيات مساعد — يؤكده عنوان ملفه على LinkedIn (Associate Software Engineer – SAMI Advanced Electronics)؛ الملف الرسمي 2023 يذكر بيور الرقمية Pure Digital / Business Analyst (دور أسبق مرجّح). حُدّثت جهة العمل والمسمى وأُضيف رابط LinkedIn. |
+| 32 | وجد باطرفي | Wajd Batarfi | LLM,Nov2023 | مجموعة أكتوبر | Sela / صلة | People Data Analyst | DATA SCIENCE — University of Jeddah — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس DATA SCIENCE — University of Jeddah (2024). شهادات سدايا: LLM,Nov2023. |
+| 33 | علياء إبراهيم | Alya Ibrahim | Machine learning bootcamp,Nov 2023 | مجموعة أكتوبر | Government Expenditure & Projects Efficiency Authority / هيئة كفاءة الإنفاق والمشروعات الحكومية | Data Science Specialist | Computer science — Prince Sattam bin Abdulaziz University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — Prince Sattam bin Abdulaziz University (2023). شهادات سدايا: Machine learning bootcamp,Nov 2023. بطاقة تعريفية (31 يوليو 2026): محلل ذكاء أعمال (Business Intelligence Analyst) لدى EXPRO — وEXPRO هي العلامة الإنجليزية لهيئة كفاءة الإنفاق والمشروعات الحكومية نفسها، فلا تعارض في الجهة؛ الملف الرسمي يذكر المسمى Data Science Specialist — لم يُعثر على تأكيد علني لأيٍّ من المسمّيين. تهجئة البطاقة: «عليا إبراهيم». |
+| 34 | بشرى الحربي | Bushra Alharbi | ML bootcamps,Nov 2023 | مجموعة أكتوبر | Umm Al Qura For Development and Construction | Data Science Specialist | Computer information system — King AbdulAziz University — 2022 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer information system — King AbdulAziz University (2022). شهادات سدايا: ML bootcamps,Nov 2023. |
+| 35 | دانة الخطيب | Danah Alkhatib | ML Practitioner,Nov2023 | مجموعة أكتوبر | BCG Platinion | It Visiting Associate | Computer science — Jubail University College — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — Jubail University College (2025). شهادات سدايا: ML Practitioner,Nov2023. |
+| 36 | فرات البرناوي | FORAT ALBARNAWI | برامج الأكاديمية | مجموعة أكتوبر | stc | Quality Assurance Specialist | Computer Information Systems — King AbdulAziz University |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer Information Systems — King AbdulAziz University. |
+| 37 | فجر المجحد | Fajr Almajhad | ML Practitioner,Nov 2023 | مجموعة أكتوبر | Waslak Logestics Services Organization | Technical support specialist | Computer Programming — Princess Nourah Bint Abdulrahman University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer Programming — Princess Nourah Bint Abdulrahman University (2023). شهادات سدايا: ML Practitioner,Nov 2023. |
+| 38 | حمزة زمزمي | Hamza Zamzami | Machine learning practitioners ,Nov 2023 | مجموعة أكتوبر | Kidana / كدانة | Technical Specialist | Computer science — King Fahd University of Petroleum & Minerals - KFUPM — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — King Fahd University of Petroleum & Minerals - KFUPM (2025). شهادات سدايا: Machine learning practitioners ,Nov 2023. |
+| 39 | جنى غراب | Jana Ghorab | Data Engineering Foundations Path | مجموعة أكتوبر | Saudi Air Navigation Services | Business Intelligence Developer | DATA SCIENCE — University of Jeddah — 2025 |  |  |  |  | https://www.zoominfo.com/p/Jana-Ghorab/10019294419 | 80 | الجهة والمسمى مؤكدان علنيًا ويطابقان الملف الرسمي حرفيًا (مطوّرة ذكاء أعمال — الخدمات السعودية للملاحة الجوية). تاريخ البدء غير مؤكد. |
+| 40 | مشعل السفياني | Meshal Alsofyani | Machine learning practitioners ,Nov 2023 | مجموعة أكتوبر | thmanyah | Product Ops Specialist | Computer science — Jubail Industrial College — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — Jubail Industrial College (2024). شهادات سدايا: Machine learning practitioners ,Nov 2023. |
+| 41 | نرجس مشعل الخرس | Narjes Mishal Alkhars | T5 Data Science and Artificial Intelligence Bootcamp (Traffic Management Bootcamp), Oct 2024 | مجموعة أكتوبر | Accenture Middle East | Management Consulting Analyst | Computer science — King Faisal University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Computer science — King Faisal University (2024). شهادات سدايا: T5 Data Science and Artificial Intelligence Bootcamp (Traffic Management Bootcamp), Oct 2024. |
+| 42 | وديان نقيب | Wedyan Naqeeb | ML bootcamps,Nov 2023 | مجموعة أكتوبر | Dezert Innovation Technology Company | AI Developer | Artificial intelligent — University of Jeddah |  |  |  |  | https://www.zoominfo.com/p/Wedyan-Naqeeb/15014757237 | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Artificial intelligent — University of Jeddah. شهادات سدايا: ML bootcamps,Nov 2023. |
+| 43 | زياد خالد القبيسي | Zyad Khaled Alqobesi | ML Practitioner,Nov 2023 | مجموعة أكتوبر | SDAIA | Software Engineer | Software engineering — King Saud University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة أكتوبر): بكالوريوس Software engineering — King Saud University (2024). شهادات سدايا: ML Practitioner,Nov 2023. |
+| 44 | عبدالإله إسماعيل | Abdulelah Ismail | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Cruise Saudi | IT Infrastructure Managment | Business Administration — King AbdulAziz University — 2020 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Business Administration — King AbdulAziz University (2020). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 45 | عبدالرحمن العميرة | Abdulrahman Alomairah | Large Language Models Practitioner, Dec 2023 | مجموعة نوفمبر | Confidential | Information Security Specialist | Computer Software Engineering — King Fahd University of Petroleum & Minerals - KFUPM — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Software Engineering — King Fahd University of Petroleum & Minerals - KFUPM (2024). شهادات سدايا: Large Language Models Practitioner, Dec 2023. |
+| 46 | عبدالرحمن المري | Abdulrahman Almarri | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | aramco | Exploration System Analyst | Computer Science — King Fahd University of Petroleum & Minerals - KFUPM — 2022 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Fahd University of Petroleum & Minerals - KFUPM (2022). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 47 | أبرار غندورة | Abrar Ghandurah | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | IBM | Application Developer | Computer Science — University of Jeddah — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — University of Jeddah (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 48 | آلاء الحارثي | Alaa Alharthi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Lucidy | AI Engineer | Computer Science — King AbdulAziz University — 2016 | https://www.linkedin.com/in/alaa-alharthi-133440100/ |  |  |  | https://www.zoominfo.com/p/Alaa-Alharthi/14504190999 | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King AbdulAziz University (2016). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 49 | الجازي الخلف | Aljazi Alkhalaf | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Masdr | Quality Assurance Analyst | Computer Science — Imam Abdulrahman Bin Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 50 | أمل البلوي | Amal Albalawi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | University of Prince Mugrin | Lecturer | Information Technology — Taibah University — 2019 | https://www.linkedin.com/in/amal-albalawi-3a915a114/ |  |  |  | https://www.researchgate.net/profile/Amal-Albalawi | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology — Taibah University (2019). شهادات سدايا: LLMs Practitioner, Dec 2023. التخصص: Arabic NLP — co-authored work on Arabic offensive-text classification using emojis (attribution to this specific Amal Albalawi not confirmed). |
+| 51 | دانة عادل المديفر | Danah Adel Almudaifer | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | SDAIA | AI Engineer | Artificial intelligent — Imam Abdulrahman Bin Faisal University — 2023 | https://www.linkedin.com/in/danah-adel-almudaifer/ |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 52 | فاطمة الأحمد | Fatimah Alahmed | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Prince Sultan University | Research Assistant | Biomedical Engineering — King Faisal University — 2020 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Biomedical Engineering — King Faisal University (2020). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 53 | هيفاء العجمي | Hayfa Alajmi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | M-LAB | Artificial Intelligence Specialist | Computer Science — Prince Sattam bin Abdulaziz University — 2023 | https://sa.linkedin.com/in/hayfa-alajmi |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Prince Sattam bin Abdulaziz University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. التخصص: Artificial intelligence / data science. |
+| 54 | هتون الحارثي | Hoton Alharthi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Ministry of National Guard Health Affairs (MNGHA) | Programmer Analyst | Computer Science — Taif University — 2022 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Taif University (2022). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 55 | خديجة باعثمان | Khadijah Baothman | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | SGS - Saudi Ground Services | Recourse Base-data Control | Artificial intelligent — University of Jeddah — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — University of Jeddah (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 56 | ليان جمان | Layan Jaman | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Unilever | Customer Development Intern | Computer Science — Effat University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Effat University (2024). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 57 | منار الربيع | Manar Alrabie | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Technical and Vocational Training Corporation | Information Technology Trainer | Computer Science — Umm Al-Qura University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Umm Al-Qura University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 58 | محمد الخويلدي | Mohammed Alkhwildi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Tabby | Data Analyst | Software Engineering & AI Concentration — King Fahd University of Petroleum & Minerals - KFUPM — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Software Engineering & AI Concentration — King Fahd University of Petroleum & Minerals - KFUPM (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 59 | مرتضى المكي | Murtadha Almakki | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Red Sea Global | Senior Specialist - Hospitality Systems - Technology | Data Science — Northern Kentucky University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Data Science — Northern Kentucky University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 60 | نايف حريصي | Naif Huraysi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | NWC | Asp.Net Developer | BTech — Saudi Electronic University — 2028 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس BTech — Saudi Electronic University (2028). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 61 | نوف أبو حيمد | Nouf Abuhaimed | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | SDAIA | AI Engineer | Artificial intelligent — Princess Nourah Bint Abdulrahman University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — Princess Nourah Bint Abdulrahman University (2024). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 62 | نورة المسيند | Noura Almusaynid | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Arab National Bank | Senior Business Intelligence Analyst | Computer Science — King Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Faisal University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 63 | رغد المغيدي | Raghad Almughidi | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | King Khalid University | UI UX designer | Computer Science — King Khalid University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Khalid University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 64 | رحيل الشهراني | Raheel Alshahrani | LLMs Practitioner, Dec 2023 Data Governance Bootcamp, Oct 2023 | مجموعة نوفمبر | Confidential Government | Data Management and Governance Consultant | Computer Science — King Khalid University |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Khalid University. شهادات سدايا: LLMs Practitioner, Dec 2023 Data Governance Bootcamp, Oct 2023. |
+| 65 | رضا سبع | Reda Sebaa | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Ultra Information Technology | System Engineer | Computer Science — Royal Commission for Jubail and Yanbu, Jubail Industrial College — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Royal Commission for Jubail and Yanbu, Jubail Industrial College (2024). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 66 | ريما الكريديس | Reema Alkuraydis | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Confidential Government | Graduate Development Program | Computer information systems — King AbdulAziz University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer information systems — King AbdulAziz University (2024). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 67 | شبيب الدوسري | Shabib Aldawsari | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | The Saudi National Bank - SNB | Global Markets Officer - Global & Large Corporates - Treasury Division | Computer Software Engineering — King Fahd University of Petroleum & Minerals - KFUPM — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Software Engineering — King Fahd University of Petroleum & Minerals - KFUPM (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 68 | شهد الخليفة | Shahad AlKhalifa | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | SITE | Senior Data Scientist | Computer Science — King Saud University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Saud University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 69 | طيف الشمراني | Taif Alshamrani | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Saudi Energy | Data & System Analyst | Data Science — Taif University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Data Science — Taif University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
+| 70 | عامر الغريبي | Aamer Alghrybi | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Basamh Group | Cloud & Data Center Systems Manager | Applied Network Systems Engineering — Technical and Vocational Training Corporation — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Applied Network Systems Engineering — Technical and Vocational Training Corporation (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 71 | الجوهرة البهلال | Aljawhara Albahlal | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | NCGR - National Center for Government Resources Sys. | System Developer | Information Technology-CyberSecurity — King Saud University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology-CyberSecurity — King Saud University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 72 | أميرة حزازي | Ameerah Hazzazi | Machine Learning Practioner, Nov 2023 | مجموعة نوفمبر | Zakat, Tax and Customs Authority | Customer Service Agent | Computer Science — Imam Abdulrahman Bin Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: Machine Learning Practioner, Nov 2023. |
+| 73 | أنس الدادي | Anas Aldadi | Machine learning practitioner, Oct 2023 | مجموعة نوفمبر | Nabrah.AI / نـبـره | AI Engineer | Computer Science — Umm Al-Qura University — 2025 | https://sa.linkedin.com/in/anas-aldadi-29251b246 |  |  |  | https://rocketreach.co/anas-aldadi-email_752615057 | 86 | أوضح تسلسل مؤرخ في دفعة 2023: متدرب باحث ذكاء اصطناعي بـNabrah.AI (2025) ← مهندس ذكاء اصطناعي بها. التوظيف بدأ بعد الشهادة، وهو ما يدعم أوّليّته. الترويسة المفهرسة: «AI engineer @ Nabrah / KAUST & Oxford». |
+| 74 | أسماء حبادي | Asma Habadi | Machine learning practitioner, Aug 2023 | مجموعة نوفمبر | Synapse | Deputy Director of Marketing | معالجة بيانات وتقنية معالجة البيانات — University of Jeddah — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس معالجة بيانات وتقنية معالجة البيانات — University of Jeddah (2025). شهادات سدايا: Machine learning practitioner, Aug 2023. |
+| 75 | بشرى دجام | Bushra Dajam | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Arabot | AI Engineer | Artificial intelligent — University of Jeddah — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — University of Jeddah (2025). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 76 | دانية القريني | Danya Alqarini | Machine Learning Practioner, Nov 2023 | مجموعة نوفمبر | SGS - Saudi Ground Services | Customer Service Agent | Information Technology — Saudi Electronic University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology — Saudi Electronic University (2023). شهادات سدايا: Machine Learning Practioner, Nov 2023. |
+| 77 | ضي الحربي | Dhay Alharbi | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | ALBAIK Food Systems Co. | Data Analyst | Computer Science — King AbdulAziz University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King AbdulAziz University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 78 | ضحى بنجابي | Doha Benjabi | Machine Learning Practitioner, Nov 2023 | مجموعة نوفمبر | Saudi Post / SPL | Senior Project Manager | Computer Science — University of Jeddah — 2022 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — University of Jeddah (2022). شهادات سدايا: Machine Learning Practitioner, Nov 2023. |
+| 79 | ابتهال المشامة | Ebtihal Almashama | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | KPMG Saudi Arabia | Associate Consultant - Digital Transformation | Artificial intelligent — University of Jeddah — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — University of Jeddah (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 80 | ازدهار التميمي | Ezdhar Altamimi | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Salam | Data Analyst | Information Technology — Prince Sultan University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology — Prince Sultan University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 81 | فادية العنزي | Fadiyah Alanazi | Fundamentals of Artificial Intelligence, Feb 2025 Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | فضاء أجا لتقنية المعلومات | Data Analyst Development Program | Data Science — University of Hafr AlBatin — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Data Science — University of Hafr AlBatin (2024). شهادات سدايا: Fundamentals of Artificial Intelligence, Feb 2025 Machine Learning Practitioner, Dec 2023. |
+| 82 | غادة محمد العنزي | Ghadah Mohammed Alenezi | Machine Learning Practitioner, Dec 2023 Artificial Intelligence Concepts and Advanced Applications Fundamentals of Artificial Intelligence | مجموعة نوفمبر | (AEEE) جمعية هندسة الكهرباء والطاقة | Content Management Systems Specialist(CMS) | Computer Science — Taibah University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Taibah University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023 Artificial Intelligence Concepts and Advanced Applications Fundamentals of Artificial Intelligence. |
+| 83 | همس الشادوي | Hams Alshadwi | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Saudi Air Navigation Services | Business Intelligence Developer | Data Science — University of Jeddah — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Data Science — University of Jeddah (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 84 | إبراهيم الصغان | Ibrahim Alsaghan | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Tamkeen Technologies | Software Engineer | Computer Science — King Saud University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Saud University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 85 | خالد الخيري | KHALID ALKHIRI | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Experts Care Medical Group - EMG | Computer Engineering | Computer Engineering — Umm Al-Qura University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Engineering — Umm Al-Qura University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 86 | مها البواردي | Maha Albawardy | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Globant | Business Analyst | Computer Science — King Saud University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Saud University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 87 | مرام عبدالله الزهراني | Maram Abdullah Alzahrani | Machine Learning Bootcamp, Nov 2023 | مجموعة نوفمبر | Emaar, The Economic City | Senior Internal Audit Officer | Computer Information Systems — Al Baha University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Information Systems — Al Baha University (2023). شهادات سدايا: Machine Learning Bootcamp, Nov 2023. |
+| 88 | مريم اليماني | Maryam Alyamani | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | alinma | AI Solutions Developer | Artificial intelligent — Princess Nourah Bint Abdulrahman University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — Princess Nourah Bint Abdulrahman University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 89 | محمد البريه | Mohammed Albrayh | Machine Learning Practitioner, Dec 2023 Professional Training Program in Large Language Models, Sep 2024 | مجموعة نوفمبر | SDAIA | AI Engineer | Computer Science — Jubail University College — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Jubail University College (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023 Professional Training Program in Large Language Models, Sep 2024. |
+| 90 | محمد عثمان النجيدي | Mohammed Othman Alnajaidi | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | ASMO | IT Service Managament Associate | Computer and Information System — Imam Abdulrahman Bin Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer and Information System — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 91 | محمد الثنيان | Mohammed AlThunayan | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | J.P. Morgan | Software Engineer I | Computer Software Engineering — King Fahd University of Petroleum & Minerals - KFUPM — 2024 |  |  |  |  | https://malthunayan.com | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Software Engineering — King Fahd University of Petroleum & Minerals - KFUPM (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. موقعه الشخصي يوثّق تخرجه في هندسة البرمجيات من KFUPM ومشاريعه (TaqaPaySen وغيرها)؛ العمل في J.P. Morgan من الملف الرسمي (غير منشور علنًا). |
+| 92 | منيرة الشثري | Munirah Alshathri | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | SITE | Senior Presales Engineer, Cybersecurity Managed Services | Computer Science — King Saud University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Saud University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 93 | نورة المطلق | Nourah Al-Mutlaq | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | stc | Big Data and Advanced Analytics Assistant Manager | Information Technology — King Saud University — 2016 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology — King Saud University (2016). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 94 | رناد العمري | Renad Alamri | Machine Learning Practitioner, Dec 2023 علم البيانات والسياحة, Mar 2021 علم البيانات والابتكار, Mar 2021 | مجموعة نوفمبر | Deloitte | Consultant | Data Science and Analytics — Princess Nourah Bint Abdulrahman University — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Data Science and Analytics — Princess Nourah Bint Abdulrahman University (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023 علم البيانات والسياحة, Mar 2021 علم البيانات والابتكار, Mar 2021. |
+| 95 | رؤى الفقيه | Roaa Alfaqih | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | LoCa Studios | Software Engineer | Computer Science — University of Jeddah — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — University of Jeddah (2025). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 96 | رؤيا القحطاني | Ruia AlQahtani | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | SLB | IT Digital Operations Specialist | Computer Information System — Imam Abdulrahman Bin Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Information System — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 97 | سحر يماني | Sahar Yamani | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Majestic International Company | Customer Service Agent (Data & Operations Support) | Computer Science — University of Jeddah — 2024 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — University of Jeddah (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 98 | شادن المنقور | Shaden Al-mangour | SDAIA T5 Data Science Bootcamp, Jan 2022 Large Language Model Bootcamp, Dec 2023 | مجموعة نوفمبر | Ministry of Human Resources and Social Development - KSA | Data scientist | Information Technology — Al-Imam Muhammad Ibn Saud Islamic University — 2020 | https://sa.linkedin.com/in/shadenalmangour |  |  |  | https://www.zoominfo.com/p/Shaden-Al-mangour/12290738405 | 80 | مؤكدة بمصدرين علنيين (مجمّع بيانات + ترويسة مفهرسة «Data Scientist / Data Analyst / SQL») ومطابقة للملف الرسمي. تاريخ البدء غير مؤكد. |
+| 99 | تالا رامي بكر | Tala Rami Bakir | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Qimam Fellowship | McKinsey & Qimam Fellow | Computer Science — Arab Open University | https://www.linkedin.com/in/tala-bakir/ |  |  |  | https://www.mckinsey.com/middle-east/overview/qimam-fellowship-program | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Arab Open University. شهادات سدايا: Machine Learning Practitioner, Dec 2023. زمالة قمم بدعم McKinsey & Company — موثّقة عبر ملفها العام على LinkedIn. |
+| 100 | وجن القحطاني | Wajn Alqahtani | Professional Training in Large Language Models, Dec 2025 Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Alinma Bank | Future Bankers Program - Data Management and AI | Artificial intelligent — Princess Nourah Bint Abdulrahman University — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Artificial intelligent — Princess Nourah Bint Abdulrahman University (2025). شهادات سدايا: Professional Training in Large Language Models, Dec 2025 Machine Learning Practitioner, Dec 2023.  [تحديث 2026] اجتياز برنامج/برامج أكاديمية سدايا: معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي (2026-02-11) — سجل شهادات 2025–2026 (داخلي). |
+| 101 | حور النفيعي | Hour Alnefaie | Machine learning Practitioner, Nov 2023 Sdaia ML Bootcamp, Sep 2023 | مجموعة سبتمبر |  |  |  |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة سبتمبر): بكالوريوس  — . شهادات سدايا: Machine learning Practitioner, Nov 2023 Sdaia ML Bootcamp, Sep 2023. |
+
+## المسح العلني الموسّع — أغسطس 2026 — 271 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | مرام الفيفي | Maram Alfaifi | معسكر T5 لعلوم البيانات — أكاديمية سدايا (SDAIA Academy T5 Data Science Bootcamp), مشروع التخرج |  | Tam Development LLC | متدربة — المشروع النهائي |  | https://www.linkedin.com/in/maram-alfaifi-b787a01b7/ | https://github.com/marama09/Eyes_Disease · https://github.com/marama09 |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Deep Learning / Medical Image Classification. الدليل: Repo description: "The Final project for SDAIA Academy T5 - Bootcamp Data Science Eyes Disease classification Project implemented in Python based on Deep Learning model". README lists team contacts "Tahani Almutery" and "Maram Alfaifi"; the repo owner handle is 'marama09', very likely Maram Alfaifi herself. |
+| 2 | سارة الحميدي | Sara Alhumidi | معسكر سدايا (SDAIA Bootcamp) — مشروع جماعي "تمرة" لتصنيف أنواع التمور |  |  |  |  |  | https://github.com/sara4se/Tamrah · https://github.com/sara4se/Tamrah/blob/main/README.md |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine Learning / Computer Vision + iOS. الدليل: README: "we trained and work on as a group in the SDAIA Bootcamp to detect the type of the Dates". Contributors listed: Sara Alhumidi, Razan Aljeraisy, Sarah Alshehri, Abdulmalik Alharbi. Explicit statement of training in an SDAIA bootcamp; the specific bootcamp name (T5 / ML) is not stated. |
+| 3 | رزان الجريسي | Razan Aljeraisy | معسكر سدايا (SDAIA Bootcamp) — مشروع جماعي "تمرة" |  |  |  |  |  | https://github.com/sara4se/Tamrah · https://github.com/sara4se/Tamrah/blob/main/README.md |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine Learning / Computer Vision. الدليل: README: "we trained and work on as a group in the SDAIA Bootcamp to detect the type of the Dates"; listed among the four contributors (Sara Alhumidi, Razan Aljeraisy, Sarah Alshehri, Abdulmalik Alharbi). |
+| 4 | عبدالملك الحربي | Abdulmalik Alharbi | معسكر سدايا (SDAIA Bootcamp) — مشروع جماعي "تمرة" |  |  |  |  |  | https://github.com/sara4se/Tamrah · https://github.com/sara4se/Tamrah/blob/main/README.md |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine Learning / iOS development. الدليل: README: "we trained and work on as a group in the SDAIA Bootcamp to detect the type of the Dates"; listed among the four contributors. |
+| 5 | علي مفيد | Ali Mufeed (GitHub: AliMufeed) | معسكر T5 لعلوم البيانات (SDAIA T5 Data Science Bootcamp) |  |  |  |  |  | https://github.com/AliMufeed · https://github.com/AliMufeed/Hotel_Review_NLP · https://github.com/AliMufeed/Glasses_Detection_Deep_Learning |  |  |  | 65 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science (EDA, regression, classification, NLP, deep learning). الدليل: README: "NLP Project for SDAIA T5 Data Science Bootcamp..."; the profile carries the full five-project T5 sequence (EDA_MTA_Turnstile_Data, Flight-Prices-Expected, Bank_Loan_term_prediction, Hotel_Review_NLP, Glasses_Detection_Deep_Learning), each described as a "project for SDAIA T5 Data Science Bootcamp". Only the GitHub handle is public; family name not confirmed. |
+| 6 | ريما الغامدي | Reema Alghamdi | معسكر تعلم الآلة — سدايا (SDAIA Machine Learning Bootcamp) |  |  | IT Graduate with First-Class Honors |  |  | https://github.com/GitReema-code · https://github.com/GitReema-code/MachineLearning |  |  |  | 62 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data analysis, Machine Learning, Generative AI, MLOps. الدليل: README: "The `SDAIA ML Bootcamp` folder in this repository contains materials related to the SDAIA Machine Learning Bootcamp." Repo organises four weeks of bootcamp instruction. Personal attendance is implied by the personal repo of bootcamp materials rather than stated outright. |
+| 7 | روعة حميدي | Rewaa Hummedi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (T5 Data Science and AI Bootcamp) | 2023 | SDM | Artificial Intelligence Specialist - Level 2 |  |  |  |  |  | https://rocketreach.co/rewaa-hummedi-email_717648824 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Artificial Intelligence. الدليل: 2023: "T5 Data Science and AI Bootcamp" at SDAIA / سدايا; 2024-2026 Artificial Intelligence Specialist at SDM |
+| 8 | مهد الجهني | Mahad Aljohani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | Marcom Arabia | Data Analyst |  |  |  |  |  | https://rocketreach.co/mahad-aljohani-email_798743902 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / Data Analytics. الدليل: 2023: Trainee in "Data Science and Artificial Intelligence T5 Bootcamp" at SDAIA; 2025-Present Data Analyst at Marcom Arabia |
+| 9 | لبنى القحطاني | Lubna Alqahtani | معسكر إدارة البيانات (Data Management Bootcamp) | 2023 | Wakeb_Data | Data Engineer |  |  |  |  |  | https://rocketreach.co/lubna-alqahtani-email_808508809 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Management / Data Engineering. الدليل: 2023: Data Management Bootcamp participant at "SDAIA / سدايا"; 2024-Present Data Engineer at Wakeb_Data |
+| 10 | رعد الصباغ | Raad Sabbagh | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | flynas | Senior Data Scientist |  |  |  |  |  | https://rocketreach.co/raad-sabbagh-email_692265497 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: 2023: T5 Data Science and AI bootcamp @ SDAIA / سدايا; 2024-2026 Data Scientist @ flynas |
+| 11 | صفا المهداوي | Safa Almahdawi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي + برنامج Elevate | 2023 | Tamayouz Business Services | Data Management and Governance |  |  |  |  |  | https://rocketreach.co/safa-almahdawi-email_766649467 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / Data Governance. الدليل: 2023: Data Science and Artificial Intelligence T5 Bootcamp at SDAIA; 2023: Elevate Program (Trainee) at SDAIA; 2024-Present Data Management and Governance at Tamayouz |
+| 12 | عبدالرحمن المقاطي | Abdulrahman Almuqati | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | stc | Virtual Desktop Infrastructure Engineer |  |  |  |  |  | https://rocketreach.co/abdulrahman-almuqati-email_806760685 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: 2023: Data Science And AI T5 Bootcamp Trainee at SDAIA / سدايا; 2024-Present VDI Engineer at stc |
+| 13 | باسل العقيل | Basil Alaqeel | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | Wedo Solutions | Data Science Specialist |  |  |  |  |  | https://rocketreach.co/basil-alaqeel-email_816256986 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: 2024: T5 Bootcamp - Data Science and Artificial Intelligence at SDAIA (incl. Traffic Management System project); 2025-Present Data Science Specialist at Wedo Solutions |
+| 14 | يوسف اللحياني | Yousef al-Lahyani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | Drahim / دراهم | Data Analyst |  |  |  |  |  | https://rocketreach.co/yousef-al-lahyani-email_569760353 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / Analytics. الدليل: 2024: Data Science and AI T5 Bootcamp participant at SDAIA / سدايا; 2025-Present Data Analyst at Drahim |
+| 15 | العنود القبيسي | Alanoud Alqubaysi | معسكر T5 (T5 Bootcamp) | 2021 | Quant | Customer Success Consultant |  |  |  |  |  | https://rocketreach.co/alanoud-alqubaysi-email_265090110 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: 2021: Data Scientist / T5 Bootcamp @ SDAIA / سدايا; 2022-Present Customer Success Consultant @ Quant |
+| 16 | عبداللطيف الصبر | Abdullatif Alsabr | معسكر T5 (T5 Bootcamp) | 2021 | Saudi Constructioneers Ltd. (SAUDICO) | Senior Human Resources Systems Specialist |  |  |  |  |  | https://rocketreach.co/abdullatif-alsabr-email_396720642 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: 2021-2022: Data Scientist / T5 Bootcamp at SDAIA / سدايا; 2023-2026 HR and Data Analytics Specialist at SAUDICO |
+| 17 | علي المحيسن | Ali Almuhaysin | أبطال صيف الذكاء الاصطناعي (AI Summer Champions) — سدايا | 2022 | King Fahad Medical City (KFMC) | IT Infrastructure Virtualization Lead |  |  |  |  |  | https://rocketreach.co/ali-almuhaysin-email_724017858 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Engineering. الدليل: 2022: Data Engineer / AI Summer Trainee @ SDAIA; 2023-2024 Epic and Linux System Administrator @ KFMC |
+| 18 | نورة الشهراني | Noura Alshahrani | معسكر T5 للذكاء الاصطناعي وعلوم البيانات + معسكر إدارة البيانات | 2024 | Master Works | Associate Data Consultant |  |  |  |  |  | https://rocketreach.co/noura-alshahrani-email_764165837 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / Data Management. الدليل: 2024: "T5 Artificial Intelligence and Data Science BootCamp" at SDAIA; 2023: Data Management BootCamp at SDAIA; 2024-Present Associate Data Consultant at Master Works |
+| 19 | عزيز الزبيدي | Aziz Alzubaidi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي |  | Jawraa | AI Developer |  |  |  |  |  | https://www.zoominfo.com/p/Aziz-Alzubaidi/10437057571 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: T5 Data Science and AI Bootcamp Participant - SDAIA (Saudi Data and AI Authority); AI Developer at Jawraa 2025-present |
+| 20 | نسرين الصايغ | Nisreen Alsayegh | معسكر T5 لعلوم البيانات — أكاديمية سدايا + أبطال صيف الذكاء الاصطناعي (مسار NLP) | 2021 | Mozn | Associate Data Scientist |  |  | https://github.com/nisreenabdullah6 |  |  | https://theorg.com/org/mozn/org-chart/nisreen-alsayegh | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / NLP. الدليل: "T5 Data Science BootCamp certification from SDAIA Academy" (obtained 2021); "AI Summer Champions NLP Path certification from SDAIA" (2022); Associate Data Scientist at Mozn 2022-present |
+| 21 | في السدلان | Fai Alsadlan | أبطال صيف الذكاء الاصطناعي (AI Summer Champions) — سدايا | 2022 | Nabatat Contracting Co | Computer Systems Administrator |  |  |  |  |  | https://rocketreach.co/fai-alsadlan-email_720036212 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: AI. الدليل: 2022: AI Summer Champions Trainee at SDAIA / سدايا; 2025-Present Computer Systems Administrator at Nabatat Contracting Co |
+| 22 | حوراء السدرة | Hawra Alsedrah | أبطال صيف الذكاء الاصطناعي (AI Summer Champions) — سدايا | 2022 | صحصح / Sahseh | Associate Product Manager |  |  |  |  |  | https://rocketreach.co/hawra-alsedrah-email_814748948 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: AI. الدليل: 2022: AI Summer Champions Trainee @ SDAIA / سدايا; 2026-Present Associate Product Manager @ صحصح / Sahseh |
+| 23 | علي القاضبي | Ali Alqadhiby | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | SDAIA (وقت المعسكر) | T5 Bootcamp trainee |  |  |  |  |  | https://www.zoominfo.com/p/Ali-Alqadhiby/11482957836 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Title: "SDAIA T5 Data Science and Artificial Intelligence Bootcamp at Sdaia", 2024-present |
+| 24 | مي الجعيد | May Aljuaid | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2025 | SDAIA (وقت المعسكر) | T5 Bootcamp trainee |  |  |  |  |  | https://www.zoominfo.com/p/May-Aljuaid/13839097276 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Title: "T5 Data Science and AI Bootcamp at Sdaia", 2025-present; Bachelor's degree from Taif University |
+| 25 | صفية الشمري | Safiyah Alshammari | معسكر T5 لعلوم البيانات | 2023 | Saudi Aramco | Data Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Safiyah-Alshammari/14286161253 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: Work history: SDAIA T5 Data Science Bootcamp (2023); Data Analyst at Aramco 2024-present |
+| 26 | حمد اليمني | Hamad Alyemni | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | GeoTech | AI Engineer |  | https://www.linkedin.com/in/hamad-alyemni | https://github.com/hsyemni99 |  |  | https://www.zoominfo.com/p/Hamad-Alyemni/8823269392 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: "participated in the SDAIA T5 Data Science and Artificial Intelligence Bootcamp" (2023); AI Engineer at GeoTech 2024-present |
+| 27 | ريم الجابري | Reem Aljabri | معسكر T5 لعلوم البيانات | 2023 | Managed Services | IT & Cybersecurity Project Coordinator |  |  |  |  |  | https://www.zoominfo.com/p/Reem-Aljabri/11482951048 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: Work history: SDAIA T5 Data Science Bootcamp (2023-2024); IT & Cybersecurity Project Coordinator at Managed Services 2024-present |
+| 28 | رتاج المطيري | Ritaj M. Almutairi | معسكر T5 لتقنيات إدارة الزحام (T5 Zeham Management BootCamp) | 2024 | CNHI LLC | Data Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Ritaj-Almutairi/10126814094 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: AI / Crowd Management. الدليل: Work history: SDAIA T5 Zeham Management BootCamp (2024); AI Intern at SDAIA (2023); Data Analyst at CNHI LLC 2024-present |
+| 29 | بسمة عبدالله | Basmah Abdullah | معسكر T5 | 2023 | AMNCO | Project Management Specialist |  |  |  |  |  | https://www.zoominfo.com/p/Basmah-Abdullah/11338401227 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Work history: SDAIA T5 Bootcamp (2023); Project Management Specialist at AMNCO |
+| 30 | منصور عبدالله | Mansour Abdullah | معسكر T5 لعلوم البيانات والذكاء الاصطناعي |  | ASCEND Healthcare Solutions | Data Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Mansour-Abdullah/13218350458 | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: "participated in the Data Science and AI T5 Bootcamp at SDAIA"; Data Analyst at ASCEND Healthcare Solutions 2025-present |
+| 31 | لجين العطاس | Lujain Alattas | معسكر T5 لعلوم البيانات والذكاء الاصطناعي + البرنامج التدريبي لمحترفي النماذج اللغوية الكبيرة | 2024 | Council of Health Insurance | Senior Business Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Lujain-Alattas/11076622706 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / LLM. الدليل: Training Program In Large Language Models Professional, Sdaia (2024); Data Science and AI T5 Bootcamp, Sdaia (2024); Associate Consultant ASCEND Healthcare 2024-2025 |
+| 32 | جواهر البقمي | Jawaher Albaqami | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | NCAI / SDAIA | Data Engineer |  |  |  |  |  | https://www.zoominfo.com/p/Jawaher-Albaqami/13106752773 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Engineering. الدليل: Data Science and AI T5 Bootcamp Trainee at Sdaia (2023); Data Engineer at NCAI 2024-present |
+| 33 | علي الجمعة | Ali Aljumah | معسكر T5 لعلوم البيانات والذكاء الاصطناعي |  | Tree | Quality Engineering Specialist |  |  |  |  |  | https://www.zoominfo.com/p/Ali-Aljumah/8552796124 | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: "training as a Data Science and AI T5 Bootcamp Trainee at SDAIA"; Quality Engineering Specialist at Tree 2025-present |
+| 34 | ذكرى القرني | Thekra Alqarni | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | Ministry of National Guard Health Affairs | Programmer Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Thekra-Alqarni/15644564992 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Data Science and AI T5 Bootcamp Trainee at Sdaia (2023); Programmer Analyst at MNGHA 2025-present |
+| 35 | لينا بن حويل | Lina Bin Huwail | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | DXC Technology | ServiceNow Developer |  |  |  |  |  | https://www.zoominfo.com/p/Lina-Huwail/13511297726 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Data Science and AI T5 Bootcamp participant at Sdaia (2024); ServiceNow Developer at DXC Technology 2024-present |
+| 36 | عبدالمجيد الردادي | Abdulmajeed Alraddadi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | Lean Business Services | Associate Product Manager |  |  |  |  |  | https://www.zoominfo.com/p/Abdulmajeed-Alraddadi/15013131850 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Data Science and AI T5 Bootcamp participant at Sdaia (2024); Associate Product Manager at Lean Business Services 2025-present |
+| 37 | ميساء الحليمي | Maisaa Alhulimi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | Tamimi Markets | Web Developer |  |  |  |  |  | https://www.zoominfo.com/p/Maisaa-Alhulimi/12775652792 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: T5 Data Science and AI Bootcamp at Sdaia (2023); Web Developer at Tamimi Markets 2024-present |
+| 38 | معاذ المبارك | Maad AlMubarak | معسكر سدايا (Bootcamp Trainee) + المسارات المتقدمة في الذكاء الاصطناعي — التعلم العميق | 2023 | SNB Capital | IT Project Management Office Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Maad-Almubarak/10219089249 | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: AI / Deep Learning. الدليل: Bootcamp Trainee, SDAIA (2023-2024); education lists "Advanced Pathways in Artificial Intelligence - Deep Learning from Sdaia"; IT PMO Analyst at SNB Capital 2024-present |
+| 39 | ميس عزيز | Mais Aziz | معسكر T5 — سدايا | 2023 | Al Rajhi Bank | Collection System Support Officer |  |  |  |  |  | https://www.zoominfo.com/p/Mais-Aziz/12622150229 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / Analytics. الدليل: Bootcamp Sdaia T5 Trainee at Sdaia (2023); Data Analyst at Valley of Tomorrow (2024); Al Rajhi Bank 2024-present |
+| 40 | عبدالله التميمي | Abdullah Altamimi | معسكر T5 لتقنيات إدارة الزحام (Zeham Management Technologies Bootcamp T5) | 2024 | Al Rajhi Bank | Management Trainee |  |  |  |  |  | https://www.zoominfo.com/p/Abdullah-Altamimi/10067602566 | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Crowd Management Tech. الدليل: Zeham Management Technologies Bootcamp T5 at Sdaia (2024); Management Trainee at Al Rajhi Bank 2025-present. NOTE: DB has a 'عبدالله بن علي سعد التميمي / معسكر T5' (prog24) — possible but unconfirmed same person. |
+| 41 | غيداء المالكي | Ghayda A. Almalki | معسكر تعلم الآلة (ML Bootcamp) + المسارات المتقدمة في الذكاء الاصطناعي — التعلم العميق |  | Teradata | Data Consultant |  |  |  |  |  | https://www.zoominfo.com/p/Ghayda-Almalki/13974095986 | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine Learning / AI. الدليل: "completed specialized programs through Sdaia, including the 'Advanced Pathways Program in AI - Deep Learning' and a 'Machine Learning Bootcamp'"; Data Consultant at Teradata 2024-present |
+| 42 | رندا الشهري | Randa Alshehri | معسكر هندسة تطبيقات الذكاء الاصطناعي (AI Applications Engineering Bootcamp) | 2025 | Saudi Arabian Monetary Agency (SAMA) | SPP Application Support Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Randa-Alshehri/13761566090 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: AI Applications Engineering. الدليل: AI Applications Engineering Trainee - Bootcamp at Sdaia (2025); SAMA 2025-present; MSc Artificial Intelligence |
+| 43 | سعد المنيف | Saad Almunif | معسكر علوم البيانات والذكاء الاصطناعي (Data Science and AI Bootcamp) | 2023 | Lean Business Services | Database Administrator |  |  |  |  |  | https://www.zoominfo.com/p/Saad-Almunif/13868959767 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Data Science and AI Bootcamp at SDAIA (2023); Database Administrator at Lean Business Services 2024-present |
+| 44 | ميعاد العتيبي | Meaad A. Alotaibi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | TechArch | Cybersecurity Associate & Consultant |  |  |  |  |  | https://www.zoominfo.com/p/Meaad-Alotaibi/6886898422 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI / ML / NLP. الدليل: Data Science and AI T5 Bootcamp, Sdaia (2024); "engaged in an intensive Data Science and AI Bootcamp at Sdaia, acquiring proficiency in SQL, Python, Applied Data Science, machine learning, and NLP"; TechArch 2025-present |
+| 45 | منتهى الشهاب | Muntaha Alshehab | معسكر إدارة البيانات (Data Management Bootcamp) | 2023 | Master Works | Data Management Consultant |  |  |  |  |  | https://www.zoominfo.com/p/Muntaha-Alshehab/14501125521 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Management. الدليل: Data Management Bootcamp Trainee at Sdaia (2023); Data Management Consultant at Master Works 2024-present |
+| 46 | أثير الكثيري | Atheer Alkthiri | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | SDAIA (وقت المعسكر) | T5 Bootcamp trainee |  | https://www.linkedin.com/in/atheer-alkthiri-b9294a278 |  |  |  | https://www.zoominfo.com/p/Atheer-Alkthiri/10746826484 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Title: "Data Science and Artificial Intelligence T5 Bootcamp at Sdaia", 2023-present |
+| 47 | هادي عطوة | Hadi Atwah | معسكر إدارة البيانات (Data Management Bootcamp) | 2023 | SDAIA (وقت المعسكر) | Data Management Bootcamp trainee |  |  |  |  |  | https://www.zoominfo.com/p/Hadi-Atwah/10929493967 | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Management. الدليل: Title: "Data Management Bootcamp at Sdaia", 2023-present |
+| 48 | العنود صالح | Alanoud Saleh | معسكر إدارة البيانات (Data Management Bootcamp) | 2023 | SDAIA (وقت المعسكر) | Data Management Bootcamp trainee |  |  |  |  |  | https://www.zoominfo.com/p/Alanoud-Saleh/10929498514 | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Management. الدليل: Title: "Data Management Bootcamp at Sdaia", 2023-present |
+| 49 | أمجاد معيض | Amjad Muidh | معسكر T5 لتحليل البيانات والذكاء الاصطناعي | 2023 | National Information Center (NIC), Ministry of Interior | Digital Transformation Specialist |  |  |  |  |  | https://www.zoominfo.com/p/Amjad-Muidh/10124441261 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Analysis / AI. الدليل: Data Analyses and Artificial Intelligence T5 Bootcamp at Sdaia (2023); Digital Transformation Specialist at NIC, MOI 2022-present |
+| 50 | رهف سعود | Rahaf Saud | معسكر سواهر — أكاديمية سدايا (Sawaher Bootcamp, SDAIA Academy) | 2022 | SDAIA | Operations System Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Rahaf-Saud/9361671414 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Crowd Management / Computer Vision platform (Sawaher). الدليل: "Sawaher Bootcamp at SDAIA Academy" (2022-present); Operations System Analyst at Sdaia |
+| 51 | أحمد كاشف | Ahmed Kashif | معسكر T5 — أكاديمية سدايا (علوم البيانات والذكاء الاصطناعي) | 2023 | General Organization for Social Insurance (GOSI) | Senior Data Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Ahmed-Kashif/10547362897 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Education: "Data science and AI" from SDAIA academy (January 2023); "participated in the SDAIA T5 BootCamp"; Senior Data Analyst at GOSI 2024-present |
+| 52 | منيرة الزهراني | Munirah Alzhrani | معسكر T5 لعلوم البيانات — أكاديمية سدايا | 2021 | Afaqy | Technical Support Engineer |  |  | https://github.com/MuniraAlzhrani |  |  | https://www.zoominfo.com/p/Munirah-Alzhrani/13639496670 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: Data Science Bootcamp T5 at SDAIA Academy (2021-2022); Technical Support Engineer at Afaqy 2023-present |
+| 53 | نايف السليحم | Naif Alsulihem | معسكر علوم البيانات — أكاديمية سدايا | 2021 | Saudi Electricity Company | Systems Administrator |  |  |  |  |  | https://www.zoominfo.com/p/Naif-Alsulihem/7752908688 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: Data Science Bootcamp participant at SDAIA Academy (2021-2022); Systems Administrator at Saudi Electricity Company 2022-present |
+| 54 | حصة الرشيد | Hessa AlRasheed | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2023 | RMG / مجموعة ريناد المجد لتقنية المعلومات | Data Analyst |  |  | https://github.com/HessaAlrasheed |  |  | https://theorg.com/org/renad-al-majd-for-information-technology/org-chart/hessa-alrasheed | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: "participated in the 'Data Science and Artificial Intelligence T5 Bootcamp at SDAIA' which she completed in December 2023"; Data Analyst at RMG since February 2024 |
+| 55 | يزيد سليمان الشريف | Yazeed Suliman Alshurify | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | Huawei | Project Manager |  |  |  |  |  | https://www.zoominfo.com/p/Yazeed-Alshurify/13935923722 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / ML / Deep Learning. الدليل: Data Science and AI Bootcamp Trainee (T5 Program), SDAIA (2024); Business System Analyst at Fateel 2024-2025; Project Manager at Huawei 2025-present |
+| 56 | فارس الشعيبي | Faris Alshuaibi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 2024 | Uptime Institute | Datacenter Technician & Trainee |  |  |  |  |  | https://www.zoominfo.com/p/Faris-Alshuaibi/8267103569 | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Data Science and AI T5 Bootcamp Trainee at Sdaia (2024); Uptime Institute 2025-present. NOTE: DB has 'Faris Bin Ibrahim Alshuaibi' under a different SDAIA program (AI apps/Python) — possibly the same person. |
+| 57 | مجد العتيبي | Majd Alotaibi | معسكر الذكاء الاصطناعي وعلوم البيانات — سدايا | 2024 | Jahez Group | Data Scientist |  |  |  |  |  | https://www.zoominfo.com/p/Majd-Alotaibi/10321815317 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Artificial Intelligence and Data Science Bootcamp at SDAIA (2024); Data Scientist at Tahakom (2024); Data Scientist at Jahez Group 2025-present |
+| 58 | عبدالكريم محبوب | Abdulkarim Mahboob | معسكر T5 لتقنيات إدارة الزحام المروري (T5 & Traffic Management Technologies Bootcamp) | 2024 | WTDcare / وتد الطبية | Junior AI Engineer |  |  |  |  |  | https://rocketreach.co/abdulkarim-mahboob-email_844877572 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: AI / Traffic Management. الدليل: 2024: T5 and Traffic Management Technologies Bootcamp participant at SDAIA; 2025-Present Junior AI Engineer at WTDcare |
+| 59 | عالية العتيبي | Aliah Alotaibi | معسكر T5 لتقنيات إدارة الزحام (T5 Zeham Management Technologies Bootcamp by SDAIA) | 2024 | SDAIA (وقت المعسكر)؛ سابقًا ELM | T5 Zeham Bootcamp trainee |  |  |  |  |  | https://rocketreach.co/aliah-alotaibi-email_794100480 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Crowd/Traffic Management Tech. الدليل: 2024-Present: T5 Zeham Management Technologies Bootcamp by SDAIA @ SDAIA / سدايا; BSc Information Systems, Imam Muhammad ibn Saud Islamic University |
+| 60 | غدير الغامدي | Ghadeer Alghamdi | معسكر T5 لعلوم البيانات (SDAIA T5 Data Science Bootcamp) — المشروع الأول | 2021 |  |  |  |  |  |  |  | https://medium.com/@ighadeer93_58983/phishing-websites-eda-exploratory-data-analysis-df80c9182d56 | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / تحليل استكشافي (EDA). الدليل: Therefore, I inspired an idea for the first project in T5 Data science Bootcamp that presented by SDAIA |
+| 61 | غسان الرحيلي | Ghassan Alrehaili | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (أكاديمية سدايا) |  |  | Data Scientist (الرياض) |  | https://www.linkedin.com/in/ghassanalrehaili | https://github.com/GhassanAlrehaili · https://github.com/MahaAlHarqan/T5Bootcamp-ML-Regression-for-Capital_Bikeshare |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / تعلم الآلة. الدليل: T5 Bootcamp — ML Regression for Capital Bikeshare — Authors: GhassanAlrehaili, sole3, MahaAlHarqan (مشروع ضمن معسكر T5، موسوم sdaia-academy) |
+| 62 | ناصر القحطاني | Nasser Alqahtani | معسكر سدايا T5 — المشروع الثالث (تصنيف/تعلم الآلة) |  |  | مهندس (Eng.) |  |  | https://github.com/nasseralq/Coffee_Bean_classification · https://github.com/nasseralq |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / التصنيف. الدليل: The third project at SDAIA bootcamp T5 , data science, artificial intelligence, machine learning — Team: Eng. Nasser Alqahtani, Mohammed Alzabyedi |
+| 63 | بنان الهذلول | Banan Alhethlool | معسكر T5 لعلوم البيانات — المشروع الثالث (تصنيف بيانات الموارد البشرية) |  |  |  |  |  | https://github.com/rmalmoha/T5-ML-Classification-Project · https://github.com/rmalmoha/T5-ML-Classification-Project/blob/main/README.md |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / التصنيف. الدليل: This is the third project that is done during the T5 data science bootcamp ... Created by: Banan Alhethlool, Randa Almohammadi |
+| 64 | رندا المحمدي | Randa Almohammadi | معسكر T5 لعلوم البيانات — المشروع الثالث (تصنيف بيانات الموارد البشرية) |  | SDAIA |  |  | https://www.linkedin.com/in/randa-almohammadi-a33826127 | https://github.com/rmalmoha/T5-ML-Classification-Project · https://github.com/rmalmoha · https://github.com/rmalmoha/T5-ML-Classification-Project/blob/main/README.md |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / التصنيف. الدليل: This is the third project that is done during the T5 data science bootcamp ... Created by: Banan Alhethlool, Randa Almohammadi |
+| 65 | روان القحطاني | Rawan Alqahtani | برنامج تدريب هندسة البيانات — أكاديمية سدايا (SDAIA Academy Data Engineering Training Program) | 2026 |  | متدربة / عضو فريق مشروع التخرج |  |  | https://github.com/Rawan1H · https://github.com/Alanoud-Alotaibi/sdaia-capstone-data-pipeline |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات (Kafka, Delta Lake, RAG, Airflow). الدليل: This project was developed by team members: Alanoud Alotaibi, Rawan Alqahtani (@Rawan1H), Reem Alshathri ... This capstone project was delivered as part of the SDAIA Academy Data Engineering Training Program. |
+| 66 | وائل العنزي | Wael Alanezi | برنامج الذكاء الاصطناعي التوكيلي / RAG — أكاديمية سدايا | 2026 |  | متدرب — مشروع التخرج النهائي |  |  | https://github.com/Wael-Alanezi · https://github.com/Wael-Alanezi/PM_LessonLearned_AgenticRag |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Agentic RAG (LangGraph, ChromaDB, Streamlit). الدليل: This project was developed as the final project for the Agentic AI / Retrieval-Augmented Generation training program delivered by SDAIA Academy (Saudi Data and Artificial Intelligence Authority). ... Author: Wael Alanezi |
+| 67 | نورة البريدي | Norah Alburidi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — سدايا (مشروع التخرج، فريق مستدام) |  |  | متدربة — جمع البيانات، المعالجة، تطوير الخوارزميات |  | https://www.linkedin.com/in/nora-alburidi | https://github.com/AlwaleedAlkhdairi/Mustdam |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / رؤية الحاسب (YOLO). الدليل: SDAIA T5 Bootcamp - Capstone Project ... ## Team Mustadm - Norah Alburidi: Data Collection, Data Preprocessing, Algorithm Development, write report |
+| 68 | عبير المدني | Abeer Almdani | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | متدربة |  |  | https://github.com/AbeerAB · https://github.com/AbeerAB/Emotion-Detection-using-Deep-Learning |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / التصنيف. الدليل: Repo description: 'Project(5) for T5 Data Science Bootcamp - SDAIA Academy'; README '## Team Members * Abeer Almdani * Rana Alzahrani' |
+| 69 | رنا الزهراني | Rana Alzahrani | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | متدربة |  |  | https://github.com/AbeerAB/Emotion-Detection-using-Deep-Learning |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / التصنيف. الدليل: Repo description: 'Project(5) for T5 Data Science Bootcamp - SDAIA Academy'; README '## Team Members * Abeer Almdani * Rana Alzahrani' |
+| 70 | شيماء الزهراني | Shaima Alzahrani | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | متدربة |  |  | https://github.com/shaimaalabedi · https://github.com/shaimaalabedi/Unsupervised_NLP-Drug-Review |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: معالجة اللغات الطبيعية / التعلم غير الموجه. الدليل: Repo description: 'Project(4) for T5 Data Science Bootcamp - SDAIA Academy'; README '## Team Members - @Shaima Alzahrani (github.com/shaimaalabedi)' |
+| 71 | ناصر القريني | Nasser Alquraini | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | متدرب |  |  | https://github.com/NasserSH12 · https://github.com/shaimaalabedi/Unsupervised_NLP-Drug-Review |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: معالجة اللغات الطبيعية / التصنيف. الدليل: Repo description: 'Project(4) for T5 Data Science Bootcamp - SDAIA Academy'; README '## Team Members ... - @Nasser Alquraini (github.com/NasserSH12)' |
+| 72 | إيمان البركة | Eman Albarakah | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | متدربة |  |  | https://github.com/Eeeemsa · https://github.com/shaimaalabedi/Unsupervised_NLP-Drug-Review |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: معالجة اللغات الطبيعية. الدليل: Repo description: 'Project(4) for T5 Data Science Bootcamp - SDAIA Academy'; README '## Team Members ... - @Eman Albarakah (github.com/Eeeemsa)' |
+| 73 | عياد الحربي | Ayad ALHarbi | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | متدرب |  |  | https://github.com/shaimaalabedi/Regression_NYC-Taxi-Trip-Duration |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الانحدار / تعلم الآلة. الدليل: Repo description: 'Project(2) for T5 Data Science Bootcamp - SDAIA Academy'; README '## Team Members ... - Ayad ALHarbi' |
+| 74 | غلا العواد | Ghala Alawad | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) | 2026 |  | متدربة — مشروع التخرج |  |  | https://github.com/GhalaAwd · https://github.com/GhalaAwd/Capstone-Project-Modern-Data-Engineering-for-AI-Systems |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات (Kafka, Delta lakehouse, RAG, Airflow). الدليل: **Student:** Ghala Alawad ... SDAIA Academy capstone |
+| 75 | بتول عسيري | Btool Asiri | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا | 2026 |  | متدربة — مشروع التخرج |  |  | https://github.com/Nfnf-56 · https://github.com/Nfnf-56/capstone-retail-pipeline |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات (Kafka, Delta Lake, Great Expectations, OpenLineage). الدليل: **Student:** Btool Asiri ... SDAIA Academy capstone. |
+| 76 | مها الشمري | Maha Alshammari | هندسة الأوامر والاستخدام المسؤول للذكاء الاصطناعي — أكاديمية سدايا (Prompt Engineering and Responsible Use of AI) | 2026 |  | متدربة — مشروع البرنامج |  | https://www.linkedin.com/in/maha-alshammari-935447348 | https://github.com/Prompt-Engineering-program/Alula |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة الأوامر / تطوير الويب. الدليل: This project was built as part of the "Prompt Engineering and Responsible Use of AI" program by SDAIA Academy, presented by instructor Musa Ibn Rushd. ... Developed by Maha Alshammari and Lina Alsarhan. |
+| 77 | لينا السرحان | Lina Alsarhan | هندسة الأوامر والاستخدام المسؤول للذكاء الاصطناعي — أكاديمية سدايا | 2026 |  | متدربة — مشروع البرنامج |  | https://www.linkedin.com/in/lina-alsarhan-2a18a8369 | https://github.com/Prompt-Engineering-program/Alula |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة الأوامر / تطوير الويب. الدليل: This project was built as part of the "Prompt Engineering and Responsible Use of AI" program by SDAIA Academy ... Developed by Maha Alshammari and Lina Alsarhan. |
+| 78 | صالح المحمود | Saleh Almahmoud | دورة هندسة الأوامر والاستخدام المسؤول للذكاء الاصطناعي — أكاديمية سدايا | 2026 |  | متدرب — مشروع الفريق |  |  | https://github.com/saud49647-cmd/Hooked |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة الأوامر / التوعية السيبرانية. الدليل: This project is part of SDAIA Prompt Engineering and Responsible AI Use Course @SDAIA_ACADEMY ... ## Team - Saud Almotawa - Saleh Almahmoud - Khaled Aljunaidi |
+| 79 | خالد الجنيدي | Khaled Aljunaidi | دورة هندسة الأوامر والاستخدام المسؤول للذكاء الاصطناعي — أكاديمية سدايا | 2026 |  | متدرب — مشروع الفريق |  |  | https://github.com/saud49647-cmd/Hooked |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة الأوامر / التوعية السيبرانية. الدليل: This project is part of SDAIA Prompt Engineering and Responsible AI Use Course @SDAIA_ACADEMY ... ## Team - Saud Almotawa - Saleh Almahmoud - Khaled Aljunaidi |
+| 80 | أمجاد الثنيان | Amjad Althinyyan | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا (METIS/T5) |  |  | متدربة |  |  | https://github.com/amjadalth · https://github.com/emanalshehrii/Hotel-Reviews-Unsupervised-NLP-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / معالجة اللغات الطبيعية. الدليل: This project is done during SDAIA Academy bootcamp of Data Science and AI, in collaboration with [Amjad Althinyyan](https://github.com/amjadalth). |
+| 81 | إيمان الشهري | Eman Alshehri | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا |  |  | متدربة |  |  | https://github.com/emanalshehrii · https://github.com/amjadalth/Hotel-Reviews-Unsupervised-NLP-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / معالجة اللغات الطبيعية. الدليل: This project is done during SDAIA Academy bootcamp of Data Science and AI, in collaboration with [Eman Alshehri](https://github.com/emanalshehrii). |
+| 82 | شهد الكلثم | Shahad Alkaltham | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا (متطلبات دورة METIS) |  |  | متدربة |  |  | https://github.com/shhdSU · https://github.com/wafaa-al/Resume-Parser-NLP |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / التعلم العميق / NLP. الدليل: ...it's done during SDAIA Academy Bootcamp as a part of METIS course requirements in collaboration with [Shahad Alkaltham](https://github.com/shhdSU) |
+| 83 | رند البشري | Renad Albishri | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا (متطلبات دورة METIS) |  |  | متدربة |  |  | https://github.com/renad-albishri · https://github.com/shhdSU/Image_Captioning_DeepLearning |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / التعلم العميق / NLP. الدليل: This project is done during SDAIA Academy Bootcamp as a part of METIS course requirements in collaboration with [Renad Albishri](https://github.com/renad-albishri). |
+| 84 | وفاء الحربي | Wafa Alharbi | معسكر علوم البيانات — أكاديمية سدايا (متطلبات دورة METIS) |  |  | متدربة |  |  | https://github.com/Wafaa-Alharbi · https://github.com/wafaa-al/MTA-Turnstile-Project · https://github.com/nadaAlruwaythi/Face-Mask-Detection-DeepLearning |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / رؤية الحاسب. الدليل: ...it's done during SDAIA Academy Bootcamp as a part of METIS course requirements in collaboration with [Wafa Alharbi](https://github.com/Wafaa-Alharbi) |
+| 85 | أحد سعد المطيري | Ahad Saad Almutairi | معسكر علوم البيانات — أكاديمية سدايا (متطلبات دورة METIS) |  |  | متدربة |  |  | https://github.com/AhadAl977 · https://github.com/shhdSU/Heterogeneity_Activity_Recognizer_Using_Classification |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / NLP والتجميع. الدليل: This project is done during SDAIA Academy Bootcamp as a part of METIS course requirements in collaboration with [Ahad Saad Almutairi](https://github.com/AhadAl977). |
+| 86 | أميرة العتيبي | Amirah Alotaibi | معسكر T5 — أكاديمية سدايا (مشروع التعلم العميق) | 2021 |  | متدربة |  |  | https://github.com/amirahSaad · https://github.com/NoBaSh-DS/Deep-Learning-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / توليد وصف الصور. الدليل: ## SDAIA Academy Bootcamp T5 / Deep Learning Project ... ## By: - Amirah Alotaibi (github.com/amirahSaad) |
+| 87 | العنود الحسين | Alanoud Alhussain | معسكر T5 — أكاديمية سدايا (مشروع التعلم العميق) | 2021 |  | متدربة |  |  | https://github.com/Alanoud-Aziz · https://github.com/NoBaSh-DS/Deep-Learning-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / توليد وصف الصور. الدليل: ## SDAIA Academy Bootcamp T5 / Deep Learning Project ... ## By: - Alanoud Alhussain (github.com/Alanoud-Aziz) |
+| 88 | أمل التمران | Amal Altamran | معسكر T5 — أكاديمية سدايا (مشروع التعلم العميق و NLP) | 2021 |  | متدربة |  |  | https://github.com/amal2121 · https://github.com/NoBaSh-DS/Deep-Learning-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / NLP والتجميع. الدليل: ## SDAIA Academy Bootcamp T5 / Deep Learning Project ... ## By: - Amal Altamran (github.com/amal2121) |
+| 89 | بتول العصيمي | Batoul AlOsaimi | معسكر T5 لعلوم البيانات — أكاديمية سدايا | 2021 |  | متدربة |  | https://www.linkedin.com/in/batoulalosaimi/ | https://github.com/batoull22 · https://github.com/NoBaSh-DS/Deep-Learning-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / التعلم العميق. الدليل: ## SDAIA Academy Bootcamp T5 / Deep Learning Project ... ## By: - Batoul AlOsaimi (github.com/batoull22) |
+| 90 | نورة القحطاني | Norah Alqahtani | معسكر T5 — أكاديمية سدايا (مشروع التعلم العميق) | 2021 |  | متدربة |  |  | https://github.com/99norah · https://github.com/NoBaSh-DS/Deep-Learning-Project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق. الدليل: ## SDAIA Academy Bootcamp T5 / Deep Learning Project ... ## By: - Norah Alqahtani (github.com/99norah) |
+| 91 | مشاعل عسيري | Mashael Asiri | معسكر T5 لعلوم البيانات — سدايا |  |  | متدربة |  |  | https://github.com/Mashael2030 · https://github.com/Mashael2030/Diabetes-Health-Indicators-Classfication |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / تحليل البيانات الاستكشافي. الدليل: SDAIA T5 Data Science Bootcamp Classfication Project by ... ## Prepared by * Mashael Asiri * Ohood Alharbi * Nadiah Ajrasiaa |
+| 92 | عهود الحربي | Ohood Alharbi | معسكر T5 لعلوم البيانات — سدايا |  |  | متدربة |  |  | https://github.com/Ohood-Alharbi · https://github.com/Mashael2030/Diabetes-Health-Indicators-Classfication |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / تحليل البيانات. الدليل: SDAIA T5 Data Science Bootcamp Classfication Project by ... ## Prepared by * Mashael Asiri * Ohood Alharbi * Nadiah Ajrasiaa |
+| 93 | نادية الجراسيه | Nadiah Ajrasiaa | معسكر T5 لعلوم البيانات — سدايا |  |  | متدربة |  |  | https://github.com/nadiahajrasiaa · https://github.com/Mashael2030/Diabetes-Health-Indicators-Classfication |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف / تحليل البيانات. الدليل: SDAIA T5 Data Science Bootcamp Classfication Project by ... ## Prepared by * Mashael Asiri * Ohood Alharbi * Nadiah Ajrasiaa |
+| 94 | تالا الهدوي | Tala Alhadawi | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا (Building AI Agent Systems) | 2026 |  | متدربة — مشروع البرنامج |  | https://www.linkedin.com/in/tala-mohammed-61a9b1216 | https://github.com/talamh0 · https://github.com/talamh0/AI_Study_Assistant |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: LangGraph، RAG، Human-in-the-Loop. الدليل: - Author: Tala Alhadawi ... - Programme: SDAIA Academy – Building AI Agent Systems |
+| 95 | فداء محمد اليحيى | Feda Mohammed Alyahya | تطوير حلول الذكاء الاصطناعي التوليدي — سدايا (Developing Generative AI Solutions) | 2026 |  | متدربة |  |  | https://github.com/feedaa03 |  |  | https://fedaalyahya.netlify.app | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي التوليدي / الأنظمة متعددة الوكلاء / iOS. الدليل: Hi 👋, I'm Feda Mohammed Alyahya ... - 🤖 Developing Generative AI Solutions — SDAIA |
+| 96 | ملاف المطيري | Melaf Al-Mutairi | الذكاء الاصطناعي التوليدي و Vibe Coding — سدايا |  |  | متدربة |  |  | https://github.com/Melaf-Almutairi |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: NLP / هندسة الأوامر / وكلاء الذكاء الاصطناعي. الدليل: Hi there, I'm Melaf Al-Mutairi! ... 🎖️ Generative AI & Vibe Coding — SDAIA (Saudi Data and AI Authority) |
+| 97 | عبدالرحمن الربيعة | Abdulrahman Alrubaiya | معسكر أكاديمية سدايا (متطلبات دورة METIS Kaplan) |  |  | متدرب |  |  | https://github.com/abdulium · https://github.com/Hashehri/employee-attendance-facial-recognition |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: رؤية الحاسب / التعرف على الوجوه. الدليل: This project is done during SDAIA Academy Bootcamp as a part of METIS Kaplan course requirements in collaboration with [Abdulrahman Alrubaiya](https://github.com/abdulium) & [Mohammed Alghamedi](https://github.com/MohammedDev315) |
+| 98 | محمد الغامدي | Mohammed Alghamedi | معسكر أكاديمية سدايا (متطلبات دورة METIS Kaplan) |  |  | متدرب |  |  | https://github.com/MohammedDev315 · https://github.com/Hashehri/employee-attendance-facial-recognition |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: رؤية الحاسب / التعرف على الوجوه. الدليل: This project is done during SDAIA Academy Bootcamp as a part of METIS Kaplan course requirements in collaboration with [Abdulrahman Alrubaiya](https://github.com/abdulium) & [Mohammed Alghamedi](https://github.com/MohammedDev315) |
+| 99 | حاتم الشهري | Hatim Alshehri | معسكر أكاديمية سدايا (متطلبات دورة METIS Kaplan) |  | DataPatterns (مساعد عالم بيانات) | متدرب — صاحب المستودع |  |  | https://github.com/Hashehri · https://github.com/Hashehri/employee-attendance-facial-recognition |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / رؤية الحاسب. الدليل: This project is done during SDAIA Academy Bootcamp as a part of METIS Kaplan course requirements ... (repo owner Hashehri = 'Hatim Alshehri' per github.com/Hashehri) |
+| 100 | خلود الشهري | Kholod Alshehri | معسكر T5 لعلوم البيانات (Metis) — أكاديمية سدايا |  |  | متدربة |  |  | https://github.com/kholod2 |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / التعلم العميق. الدليل: Hi 👋, I'm Kholod ... 💼 Metis Data Scientist Bootcamp(T5) in SDAIA Academy |
+| 101 | هالة العنزي | Hala Alenazi | معسكر T5 لعلوم البيانات (Metis) — سدايا |  |  | متدربة |  |  | https://github.com/halaalanzi · https://github.com/halaalanzi/Face-Detector-Deep-Learning-Project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / رؤية الحاسب. الدليل: Repo description: 'Deep learning project for SDAIA T5 Data Science Bootcamp...'; profile github.com/halaalanzi shows name 'hAla Alenazi' and '💼 Metis Data Scientist Bootcamp(T5)' |
+| 102 | مشاعل الناصر | Mashael Alnasser | معسكر T5 — سدايا (مشروع التخرج) |  |  | متدربة — مشروع التخرج |  |  | https://github.com/alnassermashael · https://github.com/alnassermashael/Waste-Fire-Detection |  |  |  | 88 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: رؤية الحاسب — كشف حرائق النفايات. الدليل: Repo description: 'Capstone T5 project - SDAIA' (owner profile shows name 'Mashael Alnasser') |
+| 103 | سارة سلطان | Sarah Sultan | معسكر هندسة البيانات الحديثة — سدايا (Modern Data Engineering، مشروع التخرج) | 2026 |  | متدربة — مشروع التخرج |  |  | https://github.com/sarah1421 · https://github.com/sarah1421/PRO_DATAENG_SDAIA |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: RAG للامتثال التنظيمي (SAMA) / معمارية Medallion. الدليل: SDAIA Modern Data Engineering Bootcamp — Final Capstone Project (June 2026) |
+| 104 | هيفاء السلمي | Haifa Alsulami | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا | 2026 |  | متدربة — مشروع التخرج |  |  | https://github.com/haifaahmed772-code · https://github.com/haifaahmed772-code/capstone-data-engineering-cats |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات (Kafka, Delta Lake, RAG, Airflow). الدليل: مشروع تخرج (Capstone) لبرنامج SDAIA Academy — Modern Data Engineering for AI Systems |
+| 105 | شيخة الدوسري | Shaykhah Aldawsari | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | 2026 |  | متدربة — مشروع التخرج |  |  | https://github.com/itsShaykhah · https://github.com/itsShaykhah/AAASE-Capstone |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / الذكاء الاصطناعي التطبيقي. الدليل: This project was developed as part of the **Advanced Engineering Agentic AI Systems** program offered by **SDAIA Academy**. (profile github.com/itsShaykhah shows 'Shaykhah Aldawsari') |
+| 106 | رتاج عبدالعزيز | Retaj Abdulazeez | معسكر الذكاء الاصطناعي والبيانات — سدايا (AI & Data Bootcamp، يشمل T5) |  |  | متدربة |  |  | https://github.com/RetajALAnzai · https://github.com/RetajALAnzai/SDAIA |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الحوسبة السحابية / رؤية الحاسب / الأتمتة. الدليل: Welcome to the **SDAIA** repository! This repository contains your projects and practical applications developed during the **AI & Data Bootcamp** by the **Saudi Data and AI Authority (SDAIA)**. (profile: '👋 Hi, I'm Retaj Abdulazeez') |
+| 107 | رنين الشهري | Raneen Alshehri | معسكر سدايا–كاوست للذكاء الاصطناعي (SDAIA-KAUST AI Bootcamp) |  |  | متدربة |  |  | https://github.com/RaneenAlshehri · https://github.com/RaneenAlshehri/SDAIA-KAUST-AI-Bootcamp |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة والتعلم العميق / تصنيف الصور. الدليل: # SDAIA-KAUST-AI-Bootcamp — 'This is the capstone competition for the KAUST Introduction to ML and DL...' (profile: 'Hi 👋, I'm Raneen Alshehri') |
+| 108 | هاجر عبدالله | Hajer Abdullah | معسكر الذكاء الاصطناعي التطبيقي — أكاديمية سدايا (SDAIA Applied AI Bootcamp) | 2026 |  | متدربة |  |  | https://github.com/Hajer207 |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / NLP / LLMs / RAG / الأنظمة التوكيلية. الدليل: Hi 👋, I'm Hajer Abdullah — AI Engineer / AI & Data Analyst / SDAIA Applied AI Bootcamp ... # 🧠 SDAIA Applied AI Bootcamp — Completed intensive hands-on training |
+| 109 | Yazeed Alshurify | Yazeed Alshurify | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Yazeedssh · https://github.com/sara2alharbi/GreenGuard_CapstoneProject_T5 |  |  |  | 88 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: GreenGuard capstone README Team Members: 'Yazeed Alshurify (@Yazeedssh)'; README states the project was developed during the 'SDAIA T5 bootcamp'. |
+| 110 | Jawaher Alfaifi | Jawaher Alfaifi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/sara2alharbi/GreenGuard_CapstoneProject_T5 |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: GreenGuard capstone README Team Members list includes 'Jawaher Alfaifi'; project developed during the 'SDAIA T5 bootcamp'. |
+| 111 | Sara Alharbi | Sara Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/sara-alharbi-2243751b2 | https://github.com/sara2alharbi · https://github.com/sara2alharbi/GreenGuard_CapstoneProject_T5 |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo owner sara2alharbi; repo description 'SDAIA T5 bootcamp capstone project'. GitHub profile display name 'Sara Alharbi', Riyadh, 'Fresh graduate in Information Technology, specialized in data science and artificial intelligence'. |
+| 112 | Razan Alhasan | Razan Alhasan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/RazanKhAlhasan · https://github.com/RazanKhAlhasan/Naqi |  |  |  | 87 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Naqi 'T5 Capstone Project' README lists team members incl. this person; README: 'We would like to express our gratitude to SDAIA (Saudi Data and Artificial Intelligence Authority) for providing us with the opportunity to train...' |
+| 113 | Sarah Aldakhi | Sarah Aldakhi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/RazanKhAlhasan/Naqi |  |  |  | 87 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Naqi 'T5 Capstone Project' README lists team members incl. this person; README: 'We would like to express our gratitude to SDAIA (Saudi Data and Artificial Intelligence Authority) for providing us with the opportunity to train...' |
+| 114 | Raghad Aladawi | Raghad Aladawi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/RazanKhAlhasan/Naqi |  |  |  | 87 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Naqi 'T5 Capstone Project' README lists team members incl. this person; README: 'We would like to express our gratitude to SDAIA (Saudi Data and Artificial Intelligence Authority) for providing us with the opportunity to train...' |
+| 115 | Rawan Almoghamis | Rawan Almoghamis | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Manar-k/T5-Capstone-Project-Medad |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Medad capstone README lists team: Rawan Almoghamis, Manar Khamees, Sara Albogami, Asma Ali, Taghreed A; described as 'Data Science and Artificial Intelligence T5 Bootcamp' capstone. |
+| 116 | Manar Khamees | Manar Khamees | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Manar-k · https://github.com/Manar-k/T5-Capstone-Project-Medad |  |  | https://manar-k.github.io/My-Portfolio/ | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Medad capstone README lists team: Rawan Almoghamis, Manar Khamees, Sara Albogami, Asma Ali, Taghreed A; described as 'Data Science and Artificial Intelligence T5 Bootcamp' capstone. Repo owner; GitHub profile (Riyadh) pins 'SDAIA T5 Bootcamp AI and Data Science coursework' and the Medad capstone. |
+| 117 | Sara Albogami | Sara Albogami | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Manar-k/T5-Capstone-Project-Medad |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Medad capstone README lists team: Rawan Almoghamis, Manar Khamees, Sara Albogami, Asma Ali, Taghreed A; described as 'Data Science and Artificial Intelligence T5 Bootcamp' capstone. |
+| 118 | Asma Ali | Asma Ali | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Manar-k/T5-Capstone-Project-Medad |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Medad capstone README lists team: Rawan Almoghamis, Manar Khamees, Sara Albogami, Asma Ali, Taghreed A; described as 'Data Science and Artificial Intelligence T5 Bootcamp' capstone. |
+| 119 | Leena AlQasem | Leena AlQasem | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/leena-alqasem-08996519b/ | https://github.com/LeenaAAlQasem |  |  |  | 88 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns 5 numbered repos each described 'This is the Nth project for the Data Science T5 Bootcamp' (MTA-EDA, IMDb-Regression, Job-stability-classification, NLP-YelpReviews, Traffic-Prediction-DeepLearning). Profile: Riyadh, Saudi Arabia. |
+| 120 | Shahad Alameel | Shahad Alameel | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/ShahadAlameel · https://github.com/ShahadAlameel/BankCustomerChurn_Project |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repos described 'Classification Project of SDAIA T5 Bootcamp', 'A project of SDAIA T5 Bootcamp', 'MTA project Proposal for SDAIA T5 Bootcamp'. Name derived from GitHub handle ShahadAlameel (profile shows no display name). |
+| 121 | Naif Albader | Naif Albader | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Naif-Albader · https://github.com/Naif-Albader/Classification_Project |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'The third project in SDAIA T5 bootcamp'. Name derived from GitHub handle Naif-Albader (no display name set). |
+| 122 | Abeer Alruwayti | Abeer Alruwayti | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/abeer-saleh · https://github.com/abeer-saleh/EDA_Project |  |  |  | 88 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'EDA project for SDAIA T5 bootcamp'. Profile display name 'abeer alruwayti', Riyadh, Saudi Arabia. |
+| 123 | Amal AlThaqafi | Amal AlThaqafi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  | SDAIA Academy | Junior Data Scientist |  |  | https://github.com/iamal95 · https://github.com/iamal95/Explore-ML-DS-kaggle-surveys-2020-2021-Saudi-Arabia |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'EDA project for T5 bootcamp SDAIA Academy'. GitHub profile bio: 'Junior Data Scientist at SDAIA Academy. Bachelor in Computer Engineering.' |
+| 124 | Abdulaziz Alsidais | Abdulaziz Alsidais | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/azooz1422 · https://github.com/azooz1422/t5_bootcamp |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'T5 bootcamp offered by sdaia'. Profile display name 'Abdulaziz Alsidais'. |
+| 125 | Shaima Alabedi | Shaima Alabedi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/shaimaalabedi · https://github.com/shaimaalabedi/Regression_NYC-Taxi-Trip-Duration |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repos 2,4,5 each described 'Project(N) for T5 Data Science Bootcamp - SDAIA Academy'. Profile display name 'Shaima Alabedi'. |
+| 126 | Dina Bokhamseen | Dina Bokhamseen | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  | Jr. Data Scientist |  | https://www.linkedin.com/in/dina-bokhamseen-a6a50727a | https://github.com/dinag50 · https://github.com/dinag50/Saudi_Solar_Vision_Project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'T5 Bootcamp Final Capstone Project' (Saudi Solar Vision). Profile: Dina Bokhamseen, 'Jr. Data Scientist'. |
+| 127 | Raghad Salem | Raghad Salem | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  | Data Analyst |  | https://www.linkedin.com/in/raghadware | https://github.com/raghadware · https://github.com/raghadware/solar_energy_capstone_project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'Saudi Solar Vision - T5 bootcamp capstone project' (same capstone team as Dina Bokhamseen). Profile: Raghad Salem, Data Analyst, Saudi Arabia. |
+| 128 | Abdulaziz Alothman | Abdulaziz Alothman | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/2xazo · https://github.com/2xazo/SDAIAI-T5-BOOTCAMP-WEAK1-Project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns 'SDAIAI-T5-BOOTCAMP-WEAK1-Project' plus SDAIA-Weak2/3/4/5 weekly bootcamp repos. Profile display name 'Abdulaziz Alothman', bio 'Ai student'. |
+| 129 | Shumukh Alsulami | Shumukh Alsulami | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/XSH99 · https://github.com/XSH99/SDAIA-T5-Camps-Data-Science |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'SDAIA-T5-Camps-Data-Science'. Profile display name 'Shumukh Alsulami'. |
+| 130 | Rahaf Alzahrani | Rahaf Alzahrani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/rahaf-alzahrani-561297217 | https://github.com/rhf24 · https://github.com/rhf24/sdaia_T5 |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'sdaia_T5' described 'Intensive educational programs to build national capabilities proficient in developing AI'. Profile display name 'Rahaf Alzahrani'. |
+| 131 | Tahani Mudhhi Al-rashidi | Tahani Mudhhi Al-rashidi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/tahani-al-rashidi-8963aa279 | https://github.com/Tahani344 · https://github.com/Tahani344/T5Bootcamp-Data-Science-and-Artifical-intelligence-in-SDAIA |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'T5Bootcamp-Data-Science-and-Artifical-intelligence-in-SDAIA'. Profile bio: 'Fresh graduate computer science and AI track at MU, Coop training at SDAIA / Machine learning / Data analyst...', Riyadh. |
+| 132 | Rawan Alotaibi | Rawan Alotaibi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/rs-alotaibi | https://github.com/AlRawan7 · https://github.com/AlRawan7/DataAnalysis_Week1 |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'Task For T5 Bootcamp'. Profile display name 'Rawan Alotaibi', Riyadh, Saudi Arabia. |
+| 133 | Lubna Alhenaki | Lubna Alhenaki | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/lubna-alhenaki-2304a9191/ | https://github.com/LubnaAlhenaki · https://github.com/LubnaAlhenaki/T5 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'T5' described 'T5 bootcamp'. Profile display name 'Lubna Alhenaki'; other repos on Arabic NLP. |
+| 134 | Rahaf Alluqmani | Rahaf Alluqmani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/rahaf-alluqmani-871b81244 | https://github.com/RahafLog · https://github.com/RahafLog/Sentiment_Analysis_from_Tweets |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'This project is one of the projects that I worked on T5 bootcamp'. Profile: Rahaf Alluqmani, KSA, 'Passionate about AI and Data science'. |
+| 135 | Abdulrahman Al-Sallum | Abdulrahman Al-Sallum | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/abdulrahman-al-sallum/ | https://github.com/Dalsallum · https://github.com/Dalsallum/T5-bootcamp |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'T5-bootcamp' described 'All T5 bootcamp repos'. Profile: Abdulrahman Al-Sallum, 'Electronics Engineer - Python Programmer / AI and Machine Learning', Riyadh. |
+| 136 | Nouf Alsaeed | Nouf Alsaeed | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/noufalsaeed | https://github.com/NoufAlsaeed · https://github.com/NoufAlsaeed/Classification-Project-T5-bootamp |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns 'Classification-Project-T5-bootamp', 'linear-regression-T5-bootcamp' ('as part of T5 Bootcamp, Arwa and I built linear regression models'), 'EDA-MTA-T5bootcamp'. Profile: Nouf Alsaeed, Riyadh. |
+| 137 | Shatha Alghamdi | Shatha Alghamdi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/shathaal/ | https://github.com/ShathaAlghamdi · https://github.com/ShathaAlghamdi/Prediction-of-Strokes_T5_Data_science |  |  |  | 72 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'Prediction-of-Strokes_T5_Data_science'. Profile display name 'Shatha Al' (handle ShathaAlghamdi), bio 'Programmer'. |
+| 138 | Fatimah Alhamadeh | Fatimah Alhamadeh | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/falhamadeh · https://github.com/falhamadeh/T5Camp_DataScience |  |  |  | 68 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'T5Camp_DataScience' - 'This is to share Data Science Project deliverables'. Profile display name 'Fatimah Alhamadeh'. |
+| 139 | Amnah Aldayri | Amnah Aldayri | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Amnah-Aldayri · https://github.com/Amnah-Aldayri/T5-Data-Science-Bootcamp |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'T5-Data-Science-Bootcamp' described 'T5 Data Science Bootcamp - Project'. Profile: Amnah Aldayri, Riyadh, 'Information Technology programmer, interested in AI'. |
+| 140 | Khuzama Alk | Khuzama Alk | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  | Data Scientist |  |  | https://github.com/Khuzamaalk · https://github.com/Khuzamaalk/AI_DataScience_T5_Bootcamp |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'AI_DataScience_T5_Bootcamp'. Profile: 'Khuzama Khuzamaalk', 'Data Scientist / Turning data into insights', Riyadh. Surname truncated on profile. |
+| 141 | Wafa Saif ALDABAHI | Wafa Saif ALDABAHI | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/WafaSaif · https://github.com/WafaSaif/Sahel |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'Sahel' described 'T5-Capstone Project'. Profile: Wafa Saif ALDABAHI, Riyadh, 'MSc Computer Scientist specializing in cybersecurity, digital forensics, and data-driven ML'. |
+| 142 | Noura Alnassar | Noura Alnassar | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/noura-alnassar-57b303265 | https://github.com/Nouraibn · https://github.com/Nouraibn/WasteFireDetection |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns 'WasteFireDetection' described 'T5 Capstone Project' (same capstone as alnassermashael/Waste-Fire-Detection, described 'Capstone T5 project - SDAIA'); README contact 'Noura Alnassar'. Profile: Noura Alnassar, Riyadh. |
+| 143 | Kholood Alhejori | Kholood Alhejori | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/kholoodr · https://github.com/kholoodr/Data-Science-Bootcamp |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'This Project is for the project of T5 Bootcamp requirements.' Profile: Kholood Alhejori, MSc Computer Science, Saudi Arabia. |
+| 144 | Abdulmajeed Alharbi | Abdulmajeed Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/iMJOOD · https://github.com/iMJOOD/Data_Science_Bootcamp |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'Data_Science_Bootcamp' described 'T5 Bootcamp'. Profile display name 'Abdulmajeed Alharbi'. |
+| 145 | Jawaher Alhuthayfi | Jawaher Alhuthayfi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/jwaherr · https://github.com/jwaherr/HR-Analytics-for-Employee-Retention |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'T5 bootcamp project'. Profile display name 'Jawaher Alhuthayfi'. |
+| 146 | Ahmed Almatar | Ahmed Almatar | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Ahmed-Almatar · https://github.com/Ahmed-Almatar/T5_Project-1 |  |  |  | 68 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'First Project of T5 Bootcamp'. Name derived from GitHub handle Ahmed-Almatar (no display name set). |
+| 147 | Nourah Alsaadan | Nourah Alsaadan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/nourahsaud · https://github.com/nourahsaud/T5-Data-Science-Bootcamp |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'T5-Data-Science-Bootcamp' plus capstone repos. Profile display name 'Nourah Alsaadan'. |
+| 148 | Tariq Alhathloul | Tariq Alhathloul | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/TariqAlhathloul · https://github.com/TariqAlhathloul/T55_DataScienceBootCamp |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'T55_DataScienceBootCamp' (Data Exploration using pandas). Profile display name 'Tariq Hassan', handle TariqAlhathloul, Riyadh. Weaker tie: repo names T5 bootcamp but does not name SDAIA. |
+| 149 | Dania Fallata | Dania Fallata | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  | Data Scientist |  |  | https://github.com/Dania-fallata · https://github.com/Dania-fallata/sign-language-recognition-project- |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'final project for T5 bootcamp, a sign language recognition app using python, Mediapipe and RNN model'. Profile: Dania Fallata, 'data scientist'. |
+| 150 | Atheer Alzahrani | Atheer Alzahrani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/atheer-alzahrani-b15b96265 | https://github.com/AtheerAlzhrani · https://github.com/AtheerAlzhrani/sign-language-recognition-project--Public |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'Final project for T5 bootcamp, a sign language recognition app...' (same team project as Dania Fallata). Profile: Atheer Alzahrani, Saudi Arabia, 'Automation Tester / Data Science & AI Enthusiast'. |
+| 151 | Aml Abdullah Alrefaie | Aml Abdullah Alrefaie | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  | King Abdulaziz University |  |  |  | https://github.com/amalAlrefaie · https://github.com/amalAlrefaie/project |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'This project is one of the T5 Bootcamp requirements it's talking about CVE'. Profile: Aml Abdullah Alrefaie, 'Cyber Security master student', KAU, Jeddah. |
+| 152 | Aljawhara Alsultan | Aljawhara Alsultan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  | https://www.linkedin.com/in/aljawhara-alsultan-88356562 | https://github.com/Aljawhara-CS · https://github.com/Aljawhara-CS/Proposal |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'This repo is one of the T5 Bootcamp requirements.' Profile: Aljawhara Alsultan, Saudi Arabia. |
+| 153 | Abdulrahman Almutiri | Abdulrahman Almutiri | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/engdhom9 · https://github.com/engdhom9/T5-Project |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'T5 bootcamp project'. Profile display name 'Abdulrahman Almutiri', Saudi Arabia. |
+| 154 | Ahood Alsuhaibani | Ahood Alsuhaibani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/AhoodAlsuhaibani · https://github.com/AhoodAlsuhaibani/TeacherAssistantChatbot |  |  |  | 72 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo description: 'This project developed a chatbot to assist students in the T5 Bootcamp program', trained on T5 course materials. Name derived from GitHub handle AhoodAlsuhaibani. |
+| 155 | Revan Alqahmi | Revan Alqahmi | معسكر التعلم الآلي — أكاديمية سدايا (SDAIA ML Bootcamp) |  |  |  |  | https://linkedin.com/in/revan-alqahmi-8ba13219a | https://github.com/Revan-Alqahmi · https://github.com/Revan-Alqahmi/SDAIA-ML-Bootcamp |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Owns repo 'SDAIA-ML-Bootcamp'. Profile: Revan Alqahmi, 'Fresh Computer Science Graduate... #Ai #Arabic_NLP #Data_Science', Makkah. |
+| 156 | Malik Alansari | Malik Alansari | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/MalikAlansari · https://github.com/MalikAlansari/DataScience |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'DataScience' described 'T5 BootCamp Project'. Name derived from GitHub handle MalikAlansari (no display name set). |
+| 157 | Mohammed Alrakan | Mohammed Alrakan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/MohammedAlrakan · https://github.com/MohammedAlrakan/T5-Bootcamp |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'T5-Bootcamp' described 'T5 Bootcamp'. Name derived from GitHub handle MohammedAlrakan (no display name set). |
+| 158 | Saud Altuwaijri | Saud Altuwaijri | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Saud0Altuwaijri · https://github.com/Saud0Altuwaijri/T5-ANN-Registration-classification |  |  |  | 62 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo described 'this project is a part of T5 bootcamp'; also owns T5_W3_projects, T5_W4_Task1.2. Name derived from handle Saud0Altuwaijri. |
+| 159 | Razan Aljuraysi | Razan Aljuraysi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/RazanAljuraysi · https://github.com/RazanAljuraysi/SDAIA-T5-projects |  |  |  | 68 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'SDAIA-T5-projects' described 'Diverse projects from SDAIA t5 bootcamp experience showcasing learning and growth'. Name derived from handle RazanAljuraysi (no display name set). |
+| 160 | Nouf Alshabani | Nouf Alshabani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/Noufalshabani · https://github.com/Noufalshabani/SDAIA-T5-Data-Science-Bootcamp |  |  |  | 65 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'SDAIA-T5-Data-Science-Bootcamp' - portfolio of T5 Bootcamp data science projects. Name derived from handle Noufalshabani (no display name set). |
+| 161 | Fadhel Aleid | Fadhel Aleid | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (SDAIA) |  |  |  |  |  | https://github.com/FadhelAleid · https://github.com/FadhelAleid/Data-Science-Bootcamps-for-SDAIA-Academy |  |  |  | 62 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: Repo 'Data-Science-Bootcamps-for-SDAIA-Academy'. Name derived from handle FadhelAleid (no display name set). |
+| 162 | Ghanim Alghanim | Ghanim Alghanim | معسكر T5 لعلوم البيانات — أكاديمية سدايا (SDAIA T5 Data Science Bootcamp) | 2021 | NCAI — المركز الوطني للذكاء الاصطناعي (سدايا) | Senior Artificial Intelligence Research Engineer / AI Research Engineer |  |  |  |  |  | https://www.zoominfo.com/p/Ghanim-Alghanim/8083776959 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الرؤية الحاسوبية وأبحاث الذكاء الاصطناعي (Computer Vision / AI Research). الدليل: Work history rows: "SDAIA T5 Data Science Bootcamp" at Sdaia (2021-2021); "Computer Vision Engineer" at Master Works (2022-2023); "Artificial Intelligence Research Engineer" at Sdaia (2023-2025); "Ai Research Engineer" at NCAI (2023-present) |
+| 163 | Roaa Alotaibi | Roaa Alotaibi | معسكر إدارة البيانات (Data Management Bootcamp) — سدايا | 2023 | SDAIA / سدايا (وقت المعسكر) | Data Management Bootcamp Trainee — متدربة معسكر إدارة البيانات |  |  |  |  |  | https://www.zoominfo.com/p/Roaa-Alotaibi/10612476630 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: إدارة البيانات (Data Management). الدليل: Structured work-history row: "Data Management Bootcamp Trainee at Sdaia: 2023-present". Title also rendered on colleague cards of Hadi Atwah, Rami Aljohani, Arwa Alghamdi and Shaden Alhawil as "Roaa Alotaibi — Data Management Bootcamp Trainee". |
+| 164 | Rami Aljohani | Rami Aljohani | معسكر إدارة البيانات (Data Management Bootcamp) — سدايا | 2024 | SDAIA / سدايا | Data Management Officer — مسؤول إدارة البيانات |  |  |  |  |  | https://www.zoominfo.com/p/Rami-Aljohani/15665657466 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: إدارة البيانات (Data Management). الدليل: Structured work-history rows: "Data Management Bootcamp" at Sdaia (2024-2024); "CO-OP Trainee" at Sdaia (2022-2022); "Data Management Officer" at Sdaia (2022-present) |
+| 165 | Maha AlHazzani | Maha AlHazzani | أبطال صيف الذكاء الاصطناعي (AI Summer Champions) — سدايا | 2022 | SDAIA / سدايا | Data Scientist & Analyst — عالمة ومحللة بيانات |  |  |  |  |  | https://www.zoominfo.com/p/Maha-Alhazzani/10622188029 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات والتحليل / هندسة الذكاء الاصطناعي. الدليل: Structured work-history rows: "AI Summer Champions at Sdaia (2022-2022)"; "Artificial Intelligence Engineer & Intern at Sdaia (2022-2022)"; "Big Data & Ai Engineer & Trainee at Saudi Digital Academy (2022-2022)"; "Data Scientist & Analyst at Sdaia (2022-present)" |
+| 166 | فاطمة محمد الزهراني | Fatimah Mohammed Alzahrani | معسكر تعلم الآلة — الدفعة 15 (Machine Learning Bootcamp 15) |  | جامعة الباحة / Al Baha University (Master's in AI) | Software Developer / AI Researcher |  |  | https://github.com/FatimaALzahrani · https://github.com/FatimaALzahrani/Machine-Learning-Bootcamp15_SDAIA |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine Learning, AI research. الدليل: Machine-Learning-Bootcamp15_SDAIA — profile states participation in Machine Learning Bootcamp 15 through SDAIA |
+| 167 | ميثاء القحطاني | Maitha Alqahtani | معسكر علوم البيانات (Data Science Bootcamp) — أكاديمية سدايا | 2021 | أكاديمية سدايا / SDAIA Academy | Junior Data Scientist |  |  | https://github.com/Maithaq |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science; MSc Instructional Technology (KSU), BSc CS (IAU). الدليل: Junior Data Scientist @SDAIA Academy — profile references complementary materials for a Data Science Bootcamp |
+| 168 | عبدالله المعضي | Abdullah Al Muaddi | معسكر تعلم الآلة (SDAIA ML Bootcamp) |  |  |  |  |  | https://github.com/Abdullah-Al-Muaddi · https://github.com/Abdullah-Al-Muaddi/SDAIA-ML-Bootcamp |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine Learning, EDA. الدليل: SDAIA-ML-Bootcamp — completed multiple assignments and expanded my code to enhance accuracy and enhance my understanding of machine learning techniques |
+| 169 | محمد شايع بن شايع | Mohammed Shaya Binshaya | معسكر علوم البيانات (SDAIA Data Science Bootcamp) |  |  |  |  |  | https://github.com/Binshaya · https://github.com/Binshaya/Analysis-of-Hotel-Booking-Data-SDAIA-Data-Science-Bootcamp |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / EDA. الدليل: Analysis-of-Hotel-Booking-Data-SDAIA-Data-Science-Bootcamp |
+| 170 | جميلة الحربي | Jamila Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي |  |  |  |  |  | https://github.com/jameela-masar · https://github.com/jameela-masar/T5-SDAIA-Classification-Miscarriage |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Classification, NLP (unsupervised), Regression / web scraping. الدليل: Multiple repositories titled T5-SDAIA-* (T5-SDAIA-Classification-Miscarriage, T5-SDAIA-NLP-Unsupervised, T5-SDAIA-Regrassion-Web-scraping) |
+| 171 | هند العمري | Hind Alamri | معسكر سدايا لعلوم البيانات (SDAIA bootcamp projects) |  |  | Data Scientist |  |  | https://github.com/Hind-1 · https://github.com/Hind-1/Project_MTA_SDAIA |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science, pure mathematics background; Riyadh. الدليل: Pinned projects: Project_MTA_SDAIA, Project_Donald_Trump_Speech_SDAIA, Project_Jarir_Bookstore_SDAIA, Project_Portuguese_Bank_SDAIA, Project_Age_Detection_SDAIA |
+| 172 | نواف الشهري | Nawaf Alshehri | معسكر T5 لعلوم البيانات — مشروع تحليل الحركة المرورية |  |  | Data analyst (beginner, self-described) |  |  | https://github.com/Nawaf9997 · https://github.com/Nawaf9997/T5_SDAIA_Traffic_Anlysis |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Traffic analysis, Python/Pandas. الدليل: T5_SDAIA_Traffic_Anlysis |
+| 173 | الرشيد خالد الرشيد | Alrasheed Khalid Al-Rasheed | معسكر T5 |  |  |  |  |  | https://github.com/8dci · https://github.com/8dci/T5 |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Machine learning, dashcam projects. الدليل: T5 Bootcamp from Sadia [sic - SDAIA] |
+| 174 | رغد الغانم | Ragad Alghanim | دورة سدايا للبرمجة (Java Course SDAIA / Back-End) |  |  |  |  |  | https://github.com/rsaalghanim · https://github.com/rsaalghanim/Final-Project-Sdaia-Back-End |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Java, back-end/APIs. الدليل: Multiple repositories referencing Java-Course-SDAIA (course materials, homeworks, API projects) plus Final-Project-Sdaia-Back-End |
+| 175 | سعد جرير | Saad Jareer | دورة أساسيات الواجهات الأمامية — سدايا (SDAIA frontend basics course) |  |  |  |  |  | https://github.com/saadjareer · https://github.com/saadjareer/sdaia-frontend-basics-course-lab |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Java/Spring backend, frontend. الدليل: sdaia-frontend-basics-course-lab |
+| 176 | منال اللحياني | Manal Allahyani | معسكر T5 + تخصص معالجة اللغات الطبيعية (Coursera) عبر سدايا |  |  |  |  |  | https://github.com/imnawar · https://github.com/imnawar/Natural-Language-Processing-Specialization-Coursera-SDAIA |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: NLP, GANs, machine learning. الدليل: Repo 'Natural-Language-Processing-Specialization-Coursera-SDAIA'; COVID-19 Vaccines Tweets described as a 'T5 boot camp project' |
+| 177 | سعد عبدالعزيز الشهري | Saad Abdulaziz Al-Shehri | برنامج أكاديمية سدايا (وكلاء الذكاء الاصطناعي / RAG محلي) | 2026 |  |  |  |  | https://github.com/UIUO0 · https://github.com/UIUO0/sda-agent-poc |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Arabic RAG, on-prem AI agents, data engineering. الدليل: README of sda-agent-poc credits SDAIAAcademy (أكاديمية سدايا) as the program under which the project was built |
+| 178 | حسن القاعري | Hassn Alqaeri | برنامج تدريبي بأكاديمية سدايا — مشروع التخرج (Sanad capstone) | 2026 |  |  |  |  | https://github.com/Hassn11q · https://github.com/Hassn11q/sanad-capstone |  |  |  | 65 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: LLMs, AutoML, Arabic sentiment analysis, computer vision. الدليل: capstone built for the training program (Saudi Data & AI Authority); README credits SDAIAAcademy |
+| 179 | عبدالرحمن الرحيلي | Abdulrahman Alrehaili | برنامج أكاديمية سدايا — مشروع التخرج (Masar BRD Copilot) | 2026 |  |  |  |  | https://github.com/D7nez · https://github.com/D7nez/masar-brd-copilot |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Agentic RAG, Arabic NLP, ML. الدليل: README of masar-brd-copilot credits SDAIAAcademy as the program under which the capstone was produced |
+| 180 | جوري الحسن | Jory Alhassan | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/joryhh/data-engineering-capstone |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: Student: Jory Alhassan / Program: SDAIA Academy — Modern Data Engineering for AI Systems / Session dates: 19 July 2026 – 23 July 2026 / Trainer: Mohammed Albeladi |
+| 181 | غيداء بن معدي | Ghaida Bin Maadi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Ghhaidaa/Data-Engineering-for-AI-System-DAICO |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: Students: Ghaida Bin maadi, Shaden Alghannam, Reema AlDayel / Program: SDAIA Academy — Modern Data Engineering for AI Systems / Session dates: 19 July 2026 – 23 July 2026 / Trainer: Mohammed Albeladi |
+| 182 | شادن الغنام | Shaden Alghannam | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Ghhaidaa/Data-Engineering-for-AI-System-DAICO |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: Students: Ghaida Bin maadi, Shaden Alghannam, Reema AlDayel / Program: SDAIA Academy — Modern Data Engineering for AI Systems / Session dates: 19 July 2026 – 23 July 2026 / Trainer: Mohammed Albeladi |
+| 183 | ريما الدايل | Reema AlDayel | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Ghhaidaa/Data-Engineering-for-AI-System-DAICO |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: Students: Ghaida Bin maadi, Shaden Alghannam, Reema AlDayel / Program: SDAIA Academy — Modern Data Engineering for AI Systems / Session dates: 19 July 2026 – 23 July 2026 / Trainer: Mohammed Albeladi |
+| 184 | رزان المطيري | Razan Almutairi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Shatha-1/Data-engineering |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Trainees:** Waad Alsaif, Razan Almutairi, Dana Alsaidan, Layan Alameri, Shatha Bin Mana / **Program:** Modern Data Engineering for AI Systems / **Cohort Dates:** 19-07-2026 – 23-07-2026 / **Trainer:** Mohammed Albeladi / **Academy:** Built as part of SDAIA Academy |
+| 185 | دانة السيدان | Dana Alsaidan | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Shatha-1/Data-engineering |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Trainees:** Waad Alsaif, Razan Almutairi, Dana Alsaidan, Layan Alameri, Shatha Bin Mana / **Program:** Modern Data Engineering for AI Systems / **Cohort Dates:** 19-07-2026 – 23-07-2026 / **Trainer:** Mohammed Albeladi / **Academy:** Built as part of SDAIA Academy |
+| 186 | ليان العامري | Layan Alameri | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Shatha-1/Data-engineering |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Trainees:** Waad Alsaif, Razan Almutairi, Dana Alsaidan, Layan Alameri, Shatha Bin Mana / **Program:** Modern Data Engineering for AI Systems / **Cohort Dates:** 19-07-2026 – 23-07-2026 / **Trainer:** Mohammed Albeladi / **Academy:** Built as part of SDAIA Academy |
+| 187 | فاطمة الزير | Fatimah Alzeer | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/1FATIMAH1/-Data-Engineering-for-AI-Systems--DAICO |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Student:** Fatimah ALzeer / **Program:** SDAIA Academy — Data Engineering for AI Systems (DAICO) / **Session dates:** 19 July 2026 – 23 July 2026 / **Trainer:** Mohammed Albeladi |
+| 188 | لانا الجعيد | Lana Aljuaid | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Danaksd/Enterprise-IT-Support-CapstoneProject |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أنظمة الوكلاء المتعددة / Multi-agent systems. الدليل: # 🎫 Enterprise IT Support Capstone [SDAIAAcademy](https://github.com/SDAIAAcademy) … ## 👤 Authors — **Lana Aljuaid**, **Dana Aldalaan**, **Nojood Alnahdi** |
+| 189 | دانة الدلعان | Dana Aldalaan | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Danaksd/Enterprise-IT-Support-CapstoneProject |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أنظمة الوكلاء المتعددة / Multi-agent systems. الدليل: # 🎫 Enterprise IT Support Capstone [SDAIAAcademy](https://github.com/SDAIAAcademy) … ## 👤 Authors — **Lana Aljuaid**, **Dana Aldalaan**, **Nojood Alnahdi** |
+| 190 | رسيل الخميس | Raseel Al-Khamees | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/RASEEL0/Eleva |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الوكلاء المتعددة / Multi-agent systems. الدليل: # Team — Built collaboratively by: raseel Al-Khamees, Aisha gammash … [SDAIAAcademy](https://github.com/SDAIAAcademy) |
+| 191 | عائشة غماش | Aisha Gammash | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/RASEEL0/Eleva |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الوكلاء المتعددة / Multi-agent systems. الدليل: # Team — Built collaboratively by: raseel Al-Khamees, Aisha gammash … [SDAIAAcademy](https://github.com/SDAIAAcademy) |
+| 192 | خالد الشريم | Khalid Alshuraim | أكاديمية سدايا 2026 / SDAIA Academy 2026 | 2026 |  | خريج / Trainee |  |  | https://github.com/Khalidmsaleh/Harak |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي / Artificial Intelligence. الدليل: ## المطور — **خالد الشريم** — متخصص ذكاء اصطناعي · أكاديمية سدايا · 2026 |
+| 193 | نوره تركي العجالين | Nourh Turki Alajalein | معسكر معالجة اللغة العربية الطبيعية — سدايا / Arabic NLP Bootcamp — SDAIA | 2026 |  | خريج / Trainee |  |  | https://github.com/NourahTurki/PoeticReasoningPresentation |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: معالجة اللغة العربية / Arabic NLP. الدليل: ## Author — Nourh Turki Alajalein — Arabic NLP Bootcamp — SDAIA |
+| 194 | عايش الجهني | Ayesh Aljohani | المسارات المتقدمة في الذكاء الاصطناعي — سدايا / SDAIA Advanced Pathways in AI |  |  | خريج / Trainee |  |  | https://github.com/Ayesh-Aljohani |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي / AI Engineering. الدليل: Ayesh Aljohani — AI Engineer · Data Scientist · Applied ML Researcher … Certifications: **SDAIA** — Advanced Pathways in AI |
+| 195 | أحمد الشريف | Ahmed Alshareef | سدايا — أساسيات الذكاء الاصطناعي: المفاهيم والتطبيقات المتقدمة / SDAIA AI Fundamentals |  |  | خريج / Trainee |  |  | https://github.com/whyKaiser |  |  |  | 65 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البرمجيات والذكاء الاصطناعي التطبيقي / Software & Applied AI. الدليل: Ahmed Alshareef — Software Engineer / Full Stack & Applied AI … ## Certifications **SDAIA — Saudi Data and AI Authority** — AI Fundamentals: Artificial Intelligence Concepts & Advanced Applications |
+| 196 | دانة الدويجي | Dana Alduayji | مقدمة في الذكاء الاصطناعي + الذكاء الاصطناعي المتقدم — أكاديمية كاوست وسدايا / KAUST Academy & SDAIA AI programs | 2024 |  | خريج / Trainee |  |  | https://github.com/dana-alduayji |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: Data Engineer Intern @ Saudi Data and AI Authority (SDAIA) (Jun 2024 – Aug 2024) … - 🧑‍💻 Introduction to AI – KAUST Academy & SDAIA (2024) - 🤖 Advanced Artificial Intelligence – KAUST Academy & SDAIA (2024) |
+| 197 | سعاد الجعفر | Soaad Aljafr | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp | 2021 | أكاديمية سدايا (Junior Data Scientist) | خريج / Trainee |  |  | https://github.com/SoaadM |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: Holla, I'm Soaad! … ⚡ Junior Data Scientist [@Sdaia_Academy](https://academy.sdaia.gov.sa) |
+| 198 | أجواد المجنوني | Ajwad Almajnuni | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp | 2021 |  | خريج / Trainee |  |  | https://github.com/Mashael2030/TLC-Trip-Taxi-Regression-Techniques |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: # Taxi Trip Regression Techniques — SDAIA T5 Data Science Bootcamp Linear Regression Project by … ## Prepared by * Mashael Asiri * Ajwad Almajnuni |
+| 199 | وفاء البطاح | Wafa Albattah | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp | 2021 |  | خريج / Trainee |  |  | https://github.com/wfa94/Deep-Learning · https://github.com/talbaiz/Deep-Learning |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / Deep Learning. الدليل: The Final project - T5 Data Science Bootcamp — By: Wafa Albattah / Taghreed Albaiz / Leena Alshwaihi |
+| 200 | تغريد البعيز | Taghreed Albaiz | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp | 2021 |  | خريج / Trainee |  |  | https://github.com/wfa94/Deep-Learning · https://github.com/talbaiz/Deep-Learning |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / Deep Learning. الدليل: The Final project - T5 Data Science Bootcamp — By: Wafa Albattah / Taghreed Albaiz / Leena Alshwaihi |
+| 201 | لينا الشويحي | Leena Alshwaihi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp | 2021 |  | خريج / Trainee |  |  | https://github.com/wfa94/Deep-Learning · https://github.com/talbaiz/Deep-Learning |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلم العميق / Deep Learning. الدليل: The Final project - T5 Data Science Bootcamp — By: Wafa Albattah / Taghreed Albaiz / Leena Alshwaihi |
+| 202 | الجوهرة السبيعي | Aljawharah Alsubaie | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/AljawharahAlqabbani/SDAIA-projects |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: *Student:* Aljawharah Alsubaie *Program:* SDAIA Academy — Data Engineering for AI Systems (DAICO) *Session dates:* 19 July 2026 – 23 July 2026 *Trainer:* Mohammed Albeladi |
+| 203 | خولة الحربي | Khawlah Alharbi | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا / Building AI Agents — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Khawlah-h/learngraph |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الوكلاء / AI Agents. الدليل: # LearnGraph: Capstone Project — **Course:** Building AI Agents - SDAIA Academy — **Student:** Khawlah Alharbi |
+| 204 | مها العدواني | Maha Aladwani | أكاديمية سدايا — علوم البيانات / SDAIA Academy — Data Science |  |  | خريج / Trainee |  | https://www.linkedin.com/in/maha-aladwani-37359b188 | https://github.com/msealadwani · https://github.com/msealadwani/T5_Bootcamp_Resume_NLP |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@msealadwani): "Junior data scientist / SDAIA Academy" |
+| 205 | عهد المطيري | Ahad Almutairi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/Ahad1996 |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@Ahad1996): "junior Data Scientist T5 at SDAIA Academy" |
+| 206 | عبدالله الشامي | Abdullah Alshami | أكاديمية سدايا — خريج / SDAIA Academy graduate |  |  | خريج / Trainee |  |  | https://github.com/shami-am |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@shami-am): "Computer science bachelor holder, SDAIA Academy graduate, looking for an opportunity in data science where I can apply my knowledge and experience." |
+| 207 | أحمد العنيزي | Ahmed Alonaizi | أكاديمية سدايا — علوم البيانات / SDAIA Academy — Data Science |  |  | خريج / Trainee |  |  | https://github.com/AhmedSAlonaizi |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@AhmedSAlonaizi): "Junior Data Scientist at SDAIA Academy #SDAIA #sdaiaacademy #datascience" |
+| 208 | آلاء الغامدي | Alaa AL-Ghamdi | معسكر أكاديمية سدايا لعلوم البيانات والذكاء الاصطناعي / SDAIA Academy Data Science & AI camp |  |  | خريج / Trainee |  |  | https://github.com/alaa1414-ai |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@alaa1414-ai): "Student at SDAIA Academy for Data Science and Artificial Intelligence camp." |
+| 209 | راما المرزوقي | Rama Almarzuqi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy T5 Data Science & AI Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/Rama-Almarzuqi |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@Rama-Almarzuqi): "Computer Engineer / Data Scientist / Data Science and AI T5 Bootcamp Trainee @SDAIA Academy" |
+| 210 | ريم المطيري | Reem Almutairi | برنامج الذكاء الاصطناعي — أكاديمية كاوست وسدايا / KAUST Academy & SDAIA AI program |  |  | خريج / Trainee |  |  | https://github.com/ReemNawaf |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي / AI. الدليل: GitHub profile bio (@ReemNawaf): "AI Graduate from KAUST_Academy & SDAIA_SA • Enjoy Coding in Flutter • KAU Star_23" |
+| 211 | نهى العنزي | Nuha Alanezi | معسكر تعلم الآلة — سدايا / SDAIA Machine Learning Bootcamp | 2024 |  | خريج / Trainee |  |  | https://github.com/naz50/SDAIA_ML_Bootcamp2024 |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / Machine Learning. الدليل: Repository 'SDAIA_ML_Bootcamp2024' — description '#Machine Learning #SDAIA'. Real name resolved from the sole git commit author 'Nuha Alanezi'. |
+| 212 | رضا أبو شاهين | Redha Abu Shaheen | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy Data Science & AI Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/redha-abushaheen/sdiaa-bootcamp |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: Repository 'sdiaa-bootcamp' — description 'sdaia datascience'. Real name resolved from git commit author 'Redha Abu Shaheen'. |
+| 213 | أسيل الخديدي | Aseel AlKhadaidi | معسكر تعلم الآلة — سدايا / SDAIA Machine Learning Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/xAseelx/Sdaia-ML-Bootcamp |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / Machine Learning. الدليل: Repository 'Sdaia-ML-Bootcamp' — 'Assignments I have done through Sdaia Machine learning bootcamp'. Real name resolved from git commit author 'Aseel AlKhadaidi'. |
+| 214 | ريم باحثيق | Reem Bahathiq | معسكر تعلم الآلة — سدايا / SDAIA Machine Learning Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/CS-Rorita/SDAIA-machine-learning-bootcamp |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / Machine Learning. الدليل: Repository 'SDAIA-machine-learning-bootcamp'. Real name resolved from git commit author 'Reem Bahathiq'. |
+| 215 | رهف الغامدي | Rahaf Alghamdi | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy Data Science & AI Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/irahaf/DS-Bootcamp---Tuwaiq |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: README: '#Online Data Science Bootcamps for SDAIA Academy' — Telemonitoring of Parkinson's disease progression project. Real name resolved from git commit author 'Rahaf Alghamdi'. |
+| 216 | مشاعل الفهيد | Mashael Alfehaid | معسكر علوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA Academy Data Science & AI Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/Mashael999/Cardiovascular-Disease-Classification-Project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: README: 'This project is done during SDAIA Academy bootcamp of Data Science and AI.' Real name resolved from git commit author 'Mashael Alfehaid'. |
+| 217 | شوق الزير | Shoug Alzeer | معسكر T5 للذكاء الاصطناعي — سدايا / T5 AI Bootcamp — SDAIA |  |  | خريج / Trainee |  |  | https://github.com/shhouuq/T5--AI-Bootcamp · https://github.com/shhouuq |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات والرؤية الحاسوبية / Data Science & Computer Vision. الدليل: Repository description: 'A repository containing my work during the T5 Bootcamp in SDAIA.' The account @shhouuq has no display name; real name resolved from the git commit author 'shoug Alzeer' on the same account's repository shhouuq/Riyadh-Airbnb. |
+| 218 | أفراح الحربي | Afrah Alharbi | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/itsShaykhah/AAASE-Capstone |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الوكلاء المتعددة / Multi-agent systems. الدليل: 'This project was developed as part of the **Advanced Engineering Agentic AI Systems** program offered by **SDAIA Academy**. Organization: https://github.com/SDAIAAcademy' — team-member name resolved from the repository's git commit authors ('Afrah Alharbi', alongside 'Shaykhah A. Aldawsari' and 'Revan'). |
+| 219 | علياء المنقور | Alya ALmanqour | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا |  |  | Data Scientist / Computer Vision / Researcher (self-described) |  |  | https://github.com/Alya11salem · https://github.com/Alya11salem/EDA.project_Quarterly-Statistical-Report · https://github.com/Alya11salem/Data_Science_Regression- |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات، الرؤية الحاسوبية، معالجة اللغات الطبيعية. الدليل: GitHub profile bio: "currently working on Data sciences bootcamp from SDAIA"; repo description: "This is a core proposal for complete the first project of the Data Science Bootcamp presented by SDAIA"; repo README footer: "Data Scinece 5T BootCamb BY SDAIA ACADEMY" |
+| 220 | فهد العمران | Fahad Alomran | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | Electrical Engineer, Junior Data Scientist |  |  | https://github.com/aofahad · https://github.com/aofahad/NLP_Project · https://github.com/aofahad/Deep_Learning_Project |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات، التعلم العميق، معالجة اللغات الطبيعية. الدليل: README of his own repo lists him under "## Authors" ([@aofahad]) and closes with "# Data Science T5 Bootcamp BY SDAIA ACADEMY"; GitHub profile gives the real name "Fahad Alomran", Riyadh, Saudi Arabia |
+| 221 | د. صالح الفرحان | Saleh AL-Farhan | معسكر T5 لعلوم البيانات (T5 Data Science BootCamp) — أكاديمية سدايا |  |  | Dentist / Data Scientist |  |  | https://github.com/Dr-ssaleh · https://github.com/Dr-ssaleh/Cardiovascular_Disease_Classification · https://github.com/Dr-ssaleh/Arabic_Poetry_NLP |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة، تحليل البيانات، معالجة اللغة العربية. الدليل: README: "this project is one of the T5 Data Science BootCamp requirements"; GitHub profile name "Dr.saleh AL-Frhan", KSA. Team-mate on Arabic_Poetry_NLP with "ENG. Nasser Alqahtani", whose own repos state "The third project at SDAIA bootcamp T5" |
+| 222 | عبدالرحيم الشهري | Abdulrahim Alshehri | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  | قائد فريق مشروع تصنيف الرسائل النصية (Team Leader) |  |  | https://github.com/abdulrahim999 · https://github.com/infoielham/NLP-SMS-Spam-Detection |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: معالجة اللغات الطبيعية، التصنيف، التعلم العميق. الدليل: README "## Team Members" lists "[Abdulrahim Alshehri-Leader](https://github.com/abdulrahim999)" alongside Elham Alzahrani and Nouf Alkhaldi; the repository carries the GitHub topics "sdaia-academy" and "t5-bootcamp" (listed on https://github.com/topics/sdaia-academy) |
+| 223 | نوف الخالدي | Nouf Alkhaldi | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  |  |  |  | https://github.com/infoielham/NLP-SMS-Spam-Detection |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: معالجة اللغات الطبيعية، التصنيف. الدليل: README "## Team Members" lists "[Nouf Alkhaldi](https://github.com/Nouf93)"; the repository carries the GitHub topics "sdaia-academy" and "t5-bootcamp". NOTE: the GitHub handle Nouf93 now resolves to a different, empty account (username appears to have been recycled) — only the README name is being recorded. |
+| 224 | إيلاف طلال | Elaf Talal | معسكر T5 لعلوم البيانات — أكاديمية سدايا |  |  |  |  | https://www.linkedin.com/in/elaf-talal-226a901a8/ | https://github.com/elaftalal · https://github.com/elaftalal/DS_cyber_security_IDS_prediction_system · https://github.com/elaftalal/T5_Bootcamp_ResumeNLP |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات، الأمن السيبراني (كشف التسلل)، معالجة اللغات الطبيعية. الدليل: README line 4: "Data science Project one of core element of T5 Boot camp from SDAIA Academy"; "## Authors" lists [@elaftalal]. GitHub display name is "elaf"; surname taken from the LinkedIn URL she publishes on her profile (elaf-talal-226a901a8), not inferred from the username. |
+| 225 | منيرة المجل | Muneera Almojel | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems (DAICO) — SDAIA Academy (مدرّب الدفعة: محمد البلادي / Trainer: Mohammed Albeladi) | 2026 |  | متدرّبة / Trainee (capstone author) |  |  | https://github.com/muneeran285-dev/Student-Dropout-Data-Pipeline · https://github.com/muneeran285-dev |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات وأنظمة الذكاء الاصطناعي — تخصص نظم المعلومات / Data Engineering for AI Systems — Information Systems major. الدليل: *Student:* Muneera Almojel — *Major:* Information Systems — *Program:* SDAIA Academy – Data Engineering for AI Systems (DAICO) — *Trainer:* Mohammed Albeladi |
+| 226 | أمجد الدوسري | Amjad Al-Dawsari | دورة وكلاء الذكاء الاصطناعي — أكاديمية سدايا، برنامج EXPLORERS / SDAIA AI Agents course — SDAIA Academy, EXPLORERS program | 2026 |  | متدرّب / Trainee |  |  | https://github.com/amjad1800/amjad_projects · https://github.com/amjad1800 |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: وكلاء الذكاء الاصطناعي / AI Agents. الدليل: This repository contains my projects and exercises from the SDAIA AI Agents course. ... ## Resources — SDAIA EXPLORERS: https://github.com/SDAIAAcademy/EXPLORERS ... ## Author — Amjad Al-Dawsari |
+| 227 | يزيد الحارثي | Yazeed Alharthi | أكاديمية سدايا — مشروع تدريبي في علوم البيانات / SDAIA Academy training project |  |  | متدرب / Trainee |  |  | https://github.com/Yazeeed11 · https://github.com/Yazeeed11/Housing_Prices_Regression |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات والانحدار الخطي / Data Science, Regression. الدليل: <b>Project at SDAIA Academy</b> |
+| 228 | النيرة القحطاني | Alnirah Alqahtani | معسكر T5 لعلوم البيانات — سدايا / SDAIA T5 Data Science Bootcamp | 2021 |  | متدربة / Trainee |  |  | https://github.com/AlnirahM · https://github.com/AlnirahM/Classification-Project · https://github.com/AlnirahM/Deep_Learning · https://github.com/AlnirahM/Unsupervised-Project · https://github.com/firasmalik/T5C06 |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات والتصنيف / Data Science, Classification. الدليل: SDAIA T5 Data Science Bootcamp Classification Project |
+| 229 | رقية عبدالله | Ruqaiah Abdullah | معسكر T5 — سدايا / T5 Bootcamp — SDAIA |  |  | متدربة / Trainee |  |  | https://github.com/ruqaiah22 · https://github.com/ruqaiah22/Regression_project |  |  |  | 88 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات والانحدار / Data Science, Regression. الدليل: ## Regression Project / T5-Bootcamp-SDAIA |
+| 230 | لولوة مدير | Luluwa Modeer | معسكر تعلم الآلة — سدايا / Machine Learning Bootcamp — SDAIA |  |  | متدربة / Trainee |  |  | https://github.com/LuluwaM · https://github.com/LuluwaM/BootCamp-ML-SDAIA |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / Machine Learning. الدليل: # BootCamp-ML-SDAIA — Machine Learning BootCamp from SDAIA |
+| 231 | سليمان الكربي | Sulaiman Alkurbi | معسكر النماذج اللغوية الكبيرة — سدايا / Large Language Models Bootcamp — SDAIA |  |  | متدرب / Trainee |  | https://www.linkedin.com/in/alkurbi-suliman/ | https://github.com/Alkurbi |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: النماذج اللغوية الكبيرة والروبوتات / LLMs, robot navigation, RAG. الدليل: - **Large Language Models Bootcamp** — SDAIA |
+| 232 | صالح الروقي | Saleh Alrougi | معسكر النماذج اللغوية الكبيرة — سدايا / SDAIA LLM Bootcamp |  |  | متدرب / Trainee |  |  | https://github.com/IDE21 · https://github.com/IDE21/LLM-Processing |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: النماذج اللغوية الكبيرة / LLM processing. الدليل: SDAIA_LLM_BOOTCAMP_projects |
+| 233 | عهود المحمدي | Ohoud Almohammadi | دورة هندسة البيانات — سدايا / SDAIA Data Engineering Course |  |  | متدربة / Trainee |  |  | https://github.com/Ohoud-Almohammadi · https://github.com/Ohoud-Almohammadi/Data-Enginnering |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: SDAIA Course (repository description of Data-Enginnering) |
+| 234 | ريم الغامدي | Reem Alghamdi | أكاديمية سدايا / SDAIA Academy |  |  | متدربة / Trainee |  |  | https://github.com/Reem1428 |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). الدليل: - 🌱 I’m currently learning SDAIA Academy |
+| 235 | يوسف العلي | Yossif Alali | معسكر علوم البيانات — سدايا / SDAIA Data Science Bootcamp |  |  | خريج / Graduate |  | https://www.linkedin.com/in/yossif-alali/ | https://github.com/Yhwxch |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات، بايثون، تعلم الآلة / Data Science, Python, ML. الدليل: ✅ **SDAIA Data Science Bootcamp**, Saudi Authority for Data and AI — I’ve completed the **SDAIA Data Science Bootcamp**, which provided intensive training in Python, machine learning... |
+| 236 | بتول حمد | Betool Hamad | أبطال صيف الذكاء الاصطناعي — سدايا، مسار صنع القرار المبني على البيانات (DDDM) / SDAIA AI Summer Champions — Data-Driven Decision Making path |  |  | متدربة / Trainee |  |  | https://github.com/betoolhamad · https://github.com/betoolhamad/Data-Driven-Decision-Making-DDDM-SDAIA-Project1 · https://github.com/betoolhamad/Data-Driven-Decision-Making-DDDM-SDAIA-Project2 · https://github.com/betoolhamad/Data-Driven-Decision-Making-DDDM-SDAIA-Project3 |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تحليل البيانات وصنع القرار / Data analytics & decision making. الدليل: This project is a project number 1 which was applied in SDAIA AI Summer Champions provided by cooperated SDAIA with the Coursera platform in Data-Driven Decision Making (DDDM) path. |
+| 237 | مضاوي الهبردي | Modhi Alhbrdi | معسكر T5 لعلوم البيانات — سدايا / Data Science Bootcamp T5 — SDAIA |  |  | متدربة / Trainee |  |  | https://github.com/ModiHb · https://github.com/ModiHb/T5_classification |  |  |  | 87 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة والتصنيف / Machine Learning, Classification. الدليل: The third project of the Data Science Bootcamp T5 is called Predicting Job Stability Using Classification. Through the project, we will establish employee stability for SDAIA authority. […] ### contributors: #### [Modhi Alhbrdi](https://github.com/ModiHb) |
+| 238 | جنى العجمي | Jana Alajmi | سدايا — مفاهيم الذكاء الاصطناعي والتطبيقات المتقدمة + أساسيات الذكاء الاصطناعي / SDAIA — AI Concepts and Advanced Applications + Fundamentals of Artificial Intelligence |  |  | متدربة / Trainee |  | https://www.linkedin.com/in/jana-alajmi-834305247 | https://github.com/Janafa |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي والأمن السيبراني / AI, Incident Response. الدليل: - SDAIA — AI Concepts and Advanced Applications - SDAIA — Fundamentals of Artificial Intelligence |
+| 239 | حسين الحميدي | Hussain Alhumaidi | سدايا — أساسيات الذكاء الاصطناعي ومفاهيم الذكاء الاصطناعي المتقدمة / SDAIA — Fundamentals of AI & Advanced AI Concepts |  |  | متدرب / Trainee |  |  | https://github.com/Darkness947 · https://github.com/Darkness947/Portfolio-Hussain |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البرمجيات وتطوير الواجهات / Software Engineering, Front-End. الدليل: - **SDAIA**: Fundamentals of AI & Advanced AI Concepts […] *Created with ❤️ by Hussain Alhumaidi* |
+| 240 | خالد الفهيد | Khalid Alfehaid | سدايا — مفاهيم الذكاء الاصطناعي والتطبيقات المتقدمة / SDAIA — Artificial Intelligence Concepts and Advanced Applications |  |  | متدرب / Trainee |  | https://www.linkedin.com/in/khalidalfehaid | https://github.com/KhalidAlfehaid · https://github.com/KhalidAlfehaid/Khalidfa |  |  |  | 83 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي / Artificial Intelligence. الدليل: - **Artificial Intelligence Concepts and Advanced Applications** – SDAIA |
+| 241 | لينا عسكر | Lina Askar | معسكر تعلم الآلة — سدايا / SDAIA Machine Learning Bootcamp | 2024 |  | متدربة / Trainee |  |  | https://github.com/Lina-Askar · https://github.com/Lina-Askar/sdaia-ml-bootcamp-project |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / Machine Learning. الدليل: This project was completed as part of the Machine Learning Bootcamp organized by SDAIA. […] This project was developed as part of the final assessment in the SDAIA ML Bootcamp (April–May 2024). |
+| 242 | دانية السحفي | Dania Alsahfy | معسكر تعلم الآلة — سدايا / SDAIA Machine Learning Bootcamp |  |  | متدربة / Trainee |  |  | https://github.com/Dania166 · https://github.com/Dania166/SDAIA_ML_bootcamp_Assignments |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة / Machine Learning. الدليل: # SDAIA_ML_bootcamp_Assignments (repository of assignments from the SDAIA ML bootcamp, authored by Dania Alsahfy per public commit history) |
+| 243 | ديما خالد | Deema Khaled | معسكر الذكاء الاصطناعي التطبيقي — سدايا / SDAIA Applied AI Bootcamp |  |  | متدربة / Trainee |  |  | https://github.com/DeemaK-DS · https://github.com/DeemaK-DS/SDAIA-AI-bootcamp-ML · https://github.com/DeemaK-DS/SDAIA-AI-bootcamp-NN · https://github.com/DeemaK-DS/SDAIA-AI-bootcamp-csv-Analyzer-project |  |  |  | 72 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلم الآلة والشبكات العصبية / Machine Learning, Neural Networks. الدليل: Repository series 'SDAIA-AI-bootcamp-ML' / 'SDAIA-AI-bootcamp-NN' / 'SDAIA-AI-bootcamp-csv-Analyzer-project'; README: '# Week 3 — Baseline ML System (Train + Evaluate + Predict)' |
+| 244 | أفنان السرحاني | Afnan Alsirhani | معسكر T5 لعلوم البيانات — سدايا (SDAIA T5 Data Science Bootcamp) |  |  | متدرّبة / Trainee |  |  | https://github.com/wafaa-al/CreditCard-Fraud-Detection-Classification · https://github.com/AfnanAlsirhani |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التصنيف وكشف الاحتيال (Classification / Fraud Detection). الدليل: SDAIA T5 Data Science Bootcamp … Done By: [Wafaa Alharbi] & [Afnan Alsirhani] |
+| 245 | وجد الربيعة | Wajd Alrabiah | أكاديمية سدايا (SDAIA Academy) — معسكر بناء تطبيقات الذكاء الاصطناعي التوليدي | 2026 |  | متدرّبة / Trainee |  |  | https://github.com/WajdAlrabiah/SDAIA-Building-Gen-AI-Apps-Wajd-Work · https://github.com/WajdAlrabiah |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الذكاء الاصطناعي التوليدي وتعلّم الآلة (Generative AI / ML). الدليل: Repository 'SDAIA-Building-Gen-AI-Apps-Wajd-Work'; resolved git author name: Wajd Alrabiah |
+| 246 | حصة سعد | Hissah Saad | معسكر الذكاء الاصطناعي — أكاديمية سدايا (مشروع تعلم الآلة وتمارين الوحدات) | 2026 |  | متدرّبة / Trainee |  |  | https://github.com/HSKdeveloper/ML-Project · https://github.com/HSKdeveloper/student-extra-ex |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلّم الآلة (Machine Learning). الدليل: A comprehensive Machine Learning project developed at SDAIA AI bootcamp … 'solve SDAIA bootcamp unit exercises' … resolved git author name: Hissah Saad |
+| 247 | شروق محمود محمد | Sherouk Mhmoud Mohamed | أكاديمية سدايا (SDAIA Academy) — مشروع الأسبوع الأول في المعسكر | 2026 |  | متدرّبة / Trainee |  |  | https://github.com/RayidAlshammari/SDAIA-Academy-Bootcamp-Week-1-Project · https://github.com/sherouk6/DDDM-Project |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تحليل البيانات واتخاذ القرار المبني على البيانات (DDDM). الدليل: Repository 'SDAIA-Academy-Bootcamp-Week-1-Project'; resolved git author name: Sherouk Mhmoud Mohamed |
+| 248 | عصام فلمبان | Essam Felemban | أساسيات الذكاء الاصطناعي للجميع — سدايا (SDAIA AI foundations for everyone) |  |  | متدرّب / Trainee |  |  | https://github.com/EssamFelemban/SDAIA-AI-foundations-for-everyone |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أساسيات الذكاء الاصطناعي (AI Foundations). الدليل: Repository 'SDAIA-AI-foundations-for-everyone'; resolved git author name: Essam Felemban |
+| 249 | شهد طارق | Shahad Tariq | تخصص التعلّم العميق المقدَّم من deeplearning.ai وسدايا (Deep Learning Specialization — SDAIA) |  |  | متدرّبة / Trainee |  |  | https://github.com/shtm7/Deep-Learning-Specialization |  |  |  | 75 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلّم العميق (Deep Learning). الدليل: Coursera's Deep Learning Specialization provided by deeplearning.ai and SDAIA … resolved git author name: Shahad Tariq |
+| 250 | عبدالعزيز الماس | Abdulaziz Almas | معسكر T5 لعلوم البيانات (T5 Data Science BootCamp) |  |  | متدرّب / Trainee |  |  | https://github.com/abdulazizalmass/Stroke_Prediction |  |  |  | 82 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تعلّم الآلة والتصنيف (ML / Classification). الدليل: This project is one of the T5 Data Science BootCamp requirements … resolved git author name: Abdulaziz Almas |
+| 251 | عبدالمجيد المعارك | Abdulmajeed Almuarik | معسكر سدايا — المشروع الخامس (التعلّم العميق) / التعرّف على المشاعر من الصوت |  |  | متدرّب / Trainee |  |  | https://github.com/MeshalAlamr/speech-emotion-recognition · https://github.com/CreativeSelf0 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: التعلّم العميق ومعالجة الصوت (Deep Learning / Speech). الدليل: SDAIA Bootcamp project 5 - Deep Learning … resolved git author name: Abdulmajeed Al-Muarik |
+| 252 | أحمد حكمي | Ahmad Hakami | معسكر T5 لعلوم البيانات — سدايا (SDAIA T5 Data Science Bootcamp) |  |  | متدرّب / Trainee |  |  | https://github.com/Noufalshabani/SDAIA-T5-Data-Science-Bootcamp |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات (Data Science). الدليل: Repository 'SDAIA-T5-Data-Science-Bootcamp'; resolved git author name: Ahmad Hakami |
+| 253 | مرية الرشيد | Mariyyah Alrasheed | معسكر T5 (T5 Bootcamp) |  |  | متدرّبة / Trainee |  |  | https://github.com/Mariyyah-Alrasheed/T5_tst |  |  |  | 65 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات (Data Science). الدليل: test for T5 bootcamp … resolved git author name: Mariyyah Alrasheed |
+| 254 | العنود سالم المطيري | Alanoud Salem Almutairi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — الدفعة السادسة (T5 Cohort 06) | 2021 |  | متدرّب / Trainee |  |  | https://github.com/firasmalik/T5C06 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات وتعلّم الآلة (Data Science / ML). الدليل: T5 cohort-06 classroom repository (Assignements / Regression / Classification / Deep_Learning / Unsupervised); resolved git author name: Alanoud Salem Almutairi |
+| 255 | غادة الحربي | Ghadah Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — الدفعة السادسة (T5 Cohort 06) | 2021 |  | متدرّب / Trainee |  |  | https://github.com/firasmalik/T5C06 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات وتعلّم الآلة (Data Science / ML). الدليل: T5 cohort-06 classroom repository (Assignements / Regression / Classification / Deep_Learning / Unsupervised); resolved git author name: Ghadah Alharbi |
+| 256 | منال القحطاني | Manal S AlQahtani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — الدفعة السادسة (T5 Cohort 06) | 2021 |  | متدرّب / Trainee |  |  | https://github.com/firasmalik/T5C06 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات وتعلّم الآلة (Data Science / ML). الدليل: T5 cohort-06 classroom repository (Assignements / Regression / Classification / Deep_Learning / Unsupervised); resolved git author name: Manal S AlQahtani |
+| 257 | عمران فلاته | Omran Fallatah | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — الدفعة السادسة (T5 Cohort 06) | 2021 |  | متدرّب / Trainee |  |  | https://github.com/firasmalik/T5C06 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات وتعلّم الآلة (Data Science / ML). الدليل: T5 cohort-06 classroom repository (Assignements / Regression / Classification / Deep_Learning / Unsupervised); resolved git author name: Omran Fallatah |
+| 258 | سامر عطوي | Samer Atwi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — الدفعة السادسة (T5 Cohort 06) | 2021 |  | متدرّب / Trainee |  |  | https://github.com/firasmalik/T5C06 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات وتعلّم الآلة (Data Science / ML). الدليل: T5 cohort-06 classroom repository (Assignements / Regression / Classification / Deep_Learning / Unsupervised); resolved git author name: Samer Atwi |
+| 259 | غدير الصندي | Ghadeer Alsandi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — الدفعة السادسة (T5 Cohort 06) | 2021 |  | متدرّب / Trainee |  |  | https://github.com/firasmalik/T5C06 |  |  |  | 78 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات وتعلّم الآلة (Data Science / ML). الدليل: T5 cohort-06 classroom repository (Assignements / Regression / Classification / Deep_Learning / Unsupervised); resolved git author name: Ghadeer Alsandi |
+| 260 | غيداء الزهراني | Ghaida Alzhrani | دورة أساسيات الذكاء الاصطناعي من سدايا (Fundamentals of AI from SDAIA) | 2026 |  | متدرّبة / Trainee |  |  | https://github.com/Ghaidaalzhrani/summer-holiday-2026 |  |  |  | 60 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أساسيات الذكاء الاصطناعي (AI Fundamentals). الدليل: Courses: … [x] Fundamentals of AI from SDAIA … resolved git author name: Ghaida Alzhrani |
+| 261 | محمد السياري | Mohammed Al-Sayyari | معسكر T5 لتقنيات إدارة الزحام (Zeham Management Technologies BootCamp) | 2024 | Tamkeen Technologies | AI Engineering Senior Analyst |  |  |  |  |  | https://www.zoominfo.com/p/Mohammed-Al-sayyari/2199299218 | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science / AI. الدليل: Zeham Management Technologies BootCamp at Sdaia (2024); Data Scientist at Wakeb (2024-2025); AI Engineering Senior Analyst at Tamkeen Technologies 2025-present |
+| 262 | مشاعل الصالحي | Mashael Alsalhi | معسكر علوم البيانات (Data Science Bootcamp) — سدايا | 2021 | Al Qahtani Pipe Coating Industries | Application Database Administrator |  |  |  |  |  | https://www.zoominfo.com/p/Mashael-Alsalhi/9038529347 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Data Science. الدليل: Data Science Bootcamp at SDAIA (2021-2022); "participated in a Data Science Bootcamp organized by the Saudi Data and Artificial Intelligence Authority (SDAIA)"; Application DBA at Al Qahtani Pipe Coating Industries 2022-present |
+| 263 | يوسف العمري | Yusef Alamri | معسكر الأمن السيبراني — أكاديمية سدايا (Cyber Security Bootcamp) | 2021 | National Information Center (NIC) | Cyber Security Specialist |  |  |  |  |  | https://www.zoominfo.com/p/Yusef-Alamri/10622513560 | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Cybersecurity / Data Governance. الدليل: Cyber Security Bootcamp at SDAIA Academy (2021-2022); Cyber Security Specialist at National Information Center |
+| 264 | غادة السبيعي | Ghada Alsubaie | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — سدايا (مشروع التخرج، فريق مستدام) |  |  | متدربة — جمع ونمذجة البيانات |  | https://linkedin.com/in/ghadahalsubaie/ | https://github.com/AlwaleedAlkhdairi/Mustdam |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات. الدليل: SDAIA T5 Bootcamp - Capstone Project ... ## Team Mustadm - Ghada Alsubaie: Data Collection, Data Modeling, Algorithm Development |
+| 265 | رغد محمد العدوي | Raghad Mohammed Aladawi | دورة سدايا للبرمجة بلغة جافا / Sdaia FrontEnd Course |  |  |  |  |  | https://github.com/adawi-r · https://github.com/adawi-r/Sdaia_FrontEnd_Course |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: Java, front-end development. الدليل: Repositories: SDAIA_Java_Home_Works, SDAIA_Java_Class_Activities, SDAIA_Java_HrApiDays, Sdaia_FrontEnd_Course |
+| 266 | منيرة الشهراني | Munirah Alshahrani | أكاديمية سدايا — علوم البيانات / SDAIA Academy — Data Science |  |  | خريج / Trainee |  |  | https://github.com/Munira-Alshahrani |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات / Data Science. الدليل: GitHub profile bio (@Munira-Alshahrani): "Bachelor's degree in Information System at KKU, I have experience in Data Science at SDAIA Academy, Junior Data Scientist-EDA-Machine Learning-Deep Learning" |
+| 267 | رند العجمي | Renad Alajmi | معسكر النماذج اللغوية الكبيرة — سدايا / SDAIA LLM Bootcamp |  |  | متدربة / Trainee |  |  | https://github.com/renad30 · https://github.com/renad30/SDAIA_LLM_projects |  |  |  | 88 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: النماذج اللغوية الكبيرة / Large Language Models. الدليل: here are all the projects i did while i was in SDAIA LLM bootcamp |
+| 268 | مشاعل المسيري | Meshael Almusairii | معسكر T5 — مشروع التخرج (رؤية الطاقة الشمسية السعودية) |  |  | متدرّبة / Trainee |  |  | https://github.com/raghadware/solar_energy_capstone_project |  |  |  | 80 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: علوم البيانات والتنبؤ (Data Science / Forecasting). الدليل: Saudi Solar Vision: Shining Light on tomorrow - T5 bootcamp capstone project … resolved git author name: Meshael Almusairii |
+| 269 | لمى بن مريحة | Lama Bin Muryihah | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Lama16/modern-data-engineering-project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: ## Team Members — Lama Bin Muryihah / Tarfah Alsharidah … 'This project was completed as the final project for the **Modern Data Engineering for AI Systems** training program.' (NOTE: README names the SDAIA Academy DAICO course title but does not spell out 'SDAIA' — lower confidence) |
+| 270 | طرفة الشريدة | Tarfah Alsharidah | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Lama16/modern-data-engineering-project |  |  |  | 85 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: ## Team Members — Lama Bin Muryihah / Tarfah Alsharidah … 'This project was completed as the final project for the **Modern Data Engineering for AI Systems** training program.' (NOTE: README names the SDAIA Academy DAICO course title but does not spell out 'SDAIA' — lower confidence) |
+| 271 | رغد القثمي | Raghad AlQithmi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا / SDAIA (Academy) T5 Data Science & AI Bootcamp |  |  | خريج / Trainee |  |  | https://github.com/ManaSaleh/Data-Analysis-Project |  |  |  | 70 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: تحليل البيانات / Data Analysis. الدليل: README: 'Raghad AlQithmi & Mana Al Aqeel … This project is one of the T5 Data Science BootCamp requirements.' (NOTE: names the T5 bootcamp but not SDAIA explicitly — lower confidence) |
+
+## تقرير التوظيف المبكر 2021–2026 — 50 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | منتهى جابر | Muntaha Jaber | معسكر T5 لعلوم البيانات — فصل C04 (سبتمبر–نوفمبر 2021) | 2021 | أرامكو السعودية — مركز حاسب الاستكشاف EXPEC | مطوّرة ذكاء اصطناعي (young professional, Upstream) |  | https://www.linkedin.com/in/muntaha-jaber-3699931a8/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/muntahajaber |  |  | https://www.aramcolife.com/en/publications/the-arabian-sun/articles/2023/week-16-articles/muntaha-jaber-saudi-chat-gpt-hackathon-finalist | 86 | أقوى حالة في دفعة 2021: الجهة مؤكدة بمقال رسمي في «الشعلة/Arabian Sun» — وهو المصدر الصحفي الوحيد في المشروع كله الذي سمّى خريجًا فردًا. متأهلة نهائية في أول هاكاثون ChatGPT سعودي (أكاديمية طويق). تاريخ البدء وأوّلية الوظيفة غير مؤكدين. |
+| 2 | أسماء الثقفي | Asmaa Althakafi | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | شركة مطارات الرياض | عالمة بيانات أولى (Senior Data Scientist) |  | https://www.linkedin.com/in/asmaa-althakafi/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/AsmaaAlthakafi/Optical-Music-Recognition · https://github.com/AsmaaAlthakafi |  |  | https://www.zoominfo.com/p/Asmaa-Althakafi/8472347345 | 78 | الجهة والمسمى مؤكدان عبر مجمّع بيانات؛ تاريخ البدء غير مؤكد ولقب Senior يرجّح تدرجًا. مشروع التخرج: التعرّف الضوئي على النوتة الموسيقية. |
+| 3 | محمد عسيلان | Mohammed Osailan | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | شركة الوطنية للتأمين Wataniya Insurance | محلل أعمال أول للذكاء الاصطناعي وأتمتة العمليات (Senior AI & RPA Business Analyst) |  | https://www.linkedin.com/in/mohammed-osailan/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/MohammedAHO |  |  | https://www.zoominfo.com/p/Mohammed-Osailan/13630702266 | 76 | الجهة والمسمى مؤكدان عبر مجمّع بيانات؛ التاريخ غير مؤكد. مشاريعه: كاشف العروض الإلكترونية، تصنيف إعلانات الوظائف المزيفة، موصي أفلام بلا حرق. (سجل ZoomInfo ثانٍ بجهة أخرى يُرجَّح أنه شخص آخر — لم يُدمج.) |
+| 4 | نورة الخليفة | Norah Alkhalifah | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | سدايا SDAIA | غير محدد |  | https://sa.linkedin.com/in/norahalkhalifah | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/NorahAlkhalifah/Advertising_MTA · https://github.com/NorahAlkhalifah |  |  |  | 74 | خريجة وظّفتها سدايا نفسها. الانتساب مؤكد بمقتطف ترويسة مفهرس ومعرّف ملفها يطابق كشف الفصل تمامًا؛ المسمى وتاريخ البدء غير مؤكدين. |
+| 5 | إلياس مغربي | Elyas Maghrabi | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | Devoteam | غير محدد |  | https://www.linkedin.com/in/elyas-maghrabi-567109136/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/maghrabi-es/EDA-Project · https://github.com/maghrabi-es |  |  |  | 72 | الجهة مؤكدة بمقتطف مفهرس ومعرّف الملف يطابق كشف الفصل؛ المسمى والتاريخ غير مؤكدين. أنجز سلسلة مشاريع T5 الخمس كاملة. |
+| 6 | طيف عبدالله (الخالص) | Taef Abdullah | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | Dezert Innovation Technology | أخصائية تقنية معلومات أولى (Senior IT Specialist) |  | https://www.linkedin.com/in/taef-al-khales-945380213/ | https://github.com/Taifabdullah2021/MTA_EDA · https://github.com/Taifabdullah2021 |  |  | https://www.zoominfo.com/p/Taef-Abdullah/10123812321 | 66 | الجهة من مجمّع بيانات بمطابقة اسمية متوسطة الثقة؛ التاريخ غير مؤكد. مشروعها الأول MTA_EDA بتواريخ commits 23 سبتمبر – 5 أكتوبر 2021 (مؤكدة بالاستنساخ). |
+| 7 | مشعل العمر | Meshal Alamr | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | جهة حكومية (سرية) | غير محدد |  | https://www.linkedin.com/in/meshalalamr/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/MeshalAlamr/speech-emotion-recognition · https://github.com/MeshalAlamr |  |  |  | 64 | الترويسة المفهرسة تُخفي الجهة عمدًا. منشوران مؤرخان بترميز معرّف المنشور: #KFUPM في 7 يونيو 2022، و#takeastepforward في 12 ديسمبر 2022 (نمط إعلان وظيفة جديدة، نصه غير قابل للجلب). مشروع التخرج: التعرّف على المشاعر من الصوت. |
+| 8 | إيلاف الساعدي | Elaf Alsaedi | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | جهة مُخفاة بطلب صاحبة الملف | عالمة أبحاث ذكاء اصطناعي (AI Research Scientist) |  | https://www.linkedin.com/in/elaf-alsaedi/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/elafsalem |  |  | https://scholar.google.com/citations?user=Nm3umpwAAAAJ | 62 | المسمى معلن والجهة مُخفاة؛ التاريخ غير مؤكد. لها ملف على Google Scholar (المحتوى غير قابل للجلب — robots). |
+| 9 | سارة العبدالوهاب | Sarah Alabdulwahab | معسكر T5 لعلوم البيانات — فصل C04 | 2021 | شركة حصانة الاستثمارية (مطابقة ضعيفة) | غير محدد |  |  | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/Sarah-Alabdulwahab/Concert-Tickets-Price-Prediction-Web-Scraping-and-Regression · https://github.com/Sarah-Alabdulwahab |  |  |  | 48 | تحفّظ صريح: معرّف الملف في مصدر جهة العمل يختلف عن المعرّف المسجّل في كشف الفصل، فقد يكون شخصًا آخر — لم تُعتمد الجهة. (سجل ZoomInfo ثالث بجهة مختلفة يكاد يقطع أنه شخص ثالث.) |
+| 10 | عبدالعزيز الشهري | Abdulaziz Alshehri | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/kaaz/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/AbdulazizAlshehri/ML-EDA · https://github.com/AbdulazizAlshehri |  |  |  | 52 | مؤكد التخرج: مستودع ML-EDA بتواريخ commits 23 سبتمبر – 22 ديسمبر 2021 (مؤكدة بالاستنساخ). لم يُعثر على جهة عمل. |
+| 11 | سارة حاوي | Sara Hawi | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/saraahawi/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/saraahawi/Course-Projects · https://github.com/saraahawi |  |  | https://x.com/saraahawi | 52 | مؤكدة التخرج: مستودع مشاريع المقرر بتواريخ 23 سبتمبر – 19 أكتوبر 2021 (مؤكدة بالاستنساخ). لم يُعثر على جهة عمل. التخصص: Artificial Intelligence and Data Science; ML/DL in Python (recommender systems, CNNs, classification). |
+| 12 | إبراهيم الزهيري | Ibrahim Alzuhairi | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/ibrahim-alzuhairi-27751584/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/ibalzuhairi |  |  |  | 48 | مؤكد التخرج بكشف فصل C04 (سبتمبر–نوفمبر 2021). لم يُعثر على جهة عمل. |
+| 13 | فاطمة السعيد | Fatima Alsaeed | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/fatima-al-saeed/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/Fatima-jawad |  |  |  | 48 | مؤكدة التخرج بكشف فصل C04. لم يُعثر على جهة عمل. |
+| 14 | ندى رمبو | Nada Rambu | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/nada-rambu/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/NadAAaHH |  |  |  | 48 | مؤكدة التخرج بكشف فصل C04. لم يُعثر على جهة عمل. |
+| 15 | رغد العريفي | Raghad Alarifi | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/raghad-alarifi/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/Raghad09 |  |  |  | 48 | مؤكدة التخرج بكشف فصل C04. تنبيه: ملف «رغد العريفي — بنك البلاد» معرّفه يختلف عن معرّف الكشف — لم يُدمج. |
+| 16 | ريف التركي | Reef Alturki | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/reef-alturki/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/ReefAlturki |  |  |  | 48 | مؤكدة التخرج بكشف فصل C04. لم يُعثر على جهة عمل. |
+| 17 | تيا الزنان | Tia Alzanan | معسكر T5 لعلوم البيانات — فصل C04 | 2021 |  |  |  | https://www.linkedin.com/in/tia-alzanan-993325216/ | https://github.com/DmitriiDenisov/sdaia_t5c04_projects · https://github.com/tia1996 |  |  |  | 48 | مؤكدة التخرج بكشف فصل C04. تنبيه: سجل ZoomInfo «مديرة الإدارة الثقافية بوزارة الخارجية» يُرجَّح أنه شخص آخر أو دور غير ذي صلة — لم يُدمج. |
+| 18 | رهف اليوسف | Rahaf Alyousef | معسكر T5 لعلوم البيانات — فصل C06 (نوفمبر–ديسمبر 2021) | 2021 | إسـنـاد ESNAD | غير محدد |  | https://sa.linkedin.com/in/rahaf-alyousef-6b83b8208 | https://github.com/firasmalik/T5C06 · https://github.com/rahafkh1 |  |  |  | 70 | الجهة مؤكدة بمقتطف مفهرس؛ المسمى والتاريخ غير مؤكدين. مؤلفة commits ومشاريع مشتركة في فصل C06 (Regression وUnsupervised وDeep Learning). |
+| 19 | علي التميمي | Ali Al-Tamimi | معسكر T5 لعلوم البيانات — فصل C06 | 2021 |  |  | B.S. Computer Science with a concentration in Data Science — University of North Carolina at Greensboro (2021) | https://www.linkedin.com/in/ali-al-tamimi/ | https://github.com/firasmalik/T5C06 · https://github.com/Ali-Altamimi/SDAIA_Classification · https://github.com/Ali-Altamimi/SDAIA_Convolutional_Neural_Network · https://github.com/Ali-Altamimi |  |  | https://twitter.com/Ali_Altamimi_tw/ | 56 | تخرجه مؤكد بمصدرين: مؤلفية commits في كشف فصل C06، ومستودعان مستقلان مؤرخان — SDAIA_Classification (30 أكتوبر 2021) وSDAIA_CNN لكشف كوفيد-19 من أشعة الصدر (2 ديسمبر 2021). لم يُعثر على جهة عمل. |
+| 20 | طلال النجيمان | Talal Alnujayman | معسكر T5 لعلوم البيانات — فصل C06 | 2021 |  |  |  |  | https://github.com/firasmalik/T5C06 · https://github.com/TalalMJ/T5_Classification_Project · https://github.com/TalalMJ |  |  |  | 52 | أنجز سلسلة مشاريع C06 كاملة بتواريخ متتابعة: T5_EDA ثم Regression (12 ديسمبر) ثم Classification (19 ديسمبر) ثم NLP (30 ديسمبر 2021). لم يُعثر على جهة عمل. |
+| 21 | سلطان محفوظ | Sultan Mahfouz | معسكر T5 لعلوم البيانات (سدايا × Metis) | 2021 |  | Flutter App Developer (self-described) |  |  | https://github.com/Sultanmahfouz/Tuwaiq_Final_Project · https://github.com/Sultanmahfouz |  |  | https://x.com/_Sultan_mahfouz | 54 | مرشح قوي لدفعة أكتوبر 2021 الأولى (الـ35 خريجًا): مستودع «Metis & Sdaia final project of data science & ML Bootcamp» بتواريخ commits 7–21 أكتوبر 2021 (مؤكدة بالاستنساخ) — أي مشروع نهائي مكتمل في أكتوبر 2021. التخصص: Mobile app development with Flutter. |
+| 22 | شروق عبدالله (2021) | Shroaq Abdullah (T5 2021) | معسكر T5 لعلوم البيانات | 2021 |  |  |  |  | https://github.com/shroaqabdullah/MTA-Shroaq · https://github.com/shroaqabdullah |  |  |  | 52 | مستودع MTA-Shroaq موصوف «أول مشروع في معسكر T5 لعلوم البيانات» بتواريخ commits 1 أكتوبر – 23 نوفمبر 2021 (مؤكدة بالاستنساخ) — يضعها في موجة خريف 2021 نفسها لفصلي C04/C06. |
+| 23 | ميعاد الرحيلي | Meaad Alrehaili | معسكر T5 لعلوم البيانات | 2021 |  |  |  |  | https://github.com/meaadalrehaili/Tuwaiq_Data_Science_Bootcamp · https://github.com/meaadalrehaili |  |  | https://x.com/alrehaili_meaad | 52 | مستودع موصوف «This Project for SDAIA T5 DS BootCamp» بتواريخ commits 2 أكتوبر – 26 نوفمبر 2021 (مؤكدة بالاستنساخ). التعريف الذاتي: أمن سيبراني/ذكاء اصطناعي/علوم بيانات. التخصص: Cybersecurity, Artificial Intelligence and Data Science; Python. |
+| 24 | آلاء الجداني | Alaa Aljadani | معسكر T5 لعلوم البيانات (سدايا × Metis) | 2021 |  |  | Information Systems graduate (fresh graduate) | https://www.linkedin.com/in/alaa-aljadani | https://github.com/AlaaAljadani/Customers_Churn-Metis · https://github.com/AlaaAljadani |  |  |  | 52 | مستودع موصوف «مشروعي في معسكر علوم البيانات مع أكاديمية سدايا وMetis» بتواريخ 29 نوفمبر – 16 ديسمبر 2021 (مؤكدة بالاستنساخ). التخصص: Data science — Python, MySQL, Tableau, R; A/B testing, business analytics. |
+| 25 | لمى الحربي | Lama Alharbi | معسكر T5 لعلوم البيانات | 2021 |  |  |  |  | https://github.com/lamalharbi/Tuwaiq_Project_LamaAlharbi · https://github.com/lamalharbi |  |  |  | 50 | مستودع مشروع المعسكر بتواريخ commits 10–21 أكتوبر 2021 (مؤكدة بالاستنساخ). |
+| 26 | رزان الجهني | Razan M. Aljuhani | معسكر T5 لعلوم البيانات | 2021 |  |  | Computer Science — King Abdulaziz University | https://www.linkedin.com/in/razan-aljuhani-bb15651b3 | https://github.com/razanmaljuhani/SDAIA-Data-Science-bootcamp · https://github.com/razanmaljuhani |  |  |  | 50 | مستودع «SDAIA-Data-Science-bootcamp» أُنشئ 29 نوفمبر ودُفع 16 ديسمبر 2021. التخصص: Artificial Intelligence and Data Science; big data, compilers, cybersecurity coursework. |
+| 27 | محمد السقاف | Mohammed Saggaf | معسكر T5 لعلوم البيانات | 2021 |  |  |  |  | https://github.com/m7md-saggaf/artificial_intelligence_project · https://github.com/m7md-saggaf |  |  |  | 52 | مستودع موصوف «T5 SDAIA bootcamp» بتواريخ 5–24 أكتوبر 2021، ويضم منهج T5 كاملًا في مجلدات (EDA · Linear Regression · Classification · SDAIA Project). |
+| 28 | أحمد الزرقي | Ahmed Alzurqi | معسكر T5 لعلوم البيانات | 2021 |  |  |  |  | https://github.com/AhmedAlzurqi/T5-Project · https://github.com/AhmedAlzurqi · https://github.com/AhmedAlzurqi/AhmedAlzurqi.github.io |  |  |  | 50 | مستودع «T5-Project» موصوف «T5 Bootcamp by SDAIA»، أُنشئ 12 نوفمبر ودُفع 17 نوفمبر 2021. |
+| 29 | روابي خلف | Rawabi Khalaf | معسكر T5 لعلوم البيانات — الدفعة الثانية | 2022 |  | عالمة بيانات مبتدئة (وصف ذاتي) |  |  | https://github.com/RawabiKhalaf/MTA-EDA · https://github.com/RawabiKhalaf |  |  |  | 50 | مستودع MTA-EDA موصوف «SDAIA T5 Data Science Bootcamp» بتواريخ commits 26 سبتمبر 2021 – 8 فبراير 2022 (مؤكدة بالاستنساخ) — امتداد العمل إلى فبراير 2022 يضعها في الدفعة الثانية. الرياض. الجهة غير مؤكدة. تنبيه: شخص مختلف عن «روابي المطيري». التخصص: Data science — NLP topic modelling of Saudi newspapers, speech emotion recognition, classification. |
+| 30 | نوف العتيبي | Nouf Alotaibi | معسكر T5 لعلوم البيانات — سدايا (2021–2022) | 2022 | AQAR | أخصائية نمو أولى (Senior Growth Specialist) |  |  |  |  |  | https://rocketreach.co/nouf-sultan-email_730913681 | 64 | البرنامج وسنتاه مسجّلان صراحة في سجل خبرتها على مجمّع بيانات. تاريخ بدء الوظيفة وأوّليتها غير مؤكدين. ملاحظة: المسار خرج من مجال البيانات إلى النمو التجاري. |
+| 31 | الوليد الخضيري | Alwaleed Alkhdairi | أبطال صيف الذكاء الاصطناعي — سدايا 2022 | 2022 |  |  |  |  | https://github.com/AlwaleedAlkhdairi |  |  |  | 52 | البرنامج وسنته مسجّلان في سجل خبرة مفهرس، ويعضده نشاط GitHub لاحق. لم تُحسم جهة العمل من مصدر علني. |
+| 32 | أحمد الناصر | Ahmed Alnasser | أبطال صيف الذكاء الاصطناعي — سدايا 2022 | 2022 | Intelmatix | متدرب علوم بيانات (2026) |  |  |  |  |  | https://rocketreach.co/ahmed-alnasser-email_884030874 | 40 | لا يستوفي معيار التوظيف المبكر: أقرب أثر توظيفي مرصود هو تدريب في 2026 — أي بعد أربع سنوات من البرنامج، وتدريب لا توظيفًا كاملًا. يُدرج للشفافية. |
+| 33 | شهد غاوا | Shahad Ghawa | معسكر علوم بيانات (الانتساب لسدايا مرجّح لا مؤكد) | 2022 |  |  |  | https://www.linkedin.com/posts/shahad-ghawa-a88519197_datascience-sda-datasciences-activity-6945065434324848640-pUrR |  |  |  |  | 42 | منشور عن معسكر علوم بيانات مؤرخ بترميز معرّف المنشور في 21 يونيو 2022 («مضى شهر على البداية»). الانتساب لأكاديمية سدايا مرجّح وغير مؤكد؛ لا دليل توظيف. |
+| 34 | أريج الشمري | Areej Alshammari | معسكر الخريجين الجدد في البيانات والذكاء الاصطناعي — سدايا 2023 | 2023 | سدايا SDAIA | مهندسة ذكاء اصطناعي (2023–حتى الآن) | بكالوريوس علوم حاسب — جامعة الأميرة نورة (2019–2023) |  |  |  |  | https://rocketreach.co/areej-alshammari-email_730884246 | 82 | توظيف في سنة التخرج الجامعي وسنة المعسكر نفسها (2023) — من أوضح حالات استيفاء المعيار. سبقه تدريب بمدينة الملك عبدالعزيز للعلوم والتقنية 2023. تنبيه: «أمل الشمري — مهندسة ذكاء اصطناعي بسدايا» شخص مختلف — لم يُدمج. |
+| 35 | سعد العبدالسلام | Saad Alabdulsalam | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — سدايا 2023 | 2023 | وكب Wakeb_Data | قائد فريق تقني للذكاء الاصطناعي (2025–)؛ أول توظيف: عالم بيانات (2024) |  |  |  |  |  | https://rocketreach.co/saad-alabdulsalam-email_798775696 | 80 | تدرّج مؤرخ بالكامل: متدرب المعسكر 2023 ← عالم بيانات بوكب 2024 (السنة التالية مباشرة) ← قائد فريق تقني للذكاء الاصطناعي 2025. |
+| 36 | مها الشهري | Maha Alshehri | معسكر حوكمة البيانات — أكاديمية سدايا 2024 | 2024 | سدايا SDAIA | مطوّرة برمجيات (2024–حتى الآن) |  |  |  |  |  | https://rocketreach.co/maha-alshehri-email_731626614 | 78 | توظيف في سنة المعسكر نفسها (2024) وفق سجل خبرة مفهرس. الشهر الدقيق غير مؤكد. تنبيه: «الشهري» اسم شائع — الثقة متوسطة، والمميِّز اجتماع المعسكر والوظيفة في السجل نفسه. |
+| 37 | هاجر الشهري | Hajar Alshehri | تدريب بأكاديمية سدايا 2024 | 2024 | سدايا SDAIA | مهندسة ذكاء اصطناعي (2024–حتى الآن) |  |  |  |  |  |  | 72 | انتقال من التدريب إلى التوظيف داخل سدايا في السنة نفسها (2024). تنبيه: «الشهري» اسم شائع — الثقة متوسطة. |
+| 38 | أبرار العنزي | Abrar Alanazi | معسكر النماذج اللغوية الكبيرة — سدايا 2024 · وبرنامج Elevate لمهندسي البيانات — سدايا 2023 | 2024 | الأكاديمية السعودية الرقمية | هندسة الذكاء الاصطناعي (2025–حتى الآن) |  |  |  |  |  | https://rocketreach.co/abrar-alanazi-email_883650255 | 76 | توظيف في السنة التالية مباشرة لمعسكر 2024 وفق سجل خبرة مفهرس. الشهر غير مؤكد. |
+| 39 | ندى الخرجي | Nada Alkharji | معسكر تقنيات معالجة الازدحام المروري (T5 Zeham) — يوليو–أكتوبر 2024 | 2024 |  |  | بكالوريوس علوم حاسب | https://www.linkedin.com/in/nada-alkharji | https://github.com/NadaAlkharji/T5_Zeham_Management_Technologies_BootCamp · https://github.com/NadaAlkharji |  |  | https://x.com/nada_abdulmalek | 50 | مستودع المعسكر أُنشئ 17 أكتوبر 2024. مؤشر معاكس صريح: تعريفها الذاتي وقت الرصد «خريجة علوم حاسب حديثة أبحث عن فرصة مناسبة في مجال البيانات» — أي باحثة عن عمل، لا موظفة. التخصص: Data field; Udacity Machine Learning Nanodegree. |
+| 40 | حصة الشريهي | Hssah Alsharihi | معسكر تقنيات معالجة الازدحام المروري (T5 Zeham) — 2024 | 2024 |  |  | جامعة الأميرة نورة (مشروع تخرج 2024) | https://www.linkedin.com/in/hssah-alsherihi-658b25216 | https://github.com/HssahSaad/T5_BootCamp · https://github.com/HssahSaad/ClearPath · https://github.com/HssahSaad |  |  |  | 56 | مستودع المعسكر أُنشئ 1 أكتوبر 2024، ومشروع التخرج ClearPath (رؤية حاسوبية) موصوف بأنه «ضمن أفضل المشاريع» بالمعسكر. لم يُعثر على جهة عمل. التخصص: AI and data science — analysis and visualization; Python, SQL, TensorFlow, PyTorch, scikit-learn, OpenCV. |
+| 41 | أسماء الزبيدي | Asma Ahmed Alzubaidi | معسكر تقنيات معالجة الازدحام المروري (T5 Zehame) — 2024 | 2024 |  |  |  |  | https://github.com/Asma-Ahmed-Aqil-AL-Zubaidi/Areeb · https://github.com/Asma-Ahmed-Aqil-AL-Zubaidi |  |  | https://orcid.org/0009-0001-0153-2346 | 54 | مشروع «عريب Areeb» للتنبؤ بحجم المرور بعد مشروع العاصمة، أُنشئ 6 أكتوبر 2024. أعضاء الفريق المذكورون في الملف: سديم المسند، نهى العقيلي، غدير نوح، لمى القحطاني. ORCID: 0009-0001-0153-2346. التخصص: Computer vision (multi-model CIFAR-10 classification/clustering), IoT/robotics (ESP32, ROS). |
+| 42 | العنود باسليمان | Alanoud Basulaiman | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — 2024 | 2024 |  |  |  | https://www.linkedin.com/in/alanoud-basulaiman-12a89023b | https://github.com/Alanoud2209832/T5-SDAIA-Projects · https://github.com/Alanoud2209832/Sdaia-FinalCapstone-SmartDashcam · https://github.com/Alanoud2209832 |  |  |  | 52 | مستودع مشاريع المعسكر أُنشئ 21 أكتوبر 2024، ومشروع التخرج SmartDashcam أُنشئ 27 أكتوبر 2024. |
+| 43 | سارة عميرة | Sara Omairah | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — 2024 | 2024 |  |  |  |  | https://github.com/Saraomairah/T5-Data-Science-and-AI-Bootcamp-Projects-SDAIA- · https://github.com/Saraomairah |  |  |  | 48 | مستودع مشاريع المعسكر أُنشئ 12 أكتوبر 2024. لم يُعثر على جهة عمل. |
+| 44 | أمل القحطاني | Amal Alqahtani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — 2024 (12 أسبوعًا) | 2024 |  |  |  |  | https://github.com/Amalqahtani37/SDAIA-Data-Science-and-AI-Bootcamp- · https://github.com/Amalqahtani37 |  |  |  | 50 | مستودع المعسكر أُنشئ 20 أكتوبر 2024، وموصوف كبرنامج 12 أسبوعًا يغطي علوم البيانات وتعلم الآلة والتعلم العميق ومعالجة اللغة والمحوّلات وMLOps. |
+| 45 | عبدالله العويس | Abdullah AlOwais | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — 2024 | 2024 |  |  |  |  | https://github.com/Abdullah-AlOwais/T5-SDAIA · https://github.com/Abdullah-AlOwais |  |  |  | 46 | مستودع T5-SDAIA أُنشئ 25 أكتوبر 2024. لم يُعثر على جهة عمل. |
+| 46 | حمد المهيذف | Hamad Almuhaythif | معسكر هندسة البيانات — أكاديمية سدايا (24 نوفمبر 2024 – منتصف مارس 2025، بشهادات Microsoft) | 2025 | الشركة السعودية لشراكات المياه SWPC | عالم بيانات (2025–حتى الآن) | بكالوريوس علوم حاسب (مسار الذكاء الاصطناعي) — جامعة المجمعة (2020–2024) |  |  |  |  | https://rocketreach.co/hamad-almuhaythif-email_818021996 · https://www.spa.gov.sa/N2203387 · https://www.spa.gov.sa/N2244742 | 88 | أنظف مطابقة في دفعة 2025: جهة واحدة، معسكر واحد، تواريخ متسلسلة، وصفر التباس اسمي. خريج جامعي 2024 ← معسكر 2024–2025 ← توظيف 2025 مباشرة بعد المعسكر. تدريب إضافي موثق: معسكرا KAUST Academy 2025، معسكر مسك 2024، الأكاديمية السعودية الرقمية 2024. |
+| 47 | حسين اليافعي | Hussain al-Yafei | معسكر هندسة البيانات — أكاديمية سدايا (2024–2025) | 2025 | أكاديمية كاوست KAUST Academy (2026–)؛ أول توظيف: مراس Meras (2025) | مساعد تدريس ذكاء اصطناعي؛ أول مسمى: مهندس ذكاء اصطناعي | بكالوريوس ذكاء اصطناعي بمرتبة الشرف — جامعة الإمام عبدالرحمن بن فيصل (2019–2024) |  |  |  |  | https://rocketreach.co/hussain-al-yafei-email_871894108 · https://rocketreach.co/kaust-academy-management_b6a45046c8789140 | 86 | خريج جامعي 2024 ← معسكر هندسة البيانات 2024–2025 ← مهندس ذكاء اصطناعي بمراس 2025 مباشرة بعد المعسكر ← مساعد تدريس بأكاديمية كاوست 2026 (مؤكد أيضًا بكشف الأكاديمية)، بالتوازي مع مساعد تدريس ببرنامج MEng-AI التأهيلي. تنبيه حاسم: شخص مختلف تمامًا عن «حسين محسن» — لا يُدمجان. |
+| 48 | حمد الرشيد | Hamad Alrashid | معسكر سدايا–أكسفورد للذكاء الاصطناعي 2025 | 2025 | Vectara (2023) وArio بالو ألتو (2024) — تدريبات سابقة للبرنامج | متدرب هندسة برمجيات / ذكاء اصطناعي | طالب جامعي — جامعة ميريلاند | https://www.linkedin.com/in/hamad-alrashid-3a94bb142/ | https://github.com/HamadAlrashid |  |  |  | 44 | لا يستوفي معيار «أول توظيف بعد التخرج»: عمل قبل البرنامج (تدريبات Vectara 2023 وArio 2024 وجامعة كاليفورنيا-إرفاين 2022)، وهو طالب جامعي بجامعة ميريلاند لا خريج جامعة سعودية حديث. يُدرج للشفافية. |
+| 49 | محمد رؤوف السنان | Mohammed Raoof Al Sinan | التدريب الاحترافي المرتبط بشهادات NVIDIA — أكاديمية سدايا 2026 | 2026 | مركز البحوث المشترك للذكاء الاصطناعي — سدايا وجامعة الملك فهد للبترول والمعادن (JRC-AI) | مطوّر ذكاء اصطناعي (AI Developer) |  |  |  |  |  | https://ri.kfupm.edu.sa/jrcai/about-us/staff | 74 | الحالة الوحيدة في دفعة 2026 التي تأكدت جهتها من مصدر مؤسسي رسمي: صفحة الكادر الرسمية للمركز تدرجه ضمن «Supporting Staff» بمسمى AI Developer. تاريخ البدء غير منشور — لذا استيفاء نافذة الأشهر الستة غير محسوم. |
+| 50 | ريم البلوّي (دفعة T5 2024) | Reem Albluwi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — 2024 | 2024 |  |  | Master's degree in Computer Science, specializing in Artificial Intelligence | https://www.linkedin.com/in/reem-albalawii | https://github.com/ReemAlbluwi/SDAIA-T5-BootCamp · https://github.com/ReemAlbluwi |  |  |  | 48 | مستودع المعسكر أُنشئ 13 أكتوبر 2024. تنبيه مهم: شخص مختلف عن «ريم البلوي — ATS Travel» (تهجئة عائلة مختلفة) — لم يُدمجا، والاسم موسوم هنا بالدفعة للتمييز. التخصص: Computer vision (YOLOv8), machine learning; teaching experience; traffic-management technologies. |
+
+## مسح GitHub يونيو–يوليو 2026 — 62 سجلًا
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة/التخرج | جهة العمل | المسمى | التعليم | LinkedIn | GitHub | Kaggle | بورتفوليو | مصادر أخرى | الثقة | ملاحظات |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | نواف عبدالله بن طالب | Nawaf Abdullah Bintaleb | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/Sora-Gestalt · https://github.com/Sora-Gestalt/SDAIA-ACADEMY-BUILDING-AGENTS-NBT |  |  |  | 72 | مشروع تخرج «وكيل البورتفوليو والتوظيف»: نظام RAG وكيلي متعدد النطاقات (LangGraph Functional API + LangChain) بذاكرة طويلة المدى وضوابط Human-in-the-Loop. README: «Program: SDAIA Academy Building AI Systems / Agentic Workflows» (المستودع: 29 يوليو 2026). |
+| 2 | عبدالله علي العثمان | Abdullah Ali Alothman | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/Abdullah-Alothman · https://github.com/Abdullah-Alothman/umrah-statistics-assistant |  |  |  | 72 | مشروع «مساعد إحصاءات العمرة» الوكيلي. README: «Programme: SDAIA Academy — Building Agentic AI Systems» (29 يوليو 2026). |
+| 3 | أحمد سعد الفايدي | Ahmed Saad Al-Faidi | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 (دورة مكثفة 5 أيام + مشروع تخرج) |  |  |  |  | https://github.com/asaad-cs · https://github.com/asaad-cs/SDAIA-Capstone-AI-Career-Copilot · https://github.com/asaad-cs/SDAIA-Agentic-AI-Engineering · https://github.com/urd7ym/SDAIA-Capstone-AI-Career-Copilot |  |  |  | 74 | مستودعان: مختبرات «SDAIA Advanced Agentic AISystems Engineering — 5-day intensive» ومشروع تخرج AI Career Copilot (3 وكلاء متخصصين، 378 اختبارًا ناجحًا) «built as the SDAIA Generative AI Capstone, organized by SDAIA Academy» — فريق ثلاثي (زميلاه بمعرّفي @nosaa10 و@urd7ym دون أسماء صريحة). |
+| 4 | منيرة السعيد | Muneera AlSaeed | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  | https://www.linkedin.com/in/muneera-alsaeed-26b7852b3 | https://github.com/mneerh · https://github.com/mneerh/AAASE-CAPSTONE |  |  |  | 72 | مشروع تخرج AAASE على أساس سياسات تنظيمية مشتقة من وثائق سدايا — بالشراكة مع شيخة الخثلان (23–24 يوليو 2026). |
+| 5 | شيخة الخثلان | Shaikha AlKhathlan | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/shiakah27 · https://github.com/mneerh/AAASE-CAPSTONE |  |  |  | 68 | مسماة في README مشروع تخرج AAASE (فريق ثنائي مع منيرة السعيد) بمعرّف @shiakah27. التخصص: Agentic AI systems (AAASE capstone). |
+| 6 | في العمري | Fai Alamri | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/falamri1 · https://github.com/falamri1/AAASE-CAPSTONE · https://github.com/ShumukhA/AAASE_Capstone |  |  |  | 72 | مشروع تخرج AAASE (نظام توصيات للعناية بالبشرة) — فريق ثنائي مع شموخ الزهراني؛ نسختان متطابقتان على حسابي العضوتين (23 يوليو 2026). |
+| 7 | شموخ الزهراني | Shumukh Alzahrani | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/ShumukhA · https://github.com/ShumukhA/AAASE_Capstone |  |  |  | 72 | مشروع تخرج AAASE (نظام توصيات للعناية بالبشرة) مع في العمري (23 يوليو 2026). |
+| 8 | سارة فهد الحربي | Sara Fahad Alharbi | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/sarafmh10-coder · https://github.com/sarafmh10-coder/AAASE-Capstone--Danah-Alhamdi-Sara-Alharbi · https://github.com/danah1-a/AAASE-Capstone-IDRAK |  |  |  | 72 | مشروع تخرج AAASE «إدراك» — فريق ثنائي مع دانة الحمدي (23 يوليو 2026). وردت في README باسم Sara Fahad وSara Alharbi. |
+| 9 | ميس السلوم | Mays Alsalum | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  | https://www.linkedin.com/in/mays-alsalum | https://github.com/MaysAlsalum · https://github.com/MaysAlsalum/AI-Study-Buddy |  |  |  | 72 | مشروع تخرج AI Study Buddy — README: «AAASE Capstone Program delivered by SDAIA Academy»؛ فريق ثلاثي مع رزان الرشيد وريماس الحازمي (22–24 يوليو 2026). التخصص: Power BI dashboards, APIs, image restoration. |
+| 10 | رزان الرشيد | Razan Alrashed | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/RazanAlrashed · https://github.com/MaysAlsalum/AI-Study-Buddy |  |  |  | 68 | عضوة فريق AI Study Buddy (مشروع تخرج AAASE) — مسماة بمعرّف @RazanAlrashed في README. |
+| 11 | ريماس الحازمي | Rimas Alhazmi | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/Rimas-Alhazmi · https://github.com/MaysAlsalum/AI-Study-Buddy |  |  |  | 68 | عضوة فريق AI Study Buddy (مشروع تخرج AAASE) — مسماة بمعرّف @Rimas-Alhazmi في README. |
+| 12 | نورة الخريصي | Norah Alkharisi | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/norahalkharisi · https://github.com/norahalkharisi/Sdaia---Agentic-AI-Engineering-Capstone-Project- · https://github.com/norahalkharisi/SADAIA-AAASE |  |  |  | 74 | مستودعان: مختبرات دورة AAASE «provided by Sdaia» ومشروع تخرج (مدير سلاسل إمداد وكيلي) — 19–23 يوليو 2026. |
+| 13 | كادي غالب الحربي | Kadi Ghaleb Alharbi | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/itskadighaleb · https://github.com/itskadighaleb/agentic-ai-capstone |  |  |  | 72 | مشروع تخرج «Building Agentic AI Systems — SDAIA / Capstone Track B» (23 يوليو 2026). |
+| 14 | حنين الحازمي | Hanin Alhazmi | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/hkhi18 · https://github.com/hkhi18/Email-Agent-ai- |  |  |  | 72 | وكيل بريد إلكتروني ذكي — README: «Building AI Agent Systems Bootcamp — SDAIA Academy» (22–23 يوليو 2026). |
+| 15 | نورة السبيعي | Norah Alsubaiai | برنامج EXPLORERS — أكاديمية سدايا (مسار الأنظمة التوكيلية) | يوليو 2026 |  |  |  |  | https://github.com/Norah-alsubaiai · https://github.com/Norah-alsubaiai/Agentic-AI |  |  |  | 72 | مشروع Agentic AI — README: «Program: SDAIA Academy - EXPLORERS» (22–23 يوليو 2026). |
+| 16 | الوليد إبراهيم دعبان | Alwaleed Ibrhiam Dawban | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/waleedvnm-sketch · https://github.com/waleedvnm-sketch/agentic-capstone |  |  |  | 72 | مشروع تخرج وكيلي (Supervisor + وكلاء فرعيون) — فريق ثنائي مع فيصل النشوان (22–23 يوليو 2026). |
+| 17 | فيصل عبدالعزيز النشوان | Faisal Abdulaziz Alnashwan | بناء أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/waleedvnm-sketch/agentic-capstone |  |  |  | 68 | مسمى في README مشروع التخرج الوكيلي (فريق ثنائي مع الوليد دعبان) — لا حساب شخصي مؤكد. |
+| 18 | عبدالرحمن سلامة | Abdulrhman Salamah | ورشة وكلاء الذكاء الاصطناعي — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/36a5 · https://github.com/36a5/abdulrhman-salamah-sdaia-workshop-ai-agents |  |  |  | 72 | مشروع «SDAIA Assistant» من ورشة وكلاء الذكاء الاصطناعي (9 يوليو 2026) — اسمه الكامل في عنوان المستودع وREADME. |
+| 19 | عبدالرحمن واصل الرحيلي | Abdulrahman Wasel Alruhaili | برنامج تطوير أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا (Track B) | دفعة يوليو 2026 |  |  |  | https://www.linkedin.com/in/abdulrahman-alrehaili-saudi | https://github.com/D7nez · https://github.com/D7nez/masar-brd-copilot |  |  | https://x.com/D7nxq | 72 | مشروع «Masar BRD Copilot» متعدد الوكلاء (Supervisor + Evaluator–Optimizer + HITL). README بالعربية: «المتدرب: عبدالرحمن واصل الرحيلي · البرنامج: برنامج تطوير أنظمة وكلاء الذكاء الاصطناعي — أكاديمية سدايا · الدفعة: يوليو 2026» (29 يوليو 2026). التخصص: Arabic NLP — Arabic sentiment analysis with BiLSTM + Attention; ML (Random Forest, Streamlit). |
+| 20 | سجى الشمري | Saja Alshammari | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/SajaAlshammari · https://github.com/SajaAlshammari/AAASE-CAPSTONE · https://github.com/Joodalhu/Capstone-Project |  |  |  | 72 | مشروع تخرج AAASE «Developed during the SDAIA Academy Program» — فريق ثلاثي مع منيرة أبوحيمد وجود الحميميدي (23 يوليو 2026). |
+| 21 | جود الحميميدي | Jood Alhumaimidi | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/Joodalhu · https://github.com/Joodalhu/Capstone-Project · https://github.com/MuniraNasser3/AAASE-CAPSTONE- |  |  |  | 72 | مشروع تخرج AAASE — فريق ثلاثي مع منيرة أبوحيمد وسجى الشمري (23 يوليو 2026). |
+| 22 | نورا الجعفر | Noora Aljaafar | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/nooraaljaafar7-star · https://github.com/nooraaljaafar7-star/SDAIA-Academy-capstone-project · https://github.com/nooraaljaafar7-star/Agentic_AI |  |  |  | 74 | مستودعان: «capstone requirements for SDAIA Academy» ومختبرات «Organization: SDAIA Academy» (19–27 يوليو 2026). |
+| 23 | هيفاء أحمد | Haifa Ahmed | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/haifaahmed772-code · https://github.com/haifaahmed772-code/capstone-data-engineering-cats |  |  |  | 70 | مشروع تخرج (خط بيانات القطط) — README بالعربية: «مشروع تخرج (Capstone) لبرنامج SDAIA Academy — Modern Data Engineering for AI Systems». الاسم المتاح ثنائي فقط (هيفاء أحمد). |
+| 24 | غلا عوض | Ghala Awd | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  | Software Engineering student — King Saud University |  | https://github.com/GhalaAwd · https://github.com/GhalaAwd/Capstone-Project-Modern-Data-Engineering-for-AI-Systems |  |  |  | 72 | مشروع تخرج DAICO — README: «SDAIA Academy — Modern Data Engineering for AI Systems (DAICO)» (22–23 يوليو 2026). |
+| 25 | غلا العمري | Ghala Alamri | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/Ghala3mri · https://github.com/Ghala3mri/Hospital-RAG-Capstone-Data-Engineering-For-AI-Systems---DAICO- |  |  |  | 72 | مشروع تخرج Hospital RAG — README يوثّق الدورة 19–23 يوليو 2026؛ فريق ثلاثي مع غيداء الواصل وسارة الساعد. |
+| 26 | غيداء الواصل | Ghaida Alwasel | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/Ghala3mri/Hospital-RAG-Capstone-Data-Engineering-For-AI-Systems---DAICO- |  |  |  | 68 | مسماة في README مشروع Hospital RAG (فريق ثلاثي). ملاحظة: حساب Ghhaidaa نشر مستودعًا فرديًا لنفس البرنامج — احتمال أنه لها غير محسوم. |
+| 27 | سارة الساعد | Sara Al-Sa'ed | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/Ghala3mri/Hospital-RAG-Capstone-Data-Engineering-For-AI-Systems---DAICO- |  |  |  | 68 | مسماة في README مشروع Hospital RAG (فريق ثلاثي مع غلا العمري وغيداء الواصل). |
+| 28 | ليان العمر | Layan Alomar | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  | President, Distinguished & Talented Students Club (King Saud University) | Computer Science student — King Saud University | https://www.linkedin.com/in/layan-alomar-57b11132b | https://github.com/LayanAlomar · https://github.com/LayanAlomar/Data-Engineering-for-AI-Systems-University-Regulations |  |  |  | 72 | مشروع أنظمة اللوائح الجامعية — فريق رباعي: ليان العمر، وجد العتيبي، العذوب العصيمي، ريما قبلان (22–23 يوليو 2026). التخصص: AI, Software Engineering, Research. |
+| 29 | وجد العتيبي | Wajd Alotaibi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/LayanAlomar/Data-Engineering-for-AI-Systems-University-Regulations |  |  |  | 68 | مسماة في README مشروع اللوائح الجامعية (فريق رباعي). |
+| 30 | العذوب العصيمي | Alathoob Alosaimi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/LayanAlomar/Data-Engineering-for-AI-Systems-University-Regulations |  |  |  | 68 | مسماة في README مشروع اللوائح الجامعية (فريق رباعي). |
+| 31 | ريما قبلان | Reema Qublan | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/LayanAlomar/Data-Engineering-for-AI-Systems-University-Regulations |  |  |  | 68 | مسماة في README مشروع اللوائح الجامعية (فريق رباعي). |
+| 32 | سارة البخيتان | Sarah Albukhaytan | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  | IT student — King Saud University |  | https://github.com/SarahAlBukhaytan · https://github.com/SarahAlBukhaytan/University_Hub · https://github.com/LujainAldujain/University_Hub |  |  |  | 72 | مشروع تخرج University Hub — «SDAIA Academy / Learning Space»؛ فريق ثلاثي مع لجين الدجين وعايدة السويد (22–26 يوليو 2026). |
+| 33 | لجين الدجين | Lujain Aldujain | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/LujainAldujain · https://github.com/LujainAldujain/University_Hub |  |  |  | 72 | مشروع تخرج University Hub (فريق ثلاثي) — 22–26 يوليو 2026. |
+| 34 | عايدة السويد | Ayidah Alswayed | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا + ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا | يونيو–يوليو 2026 (برنامجان) |  |  |  |  | https://github.com/LujainAldujain/University_Hub · https://github.com/Shatha-1/sdaia-vibe-coding |  |  |  | 70 | مسماة في README مشروعين مستقلين: فريق University Hub (هندسة البيانات DAICO، يوليو) وفريق ورشة Vibe Coding الرباعي (يونيو–يوليو) — انتساب مزدوج يعزز التوثيق. |
+| 35 | سارة عبدالعزيز الخضيري | Sarah Abdulaziz Alkhudhiri | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  | https://www.linkedin.com/in/sarah-abdulaziz-a87a88351 | https://github.com/SarahkhIT · https://github.com/SarahkhIT/DataEngProject |  |  |  | 72 | مشروع تخرج DAICO — فريق ثلاثي: سارة الخضيري، رهف الفالح، بسمة الهندي (21–23 يوليو 2026). التخصص: Data engineering — Delta Lakehouse pipelines and RAG question answering over arXiv papers. |
+| 36 | رهف الفالح | Rehaf Alfaleh | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/SarahkhIT/DataEngProject |  |  |  | 68 | مسماة في README مشروع DataEngProject (فريق ثلاثي). |
+| 37 | بسمة الهندي | Basma Alhindi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/SarahkhIT/DataEngProject |  |  |  | 68 | مسماة في README مشروع DataEngProject (فريق ثلاثي). |
+| 38 | فتون الزنان | Ftoon Al-Zanan | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/FtounMohammed · https://github.com/FtounMohammed/AI_Recruitment |  |  |  | 72 | مشروع توظيف ذكي — README: «Modern Data Engineering for AI Systems — SDAIA Academy, DICO … المدرب محمد البلادي»؛ فريق ثنائي مع روا المحيميد (22 يوليو 2026). |
+| 39 | روا المحيميد | Rawaa Almohaimeed | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/FtounMohammed/AI_Recruitment |  |  |  | 68 | مسماة في README مشروع AI_Recruitment (فريق ثنائي مع فتون الزنان). |
+| 40 | رنيم عبدالله الشدي | Raneem Abdullah Alsheddi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/raneem-a1 · https://github.com/raneem-a1/Books-data-capstone |  |  |  | 72 | مشروع خط بيانات الكتب — فريق ثلاثي بأسماء كاملة: رنيم الشدي، دانة الجميعة، هيا الجريسي (22–23 يوليو 2026). |
+| 41 | دانة مساعد الجميعة | Danah Musaad Aljumaiah | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/raneem-a1/Books-data-capstone |  |  |  | 68 | مسماة بالاسم الثلاثي في README مشروع Books-data-capstone. |
+| 42 | هيا عبدالمجيد الجريسي | Haya AbdulMajeed Aljuraysi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/raneem-a1/Books-data-capstone |  |  |  | 68 | مسماة بالاسم الثلاثي في README مشروع Books-data-capstone. |
+| 43 | ناديه الغامدي | Nadia Alghamdi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يوليو 2026 (دفعة مطلع يوليو) |  |  |  |  | https://github.com/Nadia-143 · https://github.com/Nadia-143/AI_Knowledge_Lakehouse_Assistant_for_Transport-Logistics |  |  |  | 72 | مساعد معرفي Lakehouse لقطاع النقل — README بالعربية يسمي الفريق: ناديه الغامدي، ابتسام محمد الزهراني، منار المطيري؛ «part of Modern Data Engineering for AI systems provided by SDAIA» (4–5 يوليو 2026). |
+| 44 | ابتسام محمد الزهراني | Ibtisam M. Alzahrani | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يوليو 2026 (دفعة مطلع يوليو) |  |  |  |  | https://github.com/Nadia-143/AI_Knowledge_Lakehouse_Assistant_for_Transport-Logistics |  |  |  | 68 | مسماة بالاسم الثلاثي في README مشروع النقل واللوجستيات (فريق ثلاثي). |
+| 45 | منار المطيري | Manar Almutairi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يوليو 2026 (دفعة مطلع يوليو) |  |  |  |  | https://github.com/Nadia-143/AI_Knowledge_Lakehouse_Assistant_for_Transport-Logistics |  |  |  | 68 | مسماة في README مشروع النقل واللوجستيات (فريق ثلاثي). (تنبيه تشابه: القاعدة تضم «نوف المطيري» و«منار الطلحي» في فريق نبيه 2024 — أشخاص مختلفون.) |
+| 46 | شذى بن مانع | Shatha Bin Mana | ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا + مشروع هندسة بيانات | يونيو–يوليو 2026 |  |  |  |  | https://github.com/Shatha-1 · https://github.com/Shatha-1/sdaia-vibe-coding · https://github.com/Shatha-1/Data-engineering |  |  |  | 74 | قائدة/صاحبة مستودع ورشة Vibe Coding «Organization: SDAIA Academy & DAICO» (فريق رباعي: شذى بن مانع، عايدة السويد، رنيم الحجي، نورة المنصور؛ 28 يونيو – 5 يوليو 2026) + مستودع هندسة بيانات «Built as part of SDAIA Academy» (23 يوليو 2026). |
+| 47 | الجوهرة القباني | Aljawharah Alqabbani | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/AljawharahAlqabbani · https://github.com/AljawharahAlqabbani/SDAIA-projects |  |  |  | 72 | مستودع SDAIA-projects — README: «SDAIA Academy — Data Engineering for AI Systems (DAICO)» (23 يوليو 2026). (شخص مختلف عن «الجوهرة Aljwharah-h» و«الجوهرة البهلال» المسجلتين سابقًا.) |
+| 48 | ريما العيسى | Reema Alessa | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/realessa · https://github.com/realessa/electricity-enginering- |  |  |  | 72 | خط بيانات الكهرباء — README: «Trainee: Reema Alessa · Training Program: Modern Data Engineering for AI Systems – SDAIA Academy · 19-07-2026 → 23-07-2026». |
+| 49 | نورة المقبل | Noura Almuqbil | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/ns3271585-arch · https://github.com/ns3271585-arch/Modern-Data-Engineering-AI--capstone |  |  |  | 70 | مشروع توصيل الطعام — README: «Students: Noura Almuqbil, Moudi Alhomoud, Shahad Alotaish · Program: Modern Data Engineering for AI Systems — SDAIA Academy · Trainer: Mohammed Albeladi · 19–23 July 2026». |
+| 50 | موضي الحمود | Moudi Alhomoud | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/ns3271585-arch/Modern-Data-Engineering-AI--capstone |  |  |  | 68 | مسماة في README مشروع توصيل الطعام (فريق ثلاثي). |
+| 51 | شهد العطيش | Shahad Alotaish | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | 19–23 يوليو 2026 |  |  |  |  | https://github.com/ns3271585-arch/Modern-Data-Engineering-AI--capstone |  |  |  | 68 | مسماة في README مشروع توصيل الطعام (فريق ثلاثي). |
+| 52 | خالد الزهراني | Khalid Alzahrani | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا (إسناد جزئي) | ~يوليو 2026 |  |  |  |  | https://github.com/khalidalzzahranii-eng · https://github.com/khalidalzzahranii-eng/customer-support-intelligence-platform-sdaia- |  |  |  | 52 | منصة ذكاء دعم العملاء بنفس قالب مشروع تخرج DAICO؛ الإسناد لسدايا وارد في اسم المستودع فقط («…-sdaia-») وREADME بلا سطر إسناد صريح — ثقة منخفضة-متوسطة. |
+| 53 | غيداء العمر | Ghaida Alomar | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يونيو 2026 |  |  |  |  | https://github.com/Ghaida2244 · https://github.com/Ghaida2244/ShopStream |  |  |  | 72 | مشروع ShopStream لبيانات التجزئة — README: «Training Program: Modern Data Engineering for AI Systems · SDAIA Academy · June 2026» — يوثّق دفعة يونيو 2026 من البرنامج. |
+| 54 | سارة البهلال | Sara Albahlal | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/saraalbahlal3 · https://github.com/saraalbahlal3/AI-Research-Assistant |  |  |  | 72 | مساعد البحث العلمي (خط Bronze/Silver/Gold + RAG) — README: «Organization: SDAIA Academy»؛ فريق ثلاثي: سارة البهلال، سارة المحرب، حصة الشدي (23 يوليو 2026). (شخص مختلف عن «الجوهرة البهلال» 2023.) |
+| 55 | سارة المحرب | Sarah Almohreb | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/saraalbahlal3/AI-Research-Assistant |  |  |  | 68 | مسماة في README مشروع AI Research Assistant (فريق ثلاثي). |
+| 56 | حصة الشدي | Hessah Alsheddi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/saraalbahlal3/AI-Research-Assistant |  |  |  | 68 | مسماة في README مشروع AI Research Assistant (فريق ثلاثي). |
+| 57 | رنيم الحجي | Raneem Alhajji | ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا | يونيو–يوليو 2026 |  |  |  |  | https://github.com/Shatha-1/sdaia-vibe-coding |  |  |  | 68 | مسماة في README مستودع ورشة Vibe Coding (فريق رباعي بقيادة شذى بن مانع). |
+| 58 | نورة المنصور | Norah Almansour | ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا | يونيو–يوليو 2026 |  |  |  |  | https://github.com/Shatha-1/sdaia-vibe-coding |  |  |  | 68 | مسماة في README مستودع ورشة Vibe Coding (فريق رباعي). |
+| 59 | عبدالعزيز مليا | Abdulaziz Mulia | ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/AK7Amin/SDAIA-VIBECODING-TO-DO-APP-PROJECT |  |  |  | 68 | مسمى في README تطبيق المهام «Built for the SDAIA Vibe Coding workshop (البرمجة التوليدية)» — فريق ثلاثي (15 يوليو 2026؛ المستودع بحساب AK7Amin). |
+| 60 | فراس الحربي | Feras Al-Harbi | ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/AK7Amin/SDAIA-VIBECODING-TO-DO-APP-PROJECT |  |  |  | 68 | مسمى في README تطبيق المهام لورشة Vibe Coding (فريق ثلاثي). |
+| 61 | فيصل العبدالجبار | Faisal Al-Abdul-Jabbar | ورشة Vibe Coding (البرمجة التوليدية) — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/AK7Amin/SDAIA-VIBECODING-TO-DO-APP-PROJECT |  |  |  | 68 | مسمى في README تطبيق المهام لورشة Vibe Coding (فريق ثلاثي). |
+| 62 | ندى العمري | Nada Alamri | برنامج Vibe Coding — أكاديمية سدايا | يوليو 2026 |  |  |  |  | https://github.com/nadaalamri-9 · https://github.com/nadaalamri-9/PromptMind |  |  |  | 72 | مشروع تخرج PromptMind — README: «capstone project for the Vibe Coding Program by SDAIA Academy» (21–22 يوليو 2026). |
+
+## مستنتج — 17 سجلًا (جدول مضغوط)
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
+|---|---|---|---|---|---|---|---|
+| 1 | رفيدة هنبظاظة | Rofidah Hanbzazah | معسكر T5 (فهرسة) | غير معروفة | سدايا (وفق الترويسة) | 35 | https://sa.linkedin.com/in/rofidah-hanbzazah |
+| 2 | في بوعيشة | Fai Bu Ayesha | معسكر سدايا (فهرسة) | غير معروفة | أرامكو السعودية | 22 | https://www.linkedin.com/in/fai-bu-ayesha-a35a91291/ |
+| 3 | نور عثمان | Nour Othman | معسكر سدايا (فهرسة) | غير معروفة | جامعة سانتياغو دي كومبوستيلا (إسبانيا) | 22 | https://www.linkedin.com/in/nour-othman-35b061137/ |
+| 4 | أماني السبيعي | Amani AlSubaie | معسكر سدايا (فهرسة) | غير معروفة | أكاديمية طويق | 25 | https://www.linkedin.com/in/amani-alsubaie-753b4b113/ |
+| 5 | العنود الزهراني | Alanoud Alzahrani | معسكر سدايا (فهرسة) | غير معروفة | تكامل القابضة Takamol | 30 | https://www.linkedin.com/in/alanoud-alzahrani-100709187/ |
+| 6 | خلود عواجي | Kholoud Awaji | معسكر سدايا (فهرسة) | غير معروفة | Athlocity (ناشئة رياضية-تقنية) | 25 | https://www.linkedin.com/in/kholoud-awaji-44774a28a/ |
+| 7 | مروان الزبيدي | Marwan Alzubaidy | معسكر سدايا (فهرسة) | غير معروفة | سدايا | 33 | https://www.linkedin.com/in/malzubaidy/ |
+| 8 | عبدالله الحويشل | Abdullah AL-Huwaishel | معسكر أكاديمية سدايا (فهرسة) | غير معروفة | ILF Consulting Engineers | 30 | https://www.linkedin.com/in/abdullah-huwaishel/ |
+| 9 | منصور الغامدي | Mansour Alghamdi | معسكر سدايا (فهرسة) | غير معروفة | جهة حكومية (سرية) | 25 | https://www.linkedin.com/in/mansour-alghamdi-030204220/ |
+| 10 | يزيد زيدان | Yazeed Zaidan | أكاديمية سدايا (فهرسة — غير متحقق) | ~2024؟ | WATEER (مزعوم) | 15 | https://sa.linkedin.com/in/yazeed-zaidan |
+| 11 | سارة الشهري | Sarah S. AlShehri | أكاديمية سدايا (فهرسة) | غير معروفة | مشروع ريادي غير مسمّى | 25 | https://www.linkedin.com/in/sarahsalshehri/ |
+| 12 | تركي الحربي | Turki Alharbi | معسكر LLM (مستنتج) |  | سدايا (عنوان مفهرس) | 30 | https://www.linkedin.com/in/turki-alharbi-63962b173/ |
+| 13 | لجين الحقباني | Lujain Alhaqbani | معسكر LLM (مستنتج) |  | سدايا (عنوان مفهرس) | 30 | https://www.linkedin.com/in/lujain-alhaqbani/ |
+| 14 | نوره الدوسري | Noorh Aldossary | تدريب سدايا (مستنتج) |  | سدايا — متدربة هندسة ذكاء اصطناعي | 30 | https://sa.linkedin.com/in/noorhaldossary |
+| 15 | أحمد الرشيد | Ahmed AlRasheed | معسكر LLM (مستنتج) |  | مجموعة تداول السعودية | 28 | https://sa.linkedin.com/in/ahmed-alrasheed-swe |
+| 16 | سارة الرشودي | Sarah Alrshoudi | معسكر غير محدد (مستنتج) |  | الشركة السعودية للكهرباء — أمن سيبراني تشغيلي | 28 | https://www.linkedin.com/in/sarah-alrshoudi-5aa216211/ |
+| 17 | عبدالله ناصر العصيمي | Abdullah Nasser Alosaimi | معسكر هندسة البيانات (مستنتج) |  | سدايا (عنوان مفهرس) | 30 | https://www.linkedin.com/in/abdullah-nasser-alosaimi-02837617a/ |
+
+## قبل النطاق — 8 سجلًا (جدول مضغوط)
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
+|---|---|---|---|---|---|---|---|
+| 1 | مها الطلق | Maha Altalak | معسكر T5 لعلوم البيانات | الدفعة غير معروفة (~2021–2022) | وزارة الصحة — مستشفى صحة الافتراضي | 60 | https://github.com/Maha-Altalak/SDAIA-T5-Bootcamp |
+| 2 | عبدالله الربيعان | Abdullah Alrobaiaan | أبطال صيف الذكاء الاصطناعي (مع Coursera وFutureX) | يوليو–سبتمبر 2022 | البواني القابضة ABH | 60 | https://lr.linkedin.com/posts/abdullah-alrobaiaan-9ba0921a1_glad-to-share-that-i-finished-sdaia-%D8%B3%D8%AF%D8%A7%D9%8A%D8%A7-activity-6975397400563564544-ZNnv |
+| 3 | رغد الناصر | Raghad Alnasser | معسكر T5 لعلوم البيانات | دفعة 2022 | غير موثّق علنًا | 72 | https://github.com/EngrRaghad · https://github.com/EngrRaghad/T5-Bootcamp-DeepLearning-project |
+| 4 | عبدالإله الدوسري | Abdulelah Al-Dossari | معسكر T5 | 2021–2023 | غير موثّق علنًا | 72 | https://github.com/a-dossari |
+| 5 | إلهام الزهراني | Elham Alzahrani | معسكر T5 | ~يناير 2022 | غير موثّق علنًا | 72 | https://github.com/infoielham |
+| 6 | زهراء سمير | Zahra Sameer | أبطال صيف الذكاء الاصطناعي | ~أكتوبر 2022 | — | 72 | https://by.linkedin.com/posts/zahra-sameer-6b6a87210_ai-sdaia-ai-activity-6982782824110043136-SpKj |
+| 7 | فهد الحربي | Fahad Alharbi | معسكر T5 — الدفعة الأولى | 2021 (منشور التخرج مؤرخ 9 نوفمبر 2021) | هيئة كفاءة الإنفاق والمشروعات EXPRO | 70 | https://www.linkedin.com/posts/fahad-alharbi77_datascience-sdaia-t5bootcamp-activity-6863753616277176320-oGzx · https://expro.gov.sa/en/aboutUs/ourStory |
+| 8 | نوف العصيمي | Nouf Alosaimi | Data-Driven Decision Making, Sep 2022 | مجموعة نوفمبر | Confidential Government | 80 |  |
+
+## برامج NVIDIA — 211 سجلًا (جدول مضغوط)
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
+|---|---|---|---|---|---|---|---|
+| 1 | د. جواهر السرحان | Jawaher A. Alserhan, PhD | أكاديمية الذكاء الاصطناعي التوليدي (البرنامج المحدد قيد التأكيد) | — | جامعة الملك خالد KKU | 55 | https://www.linkedin.com/in/jawaheralghamdi/ |
+| 2 | الجوهرة بن طمران | Aljawharah Bin Tamran | أكاديمية الذكاء الاصطناعي التوليدي (البرنامج المحدد قيد التأكيد) | — | HUMAIN | 55 |  |
+| 3 | د. وضحى المطر | Wadha M. Almattar, PhD | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) | — | جامعة الإمام عبدالرحمن بن فيصل IAU | 85 | https://www.iau.edu.sa/en/colleges/college-of-computer-science-and-information-technology/faculty/wadha-muteb-al-mattar · https://www.nature.com/articles/s41598-025-85685-w · https://scholar.google.com/citations?hl=en&user=k_AKQ9UAAAAJ · https://sa.linkedin.com/in/wadha-m-almattar-phd-93b92a186 |
+| 4 | شهد الهاجري | Shahad Alhajri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) | — | شركة الدرعية Diriyah | 78 | https://www.linkedin.com/in/shahad-alhajri/ |
+| 5 | محمد السليم | Mohammed AL Saleem | أكاديمية الذكاء الاصطناعي التوليدي (البرنامج المحدد قيد التأكيد) | — | سدايا SDAIA | 60 | https://www.linkedin.com/in/m-alsaleem/ |
+| 6 | طاهر يحيى متنبك | Taher Mutanbak | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) | غير معروفة | سدايا | 75 | https://www.linkedin.com/in/taher-yahya-mutanbak/ · https://www.proceedings.com/content/081/081108webtoc.pdf |
+| 7 | عيشه باسهل | Aisha Basahal | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 8 | رنا عبدالعزيز الشهري | Rana Abdulaziz Alshehri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | الأكاديمية السعودية الرقمية (تدريب الذكاء الاصطناعي الوكيلي)؛ سابقًا: مدينة الملك عبدالعزيز للعلوم والتقنية KACST | 76 | https://www.linkedin.com/in/ranaalshehri24/ |
+| 9 | نهى محمد صالح الجعيد | Nuha Mohammed Saleh Aljuaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 10 | يزيد محمد علي العبيدان | Yazeed Mohammed Ali Alobaidan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 11 | فارس سلامه غثيمان الجهني | Faris Salamah Ghuthaiman Aljohani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 12 | مشاعل الصحفي | Mashael Alsahafi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 13 | ماريه عصام بن ابوالخير سمارن | Mariyyah Essam bin Abualkhair Samarn | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 14 | نايف ماجد نايف آل مسعود | Naif Majed Naif Al Masoud | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 15 | موج أحمد محمد آل قوت | Mooj Ahmed Mohammed Al Goot | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 16 | هلا راشد خميس العتيبي | Hala Rashed Khamis Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 17 | لجين عبدالله المثيلي السلمي | Lujain Abdullah Almuthaili Alsulami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 18 | دعاء يعقوب مصطفى برناوي | Doaa Yaqoub Mustafa Barnawi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 19 | رغد ابراهيم حسن العوفي | Raghad Ibrahim Hassan Aloufi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 20 | ايلاف خالد سراج المالكي | Elaf Khalid Siraj Almalki | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 21 | سجى احمد بن مسفر الزهراني | Saja Ahmed bin Mesfer Alzahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 22 | ريم المرحبي | Reem Almarhabi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 23 | وسن عبدالهادي سعود العتيبي | Wasan Abdulhadi Saud Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 24 | سكينه جعفر علي الرمضان | Sukainah Jaafar Ali Alramadhan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 25 | سلطان صفير بن شريم اليامي | Sultan Sufair bin Shuraim Alyami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة نجران — كلية علوم الحاسب ونظم المعلومات | 85 | https://portal.nu.edu.sa/en/web/ssalamer · https://www.researchgate.net/profile/Sultan-Alyami-2 |
+| 26 | اريج عوده عليثه الشطيري | Areej Awdah Alithah Alshutayri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة جدة — كلية علوم وهندسة الحاسب | 85 | https://www.researchgate.net/profile/Areej-Alshutayri · https://scholar.google.com/citations?hl=ar&user=rk13hR4AAAAJ · https://etheses.whiterose.ac.uk/23600 |
+| 27 | يزيد بن شيحه | Yazeed bin Shihah | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 28 | حسان الغامدي | Hassan Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 29 | تركي الغامدي | Turki Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 30 | علي ال عوضه | Ali Al Awadhah | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 31 | ايلاف الشهري | Elaf Alshehri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 32 | خالد الزقافي | Khalid Alziqafi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 33 | لجين النجراني | Lujain Alnajrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 34 | سمية عسيري | Sumayah Asiri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 35 | لينه خرد | Lina Khorad | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 36 | حنين الأحمدي | Haneen Alahmadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 37 | منيره المطلق | Munirah Almutlaq | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 38 | بشرى الشهري | Bushra Alshehri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 39 | هتون الشعيل | Hatoun Alshoail | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 40 | عبدالرحمن بن هليل | Abdulrahman bin Hulayyil | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 41 | هتون القرني | Hatoun Alqarni | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 42 | عبدالله الاحمدي | Abdullah Alahmadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 43 | مشاعل السبيعي | Mashael Alsubaie | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 44 | عبدالله الحربي | Abdullah Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 45 | سعدون الشمري | Sadun Alshammari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 46 | خديجه السلمي | Khadijah Alsolami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 47 | بدور الشهري | Budur Alshehri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 48 | نوره الراجح | Noura Alrajeh | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 49 | معاذ باطوق | Muaz Batouq | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 50 | ريما السعيد | Reema Alsaeed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 51 | ريم السحيم | Reem Alsuhaim | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 78 | https://github.com/Reem-Alsuhaim · https://github.com/Reem-Alsuhaim/patient-monitoring-lakehouse-rag |
+| 52 | سميه العمودي | Sumayyah Alamoudi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 53 | محمد الحارثي | Mohammed Alharthi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 54 | رغد العتيبي | Raghad Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 55 | ساره الحارثي الشريف | Sarah Alharthi Alsharif | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 56 | سمى السويل | Suma Alsuwail | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 57 | سعيد الشهراني | Saeed Alshahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 58 | ساره اليامي | Sarah Alyami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 59 | لولوه السويدان | Lulwah Alsuwaidan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 60 | غدي الجهني | Ghadi Aljohani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 61 | هتاف الخديدي | Hetaf Alkhudaydi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 62 | فاطمه الجفري | Fatimah Aljifry | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 63 | فاطمه المالكي | Fatimah Almalki | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 64 | هيفاء الثبيتي | Haifa Althobaiti | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 65 | ليان الغامدي | Layan Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 66 | ريناد البقمي | Renad Albogami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 67 | شهد البلوي | Shahad Albalawi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 68 | اميره الشيخ | Ameerah Alshaikh | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 69 | أسيل الفايدي | Aseel Alfaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 70 | عبدالرحمن الناشري | Abdulrahman Alnashri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 71 | مهند الاحمدي | Mohanad Alahmadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 72 | رتاج الانصاري | Retaj Alansari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 73 | ياسر البقمي | Yasser Albogami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 74 | زياد الزهراني | Ziyad Alzahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 75 | ندى الحربي | Nada Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | SAMI Navantia | 78 | https://rocketreach.co/nada-alharbi-email_807427043 |
+| 76 | وريف الزبيدي | Wareef Alzubaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 77 | هند الجعيد | Hind Aljuaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 78 | رغد الشبرقي | Raghad Alshabraqi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 79 | مريم العكاس | Maryam Alakkas | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 80 | أحمد المخلفي | Ahmed Almakhlafi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 81 | حسام سهل اركوبي | Hussam Sahal Arkoubi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 82 | عمر عبدالرحمن العقل | Omar Abdulrahman Alaql | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 83 | الهام معتوق الكباوي | Elham Matouq Alkabawi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 84 | هيثم صالح الصغير | Haitham Saleh Alsagheer | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 85 | تركي ابراهيم الأحمدي | Turki Ibrahim Alahmadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 86 | يزيد نايف الربيلي | Yazeed Naif Alrubyli | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة بولونيا (إيطاليا) بانتساب لجامعة الأمير سلطان | 85 | https://github.com/yazeedalrubyli · https://orcid.org/0000-0002-3927-9673 · https://arxiv.org/abs/2507.19697 · https://www.linkedin.com/in/yazeedalrubyli |
+| 87 | منال خالد محمد بن خنين | Manal Khalid Mohammed bin Khonain | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الملك سعود — كلية علوم الحاسب والمعلومات | 85 | https://faculty.ksu.edu.sa/en/mbinkhonain · https://scholar.google.com/citations?hl=en&user=_EbqQNsAAAAJ |
+| 88 | امل عبدالرحمن العذبه | Amal Abdulrahman Alazba | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الملك سعود — كلية علوم الحاسب والمعلومات | 85 | https://faculty.ksu.edu.sa/en/aalazba · https://scholar.google.com/citations?user=o90FgngAAAAJ&hl=en |
+| 89 | رغد عبدالله القحطاني | Raghad Abdullah Alqahtani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 76 | https://sa.linkedin.com/in/eng-raghad-a-alqahtani-b3926513b · https://www.linkedin.com/in/eng-raghad-a-alqahtani-b3926513b/ |
+| 90 | خالد سعود المطيري | Khalid Saud Almutairi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 91 | فدوى صالح العسكر | Fadwa Saleh Alaskar | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 92 | نورة عبدالله العمري | Nora Abdullah Alamri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 93 | مها عيبان العنزي | Maha Aiban Alanazi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 94 | عامر صالح العطوي | Amer Saleh Alatawi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 95 | طيف بندر عبدالعزيز نونو | Taif Bandar Abdulaziz Nono | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 96 | ريم مهدي اليامي | Reem Mahdi Alyami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 97 | عمر حماد | Omar Hammad | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الملك فهد للبترول والمعادن — قسم علوم وهندسة الحاسب + مركز سدايا-KFUPM المشترك للذكاء الاصطناعي JRC-AI | 85 | https://pure.kfupm.edu.sa/en/persons/omar-hammad/ · https://ri.kfupm.edu.sa/jrcai/about-us/staff |
+| 98 | محمد السنان | Mohammed Alsinan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | مركز سدايا-KFUPM المشترك للذكاء الاصطناعي JRC-AI | 85 | https://ri.kfupm.edu.sa/jrcai/about-us/staff |
+| 99 | زهراء عباس الدار | Zahra Abbas Aldar | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 100 | منار محمد السيد | Manar Mohammed Alsayed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 101 | اسماء مبارك البوعينين | Asma Mubarak Albuainain | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 102 | محمد عبدالباقي التيسان | Mohammed Abdulbaqi Altaisan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 103 | عمار زكي الماجد | Ammar Zaki Almajed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 104 | تهاني محمد السبيت | Tahani Mohammed Alsubait | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة أم القرى — كلية الحوسبة | 85 | https://uqu.edu.sa/en/Profile/tmsubait · https://scholar.google.com/citations?hl=en&user=bSsHRUQAAAAJ |
+| 105 | معتصم سمير السوادي | Motasem Samir Alswadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | مدينة الملك عبدالعزيز للعلوم والتقنية KACST | 85 | https://arxiv.org/abs/2111.03106 · https://www.researchgate.net/publication/400413845_Benchmarking_YOLOv8_Variants_for_Object_Detection_Efficiency_on_Jetson_Orin_NX_for_Edge_Computing_Applications |
+| 106 | نايف سعد الزهراني | Naif Saad Alzahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 107 | ابتهال سالم باعظيم | Ibtihal Salem Baazeem | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | معهد الذكاء الاصطناعي والروبوتات — مدينة الملك عبدالعزيز للعلوم والتقنية KACST (+ جامعة الملك سعود) | 85 | https://www.mdpi.com/2079-3197/13/11/258 · https://sciprofiles.com/profile/1766219 |
+| 108 | سعد عوض الغامدي | Saad Awad Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 109 | مها مسفر الغامدي | Maha Mesfer Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الملك سعود — كلية الدراسات التطبيقية وخدمة المجتمع | 85 | https://faculty.ksu.edu.sa/en/mmesfer |
+| 110 | اثير عبدالمنعم الشيخ حسين | Atheer Abdulmunem Alshaikh Hussain | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 111 | مشعل عبدالله محمد العمرو | Meshal Abdullah Mohammed Alamr | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 112 | امجاد محمد عوض السحيمي | Amjad Mohammed Awad Alsuhaimi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 113 | نايف سعد ساعد الحارثي | Naif Saad Saed Alharthy | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 114 | معن عبدالله الثقفي | Maan Abdullah Althaqafi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 115 | ناصر فايز الكحيلي | Nasser Fayez Alkuhaili | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 116 | شروق احمد الدلبحي | Shorouq Ahmed Aldalbahi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 117 | نوف راشد سعيد الزهراني | Nouf Rashed Saeed Alzahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 118 | منار سعد عبدالله الدوسري | Manar Saad Abdullah Aldossari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 119 | فهد عبدالعزيز عبدالله الشايع | Fahad Abdulaziz Abdullah Alshaya | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 120 | عائشة العاقب الريح مكين | Aisha Alaagib Alryeh Mkean | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | المركز الألماني لأبحاث الذكاء الاصطناعي DFKI (ألمانيا) | 85 | https://aishaalaagib.netlify.app/ · https://github.com/AishaAlaagib · https://scholar.google.com/citations?user=dmwkh1AAAAAJ&hl=en |
+| 121 | ملاك صالح الجابري | Malak Saleh Aljabri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة أم القرى — كلية الحوسبة | 85 | https://uqu.edu.sa/en/Profile/mssjabri · https://scholar.google.com/citations?hl=en&user=IM4RGZAAAAAJ |
+| 122 | ايمان عبدالعال غانم الحربي | Eman Abdulaal Ghanem Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الملك عبدالعزيز — كلية الحاسبات وتقنية المعلومات + مركز التميز البحثي في الذكاء الاصطناعي وعلوم البيانات | 85 | https://www.nature.com/articles/s41598-024-77118-x · https://scholar.google.com/citations?user=guXv9goAAAAJ&hl=ar |
+| 123 | ياسر محمد صديق | Yasser Mohammed Siddiq | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 124 | اروى محمد الصبحي | Arwa Mohammed Alsubhi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة أم القرى — كلية الحوسبة | 85 | https://uqu.edu.sa/en/Profile/amsubhi |
+| 125 | علي راضي العيسى | Ali Radi Aleisa | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 126 | منال خلف المطيري | Manal Khalaf Almutairi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 127 | مصطفى بن محمد زايد يولداش | Mustafa bin Mohammed Zayed Youldash | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الإمام عبدالرحمن بن فيصل — كلية علوم الحاسب وتقنية المعلومات | 85 | https://www.iau.edu.sa/en/colleges/college-of-computer-science-and-information-technology/faculty/dr-mostafa-youldash · https://github.com/youldash · https://scholar.google.com/citations?hl=en&user=dd4LYeUAAAAJ |
+| 128 | فريح بن نايف العنزي | Freeh bin Naif Alenezi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | الهيئة العامة للغذاء والدواء SFDA | 78 | https://www.semanticscholar.org/paper/17ec45bd17e4723eb110d95904b4743eb93d6822 |
+| 129 | ماجد عطية الزهراني | Majed Attiah Alzahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | أرامكو السعودية (ترجيح) | 70 | https://cemse.kaust.edu.sa/cs/news/alumni-feature-majed-alzahrani |
+| 130 | مويد محمد الامين الشنقيطي | Moayad Mohammed Alameen Alshangiti | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة جدة | 85 | https://www.linkedin.com/in/mshangiti/ · https://scholar.google.com/citations?user=-v8r8g0AAAAJ&hl=en |
+| 131 | يوسف بن عبدالله ال معوض عسيري | Yousef bin Abdullah Al Muawwadh Asiri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 132 | شعيع دليم العتيبي | Shuaie Dulaim Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة حائل — كلية علوم وهندسة الحاسب | 82 | https://conf.researchr.org/profile/ase-2024/shoayeedlaimalotaibi · https://www.researchgate.net/profile/Shoayee-Alotaibi |
+| 133 | غادة عبدالقادر الفتني | Ghada Abdulqader Alfattni | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة أم القرى — كلية الجموم الجامعية | 85 | https://uqu.edu.sa/en/gafattni/App/CV · https://scholar.google.com/citations?hl=en&user=JBEkKCEAAAAJ |
+| 134 | طارق محمد الصخفي | Tariq Mohammed Alsahfi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة جدة — كلية علوم وهندسة الحاسب | 85 | https://sciprofiles.com/profile/1475425 · https://www.researchgate.net/profile/Tariq-Alsahfi |
+| 135 | عمر بن سليمان العليان | Omar bin Sulaiman Alolayan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | أرامكو السعودية — أبحاث الذكاء الاصطناعي (وفق مجمّعات بيانات) | 82 | https://dspace.mit.edu/bitstream/handle/1721.1/151832/Alolayan-olyanos-PhD-CEE-2023-thesis.pdf · https://www.researchgate.net/profile/Omar-Alolayan |
+| 136 | نهى عبدالرحمن البادي | Noha Abdulrahman Albadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الملك فهد للبترول والمعادن KFUPM | 85 | https://nuhaalbadi.com/ · https://github.com/nuhaalbadi |
+| 137 | مرام عبدالحي كردي | Maram Abdulhay Kurdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة كولورادو بولدر (دكتوراه)؛ مؤشرات على انتساب لاحق لجامعة الأمير مقرن | 80 | https://maramkurdi.com/ · https://scholar.google.com/citations?user=wxXWdqsAAAAJ&hl=en |
+| 138 | ريان بن اسعد الله بن عبدالروف البخاري | Rayan bin Asaadullah bin Abdulraouf Albokhari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة أكسفورد — قسم علوم الهندسة / معهد الهندسة الطبية الحيوية | 88 | https://eng.ox.ac.uk/people/rayan-albokhari/ · https://link.springer.com/chapter/10.1007/978-3-032-05472-2_31 · https://misk.org.sa/hcd-fellowship/fellow/rayan-albokhary/ |
+| 139 | نهى ناصر الدوسري | Nuha Nasser Aldausari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الأميرة نورة بنت عبدالرحمن | 85 | https://www.researchgate.net/profile/Nuha-Aldausari · https://arxiv.org/abs/2011.02250 |
+| 140 | سعيد سعد الأحمري | Saeed Saad Alahmari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة نجران — كلية علوم الحاسب ونظم المعلومات | 85 | https://portal.nu.edu.sa/en/web/ssalahmari · https://openaccess.thecvf.com/content/CVPR2024W/MTF/papers/Alahmari_Segment_Anything_in_Food_Images_CVPRW_2024_paper.pdf |
+| 141 | أبرار مطلق العتيبي | Abrar Mutlaq Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | جامعة الإمام عبدالرحمن بن فيصل — قسم علوم الحاسب | 85 | https://www.linkedin.com/in/abraralotaibi/ · https://www.researchgate.net/profile/Abrar-Alotaibi |
+| 142 | محمد يحيى العسيري | Mohammed Yahya Alaseri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 143 | معند طلال العنزي | Munid Talal Alanazi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 144 | جواهر عايض عبدالله الغامدي | Jawaher Ayedh Abdullah Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 145 | منال محمد الامير | Manal Mohammed Alamir | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 146 | عهد عوض ال غريس | Ahad Awad Al Grais | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 147 | منال سفير السواط | Manal Safeer Alswat | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 148 | سارة بدر العتيبي | Sara Badr Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 149 | اسماء احمد الزبيدي | Asmaa Ahmed Alzubaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 150 | عبير سلمان الحماد | Abeer Salman Alhammad | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 151 | عهود نايف الحربي | Ohoud Naif Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 152 | حسن علي البقشي | Hassan Ali Albaqshi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 153 | ابرار علي زينل | Abrar Ali Zainal | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 154 | مهند عبدالله المنتشري | Mohanad Abdullah Almontasheri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 155 | فاتن نايف المطيري | Faten Naif Almutairi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 156 | ساره سعود القثامي | Sarah Saud Alqethami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 157 | منار ابراهيم الجابري | Manar Ibrahim Aljabri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 158 | رهف مصطفى الحجيلي | Rahaf Mustafa Alhujaili | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 159 | خالد عبدالله الجعيد | Khalid Abdullah Aljuaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 160 | رغد محمد العواجي | Raghad Mohammed Alawaji | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 161 | زرعه جنيد شبلي | Zarah Junaid Shibli | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 162 | عبدالكريم فهد الفلاج | Abdulkarim Fahad Alfallaj | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 163 | ريناد عبدالرحمن الخربوش | Renad Abdulrahman Alkhurbush | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 164 | غدي حسان بابور | Ghadi Hassan Babour | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 165 | عبدالله عبدالرحمن العمر | Abdullah Abdulrahman Alumar | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 166 | مها محمد الشمراني | Maha Mohammed Alshamrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 167 | حنان سليمان العطوي | Hanan Sulaiman Alatawi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 168 | عبدالله حمود الصالح | Abdullah Hamoud Alsaleh | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 169 | طيف بدر الحربي | Taif Badr Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 170 | خوله احمد آل مطر | Khawla Ahmed Al Matar | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 171 | شهد غازي حنبولي | Shahad Ghazi Hanbuli | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 172 | ياسر محمد الشهري | Yasser Mohammed Alshehri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 173 | نايف مرسال المحمادي | Naif Mersal Almahmadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 72 | https://github.com/NaifMersal · https://github.com/NaifMersal/SDAIA-Building-Gen-AI-Apps |
+| 174 | اسماء عبدالصمد مهدي | Asmaa Abdulsamad Mahdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 175 | رناد ياسر الانصاري | Renad Yasser Alansari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 176 | ليان علي السعود | Layan Ali Alsaud | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 177 | ايلاف سالم الصاعدي | Elaaf Salem Alsaedi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 178 | حسن رشيد القعيري | Hassan Rasheed Alquairi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 179 | لينا احمد ابراهيم العمري | Lina Ahmed Ibrahim Alamri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 180 | شريفه صالح عبدالرحمن بن ملحان | Sharifah Saleh Abdulrahman bin Malhan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 181 | غدي محمد علي خشيل | Ghadi Mohammed Ali Khushail | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 182 | شيماء فهد فرج العتيبي | Shaimaa Fahad Faraj Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 183 | لمى علي خلف المطيري | Lama Ali Khalaf Almutairi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | الشركة السعودية للصناعات العسكرية SAMI | 85 | https://www.linkedin.com/in/lama-aalmutairi/ |
+| 184 | نايف حسين الحسين آل عائض | Naif Hussain Alhussain Al Ayedh | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 185 | ريوف بندر علي الغامدي | Ryouf Bandar Ali Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 186 | عزام سعود ناعم الحربي | Azzam Saud Naem Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 187 | لينا فهد بن عبدالله المقرن | Lena Fahad bin Abdullah Almugren | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 188 | ميعاد سلطان سعد الشيباني | Meead Sultan Saad Alshaibani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 189 | ميعاد متعب بن رزين السلمي | Miaad Mutaib bin Razeen Alsulami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 190 | أميره عويض مسحل الجعيد | Amira Owaidh Mishal Aljaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 191 | تغريد حاتم بن محمود سندي | Taghreed Hatem bin Mahmoud Sindi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | مدينة الملك عبدالله الطبية بمكة KAMC | 88 | https://saudipedia.com/en/taghreed-sindi · https://www.innovatorsunder35.com/the-list/taghreed-sindi/ · https://sa.linkedin.com/in/taghreed-sindi-9575b582 |
+| 192 | عبدالعزيز حسان عبدالله ملا | Abdulaziz Hassan Abdullah Mulla | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 193 | نوره فهد عثمان الحميد | Nourah Fahad Othman Alhumaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 194 | خالد علي مشرف العمري | Khalid Ali Meshref Alamri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 195 | لمى عبدالله سعيد الغامدي | Lama Abdullah Saeed Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 196 | لانا عبدالله صالح الجبر | Lana Abdullah Saleh Aljabr | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 197 | رائد عصام عبدالحميد أبوحجي | Raied Essam Abdulhamid Abohejji | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 198 | عبير احمد بن عبدالرحمن السعيد | Abeer Ahmed bin Abdulrahman Alsaeed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 199 | ساره غانم عوض القحطاني | Sarah Ghanem Awad Alqahtani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 200 | لبنى محمد موسى الموسى | Lubna Mohammed Musa Almusa | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 201 | لينا خليل ابراهيم الضويحي | Lina Khalil Ibrahim Aldhwaihi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 202 | هياء بعيان بن فايز الوزره | Haya Baayan bin Fayez Alwizrah | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 203 | رغد مساعد بن عبدالرحمن الجديد | Raghad Musaed bin Abdulrahman Aljadeed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 | https://sa.linkedin.com/in/raghad-aljadeed |
+| 204 | جود صقر عزيز العنزي | Joud Saqer Aziz Alanazi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 205 | زهرة توفيق يوسف رشيد | Zahrah Tawfiq Yousef Rasheed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 206 | نايف خالد بن عجي الصحبي | Naif Khalid bin Aji Alsahbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 207 | نجود محمد ثابت النهدي | Nojood Mohammed Thabet Alnahdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 208 | لين أحمد مشعل الغامدي | Leen Ahmed Meshal Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 209 | روان يحي بحيص جعفري | Rawan Yahya Buhais Jaafari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 210 | عبدالله ناصر الملحم | Abdullah Nasser Almulhim | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 211 | حيدر المبارك | Haidar Almubarak | أكاديمية الذكاء الاصطناعي التوليدي (البرنامج المحدد قيد التأكيد) |  | الجامعة السعودية الإلكترونية | 60 | https://github.com/Haidar13 · http://scholar.google.com/citations?user=MZRgD3cAAAAJ · https://www.linkedin.com/in/haidar13/ |
+
+## معسكرات 2023 (القوائم الكاملة) — 329 سجلًا (جدول مضغوط)
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
+|---|---|---|---|---|---|---|---|
+| 1 | Abdulaziz Aiedalenezi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 2 | Abdulaziz Ali Alarifi |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 3 | Abdulaziz Fahad Alqahtani |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 4 | Abdulaziz Saud Alsubaie |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 5 | Abdullah Jameel Alhuthali |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 6 | Abdullah Mubara Almu |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 7 | Abdullah Yaqub Alarfaj |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 8 | Abdulmjeed sabr sabr |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 9 | Abdulmohsen Ali Asiri |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 10 | Abdulrahman Abdullah Seedi |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 11 | Abdulrahman Nabeel Abughazala |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 12 | Abdulrahman Okab Alenizy |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 13 | Abdulrahman Omar Alghanmi |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 14 | Abdulrhman Hassan Alshehri |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 15 | Abdulrhman Khulaid Alharbi |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 16 | Abeer Bader Alharbi |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 17 | Abrar Abdulaziz Alqahtani |  | Completion — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 18 | Abrar Yousef Alrebh |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 19 | Adel Almutairi |  | Completion — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 20 | Afnan Abdullah Alshehri |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 21 | Afnan Awadh Alharbi |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 22 | Afnan Mohammed Asiri |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 23 | Afnan Yousef Alomairi |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 24 | Afnan Zaid Almutiri |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 25 | Ahad Awad Algrais |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 26 | Ahmed Abdullah Almohammed |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 27 | Ahmed Almajed |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 28 | Ahmed Almohammadi |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 29 | Ahmed Mohammed Alansari |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 30 | Ahmed Saleh Alghamdi |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 31 | Ahmedmosadq Aljuhani |  | Completion — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 32 | Alaa Ahmed Alsattam |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 33 | Alaa Almalki |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 34 | Alaa Khalid Alsalman |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 35 | Alaa Salem Alhawiti |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 36 | Alanoud Ahmed Alnasser |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 37 | Alanoud Alhuwaishel |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 38 | Alanoud Mansour Alsolmy |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 39 | Albandry Yousef Alammar |  | Completion — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 40 | Ali Mohammed Alamri |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 41 | Ali Zuhair Alojayyan |  | Completion — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 42 | Aljuri Waleed Alhejji |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 43 | Amal |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 44 | Amal Hadi Asiri |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 45 | Amal Hadi Mohammed Asiri |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 46 | Amal Saleh Alzaedi |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 47 | Ameerah |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 48 | Amirah Minyour Almutairi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 49 | Amjad |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 50 | Amjad Almutairi |  | Completion — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 51 | anfal abdulaziz alobaidi |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 52 | Aqeelah Jaffar Makki |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 53 | Areej ibrahim alaqla |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 54 | Areej Thamer Alshahrani |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 55 | Arwa Abdullah Almalki |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 56 | Arwa Alattas |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 57 | Arwa Aldawsari |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 58 | Arwa Ali Alshehri |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 59 | Aseel Alqashami |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 60 | Ashwaq Ali Alghamdi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 61 | Asma Mubarak Albuainain |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 62 | Asma Saeed Ali Alganem |  | Completion — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 63 | Asmaa Aljuhani |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 64 | Asrar Abdulrhman Alharbi |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 65 | Atheer Abdullah Alzahrani |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 66 | atheer daafi hobani |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 67 | Atheer Mohammed Alghamdi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 68 | Atheer Morshed Almalki |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 69 | Atheer Rashid Alzhrani |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 70 | Atheer Saad |  | Completion — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 71 | Atheer Saeed Alshehri |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 72 | Atyaf Alturki |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 73 | Aya Hamza Joharji |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 74 | Azizah Sulaiman |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 75 | Bader Adullah Alqahtani |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 76 | Baraah Bader Alrashed |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 77 | Bariqa Mohammad Aljarallah |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 78 | Bashaer Abdulkhaliq Alharbi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 79 | Bashayer Sultan Alghamdi |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 80 | Budur |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 81 | Budur Atdh Almareni |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 82 | Dalal Shbeeb Ali Alotibi |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 83 | Dalia Khalid Alsuwailem |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 84 | Dana Abdullah Aldossary |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 85 | Dana Majed Abdullah |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 86 | Deema Khaled Alzai |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 87 | Demah Sultan Almutairi |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 88 | Ebtesam Ali Mohammad |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 89 | Ekram Feras Jamous |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 90 | Elaf Khalid Al Malki |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 91 | Faisal Abdulaziz Alfawaz |  | Completion — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 92 | Faisal Aldayri |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 93 | Farah Fouzyalsuwayeh |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 94 | Fares Saud Alshlowi |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 95 | Faris Allam |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 96 | Faten Naif Almutairi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 97 | Fatimah Ahmed Sammar |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 98 | Fatimah Ali Hakami |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 99 | Fatimah Habib Alsaman |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 100 | FATIMAH MUTEB ALI ALGHANMI |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 101 | Fatma Ayed Saif |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 102 | Fawaz Taha Alesayi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 103 | Fayha |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 104 | Fayrouz Fayez Alhaidar |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 105 | Fayzah Qaid |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 106 | Futun Eidhah Althobieti |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 107 | Ghada Abdulaziz |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 108 | Ghada Ahmed Alamoudi |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 109 | Ghada Khalid Alwagdani |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 110 | Ghadeer Hani Albasha |  | Completion — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 111 | Ghadi Ali |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 112 | Ghadi Hassan Babour |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 113 | Ghadi M Alkhushail |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 114 | Hadeel |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 115 | hadeel osama algheffari |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 116 | Hailah Abdullah Bushulaybi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 117 | HAMED KHALAF SALEH ALRUWAILI |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 118 | Hanan Suleiman Alhuwaiti |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 119 | Haneen Ahmad Almutair |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 120 | Haneen Hamed Almabadi |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 121 | Haneen Mohanmed Althagafi |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 122 | Haneen Sulaiman Alahmadi |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 123 | Hassan Abdulbasit Abid |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 124 | Hassan Abdullah Albinsaad |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 125 | Hassan Adel Alhussain |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 126 | Hassn Rasheed Alqeari |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 127 | Hatoun Ali Alqumsani |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 128 | Haya Abdullah Dahesh |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 129 | Haya Mohammad Aldosari |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 130 | Haya Sunaid Almutairi |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 131 | Hetaf Ali Qumsani |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 132 | Hiba Hashim Fallatah |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 133 | Hindmohammed Alrashidi |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 134 | Huda Mater Aljohani |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 135 | Ibraheem Mohammed Mohsen |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 136 | Ibrahim Abdulrahman Alshehri |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 137 | Ibrahim Asiri |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 138 | Ibrahim Mohammedghazali Khayat |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 139 | Ikhlas Abdullah Albalawi |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 140 | Jenan Alhabbas |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 141 | Joud Musharraf Alghamdi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 142 | Khaled Yahya Khalil |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 143 | Khalid Hazza Almotaery |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 144 | Khawla Ahmed Almatar |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 145 | Lama Saud Alshareif |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 146 | Lamaa Mohammed Duwayriat |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 147 | Lamees Fahad Aloqlan |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 148 | Lamia Salem Alqahtani |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 149 | Lamya Khalid Alharbi |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 150 | Layan Abdulrahman AlShahrani |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 151 | Leena Albadr |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 152 | Leenah Essam Alfraih |  | ML Practitioner — ML BC 5 (أكتوبر) + LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 153 | Lobabah Mohammad Alalawiyat |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 154 | Luay Sattam Mihmas Alotaibi |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 155 | Lubna Binsalem |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 156 | Lubnah Binsalem |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 157 | Lujain Meshal Althobaiti |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 158 | Lujain Sameer Badghaish |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 159 | Lujean Ali Alharbi |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 160 | lulu - Lulwah Aljamaan |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 161 | Lulu Almuqbil |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 162 | Luluwa Ameen Modeer |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 163 | Maha Abdulaziz Alhazzani |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 164 | Maha Ali Alshehri |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 165 | Maha Alsayed |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 166 | Maha Bandar Binomirah |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 167 | Maha Musa Alsulami |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 168 | Mahdi Hassan Almajed |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 169 | Maher eid freej aljuhani |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 170 | Malak Saeed Alsalateen |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 171 | Manar Jaber Alamri |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 172 | Manar Mohammed Althobaiti |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 173 | Maram Abdulrahman Alzahrani |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 174 | Maram Ahmed Alolaqi |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 175 | maram khalyl alsefri |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 176 | Maram Mohammed Alelyani |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 177 | maram mohammed harun |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 178 | Mariam Hadram Abdullah Alshahrany |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 179 | Marwan Abdullah Omer Alobathani |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 180 | Maryam Riyadh Alnassar |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 181 | Mashael Saud Alsulami |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 182 | Maya Hussain Alamir |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 183 | Mead Alrushud |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 184 | Mias Alsehli |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 185 | Moajebah Manea Alshaiban |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 186 | Mohammed Alsayed |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 187 | Mohammed Khalid Alhusini |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 188 | Mohammed Saad Aldosari |  | Completion — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 189 | Mohammed Saad Alquraini |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 190 | Mohammed Salman Alomayri |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 191 | Munirah Waleed Almulhim |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 192 | Murouj Abdulrhman Alshehri |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 193 | Nada Khadran AlShamrani |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 194 | Nadia Almuatiri |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 195 | Nahed Salem |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 196 | Najah Khalid Al-Rowais |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 197 | Najla Ahmed Albareqi |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 198 | Najwa Anwar Almuafi |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 199 | nawaf khulaywa aljohani |  | ML Practitioner — ML BC 1 (سبتمبر) + LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 200 | Njood Hamed Alharthy |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 201 | Noora Alsumail |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 202 | Noorh Essa Aldossary |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 203 | Nora Abdullah Alhatem |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 204 | Nora Abid alharby |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 205 | Nora Saleh Alturayeif |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 206 | Norah Munahi Aldawsari |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 207 | Nouf Abdulazizi Alqhtani |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 208 | Nouf Al Kedewi |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 209 | Nouf Alateeq |  | ML Practitioner — ML BC 4 (سبتمبر) + Completion — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 210 | Nouf Alenezi |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 211 | Nouf Alfayez |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 212 | Nouf Alrashid |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 213 | Nouf Alrehaili |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 214 | Nouf Hashim Aljohani |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 215 | Nouf Saad Mohammed Mohi |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 216 | Noura Ali Alajmi |  | Completion — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 217 | Noura Awad Alobiwani |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 218 | Noura Ghonaim AlGhonaim |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 219 | Noura Mohammed Alqasem |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 220 | Noura Sami Alluhaidan |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 221 | Ohoud Saad Aldosari |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 222 | Omamah |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 223 | Omar Al-Khuwaytim |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 224 | Raed Fahad Alharbi |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 225 | Raghad Ahmed Alzahrani |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 226 | Raghad Ibrahim Aloufi |  | ML Practitioner — ML BC 3 (سبتمبر) + LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 227 | Raghad Khaled Almutairi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 228 | Raghad Khalid Alabbas |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 229 | Raghad Khamis Ali |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 230 | Raghad Mahmoud Alqobali |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 231 | Rahaf Al Amri |  | Completion — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 232 | Rahaf Awwad Alharbi |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 233 | Rahaf Saeed Alhalai |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 234 | Rama Mohammed Alyoubi |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 235 | Ranad Hamad Alharthi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 236 | Ranad Zaid Alabdan |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 237 | Raneem Abdullhadi Ali |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 238 | Raneem Saeed Alqahtani |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 239 | Rania Khalid Bahmid |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 240 | Rania Saleh Alharbi |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 241 | Ranin Abdullah Alghamdi |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 242 | Rasha Mohammed Alharthi |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 243 | Rawan Abdulrahim Alsaedi |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 244 | Rawan Yahya Jaafari |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 245 | Rayan Abdulaziz Althonian |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 246 | Rayan Almadhy |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 247 | Rayan Saeed Ahmed Althobit |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 248 | Rayyan Muhammad Raza |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 249 | Razan Alotaibi |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 250 | Razan Ayman Sharaf |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 251 | Razan Nasser Aqeel Alshammari |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 252 | Raznah khorssan salem |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 253 | Reem Abdulrhman Alothimen |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 254 | Reem Mohmmad Mushafi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 255 | Reema Ali Maeedh Saif Qahtani |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 256 | Reema Saleh Almedlej |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 257 | Reham Abdulkhaliq Alamri |  | Completion — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 258 | Reham Ibrahim Alhodaib |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 259 | Reham Saad Alharbi |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 260 | Remas Mushbabb ALshahrani |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 261 | Renad Atyah Alzahrani |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 262 | Renad Mohammed Khayyat |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 263 | Rimas Nawi Alshehri |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 264 | Roaa Ali Abeery |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 265 | Roqaiah Naser Aldajran |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 266 | Ruaa Ahmed Alawbathani |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 267 | Ruzan Ahmed Alshaikh |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 268 | Ryam Abdulwase |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 269 | Saad Aladyan |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 270 | Saad Awad Alghamdi |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 271 | Saad Fahad Alharbi |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 272 | Saad Saeed Alshahrani |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 273 | Sadeem Alyousef |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 274 | Sadeem Saeed Alzahrani |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 275 | Sadeem Salem Fihrah |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 276 | Safa Abdullah Falaqi |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 277 | Sahar Mohammed Alkhattabi |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 278 | Saja Alherbish |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 279 | Salam Alshammasi |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 280 | Saleha Mohammed Aljoufi |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 281 | Samar Saad Almutairi |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 282 | Samiyah Ali Alshehri |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 283 | Sara Ayoub Almarshad |  | LLM Practitioner — LLM 4 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 284 | Sara D Alahmari |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 285 | sarah al Amri |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 286 | sarah Al Shaikh |  | ML Practitioner — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 287 | Sarah Alaridi |  | Completion — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 288 | Sarah Fahad Alamoudi |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 289 | Sarah Jamil Alamiri |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 290 | Sarah Khalid Alaridi |  | LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 291 | Sarah Mahmoud Ali Al Qahtani |  | Completion — ML BC 4 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 292 | sarah Omeir Al Ghamdi |  | ML Practitioner — ML BC 1 (سبتمبر) + LLM Practitioner — LLM 5 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 293 | Sarah Turki Alanazi |  | ML Practitioner — ML 7 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 294 | Saud Albahlal |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 295 | Shahad Abdulaziz Meshal Althubaiti |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 296 | shahad abduljalil dahlan |  | Completion — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 297 | Shahad Abdulkader Alaydaroos |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 298 | shahad Abdulrahman alqahtani |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 299 | Shahad Ali Askary |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 300 | Shahad Hatem Balkhashir |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 301 | Shahad Salman Alqhtani |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 302 | Shaikha Khalid Albilais |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 303 | Shaima Fahad Alotaibi |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 304 | Shayam Abdullah Alsahli |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 305 | Shoaa Rajeh Almothaibri |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 306 | Shrouq Hamad Abaalharith |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 307 | Somiah AbduArhman Aloween |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 308 | Sukainah Jaffar Ali Alramadhan |  | ML Practitioner — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 309 | Suliman Binderi |  | LLM Practitioner — LLM BC 1 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 310 | Sumayyah Salman Almalki |  | ML Practitioner — ML BC 2 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 311 | Tahani Mohammad Alsubait |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 312 | Tala Mohammed Alsuhaimy |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 313 | THAMER MASEER ALHARBI |  | ML Practitioner — ML BC 3 (سبتمبر) + LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 314 | Thamer Nasser Alolayet |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 315 | Turki Ahmed Alsulayyi |  | LLM Practitioner — LLM 3 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 316 | Wafaa Saad AlSaffar |  | ML Practitioner — ML BC 1 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 317 | Walaa Mousa Shawish |  | ML Practitioner — ML BC 5 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 318 | Waleed Al Safwani |  | Completion — ML BC 3 (سبتمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 319 | Weam Faya Abaas |  | LLM Practitioner — LLM 6 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 320 | Wtin Youseef Alnashri |  | LLM Practitioner — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 321 | Yasmin Uthman Alsomaly |  | ML Practitioner — ML 10 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 322 | Yazeed Bandar Ogran |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 323 | Yusr Abdullah Alqarni |  | ML Practitioner — ML 8 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 324 | Zahraa |  | ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 325 | Zain Zuhayr Abdalwahab |  | Completion — LLM BC 2 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 326 | Zainab Hussain Alshuhayb |  | ML Practitioner — ML 9 (نوفمبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 327 | نوف علي عايض القرني |  | ML Practitioner — ML BC 2 (سبتمبر) + ML Practitioner — ML BC 3 (سبتمبر) + ML Practitioner — ML BC 3 (سبتمبر) + ML Practitioner — ML BC 4 (سبتمبر) + ML Practitioner — ML BC 5 (أكتوبر) + ML Practitioner — ML BC 6 (أكتوبر) 2023 | سبتمبر–نوفمبر 2023 |  | 75 |  |
+| 328 | MOHAMMAD SADIQ |  | شهادة حضور LLM — نوفمبر 2023 | نوفمبر 2023 |  | 70 |  |
+| 329 | AL YAHYA |  | شهادة حضور LLM — نوفمبر 2023 | نوفمبر 2023 |  | 70 |  |
+
+## سجلات 2024 الرسمية — 782 سجلًا (جدول مضغوط)
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
+|---|---|---|---|---|---|---|---|
+| 1 | شهد المنقور |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 2 | هتون السرحاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 3 | اروى القحطاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 4 | شهد محروس |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 5 | رنا شيخين |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 6 | نوف الامير |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 7 | عهود غنام الغامدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 8 | مروه ذري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 9 | زهراء جديبا |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 10 | علياء آل سالم |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 11 | شهد الشمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 12 | رغد العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 13 | أبرار الحارمي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 14 | جود صالح الربيش |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 15 | بندر الوراد |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 16 | تسنيم القحطاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 17 | حنان السبيعي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 18 | حنين الراجح |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 19 | جوان شريفي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 20 | أروى الشهري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 21 | حنان الأحمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 22 | ريماس الزهراني |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 23 | مي الشامسي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 24 | غيداء الغنام |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 25 | علا العلي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 26 | هند عابد الغريب |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 27 | جنى خياط |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 28 | جمانه الهذلي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 29 | ترف الدريويش |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 30 | طيف ناصر القحطاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 31 | داليا الفلاج |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 32 | سارة عبدالله الزير |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 33 | رهف حمود العنزي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 34 | شذى خالد الاسمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 35 | حسنه علي صالح |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 36 | شيماء المنجومي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 37 | محمد خالد الجهني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 38 | وعد ابراهيم الامير |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 39 | هاجر مرعي الرويلي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 40 | حلا احمد صيرفي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 41 | جود علي المنيع |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 42 | تركي طلال المالكي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 43 | تهاني محمد العنزي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 44 | عبدالله علي الزكري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 45 | المهاء فهد القحطاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 46 | معيوفه عتقاء الرشيدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 47 | مريم الاحمر |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 48 | ريمه الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 49 | فيصل العماري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 50 | رهف حامد المالكي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 51 | أحلام الغامدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 52 | يارا الشهري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 53 | اسماء زين يماني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 54 | سارة اليامي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 55 | أحمد عبدالله الخباز |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 56 | عبدالمحسن النافع |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 57 | ريوف القرشي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 58 | ابتسام الشهري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 59 | رائدة المرزوق |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 60 | هبه اامخايطة |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 61 | عبير الفيفي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 62 | بدر المنصور |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 63 | يزيد آل سعيد |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 64 | عبدالرحمن واصل العمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 65 | فيصل سعود البرقان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 66 | ماجد طلال بامردوف |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 67 | عتاب محمد العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 68 | رضيه الزبيدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 69 | الزهراء عبدالرحمن البليهي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 70 | بتول الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 71 | ديمه الصقيه |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 72 | فراس الصائغ |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 73 | محمد الجعيد |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 74 | فيصل الشنقيطي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 75 | عبدالرحمن احمد الصبحي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 76 | بتول علي الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 77 | فاطمة محمد القرني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 78 | بتول زهير العبدالجبار |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 79 | هيام عبدالله النويصر |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 80 | منال سعيد الشهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 81 | ميعاد عبدالله العمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 82 | ياسر عبيد العبيد |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 83 | مصعب مصعب الشريدة |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 84 | ريسان دخيل الجهني |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 85 | نواف خالد الزير |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 86 | رزان ابراهيم العربيدي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 87 | جولان المري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 88 | ميعاد سليمان العليان |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 89 | نديم بدر فارس الجهني |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 90 | غادة مناحي السبيعي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 91 | هيا شبيب السبيعي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 92 | دانه سعيد العمري |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 93 | فاتن سعيد آل سلطان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 94 | عنود الفايدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 95 | مناير رميزان السبيعي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 96 | لمى فؤاد المشيقح |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 97 | ريم حسن الغزواني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 98 | الهنوف سليمان الثنيان |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 99 | كادي بندر العقيلي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 100 | مساعد تركي الزيدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 101 | مها محمد المري |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 102 | منى عبدالعزيز الشمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 103 | أميره سعود العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 104 | هبه سندي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 105 | لمى مبارك الشهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 106 | رغد عبدالرحمن العلوي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 107 | سهام عبدالله الزهراني |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 108 | أمل محمد الزهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 109 | لارا خالد آل حسين |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 110 | طيف طلال عجوة |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 111 | عيسى عبدالله الأحمدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 112 | نوره النويصر |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 113 | ريناد حسن المجايشي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 114 | عبدالرحمن حماد الصبحي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 115 | رنا مروان الاحمدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 116 | عائشة أحمد الذرباني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 117 | زينب علي قصقوص |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 118 | ريماس علي الغامدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 119 | ساره عبدالمحسن الشريف |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 120 | خالد فيصل الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 121 | رغد عدنان المالكي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 122 | فاطمه رضي الحاجي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 123 | شهد فؤاد عبد رب النبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 124 | الجود محمد الشهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 125 | يوسف فرج الشمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 126 | رزان علي ال بالحارث |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 127 | عزيزه ثامر الثقفي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 128 | عبدالصمد حسين الزبالي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 129 | يارا وليد مزين |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 130 | محمد هندي العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 131 | روان عبدالكريم الفرحان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 132 | آمنه عيسى بوعليان |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 133 | آيه قالو |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 134 | تهاني الزبيدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 135 | سعود الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 136 | أسماء الخراصي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 137 | ساره المطلق |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 138 | حنان عيد المالكي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 139 | سهام سعد الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 140 | نواف هذال ال وقيان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 141 | سارة علي سليمان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 142 | مريم ماهر المغربي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 143 | شوق رجاءالله السلمي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 144 | رشا محمد الحارثي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 145 | أماني القحطاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 146 | سالم احمد باسباع |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 147 | ريفان محمد القحمي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 148 | يارا نايف الجهني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 149 | امجاد ذعار العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 150 | رهف حمد المري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 151 | شذى سرور العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 152 | فاطمه عدنان السلمان |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 153 | رزان يوسف الحسين |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 154 | بيان ناصر الشهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 155 | منال محمد وشع |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 156 | عبدالقادر السقاف |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 157 | خزامى الخويطر |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 158 | صالح علي الحميميدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 159 | ساره عدلي شاهين |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 160 | رزان عبدالرحمن السلمي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 161 | أبرار سليم العنزي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 162 | مشاعل محمد عسيري |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 163 | ندى عبدالرحمن الدايل |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 164 | ياسر عبدالملك السفياني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 165 | وائل حمدان الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 166 | لبنى محمد الربيعة |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 167 | خلود ناهس البقمي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 168 | خالد الدوسري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 169 | شهد العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 170 | عهد النمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 171 | رناد العجمي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 172 | ريم صالح الجبري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 173 | خالد عبدالرحمن الحرقان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 174 | مهند عوض الزهراني |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 175 | لجين المشيقح احمد المشيقح |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 176 | نوف بن ريس |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 177 | روان يحيى الغامدي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 178 | وعد محمد العبيدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 179 | ناصر عبدالحميد المطيري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 180 | شيماء خالد الخضير |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 181 | نايف عبدالمنعم السلمي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 182 | حنين سليمان المطرفي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 183 | غدي الغامدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 184 | منار صالح الصواط |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 185 | رحال علي السلوم |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 186 | جواهر عبدالرحمن باعثمان |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 187 | هشام ابراهيم الطيب |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 188 | جود ابراهيم السند |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 189 | نوره أحمد القريشي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 190 | غدير عبدالرحمن الشويلي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 191 | جود عادل الضويحي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 192 | مروان احمد الجدعاني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 193 | شهد فهد الجهني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 194 | نوره عبدالعزيز الصالحي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 195 | رغد مزيد العتيبي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 196 | سديم عبدالله السواط |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 197 | سعد سعيد آل سند |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 198 | فاطمه رشيد ياسين |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 199 | سلمى ضيف الله الدوسري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 200 | عبدالله عبدالرحمن الأحيدب |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 201 | سفر فهد الزهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 202 | ساره سعد الشعيل |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 203 | احمد عبدالرحيم الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 204 | ريم راشد الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 205 | خالد غربي الشمري |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 206 | نورة عبدالله الحجيلي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 207 | فاضل عبدالعالي العبيدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 208 | ليان على السعود |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 209 | إيمان تركي النباتي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 210 | رودينا سيف الشهراني |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 211 | دلال سعيد الحربي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 212 | بشاير محسن العمودي |  | معسكر النماذج اللغوية الكبيرة (LLM)، معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 213 | احمد سعيد الغامدي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 214 | سارة محمد الناجي |  | معسكر النماذج اللغوية الكبيرة (LLM) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 215 | افنان عبدالكريم السلمي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 216 | عبدالله خالد الفواز |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 217 | مريم احمد الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 218 | عبدالله مجدي الصبيحي |  | معسكر تعلم الآلة (ML)، برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 219 | ريناد إبراهيم معافا |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 220 | أنس أحمد الحسني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 221 | خلود مطلق الأصقه |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 222 | عفاف خالد الجعيد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 223 | عمار حسين عواجب |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 224 | روان فياح المطيري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 225 | عائشه ابراهيم الغريب |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 226 | أسماء زايد العتيبي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 227 | سمية عبدالعزيز الوادعي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 228 | نوره عبدالله الطريقي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 229 | عبدالقادر عبدالله السقاف |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 230 | رودينا سيف زايد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 231 | أنس علي حكمي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 232 | دانه باسم الشيخ |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 233 | حسن شيبه الشنقيطي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 234 | منار نوران الرشيدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 235 | رغد عائض الطلحي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 236 | رهف سعد الشهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 237 | رناد عبدالرحمن العجمي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 238 | شوق طارق الحاتم |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 239 | جوري سعد العامري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 240 | مرام صالح القرني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 241 | حنان جبر الأحمدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 242 | أمجاد حسن الصخيري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 243 | رفاء سليمان العبيواني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 244 | فيصل عبدالله آل مفرح |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 245 | نور عوض الجعيد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 246 | محمد عمر العقيل |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 247 | خالد منصور الدوسري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 248 | شهد ياسين البناي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 249 | عذاء مشرع الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 250 | غيداء عبداالرحمن الدريس |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 251 | مؤيد ابراهيم الفوار |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 252 | أنفال سعد ال كريدس |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 253 | اسامه عبدالرحمن الفوزان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 254 | رنا عبدالله الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 255 | معاذ عبدالله باتيس |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 256 | الحسن علي الشريف |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 257 | عبدالله محمد آل معدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 258 | مودة محمدسعيد القرافي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 259 | رنيم صالح الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 260 | عهد ماجد السلمي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 261 | نايف طلق القرشي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 262 | ريماس عبده حسن عباس |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 263 | ريم علي ناجعي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 264 | أجوان احمد الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 265 | ريهام سعيد القرني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 266 | خزامى ابراهيم الخويطر |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 267 | نسرين راكان الشمري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 268 | اماني ظافر العمري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 269 | سارا خالد الشويعر |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 270 | رهف راشد الضفيان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 271 | خزامى خالد السنان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 272 | رهف سعد القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 273 | صفا ناصر كلابي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 274 | آسية سعيد الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 275 | تهاني حسين الزبيدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 276 | لمى اسامة الحجيلي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 277 | منى عبد العزيز النغيثر |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 278 | لينه فواد خرد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 279 | رهف فائز الاحمدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 280 | وضحى مطحس القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 281 | عهد عبدالمحسن النمري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 282 | إمتنان محمد السنيد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 283 | رولا عادل العوفي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 284 | جنا علي الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 285 | أسماء فهد مهدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 286 | اسماء فهد الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 287 | منال عطيه الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 288 | دنى عبدالرحمن العبدالعزيز |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 289 | نوف حسن الأمير |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 290 | يارا حسن غازي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 291 | غلا محمد الشهري محمد الشهري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 292 | وعد خالد السعيد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 293 | إيثار هاني المشامع |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 294 | سديم عبدالكريم عسيري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 295 | رنا عبده باري قيسي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 296 | مريم عبدالله الشمري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 297 | جود عبدالرحمن الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 298 | عهود يحيى خبراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 299 | فاطمة حسين آلرمضان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 300 | هياء فطيس السلولي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 301 | اسامه بريك الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 302 | طيف مسفر المعلوي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 303 | ساره محمد الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 304 | رغد عيسى عامري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 305 | لين عادل العقيل |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 306 | ميلاد عبدالسلام العمري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 307 | محمد ضيف الله الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 308 | هيفاء مسند الثبيتي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 309 | بتول عبدالله الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 310 | عبدالرحمن خالد الحسن |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 311 | رهاف عبدالله الحودي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 312 | بسمه موسى الهوسه |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 313 | ساره بادي الزمامي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 314 | محمد سعد القرني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 315 | الجوهرة جالس العتيبي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 316 | نواف عبدالله الأسمري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 317 | ريم احمد الغماري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 318 | ندى حمود العنزي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 319 | نوره بخيت الجهني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 320 | أماني عبدالله القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 321 | شوق عبدالله الفوزان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 322 | فاطمه معاذ الماجد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 323 | جنان عبدالرحمن النوفل |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 324 | رهف وهيب المحمدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 325 | نهى أحمد العنزي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 326 | شوق يحيى قحل |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 327 | كوثر كمال الظاهري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 328 | شذا عبدالمغني الشيخ |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 329 | شذا خالد المعبدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 330 | عبير مهنا المطيري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 331 | لينا عبدالله الحسيني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 332 | ناصر فهد النخيلان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 333 | غاده مسفر القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 334 | جوري سعيد الشهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 335 | ربى صالح الطحيني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 336 | عبدالله عيد القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 337 | هدى صالح الربيعي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 338 | طيف معيض القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 339 | هند عواض الجعيد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 340 | رغد علي السحيباني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 341 | أفنان محي الشهري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 342 | روان عبدالله سياف |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 343 | رنيم عبدالواسع الصحفي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 344 | ساميه عادل الجويسري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 345 | شوق سعيد القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 346 | رانيه مشعل حسين |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 347 | ندى صالح الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 348 | شيماء عزيز الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 349 | منى سعيد الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 350 | اسيل مشعل الخديدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 351 | رهف رزيق الرحيلي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 352 | أميره أحمد شجاع |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 353 | ريهام منصور الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 354 | شهد فواز العتيبي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 355 | مريم عادل المغلوث |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 356 | اسية ناجي عبدالجليل |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 357 | رنا خالد الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 358 | وجد عبدالله السليمان |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 359 | طارق خالد الحقباني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 360 | ياسر تركي المالكي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 361 | بنين أحمد آل حبيل |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 362 | دانيه عبدالمحسن الصحفي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 363 | نوره محمد الحجيلي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 364 | طيف سالم البكر |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 365 | ساره سلامه الرايقي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 366 | أفنان عابد السهلي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 367 | رفاء اسماعيل العويبدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 368 | عبدالله خالد الحلوه |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 369 | غيداء احمد المالكي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 370 | لين نواف القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 371 | سلطان ظافر بنيعلي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 372 | حنين غازي الحربي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 373 | بناء محمد السبيعي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 374 | ريما عبدالله الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 375 | تركي عليوي الشهري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 376 | ريما مريزيق المطيري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 377 | عبدالله عبدالرحمن عبدالله |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 378 | ساره منصور التويجري |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 379 | عهود علي القحطاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 380 | لطيفه ناصر الريس |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 381 | نجود عبدالرحمن العجراء |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 382 | أفنان فواز العتيبي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 383 | نوف مبروك عاض |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 384 | عبدالرحمن فايز العبدالعظيم |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 385 | نجلاء عبدالله الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 386 | حنان مطيران الكلبي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 387 | رنا علي الودعاني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 388 | ريم نواف الرشيدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 389 | غالية مسحل العتيبي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 390 | رهف منيع الله النفيعي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 391 | مها عبدالرحمن الحارثي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 392 | ندى مشعل القثامي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 393 | ربى خالد السلمي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 394 | ريما صالح الاحمد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 395 | رنيم محمد السويلم |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 396 | شذى محمد الجعيد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 397 | اسرار سعيد الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 398 | الهنوف علي الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 399 | امل عايض الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 400 | غيداء احمد الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 401 | نجلاء محمد الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 402 | علي ناصر الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 403 | اريام زيادي الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 404 | سميه عيسى الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 405 | أنوار سعيد الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 406 | سمية عبدالكريم الزهراني |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 407 | منصور صالح الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 408 | ريمان الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 409 | لمى الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 410 | نهى الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 411 | فردوس الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 412 | نوف الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 413 | شيماء علي احمد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 414 | روان خالد الغامدي |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 415 | شجون مشرف احمد |  | معسكر تعلم الآلة (ML) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 416 | رؤى خالد هوساوي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 417 | رنا محمد الشهري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 418 | ريما عبدالرحمن العساكر |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 419 | رامي صالح الجهني |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 420 | ريناد عبدالمنعم الجهني |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 421 | محمد عبداللطيف الدريهم |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 422 | علياء علي باجابر |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 423 | عبدالرحمن ساكت الشمري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 424 | عهد أحمد حبيب |  | برنامج إدارة البيانات، برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 425 | في زيد الشعلان |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 426 | شهد يحيى عجيبي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 427 | أرياف خلف المطيري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 428 | نهى محمد الجعيد |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 429 | مرح محمد السهلي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 430 | رانيا ياسر الحارثي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 431 | فارس تريكي الشويعي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 432 | ماجد حمود المهيهي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 433 | عبير سويلم الشهري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 434 | بيان حميد الحربي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 435 | أروى مفرح الشهري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 436 | ريوف خالد الشدي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 437 | عبدالله علي السبعي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 438 | هيا عبدالعزيز المزيني |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 439 | ديما عبد الرحمن النذير |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 440 | شهد محمد حمدان |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 441 | نوره محمد الشمري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 442 | روان سعد العتيبي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 443 | جواهر عماد زيد |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 444 | محمد فهيد الواكد |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 445 | منال عبدالله السهلي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 446 | روان محمد الحلوي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 447 | صالحه عوض الحارثي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 448 | سعيد تركي الوادعي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 449 | سلطان عبدالله الحربي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 450 | فاطمه ابراهيم الخليفي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 451 | فهد سلمان العميره |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 452 | عبدالله عبدالعزيز المطرودي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 453 | علي إبراهيم القحطاني |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 454 | أروى عبدالرحمن المرواني |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 455 | امواج عياش العنزي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 456 | نجود محمد الزهراني |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 457 | عزام أسامه الدوغان |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 458 | فاطمه محمد الدريهم |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 459 | عبدالرحمن علي القويعي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 460 | عبدالله خالد العتيبي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 461 | عبدالرحمن هابس المطيري |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 462 | عبدالعزيز فهد الحسين |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 463 | مساعد مفضي خليفة العنزي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 464 | خالد احمد العلي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 465 | شهد أحمد بن نصار |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 466 | حصه عبدالله العجمي |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 467 | عبدالله سليمان الثنيان |  | برنامج إدارة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 468 | العنود بندر الدوسري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 469 | سريع سعود القحطاني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 470 | أفنان سليم الحربي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 471 | مها ناصر العنزي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 472 | رسيل ياسر الحربي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 473 | روان أحمد الغامدي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 474 | رناد سمير سعيد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 475 | فلاء محمد الاحمري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 476 | ديما عبدالرحمن الهوساء |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 477 | عبدالله محمد الصغير |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 478 | بتول عبدالعزيز العنزي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 479 | معالي عايض المطيري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 480 | رهف عاضه النفيعي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 481 | ميعاد عبدالرحمن ال سعد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 482 | اطياف علي الغامدي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 483 | أجياد عليان السبيعي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 484 | حصة عبدالرحمن العثمان |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 485 | فاتن عبدالله التركي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 486 | ايلاف خالد العاصم |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 487 | متعب مطلق العتيبي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 488 | أروى فيصل العواجي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 489 | رغد عادل المظفر |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 490 | جود طارق باوجيه |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 491 | بتول بندر العتيبي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 492 | شيهانه ابراهيم الثنيان |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 493 | عبدالرحمن سامي العنيزي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 494 | أثير أحمد الشهري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 495 | شهلا عبدالله العواد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 496 | عبدالرحمن سيف الدين الصبحي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 497 | رزان عايض القرني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 498 | منيره سعيد الشهراني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 499 | ابتهال واصل الجغثمي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 500 | دلال عبدالله الوداعه |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 501 | عمر علي الغامدي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 502 | عادل علي المالكي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 503 | شذى ناصر التركي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 504 | مريم عبدالله بوقرين |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 505 | نواف عبدالمحسن البدراني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 506 | وتين محمد السفياني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 507 | عواطف الشهري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 508 | غيداء مبارك ال نوار |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 509 | هنوف عبدالله الجليل |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 510 | هدى جبريل |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 511 | روابي محمد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 512 | امجاد سعد القحطاني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 513 | سعد فهد ابو عيد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 514 | مشاري عبدالله الحربي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 515 | خلود عبدالكريم الحسين |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 516 | زينب حسن ال طلاق |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 517 | منيره مهيد السعود |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 518 | رؤى صالح الوابل |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 519 | خديجه عبدالله هزازي |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 520 | نواف رشدان المطيري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 521 | مها محمد الشهري |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 522 | ميار وائل الشنتف |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 523 | لما عبدالهادي القحطاني |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 524 | علي حسن الطلاق |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 525 | خالد عبدالعزيز الرويشد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 526 | بدر عبدالعزيز الرويشد |  | برنامج حوكمة البيانات | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 527 | احمد عادل باعبدالله |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 528 | أطياف المهدي عسيري |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 529 | الجوهره ماجد العبيسي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 530 | أمجاد عبيد المقاطي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 531 | أمل حمد الدوسري |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 532 | بيان سعود الصخابره |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 533 | خالد عبده ضعافي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 534 | خالد فواز النصيري |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 535 | خالد منيف الشمري |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 536 | ديم علي العايدي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 537 | ديما فيصل العوفي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 538 | رغد فهد الدوسري |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 539 | رهف ماجد العلواني |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 540 | ريم علي السويدي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 541 | سارة محمد الفقير |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 542 | سارة ابراهيم الفارس |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 543 | سارة سيف السهلي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 544 | سارة عبدالعزيز التركي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 545 | سامي محمد النودل |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 546 | سليمان حمد الجميل |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 547 | شموخ خلف العنزي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 548 | شهد عبدالرحمن العبيد |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 549 | شيخه عتيق الطليان |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 550 | عبدالعزيز سعد العتيبي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 551 | علياء عبدالعزيز آل الشيخ |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 552 | غدير حسين الرحيلي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 553 | غيداء نوح الوذيناني |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 554 | فلك شاهر المطيري |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 555 | لجين عبدالله الجوعي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 556 | محمد عبدالله الصبيحي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 557 | مروه عمر الراجح |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 558 | مريم عامر الحارثي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 559 | مشاعر فهد العنزي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 560 | مشعل عبدالرحمن العتيق |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 561 | ناصر بدر الخالدي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 562 | نواف سلطان الحربي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 563 | نورة منصور بن سفيران |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 564 | هشام طه بانافع |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 565 | وضحي عبدالرحمن بن حضان |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 566 | ولاء فضاء العتيبي |  | معسكر بنية المفاتيح العامة (PKI) | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 567 | معاذ يحيى النعمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 568 | سليمان محمد الشهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 569 | سلطان عمر الكنيدري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 570 | يزن جابر الشريف |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 571 | سلطان بن بويذر الرشيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 572 | فهد بن إبراهيم القرني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 573 | ريان بن حاسن المالكي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 574 | يزيد بن عبدالله النصير |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 575 | محمد عبدالله الزعبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 576 | عبدالمجيد بن سعيد الشهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 577 | عبيد بن منور المطيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 578 | بدرية بنت عوض الشيباني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 579 | وفاء سعد القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 580 | نايف بن عبدالرحمن الاحمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 581 | عبدالرحمن بن عمر الحارثي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 582 | عبدالله بن هليل الشهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 583 | عبدالله بن عابد الثبيتي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 584 | عبدالعزيز بن حسين العمشاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 585 | بيان عوض الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 586 | اروى سويلم الحبيشي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 587 | فارس سعد الشريف |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 588 | منصور مشعل الربيعي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 589 | عبدالإله عبدالله الدلقان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 590 | حصه عبدالمحسن الجنيدل |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 591 | نورة بنت عبدالله العريفي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 592 | عمر ابوبكر علوي السيد |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 593 | عمرو بن محمد بن عبدالعزيز الردادي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 594 | ابراهيم عبدالرحمن ابراهيم البراك |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 595 | عبدالملك سعد بن طلاس |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 596 | عبدالعزيز عبدالرحمن إبراهيم الكنهل |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 597 | عبدالمجيد عبدالستار حسن بديوي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 598 | عبدالمحسن عبداللطيف دخيل الله الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 599 | رشا بنت ابراهيم دخيل المطيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 600 | خالد علي معيض القرني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 601 | عبدالله إبراهيم عبدالله العزاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 602 | ايمان جمعان بن بالقاسم الشهري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 603 | عجائب بنت يحيى الدوسري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 604 | سطام بن صالح نايف المطيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 605 | منصور بن سعيد محمد الغامدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 606 | نايف ابراهيم علي طاميه |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 607 | عبدالله عتيق زهيميل السلمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 608 | يزيد عايد عوض الرشيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 609 | شهد عبداللطيف الزمزمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 610 | عبدالمحسن بن قاعد قبلان العتيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 611 | نورة بنت خالد ناصر القرين |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 612 | حمد بن محمد العتيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 613 | عبدالكريم يحيى مطر الزهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 614 | عبدالله ثالب العلياني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 615 | عبدالمجيد سعود العويدان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 616 | فريد صالح الغامدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 617 | احمد غنام الدوسري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 618 | عبدالله عبدالرحمن عطاالله البلادي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 619 | عبدالرحمن محمد عبدالله الشهري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 620 | فاطمه حميد حامد العمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 621 | عبدالعزيز علي عبدالله القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 622 | فاطمه حمد علي جيشي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 623 | بسمه سعد فريجان الربيعي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 624 | صالح خضر علي الغامدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 625 | عمر بن يحي قاسم منقري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 626 | اللولو محمد جاسم النصار |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 627 | محمد بن سعود بن عبدالله الزنيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 628 | عبدالله علي محمد الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 629 | نواف بن مداوس ال فايز الشمراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 630 | علي بن إبراهيم عبدالعزيز القضيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 631 | علي بن عبدالله علي الأحمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 632 | عبدالله بن صالح محمد السويلم |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 633 | ابتهاج محمد ابراهيم مطمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 634 | عبدالله فهد عبدالرحمن هديان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 635 | خالد عايض مسفر القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 636 | بندر بن محمد بن سعود ال بريك |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 637 | صالح حمد صالح الخطاف |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 638 | محمد بن أحمد بن فايز الرويجح |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 639 | عبدالله عواد العلوي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 640 | عمران بن هادي محمد حكمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 641 | نايف عبدالله السلولي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 642 | زياد بن خالد بن قرار الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 643 | عوض سعيد عوض المطيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 644 | شهد فهد محماس العتيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 645 | فارس عايض صميهد العتيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 646 | عبدالله علي محمد أبولاهبه |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 647 | فيصل سعود عبدالعزيز الماص |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 648 | خالد بن محمد الشهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 649 | فيصل حسن محمد الزهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 650 | خالد بن مرجي بن عايض الرشيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 651 | محمد بن أحمد إبراهيم الزبيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 652 | نايف بن علي سعد آل حمود |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 653 | خالد سعد هليل الجهني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 654 | محمد بن سعيد الأحمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 655 | ريم عبدالرزاق عيسى الميموني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 656 | عبدالله بن علي سعد التميمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 657 | محمد عبدالعزيز سعيد المالكي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 658 | فيصل ملوح محمد القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 659 | رائد بن حمود النصار |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 660 | رائد عمر محمد الشافعي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 661 | محمد فارس السبيعي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 662 | راكان محمد الخريجي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 663 | فهد خالد عبدالله الخضير |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 664 | وجدان حبيب دغيل العازمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 665 | عبدالرحمن داود صالح الجمحان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 666 | خالد مهنا عبدالعزيز المهنا |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 667 | طارق راشد علي المرشود |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 668 | احلام عبدالله إبراهيم الدريويش |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 669 | لمى سلطان عبدالله بن عسكر |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 670 | عمر بن خالد بن علي الأحمدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 671 | عبدالله موسى حمد الخربوش |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 672 | علي بن عبدالرحمن محمد الشهري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 673 | اليزيد خالد محمد الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 674 | غرم الله سعيد الزاهرني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 675 | محمد مكي ناصر مشبري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 676 | سيف ابراهيم محمد العتيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 677 | محمد بن ابراهيم عبدالله حمران |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 678 | عبدالعزيز علي العثمان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 679 | ربيع بن عوض فيصل المالكي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 680 | هيثم عبدالرحمن عبدالعزيز الضالع |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 681 | محمد بن سليمان سلمان العطوي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 682 | ماجد زويد نجاء المطيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 683 | سعد بن عبدالله سفر الأحمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 684 | أحمد باتل مسعد الرشيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 685 | عبدالله احمد حسن الفيفي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 686 | ليلى إبراهيم محمد سمسم |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 687 | خوله بنت عبدالله المعشوق |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 688 | محمد بن سيف منصور السيد |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 689 | أسامة عمر عبده المغربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 690 | عبدالله حسين سعد العواد |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 691 | ضيف الله علي محمد الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 692 | محمد سعد فريج الرحيلي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 693 | خالد فيحان خويلد المطيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 694 | مشعل جزاع مطلق الشمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 695 | احمد بن مسعود سالم الشريف |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 696 | محمد عبدالله الشمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 697 | عمر محمد عبد الكريم السيف |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 698 | سامي فهد عبيد العتيبي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 699 | جنان فرحان غانم الفرحان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 700 | حنان حمود العنزي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 701 | عدنان هليل عودة العنزي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 702 | أصالة بنت صالح الشمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 703 | هشام بن سامي محمد أبوذياب |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 704 | عبدالله بن عثمان بن عبدالله البريكان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 705 | فهد محمد عبدالله ال رشيد |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 706 | سمير احمد محمود المستحي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 707 | سعد علي عبدالله الشمراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 708 | عبدالرحمن بن ظافر بن محمد الخثعمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 709 | سلطان فراج سعد ابوثنين |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 710 | خالد فهاد بن محمد الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 711 | عماد سعيد علي الشهري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 712 | محمد بن مفلح بن علي القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 713 | علاء سالم سليمان اللقماني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 714 | أحمد بن عبدالله سعد الشهراني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 715 | أحمد بن إبراهيم محمد دوشي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 716 | علي محمد علي الربعي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 717 | نبيلة محمد علي البارقي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 718 | مها بنت سعود محمد القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 719 | ملاك علي حمد المغامس |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 720 | وليد حسن عسيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 721 | عبدالرحمن بن ابراهيم سعد الموينع |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 722 | وليد خالد لافي الحربي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 723 | عبدالوهاب علي يحي عسيري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 724 | عبدالله بن صالح عبدالله المالكي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 725 | فيصل سعد محمد آل رشود |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 726 | يوسف زيد بخيت السلمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 727 | إبراهيم أحمد إبراهيم الشدوخي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 728 | فيصل بن عبدالله شبيب الحقباني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 729 | عبدالعزيز بن عبدالله عويد العويد |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 730 | مشاري محمد الشمري |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 731 | ممدوح فالح حمد الرشيدي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 732 | عبدالله بن سعد محمد الحصان |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 733 | سعد عشق القحطاني |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 734 | فرحان بن سعود سعيد السلمي |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 735 | أحمد صالح براهيم الملق |  | معسكر T5 | الربع الأول 2024 (الفترة الدقيقة غير محددة بالملف) |  | 75 |  |
+| 736 | فيصل عبدالعزيز السعد | FAISAL ABDULAZIZ ALSAAD | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 737 | خالد عبدالله الدغيّم | KHALID ABDULAH ALDUGHAYEM | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 738 | محمد ناصر الحمودي | MOHAMMED NASSER ALHAMOUDI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 739 | عبير إبراهيم العيسى | ABEER IBRAHIM EISSA | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 740 | إبراهيم علي الحربي | IBRAHIM ALI ALHARBI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 741 | الوليد إبراهيم السويداني | ALWALEED IBRAHIM ALSUWAYDANI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 742 | خالد محمد القحطاني | KHALED MOHAMMED ALQAHTANI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 743 | مشعل محمد الماضي | MESHAL MOHAMMAD ALMADI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 744 | حامد سالم الغامدي | HAMED SALEM ALGHAMDI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 745 | راكان صالح الجعيد | RAKAN SALEH ALJUAID | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 746 | عمر عبدالعزيز اللحيدان | OMAR ABDULAZIZ ALLUHAYDAN | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 747 | عناد فهد الحربي | ENAD FAHAD ALHARBI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 748 | نايف ماضي العنزي | NAIF MADI ALANAZI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 749 | يحيى عبدالرحمن الشهري | YAHYA ABDULRAHMAN ALSHEHRI | الدورة التدريبية لضباط اتصال منظومة نجد | 21–22 يوليو 2024 |  | 75 |  |
+| 750 | Lena Bint Saleh Alkhodhairi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 751 | Shahad Bint Abdulrahman Alhamed |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 752 | Nouf Bint Saad Alruwais |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 753 | Rand Bint Ahmed Alauhaibani |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 754 | Shaden Bint Sanad Aldossari |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 755 | Maha Bint Ibrahim Alrowaitie |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 756 | Rana Bint Abdullah Aldosari |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 757 | Fay Bint Mohammed Alshubaili |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 758 | Shahad Bint Fahad Alhmoud |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 759 | Amal Bint Abdulrahman Almuarik |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 760 | Abdulelah Bin Elias Felemban |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 761 | Jude Bint Saud Alsubaie |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 762 | Reema Bint Abdulnasser Alhelali |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 763 | Aseel Bint Mohammed Alarifi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 764 | Waad Bint Abdullah Albogami |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 765 | Nourh Bint Naem Almutairi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 766 | Yasmin Bint Abdullah Al-Suliman |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 767 | Alaa Bint Ismail Bakhsh |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 768 | Saad Bin Mohamed Aldajani |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 769 | Abdullah Bin Ahmed Bin-Talib |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 770 | Mohammad Bin Fahad Almubaddal |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 771 | Thamer Bin Saleh Alotaibi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 772 | Khulud Bint Hamad Alsulami |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 773 | Suha Bint Abdullah Radhi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 774 | Sara Bint Saad Alshehri |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 775 | Bader Bin Shar Albehishi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 776 | Faris Bin Ibrahim Alshuaibi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 777 | Ahmed Bin Abdulaziz Abanmi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 778 | Abdullah Bin Abdulrahman Aldawood |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 779 | Abdulrahim Bin Adel Alreefi |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 780 | Suliman Bin Sami Alhammad |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 781 | Yazid Bin Ibrahim Fallatah |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+| 782 | Sarah Bint Ghaleb Alhamdani |  | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | 27 أكتوبر – 7 نوفمبر 2024 |  | 75 |  |
+
+## مجتازو 2026 (سجل الشهادات — اجتياز) — 651 سجلًا (جدول مضغوط)
+
+| # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
+|---|---|---|---|---|---|---|---|
+| 1 | ابراهيم محسن |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 2 | حنين القحطاني |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 3 | خالد الوادعي |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 4 | دانة الحمدي |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 78 | https://github.com/danah1-a · https://github.com/danah1-a/AAASE-Capstone-IDRAK |
+| 5 | دانه السبيعي |  | حوكمة وجودة البيانات، رؤية الحاسب للمطورين | 2026-05-20 – 2026-07-18 |  | 75 |  |
+| 6 | دعد الجبر |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 7 | ريان الشمري |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 8 | ريفان العنزي |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 9 | سارة الطويهر |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 10 | عامر الرخيمي |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 11 | عبدالرحمن الجبر |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 12 | عبدالرحمن العتيبي |  | رؤية الحاسب للمطورين، محترف إدارة البيانات المعتمد | 2026-06-16 – 2026-07-18 |  | 75 |  |
+| 13 | فاطمة الزهرانى |  | البرمجة التوليدية، رؤية الحاسب للمطورين | 2026-03-07 – 2026-07-18 |  | 75 |  |
+| 14 | فيصل الوادعي |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 15 | محمد الفراج |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 78 | https://github.com/MAF-99 · https://github.com/MAF-99/capstonGraphMyVoice |
+| 16 | ميار آل مزهر |  | البرمجة التوليدية، رؤية الحاسب للمطورين | 2026-03-07 – 2026-07-18 |  | 75 |  |
+| 17 | ندى الشمراني |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 18 | ندى المطيري |  | البرمجة التوليدية، رؤية الحاسب للمطورين | 2026-03-07 – 2026-07-18 |  | 75 |  |
+| 19 | نواف الفوزان |  | البرمجة التوليدية، رؤية الحاسب للمطورين | 2026-04-19 – 2026-07-18 |  | 75 |  |
+| 20 | وسميه الحربي |  | رؤية الحاسب للمطورين | 2026-07-18 |  | 75 |  |
+| 21 | ابراهيم بن عتيان |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 22 | أحمد الحربي |  | محترف إدارة البيانات المعتمد، هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-02-16 – 2026-07-13 |  | 75 |  |
+| 23 | احمد الخالدي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 24 | ارياف العتيبي |  | البرمجة التوليدية، هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-03-07 – 2026-07-13 |  | 75 |  |
+| 25 | اسامه السحيباني |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 26 | الاء العمار |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 27 | امجاد الدوسرى |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 28 | حسان مسملي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 29 | حمد الرشيدي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 30 | ريماس القحطاني |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 31 | سعود العوفي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 32 | صالح العبدالوهاب |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 33 | عبدالاله البشر |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 34 | عبدالرحمن شلبي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 35 | عبدالله العجمي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 36 | غاده طوهري |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 37 | منى البقمي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 38 | ياسر ال فرحان |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-07-13 |  | 75 |  |
+| 39 | اسراء العثمان |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 40 | الجوهره القحطاني |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 41 | بندر القحطاني |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 42 | رزان اليوسف |  | إدارة البيانات الوصفية وجودة البيانات، نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 – 2026-07-06 |  | 75 |  |
+| 43 | رهف العتيبي |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 44 | روان المطيري |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 45 | زهره السماري |  | إدارة البيانات الوصفية وجودة البيانات، نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 – 2026-07-06 |  | 75 |  |
+| 46 | ساره الفرحان |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 47 | سعد اليامي |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 48 | عبدالرحمن القحطاني |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 49 | عبير الاسمري |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 50 | فؤاد عواجي |  | إدارة البيانات الوصفية وجودة البيانات، نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 – 2026-07-06 |  | 75 |  |
+| 51 | فرحان العنزي |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 52 | محمد الجارالله |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 53 | منصور عرب |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 54 | مها التركي |  | إدارة البيانات الوصفية وجودة البيانات | 2026-07-06 |  | 75 |  |
+| 55 | وجدان المطيري |  | إدارة البيانات الوصفية وجودة البيانات، معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 – 2026-07-06 |  | 75 |  |
+| 56 | ابراهيم الطواله |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 57 | اسماء الشلاش |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 58 | اسيل السعد |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 59 | الاء المخلفي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 60 | الريم نواف عبدالله المساعد |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 61 | العنود السدحان |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 62 | تالا الأحمد |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 63 | جنى السلمان |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 64 | حصه العيسى |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 65 | داليا القحطاني |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 66 | دانه العساف |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 67 | رنيم المخلفي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 68 | سارة البلوي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 69 | سامي الخرجي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 70 | سعود المرشد |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 71 | سعود المطوع |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 72 | سلطانه البلوي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 73 | شذى الحسني |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 74 | شهد الجعيد |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 75 | عبدالله العتيبي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 76 | عمر الخليفه |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 77 | فايز الهفتاء |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي، هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-02-11 – 2026-06-28 |  | 75 |  |
+| 78 | فكره الغامدي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 79 | فيصل الغصون |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 80 | لمى الفريح |  | الذكاء الاصطناعي التطبيقي، هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-06 – 2026-06-28 |  | 75 |  |
+| 81 | ليان الحبيب |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 82 | ليان العنزي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 83 | لين الدوسري |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 84 | محمد السالم |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 85 | محمد الكناني |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 86 | محمد عسيري |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 87 | مشعل السبيعي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 88 | مشعل السحيباني |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 89 | نواف الضفيان |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 90 | نوره القاضي |  | هندسة أنظمة الذكاء الاصطناعي التوكيلي المتقدمة | 2026-06-28 |  | 75 |  |
+| 91 | آمنه كريري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 92 | أحمد آل فائع |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 93 | اسماء القحطاني |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 94 | أمل العبدلي |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 95 | بشرى عامري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 96 | بشرى مجرشي |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 97 | ربى العريدي |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 98 | ساره آل محيميد |  | البرمجة التوليدية | 2026-04-19 – 2026-06-24 |  | 75 |  |
+| 99 | سلطان الشهري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 100 | شيمه الرويلي |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 101 | عائشه العلونى |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 102 | عبدالله العزاني |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 103 | فاضل المالكي |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 104 | فاطمه الزبيدي |  | البرمجة التوليدية، تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 – 2026-06-24 |  | 75 |  |
+| 105 | مشاعل المطيري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 106 | ميساء الذروي |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 107 | ميلاف المطيري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 108 | ندى الشهري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 109 | نماء بن جردان |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 110 | هديل الظفيري |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 111 | ياسر الشهري |  | البرمجة التوليدية، معسكر معالجة اللغة العربية | 2026-05-17 – 2026-06-24 |  | 75 |  |
+| 112 | يوسف المحمد |  | البرمجة التوليدية | 2026-06-24 |  | 75 |  |
+| 113 | ابرار الرشيدي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 114 | اسامه العنزي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال، محترف إدارة البيانات المعتمد | 2026-04-12 – 2026-06-16 |  | 75 |  |
+| 115 | خالد الحارثي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال، معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 – 2026-06-16 |  | 75 |  |
+| 116 | خلود بن حسن |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 117 | رازان السلامه |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 118 | رنيم الحميدان |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال، نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 – 2026-06-16 |  | 75 |  |
+| 119 | شهد الشايقى |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال، نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 – 2026-06-16 |  | 75 |  |
+| 120 | طرفه العبيدان |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 121 | عبدالرحمن المطيري |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 122 | عبدالعزيز الطويل |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 123 | عبدالله الصنيع |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 124 | عبدالله القحطاني |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال، معسكر معالجة اللغة العربية | 2026-05-17 – 2026-06-16 |  | 75 |  |
+| 125 | عروب العواد |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 126 | فيصل الحربي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 127 | ليان الحارثي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 128 | محمد الرحيلي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 129 | مريم العفالق |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 130 | مشاري العبيدي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 131 | ندى الرويثي |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 132 | نهله السليماني |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 133 | نورة الدعيج |  | جودة البيانات ومستودعات البيانات وذكاء الاعمال | 2026-06-16 |  | 75 |  |
+| 134 | ابراهيم الرميح |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 135 | ابراهيم العطوي |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 136 | ابراهيم المحيميد |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 137 | احمد النمري |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 138 | احمد قمقمجي |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 139 | أسماء العمري |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 140 | دانه الحاتم |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 141 | ريما العمير |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 142 | سمر ال مريع |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 143 | شايع البديوي |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 144 | فلاء الاحمري |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 145 | محمد البدر |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 146 | محمد محلفي |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 147 | نايف السليمان |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 148 | وجدان الزهراني |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 149 | وفاء ال سعد |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 150 | وليد البشر |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 151 | وليد العتيبي |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 152 | ياسمين العبدالكريم |  | محترف إدارة البيانات المعتمد | 2026-06-16 |  | 75 |  |
+| 153 | ابتهال الفايز |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 154 | أسرار القرني |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 155 | الهنوف المقري |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 156 | تركي بن عمران |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 157 | تسنيم المطيري |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 158 | حصه الخربوش |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 159 | رفا الشريف |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 160 | ريان المطيري |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 161 | ريم اليحيى |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 162 | ريما المطوع |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 163 | ريناد الحربي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 164 | ساره الخثعمي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 165 | سليمان الفوزان |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 166 | شهد التميمي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 167 | شيماء القحطاني |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 168 | صبا الطريقي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 169 | عبدالعزيز آل ملاهي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 170 | عبدالمجيد السفري |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 171 | فاطمه الغامدي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 172 | فراس الفارسي |  | البرمجة التوليدية، الذكاء الاصطناعي التطبيقي | 2026-03-07 – 2026-06-06 |  | 75 |  |
+| 173 | فهد البقمي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 174 | محمد القحطاني |  | الذكاء الاصطناعي التطبيقي، حوكمة وجودة البيانات، محترف إدارة البيانات المعتمد | 2026-02-16 – 2026-06-06 |  | 75 |  |
+| 175 | مساعد العنزي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 176 | معاذ الحارثي |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 177 | منى مشطاء |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 178 | هاجر الظفيري |  | الذكاء الاصطناعي التطبيقي | 2026-06-06 |  | 75 |  |
+| 179 | أسماء الحربي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 180 | أماني الغيلان |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 181 | ثامر العتيبي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 182 | جواهر زربطان |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 183 | جود الاحمري |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 184 | خالد السماري |  | حوكمة وجودة البيانات، محترف إدارة البيانات المعتمد | 2026-02-16 – 2026-05-20 |  | 75 |  |
+| 185 | خالد العساف |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 186 | داليا ابوحيمد |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 187 | دانه الدريس |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 188 | سعد الغامدي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 189 | سلطان الحارثي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 190 | شهاليل الشايعي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 191 | صالح العنزي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 192 | طرفه الراشد |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 193 | عبدالرحمن القباني |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 194 | عبدالله الربيع |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 195 | عصام الكنهل |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 196 | علي الطفيل |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 197 | غاده الضبيعي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 198 | غدى الدوسري |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 199 | فاطمه الشمري |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 200 | فاطمه القحطاني |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 201 | فيصل المدافعي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 202 | لمى النويصر |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 203 | محمد الفايز |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 204 | مزون الشهراني |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 205 | مشاري الدباس |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 206 | مشعل العنزي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 207 | منيره أبوحيمد |  | حوكمة وجودة البيانات | 2026-05-20 |  | 78 | https://github.com/MuniraNasser3 · https://github.com/MuniraNasser3/AAASE-CAPSTONE- |
+| 208 | ميساء ألمالكي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 209 | نايف العمري |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 210 | نبيله الهطيلي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 211 | نوره المعيوف |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 212 | نوف الحربي |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 213 | نوف الربيعه |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 214 | هدى آل فرحان |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 215 | وائل حريري |  | حوكمة وجودة البيانات | 2026-05-20 |  | 75 |  |
+| 216 | ائتمال الشريف |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 217 | أريج السلمى |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 218 | اسامه الغامدي |  | تطوير حلول الذكاء الاصطناعي التوليدي، معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 – 2026-05-17 |  | 75 |  |
+| 219 | اسماء المرعشي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 220 | الهنوف الزامل |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 221 | الوليد العوفي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 222 | امال الرويثي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 223 | امجاد الحربي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 224 | ايمان العمري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 225 | بشار الزهراني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 226 | بنين آل مرهون |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 227 | بيان الفارسي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 228 | تهاني المطيري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 229 | جمانه العدني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 230 | جنى الجمعه |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 231 | جود البيتي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 232 | ربى المشعل |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 233 | رزان آل قبطي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 234 | رغد الزهراني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 235 | رغد السبيعي |  | تطوير حلول الذكاء الاصطناعي التوليدي، معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 236 | رهام المطرفى |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 237 | رواء سرتى |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 238 | روان الثبيتي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 239 | ريم القثامي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 240 | ريما الصباح |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 241 | سديم البشري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 242 | سليمان القويفلي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 243 | شذا الشيخ |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 244 | صالح بن هديب |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 245 | عبداللطيف العبيدالله |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 246 | عبدالله البقمي |  | تطوير حلول الذكاء الاصطناعي التوليدي، محترف إدارة البيانات المعتمد | 2026-02-16 – 2026-05-17 |  | 75 |  |
+| 247 | عبدالله الزهراني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 248 | عبدالمحسن الغامدي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 249 | عمر الفراج |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 250 | غاده القحطاني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 251 | غدي الشهراني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 252 | فاطمه الفقيه |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 253 | محمد الشهري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 254 | محمد المطيري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 255 | مرام الشهري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 256 | مرام الغامدي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 257 | مواهب التويجري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 258 | يوسف الثقفي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-05-17 |  | 75 |  |
+| 259 | اسامه المحمود |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 260 | اسيل عبدالعال |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 261 | امواج الشمراني |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 262 | دينا العباد |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 263 | روان الشهري |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 264 | ريم الذروي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 265 | ريم العنزي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 266 | زياد حلبي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 267 | سارا السديري |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 268 | طلال الاحمدي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 269 | عبدالعزيز الحازمي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 270 | عبدالعزيز الراشدي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 271 | عبدالعزيز المعيلي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 272 | فواز العصيمي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 273 | ماجد العتيبي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 274 | محمد الجربوع |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 275 | معتز سندي |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 276 | هدى الشهري |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 277 | وجدان القرني |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 278 | يوسف العميري |  | حوكمة وجودة البيانات | 2026-05-17 |  | 75 |  |
+| 279 | رماس المنيع |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 280 | ساره العوجان |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 281 | عبدالرحمن العنزي |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 282 | لجين ال مانع |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 283 | مرح المطيري |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 284 | نايف السبهان |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 285 | نوره العجالين |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 286 | هاشم الحسني |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 287 | هياء الوزره |  | معسكر معالجة اللغة العربية | 2026-05-17 |  | 75 |  |
+| 288 | امجد الحربي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 289 | ايمن الحربي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 290 | حسين ازيبي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 291 | خديجه البلوي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 292 | دعاء البلوي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 293 | سعود العنزي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 294 | سهى الحسون |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 295 | شذى الشهري |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 296 | عامر القحطاني |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 297 | عبدالرحمن ال حموض |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 298 | عبدالله السويلم |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 299 | غاليه السبيعي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 300 | فريال المطيري |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 301 | مشاري العتيبي |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 302 | منار أبومديني |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 303 | منال المعتاز |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 304 | مهند الشخص |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 305 | نهله الخليفه |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 306 | نوف الجهني |  | محترف إدارة البيانات المعتمد | 2026-05-10 |  | 75 |  |
+| 307 | اسماء الرضيان |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 308 | خالد المطيري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 309 | رؤى النزاوي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 310 | رهف المرى |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 311 | ريما آل رشيد |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 312 | سامي الحارثي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 313 | سلمان المالكي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 314 | شروق العتيبي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 315 | طلال الشهري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 316 | عبدالرحمن العامر |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 317 | عبدالله آل طالب |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 318 | فتون الخالدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 319 | فرح الدوسري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 320 | لجين الشنبري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 321 | لجين العبدالجبار |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 322 | مشاعل المرزوق |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 323 | منار آل عمرو |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 324 | مى المغيولي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 325 | نجلاء الشايع |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-05-10 |  | 75 |  |
+| 326 | اسراء الدعلوج |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 327 | أسماء الغامدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال، نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-04-25 – 2026-05-10 |  | 75 |  |
+| 328 | خالد الراشدي |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 329 | ديمه الهويشل |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 330 | رائد برناوي |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 331 | رحاب العمر |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 332 | رزان العسيري |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 333 | شيخه الصفوق |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 334 | شيهانه القحطاني |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 335 | صالح معشي |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT)، نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-02-02 – 2026-05-10 |  | 75 |  |
+| 336 | عبدالكريم المالكي |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 337 | غدي الشريف |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 338 | غروب الجندل |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 339 | محمد الزهراني |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 340 | مريم آل صلاح |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 341 | مشاعل العويس |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 342 | نجود العبيسي |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 343 | نواف ال محيسن |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 344 | نوره العوفي |  | نمذجة وتصميم وتكامل البيانات وقابلية التشغيل البيني | 2026-05-10 |  | 75 |  |
+| 345 | اروى مشبب |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 346 | اسماء السلمي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 347 | الريم الدوسري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 348 | الهنوف الركيان |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 349 | حرير الشمري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 350 | خالد الشهراني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 351 | دانيه الموسى |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 352 | رناد الجريوي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 353 | ريان المجلي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 354 | شادن الوسيدي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 355 | عبدالاله خلف |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 356 | قاسم الخليفه |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 357 | لميا الدرع |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 358 | لولو العنقري |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 359 | نجد الموح |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 360 | ندى الغامدي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 361 | نورا الدويش |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 362 | نوره العريفي |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 363 | نوره الهزاني |  | تطوير حلول الذكاء الاصطناعي التوليدي | 2026-04-27 |  | 75 |  |
+| 364 | انفال النفيسه |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 365 | باسل العبيد |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 366 | خالد مرسي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 367 | رامي الشهراني |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 368 | رهف عبدالجواد |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 369 | عبدالرحمن الثبيتي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 370 | عبدالعزيز العمرو |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 371 | عبدالله النعيم |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 372 | عبدالهادي الرشيدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 373 | عبير العبود |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 374 | عنان عبدالغفار |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 375 | غاده الزايدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 376 | فاطمه الحربي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 377 | فهد الزهراني |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 378 | فهد بن جديد |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 379 | مجاهد الخزيم |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 380 | محمد الحربي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 381 | منال الحربي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 382 | منصور بافيل |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 383 | منيره بن طالب |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 384 | وفاء المطيري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 385 | يوسف المطوع |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-26 |  | 75 |  |
+| 386 | اروى الغامدي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 387 | أسامه بن حسين |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 388 | العنود المعمر |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 389 | امجاد الرحيلي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 390 | أنغام المعيقل |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 391 | انوار العنزي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 392 | بدر الحبابي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 393 | بدر الغامدي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 394 | بدور المطيري |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 395 | بسام الحربي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 396 | تيماء النويصر |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 397 | جزاء العتيبي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 398 | حنين الشعيبي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 399 | داوود الغامدي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 400 | رامز يماني |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 401 | رزان المزروع |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 402 | روان المطلق |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 403 | ريناد الشهري |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 404 | سحر شار |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 405 | سلطان الشميمري |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 406 | سمر بن ضبيعان |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 407 | طلال الحزيمي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 408 | عبدالرحمن المشاري |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 409 | عبدالعزيز الحربي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 410 | عبدالله الصالح |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 411 | عبير الثبيتي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 412 | فاديه الشلوي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 413 | فهد بن مهيزع |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 414 | ماجد العنزي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 415 | محمد العمرو |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 416 | مريم العصيمي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 417 | مشاري بدوي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 418 | منال الحارثي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 419 | منيره العيسى |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 420 | ناصر الحمدان |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 421 | نايف العواد |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 422 | ندى الاحمري |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 423 | ندى البيتي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 424 | نهله الرشيد |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 425 | نواف الشويعي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 426 | نوف الشهري |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 427 | هتان باعامر |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 428 | ولاء الحربي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 429 | ولاء باطرفي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 430 | ياسر بن سلمان |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 431 | يحيى الراشدي |  | محترف إدارة البيانات المعتمد | 2026-04-25 |  | 75 |  |
+| 432 | ابراهيم اليوبي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 433 | ايلاف العطاس |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 434 | ايمان ال مسلم |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 435 | حسين القديحي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 436 | راما الاسمري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 437 | رحمه المطيري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 438 | ريم العبداللطيف |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 439 | سريع القحطاني |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 440 | عزام الحربي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 441 | عزيزه المطيري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 442 | غاده العمران |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 443 | غفران آل ازبيل |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 444 | لوجين بصري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 445 | ماجد الماجد |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 446 | محمد الهذال |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 447 | مشاعل الخليفه |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 448 | نوره الهويمل |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 449 | هيثم الشربي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 450 | وليد الدخيل |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 451 | متدرب سجل الشهادات 2026 — المعرّف محجوب (1) |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 452 | متدرب سجل الشهادات 2026 — المعرّف محجوب (2) |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 453 | متدرب سجل الشهادات 2026 — المعرّف محجوب (3) |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 454 | متدرب سجل الشهادات 2026 — المعرّف محجوب (4) |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-25 |  | 75 |  |
+| 455 | أفنان النوفل |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 456 | الغيد جمعان |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 457 | المها العنزي |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 458 | بدور الشمري |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 459 | دانه بن سيف |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 460 | رزان باجعمان |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 461 | رغد الصنيع |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 462 | رهف الفنتوخ |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 463 | روان الحربي |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 464 | ريف البدراني |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 465 | ساره القرني |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 466 | سلمان الماجد |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 467 | شهد الشهراني |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 468 | شهد المطيري |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 469 | فارس ال تويم |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 470 | لما العتيبي |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 471 | ليان الشهري |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 472 | لينا الشهري |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 473 | وجد العمر |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 474 | وجن شوك |  | البرمجة التوليدية | 2026-04-19 |  | 75 |  |
+| 475 | اثير بن شلهوب |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 476 | اسماء الشهراني |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 477 | اشواق الشراري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 478 | بركات باوزير | Barakat Bawazir | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 | ديوان المظالم | 40 |  |
+| 479 | خالد المعزي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 480 | خلود منصوري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 481 | رزان الزهير |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 482 | شهد الجعفري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 483 | عبدالرحمن الشهراني |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 484 | عبدالعزيز الغامدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 485 | غاده الخالدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 486 | فهد العبيدي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 487 | لمى المهيدب |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 488 | مرام الشنقيطي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 489 | منيره الفايز |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 490 | منيفه المطيري |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 491 | نادر العتيبي |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 492 | نبيله ال سيف |  | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 2026-04-14 |  | 75 |  |
+| 493 | ابتسام الثبيتي |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 494 | أحمد المجيدل |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 495 | الهنوف السعدان |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 496 | تهاني العمر |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 497 | حمد العثمان |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 498 | رغد الرشيدي |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 499 | ساره المقبل |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 500 | سلمان العامر |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 501 | سليمان الجابري |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 502 | صالح السلامه |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 503 | طرفه العسكر |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 504 | عادل الحارثي |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 505 | عادل المطلق |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 506 | عبدالعزيز السبيهين |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 507 | عبدالله الفواز |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 508 | عزه الغامدي |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 509 | فيصل الخليفى |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 510 | لمى السليمان |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 511 | متعب بن نفيسه |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 512 | محمد الماجد |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 513 | مرزوق آل صليع |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 514 | نادر البقمي |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT)، محترف إدارة البيانات المعتمد | 2026-02-02 – 2026-04-12 |  | 75 |  |
+| 515 | نايف المحمادي |  | محترف إدارة البيانات المعتمد | 2026-04-12 |  | 75 |  |
+| 516 | ابتهال العتيبي |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 517 | حنين الدوسري |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 518 | خلود اليوسف |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 519 | دينا الحماد |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 520 | رغد الدوسري |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 521 | رنيم الفدا |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 522 | ريان الغنيم |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 523 | ريناد العصيمي |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 524 | سلطانه المجدل |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 525 | شذى العنزي |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 526 | عماد العسكر |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 527 | فتون المنقور |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 528 | فردوس قطيم |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 529 | فىء الفعيم |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 530 | ماجده المرشود |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 531 | وائل المطيري | Wael Almutairi | رفع الإنتاجية وتحسين العمليات | 2026-04-11 | Exec Logic / EXECRA لحلول الذكاء الاصطناعي (انتساب معلَن ذاتيًا) | 58 | https://github.com/wvwoo · https://github.com/wvwoo/building-agentic-ai-systems · https://execlogic.com.sa |
+| 532 | يارا الهزاعي |  | رفع الإنتاجية وتحسين العمليات | 2026-04-11 |  | 75 |  |
+| 533 | رهف بنت مازن المالكي |  | برنامج تطوير مشاريع الفائزين في ايتكس 2025 | 2026-03-11 |  | 75 |  |
+| 534 | سفانة بنت خليل الدغيم |  | برنامج تطوير مشاريع الفائزين في ايتكس 2025 | 2026-03-11 |  | 75 |  |
+| 535 | مريم بنت عبدالله الغامدي |  | برنامج تطوير مشاريع الفائزين في ايتكس 2025 | 2026-03-11 |  | 75 |  |
+| 536 | نورة بنت بندر المطوع |  | برنامج تطوير مشاريع الفائزين في ايتكس 2025 | 2026-03-11 |  | 75 |  |
+| 537 | نورة بنت سلمان بن جريس |  | برنامج تطوير مشاريع الفائزين في ايتكس 2025 | 2026-03-11 |  | 75 |  |
+| 538 | متدرب سجل الشهادات 2026 — المعرّف محجوب (5) |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 539 | ابراهيم الحيدري |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 540 | البتول الكحلان |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 541 | أمواج الزهراني |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 542 | بشاير الزايدي |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 543 | تركي القحطاني |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 544 | خالد العلويط |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 545 | درر المالكي |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 546 | ربى القحطاني |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 547 | رنا الجهني |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 548 | سلطان ابوثنين |  | البرمجة التوليدية | 2026-03-07 |  | 78 | https://github.com/SultanAbuthnain · https://github.com/SultanAbuthnain/GraphMyVoice- |
+| 549 | شهد الاصقه |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 550 | شيماء الرصيص |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 551 | فيصل الزيد |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 552 | لطيفه السالم العمير |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 553 | محمد الأخضر |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 554 | مشاري بن عنزان |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 555 | معاذ المدرع |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 556 | ميسم آل مالح |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 557 | نوره التركي |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 558 | هديل عواجي |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 559 | هناء آباالخيل |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 560 | يوسف الشويعي |  | البرمجة التوليدية | 2026-03-07 |  | 75 |  |
+| 561 | العنود اليوسف |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 562 | انس السلمي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 563 | تركي باطويل |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 564 | جميله البايض |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 565 | دلال الحربي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 566 | زاهر الحارثي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 567 | ساره الصومالي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 568 | سعد الدوسري |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 569 | صالح الغامدي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 570 | عبدالعزيز حكم سليم عزوقه |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 571 | عبدالهادي الرحيمي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 572 | عيسى العنزي |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 573 | ندى الشمرى |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 574 | نفلاء القحطاني |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 575 | نوره الداعج |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 576 | وجد المحيميد |  | محترف إدارة البيانات المعتمد | 2026-02-16 |  | 75 |  |
+| 577 | آمنه البراهيم |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 578 | أثير عبدالقادر |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 579 | أروى المرشدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 580 | اشواق الشهراني |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 581 | اصيل الغامدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 582 | باسل فلمبان |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 583 | بتول الحافي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 584 | جنى الحجاجى |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 585 | حاتم الحربي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 586 | حنان زين الدين |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 587 | خالد الخالدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 588 | خالد العمرو | Khaled Alamro | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 52 | https://github.com/oKhalid02/CSV_profiler · https://github.com/oKhalid02 |
+| 589 | خالد القرني |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 590 | دانه الغامدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 591 | ديما الشهري |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 592 | راشد القاسم |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 593 | ربى السلمي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 594 | رفال الزويد |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 595 | رنا آل عباس |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 596 | ريما الخالدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 597 | ريما العنقري |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 598 | ريناد الجمعه |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 599 | زياد عسيري |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 600 | سارا ابوحيمد |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 601 | سعود الحمادي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 602 | سوسن الفيفي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 603 | شذى الغامدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 604 | شموخ الحربي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 605 | شهد الدوسري |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 606 | صالح القحطاني |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 607 | طيف الحربي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 608 | عبدالرحمن اليامي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 609 | عبدالرحمن باغشير |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 610 | عبدالعزيز العثمان |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 611 | عبدالعزيز بن عسكر |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 612 | عبدالله ال سالم |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 613 | عبدالله الشهري |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 614 | عبدالله الغامدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 615 | عفراء العوفي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 616 | عمر النصيان |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 617 | غيوض العتيبي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 618 | فرح النخلي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 619 | في بن عنيق |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 620 | فيروز آل حيدر |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 621 | فيصل بلخير |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 622 | فيصل جمالي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 623 | كميل البصري |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 624 | لولوه المقبل |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 625 | ماريه النخلي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 626 | محمد بلخير |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 627 | مرعي العنزي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 628 | مريم العنزي | Maryam Alonazi | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 52 | https://github.com/devMrym/CSV-Profiler · https://github.com/devMrym |
+| 629 | منى الخالدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 630 | ندى الفصال |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 631 | نواف بن دعيج |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 632 | نوره الجندول |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 633 | وائل العيسي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 634 | يارا الرشيدي |  | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي | 2026-02-11 |  | 75 |  |
+| 635 | ابراهيم الريس |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 636 | حامد حمد عطاالله السريحى |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 637 | خالد النجار |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 638 | زياد الدوسري |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 639 | سليمان ابراهيم علي العريني |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 640 | صالح سليم أسليم الحويطي |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 641 | عبداللطيف الماضي |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 642 | عبدالله محمد عبدالعزيز القميزي |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 643 | عمر عبدالعزيز راشد المسعود |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 644 | عمرو بنجر |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 645 | فهد السويلم |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 646 | متعب القحطاني |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 647 | مستور ابراهيم احمد القرني |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 648 | منيره على مويس المطيري |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 649 | مها المطيري |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 650 | نوره عبدالله عبدالعزيز الدريس |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+| 651 | ياسمين العسكر |  | البرنامج التدريبي لمحترف معتمد في تقنيات الخصوصية (CIPT) | 2026-02-02 |  | 75 |  |
+
+
+---
+
+## التحقق وسلامة البيانات
+
+- **العدد الكلي:** 2,549 سجلًا؛ إزالة التكرار على مستوى الشخص بتطبيع الاسم العربي (توحيد ا/الهمزات/ة→ه/ى→ي، إزالة التشكيل والتطويل).
+- **3 أزواج أسماء متطابقة مُبقاة عمدًا كسجلات مستقلة** (رغد العتيبي، سارة اليامي، ليان السعود): تطابق NVIDIA غير محسوم — قرار موثّق منذ دمج 21 يوليو 2026؛ لا دليل كافيًا على أنهما الشخص نفسه.
+- لا مطابقة آلية عبر الأبجديتين (تجنّب الإيجابيات الكاذبة).
+- لا بريد إلكتروني ولا أرقام هوية في هذا الملف.
+- المخرجات الثلاثة (هذا الملف، Graduates_Database.xlsx، index.html) مولّدة من مصدر بيانات واحد — الأعداد متطابقة بالبناء.
+
+## المنهجية ودرجات الثقة
+
+- **85–95 موثّق علنًا:** انتساب ونتيجة بتواريخ من مصادر مستقلة أو تقاطع سجل رسمي + مصدر علني.
+- **75–84 سجل رسمي:** من الملفات الداخلية (المجتازون، سجل شهادات 2026، NVIDIA، كشوف 2023/2024) — الأسماء والشهادات رسمية.
+- **55–74 مؤكد جزئيًا:** انتساب ذاتي (GitHub/منشورات) أو قصص داخلية.
+- **≤45 مستنتج:** تطابق فهرسة فقط — يتطلب تحققًا قبل أي استخدام مؤثر.
+- قاعدة «الخريج» المعتمدة: **حامل شهادة اجتياز/إتمام**؛ شهادات الحضور (2,995 في سجل 2025–2026) سياق إحصائي لا خريجون.
+
+*أُعد هذا الملف آليًا في 2 أغسطس 2026 ضمن مشروع توثيق خريجي أكاديمية سدايا (النطاق الدائم: 2021 – الحاضر).*
