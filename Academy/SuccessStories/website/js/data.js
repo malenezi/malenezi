@@ -7,6 +7,8 @@
    (تغريد سندي · سكينه الرمضان · وجن القحطاني · يزن الكمال · عبدالرحمن الناشري · أسامة الغامدي).
    قاعدة عدّ «جهات العمل» (مُعلنة 13 أغسطس 2026): عدد الجهات المسمّاة المتمايزة في حقل org، باستثناء مراكز الجوائز
    والتأهل للنهائيات وأسماء الفرق والجهات غير المعلنة والبرامج الأكاديمية غير التوظيفية — 79 قيمة متمايزة، منها 70 جهة مسمّاة.
+   تحديث 13 أغسطس 2026 (لاحق): إضافة صور الخريجين الخمسة وشعارات جهات العمل الأربع الناقصة
+   (KAMC · Lucidya · Zid · SFDA) — يبقى ناقصًا: صورة وجن القحطاني وشعار مصرف الإنماء.
    لتحديث القصص: عدّل هذا الملف فقط — العرض يُبنى تلقائيًا.
    ========================================================= */
 'use strict';
@@ -1601,9 +1603,9 @@ const STORIES = [
   {
     id: 'taghreed-sindi', year: 2026,
     name: 'تغريد سندي', nameEn: 'Taghreed Sindi',
-    photo: null,
+    photo: 'assets/taghreed-sindi.jpg',
     role: 'مديرة تنفيذية مساعدة للابتكار',
-    org: 'مدينة الملك عبدالله الطبية بمكة المكرمة KAMC', orgLogo: null,
+    org: 'مدينة الملك عبدالله الطبية بمكة المكرمة KAMC', orgLogo: 'assets/kamc.png',
     program: 'برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا)',
     period: '2026',
     category: 'leadership', categories: ['leadership', 'awards', 'research'],
@@ -1620,7 +1622,7 @@ const STORIES = [
   {
     id: 'sukainah-alramadhan', year: 2026,
     name: 'سكينه الرمضان', nameEn: 'Sukainah Alramadhan',
-    photo: null,
+    photo: 'assets/sukainah-alramadhan.jpg',
     role: 'مدرّبة ذكاء اصطناعي',
     org: 'أكاديمية كاوست', orgLogo: 'assets/kaust-academy.png',
     program: 'برنامج شهادات NVIDIA — 5 دورات معتمدة · التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا × NVIDIA) · ممارس تعلم الآلة',
@@ -1637,9 +1639,9 @@ const STORIES = [
   {
     id: 'yazan-alkamal', year: 2026,
     name: 'يزن الكمال', nameEn: 'Yazan A. AlKamal',
-    photo: null,
+    photo: 'assets/yazan-alkamal.jpg',
     role: 'مهندس أمن الذكاء الاصطناعي (AI Security Engineer)',
-    org: 'لوسيديا Lucidya', orgLogo: null,
+    org: 'لوسيديا Lucidya', orgLogo: 'assets/lucidya.png',
     program: 'التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا × NVIDIA) — 28 يونيو – 3 أغسطس 2026',
     period: 'يونيو – أغسطس 2026',
     category: 'employment', categories: ['employment'],
@@ -1654,9 +1656,9 @@ const STORIES = [
   {
     id: 'abdulrahman-alnashri', year: 2026,
     name: 'عبدالرحمن الناشري', nameEn: 'Abdulrahman Alnashri',
-    photo: null,
+    photo: 'assets/abdulrahman-alnashri.jpg',
     role: 'مهندس ذكاء اصطناعي (AI Engineer)',
-    org: 'زد Zid', orgLogo: null,
+    org: 'زد Zid', orgLogo: 'assets/zid.webp',
     program: 'برنامج شهادات NVIDIA — 5 دورات معتمدة · التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا × NVIDIA)',
     period: '2026',
     category: 'employment', categories: ['employment'],
@@ -1671,9 +1673,9 @@ const STORIES = [
   {
     id: 'osama-alghamdi', year: 2026,
     name: 'أسامة الغامدي', nameEn: 'Osama Alghamdi',
-    photo: null,
+    photo: 'assets/osama-alghamdi.jpg',
     role: 'مهندس ذكاء اصطناعي (AI Engineer)',
-    org: 'الهيئة العامة للغذاء والدواء SFDA', orgLogo: null,
+    org: 'الهيئة العامة للغذاء والدواء SFDA', orgLogo: 'assets/sfda.png',
     program: 'برنامج تدريبي ضمن شراكة سدايا × NVIDIA (مسار النماذج اللغوية الكبيرة)',
     period: 'أغسطس 2026',
     category: 'employment', categories: ['employment'],
