@@ -57,8 +57,8 @@ function animateCount(el, target, dur = 1400) {
 const heroStats = $('#heroStats');
 heroStats.innerHTML = SITE_STATS.map(s => `
   <div class="hero-stat">
-    <dd data-count="${s.value}">0</dd>
     <dt>${s.label}<span class="stat-note">${s.note}</span></dt>
+    <dd data-count="${s.value}">0</dd>
   </div>`).join('');
 
 const statsIO = new IntersectionObserver(entries => {
