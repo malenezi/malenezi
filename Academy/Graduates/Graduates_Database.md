@@ -1,10 +1,33 @@
 # قاعدة بيانات خريجي أكاديمية سدايا — Graduates Database
 
-**الإصدار:** 16 أغسطس 2026 · **النطاق:** منذ تأسيس الأكاديمية 2021 – 16 أغسطس 2026 (خط أساس دائم) · **الإجمالي:** **2,647 أفراد** بعد إزالة التكرار على مستوى الشخص
+**الإصدار:** 16 أغسطس 2026 · **النطاق:** منذ تأسيس الأكاديمية 2021 – 16 أغسطس 2026 (خط أساس دائم) · **الإجمالي:** **2,651 أفراد** بعد إزالة التكرار على مستوى الشخص
 
 > ملف موحّد يدمج جميع المصادر الداخلية والعلنية للمشروع. **لم تُنقل عناوين البريد الإلكتروني ولا أرقام الهوية** إلى هذا المخرج (قيد خصوصية حاكم). الحقول الفارغة تعني «غير موثّق علنًا» — لا تُخمَّن.
 
 ---
+
+## جولة مسح مسار NVIDIA على لينكدإن — 16 أغسطس 2026
+
+جولة مخصّصة لمسار NVIDIA وحده، بتغطية زمنية من **2023 حتى 16 أغسطس 2026**، استجابةً لتقدير داخلي يفيد بأن العدد الفعلي لخريجي برامج شهادات NVIDIA يتجاوز 350.
+
+**النتيجة المنهجية الأهم — الرقم 232 كان يقارَن بالطبقة لا بالقاعدة.** عند حصر السجلات التي **يذكر حقل البرنامج فيها NVIDIA صراحةً** عبر كل الطبقات (لا داخل طبقة «برامج NVIDIA» وحدها) تبيّن أن القاعدة كانت تضم **233 سجلًا مُسمّى** قبل هذه الجولة — أي أنها تجاوزت الرقم الرسمي 232 أصلًا، وأن فجوة «232 رسمي − 211 مُسمّى = 21» المسجّلة في تدقيق 12 أغسطس كانت أثرًا من حصر العدّ في طبقة واحدة. بعد الجولة: **237 سجلًا مُسمّى** و**215 في الطبقة**.
+
+**ما نُفّذ:** بحث لينكدإن بحساب مسجَّل الدخول على مسارين — بحث المنشورات وبحث الأشخاص — بعبارات عربية وإنجليزية (NCA-GENL · NVIDIA Certified · NVIDIA DLI · «شهادات NVIDIA سدايا» · العبارة المعيارية «Professional Training Program in Large Language Models») مع تصفية جغرافية على السعودية، ثم فتح كل ملف مرشَّح والتحقق منه فرديًا.
+
+**الحصيلة:** **4 سجلات جديدة** (2,647 → 2,651) و**11 سجلًا قائمًا أُثري**، من بينها **4 أسماء كشوف رسمية رُبطت لأول مرة بحسابات لينكدإن**: #616 فارس سلامه غثيمان الجهني · #722 اسماء احمد الزبيدي · #759 ميعاد سلطان سعد الشيباني · #778 لين أحمد مشعل الغامدي. وأُضيفت شهادة NCA-GENL إلى السجل #577 تغريد سندي.
+
+**درس منهجي يُعاد استخدامه:** أربعة من ثمانية مرشحين بدوا «جددًا» عند المطابقة بالاسم الثنائي، ثم تبيّن أنهم **مسجّلون أصلًا بأسمائهم الثلاثية أو الرباعية** داخل طبقة «برامج NVIDIA». **مطابقة الاسم الثنائي وحدها تُنتج تكرارًا** — الفحص الصحيح هو احتواء مجموعة كلمات الاسم القصير داخل الاسم الكامل.
+
+**تعدد البرامج:** #138 الجوهرة البهلال (معسكر تعلم الآلة 2023 **و** التدريب الاحترافي في النماذج اللغوية الكبيرة سدايا×NVIDIA) — سجل ثانٍ من نوع «خريج برنامجين».
+
+**تنبيهات هوية مُضافة (لم تُدمج):** #2651 خالد المطيري مقابل #687 خالد سعود المطيري ومقابل #2206 خالد المطيري · #722 اسماء احمد الزبيدي مقابل #461 أسماء الزبيدي.
+
+**استبعادات موثّقة:** حاملو NCA-GENL بلا أي ذكر لسدايا في ملفاتهم (المصدر المُعلن طويق أو KACST أو غير مُعلن) · Rana Alshehri (SDA لا سدايا) · حاضرو ورش مؤتمر ICAN2026 ومعيدو نشر محتوى سدايا المؤسسي — الحضور وإعادة النشر ليسا تخرجًا.
+
+**تقدير «أكثر من 350» لم تُسنده المصادر العلنية.** السطح العلني لمسار NVIDIA×سدايا على لينكدإن مستنفَد عمليًا: بحث الأشخاص المقيَّد جغرافيًا يعيد 3 صفحات فقط لـ«NCA-GENL» و4 صفحات لعبارة البرنامج، وبحث المنشورات مقيَّد بثلاث نتائج لكل استعلام. إن كان 350+ صحيحًا فمصدره سجل داخلي غير منشور — لا يُختلق سجل لسد الفارق.
+
+---
+
 
 ## جولة مسح دفعة 2023 — 16 أغسطس 2026
 
@@ -229,16 +252,16 @@
 | مسح GitHub يونيو–يوليو 2026 | 61 |
 | مستنتج | 17 |
 | قبل النطاق | 8 |
-| برامج NVIDIA | 211 |
+| برامج NVIDIA | 215 |
 | معسكرات 2023 (القوائم الكاملة) | 329 |
 | سجلات 2024 الرسمية | 782 |
 | مجتازو 2026 (سجل الشهادات — اجتياز) | 651 |
-| **الإجمالي** | **2,647** |
+| **الإجمالي** | **2,651** |
 
-**درجات الثقة:** مرتفع (≥75): 2,371 · متوسط (45–74): 250 · منخفض (<45): 26
-**سجلات بجهة عمل موثّقة:** 308 · **سجلات بروابط تحقق علنية:** 666
+**درجات الثقة:** مرتفع (≥75): 2,375 · متوسط (45–74): 250 · منخفض (<45): 26
+**سجلات بجهة عمل موثّقة:** 310 · **سجلات بروابط تحقق علنية:** 680
 
-**النتائج:** شهادات: 2,110 · مشروع: 420 · برنامج: 336 · توظيف: 265 · بحث: 37 · قيادة: 17 · ترقية: 16 · ناشئة: 12 · جائزة: 7
+**النتائج:** شهادات: 2,114 · مشروع: 420 · برنامج: 336 · توظيف: 266 · بحث: 37 · قيادة: 17 · ترقية: 16 · ناشئة: 12 · جائزة: 7
 
 ---
 
@@ -426,7 +449,7 @@
 | 68 | شهد الخليفة | Shahad AlKhalifa | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | SITE | Senior Data Scientist | Computer Science — King Saud University — 2023 | https://sa.linkedin.com/in/shahad-al-khalifa |  |  |  | https://www.researchgate.net/profile/Shahad-Al-Khalifa | 90 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — King Saud University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. أُضيف رابط LinkedIn في جولة 2023 بتطابق ثلاثي: جهة العمل SITE والمسمى «Senior Data Scientist» في العنوان، والتعليم (قسم علوم الحاسب — جامعة الملك سعود) عبر ملف ResearchGate. نشاطها العلني في معالجة اللغة العربية الطبيعية متسق مع مسار النماذج اللغوية الكبيرة. ⚠️ تقاطع محتمل: ملف منفصل «شهد الخليفة» (جهة حكومية غير معلنة) يحمل الاسم العربي نفسه — التمييز بجهة العمل والمسمى. |
 | 69 | طيف الشمراني | Taif Alshamrani | LLMs Practitioner, Dec 2023 | مجموعة نوفمبر | Saudi Energy | Data & System Analyst | Data Science — Taif University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Data Science — Taif University (2023). شهادات سدايا: LLMs Practitioner, Dec 2023. |
 | 70 | عامر الغريبي | Aamer Alghrybi | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | Basamh Group | Cloud & Data Center Systems Manager | Applied Network Systems Engineering — Technical and Vocational Training Corporation — 2024 | https://sa.linkedin.com/in/aamer-alghrybi |  |  |  | https://theorg.com/org/basamh-group/org-chart/aamer-alghrybi | 90 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Applied Network Systems Engineering — Technical and Vocational Training Corporation (2024). شهادات سدايا: Machine Learning Practitioner, Dec 2023. أُضيف رابط LinkedIn في جولة 2023: جهة العمل Basamh Group مطابقة، ويعضدها كشف الهيكل التنظيمي على TheOrg («Senior Cloud & Data Center Administrator»). |
-| 71 | الجوهرة البهلال | Aljawhara Albahlal | Machine Learning Practitioner, Dec 2023 | مجموعة نوفمبر | NCGR - National Center for Government Resources Sys. | System Developer | Information Technology-CyberSecurity — King Saud University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology-CyberSecurity — King Saud University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
+| 71 | الجوهرة البهلال | Aljawhara Albahlal | Machine Learning Practitioner, Dec 2023 + التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا×NVIDIA) + شهادة NVIDIA NCA-GENL | مجموعة نوفمبر | NCGR - National Center for Government Resources Sys. | System Developer | Information Technology-CyberSecurity — King Saud University — 2023 | https://www.linkedin.com/in/aljawharaalbahlal/ |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Information Technology-CyberSecurity — King Saud University (2023). شهادات سدايا: Machine Learning Practitioner, Dec 2023. |
 | 72 | أميرة حزازي | Ameerah Hazzazi | Machine Learning Practioner, Nov 2023 | مجموعة نوفمبر | Zakat, Tax and Customs Authority | Customer Service Agent | Computer Science — Imam Abdulrahman Bin Faisal University — 2023 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس Computer Science — Imam Abdulrahman Bin Faisal University (2023). شهادات سدايا: Machine Learning Practioner, Nov 2023. |
 | 73 | أنس الدادي | Anas Aldadi | Machine learning practitioner, Oct 2023 | مجموعة نوفمبر | Nabrah.AI / نـبـره | AI Engineer | Computer Science — Umm Al-Qura University — 2025 | https://sa.linkedin.com/in/anas-aldadi-29251b246 |  |  |  | https://rocketreach.co/anas-aldadi-email_752615057 | 86 | أوضح تسلسل مؤرخ في دفعة 2023: متدرب باحث ذكاء اصطناعي بـNabrah.AI (2025) ← مهندس ذكاء اصطناعي بها. التوظيف بدأ بعد الشهادة، وهو ما يدعم أوّليّته. الترويسة المفهرسة: «AI engineer @ Nabrah / KAUST & Oxford». |
 | 74 | أسماء حبادي | Asma Habadi | Machine learning practitioner, Aug 2023 | مجموعة نوفمبر | Synapse | Deputy Director of Marketing | معالجة بيانات وتقنية معالجة البيانات — University of Jeddah — 2025 |  |  |  |  |  | 80 | من الملف الرسمي لمجتازي برامج الأكاديمية (مجموعة نوفمبر): بكالوريوس معالجة بيانات وتقنية معالجة البيانات — University of Jeddah (2025). شهادات سدايا: Machine learning practitioner, Aug 2023. |
@@ -649,7 +672,7 @@
 | 185 | دانة السيدان | Dana Alsaidan | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Shatha-1/Data-engineering |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Trainees:** Waad Alsaif, Razan Almutairi, Dana Alsaidan, Layan Alameri, Shatha Bin Mana / **Program:** Modern Data Engineering for AI Systems / **Cohort Dates:** 19-07-2026 – 23-07-2026 / **Trainer:** Mohammed Albeladi / **Academy:** Built as part of SDAIA Academy |
 | 186 | ليان العامري | Layan Alameri | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Shatha-1/Data-engineering |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Trainees:** Waad Alsaif, Razan Almutairi, Dana Alsaidan, Layan Alameri, Shatha Bin Mana / **Program:** Modern Data Engineering for AI Systems / **Cohort Dates:** 19-07-2026 – 23-07-2026 / **Trainer:** Mohammed Albeladi / **Academy:** Built as part of SDAIA Academy |
 | 187 | فاطمة الزير | Fatimah Alzeer | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (DAICO) — أكاديمية سدايا / Modern Data Engineering for AI Systems — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/1FATIMAH1/-Data-Engineering-for-AI-Systems--DAICO |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: هندسة البيانات / Data Engineering. الدليل: **Student:** Fatimah ALzeer / **Program:** SDAIA Academy — Data Engineering for AI Systems (DAICO) / **Session dates:** 19 July 2026 – 23 July 2026 / **Trainer:** Mohammed Albeladi |
-| 188 | لانا الجعيد | Lana Aljuaid | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/Danaksd/Enterprise-IT-Support-CapstoneProject · https://github.com/LanaAljuaid · https://github.com/LanaAljuaid/AAASE-SDAIA |  |  |  | 90 | ⬆ إثراء 11 أغسطس 2026: حسابها الشخصي LanaAljuaid ومستودعها AAASE-SDAIA (19–23 يوليو). سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أنظمة الوكلاء المتعددة / Multi-agent systems. الدليل: # 🎫 Enterprise IT Support Capstone [SDAIAAcademy](https://github.com/SDAIAAcademy) … ## 👤 Authors — **Lana Aljuaid**, **Dana Aldalaan**, **Nojood Alnahdi** |
+| 188 | لانا الجعيد | Lana Aljuaid | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  | https://www.linkedin.com/in/lana-aljuaid-cs/ | https://github.com/Danaksd/Enterprise-IT-Support-CapstoneProject · https://github.com/LanaAljuaid · https://github.com/LanaAljuaid/AAASE-SDAIA |  |  |  | 90 | ⬆ إثراء 11 أغسطس 2026: حسابها الشخصي LanaAljuaid ومستودعها AAASE-SDAIA (19–23 يوليو). سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أنظمة الوكلاء المتعددة / Multi-agent systems. الدليل: # 🎫 Enterprise IT Support Capstone [SDAIAAcademy](https://github.com/SDAIAAcademy) … ## 👤 Authors — **Lana Aljuaid**, **Dana Aldalaan**, **Nojood Alnahdi** |
 | 189 | دانة الدلعان | Dana Aldalaan | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy + التدريب الاحترافي في النماذج اللغوية الكبيرة (إنفيديا) + شهادة NVIDIA NCA-GENL | 2026 |  | خريج / Trainee |  | https://www.linkedin.com/in/dana-aldalaan-059187308 | https://github.com/Danaksd/Enterprise-IT-Support-CapstoneProject |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: أنظمة الوكلاء المتعددة / Multi-agent systems. الدليل: # 🎫 Enterprise IT Support Capstone [SDAIAAcademy](https://github.com/SDAIAAcademy) … ## 👤 Authors — **Lana Aljuaid**, **Dana Aldalaan**, **Nojood Alnahdi** · أُثري برابط LinkedIn من روابط الإشراف (6 أغسطس 2026) · إثراء 12 أغسطس 2026: منشوران علنيان (5–6 أغسطس) بشهادة اجتياز مصوّرة باسم «دانه خالد الضلعان» للتدريب الاحترافي في LLMs وشهادة NCA-GENL. |
 | 190 | رسيل الخميس | Raseel Al-Khamees | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/RASEEL0/Eleva |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الوكلاء المتعددة / Multi-agent systems. الدليل: # Team — Built collaboratively by: raseel Al-Khamees, Aisha gammash … [SDAIAAcademy](https://github.com/SDAIAAcademy) |
 | 191 | عائشة غماش | Aisha Gammash | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة (AAASE) — أكاديمية سدايا / Advanced Agentic AI Systems Engineering — SDAIA Academy | 2026 |  | خريج / Trainee |  |  | https://github.com/RASEEL0/Eleva |  |  |  | 90 | سجل مضاف في المسح العلني الموسّع (أغسطس 2026). التخصص: الوكلاء المتعددة / Multi-agent systems. الدليل: # Team — Built collaboratively by: raseel Al-Khamees, Aisha gammash … [SDAIAAcademy](https://github.com/SDAIAAcademy) |
@@ -986,7 +1009,7 @@
 | 7 | فهد الحربي | Fahad Alharbi | معسكر T5 — الدفعة الأولى | 2021 (منشور التخرج مؤرخ 9 نوفمبر 2021) | هيئة كفاءة الإنفاق والمشروعات EXPRO | 70 | https://www.linkedin.com/posts/fahad-alharbi77_datascience-sdaia-t5bootcamp-activity-6863753616277176320-oGzx · https://expro.gov.sa/en/aboutUs/ourStory |
 | 8 | نوف العصيمي | Nouf Alosaimi | Data-Driven Decision Making, Sep 2022 | مجموعة نوفمبر | Confidential Government | 80 |  |
 
-## برامج NVIDIA — 211 سجلًا (جدول مضغوط)
+## برامج NVIDIA — 215 سجلًا (جدول مضغوط)
 
 | # | الاسم العربي | الاسم الإنجليزي | البرنامج | الدفعة | جهة العمل | الثقة | مصادر |
 |---|---|---|---|---|---|---|---|
@@ -1000,7 +1023,7 @@
 | 8 | رنا عبدالعزيز الشهري | Rana Abdulaziz Alshehri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | الأكاديمية السعودية الرقمية (تدريب الذكاء الاصطناعي الوكيلي)؛ سابقًا: مدينة الملك عبدالعزيز للعلوم والتقنية KACST | 76 | https://www.linkedin.com/in/ranaalshehri24/ |
 | 9 | نهى محمد صالح الجعيد | Nuha Mohammed Saleh Aljuaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 10 | يزيد محمد علي العبيدان | Yazeed Mohammed Ali Alobaidan | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
-| 11 | فارس سلامه غثيمان الجهني | Faris Salamah Ghuthaiman Aljohani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 11 | فارس سلامه غثيمان الجهني | Faris Salamah Ghuthaiman Aljohani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + شهادة NVIDIA NCA-GENL + تدريب تعاوني في سدايا |  |  | 88 | https://www.linkedin.com/in/faris-aljohani-ai/ |
 | 12 | مشاعل الصحفي | Mashael Alsahafi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 13 | ماريه عصام بن ابوالخير سمارن | Mariyyah Essam bin Abualkhair Samarn | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 14 | نايف ماجد نايف آل مسعود | Naif Majed Naif Al Masoud | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
@@ -1043,7 +1066,7 @@
 | 51 | ريم السحيم | Reem Alsuhaim | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 78 | https://github.com/Reem-Alsuhaim · https://github.com/Reem-Alsuhaim/patient-monitoring-lakehouse-rag |
 | 52 | سميه العمودي | Sumayyah Alamoudi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 53 | محمد الحارثي | Mohammed Alharthi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
-| 54 | رغد العتيبي | Raghad Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 54 | رغد العتيبي | Raghad Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا×NVIDIA) |  |  | 88 | https://www.linkedin.com/in/raghad-alotaibi-549076268/ |
 | 55 | ساره الحارثي الشريف | Sarah Alharthi Alsharif | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 56 | سمى السويل | Suma Alsuwail | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 57 | سعيد الشهراني | Saeed Alshahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (إنفيديا) + NCA-GENL + 4 شهادات NVIDIA DLI |  |  | 85 | https://www.linkedin.com/in/saeed-al-jaber-al-shahrani/ |
@@ -1057,7 +1080,7 @@
 | 65 | ليان الغامدي | Layan Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 66 | ريناد البقمي | Renad Albogami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 67 | شهد البلوي | Shahad Albalawi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (إنفيديا) + NCA |  |  | 82 | https://www.linkedin.com/in/shahad-saad-/ |
-| 68 | اميره الشيخ | Ameerah Alshaikh | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 68 | اميره الشيخ | Ameerah Alshaikh | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + شهادة NVIDIA NCA-GENL |  |  | 88 | https://www.linkedin.com/in/ameerahalshaikh/ |
 | 69 | أسيل الفايدي | Aseel Alfaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 70 | عبدالرحمن الناشري | Abdulrahman Alnashri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (إنفيديا) + شهادة NVIDIA NCA-GENL |  | Zid (زد) — AI Specialist | 88 | https://www.linkedin.com/in/abdulrahman-alnashri-ai/ |
 | 71 | مهند الاحمدي | Mohanad Alahmadi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
@@ -1065,8 +1088,8 @@
 | 73 | ياسر البقمي | Yasser Albogami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 74 | زياد الزهراني | Ziyad Alzahrani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 75 | ندى الحربي | Nada Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | SAMI Navantia | 78 | https://rocketreach.co/nada-alharbi-email_807427043 |
-| 76 | وريف الزبيدي | Wareef Alzubaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (إنفيديا) — 19 أبريل–7 مايو 2026 + شهادة NVIDIA NCA-GENL | 2026 (أبريل–مايو) |  | 85 |  |
-| 77 | هند الجعيد | Hind Aljuaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 76 | وريف الزبيدي | Wareef Alzubaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (إنفيديا) — 19 أبريل–7 مايو 2026 + شهادة NVIDIA NCA-GENL | 2026 (أبريل–مايو) |  | 90 | https://www.linkedin.com/in/wareef-alzubaidi-927b26215/ |
+| 77 | هند الجعيد | Hind Aljuaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 88 | https://www.linkedin.com/in/hindaljuaid/ |
 | 78 | رغد الشبرقي | Raghad Alshabraqi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 79 | مريم العكاس | Maryam Alakkas | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 80 | أحمد المخلفي | Ahmed Almakhlafi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
@@ -1138,7 +1161,7 @@
 | 146 | عهد عوض ال غريس | Ahad Awad Al Grais | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 147 | منال سفير السواط | Manal Safeer Alswat | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 148 | سارة بدر العتيبي | Sara Badr Alotaibi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
-| 149 | اسماء احمد الزبيدي | Asmaa Ahmed Alzubaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 149 | اسماء احمد الزبيدي | Asmaa Ahmed Alzubaidi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) — NVIDIA-Certified: Gen AI, LLMs & Multimodal |  |  | 88 | https://www.linkedin.com/in/asma-al-zobidi-9576a5266/ |
 | 150 | عبير سلمان الحماد | Abeer Salman Alhammad | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 151 | عهود نايف الحربي | Ohoud Naif Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 152 | حسن علي البقشي | Hassan Ali Albaqshi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
@@ -1177,10 +1200,10 @@
 | 185 | ريوف بندر علي الغامدي | Ryouf Bandar Ali Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 186 | عزام سعود ناعم الحربي | Azzam Saud Naem Alharbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 187 | لينا فهد بن عبدالله المقرن | Lena Fahad bin Abdullah Almugren | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
-| 188 | ميعاد سلطان سعد الشيباني | Meead Sultan Saad Alshaibani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 188 | ميعاد سلطان سعد الشيباني | Meead Sultan Saad Alshaibani | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا×NVIDIA) | فبراير 2026 |  | 88 | https://www.linkedin.com/in/meead-alshaibani/ |
 | 189 | ميعاد متعب بن رزين السلمي | Miaad Mutaib bin Razeen Alsulami | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 190 | أميره عويض مسحل الجعيد | Amira Owaidh Mishal Aljaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
-| 191 | تغريد حاتم بن محمود سندي | Taghreed Hatem bin Mahmoud Sindi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | مدينة الملك عبدالله الطبية بمكة KAMC | 88 | https://saudipedia.com/en/taghreed-sindi · https://www.innovatorsunder35.com/the-list/taghreed-sindi/ · https://sa.linkedin.com/in/taghreed-sindi-9575b582 |
+| 191 | تغريد حاتم بن محمود سندي | Taghreed Hatem bin Mahmoud Sindi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + شهادة NVIDIA NCA-GENL |  | مدينة الملك عبدالله الطبية بمكة KAMC | 92 | https://saudipedia.com/en/taghreed-sindi · https://www.innovatorsunder35.com/the-list/taghreed-sindi/ · https://sa.linkedin.com/in/taghreed-sindi-9575b582 |
 | 192 | عبدالعزيز حسان عبدالله ملا | Abdulaziz Hassan Abdullah Mulla | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 193 | نوره فهد عثمان الحميد | Nourah Fahad Othman Alhumaid | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 194 | خالد علي مشرف العمري | Khalid Ali Meshref Alamri | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
@@ -1197,10 +1220,14 @@
 | 205 | زهرة توفيق يوسف رشيد | Zahrah Tawfiq Yousef Rasheed | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 206 | نايف خالد بن عجي الصحبي | Naif Khalid bin Aji Alsahbi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 207 | نجود محمد ثابت النهدي | Nojood Mohammed Thabet Alnahdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
-| 208 | لين أحمد مشعل الغامدي | Leen Ahmed Meshal Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
+| 208 | لين أحمد مشعل الغامدي | Leen Ahmed Meshal Alghamdi | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  | مدينة الملك عبدالعزيز للعلوم والتقنية (KACST) | 88 | https://www.linkedin.com/in/leen-almuhandes/ |
 | 209 | روان يحي بحيص جعفري | Rawan Yahya Buhais Jaafari | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 210 | عبدالله ناصر الملحم | Abdullah Nasser Almulhim | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) |  |  | 75 |  |
 | 211 | حيدر المبارك | Haidar Almubarak | أكاديمية الذكاء الاصطناعي التوليدي (البرنامج المحدد قيد التأكيد) |  | الجامعة السعودية الإلكترونية | 60 | https://github.com/Haidar13 · http://scholar.google.com/citations?user=MZRgD3cAAAAJ · https://www.linkedin.com/in/haidar13/ |
+| 212 | نايف المسعود | Naif Almasoud | برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا) + شهادة NVIDIA NCA-GENL | يناير 2026 |  | 88 | https://www.linkedin.com/in/naif-almasoud/ |
+| 213 | هتاف الخضيدي | Hutaf Alkhudaydi | التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا×NVIDIA) + شهادة NVIDIA NCA-GENL | 2026 |  | 85 | https://www.linkedin.com/in/hutaf-alkhudaydi-02651a2bb/ |
+| 214 | رغد العنزي | Raghad Alanazi | معسكر/برنامج النماذج اللغوية الكبيرة (LLM) — تنفيذ مشترك سدايا×طويق ⚠️ | 2026 |  | 78 | https://www.linkedin.com/in/raghadabd-alanazi/ |
+| 215 | خالد المطيري | Khaled Almutairy | التدريب الاحترافي في الذكاء الاصطناعي التوليدي (سدايا×NVIDIA) — شهادتا NVIDIA Certified Associate: GenAI & LLMs + Multimodal ⚠️ تنبيه هوية مع #687 و#2206 | أغسطس 2025 | شركة علم (ELM) | 90 | https://www.linkedin.com/in/khaledalmutairy/ |
 
 ## معسكرات 2023 (القوائم الكاملة) — 329 سجلًا (جدول مضغوط)
 
