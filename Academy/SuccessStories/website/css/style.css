@@ -132,7 +132,7 @@ h1, h2, h3 { line-height: 1.35; }
 .btn-primary { background: linear-gradient(120deg, var(--sky-400), var(--blue-500)); color: #fff; box-shadow: 0 8px 22px rgba(42, 120, 214, .35); }
 
 .hero-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 0;
 }
 .hero-stat {
   background: rgba(255, 255, 255, .07);
@@ -338,7 +338,7 @@ h1, h2, h3 { line-height: 1.35; }
 
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
-  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
 @media (max-width: 760px) {

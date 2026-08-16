@@ -5,30 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بوابة أكاديمية سدايا | SDAIA Academy Portal</title>
 <meta name="description" content="البوابة الموحّدة لأكاديمية سدايا، الأكاديمية الوطنية لبناء القدرات في مجالي البيانات والذكاء الاصطناعي: نبذة عن الأكاديمية ورؤيتها ورسالتها وأهدافها، والكاتالوج التدريبي والمسارات التعليمية (37 برنامجًا)، وبوابة الخريجين، وقصص النجاح، والإحصاءات والموارد — SDAIA Academy unified portal.">
+<meta name="theme-color" content="#0B2A4E">
 <link rel="icon" type="image/png" href="assets/academy-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  /* ===== Brand — shared design system with the Success Stories site ===== */
+  --navy-900:#071C36; --navy-800:#0B2A4E; --navy-700:#104281;
+  --blue-600:#1459A8; --blue-500:#2a78d6; --sky-400:#5AA9E8; --sky-300:#70C8F2;
+  --accent-orange:#F07D3D;
+
   --ink:#10233B; --ink-2:#41566E; --ink-3:#7A8CA0;
-  --brand:#1F6FB2; --brand-d:#164F80; --brand-l:#E9F2FA;
-  --teal:#0E7C86; --teal-d:#0A4E57; --teal-l:#E7F4F5; --teal-m:#2E96A3;
+  --brand:#2a78d6; --brand-d:#1459A8; --brand-l:#EAF2FB;
+  --teal:#104281; --teal-d:#0B2A4E; --teal-l:#EEF4FA; --teal-m:#2a78d6;
   --accent:#C75B1E; --accent-l:#FBEFE7;
   --green:#1C7C43; --green-l:#E8F4EC;
+
   --bg:#F6F9FC; --card:#FFFFFF; --line:#E2EAF2; --line-2:#D3DCE4;
-  --r:14px; --shadow:0 1px 2px rgba(15,42,74,.05),0 8px 24px rgba(15,42,74,.07);
+  --r:22px; --r-md:14px; --r-sm:9px;
+  --shadow:0 2px 10px rgba(11,42,78,.06);
+  --shadow-2:0 14px 40px rgba(11,42,78,.12);
+  --font:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --header-h:72px;
   /* ---- icon design tokens (single source of truth) ---- */
   --i-sm:16px; --i-md:20px; --i-lg:22px; --i-stroke:1.75;
   --chip:42px; --chip-r:12px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
-html[lang="en"] body{font-family:'Inter','IBM Plex Sans Arabic',sans-serif}
-.container{max-width:1180px;margin:0 auto;padding:0 22px}
-a{color:var(--brand);text-decoration:none}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 14px)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:clip;text-rendering:optimizeLegibility}
+html[lang="en"] body{font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif}
+.container{width:min(1240px,100% - 2.5rem);margin-inline:auto;padding:0}
+a{color:var(--blue-600);text-decoration:none}
 a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.35}
+:focus-visible{outline:3px solid var(--blue-500);outline-offset:2px;border-radius:4px}
 
 /* ===== Icon system — Lucide 1.28, inline sprite, one icon set site-wide ===== */
 .sprite{position:absolute;width:0;height:0;overflow:hidden}
@@ -37,138 +55,210 @@ a:hover{text-decoration:underline}
    vertical-align:-.19em;overflow:visible}
 .i-sm{width:var(--i-sm);height:var(--i-sm);stroke-width:2}
 .i-lg{width:var(--i-lg);height:var(--i-lg)}
-/* direction-aware icons (arrows) mirror in RTL */
 html[dir="rtl"] .i-flip{transform:scaleX(-1)}
-/* tinted icon chip — one shape, six brand tints */
 .chip{width:var(--chip);height:var(--chip);border-radius:var(--chip-r);display:inline-flex;
       align-items:center;justify-content:center;background:var(--teal-l);color:var(--teal-d);flex:none}
-.tint-teal{background:var(--teal-l);color:var(--teal-d)}
+.tint-teal{background:#E7F1FA;color:var(--navy-700)}
 .tint-blue{background:var(--brand-l);color:var(--brand-d)}
-.tint-cyan{background:#E4F3F5;color:#1B7480}
+.tint-cyan{background:#E4F4FD;color:#136A9E}
 .tint-orange{background:var(--accent-l);color:var(--accent)}
 .tint-green{background:var(--green-l);color:var(--green)}
-.tint-navy{background:#E8EEF6;color:#1B3E63}
+.tint-navy{background:#E8EEF6;color:var(--navy-800)}
 
 /* ===== Header ===== */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.hd{display:flex;align-items:center;gap:14px;padding:12px 0}
-.hd img{height:44px;width:auto}
-.hd .brand-name{font-weight:700;font-size:17px;line-height:1.3}
-.hd .brand-sub{font-size:12px;color:var(--ink-3)}
-nav.top{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap;align-items:center}
-nav.top a{padding:8px 12px;border-radius:9px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
-nav.top a:hover{background:var(--teal-l);color:var(--teal-d);text-decoration:none}
-.lang-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-2);background:var(--card);border-radius:9px;padding:7px 13px;font-family:inherit;font-size:13px;font-weight:600;color:var(--brand-d);cursor:pointer;transition:background .12s ease,border-color .12s ease}
-.lang-btn:hover{background:var(--brand-l);border-color:#CFE3F3}
+header{position:fixed;inset-inline:0;top:0;z-index:100;
+  background:rgba(7,28,54,.35);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  transition:background .3s,box-shadow .3s}
+header.scrolled{background:rgba(255,255,255,.9);box-shadow:0 1px 0 var(--line),var(--shadow)}
+.hd{display:flex;align-items:center;gap:14px;height:var(--header-h)}
+.hd img{height:38px;width:auto;background:#fff;padding:5px 10px;border-radius:8px}
+.hd .brand-name{font-weight:700;font-size:16px;line-height:1.3;color:#fff;transition:color .3s}
+.hd .brand-sub{font-size:12px;color:#A9C6E4;transition:color .3s}
+header.scrolled .hd .brand-name{color:var(--navy-800)}
+header.scrolled .hd .brand-sub{color:var(--ink-3)}
+nav.top{display:flex;gap:2px;margin-inline-start:auto;flex-wrap:wrap;align-items:center}
+nav.top a{padding:7px 12px;border-radius:100px;font-size:13.5px;font-weight:500;color:#fff;opacity:.92;transition:opacity .2s,background .2s,color .3s}
+nav.top a:hover{opacity:1;background:rgba(255,255,255,.14);text-decoration:none}
+header.scrolled nav.top a{color:var(--navy-800)}
+header.scrolled nav.top a:hover{background:var(--brand-l);color:var(--brand-d)}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.32);
+  background:rgba(255,255,255,.12);border-radius:100px;padding:7px 15px;font-family:inherit;font-size:13px;
+  font-weight:600;color:#fff;cursor:pointer;margin-inline-start:8px;transition:background .2s,border-color .2s,color .3s}
+.lang-btn:hover{background:rgba(255,255,255,.22)}
+header.scrolled .lang-btn{border-color:var(--line-2);background:var(--card);color:var(--brand-d)}
+header.scrolled .lang-btn:hover{background:var(--brand-l);border-color:#CFE3F3}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(135deg,var(--teal-d) 0%,#0F3F63 55%,var(--brand-d) 100%);color:#fff;padding:64px 0 56px}
-.hero .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 16px;font-size:13px;font-weight:600;letter-spacing:.3px;margin-bottom:18px}
-.hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:700;line-height:1.25;max-width:19em}
-.hero p.lead{margin-top:14px;font-size:16.5px;max-width:44em;color:rgba(255,255,255,.88)}
-.hero .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;border-radius:11px;padding:12px 20px;font-weight:600;font-size:14.5px;transition:transform .12s ease,background .12s ease}
-.btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn.primary{background:#fff;color:var(--teal-d)}
-.btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.hero{position:relative;overflow:hidden;color:#fff;
+  padding:calc(var(--header-h) + 4.5rem) 0 6.5rem;
+  background:linear-gradient(160deg,var(--navy-900) 0%,var(--navy-800) 45%,var(--navy-700) 100%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(600px 300px at 85% 20%,rgba(112,200,242,.18),transparent 70%),
+    radial-gradient(500px 320px at 10% 85%,rgba(240,125,61,.12),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M20 20 L44 32 L20 44 Z' fill='%2370C8F2' opacity='.10'/%3E%3Cpath d='M80 70 L104 82 L80 94 Z' fill='%23F07D3D' opacity='.08'/%3E%3Cpath d='M60 10 L76 18 L60 26 Z' fill='%23ffffff' opacity='.05'/%3E%3C/svg%3E")}
+.hero .container{position:relative;z-index:2;max-width:980px}
+.hero .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(112,200,242,.08);
+  border:1px solid rgba(112,200,242,.4);color:var(--sky-300);border-radius:100px;padding:.35rem 1rem;
+  font-size:13px;font-weight:500;letter-spacing:.02em;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:700;line-height:1.28;max-width:17em;margin-bottom:1.1rem}
+.hero p.lead{font-size:clamp(1rem,2vw,1.14rem);max-width:44em;color:#C9DCF0}
+.hero .cta{margin-top:2.2rem;display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:100px;padding:.78rem 1.7rem;
+  font-weight:600;font-size:15px;font-family:inherit;border:0;cursor:pointer;
+  transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(120deg,var(--sky-400),var(--blue-500));color:#fff;box-shadow:0 8px 22px rgba(42,120,214,.35)}
+.btn.ghost{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.28)}
 .btn.ghost:hover{background:rgba(255,255,255,.2)}
+.hero-wave{position:absolute;bottom:-1px;inset-inline:0;line-height:0;z-index:1}
+.hero-wave svg{width:100%;height:46px;display:block}
 
 /* ===== Stat tiles ===== */
-.stats{margin-top:-34px;position:relative;z-index:5}
-.stats .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
-.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 16px;box-shadow:var(--shadow)}
+.stats{margin-top:-3.2rem;position:relative;z-index:5}
+.stats .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.1rem}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem 1.2rem;
+  box-shadow:var(--shadow);transition:transform .28s,box-shadow .28s;position:relative;overflow:hidden}
+.tile:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}
+.tile::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;height:4px;
+  background:linear-gradient(90deg,var(--accent-orange),var(--blue-500))}
 .tile .chip{width:38px;height:38px;border-radius:11px;margin-bottom:12px}
-.tile .num{font-size:30px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.15}
-.tile .num small{font-size:16px;font-weight:600;color:var(--ink-3)}
+.tile .num{font-size:2rem;font-weight:700;color:var(--navy-800);font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .num small{font-size:1rem;font-weight:600;color:var(--ink-3)}
 .tile .lbl{margin-top:4px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
-.tile .note{font-size:12px;color:var(--ink-3);margin-top:2px}
+.tile .note{font-size:12px;color:var(--ink-3);margin-top:2px;line-height:1.7}
 
 /* ===== Sections ===== */
-section{padding:52px 0 8px}
-.sec-head{margin-bottom:24px}
-.sec-head h2{font-size:24px;font-weight:700}
-.sec-head p{color:var(--ink-2);font-size:14.5px;margin-top:6px;max-width:52em}
-.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.6px;color:var(--teal);text-transform:uppercase;margin-bottom:3px}
+section{padding:4.2rem 0 .5rem}
+.sec-head{margin-bottom:2rem}
+.sec-head h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:700;color:var(--navy-800)}
+.sec-head p{color:var(--ink-2);font-size:15px;margin-top:.5rem;max-width:56em}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.03em;
+  color:var(--blue-500);margin-bottom:.4rem}
+.eyebrow::before{content:"—";color:var(--accent-orange);margin-inline-end:.15rem}
 
 /* ===== Cards grid ===== */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .12s ease,border-color .12s ease}
-.card:hover{transform:translateY(-2px);border-color:var(--teal-m)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.3rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s,box-shadow .28s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2)}
 .card .chip{margin-bottom:14px}
-.card h3{font-size:16.5px;font-weight:700}
-.card p{font-size:13.5px;color:var(--ink-2);margin-top:6px;flex:1}
-.card .links{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-.card .links a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 11px;color:var(--brand-d);transition:background .12s ease,border-color .12s ease}
-.card .links a .i{color:var(--ink-3);transition:color .12s ease}
-.card .links a:hover{background:var(--brand-l);border-color:#CFE3F3;text-decoration:none}
-.card .links a:hover .i{color:var(--brand)}
+.card h3{font-size:1.14rem;font-weight:700;color:var(--navy-800)}
+.card p{font-size:14px;color:var(--ink-2);margin-top:.4rem;flex:1}
+.card .links{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.card .links a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;
+  background:var(--card);border:1.5px solid var(--line);border-radius:100px;padding:.35rem .9rem;
+  color:var(--blue-600);transition:background .2s,border-color .2s}
+.card .links a .i{color:var(--ink-3);transition:color .2s}
+.card .links a:hover{background:#F2F7FC;border-color:var(--blue-500);text-decoration:none}
+.card .links a:hover .i{color:var(--blue-500)}
 
 /* ===== Overview ===== */
-.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start}
+.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:1.7rem;align-items:start}
 @media(max-width:860px){.overview{grid-template-columns:1fr}}
-.overview .txt p{margin-bottom:12px;color:var(--ink-2);font-size:14.5px}
+.overview .txt p{margin-bottom:.8rem;color:var(--ink-2);font-size:15px}
 .tracks{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-.tracks .row{display:flex;align-items:center;gap:11px;padding:13px 18px;border-bottom:1px solid var(--line);font-size:13.5px}
-.tracks .row:last-child{border-bottom:none;background:#FAFCFE}
-.tracks .row b{font-weight:600;margin-inline-end:auto}
+.tracks .row{display:flex;align-items:center;gap:11px;padding:.85rem 1.2rem;border-bottom:1px solid var(--line);font-size:14px}
+.tracks .row:last-child{border-bottom:none;background:#F4F8FC;font-weight:600}
+.tracks .row b{font-weight:600;margin-inline-end:auto;color:var(--ink-1)}
 .tracks .row .n{color:var(--ink-3);font-size:12.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
 
+/* ===== Graduate tracks strip ===== */
+.gtracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:1.4rem}
+.gtrack{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.3rem;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .28s,box-shadow .28s}
+.gtrack:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}
+.gtrack::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;height:4px;background:var(--tc)}
+.gtrack .v{font-size:1.85rem;font-weight:700;color:var(--navy-800);font-variant-numeric:tabular-nums;line-height:1.2}
+.gtrack .l{font-size:14px;font-weight:600;color:var(--ink);margin-top:.1rem}
+.gtrack .e{font-size:12px;color:var(--ink-3);direction:ltr;text-align:start}
+.gtrack .bar{height:6px;border-radius:100px;background:#EDF3F9;margin-top:.55rem;overflow:hidden}
+.gtrack .bar i{display:block;height:100%;border-radius:100px;background:var(--tc)}
+.gtrack .p{font-size:12px;color:var(--ink-2);margin-top:.4rem;font-weight:600}
+.gnote{font-size:13.5px;color:var(--ink-2);background:#EEF4FA;border-inline-start:3px solid var(--sky-400);
+  border-radius:var(--r-sm);padding:.85rem 1.1rem;margin-top:1.1rem}
+
 /* ===== Downloads ===== */
-.dl-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
-.dl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
-.dl h3{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.dl-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.3rem}
+.dl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;box-shadow:var(--shadow)}
+.dl h3{font-size:15px;font-weight:700;margin-bottom:.8rem;display:flex;align-items:center;gap:10px;color:var(--navy-800)}
 .dl h3 .chip{width:32px;height:32px;border-radius:9px}
 .dl ul{list-style:none}
-.dl li{border-bottom:1px dashed var(--line);padding:9px 0;display:flex;align-items:flex-start}
+.dl li{border-bottom:1px dashed var(--line);padding:.55rem 0;display:flex;align-items:flex-start}
 .dl li:last-child{border-bottom:none}
 .dl a{font-size:13.5px;font-weight:500}
-.dl .ft{margin-top:3px;font-size:10px;font-weight:700;letter-spacing:.4px;border-radius:6px;padding:3px 0;margin-inline-end:10px;display:inline-block;min-width:46px;text-align:center;flex:none;border:1px solid transparent;font-family:'Inter',sans-serif}
+.dl .ft{margin-top:5px;font-size:10px;font-weight:700;letter-spacing:.4px;border-radius:6px;padding:2px 0;
+  margin-inline-end:10px;display:inline-block;min-width:46px;text-align:center;flex:none;border:1px solid transparent}
 .ft.xlsx{background:var(--green-l);color:var(--green);border-color:#CDE6D8}
 .ft.docx{background:var(--brand-l);color:var(--brand-d);border-color:#CFE3F3}
 .ft.pptx{background:var(--accent-l);color:var(--accent);border-color:#F2DCCC}
 .ft.pdf{background:#FBECEB;color:#A8352E;border-color:#F0D4D2}
 .ft.md{background:#EDF1F6;color:var(--ink-2);border-color:#DDE5EE}
-.ft.html{background:var(--teal-l);color:var(--teal-d);border-color:#CDE6E8}
-.ft.dir{background:#E8EEF6;color:#1B3E63;border-color:#D6E1EE}
+.ft.html{background:#E7F1FA;color:var(--navy-700);border-color:#CFE3F3}
+.ft.dir{background:#E8EEF6;color:var(--navy-800);border-color:#D6E1EE}
 
 /* ===== Structure map ===== */
-.map{background:var(--ink);color:#DCE6F0;border-radius:var(--r);padding:24px 26px;font-family:'Consolas','Menlo',monospace;font-size:13px;line-height:1.9;direction:ltr;text-align:left;overflow-x:auto;white-space:pre}
-.map .d{color:#7FD1DB;font-weight:700}
+.map{background:var(--navy-900);color:#DCE6F0;border-radius:var(--r);padding:1.5rem 1.6rem;
+  font-family:'Consolas','Menlo',monospace;font-size:13px;line-height:1.9;direction:ltr;text-align:left;
+  overflow-x:auto;white-space:pre;box-shadow:var(--shadow-2)}
+.map .d{color:var(--sky-300);font-weight:700}
 .map .f{color:#AFC3D8}
 .map .c{color:#6E859E}
 
 /* ===== Footer ===== */
-footer{margin-top:56px;border-top:1px solid var(--line);background:var(--card);padding:26px 0 34px;color:var(--ink-3);font-size:13px}
-footer .frow{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+footer{margin-top:4rem;background:var(--navy-900);color:#B9CBE0;padding:2.6rem 0 2rem;font-size:13.5px}
+footer .frow{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer a{color:var(--sky-300)}
 footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
 
 /* ===== About block ===== */
-.about{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:1.7rem;align-items:start}
 @media(max-width:900px){.about{grid-template-columns:1fr}}
-.about .txt p{margin-bottom:13px;color:var(--ink-2);font-size:14.5px}
+.about .txt p{margin-bottom:.85rem;color:var(--ink-2);font-size:15px}
 .about .txt p strong{color:var(--ink);font-weight:600}
-.vm{display:grid;gap:14px}
-.vm .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.vm .box::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;background:var(--teal)}
-.vm .box.b2::before{background:var(--brand)}
-.vm .box h3{font-size:15.5px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vm{display:grid;gap:1rem}
+.vm .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;
+  box-shadow:var(--shadow);position:relative;overflow:hidden}
+.vm .box::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;background:var(--accent-orange)}
+.vm .box.b2::before{background:var(--blue-500)}
+.vm .box h3{font-size:15.5px;font-weight:700;margin-bottom:.5rem;display:flex;align-items:center;gap:10px;color:var(--navy-800)}
 .vm .box h3 .chip{width:34px;height:34px;border-radius:10px}
-.vm .box p{color:var(--ink-2);font-size:13.5px}
-.objs{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;margin-top:22px}
-.obj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start}
-.obj .n{flex:none;width:28px;height:28px;border-radius:8px;background:var(--teal-l);color:var(--teal-d);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
-.obj p{font-size:13.5px;color:var(--ink-2)}
-.more{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-.more a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 14px;color:var(--brand-d)}
+.vm .box p{color:var(--ink-2);font-size:14px}
+.objs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:.9rem;margin-top:1.5rem}
+.obj{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:1rem 1.15rem;
+  box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start;transition:transform .28s,box-shadow .28s}
+.obj:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
+.obj .n{flex:none;width:28px;height:28px;border-radius:9px;background:var(--brand-l);color:var(--brand-d);
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.obj p{font-size:14px;color:var(--ink-2)}
+.more{margin-top:1.2rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.more a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;background:var(--card);
+  border:1.5px solid var(--line);border-radius:100px;padding:.45rem 1.1rem;color:var(--blue-600);transition:all .2s}
 .more a .i{color:var(--ink-3)}
-.more a:hover{background:var(--brand-l);border-color:#CFE3F3;text-decoration:none}
-.more a:hover .i{color:var(--brand)}
+.more a:hover{background:#F2F7FC;border-color:var(--blue-500);text-decoration:none}
+.more a:hover .i{color:var(--blue-500)}
 
-@media(max-width:640px){
+/* ===== to top ===== */
+.to-top{position:fixed;bottom:26px;inset-inline-start:26px;z-index:80;width:48px;height:48px;border-radius:50%;
+  border:0;cursor:pointer;background:var(--navy-700);color:#fff;font-size:1.2rem;box-shadow:var(--shadow-2);
+  transition:background .2s,transform .2s}
+.to-top:hover{background:var(--blue-600);transform:translateY(-3px)}
+
+@media(max-width:760px){
   .hd .brand-sub{display:none}
   nav.top a{display:none}          /* hide nav links, keep the language toggle reachable */
   nav.top{gap:0}
+  section{padding:3rem 0 .5rem}
+  .hero{padding:calc(var(--header-h) + 3rem) 0 5rem}
 }
+
+@media print{
+  header,.hero .cta,.to-top{display:none !important}
+  .hero{background:#fff;color:#000;padding-top:1rem}
+  .hero h1,.hero p.lead{color:#000}
+}
+
 </style>
 </head>
 <body id="top">
@@ -266,6 +356,9 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
       </a>
     </div>
   </div>
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,60 C360,110 1080,0 1440,50 L1440,90 L0,90 Z" fill="var(--bg)"></path></svg>
+  </div>
 </div>
 
 <!-- ===== KPI tiles ===== -->
@@ -311,6 +404,58 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
     </div>
   </div>
 </div>
+
+<!-- ===== Standardized graduate tracks ===== -->
+<section id="gtracks">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">
+        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-route"/></svg>
+        <span class="t" data-ar="التصنيف المعياري للبرامج" data-en="Standardized program classification"></span>
+      </div>
+      <h2 class="t" data-ar="مسارات الخريجين الموحّدة" data-en="Standardized graduate tracks"></h2>
+      <p class="t" data-ar="كل سجل من سجلات قاعدة الخريجين الـ2,651 مصنّف على مسار معياري واحد، بعد توحيد 414 صيغة نصية مختلفة لأسماء البرامج. نص البرنامج الأصلي والدفعة وتاريخ التخرّج محفوظة كما هي دون تغيير." data-en="Each of the 2,651 graduate records is mapped to a single standardized track, consolidating 414 distinct raw program strings. The original program text, cohort and graduation date are preserved unchanged."></p>
+    </div>
+    <div class="gtracks">
+        <div class="gtrack" style="--tc:#1459A8">
+          <div class="v">1,305</div>
+          <div class="l t" data-ar="مهندس ذكاء اصطناعي" data-en="AI Engineer"></div>
+          <div class="e">AI Engineer</div>
+          <div class="bar"><i style="width:49.2%"></i></div>
+          <div class="p t" data-ar="49.2% من السجل" data-en="49.2% of the registry"></div>
+        </div>
+        <div class="gtrack" style="--tc:#0E7C86">
+          <div class="v">664</div>
+          <div class="l t" data-ar="عالم بيانات" data-en="Data Scientist"></div>
+          <div class="e">Data Scientist</div>
+          <div class="bar"><i style="width:25.0%"></i></div>
+          <div class="p t" data-ar="25.0% من السجل" data-en="25.0% of the registry"></div>
+        </div>
+        <div class="gtrack" style="--tc:#F07D3D">
+          <div class="v">242</div>
+          <div class="l t" data-ar="أكاديمية الذكاء الاصطناعي التوليدي" data-en="Gen AI Academy"></div>
+          <div class="e">Gen AI Academy</div>
+          <div class="bar"><i style="width:9.1%"></i></div>
+          <div class="p t" data-ar="9.1% من السجل" data-en="9.1% of the registry"></div>
+        </div>
+        <div class="gtrack" style="--tc:#104281">
+          <div class="v">322</div>
+          <div class="l t" data-ar="إدارة وحوكمة البيانات" data-en="Data Management &amp; Governance"></div>
+          <div class="e">Data Management & Governance</div>
+          <div class="bar"><i style="width:12.1%"></i></div>
+          <div class="p t" data-ar="12.1% من السجل" data-en="12.1% of the registry"></div>
+        </div>
+        <div class="gtrack" style="--tc:#7A8CA0">
+          <div class="v">118</div>
+          <div class="l t" data-ar="برامج متخصصة أخرى" data-en="Other / Specialized"></div>
+          <div class="e">Other / Specialized</div>
+          <div class="bar"><i style="width:4.5%"></i></div>
+          <div class="p t" data-ar="4.5% من السجل" data-en="4.5% of the registry"></div>
+        </div>
+    </div>
+    <p class="gnote t" data-ar="تُحسب «أكاديمية الذكاء الاصطناعي التوليدي» عبر كل الطبقات لا داخل طبقة واحدة: 237 سجلًا يذكر NVIDIA صراحةً في حقل البرنامج، اتحادًا مع 215 سجلًا في طبقة «برامج NVIDIA» الرسمية — والمجموع غير المكرَّر 242. الرقم الرسمي 232 هو حدّ أدنى وليس سقفًا." data-en="&#171;Gen AI Academy&#187; is counted across all tiers rather than inside one: 237 records name NVIDIA explicitly in the program field, unioned with the 215 records in the official NVIDIA tier — 242 distinct in total. The official figure of 232 is a floor, not a ceiling."></p>
+  </div>
+</section>
 
 <!-- ===== About the Academy ===== -->
 <section id="about">
@@ -390,7 +535,7 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
            data-en="The training catalog is built on four pathways: an open beginner level (6 non-technical awareness programs), a shared foundation core of 5 programs, and two role-based professional tracks — AI Engineer (15 programs) and Data Scientist (11 programs) — spread across four levels: Beginner, Practitioner, Specialist and Expert. That is 37 interlocking programs and 132 training days in total."></p>
         <p class="t"
            data-ar="تجمع هذه البوابة كل أصول الأكاديمية في مساحة عمل واحدة: قاعدة بيانات الخريجين الموثّقة (2,651 أفراد منذ 2021)، وتقرير التوظيف المبكر، وموقع قصص النجاح (107 قصة عبر 73 جهة عمل)، والحقائب التدريبية الكاملة للمدرّبين، وملفات البرامج التفصيلية."
-           data-en="This portal gathers every Academy asset into a single workspace: the verified graduates database (2,651 individuals since 2021), the first-employment report, the success-stories website (105 stories across 73 employers), full instructor training packages, and detailed program files."></p>
+           data-en="This portal gathers every Academy asset into a single workspace: the verified graduates database (2,651 individuals since 2021), the first-employment report, the success-stories website (107 stories across 73 employers), full instructor training packages, and detailed program files."></p>
         <p class="t"
            data-ar="جميع الروابط في هذه الصفحة نسبية داخل مجلد Academy — يمكن نقل المجلد كاملًا أو مشاركته أو رفعه على أي خادم دون أن ينكسر أي رابط."
            data-en="Every link on this page is relative within the Academy folder — the whole folder can be moved, shared or hosted anywhere without breaking a single link."></p>
@@ -474,7 +619,7 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
       <div class="card">
         <span class="chip tint-green"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-award"/></svg></span>
         <h3 class="t" data-ar="قصص النجاح" data-en="Success Stories"></h3>
-        <p class="t" data-ar="107 قصة نجاح موثّقة لخريجي الأكاديمية في 73 جهة عمل حكومية وخاصة وعالمية، مرتبة حسب سنة التخرج 2021 – 2026." data-en="105 verified graduate success stories across 73 government, private and global employers, organized by graduation year 2021 – 2026."></p>
+        <p class="t" data-ar="107 قصة نجاح موثّقة لخريجي الأكاديمية في 73 جهة عمل حكومية وخاصة وعالمية، مرتبة حسب سنة التخرج 2021 – 2026." data-en="107 verified graduate success stories across 73 government, private and global employers, organized by graduation year 2021 – 2026."></p>
         <div class="links">
           <a href="SuccessStories/website/index.html">
             <span class="t" data-ar="فتح موقع قصص النجاح" data-en="Open success stories site"></span>
@@ -668,38 +813,6 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
 </section>
 
 <!-- ===== Structure map ===== -->
-<section id="structure">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-folder-tree"/></svg>
-        <span class="t" data-ar="بنية مساحة العمل" data-en="Workspace structure"></span>
-      </div>
-      <h2 class="t" data-ar="خريطة مجلد Academy" data-en="The Academy folder map"></h2>
-      <p class="t" data-ar="بنية معيارية قابلة للتوسّع — أضف أي مشروع مستقبلي كمجلد جديد بجانب الأقسام القائمة، ثم أضف بطاقته في هذه الصفحة." data-en="A modular, extensible structure — add any future project as a new folder beside the existing sections, then add its card to this page."></p>
-    </div>
-    <div class="map">
-<span class="d">Academy/</span>
-├── <span class="f">index.html</span>                    <span class="c">← this portal (bilingual AR/EN)</span>
-├── <span class="f">about.html</span>                    <span class="c">← Academy profile: vision, mission, objectives</span>
-├── <span class="f">Academy_Profile.md</span>            <span class="c">← institutional source text (AR)</span>
-├── <span class="d">assets/</span>                       <span class="c">← shared brand assets (academy logos)</span>
-├── <span class="d">Graduates/</span>                    <span class="c">← graduates database & interactive portal</span>
-│   ├── <span class="f">index.html</span>                <span class="c">← graduates portal + dashboards</span>
-│   └── <span class="f">Graduates_Database.xlsx / .md · employment report</span>
-├── <span class="d">SuccessStories/</span>               <span class="c">← success-stories website + media</span>
-│   └── <span class="d">website/</span>  <span class="f">index.html · css/ · js/ · assets/ · standalone.html</span>
-└── <span class="d">Catalog/</span>                      <span class="c">← training catalog, paths & materials</span>
-    ├── <span class="f">index.html</span>                <span class="c">← interactive catalog · 37 programs · 4 levels</span>
-    ├── <span class="f">SDAIA_Learning_Paths_Catalog.xlsx</span> <span class="c">← authoritative program list</span>
-    ├── <span class="f">catalog docs (docx · xlsx · pptx · pdf)</span>
-    └── <span class="d">TrainingMaterials/</span>        <span class="c">← instructor packages & program files</span>
-        ├── <span class="d">AI Engineer Track/</span>  <span class="d">Data Scientist Track/</span>  <span class="d">Foundation Core Track/</span>
-        ├── <span class="d">Level-0-Begineers/</span>  <span class="d">Program Files (AthkaX)/</span>
-        └── <span class="d">Programs Details and Paths/</span>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="container frow">
@@ -714,6 +827,8 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
     </div>
   </div>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="العودة إلى الأعلى" hidden>↑</button>
 
 <script>
 'use strict';
@@ -741,6 +856,18 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
     apply();
   });
   apply();
+})();
+
+/* ---- header scroll state + back-to-top (shared behaviour with the Success Stories site) ---- */
+(function(){
+  var hd = document.querySelector('header'), top = document.getElementById('toTop');
+  function onScroll(){
+    hd.classList.toggle('scrolled', window.scrollY > 40);
+    top.hidden = window.scrollY < 600;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  top.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  onScroll();
 })();
 </script>
 </body>

@@ -150,7 +150,7 @@ h1, h2, h3 { line-height: 1.35; }
 .btn-primary { background: linear-gradient(120deg, var(--sky-400), var(--blue-500)); color: #fff; box-shadow: 0 8px 22px rgba(42, 120, 214, .35); }
 
 .hero-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 0;
 }
 .hero-stat {
   background: rgba(255, 255, 255, .07);
@@ -357,7 +357,7 @@ h1, h2, h3 { line-height: 1.35; }
 
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
-  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
 @media (max-width: 760px) {
@@ -396,7 +396,7 @@ h1, h2, h3 { line-height: 1.35; }
     "@type": "ItemList",
     "name": "قصص نجاح خريجي أكاديمية سدايا",
     "description": "قصص نجاح موثّقة لخريجي أكاديمية سدايا في البيانات والذكاء الاصطناعي مرتبة حسب سنة التخرج 2021–2026",
-    "numberOfItems": 105
+    "numberOfItems": 107
   }
   </script>
 </head>
@@ -495,9 +495,18 @@ h1, h2, h3 { line-height: 1.35; }
 'use strict';
 
 const SITE_STATS = [
-  { value: 105, label: 'قصة نجاح موثّقة', note: 'مرتبة حسب سنة التخرج' },
-  { value: 6,   label: 'دفعات خريجين',    note: '2021 – 2026' },
-  { value: 73,  label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية' },
+  { value: 2651, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026' },
+  { value: 107,  label: 'قصة نجاح موثّقة', note: 'مرتبة حسب سنة التخرج' },
+  { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026' },
+  { value: 73,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية' },
+];
+
+const TRACKS = [
+  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                  value: 1305 },
+  { key: 'ds',    label: 'عالم بيانات',                     en: 'Data Scientist',               value: 664  },
+  { key: 'genai', label: 'أكاديمية الذكاء الاصطناعي التوليدي', en: 'Gen AI Academy',               value: 242  },
+  { key: 'dmg',   label: 'إدارة وحوكمة البيانات',            en: 'Data Management & Governance', value: 322  },
+  { key: 'other', label: 'برامج متخصصة أخرى',                en: 'Other / Specialized',          value: 118  },
 ];
 
 const YEARS = [
