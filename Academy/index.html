@@ -3,808 +3,437 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بوابة أكاديمية سدايا | SDAIA Academy Portal</title>
+<title data-ar="بوابة أكاديمية سدايا | SDAIA Academy Portal" data-en="SDAIA Academy Portal | بوابة أكاديمية سدايا">بوابة أكاديمية سدايا | SDAIA Academy Portal</title>
 <meta name="description" content="البوابة الموحّدة لأكاديمية سدايا، الأكاديمية الوطنية لبناء القدرات في مجالي البيانات والذكاء الاصطناعي: نبذة عن الأكاديمية ورؤيتها ورسالتها وأهدافها، والكاتالوج التدريبي والمسارات التعليمية (37 برنامجًا)، وبوابة الخريجين، وقصص النجاح، والإحصاءات والموارد — SDAIA Academy unified portal.">
 <meta name="theme-color" content="#0B2A4E">
 <link rel="icon" type="image/png" href="assets/academy-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/sdaia-ui.css">
+<script src="assets/sdaia-icons.js"></script>
+<script src="assets/sdaia-ui.js"></script>
 <style>
-:root{
-  /* ===== Brand — shared design system with the Success Stories site ===== */
-  --navy-900:#071C36; --navy-800:#0B2A4E; --navy-700:#104281;
-  --blue-600:#1459A8; --blue-500:#2a78d6; --sky-400:#5AA9E8; --sky-300:#70C8F2;
-  --accent-orange:#F07D3D;
-
-  --ink:#10233B; --ink-2:#41566E; --ink-3:#7A8CA0;
-  --brand:#2a78d6; --brand-d:#1459A8; --brand-l:#EAF2FB;
-  --teal:#104281; --teal-d:#0B2A4E; --teal-l:#EEF4FA; --teal-m:#2a78d6;
-  --accent:#C75B1E; --accent-l:#FBEFE7;
-  --green:#1C7C43; --green-l:#E8F4EC;
-
-  --bg:#F6F9FC; --card:#FFFFFF; --line:#E2EAF2; --line-2:#D3DCE4;
-  --r:22px; --r-md:14px; --r-sm:9px;
-  --shadow:0 2px 10px rgba(11,42,78,.06);
-  --shadow-2:0 14px 40px rgba(11,42,78,.12);
-  --font:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
-  --header-h:72px;
-  /* ---- icon design tokens (single source of truth) ---- */
-  --i-sm:16px; --i-md:20px; --i-lg:22px; --i-stroke:1.75;
-  --chip:42px; --chip-r:12px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 14px)}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
-}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:clip;text-rendering:optimizeLegibility}
-html[lang="en"] body{font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif}
-.container{width:min(1240px,100% - 2.5rem);margin-inline:auto;padding:0}
-a{color:var(--blue-600);text-decoration:none}
-a:hover{text-decoration:underline}
-img{max-width:100%;display:block}
-h1,h2,h3{line-height:1.35}
-:focus-visible{outline:3px solid var(--blue-500);outline-offset:2px;border-radius:4px}
-
-/* ===== Icon system — Lucide 1.28, inline sprite, one icon set site-wide ===== */
-.sprite{position:absolute;width:0;height:0;overflow:hidden}
-.i{width:var(--i-md);height:var(--i-md);flex:none;display:inline-block;
-   fill:none;stroke:currentColor;stroke-width:var(--i-stroke);stroke-linecap:round;stroke-linejoin:round;
-   vertical-align:-.19em;overflow:visible}
-.i-sm{width:var(--i-sm);height:var(--i-sm);stroke-width:2}
-.i-lg{width:var(--i-lg);height:var(--i-lg)}
-html[dir="rtl"] .i-flip{transform:scaleX(-1)}
-.chip{width:var(--chip);height:var(--chip);border-radius:var(--chip-r);display:inline-flex;
-      align-items:center;justify-content:center;background:var(--teal-l);color:var(--teal-d);flex:none}
-.tint-teal{background:#E7F1FA;color:var(--navy-700)}
-.tint-blue{background:var(--brand-l);color:var(--brand-d)}
-.tint-cyan{background:#E4F4FD;color:#136A9E}
-.tint-orange{background:var(--accent-l);color:var(--accent)}
-.tint-green{background:var(--green-l);color:var(--green)}
-.tint-navy{background:#E8EEF6;color:var(--navy-800)}
-
-/* ===== Header ===== */
-header{position:fixed;inset-inline:0;top:0;z-index:100;
-  background:rgba(7,28,54,.35);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  transition:background .3s,box-shadow .3s}
-header.scrolled{background:rgba(255,255,255,.9);box-shadow:0 1px 0 var(--line),var(--shadow)}
-.hd{display:flex;align-items:center;gap:14px;height:var(--header-h)}
-.hd img{height:38px;width:auto;background:#fff;padding:5px 10px;border-radius:8px}
-.hd .brand-name{font-weight:700;font-size:16px;line-height:1.3;color:#fff;transition:color .3s}
-.hd .brand-sub{font-size:12px;color:#A9C6E4;transition:color .3s}
-header.scrolled .hd .brand-name{color:var(--navy-800)}
-header.scrolled .hd .brand-sub{color:var(--ink-3)}
-nav.top{display:flex;gap:2px;margin-inline-start:auto;flex-wrap:wrap;align-items:center}
-nav.top a{padding:7px 12px;border-radius:100px;font-size:13.5px;font-weight:500;color:#fff;opacity:.92;transition:opacity .2s,background .2s,color .3s}
-nav.top a:hover{opacity:1;background:rgba(255,255,255,.14);text-decoration:none}
-header.scrolled nav.top a{color:var(--navy-800)}
-header.scrolled nav.top a:hover{background:var(--brand-l);color:var(--brand-d)}
-.lang-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.32);
-  background:rgba(255,255,255,.12);border-radius:100px;padding:7px 15px;font-family:inherit;font-size:13px;
-  font-weight:600;color:#fff;cursor:pointer;margin-inline-start:8px;transition:background .2s,border-color .2s,color .3s}
-.lang-btn:hover{background:rgba(255,255,255,.22)}
-header.scrolled .lang-btn{border-color:var(--line-2);background:var(--card);color:var(--brand-d)}
-header.scrolled .lang-btn:hover{background:var(--brand-l);border-color:#CFE3F3}
-
-/* ===== Hero ===== */
-.hero{position:relative;overflow:hidden;color:#fff;
-  padding:calc(var(--header-h) + 4.5rem) 0 6.5rem;
-  background:linear-gradient(160deg,var(--navy-900) 0%,var(--navy-800) 45%,var(--navy-700) 100%)}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(600px 300px at 85% 20%,rgba(112,200,242,.18),transparent 70%),
-    radial-gradient(500px 320px at 10% 85%,rgba(240,125,61,.12),transparent 70%)}
-.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M20 20 L44 32 L20 44 Z' fill='%2370C8F2' opacity='.10'/%3E%3Cpath d='M80 70 L104 82 L80 94 Z' fill='%23F07D3D' opacity='.08'/%3E%3Cpath d='M60 10 L76 18 L60 26 Z' fill='%23ffffff' opacity='.05'/%3E%3C/svg%3E")}
-.hero .container{position:relative;z-index:2;max-width:980px}
-.hero .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(112,200,242,.08);
-  border:1px solid rgba(112,200,242,.4);color:var(--sky-300);border-radius:100px;padding:.35rem 1rem;
-  font-size:13px;font-weight:500;letter-spacing:.02em;margin-bottom:1.4rem}
-.hero h1{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:700;line-height:1.28;max-width:17em;margin-bottom:1.1rem}
-.hero p.lead{font-size:clamp(1rem,2vw,1.14rem);max-width:44em;color:#C9DCF0}
-.hero .cta{margin-top:2.2rem;display:flex;gap:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;border-radius:100px;padding:.78rem 1.7rem;
-  font-weight:600;font-size:15px;font-family:inherit;border:0;cursor:pointer;
-  transition:transform .2s,box-shadow .2s,background .2s}
-.btn:hover{text-decoration:none;transform:translateY(-2px)}
-.btn.primary{background:linear-gradient(120deg,var(--sky-400),var(--blue-500));color:#fff;box-shadow:0 8px 22px rgba(42,120,214,.35)}
-.btn.ghost{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.28)}
-.btn.ghost:hover{background:rgba(255,255,255,.2)}
-.hero-wave{position:absolute;bottom:-1px;inset-inline:0;line-height:0;z-index:1}
-.hero-wave svg{width:100%;height:46px;display:block}
-
-/* ===== Stat tiles ===== */
-.stats{margin-top:-3.2rem;position:relative;z-index:5}
-.stats .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.1rem}
-.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem 1.2rem;
-  box-shadow:var(--shadow);transition:transform .28s,box-shadow .28s;position:relative;overflow:hidden}
-.tile:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}
-.tile::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;height:4px;
-  background:linear-gradient(90deg,var(--accent-orange),var(--blue-500))}
-.tile .chip{width:38px;height:38px;border-radius:11px;margin-bottom:12px}
-.tile .num{font-size:2rem;font-weight:700;color:var(--navy-800);font-variant-numeric:tabular-nums;line-height:1.15}
-.tile .num small{font-size:1rem;font-weight:600;color:var(--ink-3)}
-.tile .lbl{margin-top:4px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
-.tile .note{font-size:12px;color:var(--ink-3);margin-top:2px;line-height:1.7}
-
-/* ===== Sections ===== */
-section{padding:4.2rem 0 .5rem}
-.sec-head{margin-bottom:2rem}
-.sec-head h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:700;color:var(--navy-800)}
-.sec-head p{color:var(--ink-2);font-size:15px;margin-top:.5rem;max-width:56em}
-.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.03em;
-  color:var(--blue-500);margin-bottom:.4rem}
-.eyebrow::before{content:"—";color:var(--accent-orange);margin-inline-end:.15rem}
-
-/* ===== Cards grid ===== */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.3rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;
-  box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s,box-shadow .28s}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2)}
-.card .chip{margin-bottom:14px}
-.card h3{font-size:1.14rem;font-weight:700;color:var(--navy-800)}
-.card p{font-size:14px;color:var(--ink-2);margin-top:.4rem;flex:1}
-.card .links{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem}
-.card .links a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;
-  background:var(--card);border:1.5px solid var(--line);border-radius:100px;padding:.35rem .9rem;
-  color:var(--blue-600);transition:background .2s,border-color .2s}
-.card .links a .i{color:var(--ink-3);transition:color .2s}
-.card .links a:hover{background:#F2F7FC;border-color:var(--blue-500);text-decoration:none}
-.card .links a:hover .i{color:var(--blue-500)}
-
-/* ===== Overview ===== */
-.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:1.7rem;align-items:start}
-@media(max-width:860px){.overview{grid-template-columns:1fr}}
-.overview .txt p{margin-bottom:.8rem;color:var(--ink-2);font-size:15px}
-.tracks{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-.tracks .row{display:flex;align-items:center;gap:11px;padding:.85rem 1.2rem;border-bottom:1px solid var(--line);font-size:14px}
-.tracks .row:last-child{border-bottom:none;background:#F4F8FC;font-weight:600}
-.tracks .row b{font-weight:600;margin-inline-end:auto;color:var(--ink-1)}
-.tracks .row .n{color:var(--ink-3);font-size:12.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
-
-/* ===== Graduate tracks strip ===== */
-.gtracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:1.4rem}
-.gtrack{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.3rem;
-  box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .28s,box-shadow .28s}
-.gtrack:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}
-.gtrack::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;height:4px;background:var(--tc)}
-.gtrack .v{font-size:1.85rem;font-weight:700;color:var(--navy-800);font-variant-numeric:tabular-nums;line-height:1.2}
-.gtrack .l{font-size:14px;font-weight:600;color:var(--ink);margin-top:.1rem}
-.gtrack .e{font-size:12px;color:var(--ink-3);direction:ltr;text-align:start}
-.gtrack .bar{height:6px;border-radius:100px;background:#EDF3F9;margin-top:.55rem;overflow:hidden}
-.gtrack .bar i{display:block;height:100%;border-radius:100px;background:var(--tc)}
-.gtrack .p{font-size:12px;color:var(--ink-2);margin-top:.4rem;font-weight:600}
-.gnote{font-size:13.5px;color:var(--ink-2);background:#EEF4FA;border-inline-start:3px solid var(--sky-400);
-  border-radius:var(--r-sm);padding:.85rem 1.1rem;margin-top:1.1rem}
-
-/* ===== Downloads ===== */
-.dl-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.3rem}
-.dl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;box-shadow:var(--shadow)}
-.dl h3{font-size:15px;font-weight:700;margin-bottom:.8rem;display:flex;align-items:center;gap:10px;color:var(--navy-800)}
-.dl h3 .chip{width:32px;height:32px;border-radius:9px}
-.dl ul{list-style:none}
-.dl li{border-bottom:1px dashed var(--line);padding:.55rem 0;display:flex;align-items:flex-start}
-.dl li:last-child{border-bottom:none}
-.dl a{font-size:13.5px;font-weight:500}
-.dl .ft{margin-top:5px;font-size:10px;font-weight:700;letter-spacing:.4px;border-radius:6px;padding:2px 0;
-  margin-inline-end:10px;display:inline-block;min-width:46px;text-align:center;flex:none;border:1px solid transparent}
-.ft.xlsx{background:var(--green-l);color:var(--green);border-color:#CDE6D8}
-.ft.docx{background:var(--brand-l);color:var(--brand-d);border-color:#CFE3F3}
-.ft.pptx{background:var(--accent-l);color:var(--accent);border-color:#F2DCCC}
-.ft.pdf{background:#FBECEB;color:#A8352E;border-color:#F0D4D2}
-.ft.md{background:#EDF1F6;color:var(--ink-2);border-color:#DDE5EE}
-.ft.html{background:#E7F1FA;color:var(--navy-700);border-color:#CFE3F3}
-.ft.dir{background:#E8EEF6;color:var(--navy-800);border-color:#D6E1EE}
-
-/* ===== Structure map ===== */
-.map{background:var(--navy-900);color:#DCE6F0;border-radius:var(--r);padding:1.5rem 1.6rem;
-  font-family:'Consolas','Menlo',monospace;font-size:13px;line-height:1.9;direction:ltr;text-align:left;
-  overflow-x:auto;white-space:pre;box-shadow:var(--shadow-2)}
-.map .d{color:var(--sky-300);font-weight:700}
-.map .f{color:#AFC3D8}
-.map .c{color:#6E859E}
-
-/* ===== Footer ===== */
-footer{margin-top:4rem;background:var(--navy-900);color:#B9CBE0;padding:2.6rem 0 2rem;font-size:13.5px}
-footer .frow{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
-footer a{color:var(--sky-300)}
-footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
-
-/* ===== About block ===== */
-.about{display:grid;grid-template-columns:1.15fr .85fr;gap:1.7rem;align-items:start}
+/* ===== Portal-specific ===== */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:start}
 @media(max-width:900px){.about{grid-template-columns:1fr}}
-.about .txt p{margin-bottom:.85rem;color:var(--ink-2);font-size:15px}
-.about .txt p strong{color:var(--ink);font-weight:600}
+.prose p{color:var(--ink-2);font-size:15.5px;margin-bottom:.9rem;max-width:68ch}
+.prose p strong{color:var(--ink);font-weight:600}
 .vm{display:grid;gap:1rem}
-.vm .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;
-  box-shadow:var(--shadow);position:relative;overflow:hidden}
-.vm .box::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;background:var(--accent-orange)}
-.vm .box.b2::before{background:var(--blue-500)}
-.vm .box h3{font-size:15.5px;font-weight:700;margin-bottom:.5rem;display:flex;align-items:center;gap:10px;color:var(--navy-800)}
-.vm .box h3 .chip{width:34px;height:34px;border-radius:10px}
-.vm .box p{color:var(--ink-2);font-size:14px}
-.objs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:.9rem;margin-top:1.5rem}
-.obj{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:1rem 1.15rem;
-  box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start;transition:transform .28s,box-shadow .28s}
-.obj:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
-.obj .n{flex:none;width:28px;height:28px;border-radius:9px;background:var(--brand-l);color:var(--brand-d);
-  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
-.obj p{font-size:14px;color:var(--ink-2)}
+.vm .sd-card{padding:1.4rem 1.5rem;border-inline-start:4px solid var(--accent)}
+.vm .sd-card.b2{border-inline-start-color:var(--brand)}
+.vm h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:.5rem}
+.objs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:.9rem;margin-top:1.6rem}
+.obj{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:1rem 1.15rem;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow-xs)}
+.obj p{font-size:14.5px;color:var(--ink-2)}
 .more{margin-top:1.2rem;display:flex;gap:.6rem;flex-wrap:wrap}
-.more a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;background:var(--card);
-  border:1.5px solid var(--line);border-radius:100px;padding:.45rem 1.1rem;color:var(--blue-600);transition:all .2s}
-.more a .i{color:var(--ink-3)}
-.more a:hover{background:#F2F7FC;border-color:var(--blue-500);text-decoration:none}
-.more a:hover .i{color:var(--blue-500)}
 
-/* ===== to top ===== */
-.to-top{position:fixed;bottom:26px;inset-inline-start:26px;z-index:80;width:48px;height:48px;border-radius:50%;
-  border:0;cursor:pointer;background:var(--navy-700);color:#fff;font-size:1.2rem;box-shadow:var(--shadow-2);
-  transition:background .2s,transform .2s}
-.to-top:hover{background:var(--blue-600);transform:translateY(-3px)}
+.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
+@media(max-width:860px){.overview{grid-template-columns:1fr}}
+.tracks{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-xs);overflow:hidden}
+.tracks .row{display:flex;align-items:center;gap:12px;padding:.9rem 1.2rem;border-bottom:1px solid var(--line);font-size:14.5px}
+.tracks .row:last-child{border-bottom:none;background:var(--surface-2);font-weight:600}
+.tracks .row b{font-weight:600;margin-inline-end:auto;color:var(--ink)}
+.tracks .row .n{color:var(--ink-3);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tracks .dot{width:10px;height:10px;border-radius:3px;background:var(--tc);flex:none}
 
-@media(max-width:760px){
-  .hd .brand-sub{display:none}
-  nav.top a{display:none}          /* hide nav links, keep the language toggle reachable */
-  nav.top{gap:0}
-  section{padding:3rem 0 .5rem}
-  .hero{padding:calc(var(--header-h) + 3rem) 0 5rem}
-}
+.gtracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1rem}
+.gtrack{padding:1.2rem 1.3rem}
+.gtrack .v{font-size:1.8rem;font-weight:700;color:var(--brand-ink);font-variant-numeric:tabular-nums;line-height:1.2}
+html[data-theme="dark"] .gtrack .v{color:#fff}
+.gtrack .l{font-size:14.5px;font-weight:600;color:var(--ink);margin-top:.1rem}
+.gtrack .e{font-size:12px;color:var(--ink-3)}
+html[lang="en"] .gtrack .e{display:none} /* the label above already shows the English name */
+.gtrack .sd-bar{margin-top:.65rem}
+.gtrack .p{font-size:12.5px;color:var(--ink-2);margin-top:.45rem;font-weight:600}
 
-@media print{
-  header,.hero .cta,.to-top{display:none !important}
-  .hero{background:#fff;color:#000;padding-top:1rem}
-  .hero h1,.hero p.lead{color:#000}
-}
+.site-card .sd-iconbox{margin-bottom:14px}
+.site-card p{margin-top:.45rem;flex:1}
+.site-card .links{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem}
 
+.dl{padding:1.35rem 1.4rem}
+.dl h3{font-size:15px;display:flex;align-items:center;gap:10px;margin-bottom:.7rem}
+.dl ul{list-style:none}
+.dl li{border-bottom:1px dashed var(--line);padding:.55rem 0;display:flex;align-items:flex-start;gap:10px}
+.dl li:last-child{border-bottom:none}
+.dl a{font-size:13.5px;font-weight:500;line-height:1.6}
+.ft{margin-top:4px;font-size:10px;font-weight:700;letter-spacing:.4px;border-radius:6px;padding:2px 0;display:inline-block;min-width:46px;text-align:center;flex:none;border:1px solid transparent;font-family:var(--font-en)}
+.ft.xlsx{background:var(--green-100);color:var(--green-600)}
+.ft.docx{background:var(--brand-soft);color:var(--brand)}
+.ft.pptx{background:var(--orange-100);color:var(--accent-ink)}
+.ft.pdf{background:var(--red-100);color:var(--red-600)}
+.ft.md{background:var(--gray-100);color:var(--gray-600)}
+.ft.html{background:var(--sky-100);color:#0F6A9E}
+.ft.dir{background:var(--purple-100);color:var(--purple-600)}
+html[data-theme="dark"] .ft.sky,html[data-theme="dark"] .ft.html{color:#8CCDF2}
+html[data-theme="dark"] .ft.xlsx{color:#6BD39A}html[data-theme="dark"] .ft.pdf{color:#F28B82}html[data-theme="dark"] .ft.dir{color:#B7A9E8}html[data-theme="dark"] .ft.md{color:#B5C3D3}
+
+.map{background:var(--navy-950);color:#DCE6F0;border-radius:var(--r-lg);padding:1.4rem 1.6rem;font-family:var(--font-mono);font-size:13px;line-height:1.85;
+  direction:ltr;text-align:left;overflow-x:auto;white-space:pre;box-shadow:var(--shadow-md);border:1px solid rgba(255,255,255,.06)}
+.map .d{color:var(--sky-300);font-weight:600}
+.map .f{color:#C3D3E4}
+.map .c{color:#7A91AB}
 </style>
 </head>
 <body id="top">
+<a class="sd-skip" href="#main" data-ar="تخطَّ إلى المحتوى" data-en="Skip to content"></a>
 
-<!-- ===== Icon sprite · Lucide 1.28.0 (ISC licence) — the single icon set for the whole site ===== -->
-<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs>
-<symbol id="i-users-round" viewBox="0 0 24 24"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></symbol>
-<symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
-<symbol id="i-building-2" viewBox="0 0 24 24"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></symbol>
-<symbol id="i-layout-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
-<symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
-<symbol id="i-calendar-days" viewBox="0 0 24 24"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></symbol>
-<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></symbol>
-<symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
-<symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
-<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
-<symbol id="i-chart-column" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
-<symbol id="i-landmark" viewBox="0 0 24 24"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></symbol>
-<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
-<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
-<symbol id="i-folder-tree" viewBox="0 0 24 24"><path d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M3 5a2 2 0 0 0 2 2h3"/><path d="M3 3v13a2 2 0 0 0 2 2h3"/></symbol>
-<symbol id="i-presentation" viewBox="0 0 24 24"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></symbol>
-<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/></symbol>
-<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
-<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
-<symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
-<symbol id="i-pencil-ruler" viewBox="0 0 24 24"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/><path d="m8 6 2-2"/><path d="m18 16 2-2"/><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></symbol>
-<symbol id="i-zap" viewBox="0 0 24 24"><path d="M15.914 4a1.5 1.5 0 0 0-2.474-1.561l-9 9A1.5 1.5 0 0 0 5.5 14h4.002a.5.5 0 0 1 .471.666L8.086 20a1.5 1.5 0 0 0 2.475 1.56l9-9A1.5 1.5 0 0 0 18.5 10h-3.997a.5.5 0 0 1-.472-.667z"/></symbol>
-<symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
-<symbol id="i-brain-circuit" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></symbol>
-<symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></symbol>
-<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></symbol>
-<symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
-<symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
-<symbol id="i-trending-up" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></symbol>
-<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
-<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
-<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
-</defs></svg>
+<header class="sd-header" data-active="portal" data-sub-ar="البوابة الموحّدة" data-sub-en="Unified portal"></header>
 
-<header>
-  <div class="container hd">
-    <img src="assets/academy-logo.png" alt="SDAIA Academy">
-    <div>
-      <div class="brand-name t" data-ar="بوابة أكاديمية سدايا" data-en="SDAIA Academy Portal"></div>
-      <div class="brand-sub t" data-ar="المصدر الموحّد لجميع أصول الأكاديمية" data-en="The unified home of all Academy assets"></div>
-    </div>
-    <nav class="top">
-      <a href="#about" class="t" data-ar="عن الأكاديمية" data-en="About"></a>
-      <a href="#sites" class="t" data-ar="المواقع" data-en="Sites"></a>
-      <a href="Catalog/index.html" class="t" data-ar="الكاتالوج" data-en="Catalog"></a>
-      <a href="#stats" class="t" data-ar="الإحصاءات" data-en="Statistics"></a>
-      <a href="#downloads" class="t" data-ar="الموارد" data-en="Resources"></a>
-      <a href="#structure" class="t" data-ar="البنية" data-en="Structure"></a>
-      <button id="langToggle" class="lang-btn" type="button">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-languages"/></svg>
-        <span id="langLabel">English</span>
-      </button>
-    </nav>
-  </div>
-</header>
-
-<div class="hero">
-  <div class="container">
-    <span class="kicker">
+<main id="main">
+<section class="sd-hero" aria-labelledby="heroTitle">
+  <div class="sd-container">
+    <span class="sd-hero__eyebrow">
       <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>
-      <span class="t" data-ar="منظومة الأكاديمية الموحّدة · 2021 – 2026" data-en="The unified Academy ecosystem · 2021 – 2026"></span>
+      <span data-ar="منظومة الأكاديمية الموحّدة · 2021 – 2026" data-en="The unified Academy ecosystem · 2021 – 2026"></span>
     </span>
-    <h1 class="t"
-    data-ar="أكاديمية سدايا — البوابة الموحدة للبرامج والموارد والمنصات الرقمية"
-    data-en="SDAIA Academy — Unified Portal for Programs, Resources, and Digital Platforms">
-</h1>
-
-<p class="lead t"
-   data-ar="توفر هذه البوابة وصولًا موحدًا إلى البرامج التدريبية، والمسارات التعليمية، والمنصات الرقمية، والموارد المعرفية، والتقارير والملفات، بما يضمن تجربة متكاملة وسهلة للوصول إلى جميع خدمات الأكاديمية."
-   data-en="This portal provides unified access to training programs, learning pathways, digital platforms, knowledge resources, reports, and downloadable materials, delivering a seamless and integrated experience across all Academy services.">
-</p>
-    <div class="cta">
-      <a class="btn primary" href="Catalog/index.html">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg>
-        <span class="t" data-ar="استكشف الكاتالوج التدريبي" data-en="Explore the Training Catalog"></span>
-      </a>
-      <a class="btn ghost" href="Graduates/index.html">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg>
-        <span class="t" data-ar="بوابة الخريجين" data-en="Graduates Portal"></span>
-      </a>
-      <a class="btn ghost" href="SuccessStories/website/index.html">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-award"/></svg>
-        <span class="t" data-ar="قصص النجاح" data-en="Success Stories"></span>
-      </a>
-      <a class="btn ghost" href="about.html">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg>
-        <span class="t" data-ar="عن الأكاديمية" data-en="About the Academy"></span>
-      </a>
+    <h1 id="heroTitle" data-ar="أكاديمية سدايا — البوابة الموحدة للبرامج والموارد والمنصات الرقمية" data-en="SDAIA Academy — Unified Portal for Programs, Resources, and Digital Platforms"></h1>
+    <p class="sd-hero__lead" data-ar="توفر هذه البوابة وصولًا موحدًا إلى البرامج التدريبية، والمسارات التعليمية، والمنصات الرقمية، والموارد المعرفية، والتقارير والملفات، بما يضمن تجربة متكاملة وسهلة للوصول إلى جميع خدمات الأكاديمية." data-en="This portal provides unified access to training programs, learning pathways, digital platforms, knowledge resources, reports, and downloadable materials, delivering a seamless and integrated experience across all Academy services."></p>
+    <div class="sd-hero__actions">
+      <a class="sd-btn sd-btn--light" href="Catalog/index.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg><span data-ar="استكشف الكاتالوج التدريبي" data-en="Explore the Training Catalog"></span></a>
+      <a class="sd-btn sd-btn--ghost" href="Graduates/index.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg><span data-ar="بوابة الخريجين" data-en="Graduates Portal"></span></a>
+      <a class="sd-btn sd-btn--ghost" href="SuccessStories/website/index.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-award"/></svg><span data-ar="قصص النجاح" data-en="Success Stories"></span></a>
+      <a class="sd-btn sd-btn--ghost" href="about.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg><span data-ar="عن الأكاديمية" data-en="About the Academy"></span></a>
     </div>
-  </div>
-  <div class="hero-wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,60 C360,110 1080,0 1440,50 L1440,90 L0,90 Z" fill="var(--bg)"></path></svg>
-  </div>
-</div>
-
-<!-- ===== KPI tiles ===== -->
-<div class="stats" id="stats">
-  <div class="container">
-    <div class="grid">
-      <div class="tile">
-        <span class="chip tint-teal"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-users-round"/></svg></span>
-        <div class="num">2,659</div>
-        <div class="lbl t" data-ar="خريجًا موثّقًا" data-en="Documented graduates"></div>
-        <div class="note t" data-ar="بعد إزالة التكرار · 2021 – 2026" data-en="De-duplicated individuals · 2021 – 2026"></div>
-      </div>
-      <div class="tile">
-        <span class="chip tint-blue"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-badge-check"/></svg></span>
-        <div class="num">111</div>
-        <div class="lbl t" data-ar="قصة نجاح موثّقة" data-en="Verified success stories"></div>
-        <div class="note t" data-ar="ست دفعات · مرتبة حسب سنة التخرج" data-en="Six cohorts · organized by graduation year"></div>
-      </div>
-      <div class="tile">
-        <span class="chip tint-cyan"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-building-2"/></svg></span>
-        <div class="num">74</div>
-        <div class="lbl t" data-ar="جهة عمل" data-en="Employers"></div>
-        <div class="note t" data-ar="حكومية وخاصة وعالمية" data-en="Government, private &amp; global"></div>
-      </div>
-      <div class="tile">
-        <span class="chip tint-orange"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-layout-grid"/></svg></span>
-        <div class="num">37</div>
-        <div class="lbl t" data-ar="برنامجًا مترابطًا" data-en="Interlocking programs"></div>
-        <div class="note t" data-ar="4 مستويات · تمهيدي + أساس مشترك + مساران مهنيان" data-en="4 levels · beginner tier + shared core + two role tracks"></div>
-      </div>
-      <div class="tile">
-        <span class="chip tint-green"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-package"/></svg></span>
-        <div class="num">27</div>
-        <div class="lbl t" data-ar="حقيبة مدرّب جاهزة" data-en="Instructor packages"></div>
-        <div class="note t" data-ar="عبر ثلاثة مسارات تدريبية" data-en="Across three training tracks"></div>
-      </div>
-      <div class="tile">
-        <span class="chip tint-navy"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-calendar-days"/></svg></span>
-        <div class="num">132<small class="t" data-ar=" يومًا" data-en=" days"></small></div>
-        <div class="lbl t" data-ar="أيام تدريبية في الكاتالوج" data-en="Training days in the catalog"></div>
-        <div class="note t" data-ar="660 ساعة تدريب عبر 37 برنامجًا" data-en="660 training hours across 37 programs"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Standardized graduate tracks ===== -->
-<section id="gtracks">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-route"/></svg>
-        <span class="t" data-ar="التصنيف المعياري للبرامج" data-en="Standardized program classification"></span>
-      </div>
-      <h2 class="t" data-ar="مسارات الخريجين الموحّدة" data-en="Standardized graduate tracks"></h2>
-      <p class="t" data-ar="كل سجل من سجلات قاعدة الخريجين الـ2,659 مصنّف على مسار معياري واحد، بعد توحيد 414 صيغة نصية مختلفة لأسماء البرامج. نص البرنامج الأصلي والدفعة وتاريخ التخرّج محفوظة كما هي دون تغيير." data-en="Each of the 2,659 graduate records is mapped to a single standardized track, consolidating 414 distinct raw program strings. The original program text, cohort and graduation date are preserved unchanged."></p>
-    </div>
-    <div class="gtracks">
-        <div class="gtrack" style="--tc:#1459A8">
-          <div class="v">1,306</div>
-          <div class="l t" data-ar="مهندس ذكاء اصطناعي" data-en="AI Engineer"></div>
-          <div class="e">AI Engineer</div>
-          <div class="bar"><i style="width:49.2%"></i></div>
-          <div class="p t" data-ar="49.2% من السجل" data-en="49.2% of the registry"></div>
-        </div>
-        <div class="gtrack" style="--tc:#0E7C86">
-          <div class="v">668</div>
-          <div class="l t" data-ar="عالم بيانات" data-en="Data Scientist"></div>
-          <div class="e">Data Scientist</div>
-          <div class="bar"><i style="width:25.0%"></i></div>
-          <div class="p t" data-ar="25.0% من السجل" data-en="25.0% of the registry"></div>
-        </div>
-        <div class="gtrack" style="--tc:#F07D3D">
-          <div class="v">245</div>
-          <div class="l t" data-ar="أكاديمية الذكاء الاصطناعي التوليدي" data-en="Gen AI Academy"></div>
-          <div class="e">Gen AI Academy</div>
-          <div class="bar"><i style="width:9.1%"></i></div>
-          <div class="p t" data-ar="9.1% من السجل" data-en="9.1% of the registry"></div>
-        </div>
-        <div class="gtrack" style="--tc:#104281">
-          <div class="v">322</div>
-          <div class="l t" data-ar="إدارة وحوكمة البيانات" data-en="Data Management &amp; Governance"></div>
-          <div class="e">Data Management & Governance</div>
-          <div class="bar"><i style="width:12.1%"></i></div>
-          <div class="p t" data-ar="12.1% من السجل" data-en="12.1% of the registry"></div>
-        </div>
-        <div class="gtrack" style="--tc:#7A8CA0">
-          <div class="v">118</div>
-          <div class="l t" data-ar="برامج متخصصة أخرى" data-en="Other / Specialized"></div>
-          <div class="e">Other / Specialized</div>
-          <div class="bar"><i style="width:4.5%"></i></div>
-          <div class="p t" data-ar="4.5% من السجل" data-en="4.5% of the registry"></div>
-        </div>
-    </div>
-    <p class="gnote t" data-ar="تُحسب «أكاديمية الذكاء الاصطناعي التوليدي» عبر كل الطبقات لا داخل طبقة واحدة: 240 سجلًا يذكر NVIDIA صراحةً في حقل البرنامج، اتحادًا مع 215 سجلًا في طبقة «برامج NVIDIA» الرسمية — والمجموع غير المكرَّر 245. الرقم الرسمي 232 هو حدّ أدنى وليس سقفًا." data-en="&#171;Gen AI Academy&#187; is counted across all tiers rather than inside one: 240 records name NVIDIA explicitly in the program field, unioned with the 215 records in the official NVIDIA tier — 245 distinct in total. The official figure of 232 is a floor, not a ceiling."></p>
   </div>
 </section>
 
-<!-- ===== About the Academy ===== -->
-<section id="about">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg>
-        <span class="t" data-ar="عن الأكاديمية" data-en="About the Academy"></span>
+<!-- ===== KPI tiles ===== -->
+<div class="sd-kpis" id="stats">
+  <div class="sd-container">
+    <div class="sd-kpis__grid">
+      <div class="sd-kpi">
+        <span class="sd-iconbox tint-blue"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-users-round"/></svg></span>
+        <div class="sd-kpi__num" data-count="2659">0</div>
+        <div class="sd-kpi__label" data-ar="خريجًا موثّقًا" data-en="Documented graduates"></div>
+        <div class="sd-kpi__note" data-ar="بعد إزالة التكرار · 2021 – 2026" data-en="De-duplicated individuals · 2021 – 2026"></div>
       </div>
-      <h2 class="t" data-ar="الأكاديمية الوطنية لبناء القدرات في البيانات والذكاء الاصطناعي" data-en="The national academy for data &amp; AI capability building"></h2>
+      <div class="sd-kpi">
+        <span class="sd-iconbox tint-green"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-badge-check"/></svg></span>
+        <div class="sd-kpi__num" data-count="111">0</div>
+        <div class="sd-kpi__label" data-ar="قصة نجاح موثّقة" data-en="Verified success stories"></div>
+        <div class="sd-kpi__note" data-ar="ست دفعات · مرتبة حسب سنة التخرج" data-en="Six cohorts · organized by graduation year"></div>
+      </div>
+      <div class="sd-kpi">
+        <span class="sd-iconbox tint-sky"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-building-2"/></svg></span>
+        <div class="sd-kpi__num" data-count="74">0</div>
+        <div class="sd-kpi__label" data-ar="جهة عمل" data-en="Employers"></div>
+        <div class="sd-kpi__note" data-ar="حكومية وخاصة وعالمية" data-en="Government, private &amp; global"></div>
+      </div>
+      <div class="sd-kpi">
+        <span class="sd-iconbox tint-orange"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layout-grid"/></svg></span>
+        <div class="sd-kpi__num" data-count="37">0</div>
+        <div class="sd-kpi__label" data-ar="برنامجًا مترابطًا" data-en="Interlocking programs"></div>
+        <div class="sd-kpi__note" data-ar="4 مستويات · تمهيدي + أساس مشترك + مساران مهنيان" data-en="4 levels · beginner tier + shared core + two role tracks"></div>
+      </div>
+      <div class="sd-kpi">
+        <span class="sd-iconbox tint-teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-package"/></svg></span>
+        <div class="sd-kpi__num" data-count="27">0</div>
+        <div class="sd-kpi__label" data-ar="حقيبة مدرّب جاهزة" data-en="Instructor packages"></div>
+        <div class="sd-kpi__note" data-ar="عبر ثلاثة مسارات تدريبية" data-en="Across three training tracks"></div>
+      </div>
+      <div class="sd-kpi">
+        <span class="sd-iconbox tint-navy"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-calendar-days"/></svg></span>
+        <div class="sd-kpi__num"><span data-count="132">0</span><small data-ar=" يومًا" data-en=" days"></small></div>
+        <div class="sd-kpi__label" data-ar="أيام تدريبية في الكاتالوج" data-en="Training days in the catalog"></div>
+        <div class="sd-kpi__note" data-ar="660 ساعة تدريب عبر 37 برنامجًا" data-en="660 training hours across 37 programs"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="sd-subnav" data-spy data-ar-label="أقسام الصفحة" data-en-label="Page sections" style="margin-top:2rem">
+  <div class="sd-container sd-subnav__inner">
+    <a href="#about"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg><span data-ar="عن الأكاديمية" data-en="About"></span></a>
+    <a href="#overview"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg><span data-ar="نبذة عن الكاتالوج" data-en="Catalog overview"></span></a>
+    <a href="#gtracks"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-route"/></svg><span data-ar="مسارات الخريجين" data-en="Graduate tracks"></span></a>
+    <a href="#sites"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layout-grid"/></svg><span data-ar="المواقع والأقسام" data-en="Sites &amp; sections"></span></a>
+    <a href="#downloads"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span data-ar="الموارد" data-en="Resources"></span></a>
+    <a href="#structure"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-folder-tree"/></svg><span data-ar="البنية" data-en="Structure"></span></a>
+  </div>
+</nav>
+
+<!-- ===== About the Academy ===== -->
+<section class="sd-section" id="about">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg><span data-ar="عن الأكاديمية" data-en="About the Academy"></span></div>
+      <h2 data-ar="الأكاديمية الوطنية لبناء القدرات في البيانات والذكاء الاصطناعي" data-en="The national academy for data &amp; AI capability building"></h2>
     </div>
     <div class="about">
-      <div class="txt">
-        <p class="t"
-           data-ar="<strong>أكاديمية سدايا</strong> هي الأكاديمية الوطنية لبناء القدرات في مجالي البيانات والذكاء الاصطناعي، وإحدى مبادرات الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا). تُعنى الأكاديمية بتصميم وتنفيذ المبادرات والبرامج التدريبية من خلال منظومة متكاملة من الشراكات المحلية والإقليمية والعالمية، بما يسهم في إعداد كفاءات وطنية مؤهلة لقيادة سوق العمل ومواكبة متطلبات مهن المستقبل."
-           data-en="<strong>SDAIA Academy</strong> is the national academy for building capability in data and artificial intelligence, and one of the initiatives of the Saudi Data &amp; AI Authority (SDAIA). It designs and delivers training initiatives and programs through an integrated ecosystem of local, regional and global partnerships, preparing qualified national talent to lead the labour market and meet the demands of the professions of the future."></p>
-        <p class="t"
-           data-ar="وتهدف الأكاديمية إلى تمكين الكفاءات الوطنية بالمهارات المهنية والتقنية في مجالي البيانات والذكاء الاصطناعي، بما ينسجم مع مستهدفات <strong>برنامج تنمية القدرات البشرية</strong>، أحد برامج <strong>رؤية المملكة العربية السعودية 2030</strong>."
-           data-en="The Academy empowers national talent with the professional and technical skills of data and AI, in alignment with the targets of the <strong>Human Capability Development Program</strong>, one of the programs of <strong>Saudi Vision 2030</strong>."></p>
-        <p class="t"
-           data-ar="وتقدم الأكاديمية برامج تدريبية، ومعسكرات مكثفة، وشهادات مهنية متخصصة بالتعاون مع نخبة من الجامعات والمؤسسات الأكاديمية والشركات العالمية، بما يعزز جودة مخرجات التدريب، ويسهم في بناء مجتمع رقمي واعٍ ومُمكَّن يدعم التحول نحو اقتصاد معرفي مستدام."
-           data-en="It delivers training programs, intensive bootcamps and specialised professional certificates with a select group of universities, academic institutions and global companies — raising the quality of training outcomes and helping build an aware, empowered digital society."></p>
+      <div class="prose">
+        <p data-ar="<strong>أكاديمية سدايا</strong> هي الأكاديمية الوطنية لبناء القدرات في مجالي البيانات والذكاء الاصطناعي، وإحدى مبادرات الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا). تُعنى الأكاديمية بتصميم وتنفيذ المبادرات والبرامج التدريبية من خلال منظومة متكاملة من الشراكات المحلية والإقليمية والعالمية، بما يسهم في إعداد كفاءات وطنية مؤهلة لقيادة سوق العمل ومواكبة متطلبات مهن المستقبل." data-en="<strong>SDAIA Academy</strong> is the national academy for building capability in data and artificial intelligence, and one of the initiatives of the Saudi Data &amp; AI Authority (SDAIA). It designs and delivers training initiatives and programs through an integrated ecosystem of local, regional and global partnerships, preparing qualified national talent to lead the labour market and meet the demands of the professions of the future."></p>
+        <p data-ar="وتهدف الأكاديمية إلى تمكين الكفاءات الوطنية بالمهارات المهنية والتقنية في مجالي البيانات والذكاء الاصطناعي، بما ينسجم مع مستهدفات <strong>برنامج تنمية القدرات البشرية</strong>، أحد برامج <strong>رؤية المملكة العربية السعودية 2030</strong>." data-en="The Academy empowers national talent with the professional and technical skills of data and AI, in alignment with the targets of the <strong>Human Capability Development Program</strong>, one of the programs of <strong>Saudi Vision 2030</strong>."></p>
+        <p data-ar="وتقدم الأكاديمية برامج تدريبية، ومعسكرات مكثفة، وشهادات مهنية متخصصة بالتعاون مع نخبة من الجامعات والمؤسسات الأكاديمية والشركات العالمية، بما يعزز جودة مخرجات التدريب، ويسهم في بناء مجتمع رقمي واعٍ ومُمكَّن يدعم التحول نحو اقتصاد معرفي مستدام." data-en="It delivers training programs, intensive bootcamps and specialised professional certificates with a select group of universities, academic institutions and global companies — raising the quality of training outcomes and helping build an aware, empowered digital society."></p>
         <div class="more">
-          <a href="about.html">
-            <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg>
-            <span class="t" data-ar="الصفحة الكاملة: الرؤية والرسالة والأهداف" data-en="Full page: vision, mission &amp; objectives"></span>
-          </a>
-          <a href="Catalog/index.html">
-            <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg>
-            <span class="t" data-ar="الكاتالوج التدريبي" data-en="Training catalog"></span>
-          </a>
+          <a class="sd-link-pill" href="about.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg><span data-ar="الصفحة الكاملة: الرؤية والرسالة والأهداف" data-en="Full page: vision, mission &amp; objectives"></span></a>
+          <a class="sd-link-pill" href="Catalog/index.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg><span data-ar="الكاتالوج التدريبي" data-en="Training catalog"></span></a>
         </div>
       </div>
       <div class="vm">
-        <div class="box">
-          <h3>
-            <span class="chip tint-teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-target"/></svg></span>
-            <span class="t" data-ar="الرؤية" data-en="Vision"></span>
-          </h3>
-          <p class="t" data-ar="أن تكون أكاديمية وطنية بمعايير عالمية لبناء وتطوير القدرات في مجالي البيانات والذكاء الاصطناعي." data-en="To be a national academy of global standard for building and developing capability in data and artificial intelligence."></p>
+        <div class="sd-card sd-card--flat">
+          <h3><span class="sd-iconbox sd-iconbox--sm tint-orange"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-target"/></svg></span><span data-ar="الرؤية" data-en="Vision"></span></h3>
+          <p data-ar="أن تكون أكاديمية وطنية بمعايير عالمية لبناء وتطوير القدرات في مجالي البيانات والذكاء الاصطناعي." data-en="To be a national academy of global standard for building and developing capability in data and artificial intelligence."></p>
         </div>
-        <div class="box b2">
-          <h3>
-            <span class="chip tint-blue"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-compass"/></svg></span>
-            <span class="t" data-ar="الرسالة" data-en="Mission"></span>
-          </h3>
-          <p class="t" data-ar="تنمية رأس المال البشري وبناء القدرات الوطنية في مجالي البيانات والذكاء الاصطناعي، وربطها بمهن المستقبل، من خلال برامج ومعسكرات تدريبية متخصصة وفق أحدث الممارسات العالمية، لإعداد كفاءات وطنية قادرة على قيادة التحول الرقمي والابتكار." data-en="To develop human capital and build national capability in data and AI, connected to the professions of the future, through specialised programs and bootcamps built on the latest global practice — preparing national talent able to lead digital transformation and innovation."></p>
+        <div class="sd-card sd-card--flat b2">
+          <h3><span class="sd-iconbox sd-iconbox--sm tint-blue"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-compass"/></svg></span><span data-ar="الرسالة" data-en="Mission"></span></h3>
+          <p data-ar="تنمية رأس المال البشري وبناء القدرات الوطنية في مجالي البيانات والذكاء الاصطناعي، وربطها بمهن المستقبل، من خلال برامج ومعسكرات تدريبية متخصصة وفق أحدث الممارسات العالمية، لإعداد كفاءات وطنية قادرة على قيادة التحول الرقمي والابتكار." data-en="To develop human capital and build national capability in data and AI, connected to the professions of the future, through specialised programs and bootcamps built on the latest global practice — preparing national talent able to lead digital transformation and innovation."></p>
         </div>
       </div>
     </div>
-
     <div class="objs">
-      <div class="obj"><div class="n">1</div><p class="t" data-ar="تطوير البرامج التدريبية التي تسهم في رفع القدرات الوطنية في مجالي البيانات والذكاء الاصطناعي." data-en="Develop training programs that raise national capability in data and AI."></p></div>
-      <div class="obj"><div class="n">2</div><p class="t" data-ar="إعداد وتنفيذ مبادرات تطوير المهارات بما يتوافق مع الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي." data-en="Design and deliver skills initiatives aligned with the National Strategy for Data &amp; AI."></p></div>
-      <div class="obj"><div class="n">3</div><p class="t" data-ar="تعزيز الشراكات مع الجامعات والمؤسسات الأكاديمية والجهات المحلية والعالمية لبناء الكفاءات الوطنية." data-en="Strengthen partnerships with universities, academic institutions and local and global entities."></p></div>
-      <div class="obj"><div class="n">4</div><p class="t" data-ar="دراسة وتحليل احتياجات سوق العمل بصورة مستمرة لاستباق الطلب على المهارات المستقبلية وتلبيته." data-en="Continuously analyse labour-market needs to anticipate and meet demand for future skills."></p></div>
-      <div class="obj"><div class="n">5</div><p class="t" data-ar="إعداد كوادر وطنية مؤهلة للمنافسة في الاقتصاد الرقمي وتعزيز جاهزيتها لمهن المستقبل." data-en="Prepare national cadres to compete in the digital economy and be ready for future professions."></p></div>
-      <div class="obj"><div class="n">6</div><p class="t" data-ar="الإسهام في بناء منظومة وطنية مستدامة لتطوير القدرات في البيانات والذكاء الاصطناعي." data-en="Contribute to a sustainable national ecosystem for data and AI capability development."></p></div>
+      <div class="obj"><span class="sd-badge-num">1</span><p data-ar="تطوير البرامج التدريبية التي تسهم في رفع القدرات الوطنية في مجالي البيانات والذكاء الاصطناعي." data-en="Develop training programs that raise national capability in data and AI."></p></div>
+      <div class="obj"><span class="sd-badge-num">2</span><p data-ar="إعداد وتنفيذ مبادرات تطوير المهارات بما يتوافق مع الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي." data-en="Design and deliver skills initiatives aligned with the National Strategy for Data &amp; AI."></p></div>
+      <div class="obj"><span class="sd-badge-num">3</span><p data-ar="تعزيز الشراكات مع الجامعات والمؤسسات الأكاديمية والجهات المحلية والعالمية لبناء الكفاءات الوطنية." data-en="Strengthen partnerships with universities, academic institutions and local and global entities."></p></div>
+      <div class="obj"><span class="sd-badge-num">4</span><p data-ar="دراسة وتحليل احتياجات سوق العمل بصورة مستمرة لاستباق الطلب على المهارات المستقبلية وتلبيته." data-en="Continuously analyse labour-market needs to anticipate and meet demand for future skills."></p></div>
+      <div class="obj"><span class="sd-badge-num">5</span><p data-ar="إعداد كوادر وطنية مؤهلة للمنافسة في الاقتصاد الرقمي وتعزيز جاهزيتها لمهن المستقبل." data-en="Prepare national cadres to compete in the digital economy and be ready for future professions."></p></div>
+      <div class="obj"><span class="sd-badge-num">6</span><p data-ar="الإسهام في بناء منظومة وطنية مستدامة لتطوير القدرات في البيانات والذكاء الاصطناعي." data-en="Contribute to a sustainable national ecosystem for data and AI capability development."></p></div>
     </div>
   </div>
 </section>
 
 <!-- ===== Overview ===== -->
-<section id="overview">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>
-        <span class="t" data-ar="نبذة عن الأكاديمية" data-en="Academy overview"></span>
-      </div>
-      <h2 class="t" data-ar="منظومة واحدة متكاملة بدل مشاريع متفرقة" data-en="One integrated ecosystem instead of scattered projects"></h2>
+<section class="sd-section sd-section--alt" id="overview">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg><span data-ar="نبذة عن الأكاديمية" data-en="Academy overview"></span></div>
+      <h2 data-ar="منظومة واحدة متكاملة بدل مشاريع متفرقة" data-en="One integrated ecosystem instead of scattered projects"></h2>
     </div>
     <div class="overview">
-      <div class="txt">
-        <p class="t"
-           data-ar="يقوم الكاتالوج التدريبي على أربعة مسارات: مستوى تمهيدي مفتوح (6 برامج توعوية غير تقنية)، وأساس مشترك من 5 برامج تأسيسية، ومساران مهنيان قائمان على الأدوار — مهندس الذكاء الاصطناعي (15 برنامجًا) وعالِم البيانات (11 برنامجًا) — موزّعة على أربعة مستويات: تمهيدي، وممارس، ومتخصص، وخبير. المجموع 37 برنامجًا مترابطًا و132 يومًا تدريبيًا."
-           data-en="The training catalog is built on four pathways: an open beginner level (6 non-technical awareness programs), a shared foundation core of 5 programs, and two role-based professional tracks — AI Engineer (15 programs) and Data Scientist (11 programs) — spread across four levels: Beginner, Practitioner, Specialist and Expert. That is 37 interlocking programs and 132 training days in total."></p>
-        <p class="t"
-           data-ar="تجمع هذه البوابة كل أصول الأكاديمية في مساحة عمل واحدة: قاعدة بيانات الخريجين الموثّقة (2,659 أفراد منذ 2021)، وتقرير التوظيف المبكر، وموقع قصص النجاح (111 قصة عبر 74 جهة عمل)، والحقائب التدريبية الكاملة للمدرّبين، وملفات البرامج التفصيلية."
-           data-en="This portal gathers every Academy asset into a single workspace: the verified graduates database (2,659 individuals since 2021), the first-employment report, the success-stories website (111 stories across 74 employers), full instructor training packages, and detailed program files."></p>
-        <p class="t"
-           data-ar="جميع الروابط في هذه الصفحة نسبية داخل مجلد Academy — يمكن نقل المجلد كاملًا أو مشاركته أو رفعه على أي خادم دون أن ينكسر أي رابط."
-           data-en="Every link on this page is relative within the Academy folder — the whole folder can be moved, shared or hosted anywhere without breaking a single link."></p>
+      <div class="prose">
+        <p data-ar="يقوم الكاتالوج التدريبي على أربعة مسارات: مستوى تمهيدي مفتوح (6 برامج توعوية غير تقنية)، وأساس مشترك من 5 برامج تأسيسية، ومساران مهنيان قائمان على الأدوار — مهندس الذكاء الاصطناعي (15 برنامجًا) وعالِم البيانات (11 برنامجًا) — موزّعة على أربعة مستويات: تمهيدي، وممارس، ومتخصص، وخبير. المجموع 37 برنامجًا مترابطًا و132 يومًا تدريبيًا." data-en="The training catalog is built on four pathways: an open beginner level (6 non-technical awareness programs), a shared foundation core of 5 programs, and two role-based professional tracks — AI Engineer (15 programs) and Data Scientist (11 programs) — spread across four levels: Beginner, Practitioner, Specialist and Expert. That is 37 interlocking programs and 132 training days in total."></p>
+        <p data-ar="تجمع هذه البوابة كل أصول الأكاديمية في مساحة عمل واحدة: قاعدة بيانات الخريجين الموثّقة (2,659 أفراد منذ 2021)، وتقرير التوظيف المبكر، وموقع قصص النجاح (111 قصة عبر 74 جهة عمل)، والحقائب التدريبية الكاملة للمدرّبين، وملفات البرامج التفصيلية." data-en="This portal gathers every Academy asset into a single workspace: the verified graduates database (2,659 individuals since 2021), the first-employment report, the success-stories website (111 stories across 74 employers), full instructor training packages, and detailed program files."></p>
+        <p data-ar="جميع الروابط في هذه الصفحة نسبية داخل مجلد Academy — يمكن نقل المجلد كاملًا أو مشاركته أو رفعه على أي خادم دون أن ينكسر أي رابط." data-en="Every link on this page is relative within the Academy folder — the whole folder can be moved, shared or hosted anywhere without breaking a single link."></p>
+        <div class="more">
+          <a class="sd-btn sd-btn--primary sd-btn--sm" href="Catalog/index.html"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg><span data-ar="فتح الكاتالوج التفاعلي" data-en="Open the interactive catalog"></span></a>
+          <a class="sd-link-pill" href="Catalog/Levels.pdf"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-file-text"/></svg><span data-ar="المستويات الوطنية (PDF)" data-en="National levels (PDF)"></span></a>
+        </div>
       </div>
-      <div class="tracks">
-        <div class="row">
-          <svg class="i i-sm" style="color:var(--green)" aria-hidden="true" focusable="false"><use href="#i-zap"/></svg>
-          <b class="t" data-ar="المستوى التمهيدي (المبتدئون)" data-en="Beginner Level"></b>
-          <span class="n t" data-ar="6 برامج · 16 يومًا" data-en="6 programs · 16 days"></span>
-        </div>
-        <div class="row">
-          <svg class="i i-sm" style="color:var(--teal)" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>
-          <b class="t" data-ar="الأساس المشترك (Foundation Core)" data-en="Foundation Core"></b>
-          <span class="n t" data-ar="5 برامج · 17 يومًا" data-en="5 programs · 17 days"></span>
-        </div>
-        <div class="row">
-          <svg class="i i-sm" style="color:var(--brand)" aria-hidden="true" focusable="false"><use href="#i-brain-circuit"/></svg>
-          <b class="t" data-ar="مسار مهندس الذكاء الاصطناعي" data-en="AI Engineer Track"></b>
-          <span class="n t" data-ar="15 برنامجًا · 59 يومًا" data-en="15 programs · 59 days"></span>
-        </div>
-        <div class="row">
-          <svg class="i i-sm" style="color:var(--accent)" aria-hidden="true" focusable="false"><use href="#i-chart-column"/></svg>
-          <b class="t" data-ar="مسار عالِم البيانات" data-en="Data Scientist Track"></b>
-          <span class="n t" data-ar="11 برنامجًا · 40 يومًا" data-en="11 programs · 40 days"></span>
-        </div>
-        <div class="row">
-          <svg class="i i-sm" style="color:var(--ink-2)" aria-hidden="true" focusable="false"><use href="#i-circle-check"/></svg>
-          <b class="t" data-ar="الإجمالي" data-en="Total"></b>
-          <span class="n t" data-ar="37 برنامجًا · 132 يومًا · 660 ساعة" data-en="37 programs · 132 days · 660 hours"></span>
-        </div>
+      <div class="tracks" role="list">
+        <div class="row" role="listitem" style="--tc:var(--green-600)"><span class="dot"></span><b data-ar="المستوى التمهيدي (المبتدئون)" data-en="Beginner Level"></b><span class="n" data-ar="6 برامج · 16 يومًا" data-en="6 programs · 16 days"></span></div>
+        <div class="row" role="listitem" style="--tc:var(--accent)"><span class="dot"></span><b data-ar="الأساس المشترك (Foundation Core)" data-en="Foundation Core"></b><span class="n" data-ar="5 برامج · 17 يومًا" data-en="5 programs · 17 days"></span></div>
+        <div class="row" role="listitem" style="--tc:var(--navy-600)"><span class="dot"></span><b data-ar="مسار مهندس الذكاء الاصطناعي" data-en="AI Engineer Track"></b><span class="n" data-ar="15 برنامجًا · 59 يومًا" data-en="15 programs · 59 days"></span></div>
+        <div class="row" role="listitem" style="--tc:var(--teal-600)"><span class="dot"></span><b data-ar="مسار عالِم البيانات" data-en="Data Scientist Track"></b><span class="n" data-ar="11 برنامجًا · 40 يومًا" data-en="11 programs · 40 days"></span></div>
+        <div class="row" role="listitem" style="--tc:var(--ink-3)"><svg class="i i-sm" style="color:var(--ok)" aria-hidden="true" focusable="false"><use href="#i-circle-check"/></svg><b data-ar="الإجمالي" data-en="Total"></b><span class="n" data-ar="37 برنامجًا · 132 يومًا · 660 ساعة" data-en="37 programs · 132 days · 660 hours"></span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Sites & sections ===== -->
-<section id="sites">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-layout-grid"/></svg>
-        <span class="t" data-ar="مكوّنات البوابة" data-en="Portal components"></span>
-      </div>
-      <h2 class="t" data-ar="المواقع والأقسام الرئيسية" data-en="Main sites &amp; sections"></h2>
-      <p class="t" data-ar="كل بطاقة تفتح موقعًا أو قسمًا قائمًا بذاته داخل مساحة عمل الأكاديمية." data-en="Each card opens a self-contained site or section inside the Academy workspace."></p>
+<!-- ===== Standardized graduate tracks ===== -->
+<section class="sd-section" id="gtracks">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-route"/></svg><span data-ar="التصنيف المعياري للبرامج" data-en="Standardized program classification"></span></div>
+      <h2 data-ar="مسارات الخريجين الموحّدة" data-en="Standardized graduate tracks"></h2>
+      <p data-ar="كل سجل من سجلات قاعدة الخريجين الـ2,659 مصنّف على مسار معياري واحد، بعد توحيد 414 صيغة نصية مختلفة لأسماء البرامج. نص البرنامج الأصلي والدفعة وتاريخ التخرّج محفوظة كما هي دون تغيير." data-en="Each of the 2,659 graduate records is mapped to a single standardized track, consolidating 414 distinct raw program strings. The original program text, cohort and graduation date are preserved unchanged."></p>
     </div>
-    <div class="cards">
-
-      <div class="card">
-        <span class="chip tint-blue"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span>
-        <h3 class="t" data-ar="الكاتالوج التدريبي والمسارات التعليمية" data-en="Training Catalog &amp; Learning Paths"></h3>
-        <p class="t" data-ar="الكاتالوج التفاعلي الكامل: 37 برنامجًا مترابطًا عبر أربعة مستويات، ومصفوفة المهارات، والرحلة التعليمية الموجّهة، ومسارا مهندس الذكاء الاصطناعي وعالِم البيانات مع المستوى التمهيدي والأساس المشترك." data-en="The full interactive catalog: 37 interlocking programs across four levels, the skills matrix, the guided learning journey, and the AI Engineer &amp; Data Scientist tracks alongside the beginner level and foundation core."></p>
-        <div class="links">
-          <a href="Catalog/index.html">
-            <span class="t" data-ar="فتح الكاتالوج التفاعلي" data-en="Open interactive catalog"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="Catalog/Levels.pdf">
-            <span class="t" data-ar="المستويات (PDF)" data-en="Levels (PDF)"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-        </div>
+    <div class="gtracks">
+      <div class="sd-card sd-card--accent gtrack" style="--tc:#1459A8">
+        <div class="v" data-count="1306">0</div>
+        <div class="l" data-ar="مهندس ذكاء اصطناعي" data-en="AI Engineer"></div>
+        <div class="e ltr">AI Engineer</div>
+        <div class="sd-bar"><i style="--w:49.2%"></i></div>
+        <div class="p" data-ar="49.2% من السجل" data-en="49.2% of the registry"></div>
       </div>
-
-      <div class="card">
-        <span class="chip tint-teal"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg></span>
-        <h3 class="t" data-ar="بوابة الخريجين" data-en="Graduates Portal"></h3>
-        <p class="t" data-ar="قاعدة بيانات تفاعلية موثّقة لـ 2,659 خريجين منذ 2021، بدرجات ثقة ومصادر علنية، مع لوحات إحصائية وتقرير التوظيف المبكر 2021–2026." data-en="A verified interactive database of 2,659 graduates since 2021, with confidence grades and public sources, plus statistical dashboards and the 2021–2026 first-employment report."></p>
-        <div class="links">
-          <a href="Graduates/index.html">
-            <span class="t" data-ar="فتح بوابة الخريجين" data-en="Open graduates portal"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="Graduates/Graduates_Database.xlsx">
-            <span class="t" data-ar="قاعدة البيانات (Excel)" data-en="Database (Excel)"></span>
-            <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>
-          </a>
-        </div>
+      <div class="sd-card sd-card--accent gtrack" style="--tc:#0E7C86">
+        <div class="v" data-count="668">0</div>
+        <div class="l" data-ar="عالم بيانات" data-en="Data Scientist"></div>
+        <div class="e ltr">Data Scientist</div>
+        <div class="sd-bar"><i style="--w:25.0%"></i></div>
+        <div class="p" data-ar="25.0% من السجل" data-en="25.0% of the registry"></div>
       </div>
-
-      <div class="card">
-        <span class="chip tint-green"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-award"/></svg></span>
-        <h3 class="t" data-ar="قصص النجاح" data-en="Success Stories"></h3>
-        <p class="t" data-ar="111 قصة نجاح موثّقة لخريجي الأكاديمية في 74 جهة عمل حكومية وخاصة وعالمية، مرتبة حسب سنة التخرج 2021 – 2026." data-en="111 verified graduate success stories across 74 government, private and global employers, organized by graduation year 2021 – 2026."></p>
-        <div class="links">
-          <a href="SuccessStories/website/index.html">
-            <span class="t" data-ar="فتح موقع قصص النجاح" data-en="Open success stories site"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="SuccessStories/website/sdaia-success-stories-standalone.html">
-            <span class="t" data-ar="نسخة ملف واحد" data-en="Single-file version"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-        </div>
+      <div class="sd-card sd-card--accent gtrack" style="--tc:#F07D3D">
+        <div class="v" data-count="245">0</div>
+        <div class="l" data-ar="أكاديمية الذكاء الاصطناعي التوليدي" data-en="Gen AI Academy"></div>
+        <div class="e ltr">Gen AI Academy</div>
+        <div class="sd-bar"><i style="--w:9.1%"></i></div>
+        <div class="p" data-ar="9.1% من السجل" data-en="9.1% of the registry"></div>
       </div>
-
-      <div class="card">
-        <span class="chip tint-orange"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span>
-        <h3 class="t" data-ar="الحقائب التدريبية للمدرّبين" data-en="Instructor Training Materials"></h3>
-        <p class="t" data-ar="27 حقيبة مدرّب كاملة (INSTRUCTOR_PACKAGE) عبر مسارات مهندس الذكاء الاصطناعي وعالِم البيانات والأساس المشترك، مع عروض تدريبية وملفات برامج AthkaX التفصيلية." data-en="27 complete instructor packages across the AI Engineer, Data Scientist and Foundation Core tracks, with training decks and detailed AthkaX program files."></p>
-        <div class="links">
-          <a href="Catalog/TrainingMaterials/">
-            <span class="t" data-ar="تصفح مجلد الحقائب" data-en="Browse materials folder"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pdf">
-            <span class="t" data-ar="عرض المسارات v4 (PDF)" data-en="Paths deck v4 (PDF)"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-        </div>
+      <div class="sd-card sd-card--accent gtrack" style="--tc:#104281">
+        <div class="v" data-count="322">0</div>
+        <div class="l" data-ar="إدارة وحوكمة البيانات" data-en="Data Management &amp; Governance"></div>
+        <div class="e ltr">Data Management &amp; Governance</div>
+        <div class="sd-bar"><i style="--w:12.1%"></i></div>
+        <div class="p" data-ar="12.1% من السجل" data-en="12.1% of the registry"></div>
       </div>
-
-      <div class="card">
-        <span class="chip tint-blue"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-chart-column"/></svg></span>
-        <h3 class="t" data-ar="الإحصاءات ولوحات المعلومات" data-en="Statistics &amp; Dashboards"></h3>
-        <p class="t" data-ar="المؤشرات الرئيسية أعلى هذه الصفحة، ولوحات تفصيلية تفاعلية (التوظيف، الدفعات، الجهات) داخل بوابة الخريجين وموقع قصص النجاح." data-en="Headline KPIs at the top of this page, with detailed interactive dashboards (employment, cohorts, employers) inside the Graduates Portal and Success Stories site."></p>
-        <div class="links">
-          <a href="#stats">
-            <span class="t" data-ar="المؤشرات الرئيسية" data-en="Headline KPIs"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="Graduates/index.html">
-            <span class="t" data-ar="لوحات الخريجين" data-en="Graduates dashboards"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-        </div>
+      <div class="sd-card sd-card--accent gtrack" style="--tc:#7A8CA0">
+        <div class="v" data-count="118">0</div>
+        <div class="l" data-ar="برامج متخصصة أخرى" data-en="Other / Specialized"></div>
+        <div class="e ltr">Other / Specialized</div>
+        <div class="sd-bar"><i style="--w:4.5%"></i></div>
+        <div class="p" data-ar="4.5% من السجل" data-en="4.5% of the registry"></div>
       </div>
+    </div>
+    <p class="sd-note" style="margin-top:1.2rem" data-ar="تُحسب «أكاديمية الذكاء الاصطناعي التوليدي» عبر كل الطبقات لا داخل طبقة واحدة: 240 سجلًا يذكر NVIDIA صراحةً في حقل البرنامج، اتحادًا مع 215 سجلًا في طبقة «برامج NVIDIA» الرسمية — والمجموع غير المكرَّر 245. الرقم الرسمي 232 هو حدّ أدنى وليس سقفًا." data-en="&#171;Gen AI Academy&#187; is counted across all tiers rather than inside one: 240 records name NVIDIA explicitly in the program field, unioned with the 215 records in the official NVIDIA tier — 245 distinct in total. The official figure of 232 is a floor, not a ceiling."></p>
+  </div>
+</section>
 
-      <div class="card">
-        <span class="chip tint-teal"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg></span>
-        <h3 class="t" data-ar="البرامج والمبادرات" data-en="Programs &amp; Initiatives"></h3>
-        <p class="t" data-ar="تفاصيل البرامج والمعسكرات والمبادرات — من برامج المستوى التمهيدي إلى برامج الإتقان والمشاريع التطبيقية الختامية — موثّقة في الكاتالوج وملفات البرامج." data-en="Program, bootcamp and initiative details — from beginner-level programs to mastery courses and capstones — documented in the catalog and program files."></p>
-        <div class="links">
-          <a href="Catalog/index.html">
-            <span class="t" data-ar="مصفوفة البرامج" data-en="Programs matrix"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="Catalog/TrainingMaterials/Program%20Files%20(AthkaX)/">
-            <span class="t" data-ar="ملفات البرامج (AthkaX)" data-en="Program files (AthkaX)"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-        </div>
-      </div>
+<!-- ===== Sites & sections ===== -->
+<section class="sd-section sd-section--alt" id="sites">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layout-grid"/></svg><span data-ar="مكوّنات البوابة" data-en="Portal components"></span></div>
+      <h2 data-ar="المواقع والأقسام الرئيسية" data-en="Main sites &amp; sections"></h2>
+      <p data-ar="كل بطاقة تفتح موقعًا أو قسمًا قائمًا بذاته داخل مساحة عمل الأكاديمية." data-en="Each card opens a self-contained site or section inside the Academy workspace."></p>
+    </div>
+    <div class="sd-grid sd-grid--3">
 
-      <div class="card">
-        <span class="chip tint-green"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
-        <h3 class="t" data-ar="التنزيلات والموارد" data-en="Downloads &amp; Resources"></h3>
-        <p class="t" data-ar="جميع الملفات القابلة للتنزيل: الكاتالوج بصيغ Word وExcel وPDF، والعروض التقديمية، وقاعدة بيانات الخريجين، والتقارير — مجمّعة في قسم واحد أدناه." data-en="Every downloadable file: the catalog in Word, Excel and PDF, presentation decks, the graduates database, and reports — gathered in one section below."></p>
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-blue"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span>
+        <h3 data-ar="الكاتالوج التدريبي والمسارات التعليمية" data-en="Training Catalog &amp; Learning Paths"></h3>
+        <p data-ar="الكاتالوج التفاعلي الكامل: 37 برنامجًا مترابطًا عبر أربعة مستويات، ومصفوفة المهارات، والرحلة التعليمية الموجّهة، ومسارا مهندس الذكاء الاصطناعي وعالِم البيانات مع المستوى التمهيدي والأساس المشترك." data-en="The full interactive catalog: 37 interlocking programs across four levels, the skills matrix, the guided learning journey, and the AI Engineer &amp; Data Scientist tracks alongside the beginner level and foundation core."></p>
         <div class="links">
-          <a href="#downloads">
-            <span class="t" data-ar="الانتقال إلى الموارد" data-en="Go to resources"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
+          <a class="sd-link-pill" href="Catalog/index.html"><span data-ar="فتح الكاتالوج التفاعلي" data-en="Open interactive catalog"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="Catalog/Levels.pdf"><span data-ar="المستويات (PDF)" data-en="Levels (PDF)"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
-        <span class="chip tint-navy"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span>
-        <h3 class="t" data-ar="عن الأكاديمية" data-en="About the Academy"></h3>
-        <p class="t" data-ar="النبذة التعريفية، والرؤية، والرسالة، والأهداف الاستراتيجية الستة، ومجالات العمل، والأثر المستهدف، ومواءمة الأكاديمية مع رؤية 2030 والاستراتيجية الوطنية للبيانات والذكاء الاصطناعي." data-en="The Academy profile, vision, mission, six strategic objectives, focus areas, target impact, and alignment with Vision 2030 and the National Strategy for Data &amp; AI."></p>
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg></span>
+        <h3 data-ar="بوابة الخريجين" data-en="Graduates Portal"></h3>
+        <p data-ar="قاعدة بيانات تفاعلية موثّقة لـ 2,659 خريجين منذ 2021، بدرجات ثقة ومصادر علنية، مع لوحات إحصائية وتقرير التوظيف المبكر 2021–2026." data-en="A verified interactive database of 2,659 graduates since 2021, with confidence grades and public sources, plus statistical dashboards and the 2021–2026 first-employment report."></p>
         <div class="links">
-          <a href="about.html">
-            <span class="t" data-ar="فتح صفحة الأكاديمية" data-en="Open the About page"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
-          <a href="#about">
-            <span class="t" data-ar="ملخّص سريع" data-en="Quick summary"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
+          <a class="sd-link-pill" href="Graduates/index.html"><span data-ar="فتح بوابة الخريجين" data-en="Open graduates portal"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="Graduates/Graduates_Database.xlsx"><span data-ar="قاعدة البيانات (Excel)" data-en="Database (Excel)"></span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></a>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
-        <span class="chip tint-orange"><svg class="i i-lg" aria-hidden="true" focusable="false"><use href="#i-folder-tree"/></svg></span>
-        <h3 class="t" data-ar="بنية مساحة العمل" data-en="Workspace Structure"></h3>
-        <p class="t" data-ar="خريطة مجلد Academy الكاملة — أين يقع كل موقع وكل ملف، وكيف تضيف مشاريع مستقبلية دون كسر البنية." data-en="The full Academy folder map — where every site and file lives, and how to add future projects without breaking the structure."></p>
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-green"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-award"/></svg></span>
+        <h3 data-ar="قصص النجاح" data-en="Success Stories"></h3>
+        <p data-ar="111 قصة نجاح موثّقة لخريجي الأكاديمية في 74 جهة عمل حكومية وخاصة وعالمية، مرتبة حسب سنة التخرج 2021 – 2026." data-en="111 verified graduate success stories across 74 government, private and global employers, organized by graduation year 2021 – 2026."></p>
         <div class="links">
-          <a href="#structure">
-            <span class="t" data-ar="عرض الخريطة" data-en="View the map"></span>
-            <svg class="i i-sm i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
-          </a>
+          <a class="sd-link-pill" href="SuccessStories/website/index.html"><span data-ar="فتح موقع قصص النجاح" data-en="Open success stories site"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="SuccessStories/website/sdaia-success-stories-standalone.html"><span data-ar="نسخة ملف واحد" data-en="Single-file version"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
         </div>
-      </div>
+      </article>
+
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-orange"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span>
+        <h3 data-ar="الحقائب التدريبية للمدرّبين" data-en="Instructor Training Materials"></h3>
+        <p data-ar="27 حقيبة مدرّب كاملة (INSTRUCTOR_PACKAGE) عبر مسارات مهندس الذكاء الاصطناعي وعالِم البيانات والأساس المشترك، مع عروض تدريبية وملفات برامج AthkaX التفصيلية." data-en="27 complete instructor packages across the AI Engineer, Data Scientist and Foundation Core tracks, with training decks and detailed AthkaX program files."></p>
+        <div class="links">
+          <a class="sd-link-pill" href="Catalog/TrainingMaterials/"><span data-ar="تصفح مجلد الحقائب" data-en="Browse materials folder"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pdf"><span data-ar="عرض المسارات v4 (PDF)" data-en="Paths deck v4 (PDF)"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-sky"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-chart-column"/></svg></span>
+        <h3 data-ar="الإحصاءات ولوحات المعلومات" data-en="Statistics &amp; Dashboards"></h3>
+        <p data-ar="المؤشرات الرئيسية أعلى هذه الصفحة، ولوحات تفصيلية تفاعلية (التوظيف، الدفعات، الجهات) داخل بوابة الخريجين وموقع قصص النجاح." data-en="Headline KPIs at the top of this page, with detailed interactive dashboards (employment, cohorts, employers) inside the Graduates Portal and Success Stories site."></p>
+        <div class="links">
+          <a class="sd-link-pill" href="#stats"><span data-ar="المؤشرات الرئيسية" data-en="Headline KPIs"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="Graduates/index.html"><span data-ar="لوحات الخريجين" data-en="Graduates dashboards"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-purple"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg></span>
+        <h3 data-ar="البرامج والمبادرات" data-en="Programs &amp; Initiatives"></h3>
+        <p data-ar="تفاصيل البرامج والمعسكرات والمبادرات — من برامج المستوى التمهيدي إلى برامج الإتقان والمشاريع التطبيقية الختامية — موثّقة في الكاتالوج وملفات البرامج." data-en="Program, bootcamp and initiative details — from beginner-level programs to mastery courses and capstones — documented in the catalog and program files."></p>
+        <div class="links">
+          <a class="sd-link-pill" href="Catalog/index.html#catalog"><span data-ar="مصفوفة البرامج" data-en="Programs matrix"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="Catalog/TrainingMaterials/Program%20Files%20(AthkaX)/"><span data-ar="ملفات البرامج (AthkaX)" data-en="Program files (AthkaX)"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-green"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+        <h3 data-ar="التنزيلات والموارد" data-en="Downloads &amp; Resources"></h3>
+        <p data-ar="جميع الملفات القابلة للتنزيل: الكاتالوج بصيغ Word وExcel وPDF، والعروض التقديمية، وقاعدة بيانات الخريجين، والتقارير — مجمّعة في قسم واحد أدناه." data-en="Every downloadable file: the catalog in Word, Excel and PDF, presentation decks, the graduates database, and reports — gathered in one section below."></p>
+        <div class="links">
+          <a class="sd-link-pill" href="#downloads"><span data-ar="الانتقال إلى الموارد" data-en="Go to resources"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-navy"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span>
+        <h3 data-ar="عن الأكاديمية" data-en="About the Academy"></h3>
+        <p data-ar="النبذة التعريفية، والرؤية، والرسالة، والأهداف الاستراتيجية الستة، ومجالات العمل، والأثر المستهدف، ومواءمة الأكاديمية مع رؤية 2030 والاستراتيجية الوطنية للبيانات والذكاء الاصطناعي." data-en="The Academy profile, vision, mission, six strategic objectives, focus areas, target impact, and alignment with Vision 2030 and the National Strategy for Data &amp; AI."></p>
+        <div class="links">
+          <a class="sd-link-pill" href="about.html"><span data-ar="فتح صفحة الأكاديمية" data-en="Open the About page"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="sd-link-pill" href="#about"><span data-ar="ملخّص سريع" data-en="Quick summary"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="sd-card site-card">
+        <span class="sd-iconbox tint-orange"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-folder-tree"/></svg></span>
+        <h3 data-ar="بنية مساحة العمل" data-en="Workspace Structure"></h3>
+        <p data-ar="خريطة مجلد Academy الكاملة — أين يقع كل موقع وكل ملف، وكيف تضيف مشاريع مستقبلية دون كسر البنية." data-en="The full Academy folder map — where every site and file lives, and how to add future projects without breaking the structure."></p>
+        <div class="links">
+          <a class="sd-link-pill" href="#structure"><span data-ar="عرض الخريطة" data-en="View the map"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
 
     </div>
   </div>
 </section>
 
 <!-- ===== Downloads ===== -->
-<section id="downloads">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>
-        <span class="t" data-ar="التنزيلات والموارد" data-en="Downloads &amp; resources"></span>
-      </div>
-      <h2 class="t" data-ar="الملفات والتقارير القابلة للتنزيل" data-en="Downloadable files &amp; reports"></h2>
-      <p class="t" data-ar="روابط مباشرة لأهم الملفات داخل مساحة العمل، مجمّعة حسب القسم." data-en="Direct links to the key files in the workspace, grouped by section."></p>
+<section class="sd-section" id="downloads">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span data-ar="التنزيلات والموارد" data-en="Downloads &amp; resources"></span></div>
+      <h2 data-ar="الملفات والتقارير القابلة للتنزيل" data-en="Downloadable files &amp; reports"></h2>
+      <p data-ar="روابط مباشرة لأهم الملفات داخل مساحة العمل، مجمّعة حسب القسم." data-en="Direct links to the key files in the workspace, grouped by section."></p>
     </div>
-    <div class="dl-groups">
+    <div class="sd-grid sd-grid--3">
 
-      <div class="dl">
-        <h3>
-          <span class="chip tint-blue"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span>
-          <span class="t" data-ar="الكاتالوج والمسارات" data-en="Catalog &amp; Learning Paths"></span>
-        </h3>
+      <div class="sd-card sd-card--flat dl">
+        <h3><span class="sd-iconbox sd-iconbox--sm tint-blue"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg></span><span data-ar="الكاتالوج والمسارات" data-en="Catalog &amp; Learning Paths"></span></h3>
         <ul>
-          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Learning_Paths_Catalog.xlsx" class="t" data-ar="كاتالوج المسارات التعليمية (المصدر المعتمد)" data-en="Learning Paths Catalog (authoritative source)"></a></li>
-          <li><span class="ft docx">DOCX</span><a href="Catalog/SDAIA_Learning_Catalog_v2.docx" class="t" data-ar="كاتالوج التعلم v2" data-en="Learning Catalog v2"></a></li>
-          <li><span class="ft pdf">PDF</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Catalog_v2.pdf" class="t" data-ar="كاتالوج التعلم v2 (PDF)" data-en="Learning Catalog v2 (PDF)"></a></li>
-          <li><span class="ft docx">DOCX</span><a href="Catalog/SDAIA_Learning_Paths_Catalog.docx" class="t" data-ar="كاتالوج المسارات التعليمية" data-en="Learning Paths Catalog"></a></li>
-          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Academy_Learning_Catalog.xlsx" class="t" data-ar="كاتالوج التعلم (Excel)" data-en="Learning Catalog (Excel)"></a></li>
-          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Academy_Module_Catalog_v2.xlsx" class="t" data-ar="كاتالوج الوحدات v2 (Excel)" data-en="Module Catalog v2 (Excel)"></a></li>
-          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Learning_Paths_Traceability_Matrix.xlsx" class="t" data-ar="مصفوفة التتبع للمسارات" data-en="Paths Traceability Matrix"></a></li>
-          <li><span class="ft pdf">PDF</span><a href="Catalog/Levels.pdf" class="t" data-ar="المستويات الوطنية" data-en="National Levels"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Learning_Paths_Catalog.xlsx" data-ar="كاتالوج المسارات التعليمية (المصدر المعتمد)" data-en="Learning Paths Catalog (authoritative source)"></a></li>
+          <li><span class="ft docx">DOCX</span><a href="Catalog/SDAIA_Learning_Catalog_v2.docx" data-ar="كاتالوج التعلم v2" data-en="Learning Catalog v2"></a></li>
+          <li><span class="ft pdf">PDF</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Catalog_v2.pdf" data-ar="كاتالوج التعلم v2 (PDF)" data-en="Learning Catalog v2 (PDF)"></a></li>
+          <li><span class="ft docx">DOCX</span><a href="Catalog/SDAIA_Learning_Paths_Catalog.docx" data-ar="كاتالوج المسارات التعليمية" data-en="Learning Paths Catalog"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Academy_Learning_Catalog.xlsx" data-ar="كاتالوج التعلم (Excel)" data-en="Learning Catalog (Excel)"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Academy_Module_Catalog_v2.xlsx" data-ar="كاتالوج الوحدات v2 (Excel)" data-en="Module Catalog v2 (Excel)"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/SDAIA_Learning_Paths_Traceability_Matrix.xlsx" data-ar="مصفوفة التتبع للمسارات" data-en="Paths Traceability Matrix"></a></li>
+          <li><span class="ft pdf">PDF</span><a href="Catalog/Levels.pdf" data-ar="المستويات الوطنية" data-en="National Levels"></a></li>
         </ul>
       </div>
 
-      <div class="dl">
-        <h3>
-          <span class="chip tint-orange"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-presentation"/></svg></span>
-          <span class="t" data-ar="العروض التقديمية" data-en="Presentation decks"></span>
-        </h3>
+      <div class="sd-card sd-card--flat dl">
+        <h3><span class="sd-iconbox sd-iconbox--sm tint-orange"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-presentation"/></svg></span><span data-ar="العروض التقديمية" data-en="Presentation decks"></span></h3>
         <ul>
-          <li><span class="ft pptx">PPTX</span><a href="Catalog/SDAIA_Learning_Paths_Executive_Deck_2026.pptx" class="t" data-ar="العرض التنفيذي للمسارات 2026" data-en="Executive Paths Deck 2026"></a></li>
-          <li><span class="ft pptx">PPTX</span><a href="Catalog/SDAIA_Learning_Paths_Deck_v2.pptx" class="t" data-ar="عرض المسارات v2" data-en="Learning Paths Deck v2"></a></li>
-          <li><span class="ft pptx">PPTX</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pptx" class="t" data-ar="عرض المسارات v4" data-en="Learning Paths Deck v4"></a></li>
-          <li><span class="ft pdf">PDF</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pdf" class="t" data-ar="عرض المسارات v4 (PDF)" data-en="Paths Deck v4 (PDF)"></a></li>
-          <li><span class="ft docx">DOCX</span><a href="Catalog/Two_Existing_Programs.docx" class="t" data-ar="البرنامجان القائمان" data-en="Two Existing Programs"></a></li>
+          <li><span class="ft pptx">PPTX</span><a href="Catalog/SDAIA_Learning_Paths_Executive_Deck_2026.pptx" data-ar="العرض التنفيذي للمسارات 2026" data-en="Executive Paths Deck 2026"></a></li>
+          <li><span class="ft pptx">PPTX</span><a href="Catalog/SDAIA_Learning_Paths_Deck_v2.pptx" data-ar="عرض المسارات v2" data-en="Learning Paths Deck v2"></a></li>
+          <li><span class="ft pptx">PPTX</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pptx" data-ar="عرض المسارات v4" data-en="Learning Paths Deck v4"></a></li>
+          <li><span class="ft pdf">PDF</span><a href="Catalog/TrainingMaterials/Programs%20Details%20and%20Paths/SDAIA_Learning_Paths_Deck_v4.pdf" data-ar="عرض المسارات v4 (PDF)" data-en="Paths Deck v4 (PDF)"></a></li>
+          <li><span class="ft docx">DOCX</span><a href="Catalog/Two_Existing_Programs.docx" data-ar="البرنامجان القائمان" data-en="Two Existing Programs"></a></li>
         </ul>
       </div>
 
-      <div class="dl">
-        <h3>
-          <span class="chip tint-navy"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span>
-          <span class="t" data-ar="وثائق الأكاديمية" data-en="Academy documents"></span>
-        </h3>
+      <div class="sd-card sd-card--flat dl">
+        <h3><span class="sd-iconbox sd-iconbox--sm tint-navy"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span><span data-ar="وثائق الأكاديمية" data-en="Academy documents"></span></h3>
         <ul>
-          <li><span class="ft html">HTML</span><a href="about.html" class="t" data-ar="عن الأكاديمية — الرؤية والرسالة والأهداف" data-en="About — vision, mission &amp; objectives"></a></li>
-          <li><span class="ft html">HTML</span><a href="Catalog/index.html" class="t" data-ar="الكاتالوج التدريبي التفاعلي (37 برنامجًا)" data-en="Interactive training catalog (37 programs)"></a></li>
-          <li><span class="ft md">MD</span><a href="Academy_Profile.md" class="t" data-ar="ملف تعريف الأكاديمية (نص)" data-en="Academy profile (markdown)"></a></li>
+          <li><span class="ft html">HTML</span><a href="about.html" data-ar="عن الأكاديمية — الرؤية والرسالة والأهداف" data-en="About — vision, mission &amp; objectives"></a></li>
+          <li><span class="ft html">HTML</span><a href="Catalog/index.html" data-ar="الكاتالوج التدريبي التفاعلي (37 برنامجًا)" data-en="Interactive training catalog (37 programs)"></a></li>
+          <li><span class="ft md">MD</span><a href="Academy_Profile.md" data-ar="ملف تعريف الأكاديمية (نص)" data-en="Academy profile (markdown)"></a></li>
         </ul>
       </div>
 
-      <div class="dl">
-        <h3>
-          <span class="chip tint-teal"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg></span>
-          <span class="t" data-ar="الخريجون والتوظيف" data-en="Graduates &amp; employment"></span>
-        </h3>
+      <div class="sd-card sd-card--flat dl">
+        <h3><span class="sd-iconbox sd-iconbox--sm tint-teal"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"/></svg></span><span data-ar="الخريجون والتوظيف" data-en="Graduates &amp; employment"></span></h3>
         <ul>
-          <li><span class="ft xlsx">XLSX</span><a href="Graduates/Graduates_Database.xlsx" class="t" data-ar="قاعدة بيانات الخريجين (Excel)" data-en="Graduates Database (Excel)"></a></li>
-          <li><span class="ft md">MD</span><a href="Graduates/Graduates_Database.md" class="t" data-ar="قاعدة بيانات الخريجين (تقرير)" data-en="Graduates Database (report)"></a></li>
-          <li><span class="ft md">MD</span><a href="Graduates/SDAIA_Graduates_First_Employment_By_Year_2021-2026_2026-08-02.md" class="t" data-ar="تقرير التوظيف المبكر 2021–2026" data-en="First-Employment Report 2021–2026"></a></li>
-          <li><span class="ft md">MD</span><a href="SuccessStories/Top20_Success_Stories_2026-07-30.md" class="t" data-ar="أفضل 20 قصة نجاح" data-en="Top 20 Success Stories"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Graduates/Graduates_Database.xlsx" data-ar="قاعدة بيانات الخريجين (Excel)" data-en="Graduates Database (Excel)"></a></li>
+          <li><span class="ft md">MD</span><a href="Graduates/Graduates_Database.md" data-ar="قاعدة بيانات الخريجين (تقرير)" data-en="Graduates Database (report)"></a></li>
+          <li><span class="ft md">MD</span><a href="Graduates/SDAIA_Graduates_First_Employment_By_Year_2021-2026_2026-08-02.md" data-ar="تقرير التوظيف المبكر 2021–2026" data-en="First-Employment Report 2021–2026"></a></li>
+          <li><span class="ft md">MD</span><a href="SuccessStories/Top20_Success_Stories_2026-07-30.md" data-ar="أفضل 20 قصة نجاح" data-en="Top 20 Success Stories"></a></li>
         </ul>
       </div>
 
-      <div class="dl">
-        <h3>
-          <span class="chip tint-green"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span>
-          <span class="t" data-ar="ملفات البرامج والمواد" data-en="Program files &amp; materials"></span>
-        </h3>
+      <div class="sd-card sd-card--flat dl">
+        <h3><span class="sd-iconbox sd-iconbox--sm tint-green"><svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span><span data-ar="ملفات البرامج والمواد" data-en="Program files &amp; materials"></span></h3>
         <ul>
-          <li><span class="ft xlsx">XLSX</span><a href="Catalog/TrainingMaterials/SDAIA_Learning_Paths_Catalog.xlsx" class="t" data-ar="كاتالوج المسارات (Excel)" data-en="Paths Catalog (Excel)"></a></li>
-          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Program%20Files%20(AthkaX)/" class="t" data-ar="ملفات البرامج AthkaX (37 ملفًا)" data-en="AthkaX program files (37 files)"></a></li>
-          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/AI%20Engineer%20Track/" class="t" data-ar="حقائب مسار مهندس الذكاء الاصطناعي" data-en="AI Engineer Track packages"></a></li>
-          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Data%20Scientist%20Track/" class="t" data-ar="حقائب مسار عالِم البيانات" data-en="Data Scientist Track packages"></a></li>
-          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Foundation%20Core%20Track/" class="t" data-ar="حقائب الأساس المشترك" data-en="Foundation Core packages"></a></li>
-          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Level-0-Begineers/" class="t" data-ar="برامج المستوى التمهيدي" data-en="Beginner-level programs"></a></li>
+          <li><span class="ft xlsx">XLSX</span><a href="Catalog/TrainingMaterials/SDAIA_Learning_Paths_Catalog.xlsx" data-ar="كاتالوج المسارات (Excel)" data-en="Paths Catalog (Excel)"></a></li>
+          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Program%20Files%20(AthkaX)/" data-ar="ملفات البرامج AthkaX (37 ملفًا)" data-en="AthkaX program files (37 files)"></a></li>
+          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/AI%20Engineer%20Track/" data-ar="حقائب مسار مهندس الذكاء الاصطناعي" data-en="AI Engineer Track packages"></a></li>
+          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Data%20Scientist%20Track/" data-ar="حقائب مسار عالِم البيانات" data-en="Data Scientist Track packages"></a></li>
+          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Foundation%20Core%20Track/" data-ar="حقائب الأساس المشترك" data-en="Foundation Core packages"></a></li>
+          <li><span class="ft dir">DIR</span><a href="Catalog/TrainingMaterials/Level-0-Begineers/" data-ar="برامج المستوى التمهيدي" data-en="Beginner-level programs"></a></li>
         </ul>
       </div>
 
@@ -813,62 +442,37 @@ footer .top-link{display:inline-flex;align-items:center;gap:7px;font-weight:600}
 </section>
 
 <!-- ===== Structure map ===== -->
-
-<footer>
-  <div class="container frow">
-    <div>
-      <span class="t" data-ar="أكاديمية سدايا — بوابة موحّدة · إصدار 16 أغسطس 2026 · كاتالوج v2026.2" data-en="SDAIA Academy — unified portal · version 15 August 2026 · catalog v2026.2"></span>
+<section class="sd-section sd-section--alt" id="structure">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-folder-tree"/></svg><span data-ar="بنية مساحة العمل" data-en="Workspace structure"></span></div>
+      <h2 data-ar="خريطة مجلد Academy" data-en="The Academy folder map"></h2>
+      <p data-ar="كل موقع يعيش في مجلده الخاص ويشترك مع البقية في نظام التصميم الموحّد داخل <span class='mono'>assets/</span>. لإضافة مشروع جديد: أنشئ مجلدًا بجواره، واربط ملفات <span class='mono'>assets/sdaia-ui.css</span> و<span class='mono'>sdaia-ui.js</span> بمسار نسبي، ثم أضف بطاقته في قسم «المواقع والأقسام»." data-en="Each site lives in its own folder and shares the unified design system in <span class='mono'>assets/</span>. To add a new project: create a sibling folder, link <span class='mono'>assets/sdaia-ui.css</span> and <span class='mono'>sdaia-ui.js</span> with a relative path, then add its card under “Main sites &amp; sections”."></p>
     </div>
-    <div>
-      <a href="#top" class="top-link">
-        <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg>
-        <span class="t" data-ar="العودة إلى الأعلى" data-en="Back to top"></span>
-      </a>
-    </div>
+    <div class="map" role="group" data-ar-label="خريطة مجلد Academy" data-en-label="Academy folder map"><span class="d">Academy/</span>
+├── <span class="f">index.html</span>                    <span class="c" data-ar="# هذه البوابة (عربي/إنجليزي)" data-en="# this portal (AR/EN)"></span>
+├── <span class="f">about.html</span>                    <span class="c" data-ar="# عن الأكاديمية — الرؤية والرسالة والأهداف" data-en="# about the Academy — vision, mission, objectives"></span>
+├── <span class="f">Academy_Profile.md</span>
+├── <span class="d">assets/</span>                       <span class="c" data-ar="# نظام التصميم المشترك + الشعار الرسمي" data-en="# shared design system + official logo"></span>
+│   ├── <span class="f">academy-logo.png</span>  ·  <span class="f">sdaia-ui.css</span>  ·  <span class="f">sdaia-ui.js</span>  ·  <span class="f">sdaia-icons.js</span>
+├── <span class="d">Catalog/</span>
+│   ├── <span class="f">index.html</span>                <span class="c" data-ar="# الكاتالوج التفاعلي — 37 برنامجًا" data-en="# interactive learning catalog — 37 programs"></span>
+│   ├── <span class="f">SDAIA_Learning_Paths_Catalog.xlsx</span>  ·  <span class="f">*.docx</span>  ·  <span class="f">*.pptx</span>  ·  <span class="f">Levels.pdf</span>
+│   └── <span class="d">TrainingMaterials/</span>        <span class="c" data-ar="# 27 حقيبة مدرّب + ملفات برامج AthkaX" data-en="# 27 instructor packages + AthkaX program files"></span>
+│       ├── <span class="d">AI Engineer Track/</span>  ·  <span class="d">Data Scientist Track/</span>  ·  <span class="d">Foundation Core Track/</span>
+│       ├── <span class="d">Level-0-Begineers/</span>  ·  <span class="d">Program Files (AthkaX)/</span>  ·  <span class="d">Programs Details and Paths/</span>
+├── <span class="d">Graduates/</span>
+│   ├── <span class="f">index.html</span>                <span class="c" data-ar="# بوابة الخريجين — 2,659 سجلًا موثّقًا" data-en="# graduates portal — 2,659 verified records"></span>
+│   └── <span class="f">Graduates_Database.xlsx</span>  ·  <span class="f">Graduates_Database.md</span>  ·  <span class="f">reports *.md</span>
+└── <span class="d">SuccessStories/</span>
+    ├── <span class="f">Top20_Success_Stories_2026-07-30.md</span>  ·  <span class="f">photos &amp; logos</span>
+    └── <span class="d">website/</span>                  <span class="c" data-ar="# موقع قصص النجاح — 111 قصة" data-en="# success-stories site — 111 stories"></span>
+        ├── <span class="f">index.html</span>  ·  <span class="f">sdaia-success-stories-standalone.html</span>
+        └── <span class="d">css/</span>  ·  <span class="d">js/</span>  ·  <span class="d">assets/</span></div>
   </div>
-</footer>
+</section>
+</main>
 
-<button class="to-top" id="toTop" aria-label="العودة إلى الأعلى" hidden>↑</button>
-
-<script>
-'use strict';
-(function(){
-  var lang = 'ar';
-  try{ lang = localStorage.getItem('sdaia_lang') || 'ar'; }catch(e){}
-  var btn = document.getElementById('langToggle');
-  var label = document.getElementById('langLabel');
-  function apply(){
-    var isAr = lang === 'ar';
-    document.documentElement.setAttribute('lang', isAr ? 'ar' : 'en');
-    document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
-    var nodes = document.querySelectorAll('.t');
-    for (var i = 0; i < nodes.length; i++){
-      var el = nodes[i];
-      var txt = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-      if (txt !== null) el.innerHTML = txt;
-    }
-    label.textContent = isAr ? 'English' : 'العربية';
-    document.title = isAr ? 'بوابة أكاديمية سدايا | SDAIA Academy Portal' : 'SDAIA Academy Portal | بوابة أكاديمية سدايا';
-  }
-  btn.addEventListener('click', function(){
-    lang = (lang === 'ar') ? 'en' : 'ar';
-    try{ localStorage.setItem('sdaia_lang', lang); }catch(e){}
-    apply();
-  });
-  apply();
-})();
-
-/* ---- header scroll state + back-to-top (shared behaviour with the Success Stories site) ---- */
-(function(){
-  var hd = document.querySelector('header'), top = document.getElementById('toTop');
-  function onScroll(){
-    hd.classList.toggle('scrolled', window.scrollY > 40);
-    top.hidden = window.scrollY < 600;
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  top.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  onScroll();
-})();
-</script>
+<footer class="sd-footer" data-note-ar="أكاديمية سدايا — بوابة موحّدة · إصدار 16 أغسطس 2026 · كاتالوج v2026.2" data-note-en="SDAIA Academy — unified portal · version 16 August 2026 · catalog v2026.2"></footer>
 </body>
 </html>

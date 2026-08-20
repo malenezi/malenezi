@@ -37,10 +37,10 @@
 'use strict';
 
 const SITE_STATS = [
-  { value: 2659, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026' },
-  { value: 111,  label: 'قصة نجاح موثّقة', note: 'مرتبة حسب سنة التخرج' },
-  { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026' },
-  { value: 74,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية' },
+  { value: 2659, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
+  { value: 111,  label: 'قصة نجاح موثّقة', note: 'مرتبة حسب سنة التخرج',                       labelEn: 'Verified success stories', noteEn: 'Organized by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
+  { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
+  { value: 74,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
 ];
 
 /* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,659 سجلًا)
@@ -54,22 +54,28 @@ const TRACKS = [
 ];
 
 const YEARS = [
-  { id: 2021, label: 'دفعة 2021', desc: 'الدفعات التأسيسية الأولى — معسكر T5 لعلوم البيانات بالشراكة مع Metis وأكاديمية طويق' },
-  { id: 2022, label: 'دفعة 2022', desc: 'معسكر T5 لعلوم البيانات وبرنامج «أبطال صيف الذكاء الاصطناعي»' },
-  { id: 2023, label: 'دفعة 2023', desc: 'معسكرات تعلم الآلة والنماذج اللغوية الكبيرة وإدارة البيانات وحوكمتها' },
-  { id: 2024, label: 'دفعة 2024', desc: 'معسكر T5 ومعسكر معالجة الازدحام المروري وبرامج الذكاء الاصطناعي التوليدي' },
-  { id: 2025, label: 'دفعة 2025', desc: 'معسكرا هندسة البيانات وServiceNow والتدريب الاحترافي بالذكاء الاصطناعي التوليدي مع NVIDIA' },
-  { id: 2026, label: 'دفعة 2026', desc: 'عام الذكاء الاصطناعي — برامج منصة Athka X والتدريب الاحترافي المرتبط بشهادات NVIDIA' },
+  { id: 2021, label: 'دفعة 2021', desc: 'الدفعات التأسيسية الأولى — معسكر T5 لعلوم البيانات بالشراكة مع Metis وأكاديمية طويق',
+    labelEn: 'Class of 2021', descEn: 'The first founding cohorts — the T5 Data Science Bootcamp in partnership with Metis and Tuwaiq Academy' },
+  { id: 2022, label: 'دفعة 2022', desc: 'معسكر T5 لعلوم البيانات وبرنامج «أبطال صيف الذكاء الاصطناعي»',
+    labelEn: 'Class of 2022', descEn: 'The T5 Data Science Bootcamp and the “AI Summer Champions” program' },
+  { id: 2023, label: 'دفعة 2023', desc: 'معسكرات تعلم الآلة والنماذج اللغوية الكبيرة وإدارة البيانات وحوكمتها',
+    labelEn: 'Class of 2023', descEn: 'Machine-learning, large-language-model and data management & governance bootcamps' },
+  { id: 2024, label: 'دفعة 2024', desc: 'معسكر T5 ومعسكر معالجة الازدحام المروري وبرامج الذكاء الاصطناعي التوليدي',
+    labelEn: 'Class of 2024', descEn: 'The T5 bootcamp, the traffic-congestion bootcamp and generative-AI programs' },
+  { id: 2025, label: 'دفعة 2025', desc: 'معسكرا هندسة البيانات وServiceNow والتدريب الاحترافي بالذكاء الاصطناعي التوليدي مع NVIDIA',
+    labelEn: 'Class of 2025', descEn: 'The data-engineering and ServiceNow bootcamps and professional generative-AI training with NVIDIA' },
+  { id: 2026, label: 'دفعة 2026', desc: 'عام الذكاء الاصطناعي — برامج منصة Athka X والتدريب الاحترافي المرتبط بشهادات NVIDIA',
+    labelEn: 'Class of 2026', descEn: 'The Year of AI — Athka X platform programs and NVIDIA-certified professional training' },
 ];
 
 const CATEGORIES = [
-  { id: 'all',        label: 'الكل' },
-  { id: 'employment', label: 'التوظيف والتقدم المهني' },
-  { id: 'leadership', label: 'القيادة والمواقع الرفيعة' },
-  { id: 'research',   label: 'البحث والنشر العلمي' },
-  { id: 'opensource', label: 'المصادر المفتوحة' },
-  { id: 'awards',     label: 'الجوائز والزمالات' },
-  { id: 'startup',    label: 'ريادة الأعمال' },
+  { id: 'all',        label: 'الكل',                     labelEn: 'All' },
+  { id: 'employment', label: 'التوظيف والتقدم المهني',   labelEn: 'Employment & career progression' },
+  { id: 'leadership', label: 'القيادة والمواقع الرفيعة',  labelEn: 'Leadership & senior roles' },
+  { id: 'research',   label: 'البحث والنشر العلمي',       labelEn: 'Research & publication' },
+  { id: 'opensource', label: 'المصادر المفتوحة',          labelEn: 'Open source' },
+  { id: 'awards',     label: 'الجوائز والزمالات',         labelEn: 'Awards & fellowships' },
+  { id: 'startup',    label: 'ريادة الأعمال',             labelEn: 'Entrepreneurship' },
 ];
 
 const STORIES = [

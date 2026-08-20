@@ -1,312 +1,235 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-ar="كاتالوج أكاديمية سدايا التدريبي | SDAIA Academy Learning Catalog" data-en="SDAIA Academy — Learning Catalog | كاتالوج أكاديمية سدايا">كاتالوج أكاديمية سدايا التدريبي | SDAIA Academy Learning Catalog</title>
+<title>SDAIA Academy — Learning Catalog | كاتالوج أكاديمية سدايا</title>
 <meta name="description" content="The SDAIA Academy training catalog and learning paths: 37 interlocking programs across a beginner level, a shared foundation core, and the AI Engineer and Data Scientist tracks. كاتالوج أكاديمية سدايا التدريبي والمسارات التعليمية.">
-<meta name="theme-color" content="#0B2A4E">
 <link rel="icon" type="image/png" href="../assets/academy-logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/sdaia-ui.css">
-<script src="../assets/sdaia-icons.js"></script>
-<script src="../assets/sdaia-ui.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','IBM Plex Sans Arabic','sans-serif'],ar:['IBM Plex Sans Arabic','Inter','sans-serif']},
+colors:{ink:'#0F2A4A',brand:'#1F6FB2',teal:'#2E8B9E',green:'#3DBA8C',amber:'#E8743B'}}}}
+</script>
 <style>
-/* =========================================================
-   SDAIA Academy — Learning Catalog · page styles
-   (builds on the shared design system in ../assets/sdaia-ui.css)
-   ========================================================= */
-.sec-num{font-family:var(--font-mono);font-size:12px;color:var(--accent-ink);font-weight:600;margin-inline-end:.4rem}
-
-/* pathways */
-#trackgrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
-.track-card{padding:1.5rem 1.6rem}
-.track-card__head{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
-.track-card__head .sd-iconbox{background:var(--tc);color:#fff}
-.track-card__head h3{font-size:1.15rem;line-height:1.25}
-.track-card__head .cnt{font-size:12.5px;color:var(--ink-3);display:block;margin-top:2px}
-.track-card > p{margin-bottom:1rem}
-.track-rows{display:grid;gap:.55rem;font-size:14px}
-.track-rows .r{display:flex;gap:9px;align-items:flex-start}
-.track-rows .r .i{width:16px;height:16px;color:var(--tc);margin-top:.25em}
-.track-rows .r b{color:var(--ink);font-weight:600}
-.track-rows .r span{color:var(--ink-2)}
-
-/* levels */
-.level-card{padding:1.5rem 1.6rem}
-.level-card__top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-bottom:.9rem}
-.level-card .lv-n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--tc);color:#fff;font-weight:700;font-size:15px}
-.level-card .sd-bar{margin-bottom:.9rem}
-.level-card h3{font-size:1.15rem}
-.level-card > p{margin:.5rem 0 1rem}
-.level-card .counts{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-.level-card .cred{display:flex;gap:9px;font-size:13.5px;color:var(--ink-2);padding-top:.9rem;border-top:1px solid var(--line);margin-top:auto}
-.level-card .cred .i{color:var(--accent);width:17px;height:17px;margin-top:.2em}
-
-/* journey */
-.journey-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.25rem;margin-bottom:1.5rem}
-.journey-head .sd-section__head{margin-bottom:0}
-.progress-card{display:flex;align-items:center;gap:1rem;padding:.9rem 1.2rem;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-xs)}
-.progress-card svg{flex:none}
-.ring-bg{stroke:var(--surface-3)}
-.ring-fg{stroke:var(--brand);stroke-linecap:round;transition:stroke-dashoffset .8s var(--ease)}
-.progress-card .pct{font-size:1.5rem;font-weight:700;color:var(--brand-ink);line-height:1.1}
-html[data-theme="dark"] .progress-card .pct{color:#fff}
-.progress-card .pl{font-size:12.5px;color:var(--ink-3);line-height:1.5}
-.rail-wrap{overflow-x:auto;padding:.3rem 0 .8rem;margin-bottom:1.25rem;scrollbar-width:thin}
-.rail{display:flex;align-items:center;gap:4px;min-width:max-content;padding-inline:2px}
-.rail .conn{height:2px;width:20px;background:var(--line-2);flex:none}
-.railnode{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:12px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-3);flex:none;transition:all .25s;font-variant-numeric:tabular-nums}
-.railnode:hover{border-color:var(--brand);color:var(--brand)}
-.railnode.is-done{background:var(--ok);border-color:var(--ok);color:#fff}
-.railnode.is-active{background:var(--tc);border-color:var(--tc);color:#fff;box-shadow:0 0 0 4px color-mix(in srgb,var(--tc) 22%,transparent)}
-.railnode .i{width:15px;height:15px;stroke-width:2.4}
-.step-card{padding:1.8rem 1.9rem}
-.step-top{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}
-.step-id{display:flex;align-items:flex-start;gap:14px;min-width:0}
-.step-id .sd-iconbox{background:var(--tc);color:#fff;width:50px;height:50px;border-radius:14px}
-.step-tags{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:.4rem}
-.step-code{font-family:var(--font-mono);font-weight:600;font-size:13px;color:color-mix(in srgb,var(--tc) 80%,#000)}
-html[data-theme="dark"] .step-code{color:color-mix(in srgb,var(--tc) 45%,#fff)}
-.step-card h3{font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.3}
-.step-card > p.desc{font-size:15px;color:var(--ink-2);max-width:80ch;margin-bottom:1.4rem}
-.step-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:.75rem;margin-bottom:1.5rem}
-.step-meta .m{background:var(--surface-3);border-radius:var(--r-md);padding:.8rem .95rem}
-.step-meta .m .k{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--ink-3);margin-bottom:.25rem}
-.step-meta .m .k .i{width:14px;height:14px}
-.step-meta .m .v{font-size:14px;font-weight:500;color:var(--ink);line-height:1.5}
-.step-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-@media(max-width:800px){.step-cols{grid-template-columns:1fr}}
-.step-cols h4{font-size:14.5px;display:flex;align-items:center;gap:8px;margin-bottom:.7rem;color:var(--brand-ink)}
-html[data-theme="dark"] .step-cols h4{color:#fff}
-.step-cols h4 .i{width:16px;height:16px;color:var(--accent)}
-.check-list{list-style:none;display:grid;gap:.45rem;font-size:14px;color:var(--ink-2)}
-.check-list li{display:flex;gap:8px;align-items:flex-start}
-.check-list li .i{width:16px;height:16px;color:var(--ok);margin-top:.22em;flex:none}
-.step-more{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
-@media(max-width:800px){.step-more{grid-template-columns:1fr}}
-.step-more h4{font-size:13.5px;margin-bottom:.45rem;color:var(--brand-ink)}
-html[data-theme="dark"] .step-more h4{color:#fff}
-.step-more p{font-size:14px;color:var(--ink-2)}
-.step-more .blk + .blk{margin-top:1rem}
-.stack-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:12.5px;margin-top:.6rem}
-.stack-row .sd-tag{font-weight:600}.stack-row .sd-tag .mono{font-weight:600}
-.stack-row .i{width:14px;height:14px;color:var(--ink-3)}
-.journey-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.4rem;flex-wrap:wrap}
-.journey-nav .pos{font-size:13.5px;color:var(--ink-3)}
-.journey-nav .pos b{color:var(--ink)}
-
-/* catalog grid */
-.cat-filters{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin-bottom:1.5rem}
-.cat-filters .sd-search{flex:1 1 240px;max-width:380px;margin-inline-start:auto}
-.prog-card{padding:1.35rem 1.4rem}
-.prog-card__top{display:flex;align-items:flex-start;justify-content:space-between;gap:.7rem;margin-bottom:.8rem}
-.prog-card__top .sd-iconbox{background:var(--tc);color:#fff;width:40px;height:40px;border-radius:11px}
-.prog-card .code{font-family:var(--font-mono);font-size:12px;font-weight:600;color:color-mix(in srgb,var(--tc) 80%,#000);direction:ltr}
-html[data-theme="dark"] .prog-card .code{color:color-mix(in srgb,var(--tc) 45%,#fff)}
-/* per-track tag: readable tint in both themes */
-.tag-track{background:color-mix(in srgb,var(--tk) 14%,transparent);color:color-mix(in srgb,var(--tk) 75%,#000)}
-html[data-theme="dark"] .tag-track{color:color-mix(in srgb,var(--tk) 45%,#fff)}
-.prog-card h3{font-size:1.05rem;line-height:1.35;margin-bottom:.5rem}
-.prog-card .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.75rem}
-.prog-card .tags .sd-tag{font-size:11.5px;padding:.12rem .6rem}
-.prog-card .desc{font-size:14px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.prog-card .cardtog{margin-top:.8rem;display:inline-flex;align-items:center;gap:5px;font-size:13.5px;font-weight:600;color:var(--brand);align-self:flex-start}
-.prog-card .cardtog .i{width:16px;height:16px;transition:transform .25s}
-.prog-card .cardtog[aria-expanded="true"] .i{transform:rotate(180deg)}
-.expandable{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+:root{--bg:#f6f9fc;--surface:#ffffff;--surface2:#f0f5fa;--text:#13233a;--muted:#5b6b7e;--line:#e2eaf2;--ink:#0F2A4A;--brand:#1F6FB2;--accent:#2E8B9E;--shadow:0 1px 2px rgba(15,42,74,.05),0 8px 24px rgba(15,42,74,.06)}
+html.dark{--bg:#0b1626;--surface:#10203a;--surface2:#142844;--text:#e8eef6;--muted:#9fb0c6;--line:#21385a;--ink:#bcd4ee;--brand:#5aa9e6;--accent:#46c6b0;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
+*{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);transition:background .4s,color .4s;font-feature-settings:"cv11";}
+html[dir=rtl] body{font-family:'IBM Plex Sans Arabic',Inter,sans-serif}
+.surface{background:var(--surface)}
+.muted{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(15,42,74,.12);border-color:var(--brand)}
+.hairline{border-color:var(--line)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.grad-text{background:linear-gradient(100deg,#1F6FB2,#2E8B9E 55%,#3DBA8C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip{border:1px solid var(--line);background:var(--surface2)}
+.btn{transition:all .25s}.btn:hover{transform:translateY(-1px)}
+.expandable{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)}
 .expandable.open{grid-template-rows:1fr}
-.expandable > div{overflow:hidden;visibility:hidden;transition:visibility .4s} /* keep collapsed links out of the tab order */
-.expandable.open > div{visibility:visible}
-.exp-body{padding-top:1rem;margin-top:.8rem;border-top:1px solid var(--line);display:grid;gap:.8rem;font-size:13.5px}
-.exp-body .lbl{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.3rem}
-html[lang="ar"] .exp-body .lbl{letter-spacing:0;text-transform:none;font-size:12.5px}
-.exp-body ul{list-style:none;display:grid;gap:.3rem;color:var(--ink-2)}
-.exp-body ul li{display:flex;gap:6px}
-.exp-body ul li::before{content:"•";color:var(--accent)}
-.exp-body .two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.exp-body p{color:var(--ink-2);font-size:13px}
-.open-step{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--brand)}
-.open-step .i{width:14px;height:14px}
-
-/* matrix */
-.matrix-card{padding:.75rem;overflow-x:auto}
-table.mx{border-collapse:separate;border-spacing:2px;font-size:12px}
-table.mx th,table.mx td{padding:0}
-table.mx thead th{height:104px;vertical-align:bottom;padding-bottom:6px}
-table.mx thead th > span{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--font-mono);font-weight:600;font-size:11px;color:var(--brand);display:inline-block;direction:ltr}
-table.mx .fam{position:sticky;inset-inline-start:0;background:var(--surface);padding:.45rem .7rem;text-align:start;font-weight:600;min-width:190px;white-space:nowrap;z-index:1;color:var(--ink)}
-table.mx td .cell{width:28px;height:28px;display:grid;place-items:center;border-radius:6px;font-weight:700;font-family:var(--font-mono);background:var(--surface-2)}
-table.mx td .cell.I{background:var(--brand-soft);color:var(--brand)}
-table.mx td .cell.D{background:var(--blue-400);color:#05203D}
-table.mx td .cell.M{background:var(--navy-800);color:#fff}
-html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
-.legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin-top:.8rem}
-.legend .cell{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:5px;font-weight:700;font-family:var(--font-mono);font-size:11px;margin-inline-end:6px;vertical-align:middle}
-
-/* naming + recs */
-.design-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-@media(max-width:900px){.design-grid{grid-template-columns:1fr}}
-.naming-card{padding:1.6rem 1.7rem}
-.naming-card .code-ex{font-family:var(--font-mono);font-size:1.35rem;font-weight:600;color:var(--brand);margin-bottom:1.1rem;direction:ltr;text-align:start;letter-spacing:.02em}
-.naming-card .code-ex .t1{color:var(--accent-ink)}.naming-card .code-ex .t2{color:var(--green-600)}.naming-card .code-ex .t3{color:var(--ink-3)}
-.naming-rows{display:grid;gap:.7rem;font-size:14px}
-.naming-rows .r{display:flex;gap:10px;align-items:flex-start}
-.naming-rows .r .k{font-family:var(--font-mono);font-size:11.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:6px;padding:.2rem .5rem;flex:none;min-width:56px;text-align:center;margin-top:.1em;direction:ltr}
-.naming-rows .r span{color:var(--ink-2)}
-.recs{display:grid;gap:.8rem}
-.rec{display:flex;gap:12px;padding:1rem 1.15rem}
-.rec b{display:block;font-size:14.5px;color:var(--ink)}
-.rec p{font-size:13.5px;margin-top:.15rem}
-
-@media(max-width:640px){.step-card{padding:1.3rem 1.2rem}.journey-nav .pos{order:-1;width:100%;text-align:center}}
+.expandable>div{overflow:hidden}
+.nav-blur{backdrop-filter:saturate(160%) blur(12px);background:color-mix(in srgb,var(--surface) 82%,transparent)}
+.dot{width:8px;height:8px;border-radius:50%}
+.step-circle{transition:all .35s}
+.fade-swap{animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--brand);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring-bg{stroke:var(--line)}.ring-fg{stroke:url(#rg);stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.2,.7,.2,1)}
+::selection{background:#2E8B9E33}
+.lvlbar{height:4px;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--accent))}
+.hide{display:none!important}
+.scrollx::-webkit-scrollbar{height:8px}.scrollx::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+table.mx td,table.mx th{border:1px solid var(--line)}
+.t-en{display:inline}.t-ar{display:none}
+html[dir=rtl] .t-en{display:none}html[dir=rtl] .t-ar{display:inline}
 </style>
 </head>
-<body id="top">
-<a class="sd-skip" href="#main" data-ar="تخطَّ إلى المحتوى" data-en="Skip to content"></a>
+<body class="font-sans antialiased">
 
-<header class="sd-header" data-active="catalog" data-sub-ar="الكاتالوج التدريبي" data-sub-en="Learning Catalog"></header>
+<!-- Loading overlay -->
+<div id="loader" class="fixed inset-0 z-[100] grid place-items-center surface">
+  <div class="text-center">
+    <div id="loaderlogo" class="mx-auto mb-5 w-[120px]"></div>
+    <div class="spinner mx-auto"></div>
+    <p class="muted mt-4 text-sm tracking-wide">Loading catalog… · جارٍ تحميل الكاتالوج…</p>
+  </div>
+</div>
 
-<main id="main">
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 nav-blur border-b hairline">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+    <a href="#top" class="flex items-center gap-3 shrink-0">
+      <span id="navlogo" class="w-9"></span>
+      <span class="leading-tight">
+        <span class="block font-bold text-[15px] tracking-tight" style="color:var(--ink)"><span class="t-en">SDAIA Academy</span><span class="t-ar">أكاديمية سدايا</span></span>
+        <span class="block text-[10px] muted -mt-0.5"><span class="t-en">Learning Catalog</span><span class="t-ar">الكاتالوج التدريبي</span></span>
+      </span>
+    </a>
+    <div class="hidden lg:flex items-center gap-1 text-sm" id="navlinks"></div>
+    <div class="flex items-center gap-2">
+      <a href="../index.html" class="btn chip rounded-lg px-3 py-1.5 text-sm font-semibold hidden sm:inline-block" style="color:var(--ink)"><span class="t-en">Portal</span><span class="t-ar">البوابة</span></a>
+      <a href="../about.html" class="btn chip rounded-lg px-3 py-1.5 text-sm font-semibold hidden md:inline-block" style="color:var(--ink)"><span class="t-en">About</span><span class="t-ar">عن الأكاديمية</span></a>
+      <button id="langBtn" class="btn chip rounded-lg px-3 py-1.5 text-sm font-semibold" style="color:var(--ink)">عربي</button>
+      <button id="themeBtn" class="btn chip rounded-lg w-9 h-9 grid place-items-center" aria-label="theme"><i data-lucide="moon" class="w-4 h-4"></i></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
 <!-- HERO -->
-<section class="sd-hero" aria-labelledby="heroTitle">
-  <div class="sd-container">
-    <span class="sd-hero__eyebrow">
-      <svg class="i i-sm" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>
-      <span data-ar="معيارية · تراكمية · قائمة على الجدارات" data-en="Modular · Stackable · Competency-based"></span>
-    </span>
-    <h1 id="heroTitle" data-ar="بنية التعلّم لكوادر الذكاء الاصطناعي الوطنية" data-en="The Learning Architecture for National AI Talent"></h1>
-    <p class="sd-hero__lead" data-ar="كاتالوج معياري تراكمي ينتقل بالمتدرب من الوعي المفتوح إلى الممارسة الخبيرة — مستوى تمهيدي مفتوح، وأساس مشترك، ومساران قائمان على الأدوار، وأربعة مستويات، وسبعة وثلاثون برنامجًا مترابطًا." data-en="A modular, stackable catalog that carries learners from open awareness to expert practice — an open beginner level, a shared foundation core, two role-based tracks, four levels and thirty-seven interlocking programs."></p>
-    <div class="sd-hero__actions">
-      <a class="sd-btn sd-btn--light" href="#journey"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-route"/></svg><span data-ar="استكشف الرحلة" data-en="Explore the Journey"></span></a>
-      <a class="sd-btn sd-btn--ghost" href="#catalog"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-layout-grid"/></svg><span data-ar="تصفّح البرامج" data-en="Browse Programs"></span></a>
+<section class="relative overflow-hidden pt-28 pb-20 px-4 sm:px-6">
+  <div class="absolute inset-0 -z-10" style="background:radial-gradient(60% 50% at 70% 0%,#2E8B9E18,transparent),radial-gradient(50% 40% at 10% 20%,#1F6FB214,transparent)"></div>
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 reveal">
+      <div class="inline-flex items-center gap-2 chip rounded-full px-3 py-1 text-xs font-semibold mb-5" style="color:var(--accent)">
+        <span class="dot" style="background:var(--accent)"></span>
+        <span class="t-en">Modular · Stackable · Competency-based</span><span class="t-ar">معيارية · تراكمية · قائمة على الجدارات</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        <span class="t-en">The <span class="grad-text">Learning Architecture</span><br>for National AI Talent</span>
+        <span class="t-ar">بنية <span class="grad-text">التعلّم</span> لكوادر<br>الذكاء الاصطناعي الوطنية</span>
+      </h1>
+      <p class="muted text-lg mt-5 max-w-xl">
+        <span class="t-en">A modular, stackable catalog that carries learners from open awareness to expert practice — an open beginner level, a shared foundation core, two role-based tracks, four levels and thirty-seven interlocking programs.</span>
+        <span class="t-ar">كاتالوج معياري تراكمي ينتقل بالمتدرب من الوعي المفتوح إلى الممارسة الخبيرة — مستوى تمهيدي مفتوح، وأساس مشترك، ومساران قائمان على الأدوار، وأربعة مستويات، وسبعة وثلاثون برنامجًا مترابطًا.</span>
+      </p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="#journey" class="btn rounded-xl px-5 py-3 font-semibold text-white" style="background:var(--ink)"><span class="t-en">Explore the Journey</span><span class="t-ar">استكشف الرحلة</span></a>
+        <a href="#catalog" class="btn rounded-xl px-5 py-3 font-semibold chip" style="color:var(--ink)"><span class="t-en">Browse Programs</span><span class="t-ar">تصفّح البرامج</span></a>
+      </div>
+      <div id="herostats" class="grid grid-cols-4 gap-3 mt-10 max-w-lg"></div>
+    </div>
+    <div class="lg:col-span-5 reveal flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 blur-3xl -z-10" style="background:conic-gradient(from 200deg,#1F6FB230,#2E8B9E30,#3DBA8C30,#E8743B25,#1F6FB230)"></div>
+        <div id="herologo" class="w-[300px] sm:w-[360px] drop-shadow-xl"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="sd-kpis"><div class="sd-container"><div class="sd-kpis__grid" id="herostats" role="group" data-ar-label="مؤشرات الكاتالوج" data-en-label="Catalog key figures"></div></div></div>
-
-<nav class="sd-subnav" data-spy data-ar-label="أقسام الكاتالوج" data-en-label="Catalog sections" style="margin-top:2rem">
-  <div class="sd-container sd-subnav__inner" id="navlinks"></div>
-</nav>
-
 <!-- TRACKS -->
-<section class="sd-section" id="tracks">
-  <div class="sd-container">
-    <div class="sd-section__head">
-      <div class="sd-eyebrow"><span class="sec-num">01</span><span data-ar="المسارات" data-en="Pathways"></span></div>
-      <h2 data-ar="أربعة مسارات: مستوى تمهيدي مفتوح، وأساس مشترك، ومساران مهنيان" data-en="Four pathways: an open beginner tier, a shared core, two role tracks"></h2>
-    </div>
-    <div id="trackgrid" class="sd-grid sd-grid--2"></div>
+<section id="tracks" class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-10"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">01 — Pathways</span><span class="t-ar">01 — المسارات</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Four pathways: an open beginner tier, a shared core, two role tracks</span><span class="t-ar">أربعة مسارات: مستوى تمهيدي مفتوح، وأساس مشترك، ومساران مهنيان</span></h2></div>
+    <div id="trackgrid" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5"></div>
   </div>
 </section>
 
 <!-- LEVELS -->
-<section class="sd-section sd-section--alt" id="levels">
-  <div class="sd-container">
-    <div class="sd-section__head">
-      <div class="sd-eyebrow"><span class="sec-num">02</span><span data-ar="التدرّج" data-en="Progression"></span></div>
-      <h2 data-ar="أربعة مستويات وفق التصنيف الوطني لسدايا" data-en="Four levels, aligned to SDAIA's national classification"></h2>
-    </div>
-    <div id="levelgrid" class="sd-grid sd-grid--4"></div>
+<section id="levels" class="py-16 px-4 sm:px-6" style="background:var(--surface2)">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-10"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">02 — Progression</span><span class="t-ar">02 — التدرّج</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Four levels, aligned to SDAIA's national classification</span><span class="t-ar">أربعة مستويات وفق التصنيف الوطني لسدايا</span></h2></div>
+    <div id="levelgrid" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5"></div>
   </div>
 </section>
 
 <!-- JOURNEY / STEPPER -->
-<section class="sd-section" id="journey">
-  <div class="sd-container">
-    <div class="journey-head">
-      <div class="sd-section__head">
-        <div class="sd-eyebrow"><span class="sec-num">03</span><span data-ar="الرحلة الموجّهة" data-en="Guided Journey"></span></div>
-        <h2 data-ar="رحلة التعلّم التراكمية" data-en="Stackable Learning Journey"></h2>
-        <p data-ar="تنقّل عبر الكاتالوج بالتسلسل. كل برنامج يضيف شهادة تتراكم نحو شهادة المسار المهنية. يُحفظ تقدّمك في هذا المتصفح." data-en="Step through the catalog in sequence. Each program stacks a credential toward the Track Professional Certificate. Your progress is saved in this browser."></p>
+<section id="journey" class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-8">
+      <div><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">03 — Guided Journey</span><span class="t-ar">03 — الرحلة الموجّهة</span></span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Stackable Learning Journey</span><span class="t-ar">رحلة التعلّم التراكمية</span></h2>
+        <p class="muted mt-2 max-w-xl"><span class="t-en">Step through the catalog in sequence. Each program stacks a credential toward the Track Professional Certificate.</span><span class="t-ar">تنقّل عبر الكاتالوج بالتسلسل. كل برنامج يضيف شهادة تتراكم نحو شهادة المسار المهنية.</span></p>
       </div>
-      <div class="progress-card" role="group" data-ar-label="تقدّم الرحلة" data-en-label="Journey progress">
-        <svg width="78" height="78" viewBox="0 0 86 86" style="transform:rotate(-90deg)" aria-hidden="true">
+      <!-- progress ring -->
+      <div class="flex items-center gap-4 card rounded-2xl px-5 py-4">
+        <svg width="86" height="86" viewBox="0 0 86 86" class="-rotate-90">
+          <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F6FB2"/><stop offset=".5" stop-color="#2E8B9E"/><stop offset="1" stop-color="#3DBA8C"/></linearGradient></defs>
           <circle class="ring-bg" cx="43" cy="43" r="36" fill="none" stroke-width="8"/>
           <circle id="ring" class="ring-fg" cx="43" cy="43" r="36" fill="none" stroke-width="8" stroke-dasharray="226" stroke-dashoffset="226"/>
         </svg>
-        <div><div class="pct" id="pct">0%</div>
-          <div class="pl"><span data-ar="مكتمل" data-en="completed"></span> · <span class="num"><span id="donecount">0</span>/<span id="totalcount">37</span></span></div></div>
+        <div><div class="text-2xl font-extrabold" id="pct">0%</div>
+          <div class="text-xs muted"><span class="t-en">completed</span><span class="t-ar">مكتمل</span></div>
+          <div class="text-xs muted mt-0.5"><span id="donecount">0</span>/<span id="totalcount">37</span></div></div>
       </div>
     </div>
 
-    <div class="rail-wrap"><div id="rail" class="rail" role="group" data-ar-label="خطوات الرحلة" data-en-label="Journey steps"></div></div>
-    <div id="stepcard" class="sd-card sd-card--flat step-card" aria-live="polite"></div>
+    <!-- stepper rail -->
+    <div class="scrollx overflow-x-auto pb-3 mb-7"><div id="rail" class="flex items-center gap-1 min-w-max"></div></div>
 
-    <div class="journey-nav">
-      <button id="prevBtn" class="sd-btn sd-btn--secondary"><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg><span data-ar="السابق" data-en="Previous"></span></button>
-      <span class="pos"><span data-ar="الخطوة" data-en="Step"></span> <b class="num"><span id="stepnum">1</span> / <span id="steptotal">37</span></b></span>
-      <button id="nextBtn" class="sd-btn sd-btn--primary"><span data-ar="التالي" data-en="Next"></span><svg class="i i-flip" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
+    <!-- active step -->
+    <div id="stepcard" class="card rounded-3xl p-6 sm:p-8"></div>
+
+    <div class="flex items-center justify-between mt-6">
+      <button id="prevBtn" class="btn chip rounded-xl px-5 py-3 font-semibold flex items-center gap-2" style="color:var(--ink)"><i data-lucide="arrow-left" class="w-4 h-4 ltr-ic"></i><span class="t-en">Previous</span><span class="t-ar">السابق</span></button>
+      <span class="text-sm muted"><span class="t-en">Step</span><span class="t-ar">الخطوة</span> <b id="stepnum">1</b> / <span id="steptotal">37</span></span>
+      <button id="nextBtn" class="btn rounded-xl px-5 py-3 font-semibold text-white flex items-center gap-2" style="background:var(--ink)"><span class="t-en">Next</span><span class="t-ar">التالي</span><i data-lucide="arrow-right" class="w-4 h-4 ltr-ic"></i></button>
     </div>
   </div>
 </section>
 
 <!-- CATALOG -->
-<section class="sd-section sd-section--alt" id="catalog">
-  <div class="sd-container">
-    <div class="sd-section__head">
-      <div class="sd-eyebrow"><span class="sec-num">04</span><span data-ar="الكاتالوج" data-en="Catalog"></span></div>
-      <h2 data-ar="الكاتالوج الكامل للبرامج" data-en="The full program catalog"></h2>
-    </div>
-    <div class="cat-filters">
-      <div class="sd-seg" id="trackFilter" role="group" data-ar-label="تصفية حسب المسار" data-en-label="Filter by pathway"></div>
-      <div class="sd-seg" id="levelFilter" role="group" data-ar-label="تصفية حسب المستوى" data-en-label="Filter by level"></div>
-      <div class="sd-search">
-        <svg class="i" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
-        <input id="search" class="sd-input" type="search" data-ar-placeholder="ابحث بالاسم أو الرمز أو الأداة…" data-en-placeholder="Search by name, code or tool…" data-ar-label="بحث في البرامج" data-en-label="Search programs">
+<section id="catalog" class="py-16 px-4 sm:px-6" style="background:var(--surface2)">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-7"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">04 — Catalog</span><span class="t-ar">04 — الكاتالوج</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">The full program catalog</span><span class="t-ar">الكاتالوج الكامل للبرامج</span></h2></div>
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <div class="flex flex-wrap gap-1 chip rounded-xl p-1" id="trackFilter"></div>
+      <div class="flex flex-wrap gap-1 chip rounded-xl p-1" id="levelFilter"></div>
+      <div class="relative grow min-w-[200px] max-w-xs ms-auto">
+        <i data-lucide="search" class="w-4 h-4 absolute top-1/2 -translate-y-1/2 start-3 muted"></i>
+        <input id="search" class="w-full chip rounded-xl py-2 ps-9 pe-3 text-sm bg-transparent outline-none focus:border-brand" placeholder="Search… بحث…">
       </div>
     </div>
-    <p class="sd-results" id="catcount" role="status" aria-live="polite" style="margin-bottom:1rem"></p>
-    <div id="catgrid" class="sd-grid sd-grid--3"></div>
-    <p id="emptymsg" class="sd-empty" hidden data-ar="لا توجد برامج مطابقة." data-en="No programs match your filters."></p>
+    <div id="catgrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+    <p id="emptymsg" class="muted text-center py-10 hide"><span class="t-en">No programs match your filters.</span><span class="t-ar">لا توجد برامج مطابقة.</span></p>
   </div>
 </section>
 
 <!-- SKILLS MATRIX -->
-<section class="sd-section" id="skills">
-  <div class="sd-container">
-    <div class="sd-section__head">
-      <div class="sd-eyebrow"><span class="sec-num">05</span><span data-ar="الجدارات" data-en="Competencies"></span></div>
-      <h2 data-ar="مصفوفة المهارات × البرامج" data-en="Skills × Programs matrix"></h2>
-      <p data-ar="مستوى الإتقان لكل برنامج — I تعريف · D تطوير · M إتقان." data-en="Proficiency built per program — I Introduced · D Developed · M Mastered."></p>
-    </div>
-    <div class="sd-card sd-card--flat matrix-card"><div id="matrix"></div></div>
-    <div class="legend">
-      <span><span class="cell I" style="background:var(--brand-soft);color:var(--brand)">I</span><span data-ar="تعريف" data-en="Introduced"></span></span>
-      <span><span class="cell D" style="background:var(--blue-400);color:#05203D">D</span><span data-ar="تطوير" data-en="Developed"></span></span>
-      <span><span class="cell M" style="background:var(--navy-800);color:#fff">M</span><span data-ar="إتقان" data-en="Mastered"></span></span>
-    </div>
+<section id="skills" class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-7"><span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">05 — Competencies</span><span class="t-ar">05 — الجدارات</span></span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2"><span class="t-en">Skills × Programs matrix</span><span class="t-ar">مصفوفة المهارات × البرامج</span></h2>
+      <p class="muted mt-2"><span class="t-en">Proficiency built per program — I Introduced · D Developed · M Mastered.</span><span class="t-ar">مستوى الإتقان لكل برنامج — I تعريف · D تطوير · M إتقان.</span></p></div>
+    <div class="card rounded-2xl p-3 scrollx overflow-x-auto"><div id="matrix"></div></div>
   </div>
 </section>
 
 <!-- NAMING + RECOMMENDATIONS -->
-<section class="sd-section sd-section--alt" id="design">
-  <div class="sd-container design-grid">
-    <div>
-      <div class="sd-section__head">
-        <div class="sd-eyebrow"><span class="sec-num">06</span><span data-ar="اصطلاح التسمية" data-en="Naming Convention"></span></div>
-        <h2 data-ar="ترميز موحّد بمستوى مرجعي" data-en="A unified, reference-grade code"></h2>
-      </div>
-      <div class="sd-card sd-card--flat naming-card">
-        <div class="code-ex">SDA&#8209;<span class="t1">AIE</span>&#8209;<span class="t2">2</span><span class="t3">11</span></div>
-        <div id="naming" class="naming-rows"></div>
+<section id="design" class="py-16 px-4 sm:px-6" style="background:var(--surface2)">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+    <div class="reveal">
+      <span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">06 — Naming Convention</span><span class="t-ar">06 — اصطلاح التسمية</span></span>
+      <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-5"><span class="t-en">A unified, reference-grade code</span><span class="t-ar">ترميز موحّد بمستوى مرجعي</span></h2>
+      <div class="card rounded-2xl p-6">
+        <div class="font-mono text-lg font-bold mb-4" style="color:var(--brand)">SDA&#8209;<span style="color:var(--accent)">AIE</span>&#8209;<span style="color:var(--green)">2</span><span class="muted">11</span></div>
+        <div id="naming" class="space-y-3 text-sm"></div>
       </div>
     </div>
-    <div>
-      <div class="sd-section__head">
-        <div class="sd-eyebrow"><span class="sec-num">07</span><span data-ar="التحسين المستقبلي" data-en="Future Improvement"></span></div>
-        <h2 data-ar="مبنية للتوسّع" data-en="Built to extend"></h2>
-      </div>
-      <div id="recs" class="recs"></div>
+    <div class="reveal">
+      <span class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent)"><span class="t-en">07 — Future Improvement</span><span class="t-ar">07 — التحسين المستقبلي</span></span>
+      <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-5"><span class="t-en">Built to extend</span><span class="t-ar">مبنية للتوسّع</span></h2>
+      <div id="recs" class="space-y-3"></div>
     </div>
   </div>
 </section>
+
 </main>
 
-<footer class="sd-footer" data-note-ar="بنية تعلّم تراكمية معيارية · إصدار الكاتالوج 2026.2 · 37 برنامجًا · 132 يومًا تدريبيًا" data-note-en="Modular Stackable Learning Architecture · Catalog v2026.2 · 37 programs · 132 training days"></footer>
+<!-- FOOTER -->
+<footer class="border-t hairline py-12 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span id="footlogo" class="w-10"></span>
+      <div><div class="font-bold" style="color:var(--ink)"><span class="t-en">SDAIA Academy</span><span class="t-ar">أكاديمية سدايا</span></div>
+        <div class="text-xs muted"><span class="t-en">National reference academy for Data & AI</span><span class="t-ar">الأكاديمية المرجعية الوطنية للبيانات والذكاء الاصطناعي</span></div></div>
+    </div>
+    <p class="text-xs muted text-center"><span class="t-en">Modular Stackable Learning Architecture · Catalog v2026.2 · 37 programs · 132 training days</span><span class="t-ar">بنية تعلّم تراكمية معيارية · إصدار الكاتالوج 2026.2 · 37 برنامجًا · 132 يومًا تدريبيًا</span></p>
+  </div>
+</footer>
+
+<button id="toTop" class="fixed bottom-6 end-6 z-40 btn rounded-full w-11 h-11 grid place-items-center text-white shadow-lg hide" style="background:var(--ink)"><i data-lucide="arrow-up" class="w-5 h-5"></i></button>
 
 <script id="catalog-data" type="application/json">{
  "academy": {
@@ -3165,251 +3088,299 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
  ]
 }</script>
 <script>
-'use strict';
 const CATALOG = JSON.parse(document.getElementById('catalog-data').textContent);
-const $ = (s, e = document) => e.querySelector(s); const $$ = (s, e = document) => [...e.querySelectorAll(s)];
-const T = (ar, en) => SDAIA.t(ar, en);
-const I = (name, cls) => SDAIA.icon(name, cls);
-const esc = s => SDAIA.esc(s);
-const isAr = () => SDAIA.lang === 'ar';
+const T = (en,ar)=> `<span class="t-en">${en}</span><span class="t-ar">${ar}</span>`;
+const $ = (s,e=document)=>e.querySelector(s); const $$=(s,e=document)=>[...e.querySelectorAll(s)];
+let LANG = 'en';
+const TRACKMETA = Object.fromEntries(CATALOG.tracks.map(t=>[t.id,{c:t.color,ic:t.icon}]));
+const LVLMETA = Object.fromEntries(CATALOG.levels.map(l=>[l.id,{c:l.color}]));
+const TYPEIC = {Program:'book-open',Bootcamp:'rocket',Workshop:'wrench',Lab:'flask-conical',Capstone:'trophy'};
+const TYPEAR = {Program:'برنامج تدريبي',Bootcamp:'معسكر مكثّف',Workshop:'ورشة عمل',Lab:'مختبر تطبيقي',Capstone:'مشروع ختامي'};
+const DELIVAR = {'Instructor Led':'تدريب بإشراف مدرّب'};
+const typeName=(t)=>T(t,TYPEAR[t]||t);
+const delivName=(d)=>T(d,DELIVAR[d]||d);
 
-/* presentation palette mapped onto the shared brand tokens (data colours in the JSON are left untouched) */
-const TRACK_COLOR = { L0: '#1C8A4E', FND: '#D9641F', AIE: '#1459A8', DSC: '#0E7C86' };
-const TRACK_ICON = { L0: 'sunrise', FND: 'compass', AIE: 'cpu', DSC: 'chart-column' };
-const LEVEL_COLOR = { L0: '#1C8A4E', L1: '#2A78D6', L2: '#1459A8', L3: '#0B2A4E' };
-const TRACKMETA = Object.fromEntries(CATALOG.tracks.map(t => [t.id, { c: TRACK_COLOR[t.id] || t.color, ic: TRACK_ICON[t.id] || t.icon || 'layers' }]));
-const LVLMETA = Object.fromEntries(CATALOG.levels.map(l => [l.id, { c: LEVEL_COLOR[l.id] || l.color }]));
-const TYPEIC = { Program: 'book-open', Bootcamp: 'rocket', Workshop: 'wrench', Lab: 'flask-conical', Capstone: 'trophy' };
-const TYPEAR = { Program: 'برنامج تدريبي', Bootcamp: 'معسكر مكثّف', Workshop: 'ورشة عمل', Lab: 'مختبر تطبيقي', Capstone: 'مشروع ختامي' };
-const DELIVAR = { 'Instructor Led': 'تدريب بإشراف مدرّب' };
-const typeName = t => T(TYPEAR[t] || t, t);
-const delivName = d => T(DELIVAR[d] || d, d);
-const L = (en, ar) => isAr() ? ar : en;   // pick a localised data field
-const arPrograms = n => n === 1 ? 'برنامج واحد' : n === 2 ? 'برنامجان' : n <= 10 ? `${n} برامج` : `${n} برنامجًا`;
-const hoursTag = h => T(`${h} ساعة`, `${h}h`);
+/* ---------- SDAIA isometric prism logo (faithful SVG recreation) ---------- */
+function logoSVG(){
+  const D=[ // cx,cy,leftColor,rightColor
+    [230,46,'#2E8B9E','#3DBA8C'],            // top accent
+    [140,118,'#7FCBF2','#4FA3DC'],           // A1 blue
+    [320,118,'#5B4A93','#B5474B'],           // A2 purple→red
+    [94,176,'#7FCBF2','#4FA3DC'],            // B1 blue
+    [186,176,'#6FBEEC','#4596D2'],           // B2 blue
+    [274,176,'#6E5BA6','#4C3F86'],           // B3 purple
+    [366,176,'#F2A85A','#E8743B'],           // B4 orange
+    [140,234,'#6FBEEC','#4596D2'],           // C1 blue
+    [320,234,'#F2A85A','#E8743B'],           // C2 orange
+    [230,292,'#46B07A','#8BC34A'],           // bottom accent green
+  ];
+  const w=44,h=34; let p='';
+  for(const[cx,cy,c1,c2] of D){
+    const L=`${cx-w},${cy} ${cx},${cy-h} ${cx},${cy+h}`;
+    const R=`${cx},${cy-h} ${cx+w},${cy} ${cx},${cy+h}`;
+    p+=`<polygon points="${L}" fill="${c1}"/><polygon points="${R}" fill="${c2}"/>`;
+  }
+  return `<svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" aria-label="SDAIA"><g stroke="var(--surface)" stroke-width="4" stroke-linejoin="round">${p}</g></svg>`;
+}
 
 /* ---------- ordered journey ---------- */
-const ORDER = [['L0', 'L0'], ['FND', 'L1'], ['AIE', 'L1'], ['AIE', 'L2'], ['AIE', 'L3'], ['DSC', 'L1'], ['DSC', 'L2'], ['DSC', 'L3']];
-const JOURNEY = []; ORDER.forEach(([t, l]) => CATALOG.programs.filter(p => p.track === t && p.level === l).forEach(p => JOURNEY.push(p)));
-const TOTAL = JOURNEY.length;
-let cur = 0; const done = new Set();
-try { const s = localStorage.getItem('sdaia_done'); if (s) JSON.parse(s).forEach(c => done.add(c)); } catch (e) {}
+const ORDER=[['L0','L0'],['FND','L1'],['AIE','L1'],['AIE','L2'],['AIE','L3'],['DSC','L1'],['DSC','L2'],['DSC','L3']];
+let JOURNEY=[]; ORDER.forEach(([t,l])=>CATALOG.programs.filter(p=>p.track===t&&p.level===l).forEach(p=>JOURNEY.push(p)));
+const TOTAL=JOURNEY.length;
+let cur=0; const done=new Set();
+try{const s=localStorage.getItem('sdaia_done'); if(s) JSON.parse(s).forEach(c=>done.add(c));}catch(e){}
 
-function trackName(id) { const t = CATALOG.tracks.find(x => x.id === id); return L(t.name_en, t.name_ar); }
-function lvlName(id) { const l = CATALOG.levels.find(x => x.id === id); return L(l.name_en, l.name_ar); }
-const tags = s => (s || '').split(',').map(x => x.trim()).filter(Boolean).map(x => `<span class="sd-tag">${esc(x)}</span>`).join(' ');
+function trackName(id){const t=CATALOG.tracks.find(x=>x.id===id);return LANG==='ar'?t.name_ar:t.name_en;}
+function lvlName(id){const l=CATALOG.levels.find(x=>x.id===id);return LANG==='ar'?l.name_ar:l.name_en;}
 
 /* ---------- hero stats ---------- */
-function renderStats() {
-  const nDays = CATALOG.programs.reduce((a, p) => a + (p.days || 0), 0);
-  const nHours = CATALOG.programs.reduce((a, p) => a + (p.hours || 0), 0);
-  const stats = [
-    [CATALOG.programs.length, T('برنامجًا', 'Programs'), T('عبر أربعة مستويات', 'Across four levels'), 'layout-grid', 'tint-blue'],
-    [CATALOG.tracks.length, T('مسارات', 'Pathways'), T('تمهيدي · أساس مشترك · مساران مهنيان', 'Beginner · core · two role tracks'), 'route', 'tint-orange'],
-    [CATALOG.levels.length, T('مستويات', 'Levels'), T('تمهيدي · ممارس · متخصص · خبير', 'Beginner · Practitioner · Specialist · Expert'), 'layers', 'tint-teal'],
-    [nDays, T('يومًا تدريبيًا', 'Training days'), T(`${SDAIA.n(nHours)} ساعة تدريب`, `${SDAIA.n(nHours)} training hours`), 'calendar-days', 'tint-green']
-  ];
-  $('#herostats').innerHTML = stats.map(([n, l, note, ic, tint]) => `<div class="sd-kpi"><span class="sd-iconbox ${tint}">${I(ic)}</span><div class="sd-kpi__num" data-count="${n}">0</div><div class="sd-kpi__label">${l}</div><div class="sd-kpi__note">${note}</div></div>`).join('');
-  SDAIA.observeCounters($('#herostats'));
+function renderStats(){
+  const nDays=CATALOG.programs.reduce((a,p)=>a+(p.days||0),0);
+  const stats=[[String(CATALOG.programs.length),T('Programs','برنامجًا')],[String(CATALOG.tracks.length),T('Pathways','مسارات')],[String(CATALOG.levels.length),T('Levels','مستويات')],[String(nDays),T('Training days','يومًا تدريبيًا')]];
+  $('#herostats').innerHTML=stats.map(([n,l])=>`<div class="card rounded-xl px-3 py-3 text-center"><div class="text-2xl font-extrabold grad-text">${n}</div><div class="text-[11px] muted mt-0.5">${l}</div></div>`).join('');
 }
 
 /* ---------- tracks ---------- */
-function row(ic, le, la, ve, va) { return `<div class="r">${I(ic)}<div><b>${T(la, le)}: </b><span>${L(ve, va)}</span></div></div>`; }
-function renderTracks() {
-  $('#trackgrid').innerHTML = CATALOG.tracks.map(t => {
-    const m = TRACKMETA[t.id]; const nP = CATALOG.programs.filter(p => p.track === t.id).length;
-    return `<article class="sd-card sd-card--accent track-card" style="--tc:${m.c}">
-      <div class="track-card__head"><span class="sd-iconbox">${I(m.ic)}</span>
-        <div><h3>${L(t.name_en, t.name_ar)}</h3><span class="cnt">${T(arPrograms(nP), `${nP} programs`)}</span></div></div>
-      <p>${L(t.desc_en, t.desc_ar)}</p>
-      <div class="track-rows">
-        ${row('target', 'Goal', 'الهدف', t.goal_en, t.goal_ar)}
-        ${row('users', 'Audience', 'الفئة', t.audience_en, t.audience_ar)}
-        ${row('briefcase', 'Roles', 'الوظائف', t.roles_en, t.roles_ar)}
-        ${row('sparkles', 'Skills', 'المهارات', t.skills_en, t.skills_ar)}
-        ${row('key-round', 'Prerequisites', 'المتطلبات', t.prereq_en, t.prereq_ar)}
-      </div></article>`;
+function renderTracks(){
+  $('#trackgrid').innerHTML=CATALOG.tracks.map(t=>{
+    const m=TRACKMETA[t.id];const nP=CATALOG.programs.filter(p=>p.track===t.id).length;
+    return `<div class="card rounded-2xl p-6 reveal">
+      <div class="flex items-center gap-3 mb-4"><span class="grid place-items-center w-11 h-11 rounded-xl text-white" style="background:${m.c}"><i data-lucide="${m.ic}" class="w-5 h-5"></i></span>
+        <div><div class="font-bold text-lg leading-tight">${T(t.name_en,t.name_ar)}</div><div class="text-xs muted">${nP} ${T('programs','برنامج')}</div></div></div>
+      <p class="muted text-sm mb-4">${T(t.desc_en,t.desc_ar)}</p>
+      <div class="space-y-2 text-sm">
+        ${row('target','Goal','الهدف',t.goal_en,t.goal_ar)}
+        ${row('users','Audience','الفئة',t.audience_en,t.audience_ar)}
+        ${row('briefcase','Roles','الوظائف',t.roles_en,t.roles_ar)}
+        ${row('sparkles','Skills','المهارات',t.skills_en,t.skills_ar)}
+        ${row('key-round','Prerequisites','المتطلبات',t.prereq_en,t.prereq_ar)}
+      </div></div>`;
   }).join('');
 }
+function row(ic,le,la,ve,va){return `<div class="flex gap-2"><i data-lucide="${ic}" class="w-4 h-4 mt-0.5 shrink-0" style="color:var(--accent)"></i><div><span class="font-semibold">${T(le,la)}: </span><span class="muted">${T(ve,va)}</span></div></div>`}
 
 /* ---------- levels ---------- */
-function renderLevels() {
-  $('#levelgrid').innerHTML = CATALOG.levels.map((l, i) => {
-    const counts = CATALOG.tracks.map(t => [t.id, CATALOG.programs.filter(p => p.track === t.id && p.level === l.id).length]).filter(([, n]) => n > 0);
-    return `<article class="sd-card level-card" style="--tc:${LVLMETA[l.id].c}">
-      <div class="level-card__top"><span class="lv-n">${i + 1}</span><span class="sd-tag">${L(l.tech_en, l.tech_ar)}</span></div>
-      <div class="sd-bar"><i style="--w:${(i + 1) / CATALOG.levels.length * 100}%"></i></div>
-      <h3>${L(l.name_en, l.name_ar)}</h3>
-      <p>${L(l.desc_en, l.desc_ar)}</p>
-      <div class="counts">${counts.map(([id, n]) => `<span class="sd-tag tag-track" style="--tk:${TRACKMETA[id].c}"><span class="mono">${id}</span> · ${n}</span>`).join('')}</div>
-      <div class="cred">${I('award')}<span>${L(l.credential_en, l.credential_ar)}</span></div>
-    </article>`; }).join('');
+function renderLevels(){
+  $('#levelgrid').innerHTML=CATALOG.levels.map((l,i)=>{
+    const counts=CATALOG.tracks.map(t=>[t.id,CATALOG.programs.filter(p=>p.track===t.id&&p.level===l.id).length]).filter(([,n])=>n>0);
+    return `<div class="card rounded-2xl p-6 reveal">
+      <div class="flex items-center justify-between mb-3"><span class="grid place-items-center w-10 h-10 rounded-full text-white font-bold" style="background:${LVLMETA[l.id].c}">${i+1}</span>
+        <span class="chip rounded-full px-3 py-1 text-xs font-semibold">${T(l.tech_en,l.tech_ar)}</span></div>
+      <div class="lvlbar mb-3" style="width:${(i+1)/CATALOG.levels.length*100}%"></div>
+      <div class="font-bold text-lg">${T(l.name_en,l.name_ar)}</div>
+      <p class="muted text-sm mt-2 mb-4">${T(l.desc_en,l.desc_ar)}</p>
+      <div class="flex flex-wrap gap-2 text-xs">${counts.map(([id,n])=>`<span class="chip rounded-lg px-2 py-1">${id} · ${n}</span>`).join('')}</div>
+      <div class="mt-4 pt-3 border-t hairline text-sm flex gap-2"><i data-lucide="award" class="w-4 h-4 mt-0.5 shrink-0" style="color:var(--accent)"></i><span class="muted">${T(l.credential_en,l.credential_ar)}</span></div>
+    </div>`}).join('');
 }
 
 /* ---------- journey stepper ---------- */
-function renderRail() {
-  $('#rail').innerHTML = JOURNEY.map((p, i) => {
-    const active = i === cur, fin = done.has(p.code); const c = TRACKMETA[p.track].c;
-    const conn = i < TOTAL - 1 ? `<span class="conn" aria-hidden="true"></span>` : '';
-    return `<button type="button" data-i="${i}" class="railnode${active ? ' is-active' : ''}${fin ? ' is-done' : ''}" style="--tc:${c}" title="${esc(p.code)} — ${esc(L(p.name_en, p.name_ar))}" aria-label="${esc(L(p.name_en, p.name_ar))}"${active ? ' aria-current="step"' : ''}>${fin ? I('check') : i + 1}</button>${conn}`;
+function renderRail(){
+  $('#rail').innerHTML=JOURNEY.map((p,i)=>{
+    const active=i===cur, fin=done.has(p.code); const c=TRACKMETA[p.track].c;
+    const bg=active?c:(fin?'var(--accent)':'var(--surface)');
+    const col=(active||fin)?'#fff':'var(--muted)';
+    const conn=i<TOTAL-1?`<span class="h-0.5 w-5 sm:w-7" style="background:var(--line)"></span>`:'';
+    return `<div class="flex items-center"><button data-i="${i}" class="railnode step-circle grid place-items-center rounded-full font-bold text-xs border" style="width:34px;height:34px;background:${bg};color:${col};border-color:${active?c:'var(--line)'}">${fin?'<i data-lucide=check class="w-4 h-4"></i>':i+1}</button>${conn}</div>`;
   }).join('');
-  $('#totalcount').textContent = TOTAL;
-  $$('.railnode').forEach(b => b.onclick = () => { cur = +b.dataset.i; renderStep(); $(`.railnode[data-i="${cur}"]`)?.focus(); });
+  $('#totalcount').textContent=TOTAL;
 }
-function meta(ic, le, la, ve, va) { return `<div class="m"><div class="k">${I(ic)}${T(la, le)}</div><div class="v">${L(ve, va)}</div></div>`; }
-function renderStep() {
-  const p = JOURNEY[cur]; const m = TRACKMETA[p.track]; const fin = done.has(p.code);
-  const list = (en, ar) => L(en, ar).map(x => `<li>${I('circle-check')}<span>${esc(x)}</span></li>`).join('');
-  $('#stepcard').style.setProperty('--tc', m.c);
-  $('#stepcard').innerHTML = `
-    <div class="step-top">
-      <div class="step-id">
-        <span class="sd-iconbox">${I(TYPEIC[p.type] || 'book-open', 'i-lg')}</span>
-        <div><div class="step-tags">
-            <span class="step-code">${esc(p.code)}</span>
-            <span class="sd-tag">${trackName(p.track)}</span>
-            <span class="sd-tag">${lvlName(p.level)}</span>
-            <span class="sd-tag">${typeName(p.type)}</span></div>
-          <h3>${L(p.name_en, p.name_ar)}</h3></div>
+function renderStep(){
+  const p=JOURNEY[cur]; const m=TRACKMETA[p.track]; const fin=done.has(p.code);
+  const list=(en,ar)=> (LANG==='ar'?ar:en).map(x=>`<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0" style="color:var(--accent)"></i><span>${x}</span></li>`).join('');
+  const tags=(s)=> (LANG==='ar'? '' : '')+(s||'').split(',').map(x=>x.trim()).filter(Boolean).map(x=>`<span class="chip rounded-md px-2 py-0.5 text-xs">${x}</span>`).join(' ');
+  $('#stepcard').innerHTML=`<div class="fade-swap">
+    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+      <div class="flex items-start gap-4">
+        <span class="grid place-items-center w-12 h-12 rounded-xl text-white shrink-0" style="background:${m.c}"><i data-lucide="${TYPEIC[p.type]||'book-open'}" class="w-6 h-6"></i></span>
+        <div><div class="flex items-center gap-2 flex-wrap text-xs mb-1">
+            <span class="font-mono font-bold" style="color:${m.c}">${p.code}</span>
+            <span class="chip rounded-md px-2 py-0.5">${trackName(p.track)}</span>
+            <span class="chip rounded-md px-2 py-0.5">${lvlName(p.level)}</span>
+            <span class="chip rounded-md px-2 py-0.5">${typeName(p.type)}</span></div>
+          <h3 class="text-xl sm:text-2xl font-bold leading-tight">${T(p.name_en,p.name_ar)}</h3></div>
       </div>
-      <button id="doneBtn" type="button" class="sd-btn sd-btn--sm ${fin ? 'sd-btn--primary' : 'sd-btn--secondary'}" aria-pressed="${fin}">${I(fin ? 'circle-check-big' : 'circle')}<span>${fin ? T('مكتمل', 'Completed') : T('إتمام', 'Mark complete')}</span></button>
+      <button id="doneBtn" class="btn rounded-xl px-4 py-2 text-sm font-semibold flex items-center gap-2 ${fin?'text-white':'chip'}" style="${fin?'background:var(--accent)':'color:var(--ink)'}">
+        <i data-lucide="${fin?'check-circle-2':'circle'}" class="w-4 h-4"></i>${fin?T('Completed','مكتمل'):T('Mark complete','إتمام')}</button>
     </div>
-    <p class="desc">${L(p.desc_en, p.desc_ar)}</p>
-    <div class="step-meta">
-      ${meta('signal', 'Delivery', 'النمط', p.delivery, DELIVAR[p.delivery] || p.delivery)}
-      ${meta('clock', 'Duration', 'المدة', `${p.duration_en} · ${p.hours}h`, `${p.duration_ar} · ${p.hours} ساعة`)}
-      ${meta('users', 'Audience', 'الفئة', p.audience_en, p.audience_ar)}
-      ${meta('award', 'Credential', 'الشهادة', p.credential_en, p.credential_ar)}
+    <p class="muted mb-6 max-w-3xl">${T(p.desc_en,p.desc_ar)}</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+      ${meta('signal','Delivery','النمط',p.delivery,DELIVAR[p.delivery]||p.delivery)}
+      ${meta('clock','Duration','المدة',`${p.duration_en} · ${p.hours}h`,`${p.duration_ar} · ${p.hours} ساعة`)}
+      ${meta('users','Audience','الفئة',p.audience_en,p.audience_ar)}
+      ${meta('award','Credential','الشهادة',p.credential_en,p.credential_ar)}
     </div>
-    <div class="step-cols">
-      <div><h4>${I('target')}${T('نواتج التعلّم', 'Learning Outcomes')}</h4><ul class="check-list">${list(p.outcomes_en, p.outcomes_ar)}</ul></div>
-      <div><h4>${I('list-tree')}${T('الموضوعات', 'Topics Covered')}</h4><ul class="check-list">${list(p.topics_en, p.topics_ar)}</ul></div>
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div><h4 class="font-bold mb-3 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4" style="color:var(--accent)"></i>${T('Learning Outcomes','نواتج التعلّم')}</h4>
+        <ul class="space-y-1.5 text-sm muted">${list(p.outcomes_en,p.outcomes_ar)}</ul></div>
+      <div><h4 class="font-bold mb-3 flex items-center gap-2"><i data-lucide="list-tree" class="w-4 h-4" style="color:var(--accent)"></i>${T('Topics Covered','الموضوعات')}</h4>
+        <ul class="space-y-1.5 text-sm muted">${list(p.topics_en,p.topics_ar)}</ul></div>
     </div>
-    <div class="step-more">
-      <div>
-        <div class="blk"><h4>${T('المتطلبات السابقة', 'Prerequisites')}</h4><p>${L(p.prereq_en, p.prereq_ar)}</p></div>
-        <div class="blk"><h4>${T('المهارات والأدوات', 'Skills & Tools')}</h4><p style="margin-bottom:.5rem">${L(p.tech_en, p.tech_ar || p.tech_en)}</p><div class="sd-chips" style="gap:.35rem">${tags(p.tools)}</div></div>
-        <div class="blk"><h4>${T('التقييم', 'Assessment')}</h4><p>${L(p.assessment_en, p.assessment_ar)}</p></div>
+    <div class="grid lg:grid-cols-2 gap-6 mt-6 pt-6 border-t hairline">
+      <div class="space-y-4">
+        <div><h4 class="font-bold mb-2 text-sm">${T('Prerequisites','المتطلبات السابقة')}</h4><p class="muted text-sm">${T(p.prereq_en,p.prereq_ar)}</p></div>
+        <div><h4 class="font-bold mb-2 text-sm">${T('Skills & Tools','المهارات والأدوات')}</h4>
+          <p class="muted text-sm mb-2">${T(p.tech_en,p.tech_ar||p.tech_en)}</p><div class="flex flex-wrap gap-1.5">${tags(p.tools)}</div></div>
+        <div><h4 class="font-bold mb-2 text-sm">${T('Assessment','التقييم')}</h4><p class="muted text-sm">${T(p.assessment_en,p.assessment_ar)}</p></div>
       </div>
-      <div>
-        <div class="blk"><h4>${T('التراكمية', 'Stackability')}</h4><p>${L(p.stack_en, p.stack_ar)}</p>
-          <div class="stack-row">
-            <span class="sd-tag">${T('السابق', 'Prev')}: <span class="mono">${esc(p.prev)}</span></span>${I('arrow-right', 'i-flip')}
-            <span class="sd-tag sd-tag--brand mono">${esc(p.code)}</span>${I('arrow-right', 'i-flip')}
-            <span class="sd-tag">${T('التالي', 'Next')}: <span class="mono">${esc(p.next)}</span></span></div></div>
-        <div class="blk"><h4>${T('الصلة بالقطاع', 'Industry Relevance')}</h4><div class="sd-chips" style="gap:.35rem">${tags(L(p.industry_en, p.industry_ar))}</div></div>
+      <div class="space-y-4">
+        <div><h4 class="font-bold mb-2 text-sm flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4" style="color:var(--accent)"></i>${T('Stackability','التراكمية')}</h4>
+          <p class="muted text-sm mb-3">${T(p.stack_en,p.stack_ar)}</p>
+          <div class="flex items-center gap-2 text-xs">
+            <span class="chip rounded-lg px-2 py-1">${T('Prev','السابق')}: <b>${p.prev}</b></span>
+            <i data-lucide="arrow-right" class="w-3 h-3 ltr-ic muted"></i>
+            <span class="chip rounded-lg px-2 py-1" style="border-color:${m.c}"><b>${p.code}</b></span>
+            <i data-lucide="arrow-right" class="w-3 h-3 ltr-ic muted"></i>
+            <span class="chip rounded-lg px-2 py-1">${T('Next','التالي')}: <b>${p.next}</b></span></div></div>
+        <div><h4 class="font-bold mb-2 text-sm flex items-center gap-2"><i data-lucide="building-2" class="w-4 h-4" style="color:var(--accent)"></i>${T('Industry Relevance','الصلة بالقطاع')}</h4>
+          <div class="flex flex-wrap gap-1.5">${(LANG==='ar'?p.industry_ar:p.industry_en).split(',').map(x=>`<span class="chip rounded-md px-2 py-0.5 text-xs">${x.trim()}</span>`).join(' ')}</div></div>
       </div>
-    </div>`;
-  $('#stepnum').textContent = cur + 1; $('#steptotal').textContent = TOTAL;
-  $('#doneBtn').onclick = () => { done.has(p.code) ? done.delete(p.code) : done.add(p.code); persist(); renderRail(); renderStep(); $('#doneBtn')?.focus(); };
-  $('#prevBtn').disabled = cur === 0; $('#nextBtn').disabled = cur === TOTAL - 1;
-  renderRail(); updateProgress();
-  scrollRailTo($(`.railnode[data-i="${cur}"]`));
+    </div></div>`;
+  $('#stepnum').textContent=cur+1; const st=$('#steptotal'); if(st) st.textContent=TOTAL;
+  $('#doneBtn').onclick=()=>{ done.has(p.code)?done.delete(p.code):done.add(p.code); persist(); renderRail(); renderStep(); updateProgress(); lucide.createIcons(); };
+  lucide.createIcons(); renderRail(); updateProgress();
+  document.querySelectorAll('.railnode').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;renderStep();});
 }
-/* keep the active node centred in the horizontal rail without moving the page (RTL-aware) */
-function scrollRailTo(node) {
-  const wrap = $('.rail-wrap'); if (!node || !wrap) return;
-  const n = node.getBoundingClientRect(), w = wrap.getBoundingClientRect();
-  const delta = (n.left + n.width / 2) - (w.left + w.width / 2);
-  try { wrap.scrollBy({ left: delta, behavior: railReady ? 'smooth' : 'auto' }); } catch (e) { wrap.scrollLeft += delta; }
-}
-let railReady = false; requestAnimationFrame(() => { railReady = true; });
-function persist() { try { localStorage.setItem('sdaia_done', JSON.stringify([...done])); } catch (e) {} }
-function updateProgress() {
-  const pc = Math.round(done.size / TOTAL * 100);
-  $('#pct').textContent = pc + '%'; $('#donecount').textContent = done.size;
-  $('#ring').style.strokeDashoffset = 226 - (226 * pc / 100);
+function meta(ic,le,la,ve,va){return `<div class="chip rounded-xl p-3"><div class="flex items-center gap-1.5 text-[11px] font-semibold muted mb-1"><i data-lucide="${ic}" class="w-3.5 h-3.5"></i>${T(le,la)}</div><div class="text-sm font-medium leading-snug">${T(ve,va)}</div></div>`}
+function persist(){try{localStorage.setItem('sdaia_done',JSON.stringify([...done]))}catch(e){}}
+function updateProgress(){
+  const pc=Math.round(done.size/TOTAL*100);
+  $('#pct').textContent=pc+'%'; $('#donecount').textContent=done.size;
+  $('#ring').style.strokeDashoffset = 226-(226*pc/100);
 }
 
 /* ---------- catalog grid ---------- */
-let fTrack = 'all', fLevel = 'all', fQ = '';
-function renderFilters() {
-  const tf = [['all', T('كل المسارات', 'All tracks')]].concat(CATALOG.tracks.map(t => [t.id, L(t.name_en, t.name_ar)]));
-  $('#trackFilter').innerHTML = tf.map(([v, l]) => `<button type="button" data-t="${v}" aria-pressed="${v === fTrack}">${l}</button>`).join('');
-  const lf = [['all', T('كل المستويات', 'All levels')]].concat(CATALOG.levels.map(l => [l.id, L(l.name_en.split(' (')[0], l.name_ar.split(' (')[0])]));
-  $('#levelFilter').innerHTML = lf.map(([v, l]) => `<button type="button" data-l="${v}" aria-pressed="${v === fLevel}">${l}</button>`).join('');
-  $$('#trackFilter button').forEach(b => b.onclick = () => { fTrack = b.dataset.t; renderFilters(); renderCatalog(); $(`#trackFilter button[data-t="${fTrack}"]`)?.focus(); });
-  $$('#levelFilter button').forEach(b => b.onclick = () => { fLevel = b.dataset.l; renderFilters(); renderCatalog(); $(`#levelFilter button[data-l="${fLevel}"]`)?.focus(); });
+let fTrack='all',fLevel='all',fQ='';
+function renderFilters(){
+  const tf=[['all',T('All tracks','كل المسارات')]].concat(CATALOG.tracks.map(t=>[t.id,T(t.name_en,t.name_ar)]));
+  $('#trackFilter').innerHTML=tf.map(([v,l])=>`<button data-t="${v}" class="ftab rounded-lg px-3 py-1.5 text-xs font-semibold ${v===fTrack?'text-white':''}" style="${v===fTrack?'background:var(--ink)':'color:var(--muted)'}">${l}</button>`).join('');
+  const lf=[['all',T('All levels','كل المستويات')]].concat(CATALOG.levels.map(l=>[l.id,T(l.name_en.split(' (')[0],l.name_ar.split(' (')[0])]));
+  $('#levelFilter').innerHTML=lf.map(([v,l])=>`<button data-l="${v}" class="ltab rounded-lg px-3 py-1.5 text-xs font-semibold ${v===fLevel?'text-white':''}" style="${v===fLevel?'background:var(--ink)':'color:var(--muted)'}">${l}</button>`).join('');
+  $$('.ftab').forEach(b=>b.onclick=()=>{fTrack=b.dataset.t;renderFilters();renderCatalog();});
+  $$('.ltab').forEach(b=>b.onclick=()=>{fLevel=b.dataset.l;renderFilters();renderCatalog();});
 }
-function renderCatalog() {
-  const q = fQ.toLowerCase();
-  const items = CATALOG.programs.filter(p => (fTrack === 'all' || p.track === fTrack) && (fLevel === 'all' || p.level === fLevel) &&
-    (!q || [p.code, p.name_en, p.name_ar, p.tech_en, p.tech_ar, p.tools, p.industry_en, p.industry_ar, p.type].join(' ').toLowerCase().includes(q)));
-  $('#emptymsg').hidden = items.length > 0;
-  $('#catcount').innerHTML = T(`<b>${items.length}</b> من <b>${CATALOG.programs.length}</b> برنامجًا`, `<b>${items.length}</b> of <b>${CATALOG.programs.length}</b> programs`);
-  $('#catgrid').innerHTML = items.map(p => { const m = TRACKMETA[p.track];
-    return `<article class="sd-card prog-card" style="--tc:${m.c}">
-      <div class="prog-card__top"><span class="sd-iconbox">${I(TYPEIC[p.type] || 'book-open')}</span><span class="code">${esc(p.code)}</span></div>
-      <h3>${L(p.name_en, p.name_ar)}</h3>
-      <div class="tags"><span class="sd-tag">${lvlName(p.level)}</span><span class="sd-tag">${typeName(p.type)}</span><span class="sd-tag">${L(p.duration_en, p.duration_ar)}</span><span class="sd-tag num">${hoursTag(p.hours)}</span></div>
-      <p class="desc">${L(p.desc_en, p.desc_ar)}</p>
-      <button type="button" class="cardtog" aria-expanded="false" data-code="${p.code}"><span>${T('التفاصيل', 'Details')}</span>${I('chevron-down')}</button>
-      <div class="expandable"><div><div class="exp-body">
-        <div><div class="lbl">${T('النواتج', 'Outcomes')}</div><ul>${L(p.outcomes_en, p.outcomes_ar).slice(0, 5).map(x => `<li><span>${esc(x)}</span></li>`).join('')}</ul></div>
-        <div><div class="lbl">${T('الموضوعات', 'Topics')}</div><div class="sd-chips" style="gap:.3rem">${L(p.topics_en, p.topics_ar).map(x => `<span class="sd-tag">${esc(x)}</span>`).join('')}</div></div>
-        <div class="two">
-          <div><div class="lbl">${T('الأدوات', 'Tools')}</div><p>${esc(p.tools)}</p></div>
-          <div><div class="lbl">${T('التقييم', 'Assessment')}</div><p>${L(p.assessment_en, p.assessment_ar)}</p></div></div>
-        <div><div class="lbl">${T('التراكمية', 'Stackability')}</div><p>${L(p.stack_en, p.stack_ar)}</p></div>
-        <div class="stack-row"><span class="sd-tag mono">${esc(p.prev)}</span>${I('arrow-right', 'i-flip')}<span class="sd-tag sd-tag--brand mono">${esc(p.code)}</span>${I('arrow-right', 'i-flip')}<span class="sd-tag mono">${esc(p.next)}</span></div>
-        <a href="#journey" class="open-step" data-code="${p.code}">${T('افتح في الرحلة', 'Open in journey')}${I('arrow-up-right', 'i-flip')}</a>
-      </div></div></div></article>`; }).join('');
-  $$('.cardtog').forEach(b => b.onclick = () => { const ex = b.nextElementSibling; const open = ex.classList.toggle('open'); b.setAttribute('aria-expanded', String(open)); });
-  $$('.open-step').forEach(a => a.onclick = () => { const i = JOURNEY.findIndex(p => p.code === a.dataset.code); if (i >= 0) { cur = i; renderStep(); } });
+function renderCatalog(){
+  const q=fQ.toLowerCase();
+  const items=CATALOG.programs.filter(p=>(fTrack==='all'||p.track===fTrack)&&(fLevel==='all'||p.level===fLevel)&&
+    (!q||[p.code,p.name_en,p.name_ar,p.tech_en,p.tech_ar,p.tools,p.industry_en,p.industry_ar,p.type].join(' ').toLowerCase().includes(q)));
+  $('#emptymsg').classList.toggle('hide',items.length>0);
+  $('#catgrid').innerHTML=items.map(p=>{const m=TRACKMETA[p.track];
+    return `<div class="card rounded-2xl p-5 reveal in">
+      <div class="flex items-start justify-between gap-2 mb-3">
+        <span class="grid place-items-center w-10 h-10 rounded-lg text-white shrink-0" style="background:${m.c}"><i data-lucide="${TYPEIC[p.type]||'book-open'}" class="w-5 h-5"></i></span>
+        <span class="font-mono text-[11px] font-bold" style="color:${m.c}">${p.code}</span></div>
+      <h3 class="font-bold leading-tight mb-1">${T(p.name_en,p.name_ar)}</h3>
+      <div class="flex flex-wrap gap-1 text-[10px] mb-3"><span class="chip rounded px-1.5 py-0.5">${lvlName(p.level)}</span><span class="chip rounded px-1.5 py-0.5">${typeName(p.type)}</span><span class="chip rounded px-1.5 py-0.5">${T(p.duration_en,p.duration_ar)}</span><span class="chip rounded px-1.5 py-0.5">${p.hours}h</span></div>
+      <p class="muted text-sm line-clamp-3">${T(p.desc_en,p.desc_ar)}</p>
+      <button class="cardtog mt-3 text-sm font-semibold flex items-center gap-1" style="color:var(--brand)" data-code="${p.code}"><span>${T('Details','التفاصيل')}</span><i data-lucide="chevron-down" class="w-4 h-4 chev transition-transform"></i></button>
+      <div class="expandable"><div class="pt-4 mt-1 border-t hairline space-y-3 text-sm">
+        <div><div class="font-semibold mb-1 text-xs uppercase tracking-wide muted">${T('Outcomes','النواتج')}</div><ul class="space-y-1 muted">${(LANG==='ar'?p.outcomes_ar:p.outcomes_en).slice(0,5).map(x=>`<li class="flex gap-1.5"><span style="color:var(--accent)">•</span>${x}</li>`).join('')}</ul></div>
+        <div><div class="font-semibold mb-1 text-xs uppercase tracking-wide muted">${T('Topics','الموضوعات')}</div><div class="flex flex-wrap gap-1">${(LANG==='ar'?p.topics_ar:p.topics_en).map(x=>`<span class="chip rounded px-1.5 py-0.5 text-xs">${x}</span>`).join('')}</div></div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="font-semibold text-xs uppercase tracking-wide muted mb-1">${T('Tools','الأدوات')}</div><p class="muted text-xs">${p.tools}</p></div>
+          <div><div class="font-semibold text-xs uppercase tracking-wide muted mb-1">${T('Assessment','التقييم')}</div><p class="muted text-xs">${T(p.assessment_en,p.assessment_ar)}</p></div></div>
+        <div><div class="font-semibold text-xs uppercase tracking-wide muted mb-1">${T('Stackability','التراكمية')}</div><p class="muted text-xs">${T(p.stack_en,p.stack_ar)}</p></div>
+        <div class="flex items-center gap-2 text-xs pt-1"><span class="chip rounded px-2 py-1">${p.prev}</span><i data-lucide="arrow-right" class="w-3 h-3 muted ltr-ic"></i><span class="chip rounded px-2 py-1" style="border-color:${m.c}">${p.code}</span><i data-lucide="arrow-right" class="w-3 h-3 muted ltr-ic"></i><span class="chip rounded px-2 py-1">${p.next}</span></div>
+        <a href="#journey" class="open-step inline-flex items-center gap-1 text-xs font-semibold" data-code="${p.code}" style="color:var(--brand)">${T('Open in journey','افتح في الرحلة')}<i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </div></div></div>`}).join('');
+  lucide.createIcons();
+  $$('.cardtog').forEach(b=>b.onclick=()=>{const ex=b.nextElementSibling;ex.classList.toggle('open');b.querySelector('.chev').style.transform=ex.classList.contains('open')?'rotate(180deg)':'';});
+  $$('.open-step').forEach(a=>a.onclick=()=>{const i=JOURNEY.findIndex(p=>p.code===a.dataset.code);if(i>=0){cur=i;renderStep();}});
 }
 
 /* ---------- skills matrix ---------- */
-function renderMatrix() {
-  const codes = CATALOG.programs.map(p => p.code);
-  let h = '<table class="mx"><thead><tr><th class="fam">' + T('عائلة المهارة', 'Skill family') + '</th>';
-  codes.forEach(c => h += `<th scope="col"><span>${esc(c)}</span></th>`);
-  h += '</tr></thead><tbody>';
-  CATALOG.skill_families.forEach(f => {
-    h += `<tr><th scope="row" class="fam">${L(f.en, f.ar)}</th>`;
-    codes.forEach(c => { const p = CATALOG.programs.find(x => x.code === c); const v = (p.skills || {})[f.key];
-      h += `<td><div class="cell ${v || ''}" title="${esc(c)} · ${esc(L(f.en, f.ar))}">${v || ''}</div></td>`; });
-    h += '</tr>';
+function renderMatrix(){
+  const codes=CATALOG.programs.map(p=>p.code);
+  const lc={I:['#D9E8F5','#13233a'],D:['#7FB2DA','#0F2A4A'],M:['#0F2A4A','#fff']};
+  let h='<table class="mx text-xs border-collapse"><thead><tr><th class="sticky start-0 surface p-2 text-start min-w-[180px] font-bold">'+T('Skill family','عائلة المهارة')+'</th>';
+  codes.forEach(c=>h+=`<th class="p-1 font-mono font-bold" style="writing-mode:vertical-rl;transform:rotate(180deg);height:96px;color:var(--brand)">${c}</th>`);
+  h+='</tr></thead><tbody>';
+  CATALOG.skill_families.forEach(f=>{
+    h+=`<tr><td class="sticky start-0 surface p-2 font-semibold text-start">${T(f.en,f.ar)}</td>`;
+    codes.forEach(c=>{const p=CATALOG.programs.find(x=>x.code===c);const v=(p.skills||{})[f.key];
+      h+=`<td class="text-center p-0"><div class="grid place-items-center h-7 font-bold" style="${v?`background:${lc[v][0]};color:${lc[v][1]}`:''}">${v||''}</div></td>`;});
+    h+='</tr>';
   });
-  h += '</tbody></table>';
-  $('#matrix').innerHTML = h;
+  h+='</tbody></table>';
+  $('#matrix').innerHTML=h;
 }
 
 /* ---------- naming + recs ---------- */
-function renderNaming() {
-  const N = [['SDA', T('بادئة أكاديمية سدايا على كل برنامج مهني', 'SDAIA Academy prefix on every professional program')],
-    ['TRACK', T('FND الأساس المشترك · AIE مهندس الذكاء الاصطناعي · DSC عالِم البيانات — وتُضاف مسارات جديدة بالنمط نفسه', 'FND Foundation Core · AIE AI Engineer · DSC Data Scientist — new tracks plug in (APM, ASA, MLE, GAI)')],
-    ['LEVEL', T('1 ممارس · 2 متخصص · 3 خبير', '1 Practitioner · 2 Specialist · 3 Expert')],
-    ['SEQ', T('ترتيب من رقمين داخل المسار والمستوى · ويُحجز 90 للمشروع الختامي للمسار', 'Two-digit order within the track and level · 90 is reserved for the track capstone')],
-    ['L0', T('برامج المستوى التمهيدي ترمز بثلاثة أحرف (FAE, FGP, FAA, FDL, FDS, FDV) — مفتوحة وغير تقنية وبلا بادئة مسار', 'Beginner programs use a short three-letter code (FAE, FGP, FAA, FDL, FDS, FDV) — open, non-technical, no track prefix')],
-    ['TITLE', T('[المجال]+[التقنية]+[النطاق] · ≤7 كلمات · دون "مقدمة في"', '[Domain]+[Tech]+[Scope] · ≤7 words · no "Introduction to"')]];
-  $('#naming').innerHTML = N.map(([k, v]) => `<div class="r"><span class="k">${k}</span><span>${v}</span></div>`).join('');
+function renderNaming(){
+  const N=[['SDA',T('SDAIA Academy prefix on every professional program','بادئة أكاديمية سدايا على كل برنامج مهني')],
+    ['TRACK',T('FND Foundation Core · AIE AI Engineer · DSC Data Scientist — new tracks plug in (APM, ASA, MLE, GAI)','FND الأساس المشترك · AIE مهندس الذكاء الاصطناعي · DSC عالِم البيانات — وتُضاف مسارات جديدة بالنمط نفسه')],
+    ['LEVEL',T('1 Practitioner · 2 Specialist · 3 Expert','1 ممارس · 2 متخصص · 3 خبير')],
+    ['SEQ',T('Two-digit order within the track and level · 90 is reserved for the track capstone','ترتيب من رقمين داخل المسار والمستوى · ويُحجز 90 للمشروع الختامي للمسار')],
+    ['L0',T('Beginner programs use a short three-letter code (FAE, FGP, FAA, FDL, FDS, FDV) — open, non-technical, no track prefix','برامج المستوى التمهيدي ترمز بثلاثة أحرف (FAE, FGP, FAA, FDL, FDS, FDV) — مفتوحة وغير تقنية وبلا بادئة مسار')],
+    ['TITLE',T('[Domain]+[Tech]+[Scope] · ≤7 words · no "Introduction to"','[المجال]+[التقنية]+[النطاق] · ≤7 كلمات · دون "مقدمة في"')]];
+  $('#naming').innerHTML=N.map(([k,v])=>`<div class="flex gap-3"><span class="font-mono font-bold text-xs rounded-md px-2 py-1 chip shrink-0" style="color:var(--brand)">${k}</span><span class="muted">${v}</span></div>`).join('');
 }
-function renderRecs() {
-  const R = [['layers', 'Future tracks', 'مسارات مستقبلية', 'Add AI Product Manager, Solution Architect, ML Engineer & GenAI Specialist on the same scheme.', 'إضافة مسارات مدير المنتج ومعماري الحلول ومهندس تعلم الآلة وأخصائي الذكاء التوليدي بنفس النظام.'],
-    ['shuffle', 'Cross-track electives', 'مواد اختيارية متقاطعة', 'Let experts take one elective from the sister track to build T-shaped profiles.', 'السماح للخبراء بمادة اختيارية من المسار الشقيق لبناء ملفات على شكل T.'],
-    ['badge-check', 'Skills-based RPL', 'اعتراف بالتعلم السابق', 'Use the skills matrix for recognition of prior learning and placement tests.', 'استخدام مصفوفة المهارات للاعتراف بالتعلم السابق واختبارات تحديد المستوى.'],
-    ['languages', 'Arabic-first content', 'محتوى عربي أولًا', 'Prioritise Arabic NLP datasets, tooling and case studies across GenAI/NLP modules.', 'إعطاء الأولوية لبيانات وأدوات وحالات اللغة العربية في وحدات الذكاء التوليدي ومعالجة اللغة.'],
-    ['shield-check', 'Responsible-AI spine', 'عمود الذكاء المسؤول', 'Thread responsible-AI checkpoints through every level, not only the expert module.', 'تمرير نقاط تحقق الذكاء المسؤول عبر كل مستوى وليس وحدة الخبير فقط.'],
-    ['git-branch', 'Governed versioning', 'إصدارات محوكمة', 'Adopt vYYYY.R releases with a change log and an academic review board.', 'اعتماد إصدارات بترقيم محوكم مع سجل تغييرات ومجلس مراجعة أكاديمي.']];
-  $('#recs').innerHTML = R.map(([ic, te, ta, de, da]) => `<div class="sd-card sd-card--flat rec"><span class="sd-iconbox sd-iconbox--sm tint-blue">${I(ic, 'i-sm')}</span><div><b>${T(ta, te)}</b><p>${T(da, de)}</p></div></div>`).join('');
-}
-
-/* ---------- in-page nav ---------- */
-function renderNav() {
-  const Lk = [['tracks', 'Pathways', 'المسارات', 'route'], ['levels', 'Levels', 'المستويات', 'layers'], ['journey', 'Journey', 'الرحلة', 'milestone'], ['catalog', 'Catalog', 'الكاتالوج', 'layout-grid'], ['skills', 'Skills', 'المهارات', 'sparkles'], ['design', 'Design', 'التصميم', 'pencil-ruler']];
-  $('#navlinks').innerHTML = Lk.map(([id, e, a, ic]) => `<a href="#${id}">${I(ic)}<span>${T(a, e)}</span></a>`).join('');
+function renderRecs(){
+  const R=[['layers-3','Future tracks','مسارات مستقبلية','Add AI Product Manager, Solution Architect, ML Engineer & GenAI Specialist on the same scheme.','إضافة مسارات مدير المنتج ومعماري الحلول ومهندس تعلم الآلة وأخصائي الذكاء التوليدي بنفس النظام.'],
+   ['shuffle','Cross-track electives','مواد اختيارية متقاطعة','Let experts take one elective from the sister track to build T-shaped profiles.','السماح للخبراء بمادة اختيارية من المسار الشقيق لبناء ملفات على شكل T.'],
+   ['badge-check','Skills-based RPL','اعتراف بالتعلم السابق','Use the skills matrix for recognition of prior learning and placement tests.','استخدام مصفوفة المهارات للاعتراف بالتعلم السابق واختبارات تحديد المستوى.'],
+   ['languages','Arabic-first content','محتوى عربي أولًا','Prioritise Arabic NLP datasets, tooling and case studies across GenAI/NLP modules.','إعطاء الأولوية لبيانات وأدوات وحالات اللغة العربية في وحدات الذكاء التوليدي ومعالجة اللغة.'],
+   ['shield-check','Responsible-AI spine','عمود الذكاء المسؤول','Thread responsible-AI checkpoints through every level, not only the expert module.','تمرير نقاط تحقق الذكاء المسؤول عبر كل مستوى وليس وحدة الخبير فقط.'],
+   ['git-branch','Governed versioning','إصدارات محوكمة','Adopt vYYYY.R releases with a change log and an academic review board.','اعتماد إصدارات بترقيم محوكم مع سجل تغييرات ومجلس مراجعة أكاديمي.']];
+  $('#recs').innerHTML=R.map(([ic,te,ta,de,da])=>`<div class="card rounded-xl p-4 flex gap-3 reveal in"><span class="grid place-items-center w-9 h-9 rounded-lg shrink-0" style="background:var(--surface2);color:var(--accent)"><i data-lucide="${ic}" class="w-4 h-4"></i></span><div><div class="font-semibold text-sm">${T(te,ta)}</div><p class="muted text-sm mt-0.5">${T(de,da)}</p></div></div>`).join('');
 }
 
-function renderAll() {
-  renderStats(); renderTracks(); renderLevels(); renderStep(); renderFilters(); renderCatalog(); renderMatrix(); renderNaming(); renderRecs(); renderNav();
+/* ---------- nav links ---------- */
+function renderNav(){
+  const L=[['tracks','Pathways','المسارات'],['levels','Levels','المستويات'],['journey','Journey','الرحلة'],['catalog','Catalog','الكاتالوج'],['skills','Skills','المهارات'],['design','Design','التصميم']];
+  $('#navlinks').innerHTML=L.map(([id,e,a])=>`<a href="#${id}" class="rounded-lg px-3 py-1.5 font-medium hover:bg-[var(--surface2)] transition muted">${T(e,a)}</a>`).join('');
 }
 
-const toJourney = () => { const y = $('#journey').getBoundingClientRect().top + window.scrollY - 64; window.scrollTo({ top: y, behavior: 'smooth' }); };
-$('#prevBtn').onclick = () => { if (cur > 0) { cur--; renderStep(); toJourney(); } };
-$('#nextBtn').onclick = () => { if (cur < TOTAL - 1) { cur++; renderStep(); toJourney(); } };
-$('#search').addEventListener('input', e => { fQ = e.target.value; renderCatalog(); });
-renderAll();
-SDAIA.onLang(renderAll);
+/* ---------- language / theme ---------- */
+function setLang(l){
+  LANG=l; const ar=l==='ar';
+  document.documentElement.lang=ar?'ar':'en'; document.documentElement.dir=ar?'rtl':'ltr';
+  $('#langBtn').textContent=ar?'EN':'عربي';
+  $$('.ltr-ic').forEach(i=>i.style.transform=ar?'scaleX(-1)':'');
+  try{localStorage.setItem('sdaia_lang',l)}catch(e){}
+  renderAll();
+}
+function setTheme(d){
+  document.documentElement.classList.toggle('dark',d);
+  $('#themeBtn').innerHTML=`<i data-lucide="${d?'sun':'moon'}" class="w-4 h-4"></i>`;
+  try{localStorage.setItem('sdaia_theme',d?'d':'l')}catch(e){}
+  lucide.createIcons();
+}
+
+function renderAll(){
+  renderStats();renderTracks();renderLevels();renderRail();renderStep();renderFilters();renderCatalog();renderMatrix();renderNaming();renderRecs();renderNav();
+  lucide.createIcons(); observeReveal();
+}
+
+/* ---------- reveal + misc ---------- */
+let io;
+function observeReveal(){
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  $$('.reveal').forEach(el=>io.observe(el));
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  // logos
+  const lg=logoSVG();
+  ['navlogo','herologo','footlogo','loaderlogo'].forEach(id=>$('#'+id).innerHTML=lg);
+  // restore prefs
+  let lang='ar',theme=false;
+  try{lang=localStorage.getItem('sdaia_lang')||'ar';theme=localStorage.getItem('sdaia_theme')==='d';}catch(e){}
+  document.documentElement.classList.toggle('dark',theme);
+  $('#themeBtn').innerHTML=`<i data-lucide="${theme?'sun':'moon'}" class="w-4 h-4"></i>`;
+  setLang(lang);
+  $('#langBtn').onclick=()=>setLang(LANG==='en'?'ar':'en');
+  $('#themeBtn').onclick=()=>setTheme(!document.documentElement.classList.contains('dark'));
+  $('#prevBtn').onclick=()=>{if(cur>0){cur--;renderStep();$('#journey').scrollIntoView({block:'start'});}};
+  $('#nextBtn').onclick=()=>{if(cur<TOTAL-1){cur++;renderStep();$('#journey').scrollIntoView({block:'start'});}};
+  $('#search').addEventListener('input',e=>{fQ=e.target.value;renderCatalog();});
+  // toTop
+  const tt=$('#toTop'); addEventListener('scroll',()=>tt.classList.toggle('hide',scrollY<600));
+  tt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  lucide.createIcons();
+  setTimeout(()=>{$('#loader').style.opacity=0;$('#loader').style.transition='opacity .5s';setTimeout(()=>$('#loader').classList.add('hide'),500);},500);
+});
 </script>
 </body>
 </html>

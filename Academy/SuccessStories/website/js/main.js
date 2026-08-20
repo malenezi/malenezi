@@ -1,84 +1,63 @@
 /* =========================================================
    SDAIA Academy — Graduate Success Stories · Interactions
-   (vanilla JS — القصص مرتبة حسب سنة التخرج)
+   (vanilla JS — stories grouped by graduation year; bilingual UI
+   on top of the shared runtime in ../../assets/sdaia-ui.js)
    ========================================================= */
 'use strict';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-const AR_NUM = new Intl.NumberFormat('ar-SA');
+const T = (ar, en) => SDAIA.t(ar, en);
+const N = v => SDAIA.n(v);
+const I = (name, cls) => SDAIA.icon(name, cls);
+const esc = s => SDAIA.esc(s);
 
 const state = { query: '', year: 'all' };
 
-/* ---------- Header / nav ---------- */
-const header = $('#siteHeader');
-const navToggle = $('#navToggle');
-const navMenu = $('#navMenu');
-
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 40);
-  $('#toTop').hidden = window.scrollY < 600;
-}, { passive: true });
-
-navToggle.addEventListener('click', () => {
-  const open = navMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', String(open));
-  navToggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
-});
-navMenu.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    navMenu.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }
-});
-
-$('#toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-/* ---------- Reveal on scroll ---------- */
-const revealIO = new IntersectionObserver(entries => {
-  for (const en of entries) if (en.isIntersecting) { en.target.classList.add('visible'); revealIO.unobserve(en.target); }
-}, { threshold: 0.12 });
-$$('.reveal').forEach(el => revealIO.observe(el));
-
-/* ---------- Animated counters ---------- */
-function animateCount(el, target, dur = 1400) {
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) { el.textContent = AR_NUM.format(target); return; }
-  const t0 = performance.now();
-  const step = now => {
-    const p = Math.min((now - t0) / dur, 1);
-    el.textContent = AR_NUM.format(Math.round(target * (1 - Math.pow(1 - p, 3))));
-    if (p < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
+/* ---------- Hero KPI tiles ---------- */
+function renderStats() {
+  $('#heroStats').innerHTML = SITE_STATS.map(s => `
+    <div class="sd-kpi">
+      <span class="sd-iconbox ${s.tint || 'tint-blue'}">${I(s.icon || 'star')}</span>
+      <div class="sd-kpi__num" data-count="${s.value}">0</div>
+      <div class="sd-kpi__label">${T(s.label, s.labelEn)}</div>
+      <div class="sd-kpi__note">${T(s.note, s.noteEn)}</div>
+    </div>`).join('');
+  SDAIA.observeCounters($('#heroStats'));
 }
 
-/* ---------- Hero stats ---------- */
-const heroStats = $('#heroStats');
-heroStats.innerHTML = SITE_STATS.map(s => `
-  <div class="hero-stat">
-    <dt>${s.label}<span class="stat-note">${s.note}</span></dt>
-    <dd data-count="${s.value}">0</dd>
-  </div>`).join('');
+/* ---------- Year navigation + chips ---------- */
+function yearLabel(y) { return T(y.label, y.labelEn); }
 
-const statsIO = new IntersectionObserver(entries => {
-  for (const en of entries) if (en.isIntersecting) {
-    $$('[data-count]', en.target).forEach(el => animateCount(el, +el.dataset.count));
-    statsIO.unobserve(en.target);
-  }
-}, { threshold: 0.4 });
-statsIO.observe(heroStats);
-
-/* ---------- Year chips ---------- */
-const chipsWrap = $('#yearChips');
-chipsWrap.innerHTML = [{ id: 'all', label: 'كل الدفعات' }, ...YEARS].map(y => `
-  <button class="chip" role="tab" data-year="${y.id}" aria-selected="${y.id === 'all'}">${y.label}</button>`).join('');
-chipsWrap.addEventListener('click', e => {
-  const chip = e.target.closest('.chip');
-  if (!chip) return;
-  state.year = chip.dataset.year;
-  $$('.chip', chipsWrap).forEach(ch => ch.setAttribute('aria-selected', String(ch === chip)));
+function renderYearNav() {
+  $('#yearNav').innerHTML = YEARS.map(y => `<a href="#year-${y.id}" data-year="${y.id}">${I('calendar-days')}<span>${yearLabel(y)}</span></a>`).join('');
+}
+function renderChips() {
+  const wrap = $('#yearChips');
+  wrap.innerHTML = [{ id: 'all', label: 'كل الدفعات', labelEn: 'All cohorts' }, ...YEARS].map(y => `
+    <button type="button" class="sd-chip" data-year="${y.id}" aria-pressed="${String(y.id) === String(state.year)}">${yearLabel(y)}</button>`).join('');
+}
+function selectYear(year) {
+  state.year = String(year);
+  $$('.sd-chip', $('#yearChips')).forEach(ch => ch.setAttribute('aria-pressed', String(ch.dataset.year === state.year)));
   renderStories();
+}
+$('#yearChips').addEventListener('click', e => {
+  const chip = e.target.closest('.sd-chip');
+  if (chip) selectYear(chip.dataset.year);
+});
+/* the cohort sub-nav doubles as a selector, so its targets always exist after a click */
+$('#yearNav').addEventListener('click', e => {
+  const a = e.target.closest('a[data-year]');
+  if (!a) return;
+  const id = a.getAttribute('href').slice(1);
+  if (a.getAttribute('aria-disabled') === 'true') { e.preventDefault(); return; }
+  if (!document.getElementById(id)) {
+    e.preventDefault();
+    selectYear(a.dataset.year);
+    const s = document.getElementById(id);
+    if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 });
 
 /* ---------- Search ---------- */
@@ -90,16 +69,16 @@ $('#searchInput').addEventListener('input', e => {
 
 /* ---------- Stories grouped by year ---------- */
 const storiesWrap = $('#storiesByYear');
-const catLabel = id => (CATEGORIES.find(c => c.id === id) || {}).label || '';
-const EXT_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>`;
+const catLabel = id => { const c = CATEGORIES.find(x => x.id === id) || {}; return T(c.label, c.labelEn) || ''; };
 
 function initialsOf(name) { return name.replace('د. ', '').trim().charAt(0); }
 
 function countLabel(n) {
+  if (SDAIA.lang === 'en') return n === 1 ? '1 story' : `${N(n)} stories`;
   if (n === 1) return 'قصة واحدة';
   if (n === 2) return 'قصتان';
-  if (n <= 10) return `${AR_NUM.format(n)} قصص`;
-  return `${AR_NUM.format(n)} قصة`;
+  if (n <= 10) return `${N(n)} قصص`;
+  return `${N(n)} قصة`;
 }
 
 function filteredStories() {
@@ -112,30 +91,39 @@ function filteredStories() {
   });
 }
 
-function cardHTML(s, i) {
+/* Story content is Arabic-source; in the English layout it is rendered inside an RTL block (.ar)
+   and the English name leads when available. */
+function nameBlock(s, tag) {
+  const en = SDAIA.lang === 'en';
+  const primary = en && s.nameEn ? `<span class="en">${esc(s.nameEn)}</span>` : `<span class="ar">${esc(s.name)}</span>`;
+  const alt = en && s.nameEn ? `<span class="ar">${esc(s.name)}</span>` : (s.nameEn ? `<span class="en">${esc(s.nameEn)}</span>` : '');
+  return { primary, alt };
+}
+
+function cardHTML(s) {
   const media = s.photo
-    ? `<img class="photo" src="${s.photo}" alt="صورة ${s.name}" loading="lazy" decoding="async" width="560" height="385" onerror="this.outerHTML='<div class=&quot;avatar-fallback&quot; aria-hidden=&quot;true&quot;>${initialsOf(s.name)}</div>'">`
+    ? `<img class="photo" src="${s.photo}" alt="${esc(T('صورة', 'Photo of') + ' ' + s.name)}" loading="lazy" decoding="async" width="560" height="385" onerror="this.outerHTML='<div class=&quot;avatar-fallback&quot; aria-hidden=&quot;true&quot;>${initialsOf(s.name)}</div>'">`
     : `<div class="avatar-fallback" aria-hidden="true">${initialsOf(s.name)}</div>`;
-  const org = `<div class="card-org">${s.orgLogo ? `<img src="${s.orgLogo}" alt="" loading="lazy" decoding="async">` : ''}<span>${s.org}</span></div>`;
+  const org = `<div class="card-org ar">${s.orgLogo ? `<img src="${s.orgLogo}" alt="" loading="lazy" decoding="async">` : I('building-2', 'i-sm muted')}<span>${esc(s.org)}</span></div>`;
   const links = s.links.slice(0, 1).map(l =>
-    `<a class="ext-link" href="${l.url}" target="_blank" rel="noopener" aria-label="${l.label} — ${s.name} (يفتح في نافذة جديدة)" title="${l.label}">${EXT_ICON}</a>`).join('');
+    `<a class="ext-link" href="${l.url}" target="_blank" rel="noopener" aria-label="${esc(l.label)} — ${esc(s.name)} (${T('يفتح في نافذة جديدة', 'opens in a new window')})" title="${esc(l.label)}">${I('external-link')}</a>`).join('');
+  const nm = nameBlock(s);
   return `
-  <article class="story-card" style="animation-delay:${Math.min(i * 60, 420)}ms">
+  <article class="sd-card story-card">
     <div class="card-media">
       ${media}
-      <span class="rank-badge">دفعة ${s.year}</span>
+      <span class="rank-badge">${T('دفعة', 'Class of')} ${s.year}</span>
       <span class="cat-badge">${catLabel(s.category)}</span>
     </div>
     <div class="card-body">
-      <h3>${s.name}</h3>
-      <p class="card-role">${s.role}</p>
+      <h3>${nm.primary}</h3>
+      ${nm.alt ? `<span class="card-name-alt">${nm.alt}</span>` : ''}
+      <p class="card-role ar">${esc(s.role)}</p>
       ${org}
-      <p class="card-impact">${s.impact}</p>
-      <div class="card-meta">
-        <span class="meta-pill">${s.period}</span>
-      </div>
+      <p class="card-impact ar">${esc(s.impact)}</p>
+      <div class="card-meta"><span class="sd-tag ar">${I('calendar-days', 'i-sm')}${esc(s.period)}</span></div>
       <div class="card-actions">
-        <button class="btn-read" data-id="${s.id}" aria-haspopup="dialog">اقرأ القصة كاملة</button>
+        <button class="sd-btn sd-btn--primary sd-btn--sm btn-read" data-id="${s.id}" aria-haspopup="dialog">${I('book-open')}<span>${T('اقرأ القصة كاملة', 'Read the full story')}</span></button>
         ${links}
       </div>
     </div>
@@ -148,28 +136,37 @@ function renderStories() {
     const items = list.filter(s => s.year === y.id);
     if (!items.length) return '';
     return `
-    <section class="year-group" id="year-${y.id}" aria-label="${y.label}">
+    <section class="year-group" id="year-${y.id}" aria-label="${yearLabel(y)}">
       <div class="year-head">
         <div class="year-title-wrap">
-          <h3 class="year-title"><span class="year-num">${y.id}</span> ${y.label.replace(String(y.id), '').trim()}</h3>
-          <p class="year-desc">${y.desc}</p>
+          <h3 class="year-title"><span>${T('دفعة', 'Class of')}</span><span class="year-num">${y.id}</span></h3>
+          <p class="year-desc">${T(y.desc, y.descEn)}</p>
         </div>
-        <span class="year-count">${countLabel(items.length)}</span>
+        <span class="sd-tag sd-tag--brand year-count">${countLabel(items.length)}</span>
       </div>
       <div class="cards-grid">${items.map(cardHTML).join('')}</div>
     </section>`;
   }).join('');
   storiesWrap.innerHTML = html;
+  // a cohort emptied by the current search is unreachable — mark its sub-nav link disabled
+  const q = state.query.toLowerCase();
+  const hasAny = y => STORIES.some(s => s.year === y &&
+    (!q || [s.name, s.nameEn, s.org, s.role, s.program, s.impact].join(' ').toLowerCase().includes(q)));
+  $$('#yearNav a[data-year]').forEach(a => {
+    const ok = hasAny(+a.dataset.year);
+    a.classList.toggle('is-off', !ok);
+    if (ok) a.removeAttribute('aria-disabled'); else a.setAttribute('aria-disabled', 'true');
+  });
+  if (SDAIA.refreshSubnav) SDAIA.refreshSubnav();
   $('#noResults').hidden = list.length > 0;
-  $('#resultsCount').textContent = list.length === STORIES.length
-    ? `عرض جميع القصص — ${AR_NUM.format(list.length)} قصة عبر ${AR_NUM.format(YEARS.length)} دفعات`
-    : `${AR_NUM.format(list.length)} من ${AR_NUM.format(STORIES.length)} قصة`;
+  $('#resultsCount').innerHTML = list.length === STORIES.length
+    ? T(`عرض جميع القصص — <b>${N(list.length)}</b> قصة عبر <b>${N(YEARS.length)}</b> دفعات`, `Showing all stories — <b>${N(list.length)}</b> stories across <b>${N(YEARS.length)}</b> cohorts`)
+    : T(`<b>${N(list.length)}</b> من <b>${N(STORIES.length)}</b> قصة`, `<b>${N(list.length)}</b> of <b>${N(STORIES.length)}</b> stories`);
 }
 storiesWrap.addEventListener('click', e => {
   const btn = e.target.closest('.btn-read');
   if (btn) openModal(btn.dataset.id);
 });
-renderStories();
 
 /* ---------- Modal ---------- */
 const modal = $('#storyModal');
@@ -181,42 +178,41 @@ function openModal(id) {
   if (!s) return;
   lastFocused = document.activeElement;
   const photo = s.photo
-    ? `<img class="m-photo" src="${s.photo}" alt="صورة ${s.name}" onerror="this.outerHTML='<div class=&quot;m-avatar&quot; aria-hidden=&quot;true&quot;>${initialsOf(s.name)}</div>'">`
+    ? `<img class="m-photo" src="${s.photo}" alt="${esc(T('صورة', 'Photo of') + ' ' + s.name)}" onerror="this.outerHTML='<div class=&quot;m-avatar&quot; aria-hidden=&quot;true&quot;>${initialsOf(s.name)}</div>'">`
     : `<div class="m-avatar" aria-hidden="true">${initialsOf(s.name)}</div>`;
+  const nm = nameBlock(s);
   modalContent.innerHTML = `
     <div class="modal-head">
       ${photo}
       <div class="m-head-txt">
-        <span class="m-rank">دفعة ${s.year} · ${catLabel(s.category)}</span>
-        <h2 id="modalName">${s.name}</h2>
-        <span class="m-name-en">${s.nameEn}</span>
-        <p class="m-role">${s.role}</p>
+        <span class="m-rank">${T('دفعة', 'Class of')} ${s.year} · ${catLabel(s.category)}</span>
+        <h2 id="modalName">${nm.primary}</h2>
+        ${nm.alt ? `<span class="m-name-alt">${nm.alt}</span>` : ''}
+        <p class="m-role ar">${esc(s.role)}</p>
       </div>
     </div>
     <div class="modal-body">
-      <div class="m-org">${s.orgLogo ? `<img src="${s.orgLogo}" alt="شعار ${s.org}">` : ''}<span>${s.org}</span></div>
-      <div class="m-meta">
-        <div class="m-meta-item"><div class="k">سنة التخرج</div><div class="v">${s.year}</div></div>
-        <div class="m-meta-item"><div class="k">البرنامج</div><div class="v">${s.program}</div></div>
-        <div class="m-meta-item"><div class="k">الفترة الزمنية</div><div class="v">${s.period}</div></div>
+      <div class="m-org ar">${s.orgLogo ? `<img src="${s.orgLogo}" alt="${esc(T('شعار', 'Logo of') + ' ' + s.org)}">` : ''}<span>${esc(s.org)}</span></div>
+      <div class="sd-dl">
+        <div><div class="k">${T('سنة التخرج', 'Graduation year')}</div><div class="v num">${s.year}</div></div>
+        <div><div class="k">${T('البرنامج', 'Program')}</div><div class="v ar">${esc(s.program)}</div></div>
+        <div><div class="k">${T('الفترة الزمنية', 'Period')}</div><div class="v ar">${esc(s.period)}</div></div>
       </div>
-      <h3>القصة</h3>
-      <p class="m-story">${s.story}</p>
-      <h3>أبرز الإنجازات</h3>
-      <ul class="m-achievements">${s.achievements.map(a => `<li>${a}</li>`).join('')}</ul>
-      ${s.links.length ? `<h3>روابط موثّقة</h3>
-      <div class="m-links">${s.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${EXT_ICON} ${l.label}</a>`).join('')}</div>` : ''}
+      <h3>${I('book-open')}${T('القصة', 'The story')}</h3>
+      <p class="m-story ar">${esc(s.story)}</p>
+      <h3>${I('trophy')}${T('أبرز الإنجازات', 'Highlights')}</h3>
+      <ul class="m-achievements ar">${s.achievements.map(a => `<li>${I('circle-check')}<span>${esc(a)}</span></li>`).join('')}</ul>
+      ${s.links.length ? `<h3>${I('link')}${T('روابط موثّقة', 'Verified sources')}</h3>
+      <div class="m-links">${s.links.map(l => `<a class="sd-link-pill" href="${l.url}" target="_blank" rel="noopener">${I('external-link')}<span class="ar">${esc(l.label)}</span></a>`).join('')}</div>` : ''}
     </div>`;
   modal.hidden = false;
-  document.body.style.overflow = 'hidden';
-  requestAnimationFrame(() => {
-    $('.modal-close', modal).focus();
-  });
+  document.body.classList.add('sd-lock');
+  requestAnimationFrame(() => { $('.sd-modal__close', modal).focus(); });
 }
 
 function closeModal() {
   modal.hidden = true;
-  document.body.style.overflow = '';
+  document.body.classList.remove('sd-lock');
   if (lastFocused) lastFocused.focus();
 }
 
@@ -232,3 +228,8 @@ document.addEventListener('keydown', e => {
     else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
   }
 });
+
+/* ---------- Boot + re-render on language change ---------- */
+function renderAll() { renderStats(); renderYearNav(); renderChips(); renderStories(); }
+renderAll();
+SDAIA.onLang(() => { renderAll(); if (!modal.hidden) closeModal(); });
