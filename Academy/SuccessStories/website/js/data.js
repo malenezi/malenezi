@@ -101,14 +101,24 @@
    المتبقّي بعد هذه الجولة: 11 قصة بلا صورة (عريج الشمري · مها الشهري · هاجر الشهري · جهاد الجازي · أمل المبارك ·
    مجد الزيادي · جهاد الحازمي · نجد القحطاني · جنان سويان · سلطان السبيعي · ريان السواط)، وشعار واحد فقط ناقص
    لجهة عمل مسمّاة: أكاديمية الملك سلمان العالمية للغة العربية (خالد الدويسان).
+   تحديث 27 أغسطس 2026 (جولة ملف «قصص نجاح خريجي سدايا» والاقتباسات): وردت من الأكاديمية قائمة معتمدة بـ23 خريجًا،
+   لكل واحد منهم اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل و«اقتباس للنشر». من الـ23 كان 13 منشورين
+   سلفًا فتلقّوا اقتباساتهم الموثّقة، وأُضيفت 10 قصص جديدة — 70 ← 80 قصة، وجهات العمل 41 ← 47.
+   أُضيف حقل «quote» إلى كل قصة: { text, kind: 'verified' | 'draft', source? }. الاقتباسات الـ23 الواردة من الأكاديمية
+   موسومة verified مع مصدرها؛ والـ57 الباقية مسودات مستنبطة من إنجازات كل خريج الموثّقة، موسومة draft وتظهر على
+   البطاقة وفي النافذة بوسم «مسودة اقتباس — بانتظار الاعتماد» حتى تُعتمد.
+   سبع من القصص الجديدة تحمل reviewFlag: 'gap' — الفارق بين سنة التخرج وسنة التوظيف يتجاوز نافذة الأربعة عشر شهرًا
+   بالتواريخ السنوية المتاحة، ونُشرت باعتماد الأكاديمية المباشر بقرار من أ. ممدوح (27 أغسطس 2026).
+   توحيد: «ACES» و«شركة الاتصالات والإلكترونيات المتقدمة» دُمجتا في «شركة أنظمة الاتصالات والإلكترونيات المتقدمة (ACES)».
+   تنبيه تكرار: «حمد المحيذف» في ملف الأكاديمية هو نفسه «حمد المهيذف» (#2277) — لم يُنشأ سجل ولا قصة منفصلة.
    ========================================================= */
 'use strict';
 
 const SITE_STATS = [
   { value: 2715, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
-  { value: 70,   label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
+  { value: 80,   label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
   { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
-  { value: 41,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
+  { value: 47,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
 ];
 
 /* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,715 سجلًا)
@@ -152,6 +162,10 @@ const STORIES = [
 
   {
     id: 'nisreen-alsayegh', year: 2021,
+    quote: {
+      text: 'أتممت معسكر T5 في سنة تخرّجي الجامعي نفسها، والتحقت بسدايا عالمةَ بيانات في العام ذاته — كان المعسكر الجسر الذي نقلني من الدراسة إلى الممارسة مباشرة.',
+      kind: 'draft',
+    },
     name: 'نسرين الصايغ', nameEn: 'Nisreen Alsayegh',
     photo: 'assets/nisreen-alsayegh.jpg',
     role: 'عالمة بيانات — التحقت بسدايا في سنة الشهادة نفسها (2021)',
@@ -170,6 +184,10 @@ const STORIES = [
 
     {
     id: 'meshal-alamr', year: 2021,
+    quote: {
+      text: 'بنيت مشروع التنبؤ بأسعار الرحلات داخل سنة المعسكر نفسها، ولم أتوقّع أن يصبح أكثر مستودعات معسكرات الأكاديمية تفاعلًا على GitHub — علّمني المعسكر أن أبني للناس لا للتقييم وحده.',
+      kind: 'draft',
+    },
     name: 'مشعل العمر', nameEn: 'Meshal Alamr',
     photo: 'assets/meshal-alamr.jpg',
     role: 'مهندس ذكاء اصطناعي رئيسي (Lead AI Engineer)',
@@ -190,6 +208,10 @@ const STORIES = [
 /* ============================ دفعة 2022 ============================ */
   {
     id: 'maram-alfaifi', year: 2022,
+    quote: {
+      text: 'لم يفصل بين مشروعي النهائي في معسكر T5 ووظيفتي الأولى مهندسةَ برمجيات سوى شهرين — المعسكر اختصر عليّ الطريق إلى سوق العمل.',
+      kind: 'draft',
+    },
     name: 'مرام الفيفي', nameEn: 'Maram Alfaifi',
     photo: 'https://github.com/marama09.png',
     role: 'مهندسة برمجيات — Engineer II ثم مواقع أعلى',
@@ -209,6 +231,10 @@ const STORIES = [
 
   {
     id: 'maha-alhazzani', year: 2022,
+    quote: {
+      text: 'بدأت العام متدرّبة في «أبطال صيف الذكاء الاصطناعي» وأنهيته موظفةً في سدايا — لم يكن البرنامج تدريبًا فحسب، بل بابًا للانضمام إلى الجهة نفسها.',
+      kind: 'draft',
+    },
     name: 'مها الحزاني', nameEn: 'Maha AlHazzani',
     photo: 'assets/maha-alhazzani.jpg',
     role: 'عالمة بيانات ومحللة (Data Scientist & Analyst)',
@@ -227,6 +253,10 @@ const STORIES = [
 
   {
     id: 'soaad-aljafr', year: 2022,
+    quote: {
+      text: 'انتقلت من معسكر T5 إلى وظيفة عالمة بيانات في وزارة الصحة في السنة نفسها؛ وما تدرّبت عليه في المعسكر هو ما أمارسه اليوم في خدمة القطاع الصحي.',
+      kind: 'draft',
+    },
     name: 'سعاد الجعفر', nameEn: 'Soaad Aljafr',
     photo: 'https://github.com/SoaadM.png',
     role: 'عالمة بيانات (Data Scientist)',
@@ -244,6 +274,10 @@ const STORIES = [
   },
   {
     id: 'taghreed-albaiz', year: 2022,
+    quote: {
+      text: 'التحقت بتمكين للتقنيات في سنة إتمامي معسكر T5، وتدرّجت منها إلى هندسة الأمن السحابي الأولى — رافقني الأساس التحليلي الذي بناه المعسكر في كل خطوة.',
+      kind: 'draft',
+    },
     name: 'تغريد البعيز', nameEn: 'Taghreed Albaiz',
     photo: 'https://github.com/talbaiz.png',
     role: 'محللة أمن شبكات — ثم مهندسة أمن سحابي أولى (Senior Cloud Security Engineer)',
@@ -264,6 +298,10 @@ const STORIES = [
 
   {
     id: 'areej-alshammari', year: 2023,
+    quote: {
+      text: 'في عام واحد تخرّجت جامعيًا، وأتممت المعسكر، والتحقت مهندسةَ ذكاء اصطناعي في سدايا — جعل معسكر الخريجين الجدد الانتقال من الدراسة إلى العمل خطوة واحدة.',
+      kind: 'draft',
+    },
     name: 'أريج الشمري', nameEn: 'Areej Alshammari',
     photo: null,
     role: 'مهندسة ذكاء اصطناعي',
@@ -279,6 +317,11 @@ const STORIES = [
 
   {
     id: 'abdulrahman-alqannas', year: 2023,
+    quote: {
+      text: 'أسهم برنامج ممارس النماذج اللغوية الكبيرة في أكاديمية سدايا في تعزيز فهمي التطبيقي لتقنيات الذكاء الاصطناعي وتطوير مهاراتي في النماذج المتقدمة، بما دعم انتقالي المهني إلى العمل في تعلم الآلة والتحليلات المتقدمة.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'عبدالرحمن القناص', nameEn: 'Abdulrahman Alqannas',
     photo: 'assets/abdulrahman-alqannas.jpg',
     role: 'أخصائي تعلم آلة وتحليلات متقدمة',
@@ -297,6 +340,10 @@ const STORIES = [
 
   {
     id: 'asma-alzahrani', year: 2023,
+    quote: {
+      text: 'في 2023 كنت متدرّبة تعاونية في سدايا، وفي 2024 صرت موظفة فيها — ومعسكرا الأكاديمية هما ما أغلق هذه الدائرة.',
+      kind: 'draft',
+    },
     name: 'أسماء الزهراني', nameEn: 'Asma Alzahrani',
     photo: 'assets/asma-alzahrani.jpg',
     role: 'من التدريب التعاوني إلى وظيفة في سدايا',
@@ -314,6 +361,10 @@ const STORIES = [
 
   {
     id: 'hamad-alyemni', year: 2023,
+    quote: {
+      text: 'جاءت أول وظيفة لي في سنة المعسكر نفسها، ومشروع تخرّجي الطبي مفتوح المصدر بخمسة نماذج تعلّم آلي ما زال متاحًا للجميع — تعلّمت في T5 أن العمل الجيد يُنشر.',
+      kind: 'draft',
+    },
     name: 'حمد اليمني', nameEn: 'Hamad Alyemni',
     photo: 'https://github.com/hsyemni99.png',
     role: 'مهندس تطبيقات — أول توظيف في سنة المعسكر نفسها، ثم مهندس ذكاء اصطناعي',
@@ -332,6 +383,10 @@ const STORIES = [
 
   {
     id: 'hessa-alrasheed', year: 2023,
+    quote: {
+      text: 'شهران فقط بين إتمام معسكر T5 والالتحاق بوظيفة محللة بيانات — كان التدريب مركّزًا بما يكفي ليجعلني جاهزة من اليوم الأول.',
+      kind: 'draft',
+    },
     name: 'حصة الرشيد', nameEn: 'Hessa AlRasheed',
     photo: 'https://github.com/HessaAlrasheed.png',
     role: 'محللة بيانات (Data Analyst)',
@@ -350,6 +405,10 @@ const STORIES = [
 
     {
     id: 'raghad-alqobali', year: 2023,
+    quote: {
+      text: 'بين ورقتيّ المحكّمتين وقف معسكر الأكاديمية؛ وحين نُشرت الورقة الثانية باسم الهيئة السعودية للبيانات والذكاء الاصطناعي أدركت أن التدريب نقلني من التعلّم إلى الإسهام البحثي.',
+      kind: 'draft',
+    },
     name: 'رغد القبالي', nameEn: 'Raghad Alqobali',
     photo: 'https://github.com/raghadalqobali.png',
     role: 'باحثة ومهندسة ذكاء اصطناعي',
@@ -371,6 +430,10 @@ const STORIES = [
 /* ============================ دفعة 2024 ============================ */
   {
     id: 'nasser-alsaqer', year: 2024,
+    quote: {
+      text: 'قدت فريق مشروع RASYD في معسكر T5، والتحقت بالهيئة العامة للإحصاء في السنة نفسها — كانت قيادة مشروع التخرّج تدريبي الحقيقي على العمل المؤسسي.',
+      kind: 'draft',
+    },
     name: 'ناصر الصقر', nameEn: 'Nasser Alsaqer',
     photo: 'https://github.com/NasserAlsaqer.png',
     role: 'إحصائي (Statistician)',
@@ -390,6 +453,10 @@ const STORIES = [
 
   {
     id: 'maha-alshehri', year: 2024,
+    quote: {
+      text: 'من معسكر حوكمة البيانات إلى تطوير البرمجيات داخل سدايا في السنة نفسها — علّمتني الحوكمة أن جودة البيانات تبدأ من طريقة بناء الأنظمة.',
+      kind: 'draft',
+    },
     name: 'مها الشهري', nameEn: 'Maha Alshehri',
     photo: null,
     role: 'مطوّرة برمجيات',
@@ -404,6 +471,10 @@ const STORIES = [
   },
   {
     id: 'hajar-alshehri', year: 2024,
+    quote: {
+      text: 'انتقلت من التدريب في الأكاديمية إلى وظيفة مهندسة ذكاء اصطناعي في سدايا في السنة نفسها — البرنامج هو ما جعل هذه الخطوة ممكنة.',
+      kind: 'draft',
+    },
     name: 'هاجر الشهري', nameEn: 'Hajar Alshehri',
     photo: null,
     role: 'مهندسة ذكاء اصطناعي',
@@ -418,6 +489,10 @@ const STORIES = [
   },
   {
     id: 'khalid-alduwaysan', year: 2024,
+    quote: {
+      text: 'ثلاثة أشهر فصلت بين تخرّجي من المعسكر ووظيفتي مطوّرَ ذكاء اصطناعي؛ وما بنيته في «رقيم» لتصحيح النص العربي بدأ فكرةً داخل معسكر T5.',
+      kind: 'draft',
+    },
     name: 'خالد الدويسان', nameEn: 'Khalid Alduwaysan',
     photo: 'assets/khalid-alduwaysan.jpg',
     role: 'مطوّر ذكاء اصطناعي ثم مهندس بيانات في جهة حكومية',
@@ -438,6 +513,10 @@ const STORIES = [
 
   {
     id: 'rana-alharsan', year: 2024,
+    quote: {
+      text: 'عُرض مشروع «رَكَّن» في حفل التخرّج ضمن أفضل المشاريع من بين خمسين — ومعسكر معالجة الازدحام المروري هو ما حوّل الفكرة إلى حل قابل للتطبيق.',
+      kind: 'draft',
+    },
     name: 'رنا الحرصان', nameEn: 'Rana al-Harsan',
     photo: 'assets/rana-alharsan.jpg',
     role: 'مشروع «رَكَّن» — ضمن أفضل المشاريع من بين 50',
@@ -456,6 +535,10 @@ const STORIES = [
 
   {
     id: 'majd-alotaibi', year: 2024,
+    quote: {
+      text: 'التحقت بتحكّم عالمَ بيانات في سنة المعسكر نفسها، ثم انتقلت إلى مجموعة جاهز — فتح لي المعسكر أول باب، وفتحت الخبرة ما بعده.',
+      kind: 'draft',
+    },
     name: 'مجد العتيبي', nameEn: 'Majd Alotaibi',
     photo: 'assets/majd-alotaibi.jpg',
     role: 'عالم بيانات (Data Scientist) — أول توظيف في سنة المعسكر نفسها',
@@ -473,6 +556,10 @@ const STORIES = [
 
   {
     id: 'yazeed-alshurify', year: 2024,
+    quote: {
+      text: 'جاءت أول وظيفة في سنة المعسكر نفسها محللَ أنظمة أعمال، ثم انتقلت إلى إدارة المشاريع في هواوي — والأساس التحليلي الذي بناه T5 هو ما حمَلني.',
+      kind: 'draft',
+    },
     name: 'يزيد الشريف', nameEn: 'Yazeed Alshurify',
     photo: 'assets/yazeed-alshurify.jpg',
     role: 'محلل أنظمة أعمال — أول توظيف في سنة المعسكر نفسها، ثم مدير مشاريع في هواوي',
@@ -491,6 +578,10 @@ const STORIES = [
 
     {
     id: 'fares-altoukhi', year: 2024,
+    quote: {
+      text: 'نشرت ثلاثة نماذج عربية على Hugging Face وخدمة استدلال حيّة تعمل للجميع — علّمني معسكر T5 أن النموذج لا قيمة له حتى يصل إلى مستخدم.',
+      kind: 'draft',
+    },
     name: 'فارس الطوخي', nameEn: 'Fares Altoukhi',
     photo: 'assets/fares-altoukhi.jpg',
     role: 'مطوّر نماذج لغوية عربية مفتوحة المصدر',
@@ -510,6 +601,10 @@ const STORIES = [
 
   {
     id: 'mohammed-almalki', year: 2024,
+    quote: {
+      text: 'حصل مشروع ADEL للإشارات المرورية الذكية على أعلى تقييم في الدفعة، ونشرته تطبيقًا حيًّا يعمل علنًا — المعسكر هو ما رفع سقف ما ظننته ممكنًا.',
+      kind: 'draft',
+    },
     name: 'محمد المالكي', nameEn: 'Mohammed Al Malki',
     photo: 'assets/mohammed-almalki.jpg',
     role: 'صاحب مشروع ADEL — الأعلى تقييمًا في الدفعة',
@@ -529,6 +624,10 @@ const STORIES = [
 
   {
     id: 'lena-alenazi', year: 2024,
+    quote: {
+      text: 'نال مشروع CLQC لتصنيف أمراض أوراق البُن جائزة مركز «ذكاء» بمنشآت، ودخل مشروعي الثاني أفضل ثلاثة في المعسكر — حوّل التدريب شغفي بالبيانات إلى أثر ملموس.',
+      kind: 'draft',
+    },
     name: 'لينا العنزي', nameEn: 'Lena Alenazi',
     photo: 'https://github.com/lenaAlenazi.png',
     role: 'محللة ومهندسة بيانات وذكاء اصطناعي',
@@ -550,6 +649,11 @@ const STORIES = [
 /* ============================ دفعة 2025 ============================ */
   {
     id: 'hamad-almuhaythif', year: 2025,
+    quote: {
+      text: 'أسهم معسكر هندسة البيانات في أكاديمية سدايا في تحويل معرفتي الأكاديمية إلى خبرة تطبيقية أعمق في البيانات، وعزز جاهزيتي المهنية للانطلاق في مساري كعالم بيانات وتطبيق ما تعلمته في بيئة عمل فعلية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'حمد المهيذف', nameEn: 'Hamad Almuhaythif',
     photo: 'assets/hamad-almuhaythif.jpg',
     role: 'عالم بيانات (Data Scientist)',
@@ -567,6 +671,10 @@ const STORIES = [
 
   {
     id: 'jehad-aljazi', year: 2025,
+    quote: {
+      text: 'معسكر هندسة البيانات وشهادات مايكروسوفت الخمس هي ما نقلني من التخرّج الجامعي إلى وظيفة مهندس بيانات في التأمينات الاجتماعية خلال عام واحد.',
+      kind: 'draft',
+    },
     name: 'جهاد الجازي', nameEn: 'Jehad Aljazi',
     photo: null,
     role: 'مهندس بيانات',
@@ -581,6 +689,10 @@ const STORIES = [
   },
   {
     id: 'amal-almubarak', year: 2025,
+    quote: {
+      text: 'من بكالوريوس جامعة الملك سعود إلى أخصائية ذكاء اصطناعي في التأمينات الاجتماعية في سنة التخرّج نفسها — معسكر هندسة البيانات هو الحلقة التي ربطت الاثنين.',
+      kind: 'draft',
+    },
     name: 'أمل المبارك', nameEn: 'Amal Almubarak',
     photo: null,
     role: 'أخصائية ذكاء اصطناعي',
@@ -595,6 +707,10 @@ const STORIES = [
   },
   {
     id: 'hussein-mohsen', year: 2025,
+    quote: {
+      text: 'خلال سنة واحدة انتقلت من بكالوريوس الذكاء الاصطناعي إلى مساعد تدريس في أكاديمية كاوست — هيّأني معسكر هندسة البيانات وشهادات مايكروسوفت الخمس لهذا المسار الأكاديمي.',
+      kind: 'draft',
+    },
     name: 'حسين محسن', nameEn: 'Hussein Mohsen',
     photo: 'assets/hussein-mohsen.jpg',
     role: 'مساعد تدريس ذكاء اصطناعي',
@@ -611,6 +727,10 @@ const STORIES = [
   },
   {
     id: 'majd-alziyadi', year: 2025,
+    quote: {
+      text: 'شهادتا CAD وCSA من معسكر ServiceNow هما ما فتح لي باب تطوير التطبيقات في IBM — تدريب متخصص بنتيجة مباشرة.',
+      kind: 'draft',
+    },
     name: 'مجد الزيادي', nameEn: 'Majd Alziyadi',
     photo: null,
     role: 'مطوّر تطبيقات',
@@ -625,6 +745,11 @@ const STORIES = [
   },
   {
     id: 'hind-alhijailan', year: 2025,
+    quote: {
+      text: 'كانت تجربتي في معسكر مطوري أنظمة ServiceNow بأكاديمية سدايا محطة مهمة في مسيرتي المهنية، إذ أسهم المعسكر في تطوير مهاراتي التقنية وتمكيني من الحصول على شهادتي CSA وCAD، وصولًا إلى الانضمام إلى سدايا والعمل في مجال تميز خدمات الحوسبة السحابية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'هند الحجيلان', nameEn: 'Hind Alhujailan',
     photo: 'assets/hind-alhijailan.jpg',
     role: 'مسؤولة تميز خدمات الحوسبة السحابية',
@@ -642,6 +767,10 @@ const STORIES = [
 
   {
     id: 'wadha-almattar', year: 2025,
+    quote: {
+      text: 'أتممت برنامج NVIDIA وشهادتَي NVIDIA-Certified Associate في فبراير 2025، وبعد نحو ستة أشهر تولّيت رئاسة قسم هندسة الحاسب — التطوير المستمر لا يتوقف عند درجة علمية.',
+      kind: 'draft',
+    },
     name: 'د. وضحة المطر', nameEn: 'Dr. Wadha Almattar',
     photo: 'assets/wadha-almattar.jpg',
     role: 'أستاذة مساعدة ورئيسة قسم هندسة الحاسب',
@@ -660,6 +789,10 @@ const STORIES = [
 
   {
     id: 'wajn-alqahtani', year: 2025,
+    quote: {
+      text: 'ثلاثة برامج متتابعة في الأكاديمية قادتني من التخرّج الجامعي إلى برنامج تطوير الخريجين في مصرف الإنماء بمسار البيانات والذكاء الاصطناعي — بنى كل برنامج على الذي قبله.',
+      kind: 'draft',
+    },
     name: 'وجن القحطاني', nameEn: 'Wajn Alqahtani',
     photo: 'assets/wajn-alqahtani.jpg',
     role: 'برنامج تطوير الخريجين (GDP) — إدارة البيانات والذكاء الاصطناعي',
@@ -680,6 +813,10 @@ const STORIES = [
 
   {
     id: 'sukainah-alramadhan', year: 2026,
+    quote: {
+      text: 'بدأت متدرّبة في برامج الأكاديمية وأصبحت مدرّبة ذكاء اصطناعي في أكاديمية كاوست خلال عام — وأجمل ما في التعلّم أن يعود تعليمًا.',
+      kind: 'draft',
+    },
     name: 'سكينه الرمضان', nameEn: 'Sukainah Alramadhan',
     photo: 'assets/sukainah-alramadhan.jpg',
     role: 'مدرّبة ذكاء اصطناعي',
@@ -697,8 +834,13 @@ const STORIES = [
 
   {
     id: 'jehad-alhazmi', year: 2026,
+    quote: {
+      text: 'كان معسكر هندسة البيانات في أكاديمية سدايا محطة مهمة في مسيرتي، إذ عزز مهاراتي التطبيقية في هندسة البيانات وأسهم في رفع جاهزيتي للانتقال إلى سوق العمل والعمل في التخصص.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'جهاد الحازمي', nameEn: 'Jehad Alhazmi',
-    photo: null,
+    photo: 'assets/jehad-alhazmi.jpg',
     role: 'محلل هندسة بيانات (Data Engineer Analyst)',
     org: 'بنك التنمية الاجتماعية', orgLogo: 'assets/sdb.svg',
     program: 'معسكر هندسة البيانات (Data Engineer Bootcamp) — أكاديمية سدايا',
@@ -715,6 +857,11 @@ const STORIES = [
 
   {
     id: 'amal-almuarik', year: 2026,
+    quote: {
+      text: 'كانت تجربتي في معسكر هندسة البيانات بأكاديمية سدايا محطة مهمة في تطوير مهاراتي في البيانات، وأسهمت في تعزيز جاهزيتي المهنية للعمل في مجال الذكاء الاصطناعي.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'أمل عبدالرحمن المعارك', nameEn: 'Amal Abdulrahman Almuarik',
     photo: 'https://github.com/AlmuarikAmal.png',
     role: 'أخصائية ذكاء اصطناعي (Artificial Intelligence Specialist)',
@@ -733,6 +880,10 @@ const STORIES = [
 
   {
     id: 'manar-alsayed', year: 2026,
+    quote: {
+      text: 'بين ورقة محكّمة في كشف اعتلال الشبكية السكري وموقعي التقني في أرامكو السعودية، كانت برامج الأكاديمية وشهادات NVIDIA هي الأرضية المشتركة.',
+      kind: 'draft',
+    },
     name: 'منار محمد السيد', nameEn: 'Manar Mohammed Alsayed',
     photo: 'https://github.com/manarals.png',
     role: 'محللة نظم تشغيل حاسوبية مشاركة (Associate Computer Operating System Analyst)',
@@ -752,6 +903,11 @@ const STORIES = [
 
   {
     id: 'bushra-dajam', year: 2026,
+    quote: {
+      text: 'أسهم التدريب الاحترافي للذكاء الاصطناعي التوليدي في أكاديمية سدايا بالتعاون مع NVIDIA في تعميق معرفتي بالنماذج اللغوية الكبيرة وتطبيقات الذكاء الاصطناعي التوليدي، وعزز جاهزيتي لتوظيف هذه التقنيات في تطوير حلول ذكاء اصطناعي عملية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'بشرى عبدالخالق دعجم', nameEn: 'Bushra Abdulkhaliq Dajam',
     photo: 'https://github.com/Buushra1dm.png',
     role: 'مهندسة ذكاء اصطناعي (AI Engineer)',
@@ -769,6 +925,10 @@ const STORIES = [
   },
   {
     id: 'maysam-almalah', year: 2026,
+    quote: {
+      text: 'تأهّل مشروع «ريفيو» ضمن أفضل ثلاثة مشاريع من أربعة عشر، وانتقل فريقنا إلى لجنة تحكيم المرحلة الثانية — جعل معسكر Vibe Coding البناء السريع مهارة نمتلكها.',
+      kind: 'draft',
+    },
     name: 'ميسم الملاح', nameEn: 'Maysam Almalah',
     photo: 'assets/maysam-almalah.jpg',
     role: 'مطوّرة — فريق مشروع «ريفيو» المتأهل ضمن أفضل ثلاثة',
@@ -786,6 +946,10 @@ const STORIES = [
 
   {
     id: 'alanoud-alotaibi', year: 2026,
+    quote: {
+      text: 'برنامجان موثّقان في الأكاديمية ومشروعان منشوران، أحدهما موقع حيّ يعمل علنًا — تعلّمت أن هندسة الوكلاء تُتقن بالبناء لا بالقراءة.',
+      kind: 'draft',
+    },
     name: 'العنود العتيبي', nameEn: 'Alanoud Alotaibi',
     photo: 'https://github.com/Alanoud-Alotaibi.png',
     role: 'مهندسة بيانات ووكلاء ذكاء اصطناعي — طالبة بجامعة الملك سعود',
@@ -806,6 +970,10 @@ const STORIES = [
 
   {
     id: 'rayah-aldawsari', year: 2026,
+    quote: {
+      text: 'حصد مشروع تخرّجي المركز الثالث بين أكثر من مئة وعشرين مشروعًا، ونلت شهادة NVIDIA في يوليو 2026 — كانت أكاديمية الذكاء الاصطناعي التوليدي نقطة التحوّل.',
+      kind: 'draft',
+    },
     name: 'راية الدواسري', nameEn: 'Rayah Aldawsari',
     photo: 'assets/rayah-aldawsari.jpg',
     role: 'خريجة أكاديمية الذكاء الاصطناعي التوليدي — المركز الثالث بين 120+ مشروعًا',
@@ -823,6 +991,10 @@ const STORIES = [
 
   {
     id: 'hassn-alqaeri', year: 2026,
+    quote: {
+      text: 'فاز نظامنا بالمركز الأول في مهمة تشكيل النطق العربي المشتركة بمعدل خطأ 23.26%، ونُشرت الورقة في ACL Anthology — برامج الأكاديمية هي ما أوصلني إلى هذا المستوى.',
+      kind: 'draft',
+    },
     name: 'حسن القاعري', nameEn: 'Hassn Alqaeri',
     photo: 'https://github.com/Hassn11q.png',
     role: 'مهندس نماذج لغوية كبيرة — صاحب النظام الفائز بالمركز الأول',
@@ -847,6 +1019,10 @@ const STORIES = [
 
   {
     id: 'afrah-alsharari', year: 2021,
+    quote: {
+      text: 'انتقلت من مقعد التدريب إلى وظيفة أخصائية إحصاء في سدايا في الشهر نفسه، وما زلت فيها بعد أربع سنوات ونصف — لم يكن معسكر T5 محطة عابرة.',
+      kind: 'draft',
+    },
     name: 'أفراح الشراري', nameEn: 'Afrah Alsharari',
     photo: 'assets/afrah-alsharari.jpg',
     role: 'أخصائية إحصاء — عُيّنت في سدايا فور انتهاء البرنامج (مارس 2022)',
@@ -864,6 +1040,10 @@ const STORIES = [
 
   {
     id: 'ruba-alnashwan', year: 2021,
+    quote: {
+      text: 'عُيّنت مهندسةَ أبحاث في المركز الوطني للذكاء الاصطناعي في شهر تخرّجي نفسه من معسكر T5، ومنه انطلق مساري في جودة البيانات.',
+      kind: 'draft',
+    },
     name: 'ربى النشوان', nameEn: 'Ruba Alnashwan',
     photo: 'assets/ruba-alnashwan.jpg',
     role: 'مهندسة جودة بيانات — المركز الوطني للمعلومات (سبتمبر 2023)',
@@ -881,6 +1061,10 @@ const STORIES = [
 
   {
     id: 'ranya-alkahtani', year: 2021,
+    quote: {
+      text: 'بدأ توظيفي في شهر تخرّجي من معسكر T5، ووصلت خلال أربع سنوات إلى مهندسة ذكاء اصطناعي أولى في هيوماين — البداية المبكرة صنعت الفارق.',
+      kind: 'draft',
+    },
     name: 'رانيا القحطاني', nameEn: 'Ranya A. Alkahtani',
     photo: 'assets/ranya-alkahtani.jpg',
     role: 'مهندسة ذكاء اصطناعي أولى (أبريل 2025)',
@@ -898,6 +1082,10 @@ const STORIES = [
 
   {
     id: 'abdulrahman-alrifae', year: 2021,
+    quote: {
+      text: 'بعد أربعة أشهر من إتمام معسكر T5 التحقت بسدايا، محوّلًا مساري من تطوير SharePoint إلى البيانات والذكاء الاصطناعي — التحوّل المهني ممكن حين يبدأ بتدريب جاد.',
+      kind: 'draft',
+    },
     name: 'عبدالرحمن الرفاعي', nameEn: 'Abdulrahman Alrifae',
     photo: 'assets/abdulrahman-alrifae.jpg',
     role: 'مدير حسابات تقني (مارس 2022)',
@@ -915,6 +1103,10 @@ const STORIES = [
 
   {
     id: 'najd-alqahtani', year: 2021,
+    quote: {
+      text: 'شهر واحد فصل بين تخرّجي من معسكر T5 ووظيفتي محللةَ بيانات، ثم أربع سنوات من التدرّج أوصلتني إلى محللة أولى.',
+      kind: 'draft',
+    },
     name: 'نجد القحطاني', nameEn: 'Najd AlQahtani',
     photo: null,
     role: 'محللة بيانات ثم محللة بيانات أولى (يناير 2022 · أبريل 2024)',
@@ -932,6 +1124,10 @@ const STORIES = [
 
   {
     id: 'basma-alduaiji', year: 2021,
+    quote: {
+      text: 'التحقت بأكسنتشر بعد شهر واحد من تخرّجي من معسكر T5، وتدرّجت ثلاث مرات في أربع سنوات حتى محللة قيادية — حمل الأساس الذي بناه المعسكر المسار كله.',
+      kind: 'draft',
+    },
     name: 'بسمة الدعيجي', nameEn: 'Basma Alduaiji',
     photo: 'assets/basma-alduaiji.jpg',
     role: 'محللة قيادية للبحث والتطوير التقني وتمكين الابتكار (أكتوبر 2025)',
@@ -949,10 +1145,14 @@ const STORIES = [
 
   {
     id: 'jennan-sowayan', year: 2021,
+    quote: {
+      text: 'شهر واحد بين تخرّجي من معسكر T5 وأول وظيفة محللةَ بيانات، ثم أربع سنوات من العمل بُنيت كلها على ذلك الأساس.',
+      kind: 'draft',
+    },
     name: 'جنان سويان', nameEn: 'Jennan Sowayan',
     photo: null,
     role: 'أخصائية تقديم ودعم الخدمات الإلكترونية (مايو 2024)',
-    org: 'شركة الاتصالات والإلكترونيات المتقدمة', orgLogo: 'assets/aces.svg',
+    org: 'شركة أنظمة الاتصالات والإلكترونيات المتقدمة (ACES)', orgLogo: 'assets/aces.svg',
     program: 'معسكر T5 لعلوم البيانات — أكاديمية سدايا',
     period: 'سبتمبر – ديسمبر 2021',
     category: 'employment', categories: ['employment'],
@@ -966,6 +1166,10 @@ const STORIES = [
 
   {
     id: 'rana-alturki', year: 2021,
+    quote: {
+      text: 'بدأت بعد شهر من المعسكر محللةَ أعمال، ووصلت إلى أخصائية أولى في هندسة الحلول — أعطاني معسكر T5 لغة البيانات التي أعمل بها اليوم.',
+      kind: 'draft',
+    },
     name: 'رنا التركي', nameEn: 'Rana Alturki',
     photo: 'assets/rana-alturki.jpg',
     role: 'أخصائية أولى في هندسة الحلول العامة (سبتمبر 2024)',
@@ -983,6 +1187,10 @@ const STORIES = [
 
   {
     id: 'ohoud-albabtain', year: 2021,
+    quote: {
+      text: 'شهران بين تخرّجي من معسكر T5 والالتحاق مديرةَ مشاريع في المركز الوطني للمعلومات — واستمرار أربع سنوات ونصف في المسار نفسه.',
+      kind: 'draft',
+    },
     name: 'عهود البابطين', nameEn: 'Ohoud I. Albabtain',
     photo: 'assets/ohoud-albabtain.jpg',
     role: 'مديرة مشاريع (فبراير 2022)',
@@ -1000,6 +1208,11 @@ const STORIES = [
 
   {
     id: 'hussain-alhadab', year: 2021,
+    quote: {
+      text: 'أسهم معسكر T5 لعلوم البيانات بأكاديمية سدايا في تمكيني من الانتقال من الهندسة الطبية الحيوية إلى مسار مهني في البيانات، وكانت التجربة خطوة مهمة نحو عملي في استشارات البيانات.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'حسين الحدب', nameEn: 'Hussain Alhadab',
     photo: 'assets/hussain-alhadab.jpg',
     role: 'مستشار بيانات (مارس 2022)',
@@ -1017,6 +1230,10 @@ const STORIES = [
 
   {
     id: 'alanoud-alosaimi', year: 2021,
+    quote: {
+      text: 'ثلاثة أشهر بين تخرّجي من معسكر T5 وأول عمل هندسي في البيانات، ومسار مرّ بسدايا نفسها وانتهى بمهندسة بيانات في بنك فيجن.',
+      kind: 'draft',
+    },
     name: 'العنود العصيمي', nameEn: 'Alanoud Alosaimi',
     photo: 'assets/alanoud-alosaimi.jpg',
     role: 'مهندسة بيانات (أبريل 2025)',
@@ -1034,6 +1251,10 @@ const STORIES = [
 
   {
     id: 'omar-alhadi', year: 2021,
+    quote: {
+      text: 'ثلاثة أشهر بين إتمام معسكر T5 والالتحاق بمطارات الرياض — ورافقني التحليل الذي تعلّمته هناك حتى بعد انتقالي إلى قطاع الطاقة.',
+      kind: 'draft',
+    },
     name: 'عمر الهادي', nameEn: 'Omar Alhadi',
     photo: 'assets/omar-alhadi.jpg',
     role: 'مهندس صناعي (أبريل 2022) ثم أخصائي مشتريات (أغسطس 2022)',
@@ -1051,6 +1272,10 @@ const STORIES = [
 
   {
     id: 'dimah-albunayyih', year: 2021,
+    quote: {
+      text: 'أربعة أشهر بين تخرّجي من معسكر T5 وأول وظيفة محللةَ بيانات، ومسار انتهى بمهندسة أولى في مركز عمليات التقنية بشركة علم.',
+      kind: 'draft',
+    },
     name: 'ديمة البنية', nameEn: 'Dimah Albunayyih',
     photo: 'assets/dimah-albunayyih.jpg',
     role: 'مهندسة أولى — مركز عمليات التقنية (فبراير 2025)',
@@ -1068,6 +1293,10 @@ const STORIES = [
 
   {
     id: 'ahmed-almuaybid', year: 2021,
+    quote: {
+      text: 'أربعة أشهر إلى أول وظيفة في تعلّم الآلة وسبعة إلى سابك، ثم ثلاث ترقيات في أربع سنوات — كان معسكر T5 نقطة الانطلاق كلها.',
+      kind: 'draft',
+    },
     name: 'أحمد المعيبد', nameEn: 'Ahmed Almuaybid',
     photo: 'assets/ahmed-almuaybid.jpg',
     role: 'قائد تحليلات وحدة الأعمال (أغسطس 2025)',
@@ -1085,6 +1314,10 @@ const STORIES = [
 
   {
     id: 'amal-altamran', year: 2021,
+    quote: {
+      text: 'خمسة أشهر بين تخرّجي من معسكر T5 والالتحاق مستشارةَ بيانات، ثم أربع سنوات في وزارة التعليم أخصائيةَ تحليل بيانات.',
+      kind: 'draft',
+    },
     name: 'أمل التمران', nameEn: 'Amal Altamran',
     photo: 'assets/amal-altamran.jpg',
     role: 'أخصائية تحليل بيانات (ديسمبر 2022)',
@@ -1102,6 +1335,10 @@ const STORIES = [
 
   {
     id: 'nada-alqabbani', year: 2021,
+    quote: {
+      text: 'سبعة أشهر بين المعسكر وأول وظيفة تقنية، ومسار انتهى بإدارة تقنية المعلومات — معسكر T5 هو ما أعاد ترتيب مساري المهني.',
+      kind: 'draft',
+    },
     name: 'ندى القباني', nameEn: 'Nada K. AlQabbani',
     photo: 'assets/nada-alqabbani.jpg',
     role: 'مديرة تقنية المعلومات (فبراير 2025)',
@@ -1119,6 +1356,10 @@ const STORIES = [
 
   {
     id: 'arwa-albassam', year: 2021,
+    quote: {
+      text: 'تسعة أشهر بين تخرّجي من معسكر T5 ووظيفة مهندسة حلول ذكاء أعمال، ومنها انتقلت إلى إدارة المشاريع التقنية.',
+      kind: 'draft',
+    },
     name: 'أروى البسام', nameEn: 'Arwa AlBassam',
     photo: 'assets/arwa-albassam.jpg',
     role: 'مديرة مشاريع (أغسطس 2024)',
@@ -1136,6 +1377,10 @@ const STORIES = [
 
   {
     id: 'aljoharah-alaqeel', year: 2021,
+    quote: {
+      text: 'تسعة أشهر إلى أول وظيفة أخصائية بنية تحتية، ثم عودة إلى سدايا مهندسةَ أنظمة بعد ثلاث سنوات — عادت الدائرة إلى حيث بدأت.',
+      kind: 'draft',
+    },
     name: 'الجوهرة العقيل', nameEn: 'Aljoharah Alaqeel',
     photo: 'assets/aljoharah-alaqeel.jpg',
     role: 'مهندسة أنظمة بنية تحتية (نوفمبر 2024)',
@@ -1153,6 +1398,10 @@ const STORIES = [
 
   {
     id: 'abdullah-almutairi-cyber', year: 2021,
+    quote: {
+      text: 'ثلاثة أشهر بين تخرّجي من معسكر الأمن السيبراني والالتحاق أخصائيَّ أمن سيبراني في سدايا — وأربع سنوات من الاستمرارية بعدها.',
+      kind: 'draft',
+    },
     name: 'عبدالله المطيري', nameEn: 'Abdullah Almutairi',
     photo: 'assets/abdullah-almutairi.jpg',
     role: 'أخصائي أمن سيبراني (أغسطس 2022)',
@@ -1170,10 +1419,15 @@ const STORIES = [
 
   {
     id: 'mukhtar-albinhamad', year: 2021,
+    quote: {
+      text: 'أسهم معسكر T5 لعلوم البيانات في أكاديمية سدايا في تعزيز مهاراتي التقنية والتحليلية، ومنحني أساسًا عمليًا دعم انتقالي إلى سوق العمل والتدرج في أدوار تقنية متنوعة، من تشغيل الشبكات إلى البرمجة وتطوير الحلول التقنية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'مختار آل بن حمد', nameEn: 'Mukhtar Al Bin Hamad',
     photo: 'assets/mukhtar-albinhamad.jpg',
     role: 'مبرمج حاسب (ديسمبر 2023)',
-    org: 'ACES', orgLogo: 'assets/aces.svg',
+    org: 'شركة أنظمة الاتصالات والإلكترونيات المتقدمة (ACES)', orgLogo: 'assets/aces.svg',
     program: 'معسكر T5 لعلوم البيانات — أكاديمية سدايا',
     period: 'أكتوبر 2021 – يناير 2022',
     category: 'employment', categories: ['employment'],
@@ -1187,6 +1441,10 @@ const STORIES = [
 
   {
     id: 'shroaq-allwiahaq', year: 2021,
+    quote: {
+      text: 'أربعة عشر شهرًا بين إتمام معسكر T5 والالتحاق أخصائيةَ حوكمة أمن سيبراني في وزارة البلديات والإسكان — الطريق ليس دائمًا قصيرًا، لكنه يصل.',
+      kind: 'draft',
+    },
     name: 'شروق اللويحق', nameEn: 'Shroaq Allwiahaq',
     photo: 'assets/shroaq-allwiahaq.png',
     role: 'أخصائية حوكمة الأمن السيبراني (فبراير 2023)',
@@ -1204,6 +1462,10 @@ const STORIES = [
 
   {
     id: 'maha-altalak', year: 2022,
+    quote: {
+      text: 'خمسة أشهر بين إتمام برنامج «أبطال صيف الذكاء الاصطناعي» والالتحاق بنيوم مهندسةَ تعلّم آلة، ومسار قيادي انتهى بإدارة الابتكار.',
+      kind: 'draft',
+    },
     name: 'مها الطلق', nameEn: 'Maha Altalak',
     photo: 'assets/maha-altalak.jpg',
     role: 'مديرة الابتكار ورئيسة قطاع نمذجة الذكاء الاصطناعي (نوفمبر 2025)',
@@ -1221,6 +1483,11 @@ const STORIES = [
 
   {
     id: 'anas-almana', year: 2023,
+    quote: {
+      text: 'شكّل معسكر T5 لعلوم البيانات والذكاء الاصطناعي في أكاديمية سدايا نقطة انطلاق مهمة في مسيرتي المهنية، إذ عزز مهاراتي التطبيقية في الذكاء الاصطناعي وساعدني على الانتقال سريعًا إلى سوق العمل، ثم مواصلة التطور المهني وصولًا إلى العمل في سدايا والترقي إلى مهندس ذكاء اصطناعي أول.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'أنس المانع', nameEn: 'Anas Almana',
     photo: 'assets/anas-almana.jpg',
     role: 'مهندس ذكاء اصطناعي أول (مايو 2026)',
@@ -1238,6 +1505,10 @@ const STORIES = [
 
   {
     id: 'yasmin-alsuliman', year: 2024,
+    quote: {
+      text: 'خمسة أشهر إلى وظيفة أخصائية أنظمة ذكاء اصطناعي، وثلاثة عشر شهرًا من التخرّج إلى قيادة فريق الذكاء الاصطناعي في شركة المياه الوطنية.',
+      kind: 'draft',
+    },
     name: 'ياسمين آل سليمان', nameEn: 'Yasmin Al Suliman',
     photo: 'assets/yasmin-alsuliman.jpg',
     role: 'قائدة فريق الذكاء الاصطناعي (يوليو 2025)',
@@ -1255,6 +1526,10 @@ const STORIES = [
 
   {
     id: 'tasneem-alrajih', year: 2024,
+    quote: {
+      text: 'برنامجان متتاليان في الأكاديمية، ثم توظيف داخل سدايا خلال ثلاثة أشهر من إتمام الثاني — التتابع هو ما بنى الجاهزية.',
+      kind: 'draft',
+    },
     name: 'تسنيم الراجح', nameEn: 'Tasneem Alrajih',
     photo: 'assets/tasneem-alrajih.jpg',
     role: 'مطوّرة برمجيات مساعدة (أكتوبر 2024)',
@@ -1272,6 +1547,11 @@ const STORIES = [
 
   {
     id: 'rawan-althubyani', year: 2024,
+    quote: {
+      text: 'أسهم معسكر T5 لعلوم البيانات والذكاء الاصطناعي في أكاديمية سدايا في توسيع مهاراتي الرقمية والتحليلية وتعزيز قدرتي على فهم المشكلات وعرض الحلول بصورة منهجية، وهي مهارات استفدت منها لاحقًا في مسيرتي المهنية في تصميم تجربة المستخدم ورحلاته.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'روان الثبياني', nameEn: 'Rawan Althubyani',
     photo: 'assets/rawan-althubyani.jpg',
     role: 'مصمّمة تجربة وواجهة المستخدم (أبريل 2025)',
@@ -1289,6 +1569,10 @@ const STORIES = [
 
   {
     id: 'sultan-alsubaie', year: 2025,
+    quote: {
+      text: 'ثلاثة أشهر بين تخرّجي من برنامج إدارة البيانات وحوكمتها والالتحاق ببرنامج تطوير الخريجين في resilience محلّلَ حوكمة ومخاطر والتزام.',
+      kind: 'draft',
+    },
     name: 'سلطان السبيعي', nameEn: 'Sultan Alsubaie',
     photo: null,
     role: 'محلل حوكمة ومخاطر والتزام — برنامج GDP (نوفمبر 2025)',
@@ -1306,6 +1590,10 @@ const STORIES = [
 
   {
     id: 'osamah-alqarawi', year: 2025,
+    quote: {
+      text: 'شهران بين تخرّجي من معسكر إدارة الأنظمة السحابية والالتحاق مهندسَ سحابة في سدايا — أول قصة موثّقة من هذا المسار، وأتمنى ألا تكون الأخيرة.',
+      kind: 'draft',
+    },
     name: 'أسامة القروي', nameEn: 'Osamah Alqarawi',
     photo: 'assets/osamah-alqarawi.jpg',
     role: 'مهندس سحابة (فبراير 2026)',
@@ -1323,6 +1611,11 @@ const STORIES = [
 
   {
     id: 'abdullah-mushafi', year: 2025,
+    quote: {
+      text: 'أسهم معسكر إدارة الأنظمة السحابية في أكاديمية سدايا في بناء خبرة تطبيقية لدي في البنية السحابية والأمن وإدارة الخدمات التقنية، ومنحني أساسًا مهنيًا قويًا دعمني في الانتقال إلى أدوار تقنية وتحليلية أكثر تقدمًا.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'عبدالله مشافي', nameEn: 'Abdullah Mushafi',
     photo: 'assets/abdullah-mushafi.jpg',
     role: 'مهندس تحليل (يونيو 2026)',
@@ -1340,8 +1633,13 @@ const STORIES = [
 
   {
     id: 'rayan-alsuwat', year: 2025,
+    quote: {
+      text: 'بدأت رحلتي مع أكاديمية سدايا من خلال معسكر مطوري أنظمة ServiceNow، الذي عزز مهاراتي التقنية وجاهزيتي المهنية، وصولًا إلى الانضمام إلى سدايا والعمل في مجال تشغيل أنظمة الحوسبة السحابية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'ريان السواط', nameEn: 'Rayan Alsuwat',
-    photo: null,
+    photo: 'assets/rayan-alsuwat.jpg',
     role: 'مختص تشغيل أنظمة الحوسبة السحابية (فبراير 2026)',
     org: 'سدايا', orgLogo: 'assets/sdaia.svg',
     program: 'معسكر مطوري أنظمة ServiceNow — أكاديمية سدايا',
@@ -1357,6 +1655,11 @@ const STORIES = [
 
   {
     id: 'ghyoudh-alotaibi', year: 2026,
+    quote: {
+      text: 'أسهم معسكر الذكاء الاصطناعي في أكاديمية سدايا في تعزيز مهاراتي التطبيقية وبناء أساس قوي مكّنني من الانتقال إلى العمل في تطوير حلول ذكاء اصطناعي واقعية، وتوظيف النماذج اللغوية وتقنيات OCR في أنظمة حساسة تتطلب مستويات عالية من الدقة والموثوقية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
     name: 'غيوض العتيبي', nameEn: 'Ghyoudh Alotaibi',
     photo: 'assets/ghyoudh-alotaibi.jpg',
     role: 'مهندس برمجيات (مايو 2026)',
@@ -1372,4 +1675,236 @@ const STORIES = [
     ],
   },
 
+
+  /* ==== إضافات 27 أغسطس 2026 — ملف «قصص نجاح خريجي سدايا» (قائمة الأكاديمية) ==== */
+  {
+    id: 'nasser-alkuhili', year: 2024,
+    quote: {
+      text: 'كانت تجربتي مع أكاديمية سدايا وبرامج NVIDIA خطوة مهمة في تطوير مهاراتي التطبيقية في الذكاء الاصطناعي، خصوصًا في مجال الذكاء الاصطناعي التوليدي. أسهم البرنامج في تعزيز معرفتي وربط الجانب الأكاديمي بالتطبيق العملي، ودعمت جاهزيتي للعمل في مجال ابتكار الذكاء الاصطناعي.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'ناصر فايز الكحيلي', nameEn: 'Nasser Fayez Alkuhili',
+    photo: 'assets/nasser-alkuhili.jpg',
+    role: 'مهندس ذكاء اصطناعي — ابتكار الذكاء الاصطناعي (AI Innovation)',
+    org: 'مصرف الراجحي', orgLogo: 'assets/alrajhi.webp',
+    program: 'التدريب الاحترافي للذكاء الاصطناعي التوليدي — أكاديمية سدايا (سدايا × NVIDIA) + خمس شهادات NVIDIA معتمدة',
+    period: '2024 – 2026',
+    category: 'employment', categories: ['employment'],
+    impact: 'من التدريب الاحترافي في الذكاء الاصطناعي التوليدي وخمس شهادات NVIDIA معتمدة إلى هندسة الذكاء الاصطناعي في وحدة ابتكار الذكاء الاصطناعي بمصرف الراجحي.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّ ناصر التدريب الاحترافي للذكاء الاصطناعي التوليدي بأكاديمية سدايا ضمن الشراكة مع NVIDIA، وأكمل خمس دورات معتمدة في مسار شهادات NVIDIA. ويعمل اليوم مهندسَ ذكاء اصطناعي في وحدة ابتكار الذكاء الاصطناعي (AI Innovation) بمصرف الراجحي. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية.',
+    achievements: ['التدريب الاحترافي للذكاء الاصطناعي التوليدي — سدايا × NVIDIA', 'خمس دورات NVIDIA معتمدة ضمن برنامج الشهادات', 'مهندس ذكاء اصطناعي — ابتكار الذكاء الاصطناعي في مصرف الراجحي', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nasseralkuhili' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'rawabi-allihyani', year: 2024,
+    quote: {
+      text: 'منحتني تجربتي في معسكر هندسة البيانات بأكاديمية سدايا أساسًا عمليًا عزز مهاراتي في البيانات، وأسهم في رفع جاهزيتي المهنية وتطبيق ما تعلمته في مسيرتي العملية كمحللة بيانات.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'روابي عبود اللحياني', nameEn: 'Rawabi Aboud Allihyani',
+    photo: null,
+    role: 'محللة بيانات (Data Analyst)',
+    org: 'أمانة العاصمة المقدسة', orgLogo: null,
+    program: 'معسكر هندسة البيانات (Data Engineer Bootcamp) — أكاديمية سدايا',
+    period: '2024 – 2026',
+    category: 'employment', categories: ['employment'],
+    impact: 'من معسكر هندسة البيانات إلى تحليل البيانات في أمانة العاصمة المقدسة — أثر مباشر على الخدمات البلدية.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت روابي معسكر هندسة البيانات بأكاديمية سدايا، وتعمل اليوم محللةَ بيانات في أمانة العاصمة المقدسة، حيث توظّف ما تدرّبت عليه في خدمة القطاع البلدي. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية.',
+    achievements: ['معسكر هندسة البيانات — أكاديمية سدايا', 'محللة بيانات في أمانة العاصمة المقدسة', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'lama-alzahrani', year: 2024,
+    quote: {
+      text: 'كانت تجربتي مع أكاديمية سدايا وبرامج NVIDIA إضافة مهمة لمسيرتي المهنية، إذ عززت مهاراتي في الذكاء الاصطناعي وأسهمت في توظيف المعرفة التقنية بصورة أكثر فاعلية في عملي الهندسي.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'لمى حسن الزهراني', nameEn: 'Lama Hassan Alzahrani',
+    photo: null,
+    role: 'محللة تسويق (Marketing Analyst)',
+    org: 'stc', orgLogo: 'assets/stc.png',
+    program: 'معسكر هندسة البيانات (Data Engineer Bootcamp) — أكاديمية سدايا',
+    period: '2024 – 2025',
+    category: 'employment', categories: ['employment'],
+    impact: 'من معسكر هندسة البيانات إلى تحليل التسويق في stc — توظيف مهارات البيانات في أكبر مشغّل اتصالات في المملكة.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت لمى معسكر هندسة البيانات بأكاديمية سدايا، والتحقت محللةَ تسويق في stc، حيث توظّف مهارات البيانات في القرار التسويقي. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية.',
+    achievements: ['معسكر هندسة البيانات — أكاديمية سدايا', 'محللة تسويق في stc', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lamalz/' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'hanan-aljaid', year: 2024,
+    quote: {
+      text: 'كانت تجربتي في معسكر هندسة البيانات بأكاديمية سدايا خطوة مهمة في تطوير مهاراتي التقنية، وأسهمت في تعزيز جاهزيتي المهنية للعمل في مجال تقنية المعلومات والبيانات.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'حنان مشعل الجعيد', nameEn: 'Hanan Mishal Aljaid',
+    photo: null,
+    role: 'أخصائية عمليات تقنية المعلومات (Specialist, IT Operation)',
+    org: 'قو للاتصالات GO Telecom', orgLogo: null,
+    program: 'معسكر هندسة البيانات (Data Engineer Bootcamp) — أكاديمية سدايا',
+    period: '2024',
+    category: 'employment', categories: ['employment'],
+    impact: 'التحاق بقو للاتصالات في سنة إتمام معسكر هندسة البيانات نفسها — حالة توظيف داخل النافذة المعتمدة.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت حنان معسكر هندسة البيانات بأكاديمية سدايا في 2024، والتحقت في السنة نفسها أخصائيةَ عمليات تقنية معلومات في قو للاتصالات (GO Telecom) — أي أن أول توظيف وقع داخل سنة إتمام البرنامج، وهو ما يستوفي معيار الأربعة عشر شهرًا المعتمد.',
+    achievements: ['معسكر هندسة البيانات — أكاديمية سدايا (2024)', 'توظيف في سنة إتمام المعسكر نفسها (2024)', 'أخصائية عمليات تقنية المعلومات في قو للاتصالات', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+  },
+
+  {
+    id: 'aljohara-alhogail', year: 2025,
+    quote: {
+      text: 'طوّر برنامج وكلاء الذكاء الاصطناعي بأكاديمية سدايا فهمي لتطبيقات الأتمتة الذكية، وأسهم في تعزيز قدرتي على توظيف تقنيات الذكاء الاصطناعي ضمن عملي في أتمتة العمليات.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'الجوهرة خالد الحقيل', nameEn: 'Aljohara Khalid Alhogail',
+    photo: null,
+    role: 'مطوّرة أتمتة العمليات الروبوتية (RPA Developer)',
+    org: 'مصرف الإنماء', orgLogo: 'assets/alinma.png',
+    program: 'برنامج وكلاء الذكاء الاصطناعي (AI Agents) — أكاديمية سدايا',
+    period: '2025 – 2026',
+    category: 'employment', categories: ['employment'],
+    impact: 'من برنامج وكلاء الذكاء الاصطناعي إلى تطوير أتمتة العمليات الروبوتية في مصرف الإنماء.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت الجوهرة برنامج وكلاء الذكاء الاصطناعي بأكاديمية سدايا، وتعمل مطوّرةَ أتمتة عمليات روبوتية (RPA) في مصرف الإنماء — وهو تطبيق مباشر لما يقوم عليه البرنامج من أتمتة ذكية. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية.',
+    achievements: ['برنامج وكلاء الذكاء الاصطناعي — أكاديمية سدايا', 'مطوّرة أتمتة العمليات الروبوتية في مصرف الإنماء', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/aljohara-alhogail-08841425a/' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'badr-alshamrani', year: 2025,
+    quote: {
+      text: 'عزز برنامج وكلاء الذكاء الاصطناعي بأكاديمية سدايا مهاراتي في تطوير الحلول الذكية، وأسهم في توسيع قدرتي على توظيف الذكاء الاصطناعي في التطبيقات العملية والابتكار.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'بدر علي الشمراني', nameEn: 'Badr Ali Alshamrani',
+    photo: 'assets/badr-alshamrani.jpg',
+    role: 'مهندس ذكاء اصطناعي تطبيقي وابتكار (Applied AI & Innovation Engineer)',
+    org: 'مستشفى الملك فيصل التخصصي ومركز الأبحاث', orgLogo: null,
+    program: 'برنامج وكلاء الذكاء الاصطناعي (AI Agents) — أكاديمية سدايا',
+    period: '2025',
+    category: 'employment', categories: ['employment'],
+    impact: 'التحاق بمستشفى الملك فيصل التخصصي مهندسَ ذكاء اصطناعي تطبيقي في سنة إتمام البرنامج نفسها.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّ بدر برنامج وكلاء الذكاء الاصطناعي بأكاديمية سدايا في 2025، والتحق في السنة نفسها مهندسَ ذكاء اصطناعي تطبيقي وابتكار في مستشفى الملك فيصل التخصصي ومركز الأبحاث — أحد أبرز المراكز الصحية البحثية في المنطقة. ووقوع التوظيف داخل سنة إتمام البرنامج يستوفي معيار الأربعة عشر شهرًا المعتمد.',
+    achievements: ['برنامج وكلاء الذكاء الاصطناعي — أكاديمية سدايا (2025)', 'توظيف في سنة إتمام البرنامج نفسها (2025)', 'مهندس ذكاء اصطناعي تطبيقي وابتكار — مستشفى الملك فيصل التخصصي ومركز الأبحاث', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/badr-a-alshamrani-49a04a245/' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+  },
+
+  {
+    id: 'etab-alotaibi', year: 2024,
+    quote: {
+      text: 'أسهمت تجربتي مع سدايا في النماذج اللغوية الكبيرة والذكاء الاصطناعي التوليدي في تعزيز مهاراتي التقنية، ودعمت قدرتي على توظيف الذكاء الاصطناعي في التطبيقات البحثية والطبية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'عتاب محمد العتيبي', nameEn: 'Etab Mohammed Alotaibi',
+    photo: null,
+    role: 'أخصائية ذكاء اصطناعي (AI Specialist)',
+    org: 'مركز الملك عبدالله العالمي للأبحاث الطبية KAIMRC', orgLogo: null,
+    program: 'معسكر النماذج اللغوية الكبيرة (LLM) + التدريب الاحترافي للذكاء الاصطناعي التوليدي — أكاديمية سدايا (سدايا × NVIDIA)',
+    period: '2024 – 2026',
+    category: 'employment', categories: ['employment'],
+    impact: 'برنامجان متتاليان بالأكاديمية ثم موقع أخصائية ذكاء اصطناعي في مركز الملك عبدالله العالمي للأبحاث الطبية.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت عتاب معسكر النماذج اللغوية الكبيرة والتدريب الاحترافي للذكاء الاصطناعي التوليدي بأكاديمية سدايا، وتعمل أخصائيةَ ذكاء اصطناعي في مركز الملك عبدالله العالمي للأبحاث الطبية (كيمارك). ويرد سجلها أيضًا في الوثائق الداعمة للمؤشر الاستراتيجي لبناء القدرات. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية. كما يوجد تعارض طفيف بين سنة التخرج في ملف الأكاديمية (2023) وتاريخ السجل الداخلي (الربع الأول 2024).',
+    achievements: ['معسكر النماذج اللغوية الكبيرة — أكاديمية سدايا', 'التدريب الاحترافي للذكاء الاصطناعي التوليدي — سدايا × NVIDIA', 'أخصائية ذكاء اصطناعي في مركز الملك عبدالله العالمي للأبحاث الطبية', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/etab-alotaibi-893612173/' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'rand-alsaleh', year: 2024,
+    quote: {
+      text: 'أسهم التدريب الاحترافي للذكاء الاصطناعي التوليدي في أكاديمية سدايا بالتعاون مع NVIDIA في تطوير معرفتي بالتقنيات الحديثة وتعزيز قدرتي على توظيف الذكاء الاصطناعي في مبادرات التحول الرقمي، بما يدعم تطوير حلول أكثر كفاءة وابتكارًا في بيئة العمل.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'رند عبداللطيف الصالح', nameEn: 'Rand Abdullatif Alsaleh',
+    photo: null,
+    role: 'محللة التحول الرقمي (Digital Transformation Analyst)',
+    org: 'شركة صدارة للكيميائيات', orgLogo: null,
+    program: 'التدريب الاحترافي للذكاء الاصطناعي التوليدي — أكاديمية سدايا (سدايا × NVIDIA)',
+    period: '2024 – 2025',
+    category: 'employment', categories: ['employment'],
+    impact: 'من التدريب الاحترافي في الذكاء الاصطناعي التوليدي إلى تحليل التحول الرقمي في قطاع الصناعات الكيميائية.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت رند التدريب الاحترافي للذكاء الاصطناعي التوليدي بأكاديمية سدايا ضمن الشراكة مع NVIDIA، وتعمل محللةَ تحوّل رقمي في شركة صدارة للكيميائيات — نقل لمهارات الذكاء الاصطناعي التوليدي إلى قطاع صناعي ثقيل. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية.',
+    achievements: ['التدريب الاحترافي للذكاء الاصطناعي التوليدي — سدايا × NVIDIA', 'محللة التحول الرقمي في شركة صدارة للكيميائيات', 'خريجة الذكاء الاصطناعي — جامعة الإمام عبدالرحمن بن فيصل', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'yasser-alshehri', year: 2025,
+    quote: {
+      text: 'انطلاقًا من خلفيتي الكمية في الإحصاء وعلوم البيانات، أسهمت برامج NVIDIA المقدَّمة عبر أكاديمية سدايا في تعميق معرفتي بالذكاء الاصطناعي التوليدي والنماذج اللغوية، ومهّدت انتقالي إلى التخصص المتقدم في الأنظمة الوكيلة وتطبيقات الذكاء الاصطناعي الحديثة، مدعومًا بالتدريب والاعتماد من سدايا.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'ياسر محمد الشهري', nameEn: 'Yasser Mohammed Alshehri',
+    photo: 'assets/yasser-alshehri.png',
+    role: 'مسار الذكاء الاصطناعي التوليدي — جهة حكومية',
+    org: 'جهة حكومية (غير معلنة)', orgLogo: null,
+    program: 'التدريب الاحترافي للذكاء الاصطناعي التوليدي — أكاديمية سدايا (سدايا × NVIDIA) + خمس شهادات NVIDIA معتمدة',
+    period: '2025 – 2026',
+    category: 'employment', categories: ['employment'],
+    impact: 'خمس شهادات NVIDIA معتمدة عبر الأكاديمية، ثم التحاق بجهة حكومية لا يُفصح الملف عن اسمها.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّ ياسر التدريب الاحترافي للذكاء الاصطناعي التوليدي بأكاديمية سدايا وخمس دورات معتمدة في مسار شهادات NVIDIA، والتحق بجهة حكومية لم تُذكر باسمها في الملف. ⚠ ملاحظة تحرير: الفارق بين سنة التخرج وسنة الالتحاق بالعمل يتجاوز نافذة الأربعة عشر شهرًا بحسب التواريخ السنوية المتاحة؛ نُشرت القصة استنادًا إلى اعتماد الأكاديمية المباشر للحالة، وتبقى مرشحة للمراجعة عند توفر تواريخ شهرية. وتجدر الإشارة إلى وجود أكثر من سجل باسم مشابه في قاعدة الخريجين؛ رُبطت القصة بالسجل الأقرب تطابقًا في الاسم والمسار.',
+    achievements: ['التدريب الاحترافي للذكاء الاصطناعي التوليدي — سدايا × NVIDIA', 'خمس دورات NVIDIA معتمدة ضمن برنامج الشهادات', 'التحاق بجهة حكومية (غير معلنة في الملف)', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yasser-alshehri-14a224295/' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    reviewFlag: 'gap',
+  },
+
+  {
+    id: 'asma-alzubaidi', year: 2024,
+    quote: {
+      text: 'أسهمت برامج أكاديمية سدايا وشهادات NVIDIA في الذكاء الاصطناعي التوليدي في تعميق معرفتي بالنماذج اللغوية الكبيرة والتطبيقات متعددة الوسائط، وعززت قدرتي على توظيف هذه التقنيات في مبادرات التحول الرقمي والذكاء الاصطناعي بصورة أكثر فاعلية.',
+      kind: 'verified',
+      source: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+    },
+    name: 'اسماء احمد الزبيدي', nameEn: 'Asma Ahmed Alzubaidi',
+    photo: null,
+    role: 'أخصائية أولى تحول رقمي وذكاء اصطناعي',
+    org: 'سدايا', orgLogo: 'assets/sdaia.svg',
+    program: 'التدريب الاحترافي للذكاء الاصطناعي التوليدي — أكاديمية سدايا (سدايا × NVIDIA) — NVIDIA-Certified: Gen AI, LLMs & Multimodal',
+    period: '2024',
+    category: 'employment', categories: ['employment'],
+    impact: 'شهادات NVIDIA المعتمدة في الذكاء الاصطناعي التوليدي والنماذج اللغوية، وتوظيف داخل سدايا في سنة البرنامج نفسها.',
+    story: 'مصدر هذه القصة هو ملف «قصص نجاح خريجي سدايا» الذي زوّدت به الأكاديمية في 27 أغسطس 2026، وفيه اسم البرنامج وسنة التخرج وجهة العمل وسنة الالتحاق بالعمل واقتباس معتمد للنشر. أتمّت أسماء التدريب الاحترافي للذكاء الاصطناعي التوليدي بأكاديمية سدايا، وتحمل شهادات NVIDIA المعتمدة في الذكاء الاصطناعي التوليدي والنماذج اللغوية الكبيرة والوسائط المتعددة — وهو ما ينصّ عليه عنوانها المهني العلني صراحةً. وتعمل أخصائيةً أولى للتحول الرقمي والذكاء الاصطناعي في سدايا منذ سنة إتمام البرنامج نفسها (2024)، وهو ما يستوفي معيار الأربعة عشر شهرًا المعتمد.',
+    achievements: ['التدريب الاحترافي للذكاء الاصطناعي التوليدي — سدايا × NVIDIA', 'NVIDIA-Certified: Gen AI, LLMs & Multimodal', 'توظيف داخل سدايا في سنة إتمام البرنامج نفسها (2024)', 'العنوان المهني العلني يذكر «SDAIA Graduate» صراحةً', 'اقتباس معتمد للنشر من ملف الأكاديمية'],
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/asma-al-zobidi-9576a5266/' },
+    ],
+    provenance: 'ملف «قصص نجاح خريجي سدايا» — قائمة الأكاديمية (27 أغسطس 2026)',
+  },
 ];

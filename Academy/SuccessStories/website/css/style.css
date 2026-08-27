@@ -93,3 +93,46 @@ html[data-theme="dark"] .modal-body h3 { color: #fff; }
 @media (max-width: 480px) {
   .cards-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== Story quotation (added 27 Aug 2026) =====
+   s.quote.kind === 'verified'  → Academy-approved, cleared for publication
+   s.quote.kind === 'draft'     → inferred from documented achievements, awaiting approval */
+.story-quote {
+  position: relative; margin: 0 0 1rem; padding: .85rem 1rem .7rem;
+  border-radius: var(--r-md, 10px);
+  background: var(--brand-soft); border-inline-start: 3px solid var(--brand);
+}
+.story-quote .q-mark {
+  position: absolute; top: .6rem; inset-inline-end: .7rem;
+  width: 18px; height: 18px; color: var(--brand); opacity: .28; pointer-events: none;
+}
+.story-quote .q-text {
+  margin: 0; border: 0; padding: 0; font-size: 13.5px; line-height: 1.75;
+  color: var(--ink-2); font-style: normal;
+}
+.story-quote--card .q-text {
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden; padding-inline-end: 1.4rem;
+}
+.story-quote .q-foot { margin-top: .5rem; }
+.q-tag {
+  display: inline-flex; align-items: center; gap: .3rem; border-radius: var(--r-pill);
+  padding: .12rem .55rem; font-size: 11px; font-weight: 600; line-height: 1.7;
+}
+.q-tag .i { width: 12px; height: 12px; flex: none; }
+.q-tag--verified { background: rgba(16, 143, 90, .12); color: #0c7a4c; }
+.q-tag--draft    { background: rgba(184, 124, 10, .14); color: #8a5c04; }
+html[data-theme="dark"] .q-tag--verified { background: rgba(52, 199, 137, .16); color: #6fe0af; }
+html[data-theme="dark"] .q-tag--draft    { background: rgba(240, 180, 41, .16); color: #f3c765; }
+
+/* a draft quote reads as provisional — dashed rule, no solid brand bar */
+.story-quote.is-draft {
+  background: var(--surface-2); border-inline-start-style: dashed; border-inline-start-color: var(--line-2);
+}
+.story-quote.is-draft .q-mark { color: var(--ink-3); }
+
+/* modal: a real pull quote, and the attribution beneath it */
+.story-quote--modal { margin: 0 0 1.4rem; padding: 1.1rem 1.3rem .95rem; }
+.story-quote--modal .q-text { font-size: 15.5px; line-height: 1.95; color: var(--ink); }
+.story-quote--modal .q-mark { width: 22px; height: 22px; top: .8rem; }
+.q-cite { margin-top: .45rem; font-size: 11.5px; color: var(--ink-3); }

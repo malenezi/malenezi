@@ -87,7 +87,7 @@ function filteredStories() {
     const inYear = state.year === 'all' || s.year === +state.year;
     if (!inYear) return false;
     if (!q) return true;
-    return [s.name, s.nameEn, s.org, s.role, s.program, s.impact].join(' ').toLowerCase().includes(q);
+    return [s.name, s.nameEn, s.org, s.role, s.program, s.impact, (s.quote && s.quote.text) || ''].join(' ').toLowerCase().includes(q);
   });
 }
 
@@ -98,6 +98,29 @@ function nameBlock(s, tag) {
   const primary = en && s.nameEn ? `<span class="en">${esc(s.nameEn)}</span>` : `<span class="ar">${esc(s.name)}</span>`;
   const alt = en && s.nameEn ? `<span class="ar">${esc(s.name)}</span>` : (s.nameEn ? `<span class="en">${esc(s.nameEn)}</span>` : '');
   return { primary, alt };
+}
+
+/* ---------- Quotation block ----------
+   Every story carries s.quote = { text, kind: 'verified' | 'draft', source? }.
+   'verified' quotes are supplied and cleared for publication by the Academy;
+   'draft' quotes are inferred from the graduate's documented achievements and
+   are labelled as such on the card and in the modal until they are approved. */
+function quoteBlock(s, variant) {
+  const q = s.quote;
+  if (!q || !q.text) return '';
+  const draft = q.kind === 'draft';
+  const tag = draft
+    ? `<span class="q-tag q-tag--draft">${I('pencil', 'i-sm')}${T('مسودة اقتباس — بانتظار الاعتماد', 'Draft quote — pending approval')}</span>`
+    : `<span class="q-tag q-tag--verified">${I('badge-check', 'i-sm')}${T('اقتباس معتمد للنشر', 'Approved for publication')}</span>`;
+  const cite = (variant === 'modal' && !draft && q.source)
+    ? `<figcaption class="q-cite ar">${esc(q.source)}</figcaption>` : '';
+  return `
+    <figure class="story-quote story-quote--${variant}${draft ? ' is-draft' : ''}">
+      ${I('quote', 'q-mark')}
+      <blockquote class="q-text ar">${esc(q.text)}</blockquote>
+      <div class="q-foot">${tag}</div>
+      ${cite}
+    </figure>`;
 }
 
 function cardHTML(s) {
@@ -121,6 +144,7 @@ function cardHTML(s) {
       <p class="card-role ar">${esc(s.role)}</p>
       ${org}
       <p class="card-impact ar">${esc(s.impact)}</p>
+      ${quoteBlock(s, 'card')}
       <div class="card-meta"><span class="sd-tag ar">${I('calendar-days', 'i-sm')}${esc(s.period)}</span></div>
       <div class="card-actions">
         <button class="sd-btn sd-btn--primary sd-btn--sm btn-read" data-id="${s.id}" aria-haspopup="dialog">${I('book-open')}<span>${T('اقرأ القصة كاملة', 'Read the full story')}</span></button>
@@ -151,7 +175,7 @@ function renderStories() {
   // a cohort emptied by the current search is unreachable — mark its sub-nav link disabled
   const q = state.query.toLowerCase();
   const hasAny = y => STORIES.some(s => s.year === y &&
-    (!q || [s.name, s.nameEn, s.org, s.role, s.program, s.impact].join(' ').toLowerCase().includes(q)));
+    (!q || [s.name, s.nameEn, s.org, s.role, s.program, s.impact, (s.quote && s.quote.text) || ''].join(' ').toLowerCase().includes(q)));
   $$('#yearNav a[data-year]').forEach(a => {
     const ok = hasAny(+a.dataset.year);
     a.classList.toggle('is-off', !ok);
@@ -193,6 +217,7 @@ function openModal(id) {
     </div>
     <div class="modal-body">
       <div class="m-org ar">${s.orgLogo ? `<img src="${s.orgLogo}" alt="${esc(T('شعار', 'Logo of') + ' ' + s.org)}">` : ''}<span>${esc(s.org)}</span></div>
+      ${quoteBlock(s, 'modal')}
       <div class="sd-dl">
         <div><div class="k">${T('سنة التخرج', 'Graduation year')}</div><div class="v num">${s.year}</div></div>
         <div><div class="k">${T('البرنامج', 'Program')}</div><div class="v ar">${esc(s.program)}</div></div>
