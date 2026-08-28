@@ -1,649 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights - Prof. Mamdouh Alenezi</title>
-    <meta name="description" content="Thoughts on Software Engineering, AI Governance, and Tech Leadership.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        slate: { 850: '#1e293b', 900: '#0f172a' },
-                        gold: { 500: '#d4af37', 600: '#b5952f' }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-	
-	    <style>
-        .article-title {
-            width: 100%;
-        }
-        
-        .article-title a {
-            display: block;
-            width: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            .article-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights — Prof. Mamdouh Alenezi</title>
+<meta name="description" content="Essays by Prof. Mamdouh Alenezi on AI strategy, software engineering, technology governance and higher education.">
+<meta name="author" content="Mamdouh Alenezi">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0f5646">
+<link rel="canonical" href="https://malenezi.github.io/malenezi/myblog/">
+<link rel="icon" href="../images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../images/newprofile.png">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Prof. Mamdouh Alenezi">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="Insights — Prof. Mamdouh Alenezi">
+<meta property="og:description" content="Essays by Prof. Mamdouh Alenezi on AI strategy, software engineering, technology governance and higher education.">
+<meta property="og:url" content="https://malenezi.github.io/malenezi/myblog/index.html">
+<meta property="og:image" content="https://malenezi.github.io/malenezi/images/newprofile.png">
+<meta property="og:image:alt" content="Portrait of Prof. Mamdouh Alenezi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MamdouhAlenezi">
+<meta name="twitter:title" content="Insights — Prof. Mamdouh Alenezi">
+<meta name="twitter:description" content="Essays by Prof. Mamdouh Alenezi on AI strategy, software engineering, technology governance and higher education.">
+<meta name="twitter:image" content="https://malenezi.github.io/malenezi/images/newprofile.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.className+=" js";}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mamdouh Alenezi", "honorificPrefix": "Prof.", "honorificSuffix": "Ph.D.", "jobTitle": "General Manager, SDAIA Academy", "description": "Executive leader in national AI and data capability development, technology governance and digital transformation; Full Professor of Software Engineering.", "url": "https://malenezi.github.io/malenezi/", "image": "https://malenezi.github.io/malenezi/images/newprofile.png", "email": "mailto:enezi.mamdouh@gmail.com", "worksFor": {"@type": "Organization", "name": "SDAIA — Saudi Data & Artificial Intelligence Authority"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "North Dakota State University"}, {"@type": "CollegeOrUniversity", "name": "DePaul University"}, {"@type": "CollegeOrUniversity", "name": "Prince Sultan University"}], "address": {"@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA"}, "knowsAbout": ["Software Engineering", "Artificial Intelligence", "AI Governance", "Technology Governance", "Digital Transformation", "Software Security", "Capability Development", "Higher Education"], "sameAs": ["https://scholar.google.com/citations?user=zH5wDBIAAAAJ", "https://sa.linkedin.com/in/mamdouhalenezi", "https://orcid.org/0000-0001-6852-1206", "https://www.researchgate.net/profile/Mamdouh_Alenezi", "https://www.scopus.com/authid/detail.uri?authorId=55854089000", "https://dblp.org/pers/hd/a/Alenezi:Mamdouh", "https://github.com/malenezi", "https://medium.com/@malenezi", "https://x.com/MamdouhAlenezi"]}</script>
+
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
-            <a href="../index.html" class="text-xl font-serif font-bold text-slate-900 tracking-wide hover:text-slate-700 transition">
-                Prof. Alenezi <span class="text-slate-400 font-sans font-normal text-sm ml-2">/ Blog</span>
-            </a>
-            
-        </div>
-    </nav>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="brand" href="../index.html">Mamdouh <span>Alenezi</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav" id="primary-nav">
+      <li><a href="../about.html">About</a></li><li><a href="../leadership.html">Leadership</a></li><li><a href="../publications.html">Research</a></li><li><a href="../projects.html">Projects</a></li><li><a href="../speaking.html">Speaking</a></li>
+      <li><a class="nav-cta" href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-    <header class="pt-32 pb-16 px-6 bg-white border-b border-slate-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-gold-500 font-semibold uppercase tracking-widest text-xs mb-4">Research & Perspectives</p>
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
-                Insights on Tech & Governance
-            </h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Exploring the intersection of secure software engineering, artificial intelligence, and the leadership strategies required to govern them.
-            </p>
-        </div>
-    </header>
+<main id="main">
 
-    <main class="flex-grow w-full max-w-6xl mx-auto px-6 py-16">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Writing</span>
+    <h1>Insights.</h1>
+    <p>Short essays on artificial intelligence, software engineering practice, governance and the future of technical work — published on Medium and LinkedIn, in English and Arabic.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    <p class="pub-count">51 essays, 2023–2026. Each title links to the published piece.</p>
+    <div class="sec-head reveal" style="margin-top:2.8rem"><h2>2026</h2></div><ul class="rows reveal"><li><b dir="auto"><a href="https://medium.com/@malenezi/ontology-driven-enterprise-architecture-for-ai-powered-software-delivery-58d6bfa38b3a" rel="noopener" target="_blank">Ontology-Driven Enterprise Architecture for AI-Powered Software Delivery</a></b><span>February 21, 2026 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/enterprise-ai-strategy-2026-scale-the-meaning-not-just-the-model-d7b0a1052d50" rel="noopener" target="_blank">Enterprise AI Strategy 2026: Scale the Meaning, Not Just the Model</a></b><span>January 20, 2026 · Medium</span></li></ul><div class="sec-head reveal" style="margin-top:2.8rem"><h2>2025</h2></div><ul class="rows reveal"><li><b dir="auto"><a href="https://medium.com/@malenezi/من-اللمعان-إلى-الاحتراق-ثم-الاتزان-كيف-غيّرت-عشر-عادات-مساري-المهني-85ed20acfbf2" rel="noopener" target="_blank">من اللمعان إلى الاحتراق ثم الاتزان: كيف غيّرت عشر عادات مساري المهني</a></b><span>November 19, 2025 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-golden-rule-of-ai-implementation-transform-the-business-first-then-adopt-ai-494e25fb7773" rel="noopener" target="_blank">The Golden Rule of AI Implementation: Transform the Business First, Then Adopt AI</a></b><span>October 6, 2025 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/a-new-paradigm-shift-in-software-engineering-from-typists-to-conductors-91bbc168b51b" rel="noopener" target="_blank">A New Paradigm Shift in Software Engineering: From Typists to Conductors</a></b><span>October 2, 2025 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/vibe-coding-is-engineering-treat-prompts-like-source-code-f69266a89b6b" rel="noopener" target="_blank">Vibe coding is engineering — treat prompts like source code</a></b><span>September 18, 2025 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/how-mature-is-your-organizations-ai-strategy-a-five-stage-roadmap-to-true-transformation-934dd205e056" rel="noopener" target="_blank">How Mature Is Your Organization’s AI Strategy? A Five-Stage Roadmap to True Transformation</a></b><span>June 16, 2025 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-rise-of-agentic-ai-in-smart-cities-rethinking-transportation-for-a-smarter-future-eb7d5a8cc779" rel="noopener" target="_blank">The Rise of Agentic AI in Smart Cities: Rethinking Transportation for a Smarter Future</a></b><span>April 6, 2025 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/%D9%88%D9%83%D9%84%D8%A7%D8%A1-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3%D9%8A-vertical-agentic-ai-%D9%83%D9%8A%D9%81-alenezi-dpngf/?trackingId=o5eisDTypEsahMnEfZVdQQ%3D%3D" rel="noopener" target="_blank">وكلاء الذكاء الاصطناعي الرأسي (Vertical Agentic AI): كيف سيعيدون تشكيل مشهد الشركات الناشئة؟</a></b><span>February 17, 2025 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-ai-revolution-take-two-from-giant-brains-to-nimble-specialists-and-beyond-a7fbb0dd5bca" rel="noopener" target="_blank">The AI Revolution, Take Two: From Giant Brains to Nimble Specialists and Beyond</a></b><span>February 13, 2025 · Medium</span></li></ul><div class="sec-head reveal" style="margin-top:2.8rem"><h2>2024</h2></div><ul class="rows reveal"><li><b dir="auto"><a href="https://medium.com/@malenezi/5-essential-secure-coding-practices-every-software-engineer-should-know-98609ac79de2" rel="noopener" target="_blank">5 Essential Secure Coding Practices Every Software Engineer Should Know</a></b><span>November 17, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/software-refactoring-in-the-era-of-ai-beyond-code-generation-1f1bda94fd87" rel="noopener" target="_blank">Software Refactoring in the Era of AI: Beyond Code Generation</a></b><span>October 6, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/beyond-agile-devops-evolving-software-development-alenezi-1ms6f/" rel="noopener" target="_blank">Beyond Agile and DevOps: Evolving Software Development</a></b><span>September 29, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/breaking-boundaries-ai-creates-new-types-work-prof-mamdouh-alenezi-rspsf/" rel="noopener" target="_blank">Breaking Boundaries: AI Creates New Types of Work</a></b><span>September 22, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/modern-integration-governance-a-strategy-for-success-a5e23a06c59f" rel="noopener" target="_blank">Modern Integration Governance: A Strategy for Success</a></b><span>September 18, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/understanding-managing-technical-debt-necessary-evil-software-4xiwf/" rel="noopener" target="_blank">Understanding and Managing Technical Debt: A Necessary Evil in Software Development</a></b><span>September 15, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/software-development-team-excellence-guide-effective-learning-zjmmf/" rel="noopener" target="_blank">Software Development Team Excellence: A Guide to Effective Learning and Development</a></b><span>September 9, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/embracing-systems-thinking-in-software-engineering-education-a-path-to-managing-complexity-b8942a8a13af" rel="noopener" target="_blank">Embracing Systems Thinking in Software Engineering Education: A Path to Managing Complexity</a></b><span>September 1, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/software-thinks-guide-building-intelligent-ai-powered-alenezi-ffdkf/" rel="noopener" target="_blank">Software That Thinks: A Guide to Building Intelligent, AI-Powered Systems</a></b><span>August 29, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/science-based-approaches-addressing-software-bugs-alenezi-9nlnf/" rel="noopener" target="_blank">Science-Based Approaches to Addressing Software Bugs Effectively</a></b><span>August 26, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/future-software-delivery-trends-technologies-shaping-tomorrow-ge5hf/" rel="noopener" target="_blank">The Future of Software Delivery: Trends and Technologies Shaping Tomorrow</a></b><span>July 31, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/human-capability-development-program-priorities-for-2024-and-2025-f737978bd248" rel="noopener" target="_blank">Human Capability Development Program: Priorities for 2024 and 2025</a></b><span>July 16, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/platform-engineering-the-future-of-software-delivery-85da17deb474" rel="noopener" target="_blank">Platform Engineering: The Future of Software Delivery</a></b><span>July 16, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/bridging-gap-between-university-graduates-job-market-movement-wnmkf/" rel="noopener" target="_blank">Bridging the Gap Between University Graduates and Job Market Requirements: A Disruptive Movement in Training in Saudi Arabia</a></b><span>July 13, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-university-rankings-conundrum-should-institutions-chase-metrics-or-stay-true-to-their-mission-3af202491675" rel="noopener" target="_blank">The University Rankings Conundrum: Should Institutions Chase Metrics or Stay True to Their Mission?</a></b><span>July 1, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/bridging-the-gap-universities-and-the-job-market-16e8fa14699f" rel="noopener" target="_blank">Bridging the Gap: Universities and the Job Market</a></b><span>June 26, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/from-productivity-effectiveness-new-era-software-alenezi-tudhf/" rel="noopener" target="_blank">From Productivity to Effectiveness: A New Era for Software Engineering</a></b><span>June 16, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/human-centric-software-development-key-success-prof-mamdouh-alenezi-yvv9f/" rel="noopener" target="_blank">Human-Centric Software Development: The Key to Success</a></b><span>June 2, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/power-do-have-software-development-unlocking-team-dynamics-alenezi-fmp0f/" rel="noopener" target="_blank">The Power of &quot;Be, Do, Have&quot; in Software Development: Unlocking Team Dynamics</a></b><span>May 22, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-art-of-accurate-sprint-estimation-navigating-the-challenges-of-software-development-6a7099a00c78" rel="noopener" target="_blank">The Art of Accurate Sprint Estimation: Navigating the Challenges of Software Development</a></b><span>May 9, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/embracing-holistic-leadership-higher-education-prof-mamdouh-alenezi-djakf" rel="noopener" target="_blank">Embracing Holistic Leadership in Higher Education</a></b><span>May 1, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-future-of-software-entrepreneurship-how-ai-is-revolutionizing-the-industry-e04e1e496987" rel="noopener" target="_blank">The Future of Software Entrepreneurship: How AI is Revolutionizing the Industry</a></b><span>April 28, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/the-power-of-imagination-in-software-entrepreneurship-558269996409" rel="noopener" target="_blank">The Power of Imagination in Software Entrepreneurship</a></b><span>April 26, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/7-essential-devops-tips-boost-efficiency-quality-2024-alenezi-f24ef/" rel="noopener" target="_blank">7 Essential DevOps Tips to Boost Efficiency, Quality, and Reliability in 2024</a></b><span>April 23, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/moving-beyond-agile-embracing-a-new-paradigm-for-product-development-8ac8c9d99fb1" rel="noopener" target="_blank">Moving Beyond Agile: Embracing a New Paradigm for Product Development</a></b><span>April 22, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/transforming-government-services-saudi-arabia-success-alenezi-woawf/" rel="noopener" target="_blank">Transforming Government Services in Saudi Arabia: Strategies for Success in the Digital Age</a></b><span>April 14, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/optimizing-human-factors-in-devops-enhancing-collaboration-communication-and-performance-13d6bb237381" rel="noopener" target="_blank">Optimizing Human Factors in DevOps: Enhancing Collaboration, Communication, and Performance</a></b><span>April 10, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/rethinking-human-centered-software-engineering-in-the-age-of-digital-transformation-5a9801c7df61" rel="noopener" target="_blank">Rethinking Human-Centered Software Engineering in the Age of Digital Transformation</a></b><span>April 4, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/shaping-the-future-of-software-engineering-in-saudi-arabia-a-visionary-approach-fc3e258c3832" rel="noopener" target="_blank">Shaping the Future of Software Engineering in Saudi Arabia: A Visionary Approach</a></b><span>April 1, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/unlocking-success-6-principles-strategic-organization-alenezi-ucbdf/" rel="noopener" target="_blank">Unlocking Success: 6 Principles for Strategic Organization of Digital Product Management</a></b><span>March 26, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/modern-software-construction-faster-development-prof-mamdouh-alenezi-4oqpf/" rel="noopener" target="_blank">Modern Software Construction: Faster Development or Complicated Ecosystem?</a></b><span>March 15, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/entrepreneurship-and-the-digital-economy-thriving-in-the-21st-century-8d2e315a690e" rel="noopener" target="_blank">Entrepreneurship and the Digital Economy: Thriving in the 21st Century</a></b><span>March 9, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/agility-vs-planning-finding-the-right-balance-in-digital-entrepreneurship-937a6dca961c" rel="noopener" target="_blank">Agility vs. Planning: Finding the Right Balance in Digital Entrepreneurship</a></b><span>February 28, 2024 · Medium</span></li><li><b dir="auto"><a href="https://medium.com/@malenezi/scaling-digital-entrepreneurship-and-rethinking-business-models-d07c64e5221f" rel="noopener" target="_blank">Scaling Digital Entrepreneurship and Rethinking Business Models</a></b><span>February 28, 2024 · Medium</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/navigating-conflicting-viewpoints-product-management-success-alenezi-l7hhf/" rel="noopener" target="_blank">Navigating Conflicting Viewpoints in Product Management: Strategies for Success</a></b><span>February 27, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/navigating-riyadhs-traffic-google-maps-ai-combination-alenezi-3wakf/" rel="noopener" target="_blank">Navigating Riyadh&#x27;s Traffic with Google Maps and AI: A Game-Changing Combination</a></b><span>February 17, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/ai-insight-key-unlocking-human-potential-prof-mamdouh-alenezi-cfksf/" rel="noopener" target="_blank">AI Insight: The Key to Unlocking Human Potential</a></b><span>February 8, 2024 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/unique-role-data-ai-product-managers-shaping-future-business-alenezi-pjevf/" rel="noopener" target="_blank">The Unique Role of Data and AI Product Managers in Shaping the Future of Business</a></b><span>January 2, 2024 · LinkedIn</span></li></ul><div class="sec-head reveal" style="margin-top:2.8rem"><h2>2023</h2></div><ul class="rows reveal"><li><b dir="auto"><a href="https://www.linkedin.com/pulse/navigating-uncharted-waters-product-management-tech-startups-alenezi-6vwif/" rel="noopener" target="_blank">Navigating the Uncharted Waters of Product Management in Tech Startups: A Focus on Market Research and Data Analysis</a></b><span>December 24, 2023 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/intersections-between-devops-digital-transformation-alenezi-zkiyf/" rel="noopener" target="_blank">Intersections between DevOps and Digital Transformation</a></b><span>December 19, 2023 · LinkedIn</span></li><li><b dir="auto"><a href="https://www.linkedin.com/pulse/revolutionizing-software-engineering-power-automl-alenezi-r4enf/" rel="noopener" target="_blank">Revolutionizing Software Engineering: The Power of AutoML</a></b><span>December 17, 2023 · LinkedIn</span></li></ul>
+  </div>
+</section>
 
-        <div class="mb-16">
-		<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 21, 2026</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/ontology-driven-enterprise-architecture-for-ai-powered-software-delivery-58d6bfa38b3a">Ontology-Driven Enterprise Architecture for AI-Powered Software Delivery</a>
-        </h3>
+<section class="sec sec--tint">
+  <div class="wrap">
+    <div class="callout reveal">
+      <h2>Follow the writing.</h2>
+      <p>New essays appear first on Medium and LinkedIn.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" href="https://medium.com/@malenezi" rel="noopener" target="_blank">Medium</a>
+        <a class="btn btn--ghost" href="https://sa.linkedin.com/in/mamdouhalenezi" rel="noopener" target="_blank">LinkedIn</a>
+      </div>
     </div>
-</article>
-		<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>January 20, 2026</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/enterprise-ai-strategy-2026-scale-the-meaning-not-just-the-model-d7b0a1052d50">Enterprise AI Strategy 2026: Scale the Meaning, Not Just the Model</a>
-        </h3>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <ul class="foot-nav"><li><a href="../about.html">About</a></li><li><a href="../leadership.html">Leadership</a></li><li><a href="../publications.html">Research</a></li><li><a href="../projects.html">Projects</a></li><li><a href="../speaking.html">Speaking</a></li><li><a href="../myblog/">Insights</a></li><li><a href="../contact.html">Contact</a></li></ul>
+    <ul class="profiles"><li><a href="https://scholar.google.com/citations?user=zH5wDBIAAAAJ" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/></svg>Google Scholar</a></li><li><a href="https://sa.linkedin.com/in/mamdouhalenezi" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn</a></li><li><a href="https://orcid.org/0000-0001-6852-1206" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM7.9 7.4a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zm.75 3h1.5v7h-1.5v-7zm3.35 0h2.9c2.75 0 3.96 1.97 3.96 3.5 0 1.8-1.4 3.5-3.94 3.5h-2.92v-7zm1.5 1.35v4.3h1.36c2.42 0 2.98-1.84 2.98-2.15 0-1.16-.74-2.15-3.03-2.15h-1.31z"/></svg>ORCID</a></li><li><a href="https://www.researchgate.net/profile/Mamdouh_Alenezi" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>ResearchGate</a></li><li><a href="https://www.scopus.com/authid/detail.uri?authorId=55854089000" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>Scopus</a></li><li><a href="https://dblp.org/pers/hd/a/Alenezi:Mamdouh" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>DBLP</a></li><li><a href="https://github.com/malenezi" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.7C6.73 19.91 6.14 18 6.14 18c-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>GitHub</a></li><li><a href="https://medium.com/@malenezi" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>Medium</a></li><li><a href="https://x.com/MamdouhAlenezi" rel="noopener me" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-5.97l-4.68-6.12L5.74 21H2.77l6.94-7.93L2.25 3h6.12l4.23 5.59L17.53 3zm-1.04 16.2h1.65L7.6 4.72H5.83L16.49 19.2z"/></svg>X</a></li></ul>
+    <div class="foot-bottom">
+      <p>&copy; 2026 Mamdouh Alenezi · Riyadh, Saudi Arabia</p>
+      <p><a href="mailto:enezi.mamdouh@gmail.com">enezi.mamdouh@gmail.com</a></p>
     </div>
-</article>
-		<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>November 19, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/من-اللمعان-إلى-الاحتراق-ثم-الاتزان-كيف-غيّرت-عشر-عادات-مساري-المهني-85ed20acfbf2">من اللمعان إلى الاحتراق ثم الاتزان: كيف غيّرت عشر عادات مساري المهني</a>
-        </h3>
-    </div>
-</article>
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>October 6, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-golden-rule-of-ai-implementation-transform-the-business-first-then-adopt-ai-494e25fb7773">The Golden Rule of AI Implementation: Transform the Business First, Then Adopt AI</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>October 2, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/a-new-paradigm-shift-in-software-engineering-from-typists-to-conductors-91bbc168b51b">A New Paradigm Shift in Software Engineering: From Typists to Conductors</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 18, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/vibe-coding-is-engineering-treat-prompts-like-source-code-f69266a89b6b">Vibe coding is engineering — treat prompts like source code</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>June 16, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/how-mature-is-your-organizations-ai-strategy-a-five-stage-roadmap-to-true-transformation-934dd205e056">How Mature Is Your Organization’s AI Strategy? A Five-Stage Roadmap to True Transformation</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 6, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-rise-of-agentic-ai-in-smart-cities-rethinking-transportation-for-a-smarter-future-eb7d5a8cc779">The Rise of Agentic AI in Smart Cities: Rethinking Transportation for a Smarter Future</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 17, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/%D9%88%D9%83%D9%84%D8%A7%D8%A1-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3%D9%8A-vertical-agentic-ai-%D9%83%D9%8A%D9%81-alenezi-dpngf/?trackingId=o5eisDTypEsahMnEfZVdQQ%3D%3D">وكلاء الذكاء الاصطناعي الرأسي (Vertical Agentic AI): كيف سيعيدون تشكيل مشهد الشركات الناشئة؟</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 13, 2025</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-ai-revolution-take-two-from-giant-brains-to-nimble-specialists-and-beyond-a7fbb0dd5bca">The AI Revolution, Take Two: From Giant Brains to Nimble Specialists and Beyond</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>November 17, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/5-essential-secure-coding-practices-every-software-engineer-should-know-98609ac79de2">5 Essential Secure Coding Practices Every Software Engineer Should Know</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>October 6, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/software-refactoring-in-the-era-of-ai-beyond-code-generation-1f1bda94fd87">Software Refactoring in the Era of AI: Beyond Code Generation</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 29, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/beyond-agile-devops-evolving-software-development-alenezi-1ms6f/">Beyond Agile and DevOps: Evolving Software Development</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 22, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/breaking-boundaries-ai-creates-new-types-work-prof-mamdouh-alenezi-rspsf/">Breaking Boundaries: AI Creates New Types of Work</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 18, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/modern-integration-governance-a-strategy-for-success-a5e23a06c59f">Modern Integration Governance: A Strategy for Success</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 15, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/understanding-managing-technical-debt-necessary-evil-software-4xiwf/">Understanding and Managing Technical Debt: A Necessary Evil in Software Development</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 9, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/software-development-team-excellence-guide-effective-learning-zjmmf/">Software Development Team Excellence: A Guide to Effective Learning and Development</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>September 1, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/embracing-systems-thinking-in-software-engineering-education-a-path-to-managing-complexity-b8942a8a13af">Embracing Systems Thinking in Software Engineering Education: A Path to Managing Complexity</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>August 29, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/software-thinks-guide-building-intelligent-ai-powered-alenezi-ffdkf/">Software That Thinks: A Guide to Building Intelligent, AI-Powered Systems</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>August 26, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/science-based-approaches-addressing-software-bugs-alenezi-9nlnf/">Science-Based Approaches to Addressing Software Bugs Effectively</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>July 31, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/future-software-delivery-trends-technologies-shaping-tomorrow-ge5hf/">The Future of Software Delivery: Trends and Technologies Shaping Tomorrow</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>July 16, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/human-capability-development-program-priorities-for-2024-and-2025-f737978bd248">Human Capability Development Program: Priorities for 2024 and 2025</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>July 16, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/platform-engineering-the-future-of-software-delivery-85da17deb474">Platform Engineering: The Future of Software Delivery</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>July 13, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/bridging-gap-between-university-graduates-job-market-movement-wnmkf/">Bridging the Gap Between University Graduates and Job Market Requirements: A Disruptive Movement in Training in Saudi Arabia</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>July 1, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-university-rankings-conundrum-should-institutions-chase-metrics-or-stay-true-to-their-mission-3af202491675">The University Rankings Conundrum: Should Institutions Chase Metrics or Stay True to Their Mission?</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>June 26, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/bridging-the-gap-universities-and-the-job-market-16e8fa14699f">Bridging the Gap: Universities and the Job Market</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>June 16, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/from-productivity-effectiveness-new-era-software-alenezi-tudhf/">From Productivity to Effectiveness: A New Era for Software Engineering</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>June 2, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/human-centric-software-development-key-success-prof-mamdouh-alenezi-yvv9f/">Human-Centric Software Development: The Key to Success</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>May 22, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/power-do-have-software-development-unlocking-team-dynamics-alenezi-fmp0f/">The Power of "Be, Do, Have" in Software Development: Unlocking Team Dynamics</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>May 9, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-art-of-accurate-sprint-estimation-navigating-the-challenges-of-software-development-6a7099a00c78">The Art of Accurate Sprint Estimation: Navigating the Challenges of Software Development</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>May 1, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/embracing-holistic-leadership-higher-education-prof-mamdouh-alenezi-djakf">Embracing Holistic Leadership in Higher Education</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 28, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-future-of-software-entrepreneurship-how-ai-is-revolutionizing-the-industry-e04e1e496987">The Future of Software Entrepreneurship: How AI is Revolutionizing the Industry</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 26, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/the-power-of-imagination-in-software-entrepreneurship-558269996409">The Power of Imagination in Software Entrepreneurship</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 23, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/7-essential-devops-tips-boost-efficiency-quality-2024-alenezi-f24ef/">7 Essential DevOps Tips to Boost Efficiency, Quality, and Reliability in 2024</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 22, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/moving-beyond-agile-embracing-a-new-paradigm-for-product-development-8ac8c9d99fb1">Moving Beyond Agile: Embracing a New Paradigm for Product Development</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 14, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/transforming-government-services-saudi-arabia-success-alenezi-woawf/">Transforming Government Services in Saudi Arabia: Strategies for Success in the Digital Age</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 10, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/optimizing-human-factors-in-devops-enhancing-collaboration-communication-and-performance-13d6bb237381">Optimizing Human Factors in DevOps: Enhancing Collaboration, Communication, and Performance</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 4, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/rethinking-human-centered-software-engineering-in-the-age-of-digital-transformation-5a9801c7df61">Rethinking Human-Centered Software Engineering in the Age of Digital Transformation</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>April 1, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/shaping-the-future-of-software-engineering-in-saudi-arabia-a-visionary-approach-fc3e258c3832">Shaping the Future of Software Engineering in Saudi Arabia: A Visionary Approach</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>March 26, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/unlocking-success-6-principles-strategic-organization-alenezi-ucbdf/">Unlocking Success: 6 Principles for Strategic Organization of Digital Product Management</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>March 15, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/modern-software-construction-faster-development-prof-mamdouh-alenezi-4oqpf/">Modern Software Construction: Faster Development or Complicated Ecosystem?</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>March 9, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/entrepreneurship-and-the-digital-economy-thriving-in-the-21st-century-8d2e315a690e">Entrepreneurship and the Digital Economy: Thriving in the 21st Century</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 28, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/agility-vs-planning-finding-the-right-balance-in-digital-entrepreneurship-937a6dca961c">Agility vs. Planning: Finding the Right Balance in Digital Entrepreneurship</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 28, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://medium.com/@malenezi/scaling-digital-entrepreneurship-and-rethinking-business-models-d07c64e5221f">Scaling Digital Entrepreneurship and Rethinking Business Models</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 27, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/navigating-conflicting-viewpoints-product-management-success-alenezi-l7hhf/">Navigating Conflicting Viewpoints in Product Management: Strategies for Success</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 17, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/navigating-riyadhs-traffic-google-maps-ai-combination-alenezi-3wakf/">Navigating Riyadh's Traffic with Google Maps and AI: A Game-Changing Combination</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>February 8, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/ai-insight-key-unlocking-human-potential-prof-mamdouh-alenezi-cfksf/">AI Insight: The Key to Unlocking Human Potential</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>January 2, 2024</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/unique-role-data-ai-product-managers-shaping-future-business-alenezi-pjevf/">The Unique Role of Data and AI Product Managers in Shaping the Future of Business</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>December 24, 2023</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/navigating-uncharted-waters-product-management-tech-startups-alenezi-6vwif/">Navigating the Uncharted Waters of Product Management in Tech Startups: A Focus on Market Research and Data Analysis</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>December 19, 2023</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/intersections-between-devops-digital-transformation-alenezi-zkiyf/">Intersections between DevOps and Digital Transformation</a>
-        </h3>
-    </div>
-</article>
-
-<article class="group relative grid gap-8 bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-xl transition duration-300 w-full">
-    <div class="flex flex-col justify-center max-w-4xl">
-        <div class="text-slate-400 text-sm mb-3 flex items-center space-x-2">
-            <span>December 17, 2023</span>
-        </div>
-        <h3 class="text-3xl font-serif font-bold text-slate-900 mb-4 group-hover:text-gold-600 transition article-title">
-            <a href="https://www.linkedin.com/pulse/revolutionizing-software-engineering-power-automl-alenezi-r4enf/">Revolutionizing Software Engineering: The Power of AutoML</a>
-        </h3>
-    </div>
-</article>
-
-
-        </div>
-
-
-   </main>
-
-<footer class="bg-slate-50 border-t border-slate-200 py-12 text-center">
-        <p class="font-serif text-slate-900 text-lg mb-4">Prof. Mamdouh Alenezi</p>
-        <div class="flex justify-center space-x-6 text-slate-500 mb-6">
-            <a href="https://scholar.google.com/citations?user=zH5wDBIAAAAJ&hl=en" class="hover:text-white transition">Google Scholar</a>
-                <a href="https://sa.linkedin.com/in/mamdouhalenezi" class="hover:text-white transition">LinkedIn</a>
-                <a href="https://www.researchgate.net/profile/Mamdouh_Alenezi" class="hover:text-white transition">ResearchGate</a>
-        </div>
-        <p class="text-sm text-slate-400">© 2026. All rights reserved.</p>
-    </footer>
-
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
 </body>
 </html>

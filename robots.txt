@@ -1,5 +1,4 @@
 User-agent: *
+Allow: /
+
 Sitemap: https://malenezi.github.io/malenezi/sitemap.xml
-Disallow: /img/
-Disallow: /images/
-Disallow: /files/
