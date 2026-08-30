@@ -1,0 +1,23 @@
+// نُقلت إلى فئة «قيد التحقق» بقرار 30 أغسطس 2026 — يلزم تاريخ تعيين موثق في أرامكو لاحق للبرنامج
+{
+    id: 'manar-alsayed', year: 2026,
+    quote: {
+      text: 'بين ورقة محكّمة في كشف اعتلال الشبكية السكري وموقعي التقني في أرامكو السعودية، كانت برامج الأكاديمية وشهادات NVIDIA هي الأرضية المشتركة.',
+      kind: 'draft',
+    },
+    name: 'منار محمد السيد', nameEn: 'Manar Mohammed Alsayed',
+    photo: 'https://github.com/manarals.png',
+    role: 'محللة نظم تشغيل حاسوبية مشاركة (Associate Computer Operating System Analyst)',
+    org: 'أرامكو السعودية', orgLogo: 'assets/aramco.png',
+    program: 'برنامج شهادات NVIDIA — 5 دورات معتمدة · التدريب الاحترافي للذكاء الاصطناعي التوليدي (أكاديمية سدايا)',
+    period: '2026',
+    category: 'employment', categories: ['employment', 'research'],
+    impact: 'تجمع بين ورقة محكّمة منشورة في كشف اعتلال الشبكية السكري وبين موقع تقني في أرامكو السعودية — الهوية مؤكدة بثلاثة مصادر مترابطة.',
+    story: 'أتمّت منار برنامج شهادات NVIDIA بأكاديمية سدايا ضمن التدريب الاحترافي للذكاء الاصطناعي التوليدي. وقبل ذلك كانت مؤلفة في ورقة محكّمة منشورة في دورية Computers, Materials &amp; Continua بعنوان «Diabetic Retinopathy Detection: A Hybrid Intelligent Approach»، بانتساب قسم هندسة الحاسب في كلية علوم الحاسب وتقنية المعلومات بجامعة الإمام عبدالرحمن بن فيصل. وحسابها على GitHub يعرّفها بمطوّرة ذكاء اصطناعي تعمل بـ PyTorch وTensorFlow وOpenCV، ويثبّت مستودع الورقة نفسها. وتعمل اليوم محللة نظم تشغيل حاسوبية مشاركة في أرامكو السعودية. سجلها في القاعدة يوضّح كذلك أن «برنامج شهادات NVIDIA» و«التدريب الاحترافي للذكاء الاصطناعي التوليدي» مسمّيان لبرنامج واحد.',
+    achievements: ['محللة نظم تشغيل حاسوبية مشاركة — أرامكو السعودية', 'ورقة محكّمة في Computers, Materials & Continua (DOI 10.32604/cmc.2024.055106)', 'برنامج شهادات NVIDIA — 5 دورات معتمدة (أكاديمية سدايا)', 'بكالوريوس ذكاء اصطناعي — جامعة الإمام عبدالرحمن بن فيصل'],
+    links: [
+      { label: 'الورقة المحكّمة', url: 'https://www.techscience.com/cmc/v80n3/57909' },
+      { label: 'GitHub', url: 'https://github.com/manarals' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/manar-alkhalifah-alsayed/' },
+    ],
+  },
