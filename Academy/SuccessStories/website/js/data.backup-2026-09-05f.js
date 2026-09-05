@@ -125,9 +125,9 @@
 
 const SITE_STATS = [
   { value: 2845, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
-  { value: 100,  label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
+  { value: 99,   label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
   { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
-  { value: 59,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
+  { value: 58,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
 ];
 
 /* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,845 سجلًا)
@@ -2374,31 +2374,5 @@ const STORIES = [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/shahad-altamimi-672510253' },
     ],
     provenance: 'مستودع SynAnchor العلني (23 أغسطس 2026) + صفحة مهمة AraGenre على Codabench + الملف الشخصي على GitHub وLinkedIn (الاسم والمسمى وجهة العمل) + سجل مجتازي برامج الأكاديمية 2026 (الإتمام 6 يونيو 2026). سجل الخريج #1682. تحقّق 5 سبتمبر 2026 (هـ).',
-  },
-
-  {
-    id: 'haya-albaqami', year: 2023,
-    quote: {
-      text: 'أتممت معسكر ممارس تعلم الآلة في أكتوبر 2023، وبعده بأحد عشر شهرًا كنت مهندسة بيانات في هيئة الزكاة والضريبة والجمارك أعمل على تحليلات المخاطر — وهي المهارة نفسها التي تدرّبت عليها.',
-      kind: 'draft',
-    },
-    name: 'هيا البقمي', nameEn: 'Haya Albaqami',
-    photo: null,
-    role: 'مهندسة بيانات — تحليلات المخاطر والبيانات التنظيمية',
-    org: 'هيئة الزكاة والضريبة والجمارك (ZATCA)', orgLogo: null,
-    program: 'معسكر تعلم الآلة (ML) — ممارس تعلم الآلة، أكاديمية سدايا',
-    period: 'سبتمبر – أكتوبر 2023',
-    category: 'employment', categories: ['employment'],
-    impact: 'الالتحاق بهيئة الزكاة والضريبة والجمارك مهندسةَ بيانات في سبتمبر 2024 — أحد عشر شهرًا بعد إتمام معسكر ممارس تعلم الآلة، وداخل نافذة الأربعة عشر شهرًا بتاريخ مؤكد بمستوى الشهر.',
-    story: 'أتمّت هيا معسكر «ممارس تعلم الآلة» بأكاديمية سدايا في الفترة سبتمبر – أكتوبر 2023، وشهادة الإتمام مرفقة بقيد الخبرة في ملفها العام. وفي سبتمبر 2024 التحقت بهيئة الزكاة والضريبة والجمارك مهندسةَ بيانات تعمل على تحليلات المخاطر والبيانات التنظيمية — أي بعد أحد عشر شهرًا من الإتمام، في قلب نافذة الأربعة عشر شهرًا، وبتاريخ موثّق بمستوى الشهر في صفحة الخبرة. وهي أول قصة في القاعدة تنتمي جهةُ عملها إلى هيئة الزكاة والضريبة والجمارك، وبها تصير جهات العمل الموثّقة تسعًا وخمسين.',
-    achievements: [
-      'إتمام معسكر ممارس تعلم الآلة — أكتوبر 2023، بشهادة مرفقة بقيد الخبرة',
-      'الالتحاق بهيئة الزكاة والضريبة والجمارك مهندسةَ بيانات — سبتمبر 2024، بعد أحد عشر شهرًا',
-      'العمل في تحليلات المخاطر والبيانات التنظيمية — تطبيق مباشر لمجال التدريب',
-    ],
-    links: [
-      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/haya-m-a-97b91823a/' },
-    ],
-    provenance: 'صفحة الخبرة العامة على LinkedIn بحساب مسجَّل (تواريخ بمستوى الشهر، تحقّق 5 سبتمبر 2026 د) + الاسم الكامل من سجلات أكاديمية سدايا الداخلية (5 سبتمبر 2026 و). الملف العلني يعرض الاسم مختصرًا «Haya M. A.». سجل الخريج #2711.',
   },
 ];
