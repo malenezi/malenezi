@@ -124,24 +124,20 @@
 'use strict';
 
 const SITE_STATS = [
-  { value: 2839, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
+  { value: 2811, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
   { value: 95,   label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
   { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
   { value: 56,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
 ];
 
-/* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,839 سجلًا)
-   ويُعرض التوزيع نفسه في بوابة الخريجين وبوابة الأكاديمية.
-   5 سبتمبر 2026: أُضيف مسار «التدريب التعاوني (COOP)» سادسًا، ونُقل إليه سجل واحد من «برامج متخصصة أخرى»
-   (122 ← 121) مع تسعة سجلات جديدة. وستة سجلات إضافية موسومة بالتدريب التعاوني تحتفظ بمساراتها الأصلية.
-   5 سبتمبر 2026 (ب): مسح مشاريع التخرج على GitHub أضاف 19 سجلًا (مهندس ذكاء اصطناعي 1,346 ← 1,363 · عالم بيانات 765 ← 767). */
+/* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,811 سجلًا)
+   ويُعرض التوزيع نفسه في بوابة الخريجين وبوابة الأكاديمية. */
 const TRACKS = [
-  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1363 },
-  { key: 'ds',    label: 'عالم بيانات',                     en: 'Data Scientist',                value: 767  },
+  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1346 },
+  { key: 'ds',    label: 'عالم بيانات',                     en: 'Data Scientist',                value: 765  },
   { key: 'genai', label: 'أكاديمية الذكاء الاصطناعي التوليدي', en: 'Gen AI Academy',                value: 254  },
   { key: 'dmg',   label: 'إدارة وحوكمة البيانات',            en: 'Data Management & Governance',  value: 324  },
-  { key: 'coop',  label: 'التدريب التعاوني',                 en: 'Cooperative Training (COOP)',   value: 10   },
-  { key: 'other', label: 'برامج متخصصة أخرى',                en: 'Other / Specialized',           value: 121  },
+  { key: 'other', label: 'برامج متخصصة أخرى',                en: 'Other / Specialized',           value: 122  },
 ];
 
 const YEARS = [
@@ -386,7 +382,7 @@ const STORIES = [
     photo: 'assets/asma-alzahrani.jpg',
     role: 'من التدريب التعاوني إلى وظيفة في سدايا',
     org: 'سدايا', orgLogo: 'assets/sdaia.svg',
-    program: 'التدريب التعاوني — أكاديمية سدايا + معسكر النماذج اللغوية الكبيرة + معسكر ثلاثة أشهر',
+    program: 'معسكر النماذج اللغوية الكبيرة + معسكر ثلاثة أشهر',
     period: '2023 – 2024',
     category: 'employment', categories: ['employment', 'research'],
     impact: '«بـ2023 التدريب التعاوني في سدايا، وفي 2024 صرت موظفة فيها» — الدائرة تكتمل بمنشورها العلني.',
