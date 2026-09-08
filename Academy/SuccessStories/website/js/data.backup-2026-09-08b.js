@@ -136,7 +136,6 @@ const SITE_STATS = [
    (122 ← 121) مع تسعة سجلات جديدة. وستة سجلات إضافية موسومة بالتدريب التعاوني تحتفظ بمساراتها الأصلية.
    5 سبتمبر 2026 (ب): مسح مشاريع التخرج على GitHub أضاف 19 سجلًا (مهندس ذكاء اصطناعي 1,346 ← 1,363 · عالم بيانات 765 ← 767).    تحديث 8 سبتمبر 2026 (جولة قصص النجاح — تواريخ الالتحاق عبر لينكدإن بحساب مسجَّل): قراءة 20 صفحة خبرة من قائمة 92 سجلًا مرشحًا؛ أربع قصص معتمدة
    (خالد المطيري ← علم · ريم البلوي ← ATS Travel · فارس المطيري ← كيمارك · مي الجعيد ← SBCC) — 100 → 104 قصة، وجهات العمل 59 → 61 (ATS Travel · SBCC).
-   تحديث 8 سبتمبر 2026 (ب): إضافة ست صور شخصية مورَّدة من الأكاديمية (فارس المطيري · ضياء السالم · مرام الشهري · منيرة الهزاني · خالد المطيري · رنا الشهري) — القصص بلا صورة 32 → 26.
 */
 const TRACKS = [
   { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1392 },
@@ -851,7 +850,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'فارس المطيري', nameEn: 'Faris Al Muteri',
-    photo: 'assets/faris-almuteri.jpg',
+    photo: null,
     role: 'مسؤول قواعد بيانات (Database Administrator) — بعد محلل مبرمج أول',
     org: 'مركز الملك عبدالله العالمي للأبحاث الطبية KAIMRC', orgLogo: 'assets/kaimrc.jpg',
     program: 'برنامج المسارات المتقدمة في الذكاء الاصطناعي — أكاديمية سدايا',
@@ -2174,7 +2173,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'Dhiyaa Alsalem', nameEn: 'Dhiyaa Alsalem',
-    photo: 'assets/dhiyaa-alsalem.jpg',
+    photo: null,
     role: 'عالِم بيانات ومهندس ذكاء اصطناعي (Junior)',
     org: 'واكب للبيانات (Wakeb Data)', orgLogo: 'assets/wakeb.jpg',
     program: 'معسكر T5 لعلوم البيانات والذكاء الاصطناعي — مسار تقنيات إدارة الزحام، أكاديمية سدايا',
@@ -2218,7 +2217,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'Maram Alshehri', nameEn: 'Maram Alshehri',
-    photo: 'assets/maram-alshehri.jpg',
+    photo: null,
     role: 'مهندسة تعلم آلة (برنامج تطوير الخريجين)',
     org: 'Lean Business Services', orgLogo: 'assets/lean.png',
     program: 'معسكر T5 لتقنيات إدارة الزحام (زحام) — أكاديمية سدايا',
@@ -2240,7 +2239,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'Munirah Saad Alhazzani', nameEn: 'Munirah Saad Alhazzani',
-    photo: 'assets/munirah-alhazzani.jpg',
+    photo: null,
     role: 'مهندسة عمليات إدارة البيانات (المستوى الثاني)',
     org: 'المركز الوطني لنظم الموارد الحكومية (NCGR)', orgLogo: 'assets/ncgr.png',
     program: 'معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا',
@@ -2396,7 +2395,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'رنا الشهري', nameEn: 'Rana Alshehri',
-    photo: 'assets/rana-alshehri.png',
+    photo: null,
     role: 'مطوّرة ذكاء اصطناعي — كاكست (2025)، ثم برنامج الذكاء الاصطناعي الوكيلي بالأكاديمية السعودية الرقمية (2026)',
     org: 'مدينة الملك عبدالعزيز للعلوم والتقنية (KACST)', orgLogo: 'assets/kacst.webp',
     program: 'التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا × NVIDIA) — شهادة NCA-GENL',
@@ -2495,7 +2494,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'خالد المطيري', nameEn: 'Khaled Almutairy',
-    photo: 'assets/khaled-almutairy.jpg',
+    photo: null,
     role: 'عالم أبحاث ذكاء اصطناعي (AI Research Scientist)',
     org: 'شركة علم', orgLogo: 'assets/elm.png',
     program: 'التدريب الاحترافي في الذكاء الاصطناعي التوليدي (سدايا × NVIDIA) — شهادتا NVIDIA Certified Associate: Generative AI & LLMs + Multimodal Generative AI',
