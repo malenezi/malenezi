@@ -1082,18 +1082,14 @@ window.SDAIA_ICONS = '<svg xmlns="http://www.w3.org/2000/svg" class="sd-sprite" 
 'use strict';
 
 const SITE_STATS = [
-  { value: 2876, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
+  { value: 2866, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
   { value: 104,  label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
   { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
   { value: 61,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
 ];
 
-/* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,876 سجلًا)
+/* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,866 سجلًا)
    ويُعرض التوزيع نفسه في بوابة الخريجين وبوابة الأكاديمية.
-   11 سبتمبر 2026 (جولة مسح مستودعات المدرّبين والحساب المؤسسي على GitHub): 10 سجلات جديدة بلا تكرار
-   وإثراء سجلين قائمين بدل تكرارهما (2,866 ← 2,876؛ مهندس ذكاء اصطناعي 1,392 ← 1,397 · عالم بيانات 767 ← 772).
-   لا قصص نجاح جديدة: قناة إثبات تواريخ الالتحاق بالعمل كانت مغلقة، ومصدر السجلات مشاريع تدريب لا وظائف —
-   القصص 104 وجهات العمل 61 دون تغيير.
    5 سبتمبر 2026: أُضيف مسار «التدريب التعاوني (COOP)» سادسًا، ونُقل إليه سجل واحد من «برامج متخصصة أخرى»
    (122 ← 121) مع تسعة سجلات جديدة. وستة سجلات إضافية موسومة بالتدريب التعاوني تحتفظ بمساراتها الأصلية.
    5 سبتمبر 2026 (ب): مسح مشاريع التخرج على GitHub أضاف 19 سجلًا (مهندس ذكاء اصطناعي 1,346 ← 1,363 · عالم بيانات 765 ← 767).    تحديث 8 سبتمبر 2026 (جولة قصص النجاح — تواريخ الالتحاق عبر لينكدإن بحساب مسجَّل): قراءة 20 صفحة خبرة من قائمة 92 سجلًا مرشحًا؛ أربع قصص معتمدة
@@ -1101,8 +1097,8 @@ const SITE_STATS = [
    تحديث 8 سبتمبر 2026 (ب): إضافة ست صور شخصية مورَّدة من الأكاديمية (فارس المطيري · ضياء السالم · مرام الشهري · منيرة الهزاني · خالد المطيري · رنا الشهري) — القصص بلا صورة 32 → 26.
 */
 const TRACKS = [
-  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1397 },
-  { key: 'ds',    label: 'عالم بيانات',                     en: 'Data Scientist',                value: 772  },
+  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1392 },
+  { key: 'ds',    label: 'عالم بيانات',                     en: 'Data Scientist',                value: 767  },
   { key: 'genai', label: 'أكاديمية الذكاء الاصطناعي التوليدي', en: 'Gen AI Academy',                value: 249  },
   { key: 'dmg',   label: 'إدارة وحوكمة البيانات',            en: 'Data Management & Governance',  value: 324  },
   { key: 'coop',  label: 'التدريب التعاوني',                 en: 'Cooperative Training (COOP)',   value: 11   },
