@@ -56,7 +56,7 @@
   var items = [];
   try { items = JSON.parse(dataEl.textContent); } catch (err) { items = []; }
 
-  var LABEL = { journal: "Journal article", conference: "Conference paper", chapter: "Book chapter" };
+  var LABEL = { journal: "Journal article", conference: "Conference paper", chapter: "Book chapter", preprint: "Preprint" };
   var search = document.getElementById("pub-search");
   var chips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-kind]"));
   var countEl = document.getElementById("pub-count");
@@ -80,7 +80,10 @@
       list.innerHTML = rows.map(function (p) {
         var links = [];
         if (p.doi) links.push('<a href="' + esc(p.doi) + '" rel="noopener" target="_blank">DOI</a>');
-        else if (p.url) links.push('<a href="' + esc(p.url) + '" rel="noopener" target="_blank">Publisher</a>');
+        else if (p.url) {
+          var label = /arxiv\.org/i.test(p.url) ? "arXiv" : "Publisher";
+          links.push('<a href="' + esc(p.url) + '" rel="noopener" target="_blank">' + label + "</a>");
+        }
         if (p.pdf) links.push('<a href="' + esc(p.pdf) + '" rel="noopener" target="_blank">PDF</a>');
         var head = p.doi || p.url
           ? '<a href="' + esc(p.doi || p.url) + '" rel="noopener" target="_blank">' + esc(p.title) + "</a>"
@@ -96,8 +99,10 @@
       }).join("");
     }
     if (countEl) {
-      countEl.textContent = rows.length + (rows.length === 1 ? " publication" : " publications") +
-        (kind === "all" ? "" : " · " + (LABEL[kind] || kind) + "s");
+      var noun = kind === "all"
+        ? (rows.length === 1 ? " work" : " works")
+        : " · " + (LABEL[kind] || kind) + (rows.length === 1 ? "" : "s");
+      countEl.textContent = rows.length + (kind === "all" ? noun : (rows.length === 1 ? " work" : " works") + noun);
     }
   }
 
@@ -108,7 +113,11 @@
       if (!q) return true;
       return (p.title + " " + p.authors + " " + p.venue + " " + (p.year || "")).toLowerCase().indexOf(q) > -1;
     });
-    rows.sort(function (a, b) { return (b.year || 0) - (a.year || 0); });
+    var RANK = { journal: 0, conference: 0, chapter: 0, preprint: 1 };
+    rows.sort(function (a, b) {
+      return (b.year || 0) - (a.year || 0) ||
+             (RANK[a.kind] || 0) - (RANK[b.kind] || 0);
+    });
     render(rows);
   }
 

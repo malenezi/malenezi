@@ -17,9 +17,9 @@ PROFILES = [
     ("Google Scholar", "https://scholar.google.com/citations?user=zH5wDBIAAAAJ", "scholar"),
     ("LinkedIn", "https://sa.linkedin.com/in/mamdouhalenezi", "linkedin"),
     ("ORCID", "https://orcid.org/0000-0001-6852-1206", "orcid"),
-    ("ResearchGate", "https://www.researchgate.net/profile/Mamdouh_Alenezi", "dot"),
+    ("ResearchGate", "https://www.researchgate.net/profile/Mamdouh-Alenezi-2", "dot"),
     ("Scopus", "https://www.scopus.com/authid/detail.uri?authorId=55854089000", "dot"),
-    ("DBLP", "https://dblp.org/pers/hd/a/Alenezi:Mamdouh", "dot"),
+    ("DBLP", "https://dblp.org/pid/134/8933.html", "dot"),
     ("GitHub", "https://github.com/malenezi", "github"),
     ("Medium", "https://medium.com/@malenezi", "dot"),
     ("X", "https://x.com/MamdouhAlenezi", "x"),
@@ -64,9 +64,12 @@ PERSON_LD = {
         {"@type": "CollegeOrUniversity", "name": "Prince Sultan University"},
     ],
     "address": {"@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA"},
-    "knowsAbout": ["Software Engineering", "Artificial Intelligence", "AI Governance",
-                   "Technology Governance", "Digital Transformation", "Software Security",
-                   "Capability Development", "Higher Education"],
+    "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Agentic AI",
+                   "AI-Native Software Engineering", "AI Governance", "Technology Governance",
+                   "Digital Transformation", "Software Security", "Capability Development",
+                   "Higher Education"],
+    "memberOf": [{"@type": "Organization",
+                  "name": "Arab Standing Committee on Artificial Intelligence and Emerging Technologies"}],
     "sameAs": [u for _, u, _ in PROFILES],
 }
 
@@ -197,9 +200,11 @@ ROLES = [
              "Direct Saudi Arabia's national data and AI capability-development arm, owning the strategy, portfolio and delivery of advanced training programmes, bootcamps and professional certifications.",
              "Translate Vision 2030 and Human Capability Development Program priorities into a measurable academy portfolio with defined KPIs and impact metrics.",
              "Structure and manage strategic partnerships with universities, research institutions and industry to co-develop curricula and scale accredited learning pathways.",
-             "Govern academy-wide quality assurance, assessment and certification frameworks against international standards.",
+             "Govern academy-wide quality assurance, assessment and certification frameworks against international standards, including a phased roadmap towards ISO&nbsp;21001 educational-organisation certification.",
+             "Introduced the academy&rsquo;s instructor and subject-matter-expert evaluation and accreditation framework, and the KPI and executive-scorecard model used to steer the portfolio.",
+             "Expanded the advanced portfolio into agentic AI, data and AI engineering and generative-AI productivity tracks, aligned to the national qualifications and occupational-standards frameworks.",
          ],
-         tags=["National programmes", "Vision 2030", "Certification frameworks", "Partnerships"]),
+         tags=["National programmes", "Vision 2030", "Certification frameworks", "ISO 21001", "Partnerships"]),
     dict(date="Aug 2024 — Mar 2026", title="Director, AI Academy &amp; Acting Director, Technology Governance",
          org="Tahakom · Riyadh",
          points=[
@@ -288,34 +293,87 @@ COMPETENCIES = [
 ]
 
 SELECTED_PUBS = [
-    ("Healthcare Data Breaches: Insights and Implications", "Healthcare (MDPI)", "2020",
-     "https://www.mdpi.com/2227-9032/8/2/133",
-     "The most cited paper in my record — an analysis of healthcare breach trends and what they imply for security practice."),
-    ("AI-Driven Innovations in Software Engineering: A Review of Current Practices and Future Directions",
-     "Applied Sciences", "2025", "https://doi.org/10.3390/app15031344",
-     "Where AI is genuinely changing engineering practice, and where the evidence is still thin."),
     ("A Unified Meta Model for Converting Architecture Decisions Into DevOps Pipelines",
      "Software: Practice and Experience (Wiley)", "2026",
      "https://onlinelibrary.wiley.com/doi/10.1002/spe.70077",
      "Closing the gap between architectural intent and what pipelines actually deploy."),
-    ("Higher Education Future in the Era of Digital Transformation", "Education Sciences", "2022",
-     "https://www.mdpi.com/2227-7102/12/11/784",
-     "A roadmap for universities reinventing themselves as digital institutions."),
+    ("AI-Driven Innovations in Software Engineering: A Review of Current Practices and Future Directions",
+     "Applied Sciences", "2025", "https://doi.org/10.3390/app15031344",
+     "Where AI is genuinely changing engineering practice, and where the evidence is still thin."),
+    ("Healthcare Data Breaches: Insights and Implications", "Healthcare (MDPI)", "2020",
+     "https://www.mdpi.com/2227-9032/8/2/133",
+     "The most cited paper in my record — an analysis of healthcare breach trends and what they imply for security practice."),
     ("Reducing Environmental Impact with Sustainable Serverless Computing", "Sustainability", "2025",
      "https://doi.org/10.3390/su17072999",
      "Quantifying how serverless architectures can shrink software's environmental footprint."),
     ("Evolving Microcredential Strategies for Enhancing Employability: Employer and Student Perspectives",
      "Education Sciences", "2024", "https://doi.org/10.3390/educsci14121307",
      "What employers and students actually value in microcredentials — and where the two diverge."),
+    ("Higher Education Future in the Era of Digital Transformation", "Education Sciences", "2022",
+     "https://www.mdpi.com/2227-7102/12/11/784",
+     "A roadmap for universities reinventing themselves as digital institutions."),
 ]
 
-METRICS = [
-    ("8,000+", "Citations", "Google Scholar"),
-    ("37", "h-index", "Career total"),
-    ("98", "i10-index", "Career total"),
-    ("140+", "Publications", "Peer-reviewed"),
-    ("12+", "Years", "Executive leadership"),
+# The 2026 single-author working-paper series on AI-native and agentic software
+# engineering — the current research programme, published as arXiv preprints.
+RESEARCH_PROGRAMME = [
+    ("The Rise of AI-Native Software Engineering", "arXiv:2606.12986",
+     "A systematic review of 48 peer-reviewed studies (2016–2026) on what generative and agentic AI change "
+     "for practice, competencies, professional roles and the outcomes universities must deliver."),
+    ("Rethinking Software Engineering for Agentic AI Systems", "arXiv:2604.10599",
+     "If most code is machine-generated, should the discipline reorganise around orchestration, verification "
+     "and human–AI collaboration — and what follows for education, tooling and process?"),
+    ("Specification-Driven Development as the Foundation of AI-Native Enterprise Software Engineering",
+     "arXiv:2607.16680",
+     "Vibe coding versus specification-driven development: why structured specifications, not observed "
+     "behaviour, have to be the authoritative source of truth at enterprise scale."),
+    ("From Determinism to Delegation", "arXiv:2606.28791",
+     "The emergence of the agentic engineer — how delegation to autonomous agents redraws the boundaries "
+     "of engineering responsibility."),
+    ("Human–AI Collaboration and the Transformation of Software Engineering Work",
+     "arXiv:2606.03394",
+     "Evidence from large-scale observation of autonomous coding agents, and how the locus of engineering "
+     "work shifts from individual productivity to orchestration, verification and governance."),
+    ("Reshaping the SDLC for Data- and AI-Centric Systems", "arXiv:2608.17824",
+     "A five-layer adaptive lifecycle for systems whose behaviour emerges from code, data and learned "
+     "models together — with evaluation-led specifications and validation gates."),
+    ("Educating the Agentic Engineer", "arXiv:2607.29610",
+     "Curricula, collaboration models and continuous learning for engineers whose job is to direct and "
+     "verify AI systems."),
+    ("From Prompt-Response to Goal-Directed Systems", "arXiv:2602.10479",
+     "Connecting classical agent architectures — reactive, deliberative, BDI — to today's LLM-centred "
+     "agentic designs."),
+    ("Auditable DevOps Automation via VSM and GQM", "arXiv:2601.03574",
+     "A traceable framework that ties automation investment to delivery predictability, waste reduction "
+     "and customer-facing quality."),
 ]
+
+NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
+             7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
+
+CITATIONS = "8,000+"
+H_INDEX = "37"
+I10_INDEX = "98"
+
+
+def peer_reviewed(pubs):
+    """Counts by kind, and the peer-reviewed total (preprints excluded)."""
+    counts = {}
+    for p in pubs:
+        counts[p["kind"]] = counts.get(p["kind"], 0) + 1
+    counts["reviewed"] = counts.get("journal", 0) + counts.get("conference", 0) + counts.get("chapter", 0)
+    return counts
+
+
+def metrics(pubs):
+    c = peer_reviewed(pubs)
+    return [
+        (CITATIONS, "Citations", "Google Scholar"),
+        (H_INDEX, "h-index", "Career total"),
+        (I10_INDEX, "i10-index", "Career total"),
+        (str(c["reviewed"]), "Publications", "Peer-reviewed"),
+        ("2015", "Executive roles since", "CIO · dean · director · GM"),
+    ]
 
 COURSES = [
     ("SE 201", "Introduction to Software Engineering"),
@@ -344,6 +402,20 @@ SUPERVISION = [
     ("Hassan Al-Mousa", "Software architecture stability evolution in open-source object-oriented systems"),
     ("Laila Al-Rowais", "A framework for security testing of web applications"),
     ("Khawlah AlOmar", "Static analysis of open-source web applications"),
+]
+
+REGIONAL_SERVICE = [
+    ("Chair, Capacity Building &amp; Partnerships Team",
+     "Arab Standing Committee on AI &amp; Emerging Technologies · 2026&ndash;present",
+     "Chair one of the six technical teams of the Arab Standing Committee on Artificial Intelligence and "
+     "Emerging Technologies, under the Arab Ministerial Council for Communications and Information. The team&rsquo;s "
+     "2026&ndash;2029 workplan covers an Arab AI capacity map, a regional AI skills framework, a shared knowledge "
+     "and learning platform, a partnerships-for-excellence programme and a leaders-and-talents programme, "
+     "reported to the committee and the ministerial council."),
+    ("Vice-Chair, AI Governance Team",
+     "Arab Standing Committee on AI &amp; Emerging Technologies · 2026&ndash;present",
+     "Deputy chair of the committee&rsquo;s AI governance technical team, working on shared regional governance "
+     "practice for AI adoption across Arab states."),
 ]
 
 COMMITTEES = [
@@ -402,6 +474,9 @@ TALKS = [
 
 SPEAKING_TOPICS = [
     "Building national AI and data capability: from strategy to accredited learning pathways",
+    "AI-native software engineering: what agentic systems change for teams, architecture and the engineering role",
+    "Educating the agentic engineer: curricula and certification for an AI-first profession",
+    "Regional AI capability building: skills frameworks, capacity mapping and cross-border partnerships",
     "Technology governance that survives contact with delivery — EA, PMO and CMMI in practice",
     "Responsible AI adoption: governance frameworks, ethics and privacy as operational controls",
     "AI-driven software engineering: what changes for teams, architecture and quality",
@@ -411,10 +486,10 @@ SPEAKING_TOPICS = [
 
 # ------------------------------------------------------------------ home ---
 
-def metrics_block(note=True):
+def metrics_block(pubs, note=True):
     cells = "".join(
         '<div class="metric"><b>{v}</b><span>{l}</span><small>{s}</small></div>'.format(v=v, l=l, s=s)
-        for v, l, s in METRICS)
+        for v, l, s in metrics(pubs))
     out = '<div class="metrics">%s</div>' % cells
     if note:
         out += ('<p class="pub-count" style="margin-top:.9rem">Bibliometrics from '
@@ -423,7 +498,7 @@ def metrics_block(note=True):
     return out
 
 
-def build_index(insights):
+def build_index(insights, pubs):
     recent = insights[:3]
     posts = "".join(
         '<a class="card" href="{u}" rel="noopener" target="_blank">'
@@ -433,7 +508,7 @@ def build_index(insights):
             t=html.escape(p["title"]), a=ICONS["arrow"])
         for p in recent)
 
-    pubs = "".join(
+    pub_rows = "".join(
         '<li class="pub"><span class="pub__year">{y}</span><div>'
         '<h3 class="pub__title"><a href="{u}" rel="noopener" target="_blank">{t}</a></h3>'
         '<p class="pub__meta"><em>{v}</em></p><p class="pub__meta">{n}</p></div></li>'.format(
@@ -448,9 +523,11 @@ def build_index(insights):
          "Enterprise architecture maturity, PMO playbooks, CMMI-aligned SDLC and CI/CD-enabled DevOps — the unglamorous machinery that decides whether a strategy ever ships. Paired with AI governance, ethics and privacy controls that work in operation, not only on paper.",
          "projects.html", "See projects &amp; impact"),
         ("03", "Research that travels back into practice",
-         "More than 140 peer-reviewed publications on software security, AI-driven software engineering and digital transformation in education — an agenda deliberately pointed at problems institutions actually face.",
+         "{reviewed} peer-reviewed publications on software security, AI for software engineering and digital transformation in education — and a 2026 working-paper series on AI-native and agentic software engineering.",
          "publications.html", "Browse the publications"),
     ]
+    c = peer_reviewed(pubs)
+    focus = [(n, t, b.format(reviewed=c["reviewed"]), h, cl) for n, t, b, h, cl in focus]
     focus_cards = "".join(
         '<a class="card reveal" href="{h}"><span class="card__num">{n}</span><h3>{t}</h3><p>{b}</p>'
         '<span class="card__link">{c} {a}</span></a>'.format(n=n, t=t, b=b, h=h, c=c, a=ICONS["arrow"])
@@ -467,6 +544,9 @@ def build_index(insights):
          "PMO playbook institutionalised, enterprise-architecture maturity raised, SDLC rebuilt with CMMI-aligned controls and CI/CD-enabled DevOps."),
         ("University-wide ERP implementation", "Prince Sultan University · 2015–2019",
          "Delivered enterprise resource planning across finance, accounting and HR as CIO, alongside a continuous IT planning process."),
+        ("A regional AI capability mandate", "Arab Standing Committee on AI · 2026",
+         "Chair of the Capacity Building &amp; Partnerships technical team and vice-chair of the AI Governance "
+         "team, shaping a 2026–2029 Arab workplan on skills frameworks, capacity mapping and partnerships."),
         ("Three international conferences chaired", "SDMA 2018 · CDMA 2020 · CDMA 2024",
          "Conference chair for three international conferences on data science and machine learning applications, hosted in Riyadh."),
     ]
@@ -481,7 +561,7 @@ def build_index(insights):
       <span class="eyebrow">Prof. Mamdouh Alenezi, Ph.D. · Riyadh, Saudi Arabia</span>
       <h1>Turning national AI ambition into <em>capability that lasts</em>.</h1>
       <p class="hero__role">General Manager, SDAIA Academy <span>Full Professor of Software Engineering&nbsp;· Prosci&reg; Certified Change Practitioner</span></p>
-      <p class="lede">I lead Saudi Arabia's national data and AI capability development at the SDAIA Academy — the training programmes, certifications and partnerships that turn Vision&nbsp;2030 priorities into a workforce able to deliver them. Behind that sit twelve years of executive leadership in technology governance and digital transformation, three deanships and a CIO role, and a research record of more than 140 peer-reviewed publications.</p>
+      <p class="lede">I lead Saudi Arabia's national data and AI capability development at the SDAIA Academy — the training programmes, certifications and partnerships that turn Vision&nbsp;2030 priorities into a workforce able to deliver them. Behind that sit more than a decade of executive leadership in technology governance and digital transformation, three deanships and a CIO role, and a research record of {reviewed} peer-reviewed publications.</p>
       <div class="btn-row">
         <a class="btn btn--solid" href="contact.html">Start a conversation</a>
         <a class="btn btn--ghost" href="myCV.pdf">{dl} Download CV</a>
@@ -528,12 +608,21 @@ def build_index(insights):
     <div class="sec-head reveal">
       <span class="eyebrow">Research</span>
       <h2>Selected publications.</h2>
-      <p>113 journal articles, 27 conference papers and three book chapters, cited more than 8,000 times. A few that represent the work:</p>
+      <p>{journal} journal articles, {conference} conference papers and {chapter_w} book chapters, cited more than {cit} times. A few that represent the work:</p>
     </div>
     <ul class="pubs reveal">{pubs}</ul>
     <div class="btn-row" style="margin-top:2rem">
       <a class="btn btn--ghost" href="publications.html">All publications {arrow}</a>
       <a class="btn btn--ghost" href="https://scholar.google.com/citations?user=zH5wDBIAAAAJ" rel="noopener" target="_blank">Google Scholar</a>
+    </div>
+
+    <div class="callout reveal" style="margin-top:3rem">
+      <span class="eyebrow">Current research programme &middot; 2026</span>
+      <h2>AI-native and agentic software engineering.</h2>
+      <p>A series of {pre} single-author working papers published through 2026 asking one question from several
+      directions: if agents write most of the code, what is left of the engineering discipline — and what must
+      change in architecture, lifecycle, governance and education?</p>
+      <div class="btn-row"><a class="btn btn--ghost" href="publications.html#programme">Read the series {arrow}</a></div>
     </div>
   </div>
 </section>
@@ -563,16 +652,20 @@ def build_index(insights):
   </div>
 </section>
 """.format(profiles=profile_links(["Google Scholar", "LinkedIn", "ORCID", "X"]),
-           metrics=metrics_block(note=False), focus=focus_cards, impact=impact_rows,
-           pubs=pubs, posts=posts, count=len(insights), arrow=ICONS["arrow"],
-           dl=ICONS["download"], mail=ICONS["mail"], email=EMAIL)
+           metrics=metrics_block(pubs, note=False), focus=focus_cards, impact=impact_rows,
+           pubs=pub_rows, posts=posts, count=len(insights), arrow=ICONS["arrow"],
+           dl=ICONS["download"], mail=ICONS["mail"], email=EMAIL,
+           reviewed=c["reviewed"], journal=c.get("journal", 0),
+           conference=c.get("conference", 0), chapter=c.get("chapter", 0),
+           cit=CITATIONS.rstrip("+"), pre=c.get("preprint", 0),
+           chapter_w=NUM_WORDS.get(c.get("chapter", 0), c.get("chapter", 0)))
 
     return shell(
         "index.html",
         "Prof. Mamdouh Alenezi — AI Capability, Technology Governance & Software Engineering",
         "Prof. Mamdouh Alenezi, Ph.D. — General Manager of the SDAIA Academy and Full Professor of "
-        "Software Engineering. National AI and data capability development, technology governance, "
-        "and 140+ peer-reviewed publications with 8,000+ citations.",
+        "Software Engineering. National AI and data capability development, technology governance, and "
+        "%d peer-reviewed publications with %s citations." % (c["reviewed"], CITATIONS),
         body)
 
 
@@ -589,13 +682,15 @@ def page_head(title, lede, eyebrow):
 </section>""".format(e=eyebrow, t=title, l=lede)
 
 
-def build_about():
+def build_about(pubs):
     comps = "".join(
         '<article class="card reveal"><span class="card__num">{n:02d}</span><h3>{t}</h3><p>{d}</p></article>'.format(
             n=i + 1, t=t, d=d) for i, (t, d) in enumerate(COMPETENCIES))
     edu = "".join(
         '<article class="card reveal"><h3>{d}</h3><p><strong>{s}</strong><br>{p}</p><p>{n}</p></article>'.format(
             d=d, s=s, p=p, n=n) for d, s, p, n in EDUCATION)
+
+    c = peer_reviewed(pubs)
 
     body = page_head(
         "I build the institutions that make strategy real.",
@@ -605,11 +700,13 @@ def build_about():
 <section class="sec">
   <div class="wrap hero__grid hero__grid--top">
     <div class="reveal">
-      <p class="lede">My career has run along three tracks that usually stay separate: executive leadership of national-scale programmes, hands-on practice in software engineering and AI, and a research record that now exceeds 140 peer-reviewed publications.</p>
+      <p class="lede">My career has run along three tracks that usually stay separate: executive leadership of national-scale programmes, hands-on practice in software engineering and AI, and a research record of {reviewed} peer-reviewed publications.</p>
       <p>Today I serve as <strong>General Manager of the SDAIA Academy</strong> at the Saudi Data &amp; Artificial Intelligence Authority, where I lead national capability development for data and AI. That means owning the strategy, portfolio and delivery of advanced training programmes, bootcamps and professional certifications; translating Vision&nbsp;2030 and the Human Capability Development Program into a measurable portfolio with real KPIs; and building the partnerships with universities, research institutions and industry that let accredited learning pathways scale.</p>
+      <p>The same mandate now extends regionally. I chair the <strong>Capacity Building &amp; Partnerships team</strong> of the Arab Standing Committee on Artificial Intelligence and Emerging Technologies, under the Arab Ministerial Council for Communications and Information, and serve as vice-chair of its AI Governance team — work that turns national capability practice into a shared Arab agenda of skills frameworks, capacity mapping and partnerships for 2026&ndash;2029.</p>
       <p>Before that, at <strong>Tahakom</strong>, I held a dual mandate as Director of the AI Academy and Acting Director of Technology Governance. I institutionalised a PMO playbook across the project lifecycle, raised enterprise-architecture maturity, rebuilt the SDLC with CMMI-aligned quality controls, and modernised delivery with CI/CD-enabled DevOps — while building a durable AI capability ecosystem through enterprise training, competency-based certifications and academia–industry partnerships.</p>
       <p>Across nearly a decade at <strong>Prince Sultan University</strong> I served as founding dean of a new college, Dean of Quality Assurance &amp; Development, Dean of Educational Services, Chief Information &amp; Technology Officer, and department chairman. The through-line was institutional plumbing: quality systems that earned ISO certification and accreditation, an ERP that replaced paper, curricula rebuilt to ABET and ACM standards, and degree programmes that did not exist before.</p>
-      <p>I hold a Ph.D. in Software Engineering from North Dakota State University, an M.S. from DePaul University, and a B.S. in Computer Science from Prince Sultan University — where I am now a Full Professor. I am a Prosci&reg; Certified Change Practitioner and completed the strategy specialisation at Harvard Business School Online.</p>
+      <p>Research has never been a side activity. Alongside the peer-reviewed record, my current programme is a 2026 series of working papers on <strong>AI-native and agentic software engineering</strong> — the architecture, lifecycle, governance and education implications of systems that increasingly write and maintain themselves.</p>
+      <p>I hold a Ph.D. in Software Engineering from North Dakota State University, an M.S. from DePaul University, and a B.S. in Computer Science from Prince Sultan University, where I later held the rank of Full Professor of Software Engineering. I am a Prosci&reg; Certified Change Practitioner and completed the strategy specialisation at Harvard Business School Online.</p>
       <p>What I care about, in one sentence: <strong>responsible, outcome-driven adoption of technology that leaves an institution more capable than it was.</strong></p>
     </div>
     <figure class="portrait reveal">
@@ -644,7 +741,7 @@ def build_about():
     <ul class="rows reveal">
       <li><b>Prosci&reg; Certified Change Practitioner</b><span>Prosci · 2025</span><p>Change management, the ADKAR model and organisational transformation.</p></li>
       <li><b>Learning Track: Specialization in Strategy</b><span>Harvard Business School Online · 2024</span><p>Strategy Execution, Sustainable Business Strategy and Disruptive Strategy.</p></li>
-      <li><b>Full Professor of Software Engineering</b><span>Prince Sultan University · since 2022</span><p>Associate Professor 2018–2022; Assistant Professor 2014–2018.</p></li>
+      <li><b>Full Professor of Software Engineering</b><span>Prince Sultan University · 2022–2024</span><p>Associate Professor 2018–2022; Assistant Professor 2014–2018.</p></li>
     </ul>
   </div>
 </section>
@@ -661,7 +758,7 @@ def build_about():
     </div>
   </div>
 </section>
-""".format(comps=comps, edu=edu)
+""".format(comps=comps, edu=edu, reviewed=c["reviewed"])
 
     return shell("about.html", "About — Prof. Mamdouh Alenezi",
                  "The career, competencies and academic foundations of Prof. Mamdouh Alenezi: "
@@ -689,10 +786,14 @@ def build_leadership():
 
     comm = "".join("<li>%s</li>" % c for c in COMMITTEES)
 
+    regional = "".join(
+        '<li><b>{t}</b><span>{m}</span><p>{d}</p></li>'.format(t=t, m=m, d=d)
+        for t, m, d in REGIONAL_SERVICE)
+
     body = page_head(
         "From department chair to a national mandate.",
-        "Twelve years of progressive executive and academic leadership across national AI capability "
-        "building, technology governance and higher-education transformation.",
+        "More than a decade of progressive executive and academic leadership across national and regional "
+        "AI capability building, technology governance and higher-education transformation.",
         "Leadership &amp; experience") + """
 <section class="sec">
   <div class="wrap">
@@ -704,7 +805,19 @@ def build_leadership():
   </div>
 </section>
 
-<section class="sec sec--tint">
+<section class="sec sec--tint" id="regional">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Regional mandate</span>
+      <h2>Arab Standing Committee on AI.</h2>
+      <p>Two of the six technical-team leadership positions under the Arab Ministerial Council for
+      Communications and Information.</p>
+    </div>
+    <ul class="rows reveal">{regional}</ul>
+  </div>
+</section>
+
+<section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Consulting &amp; funded research</span>
@@ -715,7 +828,7 @@ def build_leadership():
   </div>
 </section>
 
-<section class="sec" id="teaching">
+<section class="sec sec--tint" id="teaching">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Teaching</span>
@@ -726,7 +839,7 @@ def build_leadership():
   </div>
 </section>
 
-<section class="sec sec--tint" id="supervision">
+<section class="sec" id="supervision">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Graduate supervision</span>
@@ -735,14 +848,15 @@ def build_leadership():
     <ul class="rows reveal">{sup}</ul>
     <div class="sec-head reveal" style="margin-top:3.2rem">
       <span class="eyebrow">Institutional governance</span>
-      <h2>Committee service.</h2>
-      <p>Fourteen university- and college-level committees spanning strategy, quality, research, policy and accreditation.</p>
+      <h2>Institutional committee service.</h2>
+      <p>Fourteen university- and college-level committees at Prince Sultan University, spanning strategy,
+      quality, research, policy and accreditation.</p>
     </div>
     <ul class="bullets reveal" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));display:grid">{comm}</ul>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--tint">
   <div class="wrap">
     <div class="callout reveal">
       <h2>The detail behind the roles.</h2>
@@ -754,42 +868,59 @@ def build_leadership():
     </div>
   </div>
 </section>
-""".format(tl=tl, cons=cons, courses=courses, sup=sup, comm=comm)
+""".format(tl=tl, cons=cons, courses=courses, sup=sup, comm=comm, regional=regional)
 
     return shell("leadership.html", "Leadership & Experience — Prof. Mamdouh Alenezi",
-                 "Executive and academic roles of Prof. Mamdouh Alenezi: SDAIA Academy, Tahakom, "
-                 "and Prince Sultan University — plus consulting, funded research, teaching and "
-                 "graduate supervision.", body)
+                 "Executive and academic roles of Prof. Mamdouh Alenezi: SDAIA Academy, the Arab Standing "
+                 "Committee on AI, Tahakom and Prince Sultan University — plus consulting, funded research, "
+                 "teaching and graduate supervision.", body)
 
 
 # ---------------------------------------------------------- publications ---
 
 def build_publications(pubs):
-    counts = {"journal": 0, "conference": 0, "chapter": 0}
-    years = []
-    for p in pubs:
-        counts[p["kind"]] = counts.get(p["kind"], 0) + 1
-        if p.get("year"):
-            years.append(p["year"])
+    counts = peer_reviewed(pubs)
+    years = [p["year"] for p in pubs if p.get("year")]
     span = "%d–%d" % (min(years), max(years))
 
     chips = [("all", "All (%d)" % len(pubs)),
-             ("journal", "Journal articles (%d)" % counts["journal"]),
-             ("conference", "Conference papers (%d)" % counts["conference"]),
-             ("chapter", "Book chapters (%d)" % counts["chapter"])]
+             ("journal", "Journal articles (%d)" % counts.get("journal", 0)),
+             ("conference", "Conference papers (%d)" % counts.get("conference", 0)),
+             ("chapter", "Book chapters (%d)" % counts.get("chapter", 0)),
+             ("preprint", "Preprints (%d)" % counts.get("preprint", 0))]
     chip_html = "".join(
         '<li><button class="chip" type="button" data-kind="{k}" aria-pressed="{p}">{l}</button></li>'.format(
             k=k, l=l, p="true" if k == "all" else "false") for k, l in chips)
 
     data = json.dumps(pubs, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
+    programme = "".join(
+        '<li><b>{t}</b><span>{i}</span><p>{d}</p></li>'.format(
+            t=t, i='<a href="https://arxiv.org/abs/%s" rel="noopener" target="_blank">%s</a>'
+                   % (i.split(":")[1], i), d=d)
+        for t, i, d in RESEARCH_PROGRAMME)
+
     body = page_head(
         "Research &amp; publications.",
         "%d peer-reviewed works published between %s — software security and vulnerability prediction, "
         "AI for software engineering, mining software repositories, empirical software quality, and "
-        "software engineering education." % (len(pubs), span),
+        "software engineering education — plus %d working papers from the 2026 programme on AI-native "
+        "software engineering." % (counts["reviewed"], span, counts.get("preprint", 0)),
         "Research") + """
-<section class="sec">
+<section class="sec" id="programme">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Current programme &middot; 2026</span>
+      <h2>AI-native and agentic software engineering.</h2>
+      <p>One question approached from nine directions: if agents write and maintain most of the code, what is
+      left of the engineering discipline — and what has to change in architecture, lifecycle, governance and
+      education? Published as working papers while under review.</p>
+    </div>
+    <ul class="rows reveal">{programme}</ul>
+  </div>
+</section>
+
+<section class="sec sec--tint">
   <div class="wrap">
     {metrics}
 
@@ -811,7 +942,7 @@ def build_publications(pubs):
   </div>
 </section>
 
-<section class="sec sec--tint">
+<section class="sec">
   <div class="wrap">
     <div class="callout reveal">
       <h2>Indexed profiles.</h2>
@@ -820,19 +951,20 @@ def build_publications(pubs):
         <a class="btn btn--solid" href="https://scholar.google.com/citations?user=zH5wDBIAAAAJ" rel="noopener" target="_blank">Google Scholar</a>
         <a class="btn btn--ghost" href="https://orcid.org/0000-0001-6852-1206" rel="noopener" target="_blank">ORCID</a>
         <a class="btn btn--ghost" href="https://www.scopus.com/authid/detail.uri?authorId=55854089000" rel="noopener" target="_blank">Scopus</a>
-        <a class="btn btn--ghost" href="https://dblp.org/pers/hd/a/Alenezi:Mamdouh" rel="noopener" target="_blank">DBLP</a>
+        <a class="btn btn--ghost" href="https://dblp.org/pid/134/8933.html" rel="noopener" target="_blank">DBLP</a>
       </div>
     </div>
   </div>
 </section>
 
 <script type="application/json" id="pub-data">{data}</script>
-""".format(metrics=metrics_block(), chips=chip_html, data=data)
+""".format(metrics=metrics_block(pubs), chips=chip_html, data=data, programme=programme)
 
     return shell("publications.html", "Research & Publications — Prof. Mamdouh Alenezi",
-                 "Searchable list of %d peer-reviewed publications by Prof. Mamdouh Alenezi: journal "
-                 "articles, conference papers and book chapters on software security, AI for software "
-                 "engineering and engineering education." % len(pubs), body)
+                 "Searchable list of %d peer-reviewed publications and %d working papers by Prof. Mamdouh "
+                 "Alenezi: software security, AI-native and agentic software engineering, empirical "
+                 "software quality and engineering education."
+                 % (counts["reviewed"], counts.get("preprint", 0)), body)
 
 
 # -------------------------------------------------------------- projects ---
@@ -855,6 +987,8 @@ def build_projects(insights):
          "Software construction, requirements engineering, group dynamics and professional practice, DevOps engineering, software entrepreneurship, and secure software engineering."),
         ("SDAIA Academy programme portfolio", "SDAIA · 2026–present",
          "Advanced training programmes, bootcamps and professional certifications, with quality assurance, assessment and certification frameworks held to international standards."),
+        ("Agentic AI and data engineering tracks", "SDAIA Academy · 2026",
+         "New advanced tracks on building agentic AI systems, LLM and data engineering, and generative-AI productivity, mapped to national qualification and occupational-standards frameworks."),
     ]
 
     systems = [
@@ -868,6 +1002,12 @@ def build_projects(insights):
          "Founded as its first dean: academic vision, governance structure and founding programme architecture."),
         ("Teaching &amp; Learning Center expansion", "Prince Sultan University",
          "Faculty development programmes extended campus-wide to lift teaching practice."),
+        ("Instructor accreditation framework", "SDAIA Academy · 2026",
+         "A framework for evaluating and accrediting instructors and subject-matter experts, so delivery quality is assessed against published criteria rather than reputation."),
+        ("ISO&nbsp;21001 educational management roadmap", "SDAIA Academy · 2026",
+         "A phased implementation plan taking the academy&rsquo;s management system towards ISO&nbsp;21001 certification for educational organisations."),
+        ("Performance measurement framework", "SDAIA Academy · 2026",
+         "A core KPI set and executive scorecard covering the academy&rsquo;s units, used to steer the portfolio and report impact to senior leadership."),
     ]
 
     governance = [
@@ -991,6 +1131,9 @@ def build_speaking(insights):
     pcs = "".join("<li>%s</li>" % p for p in PROGRAM_COMMITTEES)
     revs = "".join("<li>%s</li>" % j for j in JOURNAL_REVIEWING)
     topics = "".join("<li>%s</li>" % t for t in SPEAKING_TOPICS)
+    regional = "".join(
+        '<li><b>{t}</b><span>{m}</span><p>{d}</p></li>'.format(t=t, m=m, d=d)
+        for t, m, d in REGIONAL_SERVICE)
     posts = "".join(
         '<li><b dir="auto"><a href="{u}" rel="noopener" target="_blank">{t}</a></b><span>{d} · {s}</span></li>'.format(
             u=html.escape(p["url"]), t=html.escape(p["title"]), d=html.escape(p["date"]),
@@ -998,8 +1141,9 @@ def build_speaking(insights):
 
     body = page_head(
         "Speaking, chairing and writing.",
-        "Three international conferences chaired, programme committees for a dozen more, peer review "
-        "for eleven indexed journals, and a steady stream of essays on AI and engineering leadership.",
+        "Two regional AI committee leadership roles, three international conferences chaired, programme "
+        "committees for a dozen more, peer review for eleven indexed journals, and a steady stream of "
+        "essays on AI and engineering leadership.",
         "Speaking &amp; media") + """
 <section class="sec">
   <div class="wrap">
@@ -1015,6 +1159,18 @@ def build_speaking(insights):
 <section class="sec sec--tint">
   <div class="wrap">
     <div class="sec-head reveal">
+      <span class="eyebrow">Regional committee leadership</span>
+      <h2>Arab Standing Committee on AI.</h2>
+      <p>Leadership of two of the six technical teams under the Arab Ministerial Council for Communications
+      and Information.</p>
+    </div>
+    <ul class="rows reveal">{regional}</ul>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
       <span class="eyebrow">Conference leadership</span>
       <h2>Chaired conferences.</h2>
       <p>International conferences on data science and machine learning applications, hosted in Riyadh.</p>
@@ -1023,7 +1179,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--tint">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Workshops &amp; presentations</span>
@@ -1033,7 +1189,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec sec--tint">
+<section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Peer review &amp; committees</span>
@@ -1054,7 +1210,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--tint">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Writing</span>
@@ -1066,11 +1222,12 @@ def build_speaking(insights):
   </div>
 </section>
 """.format(topics=topics, chairs=chairs, talks=talks, pcs=pcs, revs=revs, posts=posts,
-           count=len(insights), arrow=ICONS["arrow"])
+           regional=regional, count=len(insights), arrow=ICONS["arrow"])
 
     return shell("speaking.html", "Speaking & Media — Prof. Mamdouh Alenezi",
-                 "Conference chairing, programme committees, journal peer review, workshops and public "
-                 "writing by Prof. Mamdouh Alenezi on AI capability, governance and software engineering.",
+                 "Regional AI committee leadership, conference chairing, programme committees, journal peer "
+                 "review, workshops and public writing by Prof. Mamdouh Alenezi on AI capability, governance "
+                 "and software engineering.",
                  body)
 
 
@@ -1228,8 +1385,8 @@ def build_404():
 def main():
     pubs = load("publications.json")
     insights = load("insights.json")
-    write("index.html", build_index(insights))
-    write("about.html", build_about())
+    write("index.html", build_index(insights, pubs))
+    write("about.html", build_about(pubs))
     write("leadership.html", build_leadership())
     write("publications.html", build_publications(pubs))
     write("projects.html", build_projects(insights))
