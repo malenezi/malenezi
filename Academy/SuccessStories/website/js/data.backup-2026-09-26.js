@@ -141,18 +141,14 @@
    نوفمبر 2024 ← مهندسة ذكاء اصطناعي في نبّه، مايو 2025 — 6 أشهر). 109 ← 111 قصة، وجهات العمل 66 ← 68.
    تحديث 24 سبتمبر 2026 (ب): صور سبع قصص (مجد الزيادي · الجوهرة الحقيل · مي الجعيد · مروة علي · مشعل الدلبحي · لمى الزهراني · فرح السويح)،
    وتصويب اسم «مجد» الإنجليزي إلى Majd Alziyady مع رابط LinkedIn وتأنيث صيغة قصتها.
-   تحديث 26 سبتمبر 2026 (جولة تحقق أربعة خريجين من قائمة الأكاديمية): قصة رندا المحمدي — معسكر T5 لعلوم البيانات (ديسمبر 2021) ← محللة بيانات
-   في UFMC (فبراير 2023، الشهر الرابع عشر). رُفضت مريم المقرن (صلة) وأنس الدعدي (توقيت) وتالا بكر (صلة/توقيت). 111 ← 112 قصة، وجهات العمل 68 ← 69.
-   تحديث 26 سبتمبر 2026 (ب): صور سبع قصص (أريج الشمري · هاجر الشهري · حور الشيحي · جواهر البقمي · مها الشهري · رندا المحمدي · سارة العبدالسلام)،
-   والاسمان العربيان «دانيا عماد» و«جود الغامدي»، وروابط LinkedIn لأريج ومها وهاجر — كلها مورّدة من الأكاديمية.
 */
 'use strict';
 
 const SITE_STATS = [
-  { value: 3087, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
-  { value: 112,  label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
+  { value: 3086, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
+  { value: 111,  label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
   { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
-  { value: 69,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
+  { value: 68,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
 ];
 
 /* المسارات المعيارية الموحّدة — مشتقّة من قاعدة بيانات الخريجين (2,876 سجلًا)
@@ -173,7 +169,7 @@ const TRACKS = [
   { key: 'genai', label: 'أكاديمية الذكاء الاصطناعي التوليدي', en: 'Gen AI Academy',                value: 249  },
   { key: 'dmg',   label: 'إدارة وحوكمة البيانات',            en: 'Data Management & Governance',  value: 326  },
   { key: 'coop',  label: 'التدريب التعاوني',                 en: 'Cooperative Training (COOP)',   value: 11   },
-  { key: 'other', label: 'برامج متخصصة أخرى',                en: 'Other / Specialized',           value: 149  },
+  { key: 'other', label: 'برامج متخصصة أخرى',                en: 'Other / Specialized',           value: 148  },
 ];
 
 const YEARS = [
@@ -335,7 +331,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'سارة العبدالسلام', nameEn: 'Sara Al Abdulsalam',
-    photo: 'assets/sara-alabdulsalam.jpg',
+    photo: null,
     role: 'مهندسة أبحاث بدوام كامل — ثم مطوّرة تطبيقات في channels by stc',
     org: 'سدايا', orgLogo: 'assets/sdaia.svg',
     program: 'معسكر T5 لعلوم البيانات — أكاديمية سدايا',
@@ -451,7 +447,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'أريج الشمري', nameEn: 'Areej Alshammari',
-    photo: 'assets/areej-alshammari.jpg',
+    photo: null,
     role: 'مهندسة ذكاء اصطناعي',
     org: 'سدايا', orgLogo: 'assets/sdaia.svg',
     program: 'معسكر الخريجين الجدد في البيانات والذكاء الاصطناعي',
@@ -460,9 +456,7 @@ const STORIES = [
     impact: 'ثلاثية مكتملة في سنة واحدة: بكالوريوس، ومعسكر، وتوظيف مهندسةً للذكاء الاصطناعي في سدايا نفسها — كله في 2023.',
     story: 'نالت أريج بكالوريوس علوم الحاسب من جامعة الأميرة نورة في 2023، واجتازت في السنة نفسها معسكر الخريجين الجدد في البيانات والذكاء الاصطناعي بالأكاديمية وتدريبًا في مدينة الملك عبدالعزيز للعلوم والتقنية KACST، والتحقت — في 2023 أيضًا — بسدايا مهندسةً للذكاء الاصطناعي حيث تعمل حتى الآن. ثلاث محطات مكتملة في سنة واحدة.',
     achievements: ['مهندسة ذكاء اصطناعي — سدايا (2023 – حتى الآن)', 'بكالوريوس + معسكر + توظيف في سنة واحدة', 'تدريب في KACST (2023)'],
-    links: [
-      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/areej-alshrttan/' },
-    ],
+    links: [],
   },
 
   {
@@ -584,7 +578,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'جواهر البقمي', nameEn: 'Jawaher Albaqami',
-    photo: 'assets/jawaher-albaqami.jpg',
+    photo: null,
     role: 'مهندسة بيانات (Data Engineer)',
     org: 'المركز الوطني للذكاء الاصطناعي (NCAI)', orgLogo: 'assets/ncai.svg',
     program: 'معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا',
@@ -633,7 +627,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'مها الشهري', nameEn: 'Maha Alshehri',
-    photo: 'assets/maha-alshehri.jpg',
+    photo: null,
     role: 'مطوّرة برمجيات',
     org: 'سدايا', orgLogo: 'assets/sdaia.svg',
     program: 'معسكر حوكمة البيانات',
@@ -642,9 +636,7 @@ const STORIES = [
     impact: 'من معسكر حوكمة البيانات إلى تطوير البرمجيات داخل سدايا — في سنة المعسكر نفسها.',
     story: 'اجتازت مها معسكر حوكمة البيانات بالأكاديمية (2024)، والتحقت في السنة نفسها بسدايا مطوّرةً للبرمجيات، حيث تعمل حتى الآن — واحدة من سلسلة حالات موثّقة لخريجين وظّفتهم الهيئة التي درّبتهم.',
     achievements: ['مطوّرة برمجيات — سدايا في سنة المعسكر نفسها', 'معسكر حوكمة البيانات (2024)', 'ضمن حالات التوظيف داخل سدايا'],
-    links: [
-      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/mahaalshehri1/' },
-    ],
+    links: [],
   },
   {
     id: 'hajar-alshehri', year: 2024,
@@ -653,7 +645,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'هاجر الشهري', nameEn: 'Hajar Alshehri',
-    photo: 'assets/hajar-alshehri.jpg',
+    photo: null,
     role: 'مهندسة ذكاء اصطناعي',
     org: 'سدايا', orgLogo: 'assets/sdaia.svg',
     program: 'تدريب أكاديمية سدايا',
@@ -662,9 +654,7 @@ const STORIES = [
     impact: 'من التدريب إلى التوظيف داخل سدايا في السنة نفسها — الدائرة تكتمل مرة أخرى.',
     story: 'بدأت هاجر متدربة في سدايا (2024)، وانتقلت في السنة نفسها من التدريب إلى التوظيف مهندسةً للذكاء الاصطناعي في الهيئة، حيث تعمل حتى الآن — سجلها المهني يجمع قيد التدريب وقيد التوظيف في تسلسل واحد.',
     achievements: ['مهندسة ذكاء اصطناعي — سدايا', 'انتقال من التدريب إلى التوظيف في السنة نفسها', 'ضمن حالات التوظيف داخل سدايا'],
-    links: [
-      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/hajar-alshehri-874910242/' },
-    ],
+    links: [],
   },
   {
     id: 'khalid-alduwaysan', year: 2024,
@@ -2346,7 +2336,7 @@ const STORIES = [
       text: 'معسكر إدارة البيانات في أكاديمية سدايا هو ما نقلني إلى العمل في بيع حلول البيانات والذكاء الاصطناعي وفهمها من الداخل.',
       kind: 'draft',
     },
-    name: 'دانيا عماد', nameEn: 'Dania Emad',
+    name: 'Dania Emad', nameEn: 'Dania Emad',
     photo: null,
     role: 'مهندسة مبيعات البيانات والذكاء الاصطناعي',
     org: 'بصيرة (Basserah)', orgLogo: 'assets/basserah.png',
@@ -2390,7 +2380,7 @@ const STORIES = [
       text: 'انتقلت من معسكر ممارس النماذج اللغوية الكبيرة إلى وظيفة مهندسة ذكاء اصطناعي خلال شهر، وما زلت في المسار نفسه منذ ذلك الحين.',
       kind: 'draft',
     },
-    name: 'جود الغامدي', nameEn: 'Joud Musharraf Alghamdi',
+    name: 'Joud Alghamdi', nameEn: 'Joud Musharraf Alghamdi',
     photo: null,
     role: 'مهندسة ذكاء اصطناعي',
     org: 'Private Data Department', orgLogo: null,
@@ -2434,7 +2424,7 @@ const STORIES = [
       kind: 'draft',
     },
     name: 'حور الشيحي', nameEn: 'Hoor Al-Shihi',
-    photo: 'assets/hoor-alshihi.jpg',
+    photo: null,
     role: 'المركز الأول — مسابقة المبرمجين 2024',
     org: 'SITE سايت', orgLogo: 'assets/site-co.png',
     program: 'معسكر تعلم الآلة — ممارس تعلم الآلة، أكاديمية سدايا',
@@ -2584,5 +2574,4 @@ const STORIES = [
   {"id": "miad-altowairqi", "year": 2023, "quote": {"text": "معسكر T5 نقلني من شهادة جامعية إلى أول وظيفة في تحليل البيانات خلال شهرين.", "kind": "draft"}, "name": "ميعاد الطويرقي", "nameEn": "Miad Altowairqi", "photo": "assets/miad-altowairqi.png", "role": "محللة بيانات", "org": "بارنز (Barns)", "orgLogo": "assets/barns.png", "program": "معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا", "period": "سبتمبر–ديسمبر 2023", "category": "employment", "categories": ["employment"], "impact": "توظيف بدوام كامل «محللة بيانات» في بارنز في فبراير 2024 — شهران بعد إتمام المعسكر.", "story": "أتمّت ميعاد معسكر T5 لعلوم البيانات والذكاء الاصطناعي بأكاديمية سدايا (سبتمبر–ديسمبر 2023). وفي فبراير 2024 — بعد شهرين — التحقت بوظيفة «محللة بيانات» بدوام كامل في شركة بارنز، وعملت فيها حتى يوليو 2025 على تحليلات Power BI وتطبيقات Power Apps. ثم واصلت مسارها: تدريب تحليل بيانات في resal (يناير–مارس 2026) ثم «محللة منتجات» في «جاذر إن» منذ يونيو 2026. النتيجة المحتسبة هي التوظيف الأول، والفجوة شهران داخل نافذة الأربعة عشر شهرًا.", "achievements": ["إتمام معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا (ديسمبر 2023)", "توظيف بدوام كامل بعد شهرين", "تدرّج مهني متصل: محللة بيانات ← محللة منتجات (2026)"], "links": [{"label": "LinkedIn", "url": "https://www.linkedin.com/in/miad-altowairqi"}], "provenance": "صفحة الخبرة على LinkedIn بحساب مسجَّل، بتواريخ بمستوى الشهر (بارنز — محللة بيانات، فبراير 2024 – يوليو 2025؛ ومعسكر T5 — سدايا، سبتمبر–ديسمبر 2023) + سجل الأكاديمية. تحقّق 22 سبتمبر 2026."},
   {"id": "meshal-aldalbahi", "year": 2024, "quote": {"text": "معسكر T5 لتقنيات إدارة الحشود كان الجسر من مقاعد الجامعة إلى أول وظيفة في تحليل البيانات، ثم إلى هندسة الذكاء الاصطناعي.", "kind": "draft"}, "name": "مشعل الدلبحي", "nameEn": "Meshal Aldalbahi", "photo": "assets/meshal-aldalbahi.jpg", "role": "محلل بيانات", "org": "هيئة تنمية البحث والتطوير والابتكار (RDI)", "orgLogo": null, "program": "معسكر T5 لتقنيات إدارة الحشود (Crowd Management Technologies) — أكاديمية سدايا", "period": "يوليو–سبتمبر 2024", "category": "employment", "categories": ["employment"], "impact": "توظيف بدوام كامل «محلل بيانات» في هيئة تنمية البحث والتطوير والابتكار في مايو 2025 — ثمانية أشهر بعد إتمام المعسكر.", "story": "أتمّ مشعل معسكر T5 لتقنيات إدارة الحشود بأكاديمية سدايا (يوليو–سبتمبر 2024، وشهادة المعسكر مؤرخة أغسطس 2024)، وعمل خلاله على مشروعات رؤية حاسوبية مثل رصد استخدام الهاتف واكتشاف تلف الطرق بـYOLOv8. وفي مايو 2025 — بعد ثمانية أشهر — التحق بوظيفة «محلل بيانات» بدوام كامل في هيئة تنمية البحث والتطوير والابتكار (RDI) حتى أكتوبر 2025، ثم انتقل إلى «مهندس ذكاء اصطناعي» في NHC Innovation منذ يناير 2026. النتيجة المحتسبة هي التوظيف الأول بعد المعسكر، والفجوة ثمانية أشهر داخل نافذة الأربعة عشر شهرًا.", "achievements": ["إتمام معسكر T5 لتقنيات إدارة الحشود — أكاديمية سدايا (سبتمبر 2024)", "توظيف بدوام كامل «محلل بيانات» في RDI بعد ثمانية أشهر", "تدرّج مهني: محلل بيانات ← مهندس ذكاء اصطناعي في NHC Innovation (يناير 2026)"], "links": [{"label": "LinkedIn", "url": "https://www.linkedin.com/in/meshalaldalbahi"}, {"label": "GitHub", "url": "https://github.com/Meshal-Css"}], "provenance": "صفحة الخبرة والشهادات على LinkedIn بحساب مسجَّل، بتواريخ بمستوى الشهر (SDAIA · Internship يوليو–سبتمبر 2024 وشهادة Crowd Management Technologies Bootcamp أغسطس 2024؛ RDI — Data Analyst مايو–أكتوبر 2025؛ NHC Innovation — AI Engineer منذ يناير 2026) + ملفه على GitHub الذي يحيل إلى الحساب نفسه. تحقّق 24 سبتمبر 2026."},
   {"id": "marwah-ali", "year": 2024, "quote": {"text": "مسار التعلم العميق في المسارات المتقدمة بأكاديمية سدايا نقلني من التدريب التعاوني إلى وظيفة مهندسة ذكاء اصطناعي.", "kind": "draft"}, "name": "مروة علي", "nameEn": "Marwah Ali", "photo": "assets/marwah-ali.jpg", "role": "مهندسة ذكاء اصطناعي", "org": "نبّه (Nabeh)", "orgLogo": null, "program": "برنامج المسارات المتقدمة في الذكاء الاصطناعي (مسار التعلم العميق) — أكاديمية سدايا", "period": "نوفمبر 2024", "category": "employment", "categories": ["employment"], "impact": "توظيف بدوام كامل «مهندسة ذكاء اصطناعي» في نبّه في مايو 2025 — ستة أشهر بعد إتمام مسار التعلم العميق.", "story": "أتمّت مروة مسار التعلم العميق ضمن برنامج المسارات المتقدمة في الذكاء الاصطناعي بأكاديمية سدايا في نوفمبر 2024، مع شهادة Deep Learning من DeepLearning.AI في الشهر نفسه، بعد تدريب تعاوني في تحليل البيانات بوزارة التعليم (2023). وفي مايو 2025 — بعد ستة أشهر — التحقت بوظيفة «مهندسة ذكاء اصطناعي» بدوام كامل في شركة نبّه بالرياض، وما زالت فيها. النتيجة المحتسبة توظيف أول في دور ذكاء اصطناعي، والفجوة ستة أشهر داخل نافذة الأربعة عشر شهرًا.", "achievements": ["إتمام مسار التعلم العميق — برنامج المسارات المتقدمة في الذكاء الاصطناعي، أكاديمية سدايا (نوفمبر 2024)", "توظيف بدوام كامل «مهندسة ذكاء اصطناعي» في نبّه بعد ستة أشهر", "عضوية الهيئة السعودية للمهندسين (أغسطس 2025)"], "links": [{"label": "LinkedIn", "url": "https://www.linkedin.com/in/marwah-ali"}], "provenance": "صفحة الخبرة والشهادات على LinkedIn بحساب مسجَّل، بتواريخ بمستوى الشهر (SDAIA Advanced Pathways in AI program — DL · نوفمبر 2024؛ Nabeh — AI Engineer · Full-time منذ مايو 2025) + سجل الأكاديمية #2735. تحقّق 24 سبتمبر 2026."},
-  {"id": "randa-almohammadi", "year": 2021, "quote": {"text": "من معسكر T5 لعلوم البيانات في أكاديمية سدايا خرجت بأدوات التحليل التي حملتني إلى أول وظيفة لي محللةَ بيانات.", "kind": "draft"}, "name": "رندا المحمدي", "nameEn": "Randa Almohammadi", "photo": "assets/randa-almohammadi.jpg", "role": "محللة بيانات", "org": "United Feed Manufacturing Company (UFMC)", "orgLogo": null, "program": "معسكر T5 لعلوم البيانات — أكاديمية سدايا", "period": "سبتمبر–ديسمبر 2021", "category": "employment", "categories": ["employment"], "impact": "توظيف بدوام كامل «محللة بيانات» في United Feed Manufacturing Company في فبراير 2023 — في الشهر الرابع عشر بعد إتمام المعسكر.", "story": "أتمّت رندا معسكر T5 لعلوم البيانات بأكاديمية سدايا (سبتمبر–ديسمبر 2021) ونالت شهادة تخرّجه، وشاركت فيه في مشروع تصنيف بيانات الموارد البشرية بتعلم الآلة. وفي فبراير 2023 التحقت بوظيفة «محللة بيانات» بدوام كامل في United Feed Manufacturing Company حتى مارس 2024، ونالت فيها شهادة تقدير، ثم انتقلت إلى «أخصائية بيانات العلاقات العامة» في YASREF (أبريل 2024)، فـ«أخصائية حوكمة» في القدية منذ يوليو 2025. النتيجة المحتسبة هي التوظيف الأول في دور بيانات، والفجوة أربعة عشر شهرًا — على الحد الأخير لنافذة الأربعة عشر شهرًا الشاملة لشهر نهايتها.", "achievements": ["إتمام معسكر T5 لعلوم البيانات — أكاديمية سدايا (ديسمبر 2021)", "توظيف بدوام كامل «محللة بيانات» في UFMC (فبراير 2023) مع شهادة تقدير", "تدرّج مهني: YASREF (بيانات العلاقات العامة، 2024) ← القدية (حوكمة، منذ يوليو 2025)"], "links": [{"label": "LinkedIn", "url": "https://www.linkedin.com/in/randa-almohammadi-a33826127/"}, {"label": "GitHub", "url": "https://github.com/rmalmoha"}], "provenance": "صفحة الخبرة على LinkedIn بحساب مسجَّل، بتواريخ بمستوى الشهر (Junior Data Scientist — SDAIA Academy، T5 data science Bootcamp · سبتمبر–ديسمبر 2021؛ UFMC — Data Analyst · Full-time فبراير 2023 – مارس 2024) + مستودع مشروع المعسكر على GitHub الذي يسمّيها + سجل الأكاديمية #2339. مرشّحة من قائمة مورّدة من الأكاديمية. تحقّق 26 سبتمبر 2026."},
 ];
