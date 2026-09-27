@@ -1,0 +1,66 @@
+{
+  "id": "TB-018",
+  "title": "Refund, autonomous band (<=50 SAR)",
+  "locale": "en",
+  "difficulty": "easy",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "I'd like to cancel and get a refund for order TW-2026-12594 — it hasn't shipped yet.",
+    "locale": "en",
+    "customer_id": "CUST-2302",
+    "order_id": "TW-2026-12594"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "read_policy",
+      "issue_refund"
+    ],
+    "state_diff": {
+      "orders.TW-2026-12594.refunded": true,
+      "orders.TW-2026-12594.refund_amount_sar": 37.71
+    },
+    "requires_human_approval": false
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "issue_refund"
+    ],
+    "must_not_call_tools": [
+      "mark_refunded"
+    ],
+    "refund_amount_max_sar": 50.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Order status is 'processing' (cancelled before shipping — eligible per refund_eligibility.md) and 37.71 SAR is within the 50.0 SAR autonomous band: no human approval, issue immediately, log the transaction."
+}

@@ -1,0 +1,45 @@
+{
+  "corpus": [
+    "data/corpus/corpus_v1",
+    "data/corpus/corpus_v2"
+  ],
+  "corpus_version": "v2",
+  "mode": "structure-aware",
+  "documents_seen": 134,
+  "by_format": {
+    "pdf": 82,
+    "xlsx": 8,
+    "html": 24,
+    "docx": 20
+  },
+  "parsed": 134,
+  "needs_ocr": 22,
+  "ocr_done": 22,
+  "ocr_skipped_reason": null,
+  "quarantined": [],
+  "errors": [],
+  "unsupported": [],
+  "warnings": {
+    "no usable text layer": 22,
+    "trafilatura not installed": 24
+  },
+  "chunk_stats": {
+    "chunks": 552,
+    "documents": 134,
+    "chunks_per_doc": 4.12,
+    "table_chunks": 68,
+    "mid_sentence_pct": 5.8,
+    "median_chars": 277,
+    "p95_chars": 715,
+    "empty_chunks": 0
+  },
+  "ocr_eval": {
+    "documents": 22,
+    "cer": 0.0529,
+    "cer_p95": 0.0616,
+    "worst_index": 12,
+    "worst_cer": 0.0996,
+    "gate": 0.06,
+    "gate_pass": true
+  }
+}

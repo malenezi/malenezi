@@ -1,0 +1,436 @@
+{
+  "judge": "offline-proxy",
+  "warning": "LEXICAL PROXY METRICS — not comparable to RAGAS scores and not valid for grading. Run with a pinned judge for real numbers.",
+  "n": 40,
+  "metrics": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_recall": 0.4382,
+    "context_precision": 0.3
+  },
+  "per_sample": [
+    {
+      "id": "g-082",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-064",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-009",
+      "query_class": "factoid",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.3333
+    },
+    {
+      "id": "g-047",
+      "query_class": "factoid",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-050",
+      "query_class": "factoid",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-069",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-154",
+      "query_class": "identifier",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-150",
+      "query_class": "identifier",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-086",
+      "query_class": "factoid",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.75,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-077",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-181",
+      "query_class": "identifier",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-096",
+      "query_class": "factoid",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.75,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-075",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-061",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-067",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-126",
+      "query_class": "identifier",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-090",
+      "query_class": "factoid",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.75,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-060",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-202",
+      "query_class": "multi_hop",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-048",
+      "query_class": "factoid",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-042",
+      "query_class": "factoid",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-020",
+      "query_class": "conditional",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.7647,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-152",
+      "query_class": "identifier",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-129",
+      "query_class": "identifier",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-101",
+      "query_class": "factoid",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.75,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-139",
+      "query_class": "identifier",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-068",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-074",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-052",
+      "query_class": "factoid",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-157",
+      "query_class": "identifier",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-118",
+      "query_class": "identifier",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-022",
+      "query_class": "conditional",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.7647,
+      "context_precision": 1.0
+    },
+    {
+      "id": "g-196",
+      "query_class": "conditional",
+      "language": "ar",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-063",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-079",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-141",
+      "query_class": "identifier",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-161",
+      "query_class": "identifier",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-078",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-072",
+      "query_class": "tabular",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0
+    },
+    {
+      "id": "g-015",
+      "query_class": "factoid",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 0.6667
+    }
+  ],
+  "elapsed_s": 0.0,
+  "config": {
+    "embed_model": "BAAI/bge-m3",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "fetch_k": 40,
+    "top_k": 6,
+    "ef": 128,
+    "context_budget": 3000,
+    "refusal_tau": 0.35
+  },
+  "by_query_class": {
+    "conditional": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.5098,
+      "context_precision": 0.6667,
+      "n": 3
+    },
+    "factoid": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.9091,
+      "context_precision": 0.9091,
+      "n": 11
+    },
+    "identifier": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0,
+      "n": 11
+    },
+    "multi_hop": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.0,
+      "context_precision": 0.0,
+      "n": 1
+    },
+    "tabular": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.4286,
+      "context_precision": 0.0,
+      "n": 14
+    }
+  },
+  "by_language": {
+    "ar": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.4545,
+      "context_precision": 0.4545,
+      "n": 11
+    },
+    "en": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 0.432,
+      "context_precision": 0.2414,
+      "n": 29
+    }
+  }
+}

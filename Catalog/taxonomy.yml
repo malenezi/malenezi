@@ -1,0 +1,141 @@
+# SDAIA Academy Trainer Knowledge Hub — controlled vocabulary
+# ------------------------------------------------------------
+# Single source for every enumerated value used in course metadata.
+# scripts/validate_repo.py rejects metadata values that are not listed here,
+# and the Trainer Portal builds its pathway / domain / level views from it.
+# Change this file through a pull request reviewed by Academy Admins.
+
+# Learning paths (the Academy's delivery tracks). `folder` is the directory
+# under catalog/ that holds the track's courses.
+learning_paths:
+  - id: beginner
+    folder: beginner
+    title: Beginner Level (Level 0)
+    title_ar: المستوى المبتدئ
+    code_prefix: L0-
+    description: Short, non-technical programmes for the wider public-sector workforce.
+  - id: foundation-core
+    folder: foundation-core
+    title: Foundation Core
+    title_ar: النواة التأسيسية
+    code_prefix: SDA-FND-
+    description: Shared on-ramp — AI/data literacy, Python, data skills and responsible AI — feeding both role tracks.
+  - id: ai-engineer
+    folder: ai-engineer
+    title: AI Engineer Track
+    title_ar: مسار مهندس الذكاء الاصطناعي
+    code_prefix: SDA-AIE-
+    description: Engineers who design, build, secure and operate production AI and generative-AI systems.
+  - id: data-scientist
+    folder: data-scientist
+    title: Data Scientist Track
+    title_ar: مسار عالم البيانات
+    code_prefix: SDA-DSC-
+    description: Scientists who turn data into validated insight, forecasts, experiments and decision-ready recommendations.
+
+# Subject domains — a second, topic-based view across tracks.
+domains:
+  - id: foundations
+    title: Foundations
+    title_ar: الأساسيات
+  - id: data-science
+    title: Data Science
+    title_ar: علم البيانات
+  - id: ai-engineering
+    title: AI Engineering
+    title_ar: هندسة الذكاء الاصطناعي
+  - id: data-engineering
+    title: Data Engineering
+    title_ar: هندسة البيانات
+  - id: generative-ai
+    title: Generative AI
+    title_ar: الذكاء الاصطناعي التوليدي
+  - id: ai-governance
+    title: AI Governance & Security
+    title_ar: حوكمة وأمن الذكاء الاصطناعي
+  - id: emerging-technologies
+    title: Emerging Technologies
+    title_ar: التقنيات الناشئة
+
+# Levels, aligned with the SDAIA national workforce classification used in the
+# Module Catalog v2 (Practitioner → Specialist → Expert) plus the Level-0 tier.
+levels:
+  - id: Beginner
+    title_ar: مبتدئ
+    rank: 0
+  - id: Practitioner
+    title_ar: ممارس
+    rank: 1
+  - id: Specialist
+    title_ar: متخصص
+    rank: 2
+  - id: Expert
+    title_ar: خبير
+    rank: 3
+
+delivery_modes:
+  - In-person
+  - Remote (live online)
+  - Blended
+  - TODO
+
+# Content lifecycle. Only Approved and Published content is shown to trainers
+# without a warning banner. See CONTENT_GOVERNANCE.md §4.
+statuses:
+  - Draft
+  - Under Review
+  - Approved
+  - Published
+  - Archived
+
+# Standard course sub-folders (CONTENT_GOVERNANCE.md §3).
+course_folders:
+  - slides
+  - labs
+  - activities
+  - assessments
+  - datasets
+  - solutions
+  - resources
+
+# Required files at the root of every course folder.
+course_required_files:
+  - README.md
+  - metadata.yml
+  - course-overview.md
+  - instructor-guide.md
+  - setup.md
+  - troubleshooting.md
+
+# Controlled keyword vocabulary used to index courses for search.
+# Each keyword lists the phrases that, when found in a course's catalog
+# description, topics or tools, attach that keyword to the course.
+keywords:
+  Agentic AI: [agentic, agent, multi-agent, langgraph, mcp]
+  RAG: [retrieval-augmented, rag, vector db, vector database, reranker, retrieval]
+  LLM: [large language model, llm, prompt, openai, anthropic, vllm]
+  Prompt Engineering: [prompt engineering, prompting, prompt-portfolio]
+  Fine-Tuning: [fine-tuning, peft, lora, trl]
+  NLP: [natural language, nlp, transformers, spacy, camel tools]
+  Computer Vision: [computer vision, yolo, opencv, image, vision]
+  Deep Learning: [deep learning, pytorch, neural network, cnn]
+  Machine Learning: [machine learning, scikit-learn, xgboost, lightgbm, supervised]
+  MLOps: [mlops, mlflow, dvc, model deployment, kubernetes]
+  LLMOps: [llmops, observability, langsmith, langfuse, opentelemetry]
+  AI Security: [red team, red-team, guardrails, garak, pyrit, threat]
+  Responsible AI: [responsible ai, bias, fairness, ethics, pdpl, ndmo, governance]
+  Statistics: [statistic, hypothesis, inference, scipy, statsmodels]
+  Data Visualization: [visuali, dashboard, storytelling, plotly, power bi, tableau]
+  Time Series: [time series, forecast, prophet, sktime]
+  Experimentation: [a/b test, experiment, causal]
+  Data Engineering: [data engineering, pipeline, lakehouse, delta lake, dbt, etl, elt]
+  Big Data: [spark, pyspark, big data, mllib]
+  Streaming: [streaming, kafka, real-time]
+  Optimization: [optimization, optimisation, or-tools, pulp, simulation]
+  Python: [python, numpy, pandas]
+  SQL: [sql, postgresql]
+  Software Engineering: [fastapi, docker, pytest, github actions, software engineering]
+  Architecture: [architecture, c4, reference architecture]
+  Automation: [automation, automate]
+  Spreadsheets: [spreadsheet, excel]
+  Data Literacy: [data literacy, literacy]

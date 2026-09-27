@@ -1,0 +1,210 @@
+# Module 9/final capstone — the simulated Tawseel operations environment.
+#
+# Two ways to bring this up (see runbook.md):
+#
+#   docker compose -f deployment/docker-compose.yml --profile labs up
+#       -> rafeeq-api-labs ONLY. RAFEEQ_MODEL_MODE=stub, no Qdrant, no
+#          Postgres, no MCP servers, no external services at all — the
+#          offline/stub stack every lab and the eval-harness CI gate run
+#          against (docs/OFFLINE_MODE.md). This is the profile a
+#          participant with no API key uses.
+#
+#   docker compose -f deployment/docker-compose.yml --profile full up
+#       -> the real topology: rafeeq-api + the four MCP servers + qdrant
+#          (long-term memory / versioned KB) + postgres (the LangGraph
+#          checkpointer, short-term/thread-scoped memory, M4) +
+#          sim-backends (the mock Tawseel OMS/logistics/CRM/billing
+#          backends every adapter in src/rafeeq/adapters/ talks to, with
+#          this file's brownout/latency injection switches wired in —
+#          see sim_env/ and the sim-incident drill in runbook.md).
+#
+# `docker compose ... up` with NO --profile starts neither group (every
+# service below is tagged with one of the two profiles on purpose, per
+# SPEC's "profiles: [labs] variant" requirement) — always pick one.
+
+x-rafeeq-image: &rafeeq-image
+  build:
+    context: ..
+    dockerfile: Dockerfile
+
+x-healthcheck-defaults: &hc-defaults
+  interval: 15s
+  timeout: 5s
+  retries: 5
+  start_period: 10s
+
+services:
+  # ------------------------------------------------------------------
+  # labs profile — offline/stub, zero external services.
+  # ------------------------------------------------------------------
+  rafeeq-api-labs:
+    <<: *rafeeq-image
+    profiles: ["labs"]
+    container_name: rafeeq-api-labs
+    environment:
+      RAFEEQ_MODEL_MODE: stub
+      RAFEEQ_VECTOR_MODE: simple
+      RAFEEQ_EMBED_MODE: hashing
+      RAFEEQ_TARGET: stub
+      RAFEEQ_HOST: 0.0.0.0
+      RAFEEQ_PORT: "8000"
+    ports:
+      - "8000:8000"
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:8000/readyz', timeout=3)"]
+    # No `depends_on` — the entire point of the labs profile is that it
+    # needs nothing else running (SPEC's own phrase: "no external services").
+
+  # ------------------------------------------------------------------
+  # full profile — the real, deployed topology.
+  # ------------------------------------------------------------------
+  qdrant:
+    image: qdrant/qdrant:v1.9.2
+    profiles: ["full"]
+    container_name: rafeeq-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/6333'"]
+
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["full"]
+    container_name: rafeeq-postgres
+    environment:
+      POSTGRES_DB: rafeeq_checkpoints
+      POSTGRES_USER: rafeeq
+      POSTGRES_PASSWORD: rafeeq_dev_only   # local sim env only — never a real credential
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD-SHELL", "pg_isready -U rafeeq -d rafeeq_checkpoints"]
+
+  sim-backends:
+    <<: *rafeeq-image
+    profiles: ["full"]
+    container_name: rafeeq-sim-backends
+    # The mock Tawseel OMS/logistics/CRM/billing backends
+    # (src/rafeeq/adapters/*.py) plus the brownout/latency-injection
+    # toggle file `sim_env/config.py` reads and `scripts/sim_incident.py`
+    # flips — see runbook.md's sim-incident drill.
+    command: ["python3", "deployment/sim_env/scripts/sim_incident.py", "--serve"]
+    environment:
+      RAFEEQ_MODEL_MODE: stub
+      SIM_ENV_CONFIG_PATH: /app/deployment/sim_env/state.json
+    volumes:
+      - sim_env_state:/app/deployment/sim_env/state
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c", "import json,sys,pathlib; p=pathlib.Path('/app/deployment/sim_env/state/state.json'); sys.exit(0 if p.exists() else 1)"]
+
+  mcp-orders:
+    <<: *rafeeq-image
+    profiles: ["full"]
+    container_name: rafeeq-mcp-orders
+    command: ["python3", "mcp_servers/orders_server.py"]
+    environment:
+      RAFEEQ_MODEL_MODE: stub
+    depends_on:
+      sim-backends:
+        condition: service_healthy
+    # MCP servers speak JSON-RPC over STDIO (docs/MCP_TOPOLOGY.md), not a
+    # network port — there is nothing to curl. The healthcheck below is a
+    # process-liveness probe (the interpreter is up and the module
+    # imports cleanly), which is the honest equivalent for a stdio
+    # service; the real reachability check is the client's own connect
+    # (`rafeeq.tools.mcp_client.load_tawseel_tools()`), performed at
+    # request time, not by compose.
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c", "import mcp_servers.orders_server"]
+
+  mcp-logistics:
+    <<: *rafeeq-image
+    profiles: ["full"]
+    container_name: rafeeq-mcp-logistics
+    command: ["python3", "mcp_servers/logistics_server.py"]
+    environment:
+      RAFEEQ_MODEL_MODE: stub
+    depends_on:
+      sim-backends:
+        condition: service_healthy
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c", "import mcp_servers.logistics_server"]
+
+  mcp-billing:
+    <<: *rafeeq-image
+    profiles: ["full"]
+    container_name: rafeeq-mcp-billing
+    command: ["python3", "mcp_servers/billing_server.py"]
+    environment:
+      RAFEEQ_MODEL_MODE: stub
+    depends_on:
+      sim-backends:
+        condition: service_healthy
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c", "import mcp_servers.billing_server"]
+
+  mcp-customer:
+    <<: *rafeeq-image
+    profiles: ["full"]
+    container_name: rafeeq-mcp-customer
+    command: ["python3", "mcp_servers/customer_server.py"]
+    environment:
+      RAFEEQ_MODEL_MODE: stub
+    depends_on:
+      sim-backends:
+        condition: service_healthy
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c", "import mcp_servers.customer_server"]
+
+  rafeeq-api:
+    <<: *rafeeq-image
+    profiles: ["full"]
+    container_name: rafeeq-api
+    environment:
+      RAFEEQ_MODEL_MODE: ${RAFEEQ_MODEL_MODE:-replay}   # live requires OPENAI_API_KEY; replay needs none
+      RAFEEQ_VECTOR_MODE: qdrant
+      RAFEEQ_EMBED_MODE: ${RAFEEQ_EMBED_MODE:-hashing}
+      RAFEEQ_TARGET: supervisor
+      QDRANT_URL: http://qdrant:6333
+      DATABASE_URL: postgresql://rafeeq:rafeeq_dev_only@postgres:5432/rafeeq_checkpoints
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      RAFEEQ_HOST: 0.0.0.0
+      RAFEEQ_PORT: "8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      mcp-orders:
+        condition: service_healthy
+      mcp-logistics:
+        condition: service_healthy
+      mcp-billing:
+        condition: service_healthy
+      mcp-customer:
+        condition: service_healthy
+    healthcheck:
+      <<: *hc-defaults
+      test: ["CMD", "python3", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:8000/readyz', timeout=3)"]
+
+volumes:
+  qdrant_data: {}
+  postgres_data: {}
+  sim_env_state: {}

@@ -1,0 +1,145 @@
+﻿test_id,participant_id,dashboard_version,task_id,task,time_to_answer_sec,gave_up,answer_correct,clicks_used,confidence_1_5,tested_on,tester_role
+UT-01-v1-T1,P01,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,68.1,0,0,5,2,Mobile,Field manager
+UT-01-v1-T2,P01,v1_gauge_wall,T2,Is the national trend improving or flat?,32.9,0,0,7,1,Desktop,Ops analyst
+UT-01-v1-T3,P01,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,5,2,Mobile,Ops analyst
+UT-01-v2-T1,P01,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,15.8,0,1,4,5,Desktop,Field manager
+UT-01-v2-T2,P01,v2_inverted_pyramid,T2,Is the national trend improving or flat?,11.4,0,0,2,4,Mobile,Field manager
+UT-01-v2-T3,P01,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,12.0,0,1,0,4,Desktop,Field manager
+UT-02-v1-T1,P02,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,56.3,0,0,4,2,Desktop,Director
+UT-02-v1-T2,P02,v1_gauge_wall,T2,Is the national trend improving or flat?,72.7,0,0,6,1,Mobile,Field manager
+UT-02-v1-T3,P02,v1_gauge_wall,T3,Which region has the highest cost per transaction?,54.5,0,0,6,2,Desktop,Ops analyst
+UT-02-v2-T1,P02,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,19.1,0,1,2,4,Mobile,Executive assistant
+UT-02-v2-T2,P02,v2_inverted_pyramid,T2,Is the national trend improving or flat?,13.3,0,1,1,5,Mobile,Director
+UT-02-v2-T3,P02,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,17.0,0,1,2,4,Mobile,Ops analyst
+UT-03-v1-T1,P03,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,49.0,0,0,5,4,Desktop,Executive assistant
+UT-03-v1-T2,P03,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,10,2,Desktop,Ops analyst
+UT-03-v1-T3,P03,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,8,2,Desktop,Director
+UT-03-v2-T1,P03,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,15.2,0,0,3,4,Mobile,Executive assistant
+UT-03-v2-T2,P03,v2_inverted_pyramid,T2,Is the national trend improving or flat?,9.9,0,0,0,4,Desktop,Executive assistant
+UT-03-v2-T3,P03,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,14.5,0,1,1,4,Desktop,Director
+UT-04-v1-T1,P04,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,74.6,0,0,8,2,Desktop,Field manager
+UT-04-v1-T2,P04,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,8,1,Desktop,Director
+UT-04-v1-T3,P04,v1_gauge_wall,T3,Which region has the highest cost per transaction?,86.2,0,1,9,1,Desktop,Field manager
+UT-04-v2-T1,P04,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,16.3,0,1,3,4,Desktop,Executive assistant
+UT-04-v2-T2,P04,v2_inverted_pyramid,T2,Is the national trend improving or flat?,7.2,0,1,2,5,Mobile,Ops analyst
+UT-04-v2-T3,P04,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,11.2,0,1,1,4,Mobile,Ops analyst
+UT-05-v1-T1,P05,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,73.3,0,1,8,3,Mobile,Ops analyst
+UT-05-v1-T2,P05,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,7,3,Desktop,Executive assistant
+UT-05-v1-T3,P05,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,5,1,Mobile,Ops analyst
+UT-05-v2-T1,P05,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,7.6,0,1,0,5,Desktop,Ops analyst
+UT-05-v2-T2,P05,v2_inverted_pyramid,T2,Is the national trend improving or flat?,17.4,0,1,4,4,Mobile,Director
+UT-05-v2-T3,P05,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,7.6,0,1,1,5,Desktop,Field manager
+UT-06-v1-T1,P06,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,73.0,0,0,8,3,Desktop,Director
+UT-06-v1-T2,P06,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,8,4,Mobile,Director
+UT-06-v1-T3,P06,v1_gauge_wall,T3,Which region has the highest cost per transaction?,43.5,0,0,7,3,Desktop,Executive assistant
+UT-06-v2-T1,P06,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,12.4,0,1,3,5,Desktop,Field manager
+UT-06-v2-T2,P06,v2_inverted_pyramid,T2,Is the national trend improving or flat?,9.3,0,0,5,5,Mobile,Ops analyst
+UT-06-v2-T3,P06,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,13.4,0,1,4,4,Desktop,Ops analyst
+UT-07-v1-T1,P07,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,57.3,0,0,10,2,Desktop,Executive assistant
+UT-07-v1-T2,P07,v1_gauge_wall,T2,Is the national trend improving or flat?,53.5,0,0,7,3,Desktop,Ops analyst
+UT-07-v1-T3,P07,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,8,2,Desktop,Ops analyst
+UT-07-v2-T1,P07,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,11.1,0,0,3,4,Mobile,Director
+UT-07-v2-T2,P07,v2_inverted_pyramid,T2,Is the national trend improving or flat?,10.5,0,1,8,5,Desktop,Director
+UT-07-v2-T3,P07,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,7.3,0,1,2,4,Desktop,Director
+UT-08-v1-T1,P08,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,63.0,0,0,6,3,Mobile,Field manager
+UT-08-v1-T2,P08,v1_gauge_wall,T2,Is the national trend improving or flat?,25.2,0,1,3,2,Desktop,Director
+UT-08-v1-T3,P08,v1_gauge_wall,T3,Which region has the highest cost per transaction?,42.3,0,0,3,3,Mobile,Ops analyst
+UT-08-v2-T1,P08,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,15.8,0,1,2,4,Desktop,Field manager
+UT-08-v2-T2,P08,v2_inverted_pyramid,T2,Is the national trend improving or flat?,4.9,0,1,5,4,Mobile,Executive assistant
+UT-08-v2-T3,P08,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,12.6,0,1,0,4,Desktop,Ops analyst
+UT-09-v1-T1,P09,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,59.8,0,0,6,3,Desktop,Executive assistant
+UT-09-v1-T2,P09,v1_gauge_wall,T2,Is the national trend improving or flat?,27.8,0,0,4,3,Desktop,Field manager
+UT-09-v1-T3,P09,v1_gauge_wall,T3,Which region has the highest cost per transaction?,37.4,0,0,6,4,Mobile,Executive assistant
+UT-09-v2-T1,P09,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,9.7,0,1,4,5,Desktop,Director
+UT-09-v2-T2,P09,v2_inverted_pyramid,T2,Is the national trend improving or flat?,16.3,0,0,3,5,Desktop,Ops analyst
+UT-09-v2-T3,P09,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,9.6,0,1,0,5,Desktop,Executive assistant
+UT-10-v1-T1,P10,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,57.8,0,1,6,3,Mobile,Executive assistant
+UT-10-v1-T2,P10,v1_gauge_wall,T2,Is the national trend improving or flat?,72.1,0,0,5,2,Desktop,Director
+UT-10-v1-T3,P10,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,7,2,Mobile,Field manager
+UT-10-v2-T1,P10,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,10.9,0,1,2,5,Desktop,Executive assistant
+UT-10-v2-T2,P10,v2_inverted_pyramid,T2,Is the national trend improving or flat?,13.2,0,1,1,4,Mobile,Field manager
+UT-10-v2-T3,P10,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,9.3,0,1,5,4,Mobile,Ops analyst
+UT-11-v1-T1,P11,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,35.5,0,1,6,4,Desktop,Executive assistant
+UT-11-v1-T2,P11,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,7,1,Desktop,Director
+UT-11-v1-T3,P11,v1_gauge_wall,T3,Which region has the highest cost per transaction?,82.8,0,0,3,2,Desktop,Ops analyst
+UT-11-v2-T1,P11,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,14.6,0,1,2,4,Desktop,Field manager
+UT-11-v2-T2,P11,v2_inverted_pyramid,T2,Is the national trend improving or flat?,9.3,0,1,4,4,Mobile,Ops analyst
+UT-11-v2-T3,P11,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,7.7,0,1,1,4,Mobile,Executive assistant
+UT-12-v1-T1,P12,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,10,1,Desktop,Executive assistant
+UT-12-v1-T2,P12,v1_gauge_wall,T2,Is the national trend improving or flat?,72.2,0,0,6,2,Mobile,Ops analyst
+UT-12-v1-T3,P12,v1_gauge_wall,T3,Which region has the highest cost per transaction?,57.4,0,1,4,3,Mobile,Executive assistant
+UT-12-v2-T1,P12,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,11.7,0,1,0,5,Mobile,Ops analyst
+UT-12-v2-T2,P12,v2_inverted_pyramid,T2,Is the national trend improving or flat?,9.3,0,1,0,5,Desktop,Executive assistant
+UT-12-v2-T3,P12,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,13.8,0,1,0,4,Desktop,Field manager
+UT-13-v1-T1,P13,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,6,2,Desktop,Field manager
+UT-13-v1-T2,P13,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,2,4,Mobile,Field manager
+UT-13-v1-T3,P13,v1_gauge_wall,T3,Which region has the highest cost per transaction?,66.5,0,1,8,2,Mobile,Director
+UT-13-v2-T1,P13,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,9.7,0,1,1,4,Mobile,Field manager
+UT-13-v2-T2,P13,v2_inverted_pyramid,T2,Is the national trend improving or flat?,9.4,0,1,0,5,Mobile,Field manager
+UT-13-v2-T3,P13,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,11.9,0,1,1,5,Desktop,Executive assistant
+UT-14-v1-T1,P14,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,8,4,Desktop,Ops analyst
+UT-14-v1-T2,P14,v1_gauge_wall,T2,Is the national trend improving or flat?,77.5,0,1,8,3,Mobile,Field manager
+UT-14-v1-T3,P14,v1_gauge_wall,T3,Which region has the highest cost per transaction?,60.7,0,1,7,3,Desktop,Field manager
+UT-14-v2-T1,P14,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,12.2,0,0,1,5,Desktop,Executive assistant
+UT-14-v2-T2,P14,v2_inverted_pyramid,T2,Is the national trend improving or flat?,7.7,0,1,0,4,Mobile,Ops analyst
+UT-14-v2-T3,P14,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,11.4,0,1,0,5,Desktop,Ops analyst
+UT-15-v1-T1,P15,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,91.7,0,0,9,3,Desktop,Director
+UT-15-v1-T2,P15,v1_gauge_wall,T2,Is the national trend improving or flat?,65.8,0,1,7,3,Mobile,Field manager
+UT-15-v1-T3,P15,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,5,2,Desktop,Field manager
+UT-15-v2-T1,P15,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,14.3,0,1,5,5,Desktop,Field manager
+UT-15-v2-T2,P15,v2_inverted_pyramid,T2,Is the national trend improving or flat?,11.1,0,1,2,5,Desktop,Field manager
+UT-15-v2-T3,P15,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,8.5,0,1,0,5,Mobile,Director
+UT-16-v1-T1,P16,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,47.1,0,0,5,3,Desktop,Field manager
+UT-16-v1-T2,P16,v1_gauge_wall,T2,Is the national trend improving or flat?,28.1,0,1,6,4,Desktop,Director
+UT-16-v1-T3,P16,v1_gauge_wall,T3,Which region has the highest cost per transaction?,65.1,0,0,4,2,Mobile,Executive assistant
+UT-16-v2-T1,P16,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,14.0,0,1,0,3,Desktop,Executive assistant
+UT-16-v2-T2,P16,v2_inverted_pyramid,T2,Is the national trend improving or flat?,18.6,0,1,1,4,Desktop,Executive assistant
+UT-16-v2-T3,P16,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,4.9,0,1,1,4,Mobile,Director
+UT-17-v1-T1,P17,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,3,3,Desktop,Director
+UT-17-v1-T2,P17,v1_gauge_wall,T2,Is the national trend improving or flat?,50.8,0,1,7,1,Desktop,Ops analyst
+UT-17-v1-T3,P17,v1_gauge_wall,T3,Which region has the highest cost per transaction?,70.0,0,0,1,3,Desktop,Field manager
+UT-17-v2-T1,P17,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,12.7,0,1,1,4,Mobile,Field manager
+UT-17-v2-T2,P17,v2_inverted_pyramid,T2,Is the national trend improving or flat?,7.7,0,0,0,4,Desktop,Ops analyst
+UT-17-v2-T3,P17,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,5.8,0,1,3,4,Mobile,Ops analyst
+UT-18-v1-T1,P18,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,39.3,0,0,8,3,Desktop,Executive assistant
+UT-18-v1-T2,P18,v1_gauge_wall,T2,Is the national trend improving or flat?,44.8,0,1,6,1,Desktop,Ops analyst
+UT-18-v1-T3,P18,v1_gauge_wall,T3,Which region has the highest cost per transaction?,95.6,0,1,7,3,Desktop,Field manager
+UT-18-v2-T1,P18,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,7.3,0,1,0,4,Desktop,Executive assistant
+UT-18-v2-T2,P18,v2_inverted_pyramid,T2,Is the national trend improving or flat?,11.6,0,1,0,5,Desktop,Director
+UT-18-v2-T3,P18,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,8.2,0,1,0,4,Desktop,Field manager
+UT-19-v1-T1,P19,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,6,2,Desktop,Executive assistant
+UT-19-v1-T2,P19,v1_gauge_wall,T2,Is the national trend improving or flat?,68.9,0,0,9,1,Desktop,Director
+UT-19-v1-T3,P19,v1_gauge_wall,T3,Which region has the highest cost per transaction?,53.5,0,0,9,2,Mobile,Executive assistant
+UT-19-v2-T1,P19,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,13.7,0,1,2,4,Desktop,Executive assistant
+UT-19-v2-T2,P19,v2_inverted_pyramid,T2,Is the national trend improving or flat?,16.9,0,1,0,5,Desktop,Executive assistant
+UT-19-v2-T3,P19,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,8.4,0,1,1,4,Desktop,Field manager
+UT-20-v1-T1,P20,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,59.0,0,0,8,1,Desktop,Ops analyst
+UT-20-v1-T2,P20,v1_gauge_wall,T2,Is the national trend improving or flat?,120.0,1,0,8,1,Desktop,Executive assistant
+UT-20-v1-T3,P20,v1_gauge_wall,T3,Which region has the highest cost per transaction?,76.8,0,0,7,4,Desktop,Field manager
+UT-20-v2-T1,P20,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,6.5,0,1,5,5,Desktop,Ops analyst
+UT-20-v2-T2,P20,v2_inverted_pyramid,T2,Is the national trend improving or flat?,10.0,0,1,0,5,Mobile,Field manager
+UT-20-v2-T3,P20,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,7.2,0,1,3,5,Desktop,Ops analyst
+UT-21-v1-T1,P21,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,8,2,Mobile,Field manager
+UT-21-v1-T2,P21,v1_gauge_wall,T2,Is the national trend improving or flat?,81.9,0,0,7,2,Desktop,Field manager
+UT-21-v1-T3,P21,v1_gauge_wall,T3,Which region has the highest cost per transaction?,80.0,0,0,8,3,Mobile,Ops analyst
+UT-21-v2-T1,P21,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,8.0,0,1,0,4,Desktop,Ops analyst
+UT-21-v2-T2,P21,v2_inverted_pyramid,T2,Is the national trend improving or flat?,13.8,0,0,0,3,Desktop,Executive assistant
+UT-21-v2-T3,P21,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,8.6,0,1,4,4,Desktop,Ops analyst
+UT-22-v1-T1,P22,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,37.1,0,1,8,1,Mobile,Director
+UT-22-v1-T2,P22,v1_gauge_wall,T2,Is the national trend improving or flat?,69.3,0,1,10,1,Desktop,Director
+UT-22-v1-T3,P22,v1_gauge_wall,T3,Which region has the highest cost per transaction?,70.8,0,1,7,3,Mobile,Field manager
+UT-22-v2-T1,P22,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,12.3,0,1,3,3,Desktop,Field manager
+UT-22-v2-T2,P22,v2_inverted_pyramid,T2,Is the national trend improving or flat?,6.1,0,1,0,5,Desktop,Director
+UT-22-v2-T3,P22,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,16.2,0,1,2,5,Desktop,Field manager
+UT-23-v1-T1,P23,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,8,3,Desktop,Ops analyst
+UT-23-v1-T2,P23,v1_gauge_wall,T2,Is the national trend improving or flat?,50.4,0,0,6,3,Mobile,Ops analyst
+UT-23-v1-T3,P23,v1_gauge_wall,T3,Which region has the highest cost per transaction?,35.4,0,0,5,2,Desktop,Field manager
+UT-23-v2-T1,P23,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,16.6,0,0,4,5,Desktop,Executive assistant
+UT-23-v2-T2,P23,v2_inverted_pyramid,T2,Is the national trend improving or flat?,10.2,0,1,5,4,Desktop,Director
+UT-23-v2-T3,P23,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,8.4,0,1,2,4,Mobile,Director
+UT-24-v1-T1,P24,v1_gauge_wall,T1,Which regions are below the 65% adoption target?,120.0,1,0,8,3,Desktop,Director
+UT-24-v1-T2,P24,v1_gauge_wall,T2,Is the national trend improving or flat?,91.4,0,0,13,2,Mobile,Ops analyst
+UT-24-v1-T3,P24,v1_gauge_wall,T3,Which region has the highest cost per transaction?,120.0,1,0,7,3,Desktop,Director
+UT-24-v2-T1,P24,v2_inverted_pyramid,T1,Which regions are below the 65% adoption target?,10.4,0,1,5,3,Desktop,Director
+UT-24-v2-T2,P24,v2_inverted_pyramid,T2,Is the national trend improving or flat?,12.1,0,1,3,4,Desktop,Field manager
+UT-24-v2-T3,P24,v2_inverted_pyramid,T3,Which region has the highest cost per transaction?,12.3,0,1,2,5,Desktop,Field manager

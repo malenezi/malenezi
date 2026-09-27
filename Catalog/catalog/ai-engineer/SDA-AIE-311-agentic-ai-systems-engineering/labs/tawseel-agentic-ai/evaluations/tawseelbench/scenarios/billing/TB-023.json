@@ -1,0 +1,94 @@
+{
+  "id": "TB-023",
+  "title": "Refund already recorded under this ticket's idempotency key",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge"
+  ],
+  "customer_request": {
+    "text": "Please refund my order TW-2026-11548, it hasn't shipped and I don't want it anymore.",
+    "locale": "en",
+    "customer_id": "CUST-8336",
+    "order_id": "TW-2026-11548"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "refund_ledger": {
+        "tawseelbench:TB-023": {
+          "order_id": "TW-2026-11548",
+          "payment_id": "PAY-111548",
+          "amount_sar": 55.16,
+          "reason": "already_processed_last_turn",
+          "idempotency_key": "tawseelbench:TB-023",
+          "issued_at": "2026-03-01T00:00:00+03:00",
+          "total_refunded_sar": 55.16,
+          "payment_status": "refunded",
+          "idempotent_replay": false
+        }
+      },
+      "orders": {
+        "TW-2026-11548": {
+          "refunded": true,
+          "refund_amount_sar": 55.16
+        }
+      },
+      "payments": {
+        "PAY-111548": {
+          "status": "refunded",
+          "refunds": [
+            {
+              "amount_sar": 55.16,
+              "reason": "already_processed_last_turn",
+              "idempotency_key": "tawseelbench:TB-023",
+              "issued_at": "2026-03-01T00:00:00+03:00",
+              "requires_human_approval": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "read_policy"
+    ],
+    "state_diff": {}
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "read_policy"
+    ],
+    "must_not_call_tools": [
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "The order/payment records (AND the ledger, consistently) already reflect a full refund under this exact idempotency key from a prior turn: order.refund_amount_sar equals order.amount_sar. The agent recomputes entitlement from the REAL order record (never from conversation memory of 'did I already do this'), finds the remaining refundable amount is 0, and declines — a second defence-in-depth layer on top of BillingClient's own idempotency ledger (which would in any case replay, not double-pay, had the agent tried issue_refund again). Two independent structural guarantees, not one."
+}

@@ -1,0 +1,12 @@
+﻿criterion_id,component,criterion,weight,learning_outcome,level_1_descriptor,level_2_descriptor,level_3_descriptor,level_4_descriptor,level_5_descriptor
+CAP-D1,Dashboard,Default state answers the primary question,0.1,LO3,No primary question,Question implicit,Answerable in 3+ clicks,Answerable in 1 click,Answered with zero clicks
+CAP-D2,Dashboard,Chart choice matches the task,0.1,"LO1,LO2",Decorative chart types,One task-chart mismatch,Mostly appropriate,All appropriate,Appropriate and justified
+CAP-D3,Dashboard,Non-additive measures computed correctly,0.1,LO3,Averages of averages,One measure wrong,Correct but undocumented,Correct and documented,"Correct, documented, filter-proof"
+CAP-D4,Dashboard,"Interaction: cross-filter, drill, state legibility",0.08,LO3,No interaction,Interaction without state,State partly visible,State always visible,State visible with breadcrumb and reset
+CAP-D5,Dashboard,"Accessibility, colour and Arabic RTL retained",0.07,LO2,Red/green only,Fails CVD check,"Passes CVD, no RTL",Passes CVD and RTL,"Passes CVD, RTL and mobile"
+CAP-S1,Story,Big Idea (POV + stakes + action) passes peer restatement,0.1,LO4,"Topic, not idea",Idea without stakes,"Idea, weak action",Full Big Idea,Restated verbatim by a peer
+CAP-S2,Story,BLUF: recommendation in the first 30 seconds,0.1,"LO4,LO6",Ask never stated,Ask at the end,Ask mid-deck,Ask in first minute,Ask at 0:30 and repeated at close
+CAP-S3,Story,Every slide advances the decision (<=7 scenes),0.08,LO4,Dashboard export,More than 12 slides,8-10 slides,7 slides,"7 slides, cuts justified in an appendix"
+CAP-S4,Story,Annotation carries the argument; takeaway titles,0.07,"LO2,LO5",Axis-label titles,Some takeaway titles,Most titles state conclusions,All titles state conclusions,One callout per scene at the argument
+CAP-P1,Presentation,"Q&A handling: acknowledge, answer, bridge",0.1,LO6,Defensive or frozen,Answers without bridge,Bridges sometimes,Bridges consistently,Handles hostile and data-wrong cleanly
+CAP-P2,Presentation,Time discipline within the 7-minute slot,0.1,LO6,Over by >2 min,Over by 1-2 min,Over by <1 min,On time,On time with a rehearsed cut-to-ask

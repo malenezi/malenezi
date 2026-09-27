@@ -1,0 +1,64 @@
+{
+  "id": "TB-055",
+  "title": "14-day standard return window (known StubTarget gap)",
+  "locale": "en",
+  "difficulty": "hard",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge",
+    "known_gap"
+  ],
+  "customer_request": {
+    "text": "I'd like to return order TW-2026-11000 for a refund — it's within the 14-day return window and unopened.",
+    "locale": "en",
+    "customer_id": "CUST-7825",
+    "order_id": "TW-2026-11000"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-11000": {
+          "delivered_at": "2026-03-01T12:00:00+03:00"
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order"
+    ],
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "refund_eligibility.md's 14-day standard-return-window clause is a DATE computation (delivered_at + 14 days vs now) that `StubTarget._refund_chain` does not implement — its eligibility check is only sla_breached / exception_code / status=='processing'. THIS SCENARIO IS EXPECTED TO FAIL against StubTarget today (it will decline the refund as not-eligible) and is kept in the suite deliberately: an honest benchmark records a known gap rather than writing a criterion the baseline is guaranteed to pass. A real agent (or a StubTarget extension) implementing the date-window clause should pass it."
+}

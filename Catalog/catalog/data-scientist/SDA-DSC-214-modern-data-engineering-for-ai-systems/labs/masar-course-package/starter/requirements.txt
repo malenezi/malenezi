@@ -1,0 +1,38 @@
+# Masar Lakehouse — pinned runtime stack (SDA-DSC-214).
+# Pins are canonical: CONVENTIONS.md + LAB_00 §0. Do NOT "upgrade to latest";
+# Spark 3.5 + delta-spark 3.2 on Java 17 is a narrow compatibility window and
+# every drift you introduce becomes a debugging session that eats lab time.
+
+# --- Core lakehouse engine (Labs 1-8) -------------------------------------
+pyspark==3.5.*
+delta-spark==3.2.*
+
+# --- ELT / transformation framework (Lab 3, Lab 8) ------------------------
+# `[session]` gives the local dbt-spark target that needs no Thrift server.
+dbt-core==1.7.*
+dbt-spark[session]==1.7.*
+
+# --- Data quality (Lab 6) -------------------------------------------------
+# GX 1.x renamed the API used by quality/suites/*.py — 0.18 is required.
+great-expectations==0.18.*
+
+# --- Streaming backbone (Lab 5) -------------------------------------------
+kafka-python==2.0.*
+
+# --- Online feature store + baseline model (Lab 8) ------------------------
+redis==5.0.*
+scikit-learn==1.4.*
+
+# --- Shared utilities -----------------------------------------------------
+pandas==2.2.*
+pyarrow==15.*
+python-dotenv==1.0.*
+PyYAML==6.0.*
+
+# --- Orchestration (Lab 7) ------------------------------------------------
+# Airflow is intentionally NOT pinned here: it drags a large constrained
+# dependency tree and must be installed with the official constraint file.
+#   pip install 'apache-airflow==2.9.3' \
+#     --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.3/constraints-3.11.txt"
+# If Airflow will not install on your machine, `orchestration/run_local.py`
+# runs the identical task graph with no Airflow at all. No lab ever blocks.

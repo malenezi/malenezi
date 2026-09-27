@@ -1,0 +1,70 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-112
+course_title: Data Visualization and Storytelling
+course_title_ar: تصور البيانات وسرد القصص
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Practitioner
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Data scientists, analysts, BI professionals
+prerequisites: SDA-FND-104
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-14
+next_review: 2026-12-27
+tools:
+- Plotly
+- Power BI/Tableau
+- Matplotlib/Seaborn
+technologies: []
+keywords:
+- Data Visualization
+description: A craft-focused module on turning analysis into influence. Participants apply perception
+  science to design honest, compelling visualisations, build interactive dashboards, and structure data
+  narratives for executive audiences. The module closes the last mile between analytical work and organisational
+  decisions.
+description_ar: وحدة مهارية لتحويل التحليل إلى تأثير. يطبق المشاركون علم الإدراك لتصميم تصورات صادقة ومقنعة
+  وبناء لوحات معلومات تفاعلية وهيكلة سرديات البيانات لجمهور تنفيذي، بما يغلق المسافة الأخيرة بين العمل
+  التحليلي وقرارات المؤسسة.
+learning_outcomes:
+- Apply visual-perception principles to select effective chart types
+- Design clear, honest visualisations that avoid distortion and clutter
+- Develop interactive dashboards for self-service exploration
+- Construct data narratives structured around audience and decision
+- Evaluate visualisations through critique and iterative refinement
+- Present analytical findings persuasively to executive stakeholders
+topics:
+- Perception science and visual encoding
+- Chart selection and design principles
+- Colour, annotation, and decluttering
+- Interactive dashboards and BI tools
+- Data storytelling structure and flow
+- Executive communication and presentation lab
+assessment: Dashboard project; storytelling presentation
+next_modules: SDA-DSC-211
+stackability: Communication badge; required for Data Scientist Practitioner certificate.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Data Visualization and Storytelling
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-112 - Data Visualization and
+    Storytelling.xlsx
+known_issues:
+- '[Obsolete] INSTRUCTOR_PACKAGE.md: Conflicting version: superseded by pkg/INSTRUCTOR_PACKAGE.md inside
+  SDA-DSC-112_course_package_v2.zip (newer, larger)'
+- '[Security Concern] pkg/data/supporting/region_directors.csv: Synthetic staff directory using @tayseer.gov.sa
+  e-mail addresses — switch to a reserved example domain before wider distribution'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

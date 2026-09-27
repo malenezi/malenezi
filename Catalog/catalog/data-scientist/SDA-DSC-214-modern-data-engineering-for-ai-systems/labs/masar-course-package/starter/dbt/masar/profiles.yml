@@ -1,0 +1,37 @@
+# Masar dbt profile.
+#
+# The course default is `dev`: dbt-spark's `session` method, which runs inside
+# the SAME local Spark session the labs use. No Thrift server to start, no port
+# to conflict, no extra process to explain — and `bronze.trips` means the same
+# thing to dbt as it does to `python -m masar.…` because they share the catalog.
+#
+# The `thrift` target is here because production Lakehouses use one, and
+# swapping targets should be a one-line change, not a migration.
+#
+#   dbt run  --profiles-dir dbt/masar --project-dir dbt/masar
+#   dbt test --profiles-dir dbt/masar --project-dir dbt/masar --target thrift
+masar:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: session
+      host: localhost
+      schema: silver
+      threads: 1
+      server_side_parameters:
+        spark.sql.extensions: io.delta.sql.DeltaSparkSessionExtension
+        spark.sql.catalog.spark_catalog: org.apache.spark.sql.delta.catalog.DeltaCatalog
+        spark.sql.warehouse.dir: ./lakehouse
+        spark.sql.shuffle.partitions: "8"
+
+    thrift:
+      type: spark
+      method: thrift
+      host: "{{ env_var('MASAR_THRIFT_HOST', 'localhost') }}"
+      port: "{{ env_var('MASAR_THRIFT_PORT', '10000') | int }}"
+      user: "{{ env_var('MASAR_THRIFT_USER', 'masar') }}"
+      schema: silver
+      threads: 4
+      connect_retries: 3
+      connect_timeout: 10

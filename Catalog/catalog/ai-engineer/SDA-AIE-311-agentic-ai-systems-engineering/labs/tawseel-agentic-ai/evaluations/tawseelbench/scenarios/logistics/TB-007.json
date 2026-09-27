@@ -1,0 +1,51 @@
+{
+  "id": "TB-007",
+  "title": "ETA question",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "track",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "لو سمحت، متى يصل طلبي TW-2026-10188؟",
+    "locale": "ar",
+    "customer_id": "CUST-2602",
+    "order_id": "TW-2026-10188"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "estimate_eta"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "estimate_eta"
+    ],
+    "must_mention": [
+      "TW-2026-10188"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "estimate_eta, not track_shipment — the customer specifically asked WHEN, not general status."
+}

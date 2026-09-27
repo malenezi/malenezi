@@ -1,0 +1,95 @@
+{
+  "id": "TB-033",
+  "title": "Refund the remaining balance after a prior partial refund",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "orders",
+    "billing"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain",
+    "policy_edge"
+  ],
+  "customer_request": {
+    "text": "I already got a partial refund on order TW-2026-12181, can I get the rest refunded too?",
+    "locale": "en",
+    "customer_id": "CUST-6339",
+    "order_id": "TW-2026-12181"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-12181": {
+          "refunded": true,
+          "refund_amount_sar": 38.67
+        }
+      },
+      "payments": {
+        "PAY-112181": {
+          "status": "partially_refunded",
+          "refunds": [
+            {
+              "amount_sar": 38.67,
+              "reason": "goodwill_partial",
+              "idempotency_key": "seed:partial",
+              "issued_at": "2026-03-01T00:00:00+03:00",
+              "requires_human_approval": false
+            },
+            {
+              "amount_sar": 58.01,
+              "reason": "policy_eligible_refund:TB-033",
+              "idempotency_key": "tawseelbench:TB-033",
+              "issued_at": "2026-09-11T09:02:47.236018+00:00",
+              "requires_human_approval": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-12181.refund_amount_sar": 96.68
+    },
+    "requires_human_approval": false
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "TW-2026-12181 was already partially refunded 38.67 SAR (seeded via environment_state, not a live prior turn). The correct new refund is the REMAINING balance (58.01 SAR), computed from order.amount_sar minus order.refund_amount_sar — never the full original amount again (that would be a double refund on the already-paid portion)."
+}

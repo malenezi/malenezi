@@ -1,0 +1,84 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-211
+course_title: Natural Language Processing with Transformers
+course_title_ar: معالجة اللغة الطبيعية باستخدام المحولات
+aliases:
+- Applied Natural Language Processing
+domain: ai-engineering
+learning_path: ai-engineer
+level: Specialist
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: AI engineers specialising in language applications
+prerequisites: SDA-AIE-112
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-08-26
+next_review: 2026-12-27
+tools:
+- Hugging Face Transformers
+- spaCy
+- sentence-transformers
+- CAMeL Tools
+technologies: []
+keywords:
+- LLM
+- Fine-Tuning
+- NLP
+- Statistics
+- Data Engineering
+- Optimization
+- Architecture
+description: A specialist module on modern NLP built around the transformer architecture. Participants
+  tokenise and model text, fine-tune pretrained transformers for classification and extraction tasks,
+  and handle Arabic-language processing challenges. The module bridges classic NLP pipelines and today's
+  LLM-centric stack.
+description_ar: وحدة تخصصية في معالجة اللغة الطبيعية الحديثة مبنية حول معمارية المحولات. يتعامل المشاركون
+  مع الترميز ونمذجة النصوص وضبط المحولات المدربة مسبقًا لمهام التصنيف والاستخراج مع معالجة تحديات اللغة
+  العربية، وتجسر الوحدة بين خطوط المعالجة الكلاسيكية ومنظومة النماذج اللغوية الحديثة.
+learning_outcomes:
+- Implement text-preprocessing and tokenisation pipelines including Arabic-specific handling
+- Explain attention mechanisms and the transformer architecture
+- Fine-tune pretrained transformer models for classification, NER, and QA tasks
+- Develop embedding-based semantic search and similarity applications
+- Evaluate NLP models with task-appropriate metrics and error analysis
+- Optimize inference speed and memory for transformer deployment
+topics:
+- Text processing, tokenisation, and embeddings
+- Attention and the transformer architecture
+- Fine-tuning BERT-family models for downstream tasks
+- 'Arabic NLP: challenges, models, and resources'
+- Semantic search with sentence embeddings
+- Evaluation and error analysis for NLP
+- Inference optimisation and serving
+assessment: Labs; Arabic/English NLP application project
+next_modules: SDA-AIE-213
+stackability: NLP specialisation badge; feeds the GenAI Engineering specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Applied Natural Language Processing
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-211 - Applied Natural Language Processing.xlsx
+known_issues:
+- '[Naming] AthkaX workbook title: ''Applied Natural Language Processing'''
+- '[Naming] Drive folder name: ''Applied Natural Language Processing'''
+- '[Naming] Learning Paths Catalog AR title: ''معالجة اللغات الطبيعية التطبيقية'''
+- '[Naming] Learning Paths Catalog EN title: ''Applied Natural Language Processing'''
+- '[Security Concern] Bayan_Training_Data/data/bayan_queries.jsonl: Contains Saudi phone/national-ID patterns;
+  pack LICENSE states the data is synthetic — confirm and keep the SYNTHETIC notice'
+- '[Security Concern] Bayan_Training_Data/data/bayan_raw_sample.csv: Contains Saudi phone/national-ID
+  patterns; pack LICENSE states the data is synthetic — confirm and keep the SYNTHETIC notice'
+- '[Security Concern] Bayan_Training_Data/data/pii_test_set.csv: Contains Saudi phone/national-ID patterns;
+  pack LICENSE states the data is synthetic — confirm and keep the SYNTHETIC notice'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

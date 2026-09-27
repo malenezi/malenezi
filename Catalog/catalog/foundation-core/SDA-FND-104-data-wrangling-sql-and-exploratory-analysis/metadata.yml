@@ -1,0 +1,69 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-FND-104
+course_title: Data Wrangling, SQL and Exploratory Analysis
+course_title_ar: معالجة البيانات وSQL والتحليل الاستكشافي
+aliases: []
+domain: foundations
+learning_path: foundation-core
+level: Practitioner
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Analysts, engineers, and scientists preparing for track-level modules
+prerequisites: SDA-FND-103 (Python)
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-06
+next_review: 2026-12-27
+tools:
+- SQL (PostgreSQL)
+- pandas
+- Jupyter
+- Matplotlib/Seaborn
+technologies: []
+keywords:
+- Python
+- SQL
+description: A practical module covering the full journey from raw data to analysis-ready insight. Participants
+  query relational databases with SQL, clean and reshape messy datasets, engineer features, and conduct
+  rigorous exploratory data analysis. The module instils the data-quality discipline every AI and analytics
+  role depends on.
+description_ar: وحدة عملية تغطي الرحلة الكاملة من البيانات الخام إلى الرؤى الجاهزة للتحليل. يستعلم المشاركون
+  من قواعد البيانات العلائقية باستخدام SQL، وينظفون البيانات ويعيدون تشكيلها، ويبنون الخصائص، وينفذون
+  تحليلًا استكشافيًا دقيقًا يرسّخ انضباط جودة البيانات الذي تعتمد عليه كل أدوار الذكاء الاصطناعي والتحليلات.
+learning_outcomes:
+- Design and execute SQL queries including joins, aggregations, and window functions
+- Diagnose data-quality issues and implement systematic cleaning strategies
+- Transform and reshape datasets for analysis using pandas
+- Engineer meaningful features from raw structured data
+- Conduct exploratory data analysis to surface patterns, anomalies, and relationships
+- Communicate EDA findings through clear visual and written summaries
+topics:
+- Relational databases and SQL fundamentals
+- 'Advanced SQL: joins, aggregation, window functions'
+- Data-quality assessment and cleaning workflows
+- Reshaping, merging, and transforming datasets
+- Feature engineering for analytics and ML
+- Exploratory data analysis and visual profiling
+- EDA case study on a real government-style dataset
+assessment: SQL labs; EDA project with report
+next_modules: SDA-FND-105 and role-track entry
+stackability: Foundation badge; required for Data Scientist track, recommended for AI Engineer track.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Foundation Core Track/Data Wrangling, SQL and Exploratory Analysis
+  platform_workbook: Program Files (AthkaX)/Foundation Core/SDA-FND-104 - Data Wrangling, SQL and Exploratory
+    Analysis.xlsx
+known_issues: []
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

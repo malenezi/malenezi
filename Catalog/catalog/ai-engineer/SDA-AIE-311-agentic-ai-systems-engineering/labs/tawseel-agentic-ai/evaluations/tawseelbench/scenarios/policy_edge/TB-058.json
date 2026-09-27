@@ -1,0 +1,67 @@
+{
+  "id": "TB-058",
+  "title": "Full refund chain stays within the step budget",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge",
+    "budget"
+  ],
+  "customer_request": {
+    "text": "من فضلك ألغِ واسترد المبلغ لطلبي TW-2026-25985، وخبّر التذكرة المفتوحة لدي إن الموضوع انحل.",
+    "locale": "ar",
+    "customer_id": "CUST-7825",
+    "order_id": "TW-2026-25985"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets",
+      "add_case_note"
+    ],
+    "state_diff": {
+      "orders.TW-2026-25985.refunded": true,
+      "orders.TW-2026-25985.refund_amount_sar": 150.67
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "issue_refund",
+      "add_case_note"
+    ],
+    "max_steps": 8,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "The full check-order -> ... -> confirm chain plus an existing-ticket case note is 8 tool calls for this customer — must stay within MAX_STEPS=8 (core.config) even on the 'everything happens' happy path."
+}

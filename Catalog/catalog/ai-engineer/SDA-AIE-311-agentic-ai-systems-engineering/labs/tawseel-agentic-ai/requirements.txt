@@ -1,0 +1,38 @@
+# Runtime dependencies for the Rafeeq service image (deployment/, Dockerfile).
+#
+# SPEC §1's Layer A / Layer B split applies here exactly as it does to the
+# source tree: everything below `pydantic` is Layer A (already usable in
+# the training-build sandbox); everything from `langgraph` down is Layer B
+# — NOT installable in that sandbox, but real, pinned, installable
+# packages for a deployed container (`docker build` runs in a normal
+# environment with network access, unlike the offline build sandbox this
+# repository was authored in).
+#
+# Every module that imports a Layer-B package import-guards it (`try:
+# import ... except ImportError:`) — see `docs/OFFLINE_MODE.md` — so the
+# SAME source tree runs with only the Layer-A subset installed (labs
+# profile, RAFEEQ_MODEL_MODE=stub) or with the full list below (full
+# profile, a live deployment).
+
+# --- Layer A: always required ---------------------------------------------
+pydantic>=2.6,<3
+
+# --- Layer A: service entrypoints -------------------------------------------
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+
+# --- Layer B: orchestration --------------------------------------------------
+langgraph>=0.2,<0.3
+langchain-core>=0.3,<0.4
+langchain-openai>=0.2,<0.3
+langsmith>=0.1,<1
+
+# --- Layer B: MCP -------------------------------------------------------------
+mcp>=1.0,<2
+
+# --- Layer B: long-term memory / vector store (RAFEEQ_VECTOR_MODE=qdrant) ----
+qdrant-client>=1.9,<2
+
+# --- Layer B: checkpointer (thread-scoped short-term memory over Postgres) ---
+psycopg[binary]>=3.1,<4
+langgraph-checkpoint-postgres>=2.0,<3

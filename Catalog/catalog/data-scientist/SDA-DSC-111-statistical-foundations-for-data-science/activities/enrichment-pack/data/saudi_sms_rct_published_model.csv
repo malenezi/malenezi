@@ -1,0 +1,4 @@
+predictor,contrast,outcome,adjusted_odds_ratio,ci_lower,ci_upper,p_value,interpretation_guardrail
+sms_reminder,"received SMS vs no SMS",non_attendance,0.56,0.38,0.82,0.001,"Adjusted association reported by the randomized trial; OR below 1 indicates lower odds of missing the appointment with SMS."
+visit_type,"first visit vs previous hospital contact",non_attendance,7.40,3.20,17.10,0.001,"Strong prognostic association; this is not the randomized treatment effect."
+

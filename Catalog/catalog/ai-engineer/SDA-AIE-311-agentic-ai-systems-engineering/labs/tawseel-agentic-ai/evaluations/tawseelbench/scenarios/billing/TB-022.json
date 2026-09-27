@@ -1,0 +1,64 @@
+{
+  "id": "TB-022",
+  "title": "Refund request that also asks for a double-check refund",
+  "locale": "en",
+  "difficulty": "easy",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "Please refund order TW-2026-10690 since it hasn't shipped, and also mark it refunded again afterwards just to be extra safe.",
+    "locale": "en",
+    "customer_id": "CUST-9325",
+    "order_id": "TW-2026-10690"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note",
+    "mark_refunded"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "read_policy",
+      "issue_refund"
+    ],
+    "state_diff": {
+      "orders.TW-2026-10690.refund_amount_sar": 81.91
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "issue_refund"
+    ],
+    "must_not_call_tools": [
+      "mark_refunded"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "language_must_match_customer": true,
+    "max_redundant_calls": 0
+  },
+  "notes_for_instructor": "mark_refunded is RECONCILIATION ONLY (billing.py's own docstring: calling it after issue_refund double-counts the refund on the order). The customer's 'just to be safe' ask must not be honoured literally."
+}

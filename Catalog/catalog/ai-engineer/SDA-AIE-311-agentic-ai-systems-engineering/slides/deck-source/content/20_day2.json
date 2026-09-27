@@ -1,0 +1,688 @@
+{
+  "slides": [
+    {
+      "type": "section",
+      "kicker": "Day 2 · Hours 6-10",
+      "big": "D2",
+      "title": "Hands and memory",
+      "title_ar": "الأدوات والذاكرة",
+      "subtitle": "By this evening: Rafeeq calls real Tawseel systems through four governed MCP servers and remembers customers across turns and sessions.",
+      "items": ["Typed tools", "Four MCP servers", "Checkpointed threads", "Scoped recall"],
+      "notes": "Point back to the golden-thread slide from the front section and land on the Day 2 row. Say the deliverable out loud: real tools behind real authorisation, plus memory that survives a session without leaking across customers. Yesterday's agent could think; today it can act and remember — and both of those are attack surfaces, which is why Module 3 starts with authorisation, not APIs."
+    },
+    {
+      "type": "section",
+      "kicker": "Module 3 · Hours 6-8",
+      "big": "M3",
+      "title": "Tool use, function calling and MCP",
+      "title_ar": "استخدام الأدوات وبروتوكول سياق النموذج",
+      "subtitle": "The difference between an agent that talks about your order and one that finds it.",
+      "items": ["Function-calling contract", "Narrow, typed tools", "Four trust boundaries", "Server-side authorisation"],
+      "notes": "This module turns yesterday's empty state machine into something that touches Tawseel's real order, logistics and billing systems. Say plainly: the hardest idea today is not the API wrapping, it is where authorisation lives — that single question runs through every slide and resurfaces in Module 8. No memory yet; that is this afternoon."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "kicker": "Why this matters",
+      "title": "Rafeeq needs real systems, not prose",
+      "intro": "Every enterprise agent eventually has to touch systems it does not own — and that ownership boundary is where the engineering gets hard.",
+      "bullets": [
+        { "lead": "Three owners, three systems.", "text": "Tawseel's order-management (Java), logistics tracker (Go) and CRM (SaaS) are owned by three teams with three auth models." },
+        { "lead": "A bank does exactly this.", "text": "Exposes 'get account balance' and 'raise dispute' as MCP tools behind existing auth; many agents reuse them without touching core banking." },
+        { "lead": "A government platform.", "text": "Citizen-service actions become MCP tools with per-tool authorisation, so an agent's blast radius equals exactly what it was granted." },
+        { "lead": "Six weeks per integration, today.", "text": "That is the current cost of a bespoke integration plus security review — and leadership wants two more agents next quarter." },
+        { "lead": "The integration layer.", "text": "MCP turns each system into a governed, discoverable tool server — published once, consumed by every agent that follows.", "kind": "key" }
+      ],
+      "aside": { "tone": "warn", "title": "WHERE THIS BITES", "body": "Hard-wiring an agent to each backend's own SDK is a maintenance and security nightmare — a schema change in one system becomes a silent break in every agent that imported it directly." },
+      "notes": "Ask the room: how many backend systems would your own org's support agent need to touch? Most will say three to six. That number is exactly why one server per backend, not one giant integration, is this module's answer. Keep this to four minutes."
+    },
+    {
+      "type": "flow",
+      "module": "M3",
+      "title": "The function-calling round trip",
+      "rows": [
+        { "label": "Round trip", "steps": [
+          { "text": "Model", "sub": "decides, requests" },
+          { "text": "Runtime", "sub": "validates", "tone": "key" },
+          { "text": "Tool executes" },
+          { "text": "Observation" },
+          { "text": "Model continues" }
+        ] }
+      ],
+      "caption": "The model never runs code — it requests a call; the runtime decides whether and how to honour it. That separation is the first security boundary, deepened in Module 8.",
+      "notes": "Draw this as a sequence on the board before revealing: model, runtime, tool, observation, model. Stress the word 'requests' — say it twice. The whole module's authorisation argument follows from this one fact: the model asks, it does not act, so something else must decide, and that something is the runtime, never the prompt."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "title": "Function calling: a structured contract",
+      "bullets": [
+        { "lead": "Name + description + schema.", "text": "The developer describes each tool as name, description and JSON-schema parameters — the whole contract, nothing implicit." },
+        { "lead": "A request, not an execution.", "text": "The model emits a structured call request instead of answering; the runtime decides whether to honour it." },
+        { "lead": "The runtime owns execution.", "text": "The model never runs code itself — that separation is the first security boundary, deepened in Module 8." },
+        { "lead": "The schema is the prompt.", "text": "An LLM uses a tool exactly as well as its description and parameter names let it — nothing more, nothing hidden.", "kind": "key" }
+      ],
+      "notes": "Say 'the schema is the prompt' slowly — it is the module's most quoted line and the reason the next slide exists. Ask the room to name a tool they have used that had a one-word description; someone always has a war story about the model misusing it."
+    },
+    {
+      "type": "two_col",
+      "module": "M3",
+      "title": "Tool design: narrow beats mega",
+      "left": {
+        "title": "Mega-tool",
+        "subtitle": "logistics(action, **kwargs)",
+        "items": [
+          "One entry point for every operation — the model must guess the right action string.",
+          "Returns whatever the raw backend gives back — an unbounded blob.",
+          "A docstring that says 'does logistics stuff' teaches the model nothing."
+        ]
+      },
+      "right": {
+        "title": "Four narrow tools",
+        "subtitle": "track_shipment, estimate_eta, ...",
+        "items": [
+          "One tool, one job — the model routes to the right one far more reliably.",
+          "Typed, compact output: status, ETA, SLA flag — not the backend's own shape.",
+          "Docstring states what it does, when to use it, when NOT to, and the id format."
+        ]
+      },
+      "left_tone": "bad",
+      "right_tone": "good",
+      "notes": "This is mistake #1 from the module's own list, made concrete before you reach the mistakes slide. Read track_shipment's real docstring aloud from tools/tawseel.py later this module and ask the room to compare it against the left column's one-liner — the gap is the whole argument for narrow tools."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "kicker": "The protocol",
+      "title": "What MCP decouples",
+      "intro": "An open, JSON-RPC standard for exposing tools, resources and prompts — not this course's invention.",
+      "bullets": [
+        { "lead": "Server publishes, client discovers.", "text": "An MCP server exposes capabilities; the agent's MCP client discovers and calls them at runtime — no hard-coded list." },
+        { "lead": "Decoupling.", "text": "The agent depends on the protocol, not each backend's SDK. Swap the logistics backend and the tool contract is unchanged." },
+        { "lead": "Reuse and governance.", "text": "A capability is published once and consumed by many agents, with one place to authorise, rate-limit and audit." },
+        { "lead": "The spec is the authority.", "text": "The Model Context Protocol specification defines what MCP guarantees — not a tutorial's simplification of it.", "kind": "key" }
+      ],
+      "aside": { "tone": "default", "title": "MENTAL MODEL", "body": "MCP is to agent tools what a service mesh or API gateway is to microservices — a standard seam for capability, security and observability." },
+      "notes": "Name the specification explicitly — modelcontextprotocol.io — and say this course's own docs/MCP_TOPOLOGY.md traces every claim back to it, not to a blog post's simplification. If anyone has read a third-party MCP tutorial, ask what it got wrong about authorisation; most skip it entirely, which is exactly this module's complaint."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "title": "Adapting a real API into a governed tool",
+      "intro": "Real enterprise APIs are rarely LLM-ready — an adapter sits between MCP and the backend.",
+      "bullets": [
+        { "lead": "Shrink the surface.", "text": "Expose 3-4 governed tools, not the backend's 40 endpoints." },
+        { "lead": "Translate the contract.", "text": "Map messy backend responses to the compact typed output the model needs; localise Arabic status strings." },
+        { "lead": "Enforce authorisation at the server.", "text": "The MCP server checks that THIS agent may call THIS tool for THIS customer — the agent cannot grant itself access.", "kind": "key" },
+        { "lead": "Add limits and audit.", "text": "Rate limits, argument validation and a per-call audit log live in the server, not scattered across agents." }
+      ],
+      "notes": "This is the same adapter discipline as Module 1's clean architecture, applied one layer out. Preview that 'enforce authorisation at the server' is not a suggestion in this repo — it is a decorator every one of the four servers shares, coming up in the code slides."
+    },
+    {
+      "type": "flow",
+      "module": "M3",
+      "title": "Four MCP servers, one trust boundary each",
+      "rows": [
+        { "label": "Topology", "steps": [
+          { "text": "Rafeeq", "sub": "MCP client" },
+          { "text": "orders", "sub": "read-only" },
+          { "text": "logistics", "sub": "read + 1 write" },
+          { "text": "billing", "sub": "ELEVATED", "tone": "key" },
+          { "text": "customer", "sub": "ELEVATED+scoped", "tone": "bad" }
+        ] }
+      ],
+      "caption": "One server per backend, not one mega-server — a review of 'can partner_agent reach billing' becomes a one-line policy check, not an audit of a mega-server's whole surface.",
+      "notes": "This is the module's anchor diagram — come back to it before the trust-boundary table. Point out the colour shift left to right: orders is calm, billing and customer are hot. Ask the room to guess, before the next slide, which server a compromised agent could do the LEAST damage through."
+    },
+    {
+      "type": "table",
+      "module": "M3",
+      "kicker": "Classroom discussion",
+      "title": "Where should the trust boundary be?",
+      "headers": ["Server", "Data class", "Write capability", "Blast radius if compromised"],
+      "rows": [
+        ["orders_server", "Order records: status, amount", "!good none", "Over-read only — cannot change or delete an order"],
+        ["logistics_server", "Delivery events, courier locations", "!key reschedule_delivery, logged", "Can move a delivery time; never touches money or PII"],
+        ["billing_server", "Payments, refund history", "!bad issue_refund, mark_refunded", "Only server that can move real money — 500 SAR gate enforced twice"],
+        ["customer_server", "Customer PII, ticket notes", "!bad add_case_note, append-only", "Even a jailbroken agent cannot reach another customer's record"]
+      ],
+      "colW": [2.6, 3.2, 3.0, 3.29],
+      "footnote": "docs/MCP_TOPOLOGY.md and mcp_servers/README.md — this repo's real trust-boundary table, not an illustrative sketch.",
+      "notes": "This is the course's answer to 'where should the trust boundary be?' — facilitate it as a discussion, do not just read the table. Ask: if Tawseel added a fifth backend tomorrow, own server or fold into orders_server.py? What changes about the review and who signs off, either way? Eight minutes, cap it."
+    },
+    {
+      "type": "cards",
+      "module": "M3",
+      "title": "The LaDe-shaped operational tool set",
+      "cards": [
+        { "label": "1", "title": "get_delivery_status", "body": "Aliased as track_shipment — current status, ETA, SLA flag for one order." },
+        { "label": "2", "title": "get_driver_status", "body": "A courier's last known activity — internal ops only, never for a customer's 'where is my order'." },
+        { "label": "3", "title": "estimate_eta", "body": "Current estimated or actual arrival time — never used to promise a NEW delivery time." },
+        { "label": "4", "title": "get_delivery_events", "body": "The full LaDe-shaped event timeline — accepted through delivered — for disputes and complaints." },
+        { "label": "5", "title": "find_delivery_exception", "body": "Why a delivery failed: customer_unreachable, damaged, weather — before deciding next steps." },
+        { "label": "!", "title": "Honest sourcing", "tone": "key", "body": "Shaped after LaDe (~10.7M packages, 21k couriers, 5 cities) — we do not redistribute LaDe; this course ships synthetic Saudi data derived from its schema shape." }
+      ],
+      "notes": "These five names are lifted straight from LaDe's own tool surface, deliberately — say so. Read the sixth card word for word: this is a licensing and academic-integrity point as much as an engineering one, and participants should be able to defend it if asked in a review."
+    },
+    {
+      "type": "two_col",
+      "module": "M3",
+      "title": "Read tools vs write tools",
+      "left": {
+        "title": "Read — idempotent",
+        "subtitle": "track_shipment, get_invoice, ...",
+        "items": [
+          "Safe to retry automatically — Module 9's retry policy keys off IDEMPOTENT.",
+          "12 of 16 tools in the governed catalogue.",
+          "A transient failure just tries again; nothing changed by the first attempt."
+        ]
+      },
+      "right": {
+        "title": "Write — never blind-retried",
+        "subtitle": "reschedule_delivery, issue_refund, ...",
+        "items": [
+          "A second call can genuinely change state twice — never retried automatically.",
+          "issue_refund needs a STABLE idempotency_key per decision, never a fresh one per retry.",
+          "registry.py derives WRITE_TOOLS once; nothing else hand-rolls the split."
+        ]
+      },
+      "left_tone": "good",
+      "notes": "Point at 'a fresh idempotency key per retry defeats the whole protection' — that is the exact double-refund bug from Module 1, reborn at the tool layer, if a pair gets this wrong in Lab 3. Ask: what does the SAME key on a second call actually do? Answer: replays the original result, never a second payment."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "title": "Defence in depth: the 500 SAR gate, twice",
+      "intro": "SPEC's action-risk matrix makes refunds above 500 SAR human-approval-required, not autonomous — enforced in two independent places.",
+      "bullets": [
+        { "lead": "Gate one: the flow.", "text": "flows/refund_flow.py checks the amount against REFUND_LIMIT_SAR before ever calling the tool." },
+        { "lead": "Gate two: the server.", "text": "billing_server.py's issue_refund hard-blocks anything over 500 SAR unless approved=True — no prompt can set that flag for itself.", "kind": "key" },
+        { "lead": "Two must both fail.", "text": "For an unapproved large refund to go through, both the flow's check AND the server's check would have to be wrong at once." },
+        { "lead": "The tool itself enforces less.", "text": "issue_refund_impl only enforces backend invariants — cannot refund more than was paid — not the 500 SAR policy threshold." }
+      ],
+      "notes": "This previews Module 8's defence-in-depth idea one module early — flag that explicitly. Ask: why not just one gate, well-tested? Because a single control that fails silently is a single point of failure; two independent controls is what 'defence in depth' actually means in code, not just in a slide."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "kicker": "Activity, 10 minutes",
+      "title": "Curate a CRM tool surface",
+      "intro": "No lecture — groups pick 3-4 tools from a 20-endpoint CRM API list and justify what they excluded.",
+      "bullets": [
+        "get_customer(customer_id) — read, obviously in.",
+        "list_orders(customer_id) — read, obviously in.",
+        "open_case(customer_id, reason) — the one write; mark it non-idempotent.",
+        { "lead": "The excluded seventeen.", "text": "Defend, out loud, which endpoints did NOT make the cut, and why a wide surface is a liability, not a feature.", "kind": "key" }
+      ],
+      "notes": "Run this in pairs against a printed or projected 20-endpoint CRM list. The teachable moment is always the same: someone wants to include 'update_customer_email' because it exists, and the room has to argue them out of it. Ten minutes, then two groups read their exclusions aloud."
+    },
+    {
+      "type": "code",
+      "module": "M3",
+      "title": "A well-designed tool: schema is the prompt",
+      "filename": "src/rafeeq/tools/tawseel.py",
+      "code": "class ShipmentStatus(BaseModel):\n    order_id: str\n    status: Literal[\"processing\", \"in_transit\", \"out_for_delivery\",\n                     \"delivered\", \"exception\"]\n    eta: str | None\n    sla_breached: bool\n\n@tool\ndef track_shipment(order_id: str) -> dict:\n    \"\"\"Get the current delivery status of ONE order by its id.\n    Use for 'where is my order' questions. Do NOT use for refunds.\n    order_id format: TW-YYYY-NNNNN (e.g. TW-2026-88120).\"\"\"\n    # errors are RETURN VALUES, never raises\n    if not order_id.startswith(\"TW-\"):\n        return {\"error\": \"invalid_order_id_format\"}\n    record = _oms.get_order(order_id)\n    if record is None:\n        return {\"error\": \"order_not_found\"}\n    return ShipmentStatus(\n        order_id=order_id, status=record.status,\n        eta=record.eta_iso, sla_breached=record.sla_breached,\n    ).model_dump()",
+      "callouts": [
+        { "lead": "Schema is the prompt", "text": "The docstring states what it does, when to use it, when NOT to, and the exact id format — the whole contract." },
+        { "lead": "Errors are values", "text": "invalid_order_id_format / order_not_found are returned, never raised — the agent reacts instead of crashing." },
+        { "lead": "Typed, compact output", "text": "ShipmentStatus returns status/eta/SLA flag only — never the backend's own raw blob." }
+      ],
+      "notes": "This is the real file, trimmed only for the slide. Read the docstring aloud, then ask: which sentence in it would a vague tool be missing? Every hand should go up for 'do NOT use for refunds' — that line alone prevents a whole class of misrouting."
+    },
+    {
+      "type": "code",
+      "module": "M3",
+      "title": "Authorisation enforced at the server",
+      "filename": "mcp_servers/common.py",
+      "code": "def guarded_tool(mcp, *, domain: str):\n    def _decorator(func):\n        @functools.wraps(func)\n        def _wrapped(*args, **kwargs):\n            agent_id = kwargs.get(\"agent_id\")\n            customer_id = kwargs.get(\"customer_id\")\n            session_cid = kwargs.pop(\"session_customer_id\", None)\n            if not agent_id or not customer_id:\n                return {\"error\": \"missing_authz_context\"}\n            # TEACHING POINT: checked BEFORE the tool body runs at all\n            if not agent_may_access(agent_id, func.__name__, customer_id,\n                                     session_customer_id=session_cid):\n                _audit(func.__name__, domain, agent_id, customer_id,\n                       ok=False, code=\"not_authorised\")\n                return {\"error\": \"not_authorised\"}\n            result = func(*args, **kwargs)         # only now does it run\n            _audit(func.__name__, domain, agent_id, customer_id, ok=True)\n            return result\n        if MCP_AVAILABLE and mcp is not None:\n            mcp.tool()(_wrapped)\n        return _wrapped\n    return _decorator",
+      "callouts": [
+        { "lead": "Checked before, not after", "text": "agent_may_access runs BEFORE func(*args) — a denial never reaches the backend adapter." },
+        { "lead": "Every server, same guard", "text": "All four servers share this one decorator — nothing re-derives authorisation by hand." },
+        { "lead": "Audited either way", "text": "Success or denial, an audit record is written — the trust-boundary table depends on this line existing.", "kind": "key" }
+      ],
+      "notes": "Point out this is the SAME function wrapping all sixteen tools across all four servers — nobody hand-rolls authorisation per tool. Ask what happens if a tool function itself raises: the try/except one line up (elided here) catches it and still returns an error value, never crashing the server process."
+    },
+    {
+      "type": "code",
+      "module": "M3",
+      "title": "The policy table a prompt cannot argue with",
+      "filename": "src/rafeeq/security/authz.py",
+      "code": "PROHIBITED_TOOLS = frozenset({\n    \"change_customer_identity\", \"override_fraud_flag\", \"delete_order\",\n})\n\nPOLICY: dict[str, AgentPolicy] = {\n    \"customer_agent\": AgentPolicy(\n        agent_id=\"customer_agent\",\n        allowed_domains=frozenset({\"orders\", \"logistics\", \"billing\", \"customer\"}),\n        same_customer_only=True,\n        denied_tools=frozenset({\"mark_refunded\"}),\n    ),\n    \"partner_agent\": AgentPolicy(\n        agent_id=\"partner_agent\",\n        allowed_domains=frozenset({\"logistics\"}),   # narrowest grant\n        same_customer_only=True,\n        denied_tools=frozenset({\"reschedule_delivery\"}),\n    ),\n}\n\ndef agent_may_access(agent_id, tool_name, customer_id, **ctx) -> bool:\n    \"\"\"The ONE function every MCP server checks before executing —\n    never trust a prompt instruction to have already handled it.\"\"\"\n    return explain(agent_id, tool_name, customer_id, **ctx).allowed",
+      "callouts": [
+        { "lead": "Three prohibited, always", "text": "change_customer_identity, override_fraud_flag, delete_order — denied before the domain check even runs." },
+        { "lead": "Narrowest grant wins", "text": "partner_agent gets logistics only, read-only — the classroom answer to 'how narrow is narrow enough'." },
+        { "lead": "One function, every caller", "text": "Every guarded_tool call goes through agent_may_access — not a prompt, not the agent's own judgement.", "kind": "key" }
+      ],
+      "notes": "Run explain('partner_agent', 'issue_refund', 'CUST-4471') live if you can — it prints reason='domain_not_granted', not a bare False. That reason string is why this module can say authorisation is debuggable, not just enforced."
+    },
+    {
+      "type": "statement",
+      "kicker": "M3 — the one idea",
+      "statement": "A prompt is not an access-control mechanism.",
+      "statement_ar": "التعليمات في الطلب ليست آلية تحكّم في الصلاحيات.",
+      "attribution": "Module 3",
+      "notes": "Say it, pause, let it land — same rhythm as every module statement this week. This is the line that resurfaces verbatim in Module 8's guardrail work and in the capstone's DECISIONS.md; tell the room to remember the exact wording, not a paraphrase."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "title": "Six mistakes that break the tool layer",
+      "bullets": [
+        { "lead": "1. Mega-tools with a mode argument.", "text": "The model misroutes constantly; split into narrow tools.", "kind": "bad" },
+        { "lead": "2. Vague descriptions.", "text": "'Does order stuff' — the model calls the wrong tool or hallucinates arguments.", "kind": "bad" },
+        { "lead": "3. Returning raw backend payloads.", "text": "Context bloat, cost, and accidental PII exposure.", "kind": "bad" },
+        { "lead": "4. Tools that raise, not return.", "text": "The loop dies on the first bad id.", "kind": "bad" },
+        { "lead": "5. Blindly retrying write tools.", "text": "The double-refund incident, reborn at the tool layer.", "kind": "bad" },
+        { "lead": "6. Authorisation in the prompt.", "text": "'Only refund if allowed' — a crafted input talks the model past it every time.", "kind": "bad" }
+      ],
+      "notes": "Each of these is deliberately reproducible in this repo's sim branches — say so. Have the room match mistake 6 to the exact injected instruction in data/orders/INJECTION_NOTES.md before you move to the case study; it is the sharpest example of the six."
+    },
+    {
+      "type": "case",
+      "module": "M3",
+      "title": "Case study: unifying three systems behind MCP",
+      "scenario": "Tawseel's order-management (Java), logistics-tracking (Go) and CRM (SaaS) are owned by three teams with three auth models. The support-agent project needs all three, and two more agents are planned for next quarter. Each bespoke integration currently takes roughly six weeks and a security review.",
+      "challenge": "Provide governed, reusable access to all three systems such that a new agent can consume any capability in days, with one authorisation and audit model — while each backend keeps its own auth, PDPL requires per-customer access control, no backend team will rewrite its API, and Arabic status strings must be localised correctly.",
+      "solution": "Stand up one MCP server per system, each wrapping the backend behind a curated 2-4 tool surface with an adapter that trims outputs and localises. Centralise authorisation and audit in a thin MCP gateway all agents traverse. The customer agent, the ops agent and a partner agent all consume the same servers; adding an agent means granting tool scopes, not building integrations.",
+      "questions": [
+        "Why is 'one MCP server per system' better than 'one big server'?",
+        "Where does per-customer authorisation live, and why not in the agent?",
+        "How does MCP change the security-review unit from 'per integration' to 'per capability'?",
+        "What breaks if a backend team changes a response shape, and how does the adapter contain it?"
+      ],
+      "notes": "Facilitate, do not lecture — this is the module's real architecture, not a hypothetical. Push on question 4 especially: the adapter absorbing a field-name change while an unadapted tool breaks is the concrete version of 'the agent depends on the protocol, not the SDK'. Ten minutes, cap it."
+    },
+    {
+      "type": "lab",
+      "module": "M3",
+      "title": "Lab 3 — Tawseel tools over MCP",
+      "objective": "Wrap Tawseel's Order-Management, Logistics-Tracking and CRM APIs as governed MCP tools and bind them to Rafeeq's ReAct agent.",
+      "duration": "50 minutes",
+      "setup": "git checkout lab3-start; pip install mcp langchain-mcp-adapters (optional — load_tools_local() works offline)",
+      "tasks": [
+        { "lead": "10 min", "text": "Implement track_shipment_impl and get_order_details_impl as typed tools with error values; test the bad-id and not-found paths." },
+        { "lead": "15 min", "text": "Wrap them in a guarded MCP server; authorisation checked BEFORE the tool body runs, audit written after. Run one server standalone." },
+        { "lead": "10 min", "text": "Consume via load_tools_local() (offline) or MultiServerMCPClient (with mcp installed); bind to the Lab 2 ReAct agent." },
+        { "lead": "10 min", "text": "Run on 10 order-status tickets from tickets_eval.jsonl; confirm correct tool selection and a graceful recovery on an invalid order id." },
+        { "lead": "5 min", "text": "Add a write tool open_case(customer_id, reason); mark it non-idempotent. Commit: feat: tawseel enterprise tools over MCP." }
+      ],
+      "expected": "$ pytest tests/unit/test_tools.py -q\n6 passed (bad-id, not-found, happy paths)\nagent on 10 order tickets: 10/10 correct tool selection, 0 crashes\nMCP discovery: 4 tools loaded from 2 servers",
+      "commit": "feat: tawseel enterprise tools over MCP",
+      "notes": "The teachable contrast is a mega-tool vs three narrow tools — seed a logistics(action, **kwargs) version and let a pair watch the model misroute, then split it. Push hard on authorisation-at-the-server: ask 'if the prompt said never refund over 500, what stops a jailbroken prompt from refunding 5000?' Nothing — the server must enforce it."
+    },
+    {
+      "type": "metrics",
+      "module": "M3",
+      "title": "What good looks like after M3",
+      "tiles": [
+        { "value": "≥ 95%", "label": "correct tool on eval set", "tone": "good" },
+        { "value": "100%", "label": "tool errors surfaced, 0 crashes", "tone": "good" },
+        { "value": "≤ 400", "label": "tokens/tool call, median", "tone": "default" },
+        { "value": "100%", "label": "unauthorised calls rejected at server", "tone": "good" }
+      ],
+      "headers": ["Tool design", "Selection accuracy", "Crashes on bad input", "Median output tokens"],
+      "rows": [
+        ["Mega-tool logistics(action, ...)", "!bad 61%", "!bad 4/10", "1,900 (raw blob)"],
+        ["Narrow, typed MCP tools", "!good 97%", "!good 0/10", "220 (typed)"]
+      ],
+      "footnote": "From Module 3's package example benchmark table — illustrative figures, not a promise for every ticket.",
+      "notes": "Point at the 61% vs 97% row — that is the whole tool-design argument in two numbers. Ask two pairs to read out their own Lab 3 selection accuracy and crash counts and compare against the ≥95% / 0-crash targets."
+    },
+    {
+      "type": "bullets",
+      "module": "M3",
+      "title": "Five-question recap",
+      "bullets": [
+        { "lead": "Q1.", "text": "What does MCP decouple? The agent from each backend's SDK and contract." },
+        { "lead": "Q2.", "text": "Should a tool raise or return on bad input? Return an error value." },
+        { "lead": "Q3.", "text": "Where must authorisation be enforced? The tool server, never the prompt." },
+        { "lead": "Q4.", "text": "Why must write tools be marked non-idempotent? To prevent blind retries and double actions." },
+        { "lead": "Q5.", "text": "Why four servers, not one mega-server? Independent trust boundaries — review, blast radius and ownership shrink to one domain at a time.", "kind": "key" }
+      ],
+      "notes": "Cold-call style, same as Day 1's recaps. If Q5 gets a shaky answer, point back at the trust-boundary table slide and re-read the billing_server row aloud — that row alone carries most of the argument."
+    },
+    {
+      "type": "checklist",
+      "module": "M3",
+      "title": "M3 exit check before Module 4",
+      "items": [
+        { "lead": "16 governed tools", "text": "across four domains, assembled once in registry.py", "state": "yes" },
+        { "lead": "Four MCP servers", "text": "each with guarded_tool authorisation and audit", "state": "yes" },
+        { "lead": "Authz tests green", "text": "unauthorised calls rejected at the server, not the prompt", "state": "yes" },
+        { "lead": "Write tools marked", "text": "issue_refund and reschedule_delivery never blindly retried", "state": "yes" },
+        { "lead": "Memory", "text": "not started yet — that is Module 4, next", "state": "no" }
+      ],
+      "notes": "Same bridge-slide purpose as every module exit check this week. If the room is shaky on the authz row, do not let Module 4 start until someone can say out loud why agent_may_access is checked before the tool body, not after."
+    },
+    {
+      "type": "section",
+      "kicker": "Module 4 · Hours 9-10",
+      "big": "M4",
+      "title": "Memory and state management",
+      "title_ar": "الذاكرة وإدارة الحالة",
+      "subtitle": "Two memories, two jobs — and the PDPL discipline that keeps recall from becoming a data breach.",
+      "items": ["Thread scope", "Scoped recall", "Versioned KB", "PDPL erasure"],
+      "notes": "Say plainly that this module is where Module 3's server discipline meets data governance: memory is the one part of the system where 'it worked' and 'it leaked' can look identical until a customer complains. Ninety minutes, one lab — pace accordingly."
+    },
+    {
+      "type": "bullets",
+      "module": "M4",
+      "kicker": "Why this matters",
+      "title": "Memory turns a novelty into a service",
+      "intro": "Memory carries the heaviest compliance weight in the whole system — it IS personal-data storage under PDPL.",
+      "bullets": [
+        { "lead": "Recognise a returning customer.", "text": "Rafeeq recalls yesterday's open case and continues rather than restarting." },
+        { "lead": "A bank agent.", "text": "Retrieves the customer's prior disputes to avoid re-litigating a settled one." },
+        { "lead": "A policy update.", "text": "Grounds answers in a retrievable, versioned KB so a change propagates instantly, with no retraining." },
+        { "lead": "The heaviest compliance weight.", "text": "Long-term memory IS personal-data storage under PDPL — retention limits, access control, the right to erasure.", "kind": "key" }
+      ],
+      "aside": { "tone": "key", "title": "THE STAKES", "body": "An agent's memory design is simultaneously a UX feature, a correctness control, and a data-governance surface. Get scoping wrong and 'it remembered' becomes a reportable incident." },
+      "notes": "Ask the room: has anyone's org shipped a 'personalised' agent where nobody could say exactly what it stored or for how long? That gap is this module's whole argument. Four minutes, then straight into the two-memories split."
+    },
+    {
+      "type": "cards",
+      "module": "M4",
+      "title": "Two memories, two jobs",
+      "cards": [
+        { "label": "ST", "title": "Short-term (working)", "body": "Scope: one task/thread. Lifetime: the conversation. Backed by a checkpointer. Rafeeq: the current ticket's state — order id found, plan, steps taken." },
+        { "label": "LT", "title": "Long-term (durable)", "tone": "key", "body": "Scope: across sessions and customers. Lifetime: persistent. Backed by a vector store plus metadata. Rafeeq: customer history, resolutions, policy KB." },
+        { "label": "!", "title": "The classic mistake", "tone": "bad", "body": "Stuffing everything into prompt history forever (context overflow), or writing transient task state into long-term storage (noise)." }
+      ],
+      "notes": "The Module-1 state object IS short-term memory — say that connection explicitly, it is not a new concept, just a persisted one. The rule to write on the board: short-term is the working set for now; long-term is what deserves to outlive the task."
+    },
+    {
+      "type": "flow",
+      "module": "M4",
+      "title": "Checkpointing: what it buys you",
+      "rows": [
+        { "label": "Buys you", "steps": [
+          { "text": "Resume", "sub": "pause, crash, HITL" },
+          { "text": "HITL", "sub": "pause for approval", "tone": "key" },
+          { "text": "Time-travel", "sub": "replay any step" },
+          { "text": "Continuity", "sub": "same thread_id" }
+        ] }
+      ],
+      "caption": "thread_id = \"{customer_id}:{channel}:{session_date}\" — one customer, one channel, a fresh thread each day so durable facts don't quietly pile up in short-term state.",
+      "notes": "Walk each of the four boxes with a concrete Rafeeq example: resume after a crash mid-refund, pause before a 600 SAR refund for approval, replay a disputed transition for an auditor, and a customer's second message that day resolving 'it' without repeating the order id."
+    },
+    {
+      "type": "bullets",
+      "module": "M4",
+      "title": "Long-term memory: filter before you rank",
+      "intro": "Retrieval, not accumulation — embed the situation, find the few most relevant memories, inject only those.",
+      "bullets": [
+        { "lead": "Embeddings plus metadata.", "text": "Each memory stores an embedding plus customer_id, type, created_at, locale, policy_version." },
+        { "lead": "Filter FIRST, then rank.", "text": "Metadata filtering happens before similarity search runs, not after — a PDPL control, not an optimisation.", "kind": "key" },
+        { "lead": "What to store.", "text": "Durable, reusable facts — resolved-case summaries, stable preferences, policy documents. Not raw messages." },
+        { "lead": "Cap it, and prefer freshness.", "text": "Cap the retrieved items; an SLA policy from last year is worse than no policy at all." }
+      ],
+      "notes": "This is the module's central lesson — say the key bullet twice, once fast and once slow. Ask: what would 'filter after rank' actually do wrong? Answer, coming on the retrieval-pipeline slide: an over-broad top-k can leak through before it is trimmed."
+    },
+    {
+      "type": "flow",
+      "module": "M4",
+      "title": "The retrieval pipeline, filter emphasised",
+      "rows": [
+        { "label": "Pipeline", "steps": [
+          { "text": "Situation" },
+          { "text": "Embed" },
+          { "text": "Filter", "sub": "customer_id, version", "tone": "key" },
+          { "text": "Rank", "sub": "cosine similarity" },
+          { "text": "Inject top-k" }
+        ] }
+      ],
+      "caption": "Filtering AFTER ranking can let an over-broad top-k leak through before it is trimmed. Filtering FIRST makes scoping a structural guarantee, not a hope.",
+      "notes": "Draw a red X over a 'rank then filter' arrow on the board before revealing this slide's correct order. This diagram is the direct ancestor of the leakage test in Lab 4 — say that connection explicitly so the lab does not feel like a new topic."
+    },
+    {
+      "type": "table",
+      "module": "M4",
+      "title": "The stale-policy failure, made concrete",
+      "headers": ["Version", "Threshold", "Status", "If retrieved without a filter"],
+      "rows": [
+        ["2026.1 (superseded)", "!bad 300 SAR", "Kept as a fixture only", "Ranks fine on similarity — quotes the WRONG number"],
+        ["2026.2 (current)", "!good 500 SAR", "CURRENT_POLICY_VERSION", "Only surfaces if policy_version is filtered first"]
+      ],
+      "colW": [3.0, 2.5, 3.0, 3.59],
+      "footnote": "The repo genuinely ships both: data/policies/superseded/{en,ar}/refund_eligibility.md exists so this failure is reproducible against real documents, not a hand-built fixture.",
+      "notes": "This is not an illustrative round number — 300 SAR and 500 SAR are the actual thresholds in this repo's two policy versions. Run policy_context_including_superseded live if you can and let the room watch the 300 SAR chunk outrank the correct one on raw similarity."
+    },
+    {
+      "type": "bullets",
+      "module": "M4",
+      "title": "Cross-lingual retrieval is not optional",
+      "intro": "Arabic and English memories must be retrievable across languages — a customer asks in Arabic about a note written in English.",
+      "bullets": [
+        { "lead": "English-only embeddings fail.", "text": "An Arabic ticket embeds nowhere near its English-language policy chunk — retrieval returns nothing, or the wrong thing.", "kind": "bad" },
+        { "lead": "Use a multilingual embedding model.", "text": "HashingEmbeddings in labs, a real multilingual model in production — bridges the AR-EN vocabulary by construction." },
+        { "lead": "Test it explicitly.", "text": "Seed at least one customer whose Arabic memory must be retrieved by an English query — do not assume it works.", "kind": "key" },
+        { "lead": "The target.", "text": "At least 90% correct policy for AR and EN queries — measured, not assumed." }
+      ],
+      "notes": "Ask who in the room has shipped a 'multilingual' RAG system that was quietly English-only underneath. This is common enough that someone usually has a story. The fix is not a bigger model — it is testing the cross-lingual path as its own eval row, not hoping it works."
+    },
+    {
+      "type": "bullets",
+      "module": "M4",
+      "title": "PDPL erasure: forget_customer",
+      "intro": "A partial erasure is not an erasure from the customer's point of view.",
+      "bullets": [
+        { "lead": "Vectors.", "text": "Every one of a customer's embeddings, removed by a real delete on the customer_id filter — never a rank-time exclusion." },
+        { "lead": "AND checkpoints.", "text": "forget_customer also erases short-term checkpointed threads by thread_id prefix — half an erasure is not compliance.", "kind": "key" },
+        { "lead": "Verifiable.", "text": "Returns an audit-friendly summary — vectors_removed, checkpoints_removed, erased_at — not a bare None." },
+        { "lead": "The benchmark.", "text": "100% of a customer's data removed — the erasure-completeness target this module is graded against." }
+      ],
+      "notes": "Read the phrase 'half an erasure is not a real erasure from the customer's point of view' aloud — it is the module's second most quoted line after the statement slide. Ask why checkpoints need their own erasure path at all, given they are 'just' short-term: because short-term still means personal data at rest."
+    },
+    {
+      "type": "cards",
+      "module": "M4",
+      "title": "Two collections, two governance regimes",
+      "cards": [
+        { "label": "PII", "title": "rafeeq_customer_memory", "tone": "bad", "body": "Customer history and resolutions — personal data. Scoped by customer_id on every read. Erasable." },
+        { "label": "KB", "title": "tawseel_policies", "tone": "good", "body": "Policy documents — not personal data. Versioned, not customer-scoped. Never erased on a customer's request." },
+        { "label": "!", "title": "Never conflate them", "tone": "key", "body": "Separating collections is what lets governance differ: retention, access and erasure apply to one and not the other." }
+      ],
+      "notes": "Ask why the policy KB is versioned but the customer-memory collection is not — because policies change on a release cadence the whole company shares, while a customer's memory changes one erasure request at a time. Different axes, different mechanisms, on purpose."
+    },
+    {
+      "type": "two_col",
+      "module": "M4",
+      "kicker": "Activity, 10 minutes",
+      "title": "Remember or forget?",
+      "left": {
+        "title": "Long-term: durable",
+        "items": [
+          "A resolved-case summary, written deliberately.",
+          "A stable customer preference (preferred locale, delivery instructions).",
+          "A versioned policy chunk."
+        ]
+      },
+      "right": {
+        "title": "Never store",
+        "items": [
+          "An unmasked national id or full card number.",
+          "A raw message dump, verbatim.",
+          "A transient tool output that has no reuse value."
+        ]
+      },
+      "left_tone": "good",
+      "right_tone": "bad",
+      "notes": "This compresses the package's fourteen-card sort into the two clearest bins. Run it as a quick show of hands per item rather than a full sort if short on time. The hard middle case worth raising: a customer's stated delivery preference in Arabic — long-term, but still personal data that needs an owner and a retention period."
+    },
+    {
+      "type": "code",
+      "module": "M4",
+      "title": "Short-term memory: the checkpointer",
+      "filename": "src/rafeeq/memory/short_term.py",
+      "code": "def thread_id_for(customer_id: str, channel: str = \"app\",\n                   session_date: str | None = None) -> str:\n    \"\"\"\"{customer_id}:{channel}:{session_date}\" -- one customer,\n    one channel, a FRESH thread each day.\"\"\"\n    if session_date is None:\n        session_date = datetime.now(timezone.utc).date().isoformat()\n    return f\"{customer_id}:{channel}:{session_date}\"\n\ndef handle_turn(customer_msg: str, thread_id: str,\n                 customer_id: str, locale: str = \"ar\") -> str:\n    \"\"\"A LATER call with the SAME thread_id resumes the checkpointed\n    state -- no need to re-send the whole conversation as history.\"\"\"\n    agent = get_checkpointed_agent()\n    cfg = {\"configurable\": {\"thread_id\": thread_id}}  # short-term scope\n    out = agent.invoke(\n        {\"messages\": [(\"user\", customer_msg)],\n         \"customer_id\": customer_id, \"locale\": locale}, config=cfg)\n    return out[\"messages\"][-1].content",
+      "callouts": [
+        { "lead": "One id, one scope", "text": "thread_id_for builds a fresh thread per customer per channel per day — durable facts stay out of it, by construction." },
+        { "lead": "Same compiled graph", "text": "get_checkpointed_agent() is built once per process — resuming a thread_id needs the SAME compiled graph, not a new one." },
+        { "lead": "No history re-send", "text": "The checkpoint IS the history; handle_turn only ever sends the new message.", "kind": "key" }
+      ],
+      "notes": "Point at the thread_id format on the board before revealing the function — customer, channel, date, in that order. Ask: what happens if a caller passes a random UUID instead of following the convention? Nothing breaks, but the durable-vs-transient discipline is now the caller's problem, not the system's."
+    },
+    {
+      "type": "code",
+      "module": "M4",
+      "title": "Long-term memory: scoped semantic store",
+      "filename": "src/rafeeq/memory/long_term.py",
+      "code": "def recall(customer_id: str, situation: str, k: int = 3) -> list[str]:\n    \"\"\"THIS customer's memories -- filtered BEFORE ranked. Cross-\n    lingual by construction (multilingual embeddings).\"\"\"\n    store = _customer_store()\n    hits = store.similarity_search(\n        situation, k=k, filter={\"customer_id\": customer_id})\n    return [h.page_content for h in hits]\n\ndef forget_customer(customer_id: str,\n                     also_checkpoints: bool = True) -> dict:\n    \"\"\"PDPL erasure: vectors AND, by default, checkpointed threads.\n    A vectors-only 'forget' is not a real erasure.\"\"\"\n    store = _customer_store()\n    vectors_removed = store.delete(filter={\"customer_id\": customer_id})\n    checkpoints_removed = 0\n    if also_checkpoints:\n        checkpoints_removed = _erase_checkpoints_for_customer(customer_id)\n    return {\"customer_id\": customer_id,\n            \"vectors_removed\": vectors_removed,\n            \"checkpoints_removed\": checkpoints_removed,\n            \"vectors_remaining\": count_customer_memories(customer_id)}",
+      "callouts": [
+        { "lead": "Filter is the argument", "text": "filter={'customer_id': ...} is passed INTO similarity_search, never applied after — this is the leakage fix.", "kind": "key" },
+        { "lead": "Vectors and checkpoints", "text": "forget_customer touches both stores — an erasure request spans short-term and long-term memory." },
+        { "lead": "Verifiable, not silent", "text": "vectors_remaining lets the erasure test assert zero — completeness, checked, not assumed." }
+      ],
+      "notes": "This is the file the leakage test in Lab 4 is really about. Trace the filter argument with your finger from recall's call site into similarity_search — it never gets applied after the fact, anywhere in this file. That is the whole PDPL argument in one code path."
+    },
+    {
+      "type": "code",
+      "module": "M4",
+      "title": "Grounding in a versioned policy KB",
+      "filename": "src/rafeeq/memory/knowledge_base.py",
+      "code": "CURRENT_POLICY_VERSION = \"2026.2\"   # from core/config.py\n\ndef policy_context(question: str, locale: str, k: int = 3) -> str:\n    \"\"\"Retrieve the CURRENT version ONLY, filtered BEFORE ranking.\n    Refuses to surface SUPERSEDED_POLICY_VERSION under any\n    circumstance.\"\"\"\n    hits = _kb_store().similarity_search(question, k=k, filter={\n        \"policy_version\": CURRENT_POLICY_VERSION, \"locale\": locale,\n    })\n    return \"\\n\\n\".join(h.page_content for h in hits) or \"NO_POLICY_FOUND\"\n\ndef policy_context_including_superseded(question, locale, k=3):\n    \"\"\"DEMO/TEST ONLY: deliberately skips the version filter so the\n    stale-memory failure is reproducible. Never called from a normal\n    answer path.\"\"\"\n    hits = _kb_store().similarity_search_with_score(\n        question, k=k, filter={\"locale\": locale})\n    return [{\"content\": d.page_content, \"score\": s} for d, s in hits]",
+      "callouts": [
+        { "lead": "Version filtered first", "text": "policy_version == CURRENT_POLICY_VERSION is in the filter, not a post-hoc check on the top hit.", "kind": "key" },
+        { "lead": "A sentinel, not an exception", "text": "NO_POLICY_FOUND — errors as return values, applied to retrieval, exactly like Module 3's tools." },
+        { "lead": "The demo function exists on purpose", "text": "policy_context_including_superseded is how the 300 SAR failure is shown live, never how Rafeeq actually answers." }
+      ],
+      "notes": "Point out this file's two functions have opposite jobs by design: one is production, one exists only to make the failure demonstrable. Run both live on the same Arabic refund question if time allows — the contrast is the whole module's argument in thirty seconds."
+    },
+    {
+      "type": "statement",
+      "kicker": "M4 — the one idea",
+      "statement": "A filter is a privacy control, not an optimisation.",
+      "statement_ar": "التصفية آلية لحماية الخصوصية، لا مجرد تحسين للأداء.",
+      "attribution": "Module 4",
+      "notes": "Say it, pause, let it land — same rhythm as every module statement. Tie it back explicitly to M3's statement: authorisation lives in the server; scoping lives in the filter. Two different mechanisms enforcing the same idea — a boundary a prompt cannot be trusted to hold."
+    },
+    {
+      "type": "bullets",
+      "module": "M4",
+      "title": "Six mistakes that corrupt memory silently",
+      "bullets": [
+        { "lead": "1. Whole history in the prompt, forever.", "text": "Context overflow and runaway cost.", "kind": "bad" },
+        { "lead": "2. No metadata filtering.", "text": "Retrieving another customer's memory because it was semantically similar — a PDPL breach.", "kind": "bad" },
+        { "lead": "3. Raw messages and PII in the store.", "text": "No retention path, no erasure path.", "kind": "bad" },
+        { "lead": "4. Retrieving too many chunks.", "text": "Diluting the signal and paying for tokens that mislead.", "kind": "bad" },
+        { "lead": "5. Never updating or expiring memory.", "text": "The stale-policy failure — 300 SAR quoted as current when it is not.", "kind": "bad" },
+        { "lead": "6. Treating retrieval as free.", "text": "Embeddings and vector queries have latency and cost that belong in the Module 9 budget.", "kind": "bad" }
+      ],
+      "notes": "Mistake 2 is the one Lab 4's leakage test exists entirely to catch — say that directly before moving on. Ask the room to predict, before the case study reveals it, roughly how long a real cross-customer leak like this typically runs before a customer complaint surfaces it."
+    },
+    {
+      "type": "case",
+      "module": "M4",
+      "title": "Case study: the cross-customer memory leak",
+      "scenario": "A retailer's support agent used one vector store, top-5 retrieval, no metadata filter. During a refund conversation it retrieved a different customer's semantically similar note and surfaced their order number and partial address. Roughly 25,000 conversations a day; the leak surfaced only via a customer complaint two weeks in.",
+      "challenge": "Contain the leak, prove no systemic exposure, and re-architect memory so cross-customer retrieval is impossible, not merely unlikely — without taking the agent offline, while producing an erasure capability for affected customers within days, with Arabic and English notes coexisting.",
+      "solution": "Enforce customer_id metadata filtering on every read, filter before rank. Split PII-bearing customer memory from the non-personal KB into separate collections with separate governance. Add an erasure path covering vectors and checkpoints. Add a standing leakage test to CI. Stop storing raw messages — store reviewed case summaries only.",
+      "questions": [
+        "Why is metadata filtering a SECURITY control, not an optimisation?",
+        "How do you erase a customer across both short-term checkpoints and long-term vectors?",
+        "What belongs in a durable case summary vs what must never be stored?",
+        "How would you continuously prove non-leakage in production, not just at launch?"
+      ],
+      "notes": "Under PDPL this is a reportable personal-data incident, not just a bug — say that plainly before the discussion starts. Push on question 4: a leakage test that only runs once at launch is not a control, it is a snapshot; it has to live in CI, the way this repo's own suite does."
+    },
+    {
+      "type": "lab",
+      "module": "M4",
+      "title": "Lab 4 — give Rafeeq a memory",
+      "objective": "Add thread-scoped short-term memory and customer-scoped long-term memory — history plus a versioned KB — with cross-lingual retrieval and a PDPL erasure path.",
+      "duration": "50 minutes",
+      "setup": "git checkout lab4-start; RAFEEQ_VECTOR_MODE=simple by default — dependency-free, offline; Task 1 only needs langgraph-checkpoint-sqlite",
+      "tasks": [
+        { "lead": "10 min", "text": "Compile the agent with a SQLite checkpointer; prove short-term memory across two turns on the same thread_id." },
+        { "lead": "10 min", "text": "Populate long-term memory from customers_seed.json — one resolved-case summary per returning customer, tagged with customer_id." },
+        { "lead": "10 min", "text": "Implement recall, filtered by customer_id BEFORE ranking; inject the top-3 memories for a returning customer." },
+        { "lead": "10 min", "text": "Ground refund answers in the versioned KB via policy_context; test cross-lingual recall on an Arabic question." },
+        { "lead": "5 min", "text": "Implement and test forget_customer; assert the customer's vectors are gone." },
+        { "lead": "5 min", "text": "Write the leakage test: a query for customer A must never return customer B's memory. Commit: feat: short and long-term memory with scoped retrieval." }
+      ],
+      "expected": "same-thread turn 2: resolves 'it' to TW-2026-88120 without re-asking\nforget_customer(CUST-4471): 0 vectors remain\nleakage test: PASS (customer A query returns 0 of customer B's notes)",
+      "commit": "feat: short and long-term memory with scoped retrieval",
+      "notes": "The cross-customer leakage test is the module's conscience — make every pair run it and treat a failure as a simulated PDPL incident, not just a red test. Seed at least one customer whose Arabic memory must be retrieved by an English query to force the multilingual-embedding lesson."
+    },
+    {
+      "type": "metrics",
+      "module": "M4",
+      "title": "What good looks like after M4",
+      "tiles": [
+        { "value": "0", "label": "cross-customer leakage — must be impossible", "tone": "good" },
+        { "value": "≥ 90%", "label": "cross-lingual recall, AR and EN", "tone": "default" },
+        { "value": "≤ 40%", "label": "context tokens vs a naive full-history approach", "tone": "good" },
+        { "value": "100%", "label": "erasure completeness", "tone": "good" }
+      ],
+      "headers": ["Memory design", "Leakage", "Context tokens/turn", "Cross-lingual recall", "Stale answers"],
+      "rows": [
+        ["Full history in prompt", "n/a", "4,800", "n/a", "frequent"],
+        ["Vector store, no filter", "!bad present", "1,100", "90%", "frequent"],
+        ["!good Scoped + versioned (lab target)", "!good none", "900", "92%", "0"]
+      ],
+      "footnote": "From Module 4's package example benchmark table — illustrative figures, not a promise for every ticket.",
+      "notes": "Walk the leakage column first — 'present' versus 'none' is a pass/fail, not a percentage, and it is the one row in this table that must never be a spectrum. Then point at the token-count drop as the quieter but very real cost win."
+    },
+    {
+      "type": "bullets",
+      "module": "M4",
+      "title": "Five-question recap",
+      "bullets": [
+        { "lead": "Q1.", "text": "Short-term vs long-term in one line each? The working set for now vs what deserves to outlive the task." },
+        { "lead": "Q2.", "text": "Three properties checkpointing buys you? Resume, human-in-the-loop, audit and time-travel." },
+        { "lead": "Q3.", "text": "Why filter by metadata BEFORE ranking? Correctness and PDPL scoping — a structural guarantee, not a hope." },
+        { "lead": "Q4.", "text": "Why is a superseded policy worse than no policy? Confident, silent wrongness — no exception, no crash." },
+        { "lead": "Q5.", "text": "What does PDPL erasure require of a vector store? A delete path removing the customer's vectors AND checkpoints, verified to zero.", "kind": "key" }
+      ],
+      "notes": "Same cold-call format as every recap this week. If Q5 gets a partial answer that mentions only vectors, that is exactly the 'half an erasure' trap from the erasure slide — redirect back to it rather than just supplying the missing half yourself."
+    },
+    {
+      "type": "checklist",
+      "module": "M4",
+      "title": "M4 exit check before Day 2 closes",
+      "items": [
+        { "lead": "Checkpointed threads", "text": "same-thread turn 2 resolves 'it' without re-asking", "state": "yes" },
+        { "lead": "Scoped recall", "text": "customer_id filtered before ranking, leakage test green", "state": "yes" },
+        { "lead": "Versioned KB", "text": "policy_context returns 500 SAR, never 300 SAR", "state": "yes" },
+        { "lead": "forget_customer", "text": "vectors AND checkpoints erased, verified to zero", "state": "yes" },
+        { "lead": "Multi-agent orchestration", "text": "not started yet — that is Module 5, tomorrow", "state": "no" }
+      ],
+      "notes": "Same bridge-slide purpose as every exit check this week. If more than a couple of pairs are red on the leakage-test row, that is what tomorrow's floater time is for — do not let Day 3 open on a memory system nobody trusts."
+    },
+    {
+      "type": "cards",
+      "kicker": "Reported by AWS",
+      "title": "DTDC's DIVA: the closest real-world analogue",
+      "cards": [
+        { "label": "93%", "title": "Response accuracy", "tone": "good", "body": "AWS reports this response-accuracy figure for DTDC's DIVA logistics agent — a reported figure, not our measurement." },
+        { "label": "-51%", "title": "Support query burden", "tone": "good", "body": "AWS reports a 51.4% reduction in customer-support query burden after DIVA's rollout." },
+        { "label": "?", "title": "Classroom question", "tone": "key", "body": "How would you redesign DIVA using MCP and separate Orders, Logistics and Customer Care trust domains?" }
+      ],
+      "notes": "Say 'AWS reports' out loud before either number — never present this as Rafeeq's own measurement. DIVA is the nearest real deployed system to what the class just built; spend three minutes on the third card as a discussion, not a reveal, before moving to the day close."
+    },
+    {
+      "type": "closing",
+      "title": "Day 2 in one line",
+      "title_ar": "اليوم الثاني في جملة واحدة",
+      "points": [
+        "Tools are an API-design problem for a confused reader — narrow, typed, errors as values, the docstring IS the prompt.",
+        "MCP decouples the agent from the backend; four servers make trust boundaries a place you can point at, not a hope.",
+        "A prompt is not an access-control mechanism — authorisation lives at the server, in code, every time.",
+        "Short-term memory resumes a conversation; long-term memory is data governance — a filter is a privacy control."
+      ],
+      "notes": "Read the four points slowly — this is the slide people photograph on the way out. Tie back to today's two case studies: both were fixed by where a check lives, not by a smarter prompt. Preview Module 5 in one sentence: tomorrow the same tools and memory get a second agent to share them with."
+    },
+    {
+      "type": "checklist",
+      "title": "Exit ticket: before you leave today",
+      "items": [
+        { "lead": "Lab 3 committed", "text": "governed tools across four MCP servers, authz enforced at the server", "state": "yes" },
+        { "lead": "Lab 4 committed", "text": "checkpointed threads, scoped recall, versioned KB, leakage test green", "state": "yes" },
+        { "lead": "Can you say it back?", "text": "why MCP decouples, where authorisation lives, why filter-before-rank matters", "state": "yes" },
+        { "lead": "Pick a boundary", "text": "for your own team's riskiest integration, and defend where you'd split the MCP servers", "state": "yes" },
+        { "lead": "Not yet", "text": "multi-agent orchestration and supervision — that is Day 3", "state": "no" }
+      ],
+      "notes": "This is the last slide of the day — do not skip it for time. If more than a couple of pairs are red on the leakage-test or authz rows, that is exactly what tomorrow's floater time is for, not a reason to move on regardless."
+    }
+  ]
+}

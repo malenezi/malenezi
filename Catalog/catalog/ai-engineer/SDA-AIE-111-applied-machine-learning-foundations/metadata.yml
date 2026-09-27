@@ -1,0 +1,74 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-111
+course_title: Applied Machine Learning Foundations
+course_title_ar: أسس تعلم الآلة التطبيقي
+aliases: []
+domain: ai-engineering
+learning_path: ai-engineer
+level: Practitioner
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Developers, engineers, analysts entering AI engineering; cross-listed to Data Scientist
+  track
+prerequisites: SDA-FND-103; SDA-FND-104 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-05
+next_review: 2026-12-27
+tools:
+- scikit-learn
+- pandas
+- Jupyter
+- XGBoost
+- Matplotlib
+technologies: []
+keywords:
+- Machine Learning
+- Data Engineering
+- Python
+description: A hands-on foundation in supervised and unsupervised learning that teaches the complete modelling
+  workflow. Participants frame business problems as ML tasks, train and tune models with scikit-learn,
+  and evaluate them with the right metrics. The module ends with an end-to-end modelling project on real
+  data.
+description_ar: أساس تطبيقي في التعلم الخاضع وغير الخاضع للإشراف يغطي سير عمل النمذجة الكامل. يصوغ المشاركون
+  المشكلات كمهام تعلم آلة ويدربون النماذج ويضبطونها باستخدام scikit-learn ويقيّمونها بالمقاييس المناسبة،
+  وتختتم الوحدة بمشروع نمذجة متكامل على بيانات حقيقية.
+learning_outcomes:
+- Frame business problems as supervised or unsupervised learning tasks
+- Implement the end-to-end ML workflow from data splitting to model selection
+- Develop classification and regression models using scikit-learn pipelines
+- Apply feature engineering, scaling, and encoding techniques appropriately
+- Evaluate models using suitable metrics, cross-validation, and error analysis
+- Diagnose and mitigate overfitting, underfitting, and data leakage
+- Optimize model performance through systematic hyperparameter tuning
+topics:
+- ML problem framing and workflow design
+- 'Supervised learning: regression and classification'
+- Feature engineering and preprocessing pipelines
+- Model evaluation, metrics, and cross-validation
+- 'Tree ensembles: random forests and gradient boosting'
+- 'Unsupervised learning: clustering and dimensionality reduction'
+- Hyperparameter tuning and model selection
+- End-to-end modelling project
+assessment: Daily labs; end-to-end ML project
+next_modules: SDA-AIE-112
+stackability: Core ML badge; required for all Specialist AI Engineer modules and DSC-211.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Applied Machine Learning Foundations
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-111 - Applied Machine Learning Foundations.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''أساسيات تعلم الآلة التطبيقية'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

@@ -1,0 +1,323 @@
+# ============================================================================
+# Dalil Corpus — Layer A: real, publicly published SDAIA / NDMO documents
+# SDA-AIE-214 · Building Retrieval-Augmented Generation Systems
+# ----------------------------------------------------------------------------
+# WHY THIS FILE EXISTS
+#   The course corpus is no longer invented. Layer A is the authoritative,
+#   citable, publicly available Saudi data & AI regulatory corpus. Participants
+#   build Dalil over documents their own organisations are legally bound by,
+#   so every retrieval failure they debug is a failure that matters at work.
+#
+# HOW TO USE
+#   1. python corpus/fetch_corpus.py --manifest corpus/manifest/sdaia_layer_a.yaml
+#   2. python corpus/validate_corpus.py            # coverage, hashes, language mix
+#   3. Commit corpus/LOCK.json (hashes + resolved URLs + fetch date) to the
+#      course repo so every cohort indexes byte-identical documents.
+#
+# URL STABILITY WARNING (read before every delivery)
+#   SDAIA reorganises its publication pages. Every entry below carries
+#   `url_candidates` (most-likely canonical locations) and `discovery`
+#   (the index page to scrape if all candidates 404). fetch_corpus.py tries
+#   candidates in order, then falls back to discovery, then reports the entry
+#   as UNRESOLVED and continues — a missing document never blocks a cohort,
+#   because Layer B (synthetic) guarantees a runnable corpus floor.
+#   T-1 week task for the instructor: run fetch + validate and refresh LOCK.json.
+#
+# LICENCE / ATTRIBUTION
+#   These are public government publications redistributed for training use.
+#   Do not re-host. Ship LOCK.json (hashes + URLs), not the PDFs, in any public
+#   repository. See corpus/LICENSING.md.
+# ============================================================================
+
+manifest_version: "1.0"
+corpus_id: dalil_layer_a
+language_policy: prefer_both        # fetch AR and EN editions when both exist
+discovery_pages:
+  - https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx
+  - https://sdaia.gov.sa/ar/SDAIA/about/Pages/RegulationsAndPolicies.aspx
+  - https://sdaia.gov.sa/en/Sectors/Pages/AboutNDMO.aspx
+  - https://sdaia.gov.sa/en/SDAIA/about/Pages/PoliciesLegislations.aspx
+
+documents:
+
+  # ---------------------------------------------------------------- law tier
+  - id: pdpl-law
+    title_en: Personal Data Protection Law
+    title_ar: نظام حماية البيانات الشخصية
+    authority: SDAIA
+    doc_class: law
+    instrument: Royal Decree M/19 (1443H), amended by Royal Decree M/148 (1444H)
+    effective_note: "In force 14 Sep 2023; enforcement grace period ended 14 Sep 2024"
+    department: legal
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/Personal%20Data%20English%20V2-23April2023-%20Reviewed-.pdf
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/PDPL.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [F4-identifier-queries, cross-reference-to-regulation, bilingual-parallel-text]
+    golden_set_share: 0.18
+
+  - id: pdpl-implementing-regulation
+    title_en: Implementing Regulation of the Personal Data Protection Law
+    title_ar: اللائحة التنفيذية لنظام حماية البيانات الشخصية
+    authority: SDAIA
+    doc_class: regulation
+    parent: pdpl-law
+    department: legal
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/ImplementingRegulation.pdf
+      - https://sdaia.gov.sa/ar/SDAIA/about/Documents/ImplementingRegulation-ar.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [multi-hop-law-to-regulation, article-level-citation, F5-precision]
+    golden_set_share: 0.16
+    notes: >
+      The single highest-value document in the corpus. Multi-hop questions are
+      built law → regulation ("what does the Law require, and what does the
+      Regulation say that means in practice?"). Lab 7's decomposition path is
+      demonstrated on exactly this pair.
+
+  - id: pdpl-data-transfer-regulation
+    title_en: Regulation on Personal Data Transfer outside the Kingdom
+    title_ar: ضوابط نقل البيانات الشخصية خارج المملكة
+    authority: SDAIA
+    doc_class: regulation
+    parent: pdpl-law
+    department: legal
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/DataTransferRegulations.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [conditional-entitlement, multi-hop, risk-assessment-crossref]
+    golden_set_share: 0.08
+
+  - id: pdpl-risk-assessment-guideline
+    title_en: Guideline for Transfer Risk Assessment
+    title_ar: دليل تقييم مخاطر نقل البيانات الشخصية خارج المملكة
+    authority: SDAIA
+    doc_class: guideline
+    parent: pdpl-data-transfer-regulation
+    department: risk
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/RiskAssessmentGuideline.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [multi-hop-three-documents, procedure-extraction]
+    golden_set_share: 0.05
+
+  # -------------------------------------------------------- national data mgmt
+  - id: data-classification-policy
+    title_en: Data Classification Policy
+    title_ar: سياسة تصنيف البيانات
+    authority: NDMO / SDAIA
+    doc_class: policy
+    department: data_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/Data%20Classification%20Policy.pdf
+    discovery: AboutNDMO
+    teaches: [F1-tables, four-level-taxonomy, access-control-scenarios]
+    golden_set_share: 0.10
+    notes: >
+      Contains the classification-level table (Top Secret / Secret / Restricted /
+      Public) — the canonical F1 "table that nobody could retrieve" case now
+      lands on a real document. Do not let the loader flatten it.
+
+  - id: data-sharing-policy
+    title_en: Data Sharing Policy
+    title_ar: سياسة مشاركة البيانات
+    authority: NDMO / SDAIA
+    doc_class: policy
+    department: data_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/Data%20Sharing%20Policy.pdf
+    discovery: AboutNDMO
+    teaches: [conditional-entitlement, classification-crossref]
+    golden_set_share: 0.07
+
+  - id: open-data-policy
+    title_en: Open Data Policy
+    title_ar: سياسة البيانات المفتوحة
+    authority: NDMO / SDAIA
+    doc_class: policy
+    department: data_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/Open%20Data%20Policy.pdf
+    discovery: AboutNDMO
+    teaches: [near-duplicate-confusion-with-sharing-policy, F5-precision]
+    golden_set_share: 0.05
+    notes: >
+      Deliberately retained because it is *semantically adjacent* to the Data
+      Sharing Policy. Dense-only retrieval confuses the two; this pair is the
+      cleanest live demonstration of why reranking earns its latency.
+
+  - id: data-monetization-policy
+    title_en: Data Monetization Policy
+    title_ar: سياسة إتاحة البيانات مقابل مقابل مالي
+    authority: NDMO / SDAIA
+    doc_class: policy
+    department: data_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/Data%20Monetization%20Policy.pdf
+    discovery: AboutNDMO
+    teaches: [low-frequency-topic-recall]
+    golden_set_share: 0.04
+
+  - id: data-anonymization-guideline
+    title_en: Personal Data Anonymization/De-identification Guideline
+    title_ar: دليل إخفاء هوية البيانات الشخصية
+    authority: SDAIA
+    doc_class: guideline
+    department: data_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/AnonymizationGuideline.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [technique-comparison-tables, jargon-vocabulary-gap]
+    golden_set_share: 0.05
+
+  - id: data-destruction-guideline
+    title_en: Personal Data Destruction Guideline
+    title_ar: دليل إتلاف البيانات الشخصية
+    authority: SDAIA
+    doc_class: guideline
+    department: data_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/DestructionGuideline.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [retention-period-arithmetic, procedure-extraction]
+    golden_set_share: 0.04
+
+  # ------------------------------------------------------------------ AI tier
+  - id: ai-ethics-principles
+    title_en: AI Ethics Principles
+    title_ar: مبادئ أخلاقيات الذكاء الاصطناعي
+    authority: SDAIA
+    doc_class: principles
+    department: ai_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/ai-principles.pdf
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/AI%20Ethics%20Principles.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [enumeration-questions, principle-to-control-mapping]
+    golden_set_share: 0.06
+
+  - id: genai-guideline-government
+    title_en: Generative AI Guidelines for Government
+    title_ar: أدلة الذكاء الاصطناعي التوليدي للجهات الحكومية
+    authority: SDAIA
+    doc_class: guideline
+    department: ai_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/GenAI-Government.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [self-referential-rag-governance, classification-crossref]
+    golden_set_share: 0.06
+    notes: >
+      Pedagogically delicious: participants build a RAG system whose corpus
+      contains the rules governing the RAG system they are building. Used in
+      the Module 5 access-control discussion and the capstone governance memo.
+
+  - id: genai-guideline-public
+    title_en: Generative AI Guidelines for the Public
+    title_ar: أدلة الذكاء الاصطناعي التوليدي للعموم
+    authority: SDAIA
+    doc_class: guideline
+    department: ai_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/GenAI-Public.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [near-duplicate-confusion-with-government-edition]
+    golden_set_share: 0.03
+    notes: >
+      Second half of the second near-duplicate pair. Questions must specify
+      *which* audience edition — a superb query-ambiguity teaching case.
+
+  - id: ai-adoption-framework
+    title_en: AI Adoption Framework
+    title_ar: إطار تبني الذكاء الاصطناعي
+    authority: SDAIA
+    doc_class: framework
+    department: ai_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/AIAdoptionFramework.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [maturity-model-tables, long-document-chunking]
+    golden_set_share: 0.05
+
+  - id: deepfake-guideline
+    title_en: Deepfakes Guidelines
+    title_ar: أدلة التزييف العميق
+    authority: SDAIA
+    doc_class: guideline
+    department: ai_governance
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/DeepfakeGuideline.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [out-of-scope-boundary-questions]
+    golden_set_share: 0.03
+
+  # --------------------------------------------------------- workforce tier
+  - id: national-occupational-standards-data-ai
+    title_en: National Occupational Standards Framework for Data and AI
+    title_ar: الإطار الوطني للمعايير المهنية للبيانات والذكاء الاصطناعي
+    authority: SDAIA
+    doc_class: framework
+    department: capacity_building
+    access_tier: public
+    lifecycle: current
+    languages: [ar, en]
+    url_candidates:
+      - https://sdaia.gov.sa/en/SDAIA/about/Documents/OccupationalStandards.pdf
+    discovery: RegulationsAndPolicies
+    teaches: [role-taxonomy-tables, long-enumeration-retrieval]
+    golden_set_share: 0.03
+
+# ----------------------------------------------------------------------------
+# Coverage targets the validator enforces (validate_corpus.py --strict)
+# ----------------------------------------------------------------------------
+targets:
+  min_documents_resolved: 10          # below this, fall back to Layer B only
+  min_bilingual_pairs: 6              # AR+EN editions of the same document
+  min_total_pages: 300
+  require_at_least_one_table_doc: true
+  require_at_least_one_near_duplicate_pair: true

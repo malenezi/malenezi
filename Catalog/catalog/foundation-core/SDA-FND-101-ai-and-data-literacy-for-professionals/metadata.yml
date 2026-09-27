@@ -1,0 +1,70 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-FND-101
+course_title: AI and Data Literacy for Professionals
+course_title_ar: الإلمام بالذكاء الاصطناعي والبيانات للمهنيين
+aliases: []
+domain: foundations
+learning_path: foundation-core
+level: Practitioner
+duration:
+  days: 2
+  hours: 10
+delivery_mode: Remote (live online)
+target_audience: Business professionals, decision-makers, fresh graduates, non-technical staff
+prerequisites: None — open entry point
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-06
+next_review: 2026-12-27
+tools:
+- No-code AI tools
+- BI dashboards
+- AI assistants
+technologies: []
+keywords:
+- LLM
+- Machine Learning
+- Data Visualization
+- Data Literacy
+description: A shared on-ramp that builds a common language across AI, machine learning, generative AI,
+  and the data value chain. Participants learn how modern AI systems create value, where they fail, and
+  how data-driven decisions are made in organisations. The module anchors all subsequent pathways and
+  requires no technical background.
+description_ar: بوابة مشتركة تبني لغة موحدة حول الذكاء الاصطناعي وتعلم الآلة والذكاء الاصطناعي التوليدي
+  وسلسلة قيمة البيانات. يتعرف المشاركون على كيفية تحقيق أنظمة الذكاء الاصطناعي للقيمة ومواطن إخفاقها وكيفية
+  اتخاذ القرارات المبنية على البيانات، دون الحاجة لخلفية تقنية.
+learning_outcomes:
+- Explain core AI, ML, and generative-AI concepts and their business applications in plain language
+- Differentiate between rule-based systems, machine learning, deep learning, and generative AI
+- Analyze the data value chain from collection to decision within an organisational context
+- Evaluate AI use cases for feasibility, value, and risk using a structured framework
+- Identify common failure modes, biases, and limitations of AI systems
+- Interpret basic data visualisations and model outputs to support decisions
+topics:
+- The AI, ML, and generative-AI landscape and terminology
+- 'How machine learning works: data, models, predictions'
+- The data value chain and data-driven decision-making
+- Generative AI and large language models in the workplace
+- AI opportunity and risk assessment frameworks
+- National AI strategy context (NSDAI) and workforce roles
+- 'Hands-on: exploring AI tools and reading model outputs'
+assessment: Quizzes; use-case evaluation exercise
+next_modules: SDA-FND-102 / SDA-FND-103
+stackability: Entry badge; counts toward all certificates and both role tracks.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Foundation Core Track/AI and Data Literacy for Professionals
+  platform_workbook: Program Files (AthkaX)/Foundation Core/SDA-FND-101 - AI and Data Literacy for Professionals.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''الوعي بالذكاء الاصطناعي والبيانات للمحترفين'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

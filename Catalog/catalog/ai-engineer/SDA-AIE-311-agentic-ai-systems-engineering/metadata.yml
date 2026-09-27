@@ -1,0 +1,92 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-311
+course_title: Agentic AI Systems Engineering
+course_title_ar: هندسة أنظمة الذكاء الاصطناعي الوكيلي
+aliases:
+- Advanced Agentic AI Systems Engineering
+domain: generative-ai
+learning_path: ai-engineer
+level: Expert
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Senior AI engineers, AI architects, technical leads
+prerequisites: SDA-AIE-214
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-11
+next_review: 2026-12-27
+tools:
+- LangGraph
+- MCP
+- vector DBs
+- agent-tracing platforms (LangSmith)
+- guardrails frameworks
+technologies:
+- Model Context Protocol (MCP)
+- Vector databases
+- LangSmith (agent tracing)
+keywords:
+- Agentic AI
+- RAG
+- LLM
+- Prompt Engineering
+- LLMOps
+- AI Security
+- Optimization
+- Architecture
+description: An expert module on designing, building, securing, and operating enterprise agentic systems
+  that plan, reason, use tools, and manage memory across multi-step workflows. Participants implement
+  ReAct, Plan-and-Execute, and Reflection patterns, orchestrate multi-agent architectures, integrate tools
+  via the Model Context Protocol, and harden agents with guardrails and red-team testing. The module culminates
+  in deploying a production-grade agentic system in a simulated enterprise environment.
+description_ar: وحدة خبراء في تصميم وبناء وتأمين وتشغيل أنظمة وكيلية مؤسسية قادرة على التخطيط والاستدلال
+  واستخدام الأدوات وإدارة الذاكرة عبر سير عمل متعدد الخطوات. يطبق المشاركون أنماط ReAct وPlan-and-Execute
+  وReflection وينسقون معماريات متعددة الوكلاء ويدمجون الأدوات عبر بروتوكول MCP ويحصّنون الوكلاء بالحواجز
+  الوقائية واختبارات الفريق الأحمر، وتُختتم الوحدة بنشر نظام وكيلي بمستوى إنتاجي في بيئة مؤسسية محاكاة.
+learning_outcomes:
+- Design agentic architectures with planning, reasoning, tool use, and memory
+- Implement ReAct, Plan-and-Execute, and Reflection patterns in working agents
+- Develop multi-agent systems with orchestration, delegation, and task routing
+- Integrate tools and enterprise APIs using the Model Context Protocol
+- Design state management and short/long-term memory with vector stores
+- Implement automated guardrails and red-team agents against attacks
+- Optimize agent performance, cost, and reliability with tracing and monitoring
+- Validate a deployed agentic system in a simulated enterprise environment
+topics:
+- Agentic system architectures and components
+- 'Planning and reasoning patterns: ReAct, Plan-and-Execute, Reflection'
+- Tool use, function calling, and MCP integration
+- Memory and state management with vector databases
+- Single-agent versus multi-agent architectures
+- Hierarchical delegation and agent orchestration
+- Flow engineering over prompt engineering
+- Guardrails, security, and adversarial testing
+- Observability, cost optimisation, and monitoring
+- 'Capstone: enterprise agentic system deployment'
+assessment: Labs; security report; deployed agent capstone
+next_modules: SDA-AIE-313 / SDA-AIE-390
+stackability: Flagship Expert badge; anchors the GenAI Engineering specialisation. Derived from the existing
+  Advanced Agentic AI Systems programme.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Advanced Agentic AI Systems Engineering
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-311 - Advanced Agentic AI Systems
+    Engineering.xlsx
+known_issues:
+- '[Naming] AthkaX workbook title: ''Advanced Agentic AI Systems Engineering'''
+- '[Naming] Drive folder name: ''Advanced Agentic AI Systems Engineering'''
+- '[Naming] Learning Paths Catalog AR title: ''هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة'''
+- '[Naming] Learning Paths Catalog EN title: ''Advanced Agentic AI Systems Engineering'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

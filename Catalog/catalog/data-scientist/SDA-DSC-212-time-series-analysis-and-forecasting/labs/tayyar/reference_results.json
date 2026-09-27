@@ -1,0 +1,282 @@
+{
+  "m1": {
+    "rows_raw": 26235,
+    "rows_clean": 26280,
+    "missing": 71,
+    "longest_gap_h": 5,
+    "imputed": 66,
+    "transform": {
+      "level_swing_corr": 0.937,
+      "decision": "multiplicative",
+      "transform": "log"
+    },
+    "strength": {
+      "seasonal_24": 0.972,
+      "seasonal_168": 0.61,
+      "trend": 0.969
+    },
+    "yoy_growth_pct": [
+      3.37,
+      5.54
+    ]
+  },
+  "m2": {
+    "level": {
+      "adf_stat": -3.103,
+      "adf_p": 0.0263,
+      "adf_says_stationary": true,
+      "kpss_stat": 5.258,
+      "kpss_p": 0.01,
+      "kpss_says_stationary": "False",
+      "verdict": "difference-stationary",
+      "action": "ADF stationary, KPSS not: a deterministic/level shift remains \u2014 difference once and re-test."
+    },
+    "chosen_d": 0,
+    "chosen_D": 1,
+    "final_verdict": "stationary",
+    "trace": [
+      {
+        "d": 0,
+        "D": 0,
+        "adf_p": 0.0263,
+        "kpss_p": 0.01,
+        "verdict": "difference-stationary"
+      },
+      {
+        "d": 0,
+        "D": 1,
+        "adf_p": 0.0,
+        "kpss_p": 0.1,
+        "verdict": "stationary"
+      }
+    ],
+    "suggested_orders": {
+      "p": 5,
+      "q": 5,
+      "P": 1,
+      "Q": 1,
+      "m": 24
+    }
+  },
+  "m3": {
+    "ets": {
+      "MAE": 868.5,
+      "RMSE": 1036.5,
+      "MAPE_%": 2.682,
+      "sMAPE_%": 2.633,
+      "WAPE_%": 2.668,
+      "bias": 782.4,
+      "MASE": 0.4335
+    },
+    "sarimax": {
+      "MAE": 666.2,
+      "RMSE": 826.4,
+      "MAPE_%": 2.05,
+      "sMAPE_%": 2.048,
+      "WAPE_%": 2.047,
+      "bias": 36.7,
+      "MASE": 0.3325
+    },
+    "sarima_no_exog": {
+      "MAE": 686.0,
+      "RMSE": 843.6,
+      "MAPE_%": 2.14,
+      "sMAPE_%": 2.139,
+      "WAPE_%": 2.107,
+      "bias": 142.3,
+      "MASE": 0.3424
+    },
+    "seasonal_naive": {
+      "MAE": 2609.0,
+      "RMSE": 3040.1,
+      "MAPE_%": 8.115,
+      "sMAPE_%": 7.696,
+      "WAPE_%": 8.015,
+      "bias": 2534.0,
+      "MASE": 1.3021
+    },
+    "sarimax_coverage_90": 0.964,
+    "sarimax_diagnostics": {
+      "ljung_box_p": 0.0,
+      "residual_autocorrelation": true,
+      "verdict": "UNDER-SPECIFIED: structure remains in residuals",
+      "jarque_bera_p": 0.0,
+      "aic": 11443.8,
+      "bic": 11493.6
+    },
+    "ets_aic": 10532.0
+  },
+  "m4": {
+    "n_features": 44,
+    "train_rows": 23707,
+    "importance_top10": [
+      {
+        "feature": "demand_mw_lag3",
+        "gain": 61994.58902430534
+      },
+      {
+        "feature": "d_cos1",
+        "gain": 53113.80726571878
+      },
+      {
+        "feature": "demand_mw_rmean168",
+        "gain": 47585.7689533929
+      },
+      {
+        "feature": "hour",
+        "gain": 45132.995873729385
+      },
+      {
+        "feature": "demand_mw_rmean24",
+        "gain": 40502.30856743455
+      },
+      {
+        "feature": "d_sin1",
+        "gain": 30830.466981589794
+      },
+      {
+        "feature": "demand_mw_rmin24",
+        "gain": 30416.223244259756
+      },
+      {
+        "feature": "demand_mw_lag168",
+        "gain": 28550.951815873384
+      },
+      {
+        "feature": "demand_mw_lag1",
+        "gain": 27667.542331864435
+      },
+      {
+        "feature": "demand_mw_rstd168",
+        "gain": 26493.47237809499
+      }
+    ],
+    "importance_by_family": [
+      {
+        "family": "rolling",
+        "share_%": 33.1
+      },
+      {
+        "family": "lag",
+        "share_%": 29.0
+      },
+      {
+        "family": "fourier",
+        "share_%": 25.8
+      },
+      {
+        "family": "calendar",
+        "share_%": 7.3
+      },
+      {
+        "family": "weather",
+        "share_%": 4.9
+      }
+    ]
+  },
+  "m5": {
+    "coverage_uncalibrated": 0.8226,
+    "coverage_calibrated": 0.9016,
+    "coverage_before_on_test": 0.7862,
+    "mean_width_before": 2417.8,
+    "mean_width_after": 3234.8,
+    "qhat": 408.5,
+    "pinball_q05": 95.2,
+    "pinball_q50": 368.4,
+    "pinball_q95": 120.9,
+    "winkler": 4322.9,
+    "conditional": [
+      {
+        "group": "ALL",
+        "n": 1464,
+        "coverage": 0.9016,
+        "mean_width": 3234.8
+      },
+      {
+        "group": "12:00-18:00 (peak)",
+        "n": 427,
+        "coverage": 0.8454,
+        "mean_width": 3863.4
+      },
+      {
+        "group": "other hours",
+        "n": 1037,
+        "coverage": 0.9248,
+        "mean_width": 2975.9
+      }
+    ],
+    "conditional_before": [
+      {
+        "group": "ALL",
+        "n": 1464,
+        "coverage": 0.7862,
+        "mean_width": 2417.8
+      },
+      {
+        "group": "12:00-18:00 (peak)",
+        "n": 427,
+        "coverage": 0.7377,
+        "mean_width": 3046.4
+      },
+      {
+        "group": "other hours",
+        "n": 1037,
+        "coverage": 0.8062,
+        "mean_width": 2158.9
+      }
+    ]
+  },
+  "m6": {
+    "n_origins": 60,
+    "summary": [
+      {
+        "model": "LightGBM (direct)",
+        "MAE": 719.075,
+        "RMSE": 904.303,
+        "MAPE_%": 2.328,
+        "WAPE_%": 2.385,
+        "MASE": 0.445,
+        "bias": -14.06
+      },
+      {
+        "model": "LightGBM (quantile q50)",
+        "MAE": 735.373,
+        "RMSE": 920.578,
+        "MAPE_%": 2.381,
+        "WAPE_%": 2.44,
+        "MASE": 0.455,
+        "bias": 5.34
+      },
+      {
+        "model": "Seasonal-naive",
+        "MAE": 1244.025,
+        "RMSE": 1464.803,
+        "MAPE_%": 4.117,
+        "WAPE_%": 4.189,
+        "MASE": 0.77,
+        "bias": 74.795
+      }
+    ],
+    "dm_lgbm_vs_naive": {
+      "dm_stat": -6.75,
+      "p_value": 0.0,
+      "mean_loss_diff": -524.951,
+      "n": 1440,
+      "significant_at_5pct": true,
+      "verdict": "model 1 significantly better"
+    },
+    "dm_lgbm_vs_q50": {
+      "dm_stat": -1.901,
+      "p_value": 0.0575,
+      "mean_loss_diff": -16.3019,
+      "n": 1440,
+      "significant_at_5pct": false,
+      "verdict": "no significant difference \u2014 prefer the simpler model"
+    }
+  },
+  "leakage": {
+    "shuffled_split_centred_window_mape_pct": 1.205,
+    "time_split_1step_mape_pct": 1.395,
+    "honest_day_ahead_mape_pct": 2.328
+  }
+}

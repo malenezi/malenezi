@@ -1,0 +1,38 @@
+/* SDAIA Academy Trainer Portal — theme overrides.
+   Colours are neutral placeholders until the official brand palette is added (shared/branding). */
+:root {
+  --md-primary-fg-color: #0b3b5b;
+  --md-primary-fg-color--light: #1f5f86;
+  --md-primary-fg-color--dark: #072a41;
+  --md-accent-fg-color: #1a9e8f;
+  --hub-muted: #5f6b76;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #12507a;
+  --md-accent-fg-color: #3cc4b3;
+  --hub-muted: #a9b4bf;
+}
+/* Arabic text blocks */
+[dir="rtl"] { text-align: right; font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Geeza Pro", sans-serif; }
+p[dir="rtl"] strong { font-size: 1.1em; }
+
+/* Catalog filter bar */
+.hub-filter { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 1rem 0; }
+.hub-filter input, .hub-filter select {
+  font: inherit; padding: .45rem .6rem; border-radius: .3rem;
+  border: 1px solid var(--md-default-fg-color--lighter); background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.hub-filter input { flex: 1 1 18rem; min-width: 12rem; }
+.hub-count { color: var(--hub-muted); font-size: .8rem; }
+.hub-kw { display: none; }
+table th.hub-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+table th.hub-sortable::after { content: " ⇅"; opacity: .35; }
+table th.hub-sort-asc::after { content: " ▲"; opacity: .8; }
+table th.hub-sort-desc::after { content: " ▼"; opacity: .8; }
+#catalog-table table { font-size: .72rem; }
+#catalog-table td:last-child, #catalog-table th:last-child { display: none; }
+
+/* Course quick-access line */
+.md-typeset p strong a { text-decoration: none; }
+.md-typeset del { opacity: .45; text-decoration: none; }

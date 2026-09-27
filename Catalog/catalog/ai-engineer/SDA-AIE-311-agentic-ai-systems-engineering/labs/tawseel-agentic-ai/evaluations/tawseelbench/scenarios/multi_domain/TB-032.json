@@ -1,0 +1,68 @@
+{
+  "id": "TB-032",
+  "title": "Business-tier cancellation refund (12h SLA context)",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "orders",
+    "billing",
+    "customer"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain",
+    "tier_context"
+  ],
+  "customer_request": {
+    "text": "من فضلك ألغِ واسترد المبلغ لطلبي TW-2026-17536 - ما وصلنا إشعار شحن بعد ونحتاج المبلغ اليوم.",
+    "locale": "ar",
+    "customer_id": "CUST-1683",
+    "order_id": "TW-2026-17536"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility",
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-17536.refunded": true,
+      "orders.TW-2026-17536.refund_amount_sar": 68.04
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "issue_refund"
+    ],
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "business-tier customer (12h SLA window) cancelling before dispatch — eligible via status='processing'; 68.04 SAR determines the band."
+}

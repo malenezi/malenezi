@@ -1,0 +1,61 @@
+﻿month,year,month_num,quarter,fiscal_quarter,month_name_en,month_name_ar,hijri_month_approx,ramadan_flag,hajj_season_flag,eid_flag,school_term_flag,national_day_flag,working_days,seasonality_note
+2021-07-01,2021,7,Q3,Q3,July,يوليو,Ramadan,0,0,0,0,0,22,Normal
+2021-08-01,2021,8,Q3,Q3,August,أغسطس,Shawwal,0,0,0,0,0,22,School enrolment peak
+2021-09-01,2021,9,Q3,Q3,September,سبتمبر,Dhu al-Qadah,0,0,0,1,1,21,School enrolment peak
+2021-10-01,2021,10,Q4,Q4,October,أكتوبر,Dhu al-Hijjah,0,0,0,1,0,23,Normal
+2021-11-01,2021,11,Q4,Q4,November,نوفمبر,Muharram,0,0,0,1,0,23,Normal
+2021-12-01,2021,12,Q4,Q4,December,ديسمبر,Safar,0,0,0,1,0,23,Year-end licence and renewal peak
+2022-01-01,2022,1,Q1,Q1,January,يناير,Rabi al-Awwal,0,0,0,1,0,22,Normal
+2022-02-01,2022,2,Q1,Q1,February,فبراير,Rabi al-Thani,0,0,0,1,0,23,Normal
+2022-03-01,2022,3,Q1,Q1,March,مارس,Jumada al-Ula,0,0,0,1,0,22,Normal
+2022-04-01,2022,4,Q2,Q2,April,أبريل,Jumada al-Akhirah,1,0,0,1,0,20,Ramadan - branch volume falls sharply
+2022-05-01,2022,5,Q2,Q2,May,مايو,Rajab,0,0,1,1,0,23,Normal
+2022-06-01,2022,6,Q2,Q2,June,يونيو,Shaban,0,0,0,1,0,22,Normal
+2022-07-01,2022,7,Q3,Q3,July,يوليو,Ramadan,0,1,1,0,0,21,Hajj season - Makkah/Madinah surge
+2022-08-01,2022,8,Q3,Q3,August,أغسطس,Shawwal,0,0,0,0,0,23,School enrolment peak
+2022-09-01,2022,9,Q3,Q3,September,سبتمبر,Dhu al-Qadah,0,0,0,1,1,22,School enrolment peak
+2022-10-01,2022,10,Q4,Q4,October,أكتوبر,Dhu al-Hijjah,0,0,0,1,0,21,Normal
+2022-11-01,2022,11,Q4,Q4,November,نوفمبر,Muharram,0,0,0,1,0,22,Normal
+2022-12-01,2022,12,Q4,Q4,December,ديسمبر,Safar,0,0,0,1,0,22,Year-end licence and renewal peak
+2023-01-01,2023,1,Q1,Q1,January,يناير,Rabi al-Awwal,0,0,0,1,0,21,Normal
+2023-02-01,2023,2,Q1,Q1,February,فبراير,Rabi al-Thani,0,0,0,1,0,23,Normal
+2023-03-01,2023,3,Q1,Q1,March,مارس,Jumada al-Ula,1,0,0,1,0,19,Ramadan - branch volume falls sharply
+2023-04-01,2023,4,Q2,Q2,April,أبريل,Jumada al-Akhirah,0,0,1,1,0,21,Normal
+2023-05-01,2023,5,Q2,Q2,May,مايو,Rajab,0,0,0,1,0,23,Normal
+2023-06-01,2023,6,Q2,Q2,June,يونيو,Shaban,0,1,1,1,0,23,Hajj season - Makkah/Madinah surge
+2023-07-01,2023,7,Q3,Q3,July,يوليو,Ramadan,0,0,0,0,0,21,Normal
+2023-08-01,2023,8,Q3,Q3,August,أغسطس,Shawwal,0,0,0,0,0,22,School enrolment peak
+2023-09-01,2023,9,Q3,Q3,September,سبتمبر,Dhu al-Qadah,0,0,0,1,1,23,School enrolment peak
+2023-10-01,2023,10,Q4,Q4,October,أكتوبر,Dhu al-Hijjah,0,0,0,1,0,22,Normal
+2023-11-01,2023,11,Q4,Q4,November,نوفمبر,Muharram,0,0,0,1,0,23,Normal
+2023-12-01,2023,12,Q4,Q4,December,ديسمبر,Safar,0,0,0,1,0,23,Year-end licence and renewal peak
+2024-01-01,2024,1,Q1,Q1,January,يناير,Rabi al-Awwal,0,0,0,1,0,23,Normal
+2024-02-01,2024,2,Q1,Q1,February,فبراير,Rabi al-Thani,0,0,0,1,0,23,Normal
+2024-03-01,2024,3,Q1,Q1,March,مارس,Jumada al-Ula,1,0,0,1,0,18,Ramadan - branch volume falls sharply
+2024-04-01,2024,4,Q2,Q2,April,أبريل,Jumada al-Akhirah,0,0,1,1,0,23,Normal
+2024-05-01,2024,5,Q2,Q2,May,مايو,Rajab,0,0,0,1,0,22,Normal
+2024-06-01,2024,6,Q2,Q2,June,يونيو,Shaban,0,1,1,1,0,22,Hajj season - Makkah/Madinah surge
+2024-07-01,2024,7,Q3,Q3,July,يوليو,Ramadan,0,0,0,0,0,21,Normal
+2024-08-01,2024,8,Q3,Q3,August,أغسطس,Shawwal,0,0,0,0,0,23,School enrolment peak
+2024-09-01,2024,9,Q3,Q3,September,سبتمبر,Dhu al-Qadah,0,0,0,1,1,23,School enrolment peak
+2024-10-01,2024,10,Q4,Q4,October,أكتوبر,Dhu al-Hijjah,0,0,0,1,0,23,Normal
+2024-11-01,2024,11,Q4,Q4,November,نوفمبر,Muharram,0,0,0,1,0,23,Normal
+2024-12-01,2024,12,Q4,Q4,December,ديسمبر,Safar,0,0,0,1,0,22,Year-end licence and renewal peak
+2025-01-01,2025,1,Q1,Q1,January,يناير,Rabi al-Awwal,0,0,0,1,0,22,Normal
+2025-02-01,2025,2,Q1,Q1,February,فبراير,Rabi al-Thani,0,0,0,1,0,22,Normal
+2025-03-01,2025,3,Q1,Q1,March,مارس,Jumada al-Ula,1,0,1,1,0,19,Ramadan - branch volume falls sharply
+2025-04-01,2025,4,Q2,Q2,April,أبريل,Jumada al-Akhirah,0,0,0,1,0,23,Normal
+2025-05-01,2025,5,Q2,Q2,May,مايو,Rajab,0,0,0,1,0,21,Normal
+2025-06-01,2025,6,Q2,Q2,June,يونيو,Shaban,0,1,1,1,0,22,Hajj season - Makkah/Madinah surge
+2025-07-01,2025,7,Q3,Q3,July,يوليو,Ramadan,0,0,0,0,0,23,Normal
+2025-08-01,2025,8,Q3,Q3,August,أغسطس,Shawwal,0,0,0,0,0,21,School enrolment peak
+2025-09-01,2025,9,Q3,Q3,September,سبتمبر,Dhu al-Qadah,0,0,0,1,1,21,School enrolment peak
+2025-10-01,2025,10,Q4,Q4,October,أكتوبر,Dhu al-Hijjah,0,0,0,1,0,23,Normal
+2025-11-01,2025,11,Q4,Q4,November,نوفمبر,Muharram,0,0,0,1,0,21,Normal
+2025-12-01,2025,12,Q4,Q4,December,ديسمبر,Safar,0,0,0,1,0,23,Year-end licence and renewal peak
+2026-01-01,2026,1,Q1,Q1,January,يناير,Rabi al-Awwal,0,0,0,1,0,23,Normal
+2026-02-01,2026,2,Q1,Q1,February,فبراير,Rabi al-Thani,1,0,0,1,0,19,Ramadan - branch volume falls sharply
+2026-03-01,2026,3,Q1,Q1,March,مارس,Jumada al-Ula,0,0,1,1,0,23,Normal
+2026-04-01,2026,4,Q2,Q2,April,أبريل,Jumada al-Akhirah,0,0,0,1,0,23,Normal
+2026-05-01,2026,5,Q2,Q2,May,مايو,Rajab,0,1,1,1,0,22,Hajj season - Makkah/Madinah surge
+2026-06-01,2026,6,Q2,Q2,June,يونيو,Shaban,0,0,0,1,0,22,Normal

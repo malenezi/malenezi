@@ -1,0 +1,14 @@
+{
+  "n": 40,
+  "answered": 40,
+  "refused": 0,
+  "answers_with_citations": 1.0,
+  "invented_citation_rate": 0.0,
+  "citation_resolves_to_retrieved": 1.0,
+  "correct_doc_in_retrieved": 0.75,
+  "cited_correct_doc": 0.425,
+  "refusal_on_unanswerable": 0.0,
+  "latency_ms_p50": 11.2,
+  "stub_run": true,
+  "warning": "answers came from the offline stub model — citation and refusal plumbing is real, answer quality is not measured"
+}

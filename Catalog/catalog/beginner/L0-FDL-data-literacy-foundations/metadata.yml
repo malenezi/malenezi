@@ -1,0 +1,100 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: L0-FDL
+course_title: Data Literacy Foundations
+course_title_ar: الوعي بالبيانات وفهمها
+aliases:
+- FDL
+domain: foundations
+learning_path: beginner
+level: Beginner
+duration:
+  days: 2
+  hours: 10
+delivery_mode: Remote (live online)
+target_audience: 'TODO: Information not available in source material.'
+prerequisites: None stated in source material.
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-12
+next_review: 2026-12-27
+tools: []
+technologies: []
+keywords:
+- Data Visualization
+- Data Literacy
+description: This training program enables participants to build a foundational awareness of data and
+  understand its role in work and decision support, in simple language that requires no technical background.
+  The program focuses on understanding what data is, its types and sources, and its journey within an
+  organisation, and on developing the skills to read basic tables and charts and interpret the common
+  figures and indicators found in reports and dashboards, with hands-on exercises on asking the right
+  questions of data and recognising data-quality problems. It also covers the basics of responsible data
+  handling and protecting data privacy, so that participants leave with the practical ability to understand
+  the data used in their daily work and take part confidently in data-based discussions.
+description_ar: يهدف هذا البرنامج التدريبي إلى تمكين المشاركين من بناء وعي أساسي بالبيانات وفهم دورها
+  في العمل ودعم القرارات، بلغة مبسطة لا تتطلب أي خلفية تقنية. يركز البرنامج على التعرف على مفهوم البيانات
+  وأنواعها ومصادرها ورحلتها داخل المنظمة، وتنمية مهارات قراءة الجداول والرسوم البيانية الأساسية وفهم الأرقام
+  والمؤشرات الشائعة في التقارير ولوحات المعلومات، مع تدريبات عملية على طرح الأسئلة الصحيحة على البيانات
+  وتمييز مشكلات جودتها. كما يتناول البرنامج أساسيات التعامل المسؤول مع البيانات والحفاظ على خصوصيتها،
+  ويخرج المشاركون بقدرة عملية على فهم البيانات المستخدمة في أعمالهم اليومية والمشاركة بثقة في النقاشات
+  المبنية عليها.
+learning_outcomes:
+- Understand the concept of data, its types and sources, and its role in the workplace.
+- Read basic tables and charts and interpret their meaning correctly.
+- Understand the common figures and indicators found in reports and dashboards.
+- Ask the right questions of data to support work tasks and decision-making.
+- Recognise common data-quality problems and their impact on results and conclusions.
+- Apply the basic principles of responsible data handling and data privacy.
+topics:
+- Introduction to Data and Its Importance
+- Types and Sources of Data
+- Reading Tables and Charts
+- Data Quality and Common Problems
+- Data in Decision Support
+- Responsible Data Handling
+topic_details:
+  Introduction to Data and Its Importance:
+  - Understand the concept of data and the difference between data, information, and knowledge.
+  - Review realistic examples of the role of data in improving business and services.
+  - Understand the importance of data literacy as a core skill for every employee in the digital age.
+  Types and Sources of Data:
+  - Differentiate between numerical, textual, and descriptive data and their various forms.
+  - Learn about the common sources of data inside and outside the organisation.
+  - Understand the journey of data from collection to its use in reports and decisions.
+  Reading Tables and Charts:
+  - Practise reading tables and understanding rows, columns, and totals.
+  - Interpret common chart types such as bar, line, and pie charts.
+  - Complete practical exercises reading charts taken from realistic reports.
+  Data Quality and Common Problems:
+  - Recognise data-quality problems such as missing values, duplication, and inconsistency.
+  - Understand the impact of inaccurate data on results and the decisions based on them.
+  - Practise spotting signs of poor data quality in simple practical examples.
+  Data in Decision Support:
+  - Understand how data and indicators are used in everyday decision-making.
+  - Practise asking clear questions that can be answered with data.
+  - Discuss practical examples of work decisions built on a correct reading of data.
+  Responsible Data Handling:
+  - Recognise the importance of data privacy and information confidentiality in the workplace.
+  - Learn the basic principles of ethical and responsible data use.
+  - Apply simple practical rules for handling data safely in daily tasks.
+assessment: Qualification form + pre-/post-test (AthkaX platform workbook)
+next_modules: 'TODO: Information not available in source material.'
+stackability: 'TODO: Information not available in source material.'
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: Program Files (AthkaX)/Beginner-Level/L0-FDL - Data Literacy Foundations.xlsx
+  drive_folder: none
+  platform_workbook: Program Files (AthkaX)/Beginner-Level/L0-FDL - Data Literacy Foundations.xlsx
+known_issues:
+- '[Needs Review] L0-FDL - Data Literacy Foundations.xlsx: Qualification form + pre/post-test (7 MCQs
+  each). Questions were generated from the workbook description because no instructor package exists —
+  review first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

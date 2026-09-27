@@ -1,0 +1,54 @@
+{
+  "id": "TB-015",
+  "title": "Reschedule an order already in exception status",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "reschedule",
+  "tags": [
+    "error_handling",
+    "should_refuse_escalate"
+  ],
+  "customer_request": {
+    "text": "Can you postpone delivery for order TW-2026-11623 to next week?",
+    "locale": "en",
+    "customer_id": "CUST-4634",
+    "order_id": "TW-2026-11623"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "rescheduling"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "reschedule_delivery"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "track_shipment"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "track_shipment"
+    ],
+    "must_not_call_tools": [
+      "reschedule_delivery"
+    ],
+    "escalation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "TW-2026-11623 is in 'exception' status — reschedule_delivery_impl rejects this too (same precondition as TB-009, different root status); escalate instead of retrying blindly."
+}

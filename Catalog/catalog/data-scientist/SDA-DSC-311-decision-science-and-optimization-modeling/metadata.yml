@@ -1,0 +1,73 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-311
+course_title: Decision Science and Optimization Modeling
+course_title_ar: علم القرار ونمذجة التحسين
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Expert
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Senior data scientists supporting operational and strategic decisions
+prerequisites: SDA-DSC-211; SDA-DSC-213 recommended
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-12
+next_review: 2026-12-27
+tools:
+- PuLP/OR-Tools
+- SimPy
+- pandas
+technologies: []
+keywords:
+- Data Engineering
+- Optimization
+- Python
+description: An expert module that moves from predicting outcomes to prescribing actions. Participants
+  formulate linear and integer optimisation models, run simulations under uncertainty, and combine ML
+  predictions with optimisation to recommend optimal decisions. Applications span resource allocation,
+  scheduling, and policy planning.
+description_ar: وحدة خبراء تنتقل من التنبؤ بالنتائج إلى وصف الإجراءات. يصوغ المشاركون نماذج التحسين الخطي
+  والصحيح وينفذون المحاكاة في ظل عدم اليقين ويجمعون تنبؤات تعلم الآلة مع التحسين للتوصية بالقرارات المثلى،
+  مع تطبيقات في تخصيص الموارد والجدولة وتخطيط السياسات.
+learning_outcomes:
+- Formulate business problems as linear and integer optimisation models
+- Implement optimisation solutions using modern solver frameworks
+- Design simulations to evaluate decisions under uncertainty
+- Integrate ML predictions into prescriptive decision pipelines
+- Analyze trade-offs with sensitivity and scenario analysis
+- Evaluate decision-support systems for robustness and adoption
+topics:
+- From predictive to prescriptive analytics
+- Linear and integer programming
+- Solver frameworks and model building
+- Monte Carlo simulation
+- Predict-then-optimise pipelines
+- Sensitivity and scenario analysis
+- Decision-science case project
+assessment: Optimisation project with decision memo
+next_modules: SDA-DSC-390
+stackability: Decision-science badge; Expert elective.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: none
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-311 - Decision Science and Optimization
+    Modeling.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''علوم القرار ونمذجة التحسين'''
+- '[Needs Review] SDA-DSC-311 - Decision Science and Optimization Modeling.xlsx: Qualification form +
+  pre/post-test (7 MCQs each). Questions were generated from the workbook description because no instructor
+  package exists — review first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

@@ -1,0 +1,114 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: L0-FDV
+course_title: Data Storytelling & Data-Driven Decisions
+course_title_ar: سرد البيانات واتخاذ القرارات المبنية عليها
+aliases:
+- FDV
+- Data Visualization and Storytelling
+domain: data-science
+learning_path: beginner
+level: Beginner
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: 'TODO: Information not available in source material.'
+prerequisites: None stated in source material.
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-08-25
+next_review: 2026-12-27
+tools: []
+technologies: []
+keywords:
+- Data Visualization
+description: This training program enables participants to turn data and numbers into clear, persuasive
+  stories that support decision-making in the workplace, through a simple practical approach that requires
+  no technical background. The program focuses on the fundamentals of data storytelling and shaping the
+  right message for the target audience, choosing suitable charts and designing clear, non-misleading
+  visuals, and building a complete data story that moves from context to insight to recommendation. It
+  also covers the principles of data-driven decision-making and evaluating options objectively, with hands-on
+  practice presenting insights to colleagues and decision-makers, so that participants leave with the
+  practical ability to communicate data findings with confidence and impact.
+description_ar: يهدف هذا البرنامج التدريبي إلى تمكين المشاركين من تحويل البيانات والأرقام إلى قصص واضحة
+  ومقنعة تدعم اتخاذ القرارات في بيئة العمل، بأسلوب عملي مبسط لا يتطلب خلفية تقنية. يركز البرنامج على أساسيات
+  سرد البيانات وصياغة الرسالة المناسبة للجمهور المستهدف، واختيار الرسوم البيانية الملائمة وتصميم عروض
+  بصرية واضحة وخالية من التضليل، إضافة إلى بناء قصة بيانات متكاملة تتدرج من السياق إلى الرؤية إلى التوصية.
+  كما يتناول البرنامج مبادئ اتخاذ القرارات المبنية على البيانات وتقييم الخيارات بموضوعية، مع تدريبات عملية
+  على عرض الرؤى أمام الزملاء ومتخذي القرار، ويخرج المشاركون بقدرة عملية على إيصال نتائج البيانات بثقة
+  وتأثير.
+learning_outcomes:
+- Understand the concept of data storytelling and its importance in communicating insights and supporting
+  decisions.
+- Turn numbers and results into a clear message suited to the target audience.
+- Choose the right chart for each type of data and message.
+- Design clear visuals that are free of clutter and misleading elements.
+- Build a complete data story that moves from context to insight to recommendation.
+- Present data-based insights with confidence to colleagues and decision-makers.
+- Apply the principles of data-driven decision-making in everyday work situations.
+topics:
+- Introduction to Data Storytelling
+- From Numbers to Message
+- Choosing the Right Chart
+- Designing Clear Visuals
+- Building the Data Story
+- Presenting Insights to Decision-Makers
+- Data-Driven Decision-Making
+topic_details:
+  Introduction to Data Storytelling:
+  - Understand the concept of data storytelling and the difference between showing numbers and delivering
+    a message.
+  - Review realistic examples of successful data stories that influenced business decisions.
+  - 'Understand the three elements of a data story: data, visuals, and narrative.'
+  From Numbers to Message:
+  - Practise extracting the key idea from a set of results and figures.
+  - Analyse the target audience and identify what matters to them in the data being presented.
+  - Craft a clear, concise message that sums up what the data is saying.
+  Choosing the Right Chart:
+  - Learn the common chart types and the purpose of each one.
+  - Practise matching the chart type to the nature of the data and the message to be delivered.
+  - Discuss examples of good and poor chart choices.
+  Designing Clear Visuals:
+  - Apply basic design principles of simplifying, highlighting, and arranging visual elements.
+  - Practise improving cluttered charts to make them clearer and easier to read.
+  - Recognise misleading practices in presenting data and how to avoid them.
+  Building the Data Story:
+  - Practise structuring a complete data story from context to insight to recommendation.
+  - Arrange visuals and messages in a logical sequence that leads the audience to the conclusion.
+  - Complete a practical exercise building a short data story from a realistic dataset.
+  Presenting Insights to Decision-Makers:
+  - Practise delivering the data story verbally in a clear and compelling way.
+  - Handle audience questions and objections about the data and conclusions.
+  - Receive feedback and improve the presentation based on it.
+  Data-Driven Decision-Making:
+  - Understand the steps of data-driven decision-making from question to choice.
+  - Practise evaluating options using evidence and numbers rather than impressions.
+  - Discuss practical cases of work decisions whose outcomes improved by relying on data.
+assessment: Qualification form + pre-/post-test (AthkaX platform workbook)
+next_modules: 'TODO: Information not available in source material.'
+stackability: 'TODO: Information not available in source material.'
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: Program Files (AthkaX)/Beginner-Level/L0-FDV - Data Storytelling & Data-Driven Decisions.xlsx
+  drive_folder: Level-0-Beginners/Data/Data Storytelling & Data-Driven Decisions
+  platform_workbook: Program Files (AthkaX)/Beginner-Level/L0-FDV - Data Storytelling & Data-Driven Decisions.xlsx
+known_issues:
+- '[Naming] Instructor package AR title: ''تصور البيانات وسرد القصص'''
+- '[Naming] Instructor package H1: ''Data Visualization and Storytelling'''
+- '[Needs Review] Data Files.zip: SDA-DSC-112 v1 datasets (tayseer_services + nested zip) stored under
+  L0-FDV'
+- '[Needs Review] L0-FDV - Data Storytelling & Data-Driven Decisions.xlsx: Qualification form + pre/post-test
+  (7 MCQs each). Questions were generated from the workbook description because no instructor package
+  exists — review first (FLAG_REPORT)'
+- '[Needs Review] SDA-DSC-112_Instructor_Training_Deck.pptx: SDA-DSC-112 v1 deck stored under L0-FDV;
+  superseded by DSC-112 v2 — confirm whether FDV should get its own beginner deck'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

@@ -1,0 +1,72 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-213
+course_title: Experimentation, A/B Testing and Causal Inference
+course_title_ar: التجريب واختبارات A/B والاستدلال السببي
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Specialist
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: Data scientists supporting product, policy, and programme decisions
+prerequisites: SDA-DSC-111
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-07
+next_review: 2026-12-27
+tools:
+- statsmodels
+- DoWhy/EconML
+- experiment simulators
+technologies:
+- experiment simulators (numpy/scipy/pandas
+- Jupyter)
+keywords:
+- Statistics
+- Experimentation
+description: A specialist module on answering "what actually works" with data. Participants design and
+  analyse randomised experiments, compute power and sample sizes, and apply causal-inference methods —
+  matching, difference-in-differences, and instrumental variables — when experiments are impossible. The
+  module turns data scientists into trusted advisors on policy and product decisions.
+description_ar: وحدة تخصصية للإجابة عن سؤال "ما الذي يحدث الأثر فعلًا" بالبيانات. يصمم المشاركون التجارب
+  العشوائية ويحللونها ويحسبون القوة وأحجام العينات ويطبقون أساليب الاستدلال السببي — المطابقة والفروق
+  في الفروق والمتغيرات الأداتية — حين تتعذر التجارب، بما يجعل عالم البيانات مستشارًا موثوقًا لقرارات السياسات
+  والمنتجات.
+learning_outcomes:
+- Design randomised experiments with valid randomisation units and guardrail metrics
+- Compute statistical power, sample sizes, and minimum detectable effects
+- Analyze experiment results with correct variance estimation and multiple-testing control
+- Apply quasi-experimental methods including matching and difference-in-differences
+- Evaluate causal claims from observational data using DAG-based reasoning
+- Communicate experimental evidence and uncertainty to decision-makers
+topics:
+- Causal thinking and potential outcomes
+- Experiment design and randomisation
+- Power analysis and sample sizing
+- 'Analysis pitfalls: peeking, multiple testing'
+- 'Quasi-experiments: matching, DiD, IV'
+- Causal graphs and confounding
+- Experimentation case study
+assessment: Experiment design and analysis project
+next_modules: SDA-DSC-311
+stackability: Causal badge; core of Analytics & Experimentation specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Experimentation, A-B Testing and Causal Inference
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-213 - Experimentation, A-B Testing
+    and Causal Inference.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''التجارب واختبارات A/B والاستدلال السببي'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

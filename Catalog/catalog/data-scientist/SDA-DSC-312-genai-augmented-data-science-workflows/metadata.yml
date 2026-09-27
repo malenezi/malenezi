@@ -1,0 +1,75 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-312
+course_title: GenAI-Augmented Data Science Workflows
+course_title_ar: سير عمل علم البيانات المعزز بالذكاء التوليدي
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Expert
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Experienced data scientists modernising their workflow
+prerequisites: SDA-DSC-211; SDA-FND-102
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-12
+next_review: 2026-12-27
+tools:
+- AI coding assistants
+- LLM APIs
+- Git
+- notebook-to-pipeline tooling
+technologies: []
+keywords:
+- Agentic AI
+- LLM
+- Responsible AI
+- Data Engineering
+- Automation
+description: An expert module on multiplying data-science productivity with generative AI. Participants
+  use LLMs for code generation, automated EDA, synthetic data, and unstructured-text analysis, while building
+  reproducible, verifiable workflows. The module defines the professional standard for responsible AI-assisted
+  analysis.
+description_ar: وحدة خبراء لمضاعفة إنتاجية علم البيانات بالذكاء التوليدي. يستخدم المشاركون النماذج اللغوية
+  لتوليد الكود والتحليل الاستكشافي الآلي والبيانات الاصطناعية وتحليل النصوص غير المهيكلة مع بناء سير عمل
+  قابل للتكرار والتحقق، وتحدد الوحدة المعيار المهني للتحليل المسؤول المدعوم بالذكاء الاصطناعي.
+learning_outcomes:
+- Integrate AI coding assistants into analysis workflows with verification discipline
+- Apply LLMs to extract structure and insight from unstructured text data
+- Develop synthetic-data strategies for augmentation and privacy protection
+- Design reproducible, version-controlled analysis pipelines with AI assistance
+- Evaluate AI-generated analytical artefacts for correctness and bias
+- Implement agent-assisted automation for recurring analytics tasks
+topics:
+- AI-assisted coding and analysis patterns
+- LLMs for text analytics and feature extraction
+- Synthetic data generation and privacy
+- Reproducibility and verification discipline
+- Automating recurring analytics with agents
+- Responsible use and quality assurance
+assessment: Augmented-workflow project with verification report
+next_modules: SDA-DSC-390
+stackability: GenAI-workflow badge; Expert elective bridging to AI Engineer track.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: none
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-312 - GenAI-Augmented Data Science
+    Workflows.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''سير عمل علم البيانات المعزز بالذكاء الاصطناعي التوليدي'''
+- '[Needs Review] SDA-DSC-312 - GenAI-Augmented Data Science Workflows.xlsx: Qualification form + pre/post-test
+  (7 MCQs each). Questions were generated from the workbook description because no instructor package
+  exists — review first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

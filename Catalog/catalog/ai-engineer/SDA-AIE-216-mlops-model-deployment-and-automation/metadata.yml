@@ -1,0 +1,82 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-216
+course_title: 'MLOps: Model Deployment and Automation'
+course_title_ar: 'عمليات تعلم الآلة: نشر النماذج والأتمتة'
+aliases: []
+domain: ai-engineering
+learning_path: ai-engineer
+level: Specialist
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: AI engineers responsible for production ML systems
+prerequisites: SDA-AIE-113; SDA-AIE-111
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-08
+next_review: 2026-12-27
+tools:
+- MLflow
+- DVC
+- Airflow/Prefect
+- Docker
+- Kubernetes basics
+- Evidently
+technologies:
+- Kubernetes (basics)
+keywords:
+- LLM
+- Machine Learning
+- MLOps
+- LLMOps
+- Experimentation
+- Data Engineering
+- Streaming
+- Software Engineering
+- Architecture
+- Automation
+description: A comprehensive module on operationalising machine learning. Participants build reproducible
+  training pipelines, register and version models and data, deploy scalable serving endpoints, and automate
+  retraining with monitoring for drift. The module establishes the MLOps backbone that Expert-level reliability
+  and LLMOps modules extend.
+description_ar: وحدة شاملة في تشغيل تعلم الآلة. يبني المشاركون خطوط تدريب قابلة للتكرار ويسجلون النماذج
+  والبيانات بإصدارات ويطلقون نقاط خدمة قابلة للتوسع ويؤتمتون إعادة التدريب مع مراقبة الانحراف، بما يؤسس
+  العمود الفقري لعمليات تعلم الآلة الذي تبني عليه وحدات الموثوقية وLLMOps للخبراء.
+learning_outcomes:
+- Design end-to-end MLOps architectures spanning training, serving, and monitoring
+- Implement reproducible pipelines with data and model versioning
+- Deploy models as scalable, containerised inference services
+- Develop automated retraining and CI/CD/CT workflows
+- Implement monitoring for data drift, concept drift, and performance decay
+- Evaluate deployment strategies including canary, blue-green, and shadow releases
+topics:
+- MLOps maturity model and system architecture
+- Experiment tracking and model registry
+- Data versioning and feature stores
+- Pipeline orchestration and automation
+- 'Model serving: batch, online, streaming'
+- Drift detection and monitoring
+- Release strategies and rollback
+- MLOps platform project
+assessment: Labs; deployed pipeline project
+next_modules: SDA-AIE-312
+stackability: MLOps badge; prerequisite for LLMOps and reliability modules.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/MLOps — Model Deployment and Automation
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-216 - MLOps — Model Deployment and
+    Automation.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''عمليات تعلم الآلة والنشر الآلي'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

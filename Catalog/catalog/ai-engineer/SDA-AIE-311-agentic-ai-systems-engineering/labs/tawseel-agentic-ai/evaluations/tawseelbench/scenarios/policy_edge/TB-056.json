@@ -1,0 +1,71 @@
+{
+  "id": "TB-056",
+  "title": "Refund on a cash-on-delivery payment",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge"
+  ],
+  "customer_request": {
+    "text": "ألغِ طلبي TW-2026-18356 من فضلك واسترد المبلغ - دفعت عند الاستلام (كاش).",
+    "locale": "ar",
+    "customer_id": "CUST-6790",
+    "order_id": "TW-2026-18356"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "payments": {
+        "PAY-118356": {
+          "method": "cod"
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets",
+      "add_case_note"
+    ],
+    "state_diff": {
+      "orders.TW-2026-18356.refunded": true,
+      "orders.TW-2026-18356.refund_amount_sar": 132.32
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "refund_eligibility.md: 'It applies to ... all payment methods (mada, Visa, Apple Pay, cash on delivery).' The refund mechanics (and the amount band) must not depend on payment method — a COD order is refunded the same way as a card payment."
+}

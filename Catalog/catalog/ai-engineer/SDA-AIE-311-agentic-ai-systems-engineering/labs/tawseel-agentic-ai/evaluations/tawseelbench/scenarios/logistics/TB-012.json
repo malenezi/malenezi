@@ -1,0 +1,49 @@
+{
+  "id": "TB-012",
+  "title": "Reschedule request, no order specified",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "reschedule",
+  "tags": [
+    "clarifying_only"
+  ],
+  "customer_request": {
+    "text": "أحتاج تغيير موعد التوصيل لأحد طلباتي، بس ما أتذكر رقم الطلب بالضبط.",
+    "locale": "ar",
+    "customer_id": "CUST-1000",
+    "order_id": null
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "rescheduling"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "reschedule_delivery"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": []
+  },
+  "pass_fail_criteria": {
+    "must_not_call_tools": [
+      "reschedule_delivery",
+      "issue_refund"
+    ],
+    "clarifying_question_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "reschedule_delivery needs a specific order id (a WRITE tool — never call it against a guess); with none given, the only correct move is to ask which order, not pick one."
+}

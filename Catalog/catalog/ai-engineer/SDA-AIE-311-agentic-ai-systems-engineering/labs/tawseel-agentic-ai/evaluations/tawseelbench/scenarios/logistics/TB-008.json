@@ -1,0 +1,57 @@
+{
+  "id": "TB-008",
+  "title": "Reschedule delivery (Arabic)",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "reschedule",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "ممكن تأجيل موعد توصيل الطلب TW-2026-10210 ليوم آخر؟",
+    "locale": "ar",
+    "customer_id": "CUST-5307",
+    "order_id": "TW-2026-10210"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "rescheduling"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "reschedule_delivery"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "track_shipment",
+      "reschedule_delivery"
+    ],
+    "state_diff": {
+      "orders.TW-2026-10210.sla_breached": false
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "track_shipment",
+      "reschedule_delivery"
+    ],
+    "must_mention": [
+      "TW-2026-10210"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Straightforward reschedule: check it is reschedulable first (autonomous-within-policy, SPEC §5), then do it."
+}

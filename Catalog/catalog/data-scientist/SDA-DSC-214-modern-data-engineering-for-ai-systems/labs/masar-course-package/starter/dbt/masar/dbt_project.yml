@@ -1,0 +1,47 @@
+# Masar Lakehouse — dbt project (SDA-DSC-214).
+# ELT, not ETL: the raw feeds are already in the lakehouse (Lab 1). dbt does
+# the T, in SQL, in version control, with tests and lineage attached.
+name: masar
+version: "1.0.0"
+config-version: 2
+profile: masar
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+require-dbt-version: [">=1.7.0", "<1.8.0"]
+
+vars:
+  # Late-arriving trips inside this window are corrected by MERGE; beyond it
+  # they are missed. The Spark path uses the same number (masar.config).
+  lookback_days: 3
+  # Cities Masar operates in, as conformed NAMES (staging maps the codes).
+  ksa_cities: ["Riyadh", "Jeddah", "Dammam", "Mecca", "Medina"]
+
+models:
+  masar:
+    +persist_docs:
+      relation: true
+      columns: true
+    staging:
+      # Views: staging is a rename-and-cast layer with no expensive logic, so
+      # materialising it would cost storage and buy nothing.
+      +materialized: view
+      +schema: staging
+    marts:
+      silver:
+        +materialized: incremental
+        +file_format: delta
+        +schema: silver
+      gold:
+        +materialized: table
+        +file_format: delta
+        +schema: gold
+
+seeds:
+  masar:
+    +schema: reference

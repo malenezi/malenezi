@@ -1,0 +1,49 @@
+{
+  "id": "TB-060",
+  "title": "Reply in the customer's profile language, not the message's language",
+  "locale": "ar",
+  "difficulty": "hard",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "order_status",
+  "tags": [
+    "policy_edge",
+    "language"
+  ],
+  "customer_request": {
+    "text": "Hey, what's happening with order TW-2026-13242? Running late for me today.",
+    "locale": "ar",
+    "customer_id": "CUST-5172",
+    "order_id": "TW-2026-13242"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "track_shipment"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "track_shipment"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "CUST-5172's profile locale is 'ar' (customers_seed.json) but this particular message is written in English — customer_request.locale carries the CUSTOMER's stated locale for this scenario (ar), and the reply must match it, not the incidental script of one message (code-switching is common and must not flip the reply language)."
+}

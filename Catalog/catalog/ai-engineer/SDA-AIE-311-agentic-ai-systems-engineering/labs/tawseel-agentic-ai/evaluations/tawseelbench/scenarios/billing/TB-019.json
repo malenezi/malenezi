@@ -1,0 +1,74 @@
+{
+  "id": "TB-019",
+  "title": "Refund, policy-controlled band (50-500 SAR), SLA breach",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "طلبي TW-2026-10723 متأخر جدًا عن الموعد الموعود، أبغى استرداد كامل المبلغ.",
+    "locale": "ar",
+    "customer_id": "CUST-9892",
+    "order_id": "TW-2026-10723"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility",
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-10723": {
+          "sla_breached": true
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "read_policy",
+      "issue_refund",
+      "add_case_note"
+    ],
+    "state_diff": {
+      "orders.TW-2026-10723.refunded": true,
+      "orders.TW-2026-10723.refund_amount_sar": 59.81
+    },
+    "requires_human_approval": false
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "issue_refund"
+    ],
+    "must_not_call_tools": [
+      "mark_refunded"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "SLA breach patched onto a real in-transit order; 59.81 SAR falls in the 50-500 SAR policy-controlled band: autonomous execution IS allowed, but it MUST be logged (the refund tool call itself is the audit record here)."
+}

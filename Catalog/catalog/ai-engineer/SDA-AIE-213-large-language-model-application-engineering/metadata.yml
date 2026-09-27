@@ -1,0 +1,72 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-213
+course_title: Large Language Model Application Engineering
+course_title_ar: هندسة تطبيقات النماذج اللغوية الكبيرة
+aliases: []
+domain: generative-ai
+learning_path: ai-engineer
+level: Specialist
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: Engineers building generative-AI products and services
+prerequisites: SDA-AIE-111; SDA-FND-102 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-05
+next_review: 2026-12-27
+tools:
+- OpenAI/Anthropic APIs
+- LangChain
+- pydantic
+- promptfoo/evals
+- vLLM
+technologies: []
+keywords:
+- LLM
+- AI Security
+- Data Engineering
+- Architecture
+description: A hands-on module for engineering applications on top of LLM APIs and open-weight models.
+  Participants design prompt pipelines, structured outputs, function calling, and evaluation harnesses,
+  and architect complete LLM-powered products. It establishes the engineering discipline behind reliable
+  generative-AI software.
+description_ar: وحدة تطبيقية لهندسة التطبيقات فوق واجهات النماذج اللغوية الكبيرة والنماذج مفتوحة الأوزان.
+  يصمم المشاركون خطوط الأوامر والمخرجات المهيكلة واستدعاء الوظائف ومنصات التقييم ويبنون منتجات متكاملة
+  مدعومة بالنماذج اللغوية، بما يرسّخ الانضباط الهندسي وراء برمجيات الذكاء التوليدي الموثوقة.
+learning_outcomes:
+- Design application architectures around LLM APIs and open-weight models
+- Implement structured outputs, function calling, and tool integration
+- Develop robust prompt pipelines with templating and guardrails
+- Build evaluation harnesses to measure quality, safety, and regression
+- Optimize latency and token cost across model and caching choices
+- Compare commercial and open-weight models for a given use case
+topics:
+- LLM application architecture patterns
+- Working with LLM APIs and open-weight models
+- Structured outputs and function calling
+- Prompt pipelines, templating, and guardrails
+- 'LLM evaluation: golden sets, LLM-as-judge, metrics'
+- Cost, latency, and caching strategies
+- Building a complete LLM-powered application
+assessment: Labs; LLM application project with evaluation report
+next_modules: SDA-AIE-214
+stackability: GenAI engineering badge; core of the GenAI Engineering specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Large Language Model Application Engineering
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-213 - Large Language Model Application
+    Engineering.xlsx
+known_issues: []
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

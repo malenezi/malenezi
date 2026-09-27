@@ -1,0 +1,33 @@
+{
+  "queries": 138,
+  "recall@1": 0.4656,
+  "hit@1": 0.4855,
+  "recall@5": 0.7065,
+  "hit@5": 0.7536,
+  "recall@10": 0.7572,
+  "hit@10": 0.8043,
+  "recall@20": 0.808,
+  "hit@20": 0.8696,
+  "mrr@10": 0.5947,
+  "ndcg@6": 0.6104,
+  "ndcg@10": 0.6235,
+  "recall@10::ar": 0.8293,
+  "n::ar": 41,
+  "recall@10::en": 0.7268,
+  "n::en": 97,
+  "latency": {
+    "p50_ms": 8.6,
+    "p95_ms": 9.8,
+    "max_ms": 10.4,
+    "n": 138
+  },
+  "config": {
+    "mode": "hybrid",
+    "model": "hash-384",
+    "fetch_k": 40,
+    "top_k": 6,
+    "backend": "memory",
+    "ef": 128
+  },
+  "notes": []
+}

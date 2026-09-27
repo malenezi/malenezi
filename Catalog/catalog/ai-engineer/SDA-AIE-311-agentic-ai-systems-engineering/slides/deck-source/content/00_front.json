@@ -1,0 +1,135 @@
+{
+  "slides": [
+    {
+      "type": "title",
+      "eyebrow": "SDAIA Academy · Capacity Building Sector",
+      "title": "Agentic AI Systems Engineering",
+      "title_ar": "هندسة أنظمة الذكاء الاصطناعي الوكيلي",
+      "subtitle": "Designing, building, securing and operating enterprise agents that plan, reason, use tools and remember — across five days and one system that grows with you.",
+      "meta": [
+        { "k": "Code", "v": "SDA-AIE-311" },
+        { "k": "Level", "v": "Expert / خبير" },
+        { "k": "Duration", "v": "5 days · 25 hours" },
+        { "k": "Audience", "v": "Senior AI engineers" },
+        { "k": "Assessment", "v": "Labs · Red team · Capstone" }
+      ],
+      "notes": "Welcome. Introduce yourself in one minute, then go straight to the failure story on the next slide — do not spend ten minutes on logistics. Housekeeping goes in the chat or on a printed card. Confirm everyone ran `make doctor` and got 8/8; floaters help anyone who did not while you start."
+    },
+    {
+      "type": "statement",
+      "kicker": "The premise of this course",
+      "statement": "An LLM answers. An agent acts.",
+      "statement_ar": "النموذج اللغوي يجيب. الوكيل ينفّذ.",
+      "attribution": "And anything that can act can act wrongly, at scale, spending money and touching personal data.",
+      "notes": "Say it, pause, let it land. The whole week is the engineering consequence of that one sentence: bounded loops, structural authorisation, observation. Do not explain it yet."
+    },
+    {
+      "type": "bullets",
+      "kicker": "Why you are here",
+      "title": "Saudi enterprises are past the chatbot",
+      "title_ar": "ما بعد المحادثة الآلية",
+      "module": "Intro",
+      "intro": "The shift from answering to acting changes the risk profile entirely — and that is an engineering problem, not a prompting one.",
+      "bullets": [
+        { "lead": "From answering to transacting.", "text": "Reschedule a delivery, open a case, reconcile an invoice, move money. The agent is now inside the business process, not beside it." },
+        { "lead": "New failure class.", "text": "An agent can be wrong while running perfectly. There is no exception, no stack trace, no red dashboard — just a confidently wrong action." },
+        { "lead": "Regulated by default.", "text": "PDPL applies to what the agent remembers. An automated money movement needs an audit trail a regulator accepts." },
+        { "lead": "Cost is a design decision.", "text": "The reasoning pattern you default to is worth a 20x swing in cost per contact. That is invisible in a demo and fatal at 18,000 contacts a day." },
+        { "lead": "Nobody owns the seam.", "text": "Prompting people do not think about budgets and idempotency; platform people do not think about non-determinism. This course lives exactly at that seam.", "kind": "key" }
+      ],
+      "aside": {
+        "tone": "key",
+        "title": "THE MAXIM",
+        "body": "As much structure as possible, as much agency as necessary.\n\nYou will hear this on every day of the week. By Friday you will be able to say where, in your own code, the line sits — and defend it with a measurement."
+      },
+      "notes": "Ask the room: who here has an agent in production? Who has one in a pilot that leadership already believes is production? The gap between those two answers is the course."
+    },
+    {
+      "type": "flow",
+      "title": "One system, five days: Rafeeq at Tawseel",
+      "title_ar": "رفيق في شركة توصيل",
+      "module": "Intro",
+      "kicker": "The golden thread",
+      "rows": [
+        { "label": "Day 1", "steps": [ { "text": "Bounded loop", "sub": "M1 · state machine" }, { "text": "ReAct", "sub": "M2" }, { "text": "Plan-and-Execute", "sub": "M2" }, { "text": "Reflection", "sub": "M2 · high stakes only" } ] },
+        { "label": "Day 2", "steps": [ { "text": "Typed tools", "sub": "M3 · errors as values" }, { "text": "Four MCP servers", "sub": "M3 · trust boundaries" }, { "text": "Thread memory", "sub": "M4 · checkpoints" }, { "text": "Scoped recall", "sub": "M4 · PDPL filter" } ] },
+        { "label": "Day 3", "steps": [ { "text": "Three specialists", "sub": "M5" }, { "text": "Supervisor", "sub": "M6 · route + aggregate" }, { "text": "Agents-as-tools", "sub": "M6 · architecture B" }, { "text": "When NOT to", "sub": "M5.3", "tone": "key" } ] },
+        { "label": "Day 4", "steps": [ { "text": "Prompt to flow", "sub": "M7 · rules as branches" }, { "text": "Guardrails", "sub": "M8 · layered" }, { "text": "Red team", "sub": "M8 · a test, not a poke" }, { "text": "Security report", "sub": "M8 · graded" } ] },
+        { "label": "Day 5", "steps": [ { "text": "Tracing", "sub": "M9" }, { "text": "Cost attribution", "sub": "M9 · two levers" }, { "text": "Deploy", "sub": "Capstone" }, { "text": "Demo", "sub": "Capstone · 6 min" } ] }
+      ],
+      "caption": "Rafeeq (رفيق) is an operations assistant for Tawseel (توصيل), a fictional Saudi last-mile logistics company. Every lab extends the same system — nothing is thrown away, and Friday's capstone is an assembly, not a scramble.",
+      "notes": "This slide is the map. Come back to it at the start of each morning and point at where the class is. Say explicitly: there is no weather agent in this course."
+    },
+    {
+      "type": "cards",
+      "title": "What you will own by Friday afternoon",
+      "module": "Intro",
+      "kicker": "Outcomes",
+      "cards": [
+        { "label": "1", "title": "A deployed service", "body": "Rafeeq running in a simulated Tawseel environment behind /v1/resolve, containerised, with health and readiness endpoints, resolving bilingual tickets end to end." },
+        { "label": "2", "title": "Evidence it works", "body": "An evaluation harness over 120 labelled tickets and 60 TawseelBench scenarios, with measured task success, cost per contact, p95 latency and zero cross-customer leakage." },
+        { "label": "3", "title": "A security report", "body": "A red-team suite running in CI over 78 attack payloads in Arabic and English, triaged findings, structural mitigations, and zero open high-severity." },
+        { "label": "4", "title": "Trade-off literacy", "body": "DECISIONS.md: five engineering decisions you can defend — pattern per workflow, where authorisation lives, cache key design, single versus supervisor, escalation policy.", "tone": "key" }
+      ],
+      "notes": "Stress the second card. The point of the course is that the system testifies to its own quality — grading is evidence-first, demo second."
+    },
+    {
+      "type": "table",
+      "title": "Learning outcomes and where they are proven",
+      "module": "Intro",
+      "headers": ["", "Outcome", "Built in", "Proven by"],
+      "rows": [
+        ["LO1", "Design agentic architectures with planning, reasoning, tool use and memory", "M1 · Lab 1", "Termination test, state inspectability review"],
+        ["LO2", "Implement ReAct, Plan-and-Execute and Reflection", "M2 · Lab 2", "Pattern comparison table on the eval set"],
+        ["LO3", "Develop multi-agent systems with orchestration and routing", "M5, M6 · Labs 5-6", "Routing accuracy, architecture A/B comparison"],
+        ["LO4", "Integrate enterprise APIs using the Model Context Protocol", "M3 · Lab 3", "Runtime discovery, server-side authorisation tests"],
+        ["LO5", "Design state management and short/long-term memory", "M4 · Lab 4", "Cross-customer leakage test, PDPL erasure"],
+        ["LO6", "Implement guardrails and red-team agents", "M7, M8 · Labs 7-8", "!key SECURITY_REPORT.md, zero open high-severity"],
+        ["LO7", "Optimise performance, cost and reliability", "M9 · Lab 9", "Trace tree, cost attribution, measured cost cut"],
+        ["LO8", "Validate a deployed agentic system", "Capstone", "Eval replay in the simulated environment"]
+      ],
+      "footnote": "Every row is traceable in the course repository: docs/CURRICULUM_MAP.md maps outcome to module to lab to source path to test.",
+      "notes": "Do not read this table out. Point at LO6 and LO8 and say those two are what separate this from a tutorial."
+    },
+    {
+      "type": "two_col",
+      "title": "How the week runs",
+      "module": "Intro",
+      "left": {
+        "title": "Ground rules",
+        "items": [
+          { "text": "Every lab extends Rafeeq. Nothing is throwaway." },
+          { "text": "Every claim needs a measurement. \"It worked in the demo\" never counts." },
+          { "text": "Cheap model by default; the frontier model is reserved for the capstone demo." },
+          { "text": "Pairs rotate daily — a strong prompter with a strong engineer." },
+          { "text": "Code, state keys and commits in English. Rafeeq itself is bilingual." }
+        ]
+      },
+      "right": {
+        "title": "What is graded",
+        "items": [
+          { "lead": "30%", "text": "Lab completion — checkpoint commits and expected outputs" },
+          { "lead": "20%", "text": "PA-1 diagnosis and PA-2 security report" },
+          { "lead": "10%", "text": "Quiz — 10 questions, closed book" },
+          { "lead": "40%", "text": "Capstone — evidence first, demo second", "kind": "key" },
+          { "lead": "Badge", "text": "Flagship Expert badge needs ≥70 overall, capstone ≥70, zero open high-severity, and a green leakage test" }
+        ]
+      },
+      "notes": "Say the cost rule out loud and point at the shared spend board. Cost literacy is a graded outcome, not a courtesy."
+    },
+    {
+      "type": "checklist",
+      "title": "Before we start: the five-minute check",
+      "module": "Intro",
+      "items": [
+        { "lead": "make doctor", "text": "returns 8/8 — Python 3.12, data files, model mode, vector mode" },
+        { "lead": "make data", "text": "regenerates 2,000 orders, 400 customers, 120 eval tickets" },
+        { "lead": "make test-offline", "text": "127 assertions pass with no API key and no network" },
+        { "lead": "Repo cloned", "text": "and you can see labs/lab01/start/broken_agent.py" },
+        { "lead": "Gateway key", "text": "exported, with your per-participant spend cap visible on the board" },
+        { "lead": "Docker", "text": "optional today — needed from Lab 3 onward for the MCP and Qdrant stack" }
+      ],
+      "notes": "Anyone red on the first three gets a floater now. Do not start Lab 1 with a broken environment — it costs the whole morning."
+    }
+  ]
+}

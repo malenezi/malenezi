@@ -1,0 +1,591 @@
+﻿path,size_bytes,modified_utc
+AI Engineer Track/AI Engineering Capstone — Production GenAI System/INSTRUCTOR_PACKAGE.md,169710,2026-07-08 07:31
+AI Engineer Track/AI Engineering Capstone — Production GenAI System/desktop.ini,246,2026-09-27 03:25
+"AI Engineer Track/AI Performance, Scalability and Cost Optimization/INSTRUCTOR_PACKAGE.md",174645,2026-07-08 07:27
+"AI Engineer Track/AI Performance, Scalability and Cost Optimization/desktop.ini",246,2026-09-27 03:25
+"AI Engineer Track/AI Security, Guardrails and Red Teaming/INSTRUCTOR_PACKAGE.md",169683,2026-07-08 07:27
+"AI Engineer Track/AI Security, Guardrails and Red Teaming/desktop.ini",246,2026-09-27 03:25
+AI Engineer Track/Advanced Agentic AI Systems Engineering/01_Training_Deck/SDA-AIE-311_Agentic_AI_Systems_Engineering_Deck.pdf,2620813,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/01_Training_Deck/SDA-AIE-311_Agentic_AI_Systems_Engineering_Deck.pptx,6972619,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/01_Training_Deck/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/ASSESSMENT_PACK.md,17776,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/INSTRUCTOR_DELIVERY_GUIDE.md,27808,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/PARTICIPANT_HANDBOOK.md,40515,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/PROGRAMME_OVERVIEW.md,9472,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/RESOURCES.md,22183,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/SETUP_GUIDE.md,14191,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/VISUAL_ASSET_BRIEF.md,25085,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/02_Programme_Guides/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Advanced Agentic AI Systems Engineering/03_Course_Repository/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Advanced Agentic AI Systems Engineering/03_Course_Repository/tawseel-agentic-ai.zip,1161637,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/INSTRUCTOR_PACKAGE.md,223083,2026-07-08 07:08
+AI Engineer Track/Advanced Agentic AI Systems Engineering/README_START_HERE.md,10546,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/SDA-AIE-311_Program_Package.zip,3049710,2026-09-11 12:42
+AI Engineer Track/Advanced Agentic AI Systems Engineering/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/INSTRUCTOR_PACKAGE.md,218333,2026-08-30 05:28
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Applied_ML_Foundations_Training.pptx,547642,2026-09-05 22:39
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/README.md,3034,2026-08-30 05:28
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/RESOURCES.md,4190,2026-08-30 05:28
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/capstone_kit/CAPSTONE_DATASETS.md,5642,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/capstone_kit/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/capstone_kit/prepare_ecommerce_churn.py,3867,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/capstone_kit/prepare_online_retail_ii.py,8469,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/case_studies/SDA-AIE-111_Case_Talabat_QuickCommerce.md,9763,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/case_studies/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/check_env.ipynb,3561,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/data_dictionary.md,5898,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/generate_manafeth.py,20080,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/jeddah_requests_sample.csv,543828,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/jubail_sensors_sample.parquet,103637,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/makkah_demand_sample.parquet,53938,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/manafeth_customers.parquet,978774,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/manafeth_orders.parquet,10100791,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/markabat_listings_sample.csv,117371,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/shifted_month.parquet,210622,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/validate_data.py,8558,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/data/validation_report.txt,1185,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day1/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day1/lab1_framing.ipynb,7817,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day1/lab2a_regression.ipynb,5953,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day2/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day2/lab2b_classification.ipynb,6433,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day2/lab3_pipelines.ipynb,7720,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day2/sabotaged_features.ipynb,5680,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day3/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day3/lab4_evaluation.ipynb,7419,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day3/lab5_ensembles.ipynb,7472,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day4/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day4/lab6_unsupervised.ipynb,6938,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day4/lab7_tuning.ipynb,7004,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day5/capstone_starter.ipynb,6635,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/day5/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/notebooks/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/project/FRAMING.md,1491,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/project/MODEL_CARD_TEMPLATE.md,2108,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/project/SCOREBOARD.md,1177,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/project/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/requirements.txt,266,2026-08-30 05:28
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab1_solution.ipynb,18479,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab2a_solution.ipynb,96777,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab2b_solution.ipynb,64500,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab3_solution.ipynb,125322,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab4_solution.ipynb,119730,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab5_solution.ipynb,103522,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab6_solution.ipynb,334065,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/solutions/lab7_solution.ipynb,14465,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/src/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/src/manafeth/__init__.py,345,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/src/manafeth/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/src/manafeth/evaluation.py,2218,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Course_Repo/src/manafeth/features.py,6257,2026-08-30 05:29
+AI Engineer Track/Applied Machine Learning Foundations/SDA-AIE-111_Manafeth_Data_Package.zip,18938715,2026-08-30 05:28
+AI Engineer Track/Applied Machine Learning Foundations/data_dictionary.md,5898,2026-08-30 05:28
+AI Engineer Track/Applied Machine Learning Foundations/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Natural Language Processing/Bayan_Data_Catalog.xlsx,10135,2026-08-26 11:16
+AI Engineer Track/Applied Natural Language Processing/Bayan_Data_Catalog.xlsx.inspect.ndjson,84049,2026-08-26 11:16
+AI Engineer Track/Applied Natural Language Processing/Bayan_Training_Data.zip,627854,2026-08-26 11:14
+AI Engineer Track/Applied Natural Language Processing/INSTRUCTOR_PACKAGE.md,231202,2026-07-05 11:46
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training.pptx,2342090,2026-08-26 12:53
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training.pptx.inspect.ndjson,324777,2026-08-26 12:53
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-1.png,908779,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-10.png,68730,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-100.png,41502,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-101.png,63862,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-102.png,76818,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-103.png,63229,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-104.png,68379,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-105.png,61916,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-106.png,61503,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-107.png,65654,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-108.png,66038,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-109.png,63963,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-11.png,77931,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-110.png,68966,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-111.png,70399,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-112.png,54063,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-113.png,67597,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-114.png,65894,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-115.png,50026,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-116.png,32131,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-117.png,94689,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-118.png,45731,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-119.png,51346,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-12.png,67387,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-120.png,44721,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-121.png,78409,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-122.png,57385,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-123.png,59073,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-124.png,44905,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-125.png,44855,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-126.png,46890,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-127.png,40471,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-128.png,52501,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-129.png,75208,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-13.png,71732,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-130.png,80231,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-131.png,58745,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-132.png,42579,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-133.png,42424,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-134.png,43702,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-135.png,37563,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-136.png,39509,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-137.png,42937,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-138.png,42447,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-139.png,37569,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-14.png,71326,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-140.png,42439,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-141.png,40058,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-142.png,38297,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-143.png,55544,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-144.png,50561,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-15.png,72779,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-16.png,75019,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-17.png,63806,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-18.png,73196,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-19.png,74789,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-2.png,45069,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-20.png,59662,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-21.png,78964,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-22.png,58678,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-23.png,44558,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-24.png,66803,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-25.png,66042,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-26.png,64769,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-27.png,64967,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-28.png,69451,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-29.png,65655,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-3.png,84132,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-30.png,69075,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-31.png,65046,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-32.png,70033,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-33.png,58433,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-34.png,53695,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-35.png,73060,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-36.png,51608,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-37.png,55491,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-38.png,35753,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-39.png,43762,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-4.png,50744,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-40.png,67765,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-41.png,74619,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-42.png,69048,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-43.png,70218,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-44.png,59050,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-45.png,65443,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-46.png,68637,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-47.png,62470,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-48.png,67584,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-49.png,68086,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-5.png,81216,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-50.png,56213,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-51.png,74227,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-52.png,46315,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-53.png,52408,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-54.png,73604,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-55.png,76671,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-56.png,66404,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-57.png,63701,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-58.png,65853,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-59.png,60659,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-6.png,50818,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-60.png,60694,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-61.png,63443,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-62.png,67404,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-63.png,73019,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-64.png,54357,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-65.png,62920,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-66.png,64363,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-67.png,35407,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-68.png,76151,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-69.png,49940,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-7.png,49339,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-70.png,71681,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-71.png,73405,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-72.png,73439,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-73.png,63736,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-74.png,63705,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-75.png,57270,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-76.png,65635,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-77.png,71774,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-78.png,65195,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-79.png,69307,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-8.png,31769,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-80.png,50312,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-81.png,73284,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-82.png,52866,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-83.png,55435,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-84.png,41633,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-85.png,66039,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-86.png,70125,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-87.png,61188,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-88.png,60228,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-89.png,65177,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-9.png,50961,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-90.png,70665,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-91.png,59851,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-92.png,60032,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-93.png,69002,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-94.png,56585,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-95.png,51728,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-96.png,65910,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-97.png,58804,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-98.png,59752,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/SDA-AIE-211_NLP_with_Transformers_Training/slide-99.png,33074,2026-08-26 12:54
+AI Engineer Track/Applied Natural Language Processing/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Building Retrieval-Augmented Generation Systems/INSTRUCTOR_PACKAGE.md,24049,2026-09-09 08:45
+AI Engineer Track/Building Retrieval-Augmented Generation Systems/SDA-AIE-214_Course_Assets.tar.gz,23060028,2026-09-09 08:51
+AI Engineer Track/Building Retrieval-Augmented Generation Systems/SDA-AIE-214_Instructor_Training_Deck_v2.pptx,6222833,2026-09-09 08:45
+AI Engineer Track/Building Retrieval-Augmented Generation Systems/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Computer Vision Systems Development/INSTRUCTOR_PACKAGE.md,234253,2026-07-05 11:48
+AI Engineer Track/Computer Vision Systems Development/SDA-AIE-212_Instructor_Training_Deck.pptx,917071,2026-09-10 15:32
+AI Engineer Track/Computer Vision Systems Development/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Computer Vision Systems Development/instructor-guide.html,451699,2026-07-15 16:22
+AI Engineer Track/Deep Learning Essentials with PyTorch/Deep_Learning_Essentials_with_PyTorch.pptx,2130622,2026-08-26 09:55
+AI Engineer Track/Deep Learning Essentials with PyTorch/INSTRUCTOR_PACKAGE.md,222609,2026-07-05 11:48
+AI Engineer Track/Deep Learning Essentials with PyTorch/Tamr_Vision_Training_Data_Pack.zip,14242386,2026-08-26 10:00
+AI Engineer Track/Deep Learning Essentials with PyTorch/Tamr_Vision_Training_Resources.xlsx,23833,2026-08-26 09:55
+AI Engineer Track/Deep Learning Essentials with PyTorch/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Enterprise AI Solution Architecture/INSTRUCTOR_PACKAGE.md,171788,2026-07-08 07:26
+AI Engineer Track/Enterprise AI Solution Architecture/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Fine-Tuning and Adapting Foundation Models/INSTRUCTOR_PACKAGE.md,171366,2026-07-08 07:02
+AI Engineer Track/Fine-Tuning and Adapting Foundation Models/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/LLMOps and Production AI Observability/INSTRUCTOR_PACKAGE.md,172891,2026-07-08 07:26
+AI Engineer Track/LLMOps and Production AI Observability/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Large Language Model Application Engineering/INSTRUCTOR_PACKAGE.md,235703,2026-07-05 11:50
+AI Engineer Track/Large Language Model Application Engineering/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/MLOps — Model Deployment and Automation/INSTRUCTOR_PACKAGE.md,223285,2026-07-08 07:06
+AI Engineer Track/MLOps — Model Deployment and Automation/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/INSTRUCTOR_PACKAGE.md,161745,2026-07-05 07:03
+AI Engineer Track/Software Engineering Practices for AI Systems/SDA-AIE-113_Activity_and_Assessment_Pack.md,5090,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/SDA-AIE-113_Instructor_Delivery_Guide.md,6655,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/SDA-AIE-113_Instructor_Training_Deck_Enhanced.pptx,6358682,2026-08-28 12:07
+AI Engineer Track/Software Engineering Practices for AI Systems/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/README.md,769,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/activities/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/activities/failure_injection_cards.md,2960,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/checklists/capstone_review_checklist.md,1981,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/checklists/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/checklists/lab_recovery_matrix.md,1801,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/logs/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/logs/logs_sample.jsonl,2357,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/payloads/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/payloads/malformed-missing-id.json,120,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/payloads/malformed-negative-amount.json,155,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/payloads/malformed-unknown-field.json,178,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/payloads/valid-request.json,162,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/templates/BENCHMARKS_template.md,1509,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/templates/DECISIONS_template.md,869,2026-08-28 12:00
+AI Engineer Track/Software Engineering Practices for AI Systems/training_assets/templates/desktop.ini,246,2026-09-27 03:25
+AI Engineer Track/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Advanced Machine Learning Methods/Applied ML for Intelligent Systems_2026_v2.pptx,1320347,2026-07-11 12:40
+Data Scientist Track/Advanced Machine Learning Methods/INSTRUCTOR_PACKAGE.md,162674,2026-07-08 09:35
+Data Scientist Track/Advanced Machine Learning Methods/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Big Data Analytics with Spark/INSTRUCTOR_PACKAGE.md,165440,2026-07-08 09:35
+Data Scientist Track/Big Data Analytics with Spark/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Data Visualization and Storytelling/INSTRUCTOR_PACKAGE.md,156838,2026-07-08 09:34
+Data Scientist Track/Data Visualization and Storytelling/SDA-DSC-112_Instructor_Training_Deck_v2.pptx,4042903,2026-09-14 13:01
+Data Scientist Track/Data Visualization and Storytelling/SDA-DSC-112_course_package_v2.zip,13783869,2026-09-14 13:01
+Data Scientist Track/Data Visualization and Storytelling/desktop.ini,246,2026-09-27 03:25
+"Data Scientist Track/Experimentation, A-B Testing and Causal Inference/Experimentation_and_Causal_Inference_P6.1.04.pptx",4398265,2026-09-07 18:02
+"Data Scientist Track/Experimentation, A-B Testing and Causal Inference/INSTRUCTOR_PACKAGE.md",183829,2026-07-08 07:53
+"Data Scientist Track/Experimentation, A-B Testing and Causal Inference/Program Repository/SDA-DSC-213_instructor_supplement.zip",5414348,2026-09-07 18:02
+"Data Scientist Track/Experimentation, A-B Testing and Causal Inference/Program Repository/SDA-DSC-213_participant_bundle.zip",14853540,2026-09-07 18:02
+"Data Scientist Track/Experimentation, A-B Testing and Causal Inference/Program Repository/desktop.ini",246,2026-09-27 03:25
+"Data Scientist Track/Experimentation, A-B Testing and Causal Inference/desktop.ini",246,2026-09-27 03:25
+Data Scientist Track/Modern Data Engineering for AI Systems/INSTRUCTOR_PACKAGE.md,212600,2026-07-08 07:55
+Data Scientist Track/Modern Data Engineering for AI Systems/SDA-DSC-214_Course_Package.zip,5599434,2026-09-10 12:08
+Data Scientist Track/Modern Data Engineering for AI Systems/SDA-DSC-214_GPS_Sample_Data.zip,26620570,2026-09-10 12:12
+Data Scientist Track/Modern Data Engineering for AI Systems/SDA-DSC-214_Modern_Data_Engineering_for_AI_Systems.pptx,2872867,2026-09-10 12:08
+Data Scientist Track/Modern Data Engineering for AI Systems/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/INSTRUCTOR_PACKAGE.md,178989,2026-07-08 09:34
+Data Scientist Track/Statistical Foundations for Data Science/Statistical Foundations - Enriched.pptx,529204,2026-08-29 01:10
+Data Scientist Track/Statistical Foundations for Data Science/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/README.md,1836,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/activities/CDC_NHCS_EXTENSION.md,3726,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/activities/SAUDI_SMS_RCT_CASE.md,4028,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/activities/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/data/cdc_nhcs_2022_ed_extract.csv,2188,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/data/cdc_nhcs_2022_ed_unweighted_appendix_extract.csv,2188,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/data/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/data/saudi_sms_rct_aggregate.csv,228,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/data/saudi_sms_rct_published_model.csv,468,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/notebooks/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/notebooks/saudi_sms_case_solution.ipynb,2922,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/notebooks/saudi_sms_case_start.ipynb,1668,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/references/OPEN_RESOURCES.md,2116,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/references/SOURCES.md,1739,2026-08-28 18:05
+Data Scientist Track/Statistical Foundations for Data Science/enrichment_pack/references/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Statistical Foundations for Data Science/mawid_data_pack.zip,718430,2026-08-27 10:01
+Data Scientist Track/Time Series Analysis and Forecasting/INSTRUCTOR_PACKAGE.md,177157,2026-07-08 09:35
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/.gitignore,108,2026-09-02 06:58
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/Makefile,1367,2026-09-02 06:58
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/README.md,7149,2026-09-02 06:58
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/SDA-DSC-212_Time_Series_Training_Deck.pptx,3472940,2026-09-02 05:04
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/assessment/CAPSTONE_BRIEF.md,7334,2026-09-02 06:37
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/assessment/SDA-DSC-212_Assessment_Pack.xlsx,17277,2026-09-02 06:36
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/assessment/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/case_studies/CS1_saudi_electricity_load.md,22472,2026-09-02 06:42
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/case_studies/CS2_retail_demand_inventory.md,21585,2026-09-02 06:44
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/case_studies/CS3_government_service_demand.md,24544,2026-09-02 06:46
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/case_studies/CS4_traffic_flow.md,22911,2026-09-02 06:48
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/case_studies/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/config.yaml,1885,2026-09-02 06:58
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/ksa_calendar.csv,50788,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/ksa_grid_demand.csv,1045342,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/ksa_grid_demand_4area.csv,4593176,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/ksa_grid_demand_clean.csv,1047157,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/temp_forecast_14d.csv,933101,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/data/temp_forecast_28d.csv,1866070,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/build.js,1100,2026-09-02 04:31
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/lib.js,5977,2026-09-02 04:56
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part1.js,15054,2026-09-02 04:39
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part2.js,19908,2026-09-02 04:49
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part3.js,23298,2026-09-02 05:04
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part4.js,15225,2026-09-02 05:03
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part5.js,16947,2026-09-02 05:04
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part6.js,15073,2026-09-02 04:55
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part7.js,13365,2026-09-02 04:55
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/part8.js,16118,2026-09-02 05:03
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/deck/theme.js,887,2026-09-02 04:17
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/01_series_overview.png,206210,2026-09-02 04:14
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/02_mstl_panel.png,396004,2026-09-02 04:47
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/03_acf_pacf.png,88279,2026-09-02 04:14
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/04_feature_importance.png,76594,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/05_interval.png,115121,2026-09-02 04:18
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/06_coverage.png,99561,2026-09-02 04:18
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/07_backtest.png,157701,2026-09-02 04:18
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/08_leakage.png,53461,2026-09-02 04:19
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/09_calendar.png,147174,2026-09-02 04:47
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D1_leakage_split.png,45554,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D2_adf_kpss.png,94853,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D3_rolling_origin.png,52569,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D4_pinball.png,97675,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D5_tradeoff_radar.png,176998,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D6_pipeline.png,53133,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/D7_fingerprint.png,58901,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/figures/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/DATA_AND_RESOURCE_CATALOG.md,32917,2026-09-02 06:52
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/FACILITATOR_RUNSHEET.md,11513,2026-09-02 06:57
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/LEAKAGE_FAILURE_EXERCISE.md,21128,2026-09-02 06:54
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/ALL_POSTERS.pdf,651014,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P1_leakage_smells.pdf,50920,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P1_leakage_smells.png,202801,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P2_adf_kpss.pdf,37537,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P2_adf_kpss.png,147152,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P3_metrics.pdf,48994,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P3_metrics.png,196631,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P4_fingerprint.pdf,47710,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P4_fingerprint.png,131976,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P5_additive_model.pdf,33757,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/instructor/posters/P5_additive_model.png,134718,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/leak_results.json,186,2026-09-02 04:19
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/_SPEC.md,1763,2026-09-02 05:05
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab1_solution.ipynb,9363,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab1_start.ipynb,6674,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab2_solution.ipynb,21176,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab2_start.ipynb,10815,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab3_solution.ipynb,23861,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab3_start.ipynb,11868,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab4_solution.ipynb,31251,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab4_start.ipynb,17726,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab5_solution.ipynb,30783,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab5_start.ipynb,15467,2026-09-02 06:10
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab6_solution.ipynb,59459,2026-09-02 06:29
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab6_start.ipynb,24613,2026-09-02 06:29
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab7_solution.ipynb,43051,2026-09-02 06:29
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/notebooks/lab7_start.ipynb,21101,2026-09-02 06:29
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/reference_results.json,5994,2026-09-02 04:47
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/requirements.txt,311,2026-09-02 06:58
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/analysis/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/analysis/correlograms.py,1639,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/analysis/decompose.py,1548,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/analysis/differencing.py,1455,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/analysis/stationarity.py,2111,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/analysis/transform.py,1228,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/data/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/data/load.py,3026,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/eval/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/eval/backtest.py,2566,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/eval/diebold_mariano.py,1635,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/eval/metrics.py,1814,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/eval/pinball.py,1395,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/features/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/features/build.py,5172,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/baselines.py,1154,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/conformal.py,2695,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/ets.py,1931,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/explain.py,829,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/lgbm_forecaster.py,2724,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/quantile.py,1775,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/models/sarimax.py,2383,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/pipeline/__init__.py,0,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/pipeline/brief.py,1306,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/pipeline/recommend.py,1525,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/src/tayyar/pipeline/select.py,1037,
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/templates/BACKTEST_REPORT.md,2474,2026-09-02 06:37
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/templates/DECISION_RECORD.md,2940,2026-09-02 06:37
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/templates/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/_source_outline_m2_m7.md,78570,2026-09-02 03:59
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/doctor.py,2084,2026-09-02 06:58
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/fix_figures.py,3014,2026-09-02 04:47
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/leak_demo.py,3772,2026-09-02 04:19
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_assessment.py,14626,2026-09-02 06:36
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_diagrams.py,9811,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_notebooks.py,9077,2026-09-02 05:48
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_notebooks_23.py,45508,2026-09-02 05:48
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_notebooks_45.py,61688,2026-09-02 05:48
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_notebooks_67.py,100022,2026-09-02 06:29
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_posters.py,11594,2026-09-02 06:57
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/make_tayyar_data.py,10904,2026-09-02 04:01
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Course_Package/tayyar/tools/run_reference.py,17020,2026-09-02 04:38
+Data Scientist Track/Time Series Analysis and Forecasting/SDA-DSC-212_Time_Series_Training_Deck.pptx,3472940,2026-09-02 10:19
+Data Scientist Track/Time Series Analysis and Forecasting/desktop.ini,246,2026-09-27 03:25
+Data Scientist Track/desktop.ini,246,2026-09-27 03:25
+Foundation Core Track/AI and Data Literacy for Professionals/INSTRUCTOR_PACKAGE.md,217872,2026-07-06 05:51
+Foundation Core Track/AI and Data Literacy for Professionals/desktop.ini,246,2026-09-27 03:25
+"Foundation Core Track/Data Wrangling, SQL and Exploratory Analysis/INSTRUCTOR_PACKAGE.md",194993,2026-07-06 05:47
+"Foundation Core Track/Data Wrangling, SQL and Exploratory Analysis/desktop.ini",246,2026-09-27 03:25
+Foundation Core Track/Generative AI and Prompt Engineering Essentials/INSTRUCTOR_PACKAGE.md,203930,2026-07-06 05:51
+Foundation Core Track/Generative AI and Prompt Engineering Essentials/desktop.ini,246,2026-09-27 03:25
+Foundation Core Track/Python Programming for Data and AI/INSTRUCTOR_PACKAGE.md,215895,2026-07-06 05:32
+Foundation Core Track/Python Programming for Data and AI/desktop.ini,246,2026-09-27 03:25
+Foundation Core Track/Responsible AI and Data Governance/INSTRUCTOR_PACKAGE.md,221608,2026-07-06 05:49
+Foundation Core Track/Responsible AI and Data Governance/desktop.ini,246,2026-09-27 03:25
+Foundation Core Track/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1.zip,1079409,2026-09-11 01:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/01_Training_Deck/SDA-FAE-100_Instructor_Training_Deck.pptx,675223,2026-09-10 19:31
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/01_Training_Deck/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/02_Instructor_Guide/SDA-FAE-100_Facilitator_Guide.docx,43521,2026-09-10 19:52
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/02_Instructor_Guide/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/03_Learner_Materials/SDA-FAE-100_Learner_Workbook.xlsx,16382,2026-09-10 19:33
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/03_Learner_Materials/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/04_Labs_and_Activities/SDA-FAE-100_Lab_Activity_Guide.docx,41487,2026-09-10 19:52
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/04_Labs_and_Activities/SDA-FAE-100_Prompt_Library.md,1766,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/04_Labs_and_Activities/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/customer_feedback.csv,7299,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/employee_survey.csv,6679,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/meeting_notes.docx,38475,2026-09-10 19:52
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/policy_document.pdf,107590,2026-09-10 19:42
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/project_updates.docx,38950,2026-09-10 19:52
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/risk_cards.pptx,34432,2026-09-10 19:31
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/service_requests.xlsx,12273,2026-09-10 19:33
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/verification_answers.docx,38216,2026-09-10 19:52
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/06_Assessment/SDA-FAE-100_Assessment_and_Answer_Key.docx,39225,2026-09-10 19:52
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/06_Assessment/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/07_Printables/SDA-FAE-100_Activity_Cards.pdf,160127,2026-09-10 19:42
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/07_Printables/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/INSTRUCTOR_PACKAGE.md,1283,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/PACKAGE_MANIFEST.csv,2041,2026-09-11 01:24
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/README.md,985,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AI_Fundamentals_Complete_Program_Package_v1/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/01_Training_Deck/SDA-FAE-100_Instructor_Training_Deck.pptx,675223,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/02_Instructor_Guide/SDA-FAE-100_Facilitator_Guide.docx,43521,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/03_Learner_Materials/SDA-FAE-100_Learner_Workbook.xlsx,16382,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/04_Labs_and_Activities/SDA-FAE-100_Lab_Activity_Guide.docx,41487,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/04_Labs_and_Activities/SDA-FAE-100_Prompt_Library.md,1766,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/customer_feedback.csv,7299,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/employee_survey.csv,6679,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/meeting_notes.docx,38475,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/policy_document.pdf,107590,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/project_updates.docx,38950,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/risk_cards.pptx,34432,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/service_requests.xlsx,12273,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/05_Data_Files/verification_answers.docx,38216,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/06_Assessment/SDA-FAE-100_Assessment_and_Answer_Key.docx,39225,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/07_Printables/SDA-FAE-100_Activity_Cards.pdf,160127,
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/INSTRUCTOR_PACKAGE.md,1283,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/PACKAGE_MANIFEST.csv,2041,2026-09-11 01:24
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/README.md,985,2026-09-10 19:41
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/AI_Fundamentals_Complete_Program_Package_v1/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/AdditionalDetails/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/SDA-FAE-100 - أساسيات الذكاء الاصطناعي في بيئة العمل.pptx,656718,2026-09-06 04:51
+Level-0-Beginners/AI/AI Fundamentals for the Workplace/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/AI-Powered Automation/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/Generative AI for Productivity/GenAI_for_Productivity_Program.zip,900508,2026-08-26 12:50
+Level-0-Beginners/AI/Generative AI for Productivity/GenAI_for_Productivity_Trainer_Deck.pptx,2685402,2026-08-26 12:50
+Level-0-Beginners/AI/Generative AI for Productivity/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/AI/Generative AI for Productivity/facilitator_guide.docx,16624,2026-08-26 12:50
+Level-0-Beginners/AI/Generative AI for Productivity/participant_workbook.docx,17545,2026-08-26 12:50
+Level-0-Beginners/AI/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/Data/Data Literacy Foundations/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/Data/Data Storytelling & Data-Driven Decisions/Data Files.zip,2057802,2026-08-25 13:21
+Level-0-Beginners/Data/Data Storytelling & Data-Driven Decisions/INSTRUCTOR_PACKAGE.md,156838,2026-08-25 13:01
+Level-0-Beginners/Data/Data Storytelling & Data-Driven Decisions/SDA-DSC-112_Instructor_Training_Deck.pptx,9702884,2026-08-25 12:56
+Level-0-Beginners/Data/Data Storytelling & Data-Driven Decisions/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/Data/Practical Data Skills with Spreadsheets/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/Data/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/desktop.ini,246,2026-09-27 03:25
+Level-0-Beginners/دليل توظيف أدوات الذكاء الاصطناعي - وفق قالب اللائحة.pdf,790466,2026-09-05 11:52
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-111 - Applied Machine Learning Foundations.xlsx,34313,2026-07-12 12:05
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-112 - Deep Learning Foundations.xlsx,34461,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-113 - Software Engineering Practices for AI Systems.xlsx,33294,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-211 - Applied Natural Language Processing.xlsx,35237,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-212 - Computer Vision Systems Development.xlsx,33855,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-213 - Large Language Model Application Engineering.xlsx,34372,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-214 - Building Retrieval-Augmented Generation Systems.xlsx,35669,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-215 - Fine-Tuning and Adapting Foundation Models.xlsx,34127,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-216 - MLOps — Model Deployment and Automation.xlsx,35430,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-311 - Advanced Agentic AI Systems Engineering.xlsx,38377,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-312 - LLMOps and Production AI Observability.xlsx,34504,2026-07-12 12:03
+"Program Files (AthkaX)/AI Engineer Track/SDA-AIE-313 - AI Security, Guardrails and Red Teaming.xlsx",35486,2026-07-12 12:03
+"Program Files (AthkaX)/AI Engineer Track/SDA-AIE-314 - AI Performance, Scalability and Cost Optimization.xlsx",35266,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-315 - Enterprise AI Solution Architecture.xlsx,35848,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/SDA-AIE-390 - AI Engineering Capstone — Production GenAI System.xlsx,34998,2026-07-12 12:03
+Program Files (AthkaX)/AI Engineer Track/desktop.ini,246,2026-09-27 03:25
+Program Files (AthkaX)/Beginner-Level/L0-FAA - AI-Powered Automation.xlsx,32931,2026-07-12 12:03
+Program Files (AthkaX)/Beginner-Level/L0-FAE - AI Fundamentals for the Workplace.xlsx,33066,2026-07-12 12:03
+Program Files (AthkaX)/Beginner-Level/L0-FDL - Data Literacy Foundations.xlsx,32382,2026-07-12 12:03
+Program Files (AthkaX)/Beginner-Level/L0-FDS - Practical Data Skills with Spreadsheets.xlsx,32291,2026-07-12 12:04
+Program Files (AthkaX)/Beginner-Level/L0-FDV - Data Storytelling & Data-Driven Decisions.xlsx,33114,2026-07-12 12:03
+Program Files (AthkaX)/Beginner-Level/L0-FGP - Generative AI for Productivity.xlsx,33523,2026-07-12 12:03
+Program Files (AthkaX)/Beginner-Level/desktop.ini,246,2026-09-27 03:25
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-111 - Statistical Foundations for Data Science.xlsx,33003,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-112 - Data Visualization and Storytelling.xlsx,32378,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-211 - Advanced Machine Learning Methods.xlsx,33184,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-212 - Time Series Analysis and Forecasting.xlsx,32328,2026-07-12 12:03
+"Program Files (AthkaX)/Data Scientist Track/SDA-DSC-213 - Experimentation, A-B Testing and Causal Inference.xlsx",33479,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-214 - Modern Data Engineering for AI Systems.xlsx,33237,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-215 - Big Data Analytics.xlsx,32368,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-311 - Decision Science and Optimization Modeling.xlsx,32654,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-312 - GenAI-Augmented Data Science Workflows.xlsx,33528,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-313 - Real-Time and Streaming Data Analytics.xlsx,32828,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/SDA-DSC-390 - Data Science Capstone — From Data to Decision.xlsx,33288,2026-07-12 12:03
+Program Files (AthkaX)/Data Scientist Track/desktop.ini,246,2026-09-27 03:25
+Program Files (AthkaX)/FLAG_REPORT.md,4803,2026-07-12 12:05
+Program Files (AthkaX)/Foundation Core/SDA-FND-101 - AI and Data Literacy for Professionals.xlsx,33443,2026-07-12 12:03
+Program Files (AthkaX)/Foundation Core/SDA-FND-102 - Generative AI and Prompt Engineering Essentials.xlsx,34107,2026-07-12 12:03
+Program Files (AthkaX)/Foundation Core/SDA-FND-103 - Python Programming for Data and AI.xlsx,34085,2026-07-12 12:03
+"Program Files (AthkaX)/Foundation Core/SDA-FND-104 - Data Wrangling, SQL and Exploratory Analysis.xlsx",33275,2026-07-12 12:04
+Program Files (AthkaX)/Foundation Core/SDA-FND-105 - Responsible AI and Data Governance.xlsx,34217,2026-07-12 12:03
+Program Files (AthkaX)/Foundation Core/desktop.ini,246,2026-09-27 03:25
+Program Files (AthkaX)/desktop.ini,246,2026-09-27 03:25
+Programs Details and Paths/SDAIA_Academy_Module_Catalog_v2.xlsx,41501,2026-07-02 18:15
+Programs Details and Paths/SDAIA_Learning_Catalog_v2.docx,47765,2026-07-02 18:15
+Programs Details and Paths/SDAIA_Learning_Catalog_v2.pdf,474150,2026-07-05 07:48
+Programs Details and Paths/SDAIA_Learning_Paths_Deck_v4.pdf,298174,2026-07-05 07:44
+Programs Details and Paths/SDAIA_Learning_Paths_Deck_v4.pptx,225593,2026-07-03 07:36
+Programs Details and Paths/_agent_build/AGENT_INSTRUCTIONS.md,4546,2026-07-08 06:13
+Programs Details and Paths/_agent_build/SOURCE_REFERENCE.md,37242,2026-07-08 06:13
+Programs Details and Paths/_agent_build/desktop.ini,246,2026-09-27 03:25
+Programs Details and Paths/_agent_build/module_catalog.json,84518,2026-07-08 06:13
+Programs Details and Paths/desktop.ini,246,2026-09-27 03:25
+SDAIA_Academy_Programs_Guide_2026_Editable.docx,103136,2026-08-26 11:01
+SDAIA_Learning_Paths_Catalog.xlsx,24609,2026-07-14 11:08
+desktop.ini,246,2026-09-27 03:25

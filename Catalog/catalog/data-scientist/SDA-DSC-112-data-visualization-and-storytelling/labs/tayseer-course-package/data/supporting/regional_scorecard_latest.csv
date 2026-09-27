@@ -1,0 +1,14 @@
+﻿region,region_code,region_ar,population_2025,digital_adoption_pct,gap_to_target_pp,cost_per_txn_sar,csat,avg_completion_min,monthly_transactions,monthly_unique_users,digital_txn_per_1k_pop,txn_per_1k_pop,adoption_9m_ago_pct,adoption_slope_pp_per_month,trend_class,priority_tier,projected_dec_2026_pct,reaches_target_unaided
+Jazan,JZN,منطقة جازان,1720000,50.0,15.0,24.6,3.78,21.2,610056,348472,180.0,354.7,49.4,0.067,Stalled,Tier 1 - intervention,50.4,No
+Najran,NJR,منطقة نجران,660000,52.4,12.6,22.3,3.98,19.4,232696,133984,184.0,352.6,52.1,0.033,Stalled,Tier 1 - intervention,52.6,No
+Al-Baha,BAH,منطقة الباحة,500000,55.5,9.5,21.1,4.09,18.4,174849,98677,194.2,349.7,55.0,0.056,Stalled,Tier 1 - intervention,55.8,No
+Asir,ASR,منطقة عسير,2310000,60.2,4.8,19.8,4.08,16.3,813727,444637,212.1,352.3,59.9,0.033,Stalled,Tier 1 - intervention,60.4,No
+Northern Borders,NBR,منطقة الحدود الشمالية,400000,61.7,3.3,19.4,4.29,14.7,141728,76601,221.6,354.3,61.0,0.078,Stalled,Tier 1 - intervention,62.2,No
+Madinah,MAD,منطقة المدينة المنورة,2290000,62.1,2.9,17.9,4.35,15.0,802460,434429,216.4,350.4,60.9,0.133,Rising,Tier 2 - monitor,62.9,No
+Makkah,MAK,منطقة مكة المكرمة,9230000,63.1,1.9,17.2,4.02,16.1,3219163,1723171,220.6,348.8,61.8,0.144,Rising,Tier 2 - monitor,64.0,No
+Al-Jouf,JOF,منطقة الجوف,560000,63.2,1.8,17.8,4.16,14.0,197956,106489,222.3,353.5,61.8,0.156,Rising,Tier 2 - monitor,64.1,No
+Hail,HAL,منطقة حائل,760000,65.0,0.0,17.1,4.25,13.7,266079,140407,227.6,350.1,63.7,0.144,Rising,Tier 2 - monitor,65.9,Yes
+Tabuk,TBK,منطقة تبوك,1040000,65.1,-0.1,17.4,3.95,14.6,364711,194565,229.1,350.7,63.9,0.133,Rising,Tier 2 - monitor,65.9,Yes
+Qassim,QSM,منطقة القصيم,1520000,65.8,-0.8,16.4,3.97,12.9,530067,278730,226.8,348.7,64.8,0.111,Rising,Tier 2 - monitor,66.5,Yes
+Eastern Province,EAS,المنطقة الشرقية,5410000,67.4,-2.4,15.1,4.29,12.7,1894533,996906,235.8,350.2,66.0,0.156,Rising,Tier 2 - monitor,68.3,Yes
+Riyadh,RIY,منطقة الرياض,9050000,67.8,-2.8,14.6,4.32,12.1,3229163,1687373,242.4,356.8,66.6,0.133,Rising,Tier 2 - monitor,68.6,Yes

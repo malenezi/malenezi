@@ -1,0 +1,37 @@
+﻿service_id,service_name_en,service_name_ar,service_category,category_ar,owning_entity,digitally_available,complexity,target_completion_min,statutory_fee_sar,launch_date,annual_volume_rank
+SVC-001,National ID renewal,تجديد الهوية الوطنية,Identity & Civil Affairs,الأحوال المدنية والهوية,Ministry of Interior,Yes,Medium,10,100,2020-10-01,1
+SVC-002,Birth certificate issuance,إصدار شهادة ميلاد,Identity & Civil Affairs,الأحوال المدنية والهوية,Ministry of Education,Yes,Medium,10,500,2022-01-01,2
+SVC-003,Family record update,تحديث سجل الأسرة,Identity & Civil Affairs,الأحوال المدنية والهوية,Ministry of Commerce,Yes,Medium,10,500,2019-07-01,3
+SVC-004,Address registration,تسجيل العنوان الوطني,Identity & Civil Affairs,الأحوال المدنية والهوية,Ministry of HR & Social Development,Yes,Medium,10,0,2023-04-01,4
+SVC-005,Primary care appointment,موعد الرعاية الأولية,Health Services,الخدمات الصحية,Ministry of HR & Social Development,Yes,Low,9,1000,2019-03-01,5
+SVC-006,Vaccination record,سجل التطعيمات,Health Services,الخدمات الصحية,Ministry of Justice,Yes,Low,9,200,2022-06-01,6
+SVC-007,Specialist referral,إحالة لأخصائي,Health Services,الخدمات الصحية,Ministry of Commerce,Yes,Low,9,300,2018-11-01,7
+SVC-008,Sick leave verification,التحقق من إجازة مرضية,Health Services,الخدمات الصحية,Ministry of Health,Yes,Low,9,1000,2021-04-01,8
+SVC-009,Driving licence renewal,تجديد رخصة القيادة,Traffic & Transport,المرور والنقل,Ministry of Municipal Affairs,Yes,Low,8,200,2018-02-01,9
+SVC-010,Vehicle registration transfer,نقل ملكية مركبة,Traffic & Transport,المرور والنقل,Ministry of Interior,Yes,Low,8,100,2022-10-01,10
+SVC-011,Traffic violation payment,سداد مخالفة مرورية,Traffic & Transport,المرور والنقل,Ministry of HR & Social Development,Yes,Low,8,50,2019-09-01,11
+SVC-012,Vehicle periodic inspection booking,حجز الفحص الدوري,Traffic & Transport,المرور والنقل,Ministry of Education,Yes,Low,8,300,2018-09-01,12
+SVC-013,School enrolment,التسجيل المدرسي,Education & Training,التعليم والتدريب,Ministry of Justice,Yes,Low,8,300,2020-10-01,13
+SVC-014,Certificate attestation,تصديق الشهادات,Education & Training,التعليم والتدريب,Ministry of Commerce,Yes,Low,8,300,2023-05-01,14
+SVC-015,Scholarship application,طلب ابتعاث,Education & Training,التعليم والتدريب,Ministry of HR & Social Development,Yes,Low,8,1000,2021-05-01,15
+SVC-016,Training seat booking,حجز مقعد تدريبي,Education & Training,التعليم والتدريب,Ministry of Municipal Affairs,Yes,Low,8,300,2022-10-01,16
+SVC-017,Building permit,رخصة بناء,Municipal Services,الخدمات البلدية,Ministry of Commerce,Yes,Medium,11,1000,2020-11-01,17
+SVC-018,Commercial signage permit,رخصة لوحة تجارية,Municipal Services,الخدمات البلدية,Ministry of Education,Yes,Medium,11,0,2020-03-01,18
+SVC-019,Waste collection request,طلب جمع نفايات,Municipal Services,الخدمات البلدية,Ministry of HR & Social Development,Yes,Medium,11,500,2021-10-01,19
+SVC-020,Street maintenance report,بلاغ صيانة طريق,Municipal Services,الخدمات البلدية,Ministry of Justice,Yes,Medium,11,1000,2021-03-01,20
+SVC-021,Work permit issuance,إصدار رخصة عمل,Labour & HR Services,خدمات العمل والموارد البشرية,Ministry of Municipal Affairs,Yes,Medium,10,100,2022-09-01,21
+SVC-022,Contract authentication,توثيق عقد عمل,Labour & HR Services,خدمات العمل والموارد البشرية,Ministry of Health,Yes,Medium,10,0,2019-06-01,22
+SVC-023,Wage protection filing,رفع ملف حماية الأجور,Labour & HR Services,خدمات العمل والموارد البشرية,Ministry of Transport,Yes,Medium,10,50,2018-03-01,23
+SVC-024,Employment certificate,شهادة تعريف بالراتب,Labour & HR Services,خدمات العمل والموارد البشرية,Ministry of Health,Yes,Medium,10,0,2022-03-01,24
+SVC-025,Commercial registration,السجل التجاري,Business & Licensing,الأعمال والتراخيص,Ministry of HR & Social Development,Yes,High,16,500,2023-02-01,25
+SVC-026,Investment licence,رخصة استثمار,Business & Licensing,الأعمال والتراخيص,Ministry of HR & Social Development,Partial,High,16,0,2018-06-01,26
+SVC-027,Activity amendment,تعديل نشاط تجاري,Business & Licensing,الأعمال والتراخيص,Ministry of Justice,Yes,High,16,1000,2018-01-01,27
+SVC-028,Licence renewal,تجديد رخصة,Business & Licensing,الأعمال والتراخيص,Ministry of Transport,Partial,High,16,1000,2022-05-01,28
+SVC-029,Citizen account application,طلب حساب المواطن,Social Support & Subsidies,الدعم والإعانات الاجتماعية,Ministry of Municipal Affairs,Yes,Medium,11,0,2018-06-01,29
+SVC-030,Social security benefit,الضمان الاجتماعي,Social Support & Subsidies,الدعم والإعانات الاجتماعية,Ministry of Municipal Affairs,Yes,Medium,11,200,2022-07-01,30
+SVC-031,Housing support request,طلب دعم سكني,Social Support & Subsidies,الدعم والإعانات الاجتماعية,Ministry of Commerce,Yes,Medium,11,500,2019-10-01,31
+SVC-032,Subsidy appeal,اعتراض على الدعم,Social Support & Subsidies,الدعم والإعانات الاجتماعية,Ministry of Transport,Yes,Medium,11,0,2020-01-01,32
+SVC-033,Power of attorney,توكيل إلكتروني,Justice & Notary,العدل والتوثيق,Ministry of Commerce,Yes,High,17,1000,2018-08-01,33
+SVC-034,Property deed transfer,نقل صك عقاري,Justice & Notary,العدل والتوثيق,Ministry of HR & Social Development,Partial,High,17,500,2019-09-01,34
+SVC-035,Case filing,رفع دعوى,Justice & Notary,العدل والتوثيق,Ministry of Health,Partial,High,17,0,2020-06-01,35
+SVC-036,Notarised declaration,إقرار موثق,Justice & Notary,العدل والتوثيق,Ministry of Municipal Affairs,Yes,High,17,50,2019-11-01,36

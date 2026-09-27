@@ -1,0 +1,4198 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Private trainer portal for SDAIA Academy training content">
+      
+      
+        <meta name="author" content="SDAIA Academy">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>LAB 02 — Cost and Elasticity Model for Masar - SDAIA Academy Trainer Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <!-- Internal training material: keep out of search engines on any host -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-02-cost-and-elasticity-model-for-masar" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-header__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SDAIA Academy Trainer Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LAB 02 — Cost and Elasticity Model for Masar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../portal/catalog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../beginner/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../shared/trainer-resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Trainer resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../portal/feedback/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Help & governance
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-nav__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    SDAIA Academy Trainer Knowledge Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../TRAINER_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/domains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse by domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/recently-updated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recently updated
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Courses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Courses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../beginner/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner Level (Level 0)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Beginner Level (Level 0)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FAA-ai-powered-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAA · AI-Powered Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FAE-ai-fundamentals-for-the-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAE · AI Fundamentals for the Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FDL-data-literacy-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDL · Data Literacy Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FDS-practical-data-skills-with-spreadsheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDS · Practical Data Skills with Spreadsheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FDV-data-storytelling-and-data-driven-decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDV · Data Storytelling & Data-Driven Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FGP-generative-ai-for-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FGP · Generative AI for Productivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../foundation-core/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation Core
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-101-ai-and-data-literacy-for-professionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-101 · AI and Data Literacy for Professionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-102-generative-ai-and-prompt-engineering-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-102 · Generative AI and Prompt Engineering Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-103-python-programming-for-data-and-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-103 · Python Programming for Data and AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-104-data-wrangling-sql-and-exploratory-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-104 · Data Wrangling, SQL and Exploratory Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-105-responsible-ai-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-105 · Responsible AI and Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../ai-engineer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineer Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Engineer Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-111-applied-machine-learning-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-111 · Applied Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-112-deep-learning-essentials-with-pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-112 · Deep Learning Essentials with PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-113-software-engineering-practices-for-ai-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-113 · Software Engineering Practices for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-211-natural-language-processing-with-transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-211 · Natural Language Processing with Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-212-computer-vision-systems-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-212 · Computer Vision Systems Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-213-large-language-model-application-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-213 · Large Language Model Application Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-214-building-retrieval-augmented-generation-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-214 · Building Retrieval-Augmented Generation Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-215-fine-tuning-and-adapting-foundation-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-215 · Fine-Tuning and Adapting Foundation Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-216-mlops-model-deployment-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-216 · MLOps: Model Deployment and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-311-agentic-ai-systems-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-311 · Agentic AI Systems Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-312-llmops-and-production-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-312 · LLMOps and Production AI Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-313-ai-security-guardrails-and-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-313 · AI Security, Guardrails and Red Teaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-314-ai-performance-scalability-and-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-314 · AI Performance, Scalability and Cost Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-315-enterprise-ai-solution-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-315 · Enterprise AI Solution Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-390-ai-engineering-capstone-production-genai-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-390 · AI Engineering Capstone: Production GenAI System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Scientist Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Scientist Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-111-statistical-foundations-for-data-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-111 · Statistical Foundations for Data Science
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-112-data-visualization-and-storytelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-112 · Data Visualization and Storytelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-211-advanced-machine-learning-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-211 · Advanced Machine Learning Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-212-time-series-analysis-and-forecasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-212 · Time Series Analysis and Forecasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-213-experimentation-a-b-testing-and-causal-inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-213 · Experimentation, A/B Testing and Causal Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-214 · Modern Data Engineering for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-215-big-data-analytics-with-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-215 · Big Data Analytics with Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-311-decision-science-and-optimization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-311 · Decision Science and Optimization Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-312-genai-augmented-data-science-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-312 · GenAI-Augmented Data Science Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-313-real-time-and-streaming-data-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-313 · Real-Time and Streaming Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-390-data-science-capstone-from-data-to-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-390 · Data Science Capstone: From Data to Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../shared/trainer-resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trainer resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/assessment-guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assessment guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/classroom-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/delivery-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/technical-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academy templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/branding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/catalog-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog source documents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help & governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help & governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report a problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/content-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../hub-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../CONTENT_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/ADMIN_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/HOSTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/LARGE_FILES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/PERMISSIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../migration/MIGRATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../migration/MISSING_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../migration/DUPLICATE_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-lab-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this lab matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-3-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup (3 min)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-step tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-fill-in-real-prices-and-cite-them-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1 — Fill in real prices and cite them (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-model-masars-storage-and-compute-and-record-compute_share-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2 — Model Masar's storage and compute, and record compute_share (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-measure-data-skipping-do-not-assume-it-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3 — Measure data skipping, do not assume it (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-build-the-coupled-vs-decoupled-comparison-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4 — Build the coupled-vs-decoupled comparison (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-write-the-elasticity-guardrails-and-justify-them-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5 — Write the elasticity guardrails and justify them (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-commit-2-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6 — Commit (2 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-check questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stretch-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stretch goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capstone-linkage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capstone linkage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="lab-02-cost-and-elasticity-model-for-masar">LAB 02 — Cost and Elasticity Model for Masar<a class="headerlink" href="#lab-02-cost-and-elasticity-model-for-masar" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lab ID</strong></td>
+<td>LAB-02</td>
+</tr>
+<tr>
+<td><strong>Module</strong></td>
+<td>M2 — Compute–Storage Separation and Cloud Economics</td>
+</tr>
+<tr>
+<td><strong>Day / Hour</strong></td>
+<td>Day 1, Hour 5</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>50 minutes (20% theory / 80% lab), pairs</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Foundational–Intermediate (analysis-heavy, light coding)</td>
+</tr>
+<tr>
+<td><strong>LO mapping</strong></td>
+<td>LO2 (primary — compute–storage separation, cost, elasticity, scale), LO1 (reinforced — why the Lakehouse is economically viable), LO7 (contributes — <code>BENCHMARKS.md</code> seed)</td>
+</tr>
+<tr>
+<td><strong>Prerequisites</strong></td>
+<td>LAB-01 complete (<code>bronze.trips</code>, <code>bronze.gps_events</code> landed); M2 lecture (object storage, Parquet, elasticity spectrum, cost model)</td>
+</tr>
+<tr>
+<td><strong>Checkpoint git tag</strong></td>
+<td><code>lab2-start</code> (solution: <code>lab2-solution</code>)</td>
+</tr>
+<tr>
+<td><strong>Deliverable</strong></td>
+<td>A runnable <code>src/masar/econ/cost_model.py</code> producing a storage-vs-compute split with a stated dominant driver; measured data-skipping evidence from <code>src/masar/econ/scan_cost.py</code>; <code>LAB2_NOTES.md</code> containing the coupled-vs-decoupled comparison table, the break-even statement, cited price sources, and the elasticity-guardrail rationale</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Scale note.</strong> Figures quoted in this document assume the full-scale generator run (<code>--scale 1.0</code>); the shipped sample is <code>--scale 0.15</code> — 7,230 trips/day over 5 days (36,150 trips), 873,763 GPS pings, 3,450 drivers, 3,864 vehicles, 48 zones. Grains, ratios and file-count reductions hold at either scale; absolute row counts do not.</p>
+</blockquote>
+<hr />
+<h2 id="why-this-lab-matters">Why this lab matters<a class="headerlink" href="#why-this-lab-matters" title="Permanent link">&para;</a></h2>
+<p>Masar's ETA model is only retrained if someone approves the compute budget, and the operations dashboard only refreshes every 15 minutes if that refresh is affordable. <strong>When the economics of the platform fail, the AI system fails quietly through starvation:</strong> history gets truncated to save storage (so the model loses seasonality), retrains are cut from weekly to monthly (so the model drifts), and features are sampled instead of computed (so training and serving diverge). The counter-failure is just as real — an unbounded autoscaling cluster with no idle termination produces a bill that gets the whole platform cancelled in month two. This lab teaches you to defend a Lakehouse in an architecture review with numbers you measured yourself, and to name the layout decisions that turn decoupling from a <em>possibility</em> of savings into <em>realised</em> savings.</p>
+<hr />
+<h2 id="setup-3-min">Setup (3 min)<a class="headerlink" href="#setup-3-min" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>~/masar-lakehouse
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>fetch<span class="w"> </span>--tags
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>git<span class="w"> </span>checkout<span class="w"> </span>lab2-start
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>make<span class="w"> </span>doctor
+</code></pre></div>
+<p>This lab benchmarks against a curated table. Two supported paths:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Path A (default): a pre-built 7-day silver.trips sample ships on the lab2-start tag</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#   (~294k rows, 27 columns, partitioned by city) so the scan benchmark has</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#   enough files per partition for skipping to be measurable.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>ls<span class="w"> </span>lakehouse/silver/trips/_delta_log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-3
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Path B (if lakehouse/silver/trips is absent): build the benchmark input from YOUR bronze</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.econ.prepare_benchmark_input<span class="w">      </span><span class="c1"># writes lakehouse/silver/trips from bronze.trips</span>
+</code></pre></div>
+<p>Data paths used by this lab:</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark table (Delta, partitioned by <code>city</code>)</td>
+<td><code>lakehouse/silver/trips</code></td>
+</tr>
+<tr>
+<td>Raw volume reference for the storage estimate</td>
+<td><code>data/raw/</code>, <code>lakehouse/bronze/</code></td>
+</tr>
+<tr>
+<td>Cost model</td>
+<td><code>src/masar/econ/cost_model.py</code></td>
+</tr>
+<tr>
+<td>Scan benchmark</td>
+<td><code>src/masar/econ/scan_cost.py</code></td>
+</tr>
+<tr>
+<td>Cluster guardrail config</td>
+<td><code>infra/cluster/masar-elt-cluster.yaml</code></td>
+</tr>
+<tr>
+<td>Your notes</td>
+<td><code>LAB2_NOTES.md</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-by-step-tasks">Step-by-step tasks<a class="headerlink" href="#step-by-step-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="task-1-fill-in-real-prices-and-cite-them-10-min">Task 1 — Fill in real prices and cite them (10 min)<a class="headerlink" href="#task-1-fill-in-real-prices-and-cite-them-10-min" title="Permanent link">&para;</a></h3>
+<p>Open <code>src/masar/econ/cost_model.py</code>. Replace the placeholder prices with the <strong>current published list prices</strong> of one cloud region you choose (KSA-relevant options: <code>me-central-1</code> / <code>me-south-1</code> / a European region if the ME price is not published). Record the URL and the date you read it in <code>LAB2_NOTES.md</code> — an uncited price is an unusable model.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># src/masar/econ/cost_model.py</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">&quot;&quot;&quot;Transparent storage-vs-compute cost model for the Masar platform.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">All prices are INPUTS; the point is to SEE which axis dominates, and to be</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">able to defend every number in an architecture review.</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="sd">Sources (fill in and keep current):</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="sd">  storage_gb_month : &lt;provider&gt; standard object storage, &lt;region&gt;, list price, read &lt;date&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="sd">  core_hour        : &lt;provider&gt; general-purpose 4-core node, &lt;region&gt;, on-demand, read &lt;date&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="sd">  spot_discount    : &lt;provider&gt; published spot/preemptible discount range, read &lt;date&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">replace</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">Prices</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">storage_gb_month</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.023</span>      <span class="c1"># object storage $/GB-month</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="n">core_hour</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.06</span>              <span class="c1"># decoupled compute $/core-hour (on-demand)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">spot_multiplier</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.35</span>        <span class="c1"># spot ≈ 65% cheaper than on-demand</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">warehouse_core_hour</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.18</span>    <span class="c1"># coupled MPP warehouse: node runs 24/7</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="n">warehouse_storage_gb_month</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.21</span>   <span class="c1"># storage inside the warehouse node</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="k">class</span><span class="w"> </span><span class="nc">Job</span><span class="p">:</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;One scheduled workload on the decoupled platform.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="n">cores</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="n">runtime_hours</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="n">runs_per_month</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    <span class="n">spot</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">monthly_core_hours</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cores</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">runtime_hours</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">runs_per_month</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">monthly_compute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">Prices</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>        <span class="n">rate</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">core_hour</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">spot_multiplier</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot</span> <span class="k">else</span> <span class="mf">1.0</span><span class="p">)</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">monthly_core_hours</span><span class="p">()</span> <span class="o">*</span> <span class="n">rate</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="k">def</span><span class="w"> </span><span class="nf">lakehouse_monthly_cost</span><span class="p">(</span><span class="n">total_gb</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Job</span><span class="p">],</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>                           <span class="n">p</span><span class="p">:</span> <span class="n">Prices</span> <span class="o">=</span> <span class="n">Prices</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Decoupled: pay per byte KEPT and per second of compute that RUNS.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>    <span class="n">storage</span> <span class="o">=</span> <span class="n">total_gb</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">storage_gb_month</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>    <span class="n">compute</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">monthly_compute</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">)</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">storage</span> <span class="o">+</span> <span class="n">compute</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;storage&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">storage</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>            <span class="s2">&quot;compute&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">compute</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>            <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>            <span class="s2">&quot;compute_share&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">compute</span> <span class="o">/</span> <span class="n">total</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="k">def</span><span class="w"> </span><span class="nf">warehouse_monthly_cost</span><span class="p">(</span><span class="n">total_gb</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">nodes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cores_per_node</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>                           <span class="n">p</span><span class="p">:</span> <span class="n">Prices</span> <span class="o">=</span> <span class="n">Prices</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Coupled: the cluster must be sized for the DATA and runs 24/7.</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="sd">    Storage and compute cannot be scaled independently, so idle hours are</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="sd">    billed and retaining history forces you to add compute you do not need.</span>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>    <span class="n">hours</span> <span class="o">=</span> <span class="mf">730.0</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>    <span class="n">compute</span> <span class="o">=</span> <span class="n">nodes</span> <span class="o">*</span> <span class="n">cores_per_node</span> <span class="o">*</span> <span class="n">hours</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">warehouse_core_hour</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>    <span class="n">storage</span> <span class="o">=</span> <span class="n">total_gb</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">warehouse_storage_gb_month</span>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">storage</span> <span class="o">+</span> <span class="n">compute</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;storage&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">storage</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>            <span class="s2">&quot;compute&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">compute</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>            <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>            <span class="s2">&quot;compute_share&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">compute</span> <span class="o">/</span> <span class="n">total</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>            <span class="s2">&quot;idle_share&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.9</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span> <span class="o">/</span> <span class="n">hours</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>   <span class="c1"># ~0.9h of real work/day</span>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="k">def</span><span class="w"> </span><span class="nf">break_even_utilisation</span><span class="p">(</span><span class="n">total_gb</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">nodes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cores_per_node</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>                           <span class="n">p</span><span class="p">:</span> <span class="n">Prices</span> <span class="o">=</span> <span class="n">Prices</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Monthly decoupled core-hours at which the Lakehouse stops being cheaper.</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="sd">    Above this many core-hours per month, an always-on coupled cluster of the</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a><span class="sd">    same shape would cost less than paying per second — i.e. the workload is</span>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="sd">    steady 24/7 and elasticity buys you nothing.</span>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a>    <span class="n">wh</span> <span class="o">=</span> <span class="n">warehouse_monthly_cost</span><span class="p">(</span><span class="n">total_gb</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">cores_per_node</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>    <span class="n">lakehouse_storage</span> <span class="o">=</span> <span class="n">total_gb</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">storage_gb_month</span>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>    <span class="n">budget_for_compute</span> <span class="o">=</span> <span class="n">wh</span><span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">lakehouse_storage</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">budget_for_compute</span> <span class="o">/</span> <span class="n">p</span><span class="o">.</span><span class="n">core_hour</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a>
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>    <span class="n">prices</span> <span class="o">=</span> <span class="n">Prices</span><span class="p">()</span>
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>    <span class="c1"># Masar&#39;s three scheduled workloads (sizes from the M2 lecture)</span>
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a>        <span class="n">Job</span><span class="p">(</span><span class="s2">&quot;nightly_elt&quot;</span><span class="p">,</span>           <span class="n">cores</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">runtime_hours</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">runs_per_month</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span>
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a>        <span class="n">Job</span><span class="p">(</span><span class="s2">&quot;hourly_stream_compact&quot;</span><span class="p">,</span> <span class="n">cores</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>  <span class="n">runtime_hours</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">runs_per_month</span><span class="o">=</span><span class="mi">720</span><span class="p">),</span>
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>        <span class="n">Job</span><span class="p">(</span><span class="s2">&quot;weekly_feature_build&quot;</span><span class="p">,</span>  <span class="n">cores</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">runtime_hours</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">runs_per_month</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a>            <span class="n">spot</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a>    <span class="p">]</span>
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a>
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a>    <span class="n">TOTAL_GB</span> <span class="o">=</span> <span class="mi">12_000</span>        <span class="c1"># 36 months of raw GPS + trips + curated layers</span>
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a>    <span class="n">lh</span> <span class="o">=</span> <span class="n">lakehouse_monthly_cost</span><span class="p">(</span><span class="n">TOTAL_GB</span><span class="p">,</span> <span class="n">jobs</span><span class="p">,</span> <span class="n">prices</span><span class="p">)</span>
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a>    <span class="n">wh</span> <span class="o">=</span> <span class="n">warehouse_monthly_cost</span><span class="p">(</span><span class="n">TOTAL_GB</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">cores_per_node</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prices</span><span class="p">)</span>
+<a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a>
+<a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lakehouse :&quot;</span><span class="p">,</span> <span class="n">lh</span><span class="p">)</span>
+<a id="__codelineno-2-104" name="__codelineno-2-104" href="#__codelineno-2-104"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;warehouse :&quot;</span><span class="p">,</span> <span class="n">wh</span><span class="p">)</span>
+<a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;saving    : </span><span class="si">%.1f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lh</span><span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">wh</span><span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">])))</span>
+<a id="__codelineno-2-106" name="__codelineno-2-106" href="#__codelineno-2-106"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;break-even core-hours/month:&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-107" name="__codelineno-2-107" href="#__codelineno-2-107"></a>          <span class="n">break_even_utilisation</span><span class="p">(</span><span class="n">TOTAL_GB</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">prices</span><span class="p">))</span>
+<a id="__codelineno-2-108" name="__codelineno-2-108" href="#__codelineno-2-108"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;actual core-hours/month    :&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-109" name="__codelineno-2-109" href="#__codelineno-2-109"></a>          <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">monthly_core_hours</span><span class="p">()</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-2-110" name="__codelineno-2-110" href="#__codelineno-2-110"></a>
+<a id="__codelineno-2-111" name="__codelineno-2-111" href="#__codelineno-2-111"></a>    <span class="c1"># Sensitivity: what if GPS volume doubles (new city)?</span>
+<a id="__codelineno-2-112" name="__codelineno-2-112" href="#__codelineno-2-112"></a>    <span class="n">doubled</span> <span class="o">=</span> <span class="n">replace</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>                       <span class="c1"># same prices, more data</span>
+<a id="__codelineno-2-113" name="__codelineno-2-113" href="#__codelineno-2-113"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2x data   :&quot;</span><span class="p">,</span> <span class="n">lakehouse_monthly_cost</span><span class="p">(</span><span class="n">TOTAL_GB</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">jobs</span><span class="p">,</span> <span class="n">doubled</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>What to look for:</strong> the model has no hidden constants. Every number is either a cited price, a stated data volume, or a job shape you can defend. That property is what lets it survive a review.</p>
+<hr />
+<h3 id="task-2-model-masars-storage-and-compute-and-record-compute_share-10-min">Task 2 — Model Masar's storage and compute, and record <code>compute_share</code> (10 min)<a class="headerlink" href="#task-2-model-masars-storage-and-compute-and-record-compute_share-10-min" title="Permanent link">&para;</a></h3>
+<p>Estimate Masar's 36-month footprint from the volumes you measured in Lab 1 rather than from the lecture slide. Work it out in <code>LAB2_NOTES.md</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>trips        : 48,200 rows/day  × ~180 B/row compressed  ≈ 8.7 MB/day
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>gps_events   : 1,210,000 rows/day × ~120 B/row compressed ≈ 145 MB/day
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>payments     : ~46,000 rows/day                            ≈ 3 MB/day
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>--------------------------------------------------------------------
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>raw ≈ 157 MB/day  → ×365×3 years ≈ 172 GB   (single city set, sample scale)
+</code></pre></div>
+<p>The sample is deliberately small. <strong>Extrapolate to production scale before you cost it</strong>: Masar at national scale runs ~70× the sample volume (all cities, full fleet), which is where the ~12 TB figure comes from. State your multiplier explicitly — an unstated extrapolation is the most common way a cost model gets challenged and lost.</p>
+<p>Then run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.econ.cost_model
+</code></pre></div>
+<p>Record in <code>LAB2_NOTES.md</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Your value</th>
+<th>Where it came from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total GB (36 months, all layers)</td>
+<td></td>
+<td>measured daily volume × retention × extrapolation factor</td>
+</tr>
+<tr>
+<td>Storage $/month</td>
+<td></td>
+<td><code>total_gb × storage_gb_month</code></td>
+</tr>
+<tr>
+<td>Compute $/month</td>
+<td></td>
+<td>Σ jobs</td>
+</tr>
+<tr>
+<td><strong><code>compute_share</code></strong></td>
+<td></td>
+<td>model output</td>
+</tr>
+<tr>
+<td>Coupled-warehouse $/month</td>
+<td></td>
+<td><code>warehouse_monthly_cost</code></td>
+</tr>
+<tr>
+<td>Saving vs coupled</td>
+<td></td>
+<td>model output</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What to look for:</strong> most pairs predict storage will dominate and are wrong. Note your prediction <em>before</em> you run it, then note the actual <code>compute_share</code>. That gap is the lesson.</p>
+<p>Now vary one input at a time and record the effect (three lines in your notes):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 1. retention: 36 months -&gt; 12 months. How much do you actually save?</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 2. the weekly feature build moved OFF spot (spot=False)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 3. the nightly ELT runtime doubles because silver is not compacted (0.33h -&gt; 0.66h)</span>
+</code></pre></div>
+<hr />
+<h3 id="task-3-measure-data-skipping-do-not-assume-it-10-min">Task 3 — Measure data skipping, do not assume it (10 min)<a class="headerlink" href="#task-3-measure-data-skipping-do-not-assume-it-10-min" title="Permanent link">&para;</a></h3>
+<p>Complete <code>src/masar/econ/scan_cost.py</code>. The point is to <em>measure</em> bytes and files read, not to trust the physical plan's appearance.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># src/masar/econ/scan_cost.py</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="sd">&quot;&quot;&quot;Demonstrate that columnar + partitioned reads scan far less data.</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">The cost of decoupled compute is dominated by BYTES SCANNED, so we</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">measure it directly rather than trusting intuition.</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="kn">from</span><span class="w"> </span><span class="nn">masar.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_spark</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">SILVER</span> <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">scan_metrics</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute the plan and read the scan metrics Spark recorded.</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="sd">    &#39;number of files read&#39; and &#39;size of files read&#39; come from the file-scan</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="sd">    node; they are the honest measure of what decoupled compute paid for.</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>                                   <span class="c1"># force execution</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">plan</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">queryExecution</span><span class="p">()</span><span class="o">.</span><span class="n">executedPlan</span><span class="p">()</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">out</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">walk</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="n">it</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">metrics</span><span class="p">()</span><span class="o">.</span><span class="n">iterator</span><span class="p">()</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="k">while</span> <span class="n">it</span><span class="o">.</span><span class="n">hasNext</span><span class="p">():</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>            <span class="n">entry</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>            <span class="n">name</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">_1</span><span class="p">(),</span> <span class="n">entry</span><span class="o">.</span><span class="n">_2</span><span class="p">()</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;numFiles&quot;</span><span class="p">,</span> <span class="s2">&quot;filesSize&quot;</span><span class="p">,</span> <span class="s2">&quot;numOutputRows&quot;</span><span class="p">):</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>                <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">metric</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>            <span class="k">if</span> <span class="s2">&quot;files read&quot;</span> <span class="ow">in</span> <span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;file&quot;</span> <span class="ow">in</span> <span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>                <span class="n">out</span><span class="p">[</span><span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">()]</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">metric</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>        <span class="n">kids</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">()</span><span class="o">.</span><span class="n">iterator</span><span class="p">()</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>        <span class="k">while</span> <span class="n">kids</span><span class="o">.</span><span class="n">hasNext</span><span class="p">():</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>            <span class="n">walk</span><span class="p">(</span><span class="n">kids</span><span class="o">.</span><span class="n">next</span><span class="p">())</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>    <span class="n">walk</span><span class="p">(</span><span class="n">plan</span><span class="p">)</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>    <span class="k">return</span> <span class="n">out</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a><span class="k">def</span><span class="w"> </span><span class="nf">compare_scans</span><span class="p">(</span><span class="n">silver_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">SILVER</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;scan-cost&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>    <span class="n">df_all</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">silver_path</span><span class="p">)</span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>    <span class="n">total_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_all</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>    <span class="c1"># A. Naive: every column, filter applied after the scan is planned wide.</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>    <span class="n">naive</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Riyadh&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>    <span class="c1"># B. Column-pruned: only the 3 columns the question needs.</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>    <span class="n">pruned</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_all</span>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>              <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_sar&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>              <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Riyadh&quot;</span><span class="p">))</span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>    <span class="c1"># C. Pruned + partition filter + a stats-friendly range predicate.</span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>    <span class="c1">#    `city` is the partition column =&gt; whole directories are skipped.</span>
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>    <span class="n">pruned_part</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_all</span>
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>                   <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;pickup_ts&quot;</span><span class="p">,</span> <span class="s2">&quot;fare_sar&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>                   <span class="o">.</span><span class="n">filter</span><span class="p">((</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Riyadh&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>                           <span class="o">&amp;</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;2026-06-01&quot;</span><span class="p">))</span>
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>                           <span class="o">&amp;</span> <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">)</span> <span class="o">&lt;</span>  <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;2026-06-02&quot;</span><span class="p">))))</span>
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">cols</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;naive full read&quot;</span><span class="p">,</span> <span class="n">naive</span><span class="p">,</span> <span class="n">total_cols</span><span class="p">),</span>
+<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>                           <span class="p">(</span><span class="s2">&quot;column-pruned&quot;</span><span class="p">,</span> <span class="n">pruned</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>                           <span class="p">(</span><span class="s2">&quot;pruned + partition filter&quot;</span><span class="p">,</span> <span class="n">pruned_part</span><span class="p">,</span> <span class="mi">4</span><span class="p">)):</span>
+<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a>        <span class="n">m</span> <span class="o">=</span> <span class="n">scan_metrics</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a>        <span class="n">files</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;number of files read&quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numFiles&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a>        <span class="n">size</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size of files read&quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;filesSize&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">:</span><span class="s2">28s</span><span class="si">}</span><span class="s2"> rows=</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;numOutputRows&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;9,</span><span class="si">}</span><span class="s2"> &quot;</span>
+<a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a>              <span class="sa">f</span><span class="s2">&quot;cols=</span><span class="si">{</span><span class="n">cols</span><span class="si">:</span><span class="s2">&gt;2</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">total_cols</span><span class="si">}</span><span class="s2"> files=</span><span class="si">{</span><span class="n">files</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2"> &quot;</span>
+<a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a>              <span class="sa">f</span><span class="s2">&quot;bytes=</span><span class="si">{</span><span class="n">size</span><span class="si">:</span><span class="s2">&gt;12,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-75" name="__codelineno-6-75" href="#__codelineno-6-75"></a>
+<a id="__codelineno-6-76" name="__codelineno-6-76" href="#__codelineno-6-76"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- physical plan of the pruned query ---&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-77" name="__codelineno-6-77" href="#__codelineno-6-77"></a>    <span class="n">pruned</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;formatted&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-78" name="__codelineno-6-78" href="#__codelineno-6-78"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- physical plan of the pruned + partition-filtered query ---&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-79" name="__codelineno-6-79" href="#__codelineno-6-79"></a>    <span class="n">pruned_part</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;formatted&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-80" name="__codelineno-6-80" href="#__codelineno-6-80"></a>
+<a id="__codelineno-6-81" name="__codelineno-6-81" href="#__codelineno-6-81"></a>
+<a id="__codelineno-6-82" name="__codelineno-6-82" href="#__codelineno-6-82"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-6-83" name="__codelineno-6-83" href="#__codelineno-6-83"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<a id="__codelineno-6-84" name="__codelineno-6-84" href="#__codelineno-6-84"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">SILVER</span><span class="p">)</span>
+<a id="__codelineno-6-85" name="__codelineno-6-85" href="#__codelineno-6-85"></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<a id="__codelineno-6-86" name="__codelineno-6-86" href="#__codelineno-6-86"></a>    <span class="n">compare_scans</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<a id="__codelineno-6-87" name="__codelineno-6-87" href="#__codelineno-6-87"></a>
+<a id="__codelineno-6-88" name="__codelineno-6-88" href="#__codelineno-6-88"></a>
+<a id="__codelineno-6-89" name="__codelineno-6-89" href="#__codelineno-6-89"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-6-90" name="__codelineno-6-90" href="#__codelineno-6-90"></a>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Run it and capture the output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.econ.scan_cost<span class="w"> </span>lakehouse/silver/trips<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>LAB2_NOTES.md
+</code></pre></div>
+<p><strong>What to look for in the plan</strong> (this is what you paste into your notes as evidence):</p>
+<ul>
+<li><code>PartitionFilters: [isnotnull(city#123), (city#123 = Riyadh)]</code> — whole directories skipped, the cheapest possible saving.</li>
+<li><code>PushedFilters: [IsNotNull(pickup_ts), GreaterThanOrEqual(pickup_ts,...)]</code> — the predicate reached the Parquet reader, so row groups whose min/max cannot match are never decompressed.</li>
+<li><code>ReadSchema: struct&lt;trip_id:string,city:string,fare_sar:double&gt;</code> — three columns, not twenty-six. This is column pruning and it is where most of the byte saving comes from.</li>
+<li>All three queries return the <strong>same</strong> Riyadh trip count. Same answer, a fraction of the bytes: that is the entire economic argument for Parquet under a decoupled engine.</li>
+</ul>
+<blockquote>
+<p>If your Spark build does not expose scan metrics through <code>executedPlan().metrics()</code>, open the Spark UI (<code>http://localhost:4040</code> while the job runs) → <strong>SQL/DataFrame</strong> tab → click the query → read <em>number of files read</em> and <em>size of files read</em> from the scan node. Record those numbers instead; the lesson is identical.</p>
+</blockquote>
+<p>Fill the benchmark table in <code>LAB2_NOTES.md</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Columns read</th>
+<th>Files read</th>
+<th>Bytes read</th>
+<th>Filter pushdown</th>
+<th>Relative bytes scanned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>naive full read</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>column-pruned</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>pruned + partition filter</td>
+<td></td>
+<td></td>
+<td></td>
+<td>yes (city, pickup_ts)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="task-4-build-the-coupled-vs-decoupled-comparison-10-min">Task 4 — Build the coupled-vs-decoupled comparison (10 min)<a class="headerlink" href="#task-4-build-the-coupled-vs-decoupled-comparison-10-min" title="Permanent link">&para;</a></h3>
+<p>Produce a one-page table in <code>LAB2_NOTES.md</code>. Use <em>your</em> numbers, not the lecture's.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Coupled warehouse</th>
+<th>Decoupled Lakehouse</th>
+<th>Your delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>36 months raw GPS + trips (~12 TB)</td>
+<td>stored on always-on nodes at warehouse storage rates</td>
+<td>object storage at <code>storage_gb_month</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Nightly ELT (20 min)</td>
+<td>part of the always-on bill</td>
+<td>16 cores × 0.33 h × 30 runs</td>
+<td></td>
+</tr>
+<tr>
+<td>Hourly stream compaction</td>
+<td>contends with production nodes</td>
+<td>4 cores × 0.1 h × 720 runs</td>
+<td></td>
+</tr>
+<tr>
+<td>Weekly feature build</td>
+<td>contends with production nodes</td>
+<td>32 cores × 0.5 h × 4 runs, <strong>spot</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Ad-hoc analyst queries</td>
+<td>contend with production nodes</td>
+<td>isolated serverless/second cluster</td>
+<td></td>
+</tr>
+<tr>
+<td>Idle overnight + weekend</td>
+<td>fully paid</td>
+<td>≈ $0 compute</td>
+<td></td>
+</tr>
+<tr>
+<td>Adding a city (2× GPS)</td>
+<td>new nodes for storage <em>and</em> compute</td>
+<td>storage line grows; compute grows only with runtime</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Monthly total</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then write two sentences that an architecture review can act on:</p>
+<ol>
+<li><strong>Dominant cost driver:</strong> <code>&lt;storage | compute&gt;</code>, at <code>&lt;compute_share&gt;</code> of the bill, because <code>&lt;reason&gt;</code>.</li>
+<li><strong>Break-even:</strong> the Lakehouse stops being cheaper above ≈ <code>&lt;N&gt;</code> core-hours/month of sustained compute — i.e. if Masar's workload became a steady 24/7 load at this cluster size, a coupled system would win. Masar's actual demand is <code>&lt;M&gt;</code> core-hours/month, so we are at <code>&lt;M/N&gt;</code> of break-even.</li>
+</ol>
+<hr />
+<h3 id="task-5-write-the-elasticity-guardrails-and-justify-them-5-min">Task 5 — Write the elasticity guardrails and justify them (5 min)<a class="headerlink" href="#task-5-write-the-elasticity-guardrails-and-justify-them-5-min" title="Permanent link">&para;</a></h3>
+<p>Inspect <code>infra/cluster/masar-elt-cluster.yaml</code> and justify each guardrail in <code>LAB2_NOTES.md</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># infra/cluster/masar-elt-cluster.yaml</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Ephemeral job cluster: exists only for the ELT run, then dies.</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">cluster</span><span class="p">:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">masar-elt</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">spark_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.5&quot;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">autoscale</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">min_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">max_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span><span class="w">          </span><span class="c1"># bounded elasticity: no runaway bill</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nt">autotermination_minutes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">   </span><span class="c1"># MANDATORY: kill idle compute</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">node_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">general-4core</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="nt">spot</span><span class="p">:</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">           </span><span class="c1"># restartable ELT tolerates preemption</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="nt">on_demand_driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># keep the driver stable</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="nt">cost_center</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">masar-data-platform</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nt">workload</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elt-nightly</span>
+</code></pre></div>
+<p>Your rationale must answer, in one line each:</p>
+<ul>
+<li>Why <code>autotermination_minutes: 10</code> and not 60 or 0? (What does each extreme cost?)</li>
+<li>Why <code>max_workers: 8</code> and not unbounded? (Elasticity without a bound is an unbounded bill; also, past a point the ELT is shuffle-bound, not core-bound.)</li>
+<li>Why spot for the weekly feature build but <code>on_demand_driver: true</code>? (Losing an executor costs a retried task; losing the driver costs the whole job.)</li>
+<li>What do the <code>tags</code> buy you? (Unattributed compute is unmanageable; per-workload attribution is how you find the one dashboard costing 40% of the bill.)</li>
+</ul>
+<hr />
+<h3 id="task-6-commit-2-min">Task 6 — Commit (2 min)<a class="headerlink" href="#task-6-commit-2-min" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>add<span class="w"> </span>src/masar/econ/cost_model.py<span class="w"> </span>src/masar/econ/scan_cost.py<span class="w"> </span>LAB2_NOTES.md
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(econ): cost model + data-skipping benchmark for Masar&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="expected-output">Expected output<a class="headerlink" href="#expected-output" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ python -m masar.econ.cost_model
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>lakehouse : {&#39;storage&#39;: 276.0, &#39;compute&#39;: 118.4, &#39;total&#39;: 394.4, &#39;compute_share&#39;: 0.3}
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>warehouse : {&#39;storage&#39;: 2520.0, &#39;compute&#39;: 16819.2, &#39;total&#39;: 19339.2, &#39;compute_share&#39;: 0.87, &#39;idle_share&#39;: 0.963}
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>saving    : 98.0%
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>break-even core-hours/month: 318716.7
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>actual core-hours/month    : 2118.4
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>2x data   : {&#39;storage&#39;: 552.0, &#39;compute&#39;: 118.4, &#39;total&#39;: 670.4, &#39;compute_share&#39;: 0.177}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ python -m masar.econ.scan_cost lakehouse/silver/trips
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>naive full read              rows=   55,254 cols=27/27 files=  12 bytes=  11,943,208
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>column-pruned                rows=   55,254 cols= 3/27 files=  12 bytes=   3,344,098
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>pruned + partition filter    rows=   18,418 cols= 4/27 files=   4 bytes=     716,592
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>--- physical plan of the pruned query ---
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>== Physical Plan ==
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>* HashAggregate (5)
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>+- Exchange (4)
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>   +- * HashAggregate (3)
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>      +- * Project (2)
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>         +- Scan parquet  (1)
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>(1) Scan parquet
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>Location: PreparedDeltaFileIndex [file:/home/dev/masar-lakehouse/lakehouse/silver/trips]
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>PartitionFilters: [isnotnull(city#412), (city#412 = Riyadh)]
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>PushedFilters: []
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>ReadSchema: struct&lt;trip_id:string,fare_sar:double&gt;
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>--- physical plan of the pruned + partition-filtered query ---
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>(1) Scan parquet
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>Location: PreparedDeltaFileIndex [file:/home/dev/masar-lakehouse/lakehouse/silver/trips]
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>PartitionFilters: [isnotnull(city#412), (city#412 = Riyadh)]
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>PushedFilters: [IsNotNull(pickup_ts), GreaterThanOrEqual(pickup_ts,2026-06-01 00:00:00),
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>                LessThan(pickup_ts,2026-06-02 00:00:00)]
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>ReadSchema: struct&lt;trip_id:string,pickup_ts:timestamp,fare_sar:double&gt;
+</code></pre></div>
+<p><em>(Absolute bytes depend on your sample size and compression; the </em><em>ratios</em><em> are the deliverable.)</em></p>
+<hr />
+<h2 id="acceptance-criteria">Acceptance criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>python -m masar.econ.cost_model</code> runs and prints a storage / compute / total / <code>compute_share</code> split for the Lakehouse <strong>and</strong> a comparable figure for the coupled warehouse</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Every price in <code>Prices</code> is a real published list price with a <strong>cited URL and read-date</strong> in <code>LAB2_NOTES.md</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The 36-month storage estimate is derived from measured daily volumes, with the extrapolation factor stated explicitly</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The dominant cost driver is stated with its <code>compute_share</code> and a one-line reason</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>scan_cost.py</code> produced three measured rows (files and bytes read) and the plans show <strong><code>PartitionFilters</code></strong>, <strong><code>PushedFilters</code></strong> and a reduced <strong><code>ReadSchema</code></strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The pruned query reads ≤ 25% of the naive query's columns and returns an identical count</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The coupled-vs-decoupled comparison table is complete in <code>LAB2_NOTES.md</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A <strong>break-even</strong> figure is stated with its assumptions, and Masar's actual utilisation is compared against it</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>autotermination_minutes</code> and the spot/on-demand-driver split are each justified in one line</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> At least one sensitivity result recorded (retention change, spot off, or uncompacted-silver runtime)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Commit <code>feat(econ): cost model + data-skipping benchmark for Masar</code> exists</li>
+</ul>
+<hr />
+<h2 id="self-check-questions">Self-check questions<a class="headerlink" href="#self-check-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q1.</strong> You predicted storage would dominate the bill and the model says compute is 30% of a small total while the warehouse's compute is 87% of a large one. Reconcile the two.</p>
+<details><summary>Answer</summary>
+They measure different things. In the decoupled model you pay for compute *only while jobs run* — Masar's three jobs total ~2,100 core-hours/month, so compute is a modest line and storage is the steady floor. In the coupled model the cluster is sized for the **data** and billed 24/7 whether or not work happens, so ~96% of its compute hours are idle and compute swamps everything. The lesson is not "compute is big" or "storage is big" — it is that decoupling converts a fixed cost into a variable one, which is why *elasticity* is the lever.
+</details>
+
+<p><strong>Q2.</strong> Decoupling moved data to cheap object storage, yet a team's bill went <strong>up</strong> after migration. Give the two most likely causes and the fix for each.</p>
+<details><summary>Answer</summary>
+(1) Every query full-scans an unpartitioned, uncompacted table, so compute pays to read data a filter could have skipped — fix with partitioning on a low-cardinality column, ZORDER on the common filter columns, and scheduled OPTIMIZE. (2) Autoscaling clusters never idle-terminate, so "elastic" compute is running 24/7 anyway — fix with `autotermination_minutes` and bounded `max_workers`, plus spot for restartable jobs. Decoupling *enables* savings; layout and elasticity discipline *realise* them.
+</details>
+
+<p><strong>Q3.</strong> Why does partitioning by <code>city</code> help the scan benchmark, and why would partitioning by <code>trip_id</code> hurt it catastrophically?</p>
+<details><summary>Answer</summary>
+`city` has ~5 distinct values, so each partition is a directory containing large files; a `city = 'Riyadh'` filter eliminates whole directories before any file is opened (`PartitionFilters`). `trip_id` is a unique key: partitioning by it produces one tiny file per trip — millions of objects. Listing dominates the job, per-file overhead dwarfs the data, and no filter can skip anything useful. That is the small-files problem, and it makes object storage both slow *and* expensive (Module 4 fixes it with OPTIMIZE).
+</details>
+
+<p><strong>Q4.</strong> Masar adds a new city and daily GPS volume doubles. Which line item grows, by how much, and does the compute/storage balance shift?</p>
+<details><summary>Answer</summary>
+Storage roughly doubles (it is linear in bytes kept): in the model, $276 → $552/month. Compute does **not** double automatically — it grows only with the additional runtime needed to process the extra rows, which is sublinear if the cluster is already parallel and the layout supports skipping. So `compute_share` falls (0.30 → 0.18 in the shipped example), and the platform gets relatively *more* storage-weighted as it scales. This is the argument for retaining raw history: the marginal cost of keeping more is small compared with the option value of reprocessing.
+</details>
+
+<p><strong>Q5.</strong> When is a coupled warehouse still the right architectural call for Masar?</p>
+<details><summary>Answer</summary>
+When the workload is small, structured, steady and latency-critical with high concurrency — e.g. a sub-second, hundreds-of-concurrent-users operational dashboard over a few GB. There, the always-on cost is small in absolute terms, the elasticity has nothing to exploit (utilisation is near break-even), and the warehouse's coupled storage gives lower latency than fetching objects over the network. The honest position in a review is: decoupling wins for the AI/analytics estate; a small serving-tier warehouse or cache in front of gold can still be justified — provided it is a *cache*, not a second source of truth (that would recreate the M1 two-tier problem).
+</details>
+
+<p><strong>Q6.</strong> Your break-even calculation says the Lakehouse loses above ~318,000 core-hours/month. A colleague says "then we should just make our jobs bigger to get closer to break-even." What is wrong with that reasoning?</p>
+<details><summary>Answer</summary>
+Break-even is a *comparison point*, not a target. Consuming more core-hours does not create value; it just raises the bill until the alternative architecture would have been equally bad. The correct reading is a risk statement: Masar operates at under 1% of break-even utilisation, so there is enormous headroom to add workloads (more retrains, more backfills, more ad-hoc analysis) before the economics would favour a coupled system. That headroom is precisely what lets the AI team retrain weekly instead of monthly.
+</details>
+
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pruned and naive plans look identical</td>
+<td>Filter applied after <code>collect()</code>/<code>toPandas()</code>, so Spark planned a full scan</td>
+<td>Keep the filter on the DataFrame before any action; never filter in Python</td>
+</tr>
+<tr>
+<td>No <code>PushedFilters</code> in the plan</td>
+<td>Predicate is on a derived/casted expression, or the column has no Parquet statistics</td>
+<td>Filter on a native stored column (<code>city</code>, <code>pickup_ts</code>), not on <code>year(pickup_ts)</code> or a <code>cast(...)</code></td>
+</tr>
+<tr>
+<td><code>compute_share</code> ≈ 1.0 unexpectedly</td>
+<td>Storage GB under-estimated (usually retention months forgotten)</td>
+<td>Recount: daily volume × 365 × retention years × extrapolation factor, across <strong>all</strong> layers, not just raw</td>
+</tr>
+<tr>
+<td>Prices "feel wrong" by 1000×</td>
+<td>Mixed per-GB and per-TB units, or per-node vs per-core rates</td>
+<td>Normalise everything to $/GB-month and $/core-hour before it enters <code>Prices</code></td>
+</tr>
+<tr>
+<td><code>scan_metrics</code> returns an empty dict</td>
+<td>This Spark build does not surface scan metrics through the Py4J plan walk</td>
+<td>Read <em>number of files read</em> / <em>size of files read</em> from the Spark UI SQL tab (<code>localhost:4040</code>) and record those</td>
+</tr>
+<tr>
+<td>All three queries read the same number of files</td>
+<td>The table has only one file per partition (sample too small), so pruning has nothing to skip</td>
+<td>Land 3 days of trips (Lab 1 stretch goal 1) before benchmarking, or accept the column-pruning result and note the limitation</td>
+</tr>
+<tr>
+<td><code>PartitionFilters</code> empty though you filtered on <code>city</code></td>
+<td>The benchmark table was written without <code>.partitionBy("city")</code></td>
+<td>Rebuild with <code>python -m masar.econ.prepare_benchmark_input</code>; confirm <code>lakehouse/silver/trips/city=Riyadh/</code> directories exist</td>
+</tr>
+<tr>
+<td>Bytes read <em>increase</em> after adding a filter</td>
+<td>Delta statistics are stale, or the added predicate forced a wider column set</td>
+<td>Run <code>OPTIMIZE</code> (Lab 4) to refresh file statistics; check the <code>ReadSchema</code> line — you may have selected more columns</td>
+</tr>
+<tr>
+<td>Timings vary by 3× run to run</td>
+<td>JVM warm-up, OS page cache, and other laptop load</td>
+<td>Report <strong>relative bytes/files scanned</strong>, not wall-clock seconds; run each query twice and use the second</td>
+</tr>
+<tr>
+<td>Savings claim of 98% challenged as unrealistic</td>
+<td>The coupled baseline was sized for peak, and list prices ignore committed-use discounts</td>
+<td>State the caveat explicitly: apply a 30–50% enterprise discount to the warehouse baseline and re-report. A model that survives its own caveats wins the review</td>
+</tr>
+<tr>
+<td><code>FileNotFoundException: lakehouse/silver/trips</code></td>
+<td>On <code>lab2-start</code> without the shipped sample</td>
+<td><code>python -m masar.econ.prepare_benchmark_input</code> to build it from your Lab 1 bronze</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="stretch-goals">Stretch goals<a class="headerlink" href="#stretch-goals" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Spot-vs-on-demand for the weekly feature build.</strong> Compute the saving from <code>spot=True</code> and pair it with an interruption-risk statement: what is the expected retry cost if the job is preempted at 80% completion, and does that change the recommendation?</li>
+<li><strong>Cost per consumer.</strong> Split the compute line by consumer — AI feature build vs BI mart refresh — and produce a per-consumer monthly figure. This is the number a platform team actually gets asked for, and it is the seed of the capstone's cost attribution.</li>
+<li><strong>Serverless / per-TB-scanned model.</strong> Add a third pricing model (<code>$ per TB scanned</code>) and show how the measured bytes from Task 3 translate into a query bill. Which of the three scan variants would you allow a BI tool to run against gold?</li>
+<li><strong>Layout sensitivity.</strong> Rewrite the benchmark table unpartitioned and re-run <code>scan_cost.py</code>. Quantify the extra bytes an unpartitioned layout costs per dashboard refresh, then multiply by 40 dashboards × 96 refreshes/day — the "Tabadul" case study in one number.</li>
+<li><strong>Egress trap.</strong> Extend <code>Prices</code> with a cross-region egress rate and model the cost of running compute in a different region from storage. State the architectural rule this implies.</li>
+</ol>
+<hr />
+<h2 id="capstone-linkage">Capstone linkage<a class="headerlink" href="#capstone-linkage" title="Permanent link">&para;</a></h2>
+<p>This lab delivers <strong>capstone mandatory requirement 2 (Compute–storage discipline, LO2)</strong>: the object-storage-style layout is already in place from Lab 1, and this lab produces the <em>cost/scan analysis section of <code>BENCHMARKS.md</code></em> — capstone deliverable 3 — with your own measured columns-read, files-read and bytes-read figures. The break-even statement and the guardrail rationale are two of the five entries required in <code>DECISIONS.md</code> (capstone deliverable 6): <strong>partition-key choice</strong> and <strong>elastic-compute guardrails</strong>. The measurement technique you built here is reused twice more: to quantify the small-files reduction after <code>OPTIMIZE</code> in Lab 4 (requirement 2's "measured file-count reduction") and to benchmark direct-serve versus materialised marts in Lab 8.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SDAIA Academy — internal use only. Do not distribute.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../assets/vendor/mermaid-11.17.2.min.js"></script>
+      
+        <script src="../../../../../../../assets/hub.js"></script>
+      
+    
+  </body>
+</html>

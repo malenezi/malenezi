@@ -1,0 +1,69 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-FND-102
+course_title: Generative AI and Prompt Engineering Essentials
+course_title_ar: أساسيات الذكاء الاصطناعي التوليدي وهندسة الأوامر
+aliases: []
+domain: generative-ai
+learning_path: foundation-core
+level: Practitioner
+duration:
+  days: 2
+  hours: 10
+delivery_mode: Remote (live online)
+target_audience: All professionals, analysts, technical and non-technical staff
+prerequisites: SDA-FND-101 (recommended)
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-06
+next_review: 2026-12-27
+tools:
+- ChatGPT/Claude-class assistants
+- AI coding assistants
+- evaluation checklists
+technologies: []
+keywords:
+- LLM
+- Prompt Engineering
+- Responsible AI
+description: A practical module on working productively and safely with generative-AI tools. Participants
+  master prompt design patterns, output evaluation, and workflow integration for text, code, and data
+  tasks. It equips every professional to use LLM-based assistants responsibly and effectively.
+description_ar: وحدة تطبيقية للعمل بإنتاجية وأمان مع أدوات الذكاء الاصطناعي التوليدي. يتقن المشاركون أنماط
+  تصميم الأوامر وتقييم المخرجات ودمجها في مهام النصوص والبرمجة والبيانات، بما يمكّن كل مهني من استخدام
+  المساعدات الذكية بمسؤولية وفاعلية.
+learning_outcomes:
+- Explain how large language models generate output and why they hallucinate
+- Design effective prompts using role, context, format, and few-shot patterns
+- Apply iterative prompt refinement to improve output quality and reliability
+- Evaluate generative-AI outputs for accuracy, bias, and appropriateness
+- Integrate generative-AI assistants into document, analysis, and coding workflows
+- Assess data-privacy and confidentiality risks when using AI tools
+topics:
+- 'How LLMs work: tokens, context, and limitations'
+- Prompt design patterns and structured prompting
+- Iterative refinement and prompt evaluation
+- GenAI for documents, analysis, and code
+- Hallucination, bias, and output verification
+- Safe and compliant use of AI tools at work
+- Hands-on prompt engineering lab
+assessment: Prompt-portfolio project; practical exercises
+next_modules: SDA-FND-103 or role-track modules
+stackability: Foundation badge; recommended before all GenAI engineering modules.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Foundation Core Track/Generative AI and Prompt Engineering Essentials
+  platform_workbook: Program Files (AthkaX)/Foundation Core/SDA-FND-102 - Generative AI and Prompt Engineering
+    Essentials.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''أساسيات الذكاء الاصطناعي التوليدي وهندسة الموجهات'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

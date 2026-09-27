@@ -1,0 +1,41 @@
+variable,code,label,count,percent,denominator,source_page
+Sex,1,Male,225703,45.3,497769,39
+Sex,2,Female,266644,53.6,497769,39
+Sex,-9,Missing,5422,1.1,497769,39
+Discharge_month,1,January,38915,7.8,497769,39
+Discharge_month,2,February,33567,6.7,497769,39
+Discharge_month,3,March,40394,8.1,497769,39
+Discharge_month,4,April,40750,8.2,497769,39
+Discharge_month,5,May,43741,8.8,497769,39
+Discharge_month,6,June,41627,8.4,497769,39
+Discharge_month,7,July,42547,8.6,497769,39
+Discharge_month,8,August,42605,8.6,497769,39
+Discharge_month,9,September,41906,8.4,497769,39
+Discharge_month,10,October,43530,8.8,497769,39
+Discharge_month,11,November,44702,9.0,497769,39
+Discharge_month,12,December,43485,8.7,497769,39
+Discharge_status,1,Routine to Home,412480,82.9,497769,39
+Discharge_status,2,Left against medical advice,18321,3.7,497769,39
+Discharge_status,3,Transfer to short term facility,4641,0.9,497769,39
+Discharge_status,4,Transfer to long term facility,2841,0.6,497769,39
+Discharge_status,5,Home health care,7347,1.5,497769,39
+Discharge_status,6,Hospice care - home or medical facility,1405,0.3,497769,39
+Discharge_status,7,Other,18417,3.7,497769,39
+Discharge_status,8,Dead,2268,0.5,497769,39
+Discharge_status,-9,Missing,30049,6.0,497769,39
+CCSR_CIR007,1,Essential hypertension - Yes,71111,14.3,497769,39
+CCSR_CIR007,2,Essential hypertension - No,422003,84.8,497769,39
+CCSR_CIR007,-9,Essential hypertension - Missing,4655,0.9,497769,39
+CCSR_CIR012,1,Nonspecific chest pain - Yes,34287,6.9,497769,39
+CCSR_CIR012,2,Nonspecific chest pain - No,458827,92.2,497769,40
+CCSR_CIR012,-9,Nonspecific chest pain - Missing,4655,0.9,497769,40
+CCSR_CIR019,1,Heart failure - Yes,18937,3.8,497769,40
+CCSR_CIR019,2,Heart failure - No,474177,95.3,497769,40
+CCSR_CIR019,-9,Heart failure - Missing,4655,0.9,497769,40
+CCSR_END005,1,Diabetes mellitus Type 2 - Yes,41895,8.4,497769,40
+CCSR_END005,2,Diabetes mellitus Type 2 - No,451219,90.7,497769,40
+CCSR_END005,-9,Diabetes mellitus Type 2 - Missing,4655,0.9,497769,40
+CCSR_GEN003,1,Chronic kidney disease - Yes,19959,4.0,497769,40
+CCSR_GEN003,2,Chronic kidney disease - No,473155,95.1,497769,40
+CCSR_GEN003,-9,Chronic kidney disease - Missing,4655,0.9,497769,40
+

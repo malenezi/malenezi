@@ -1,0 +1,4381 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Private trainer portal for SDAIA Academy training content">
+      
+      
+        <meta name="author" content="SDAIA Academy">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PA-3 — Feature Leakage Audit: gold.eta_features and a Model Card That Lies - SDAIA Academy Trainer Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <!-- Internal training material: keep out of search engines on any host -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pa-3-feature-leakage-audit-goldeta_features-and-a-model-card-that-lies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-header__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SDAIA Academy Trainer Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PA-3 — Feature Leakage Audit: gold.eta_features and a Model Card That Lies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../../portal/catalog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../beginner/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../../shared/trainer-resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Trainer resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../../portal/feedback/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Help & governance
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-nav__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    SDAIA Academy Trainer Knowledge Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../TRAINER_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/domains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse by domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/recently-updated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recently updated
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Courses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Courses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../beginner/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner Level (Level 0)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Beginner Level (Level 0)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FAA-ai-powered-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAA · AI-Powered Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FAE-ai-fundamentals-for-the-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAE · AI Fundamentals for the Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FDL-data-literacy-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDL · Data Literacy Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FDS-practical-data-skills-with-spreadsheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDS · Practical Data Skills with Spreadsheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FDV-data-storytelling-and-data-driven-decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDV · Data Storytelling & Data-Driven Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FGP-generative-ai-for-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FGP · Generative AI for Productivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../foundation-core/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation Core
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-101-ai-and-data-literacy-for-professionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-101 · AI and Data Literacy for Professionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-102-generative-ai-and-prompt-engineering-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-102 · Generative AI and Prompt Engineering Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-103-python-programming-for-data-and-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-103 · Python Programming for Data and AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-104-data-wrangling-sql-and-exploratory-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-104 · Data Wrangling, SQL and Exploratory Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-105-responsible-ai-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-105 · Responsible AI and Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../ai-engineer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineer Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Engineer Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-111-applied-machine-learning-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-111 · Applied Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-112-deep-learning-essentials-with-pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-112 · Deep Learning Essentials with PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-113-software-engineering-practices-for-ai-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-113 · Software Engineering Practices for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-211-natural-language-processing-with-transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-211 · Natural Language Processing with Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-212-computer-vision-systems-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-212 · Computer Vision Systems Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-213-large-language-model-application-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-213 · Large Language Model Application Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-214-building-retrieval-augmented-generation-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-214 · Building Retrieval-Augmented Generation Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-215-fine-tuning-and-adapting-foundation-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-215 · Fine-Tuning and Adapting Foundation Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-216-mlops-model-deployment-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-216 · MLOps: Model Deployment and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-311-agentic-ai-systems-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-311 · Agentic AI Systems Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-312-llmops-and-production-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-312 · LLMOps and Production AI Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-313-ai-security-guardrails-and-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-313 · AI Security, Guardrails and Red Teaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-314-ai-performance-scalability-and-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-314 · AI Performance, Scalability and Cost Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-315-enterprise-ai-solution-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-315 · Enterprise AI Solution Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-390-ai-engineering-capstone-production-genai-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-390 · AI Engineering Capstone: Production GenAI System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Scientist Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Scientist Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-111-statistical-foundations-for-data-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-111 · Statistical Foundations for Data Science
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-112-data-visualization-and-storytelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-112 · Data Visualization and Storytelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-211-advanced-machine-learning-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-211 · Advanced Machine Learning Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-212-time-series-analysis-and-forecasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-212 · Time Series Analysis and Forecasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-213-experimentation-a-b-testing-and-causal-inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-213 · Experimentation, A/B Testing and Causal Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-214 · Modern Data Engineering for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-215-big-data-analytics-with-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-215 · Big Data Analytics with Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-311-decision-science-and-optimization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-311 · Decision Science and Optimization Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-312-genai-augmented-data-science-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-312 · GenAI-Augmented Data Science Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-313-real-time-and-streaming-data-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-313 · Real-Time and Streaming Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-390-data-science-capstone-from-data-to-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-390 · Data Science Capstone: From Data to Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../../shared/trainer-resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trainer resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/assessment-guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assessment guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/classroom-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/delivery-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/technical-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academy templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/branding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/catalog-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog source documents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help & governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help & governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report a problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/content-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../hub-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../CONTENT_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/ADMIN_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/HOSTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/LARGE_FILES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/PERMISSIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../migration/MIGRATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../migration/MISSING_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../migration/DUPLICATE_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-this-exists-separately-from-the-lab-8-drill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why this exists separately from the Lab-8 drill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instructor-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Instructor setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Instructor setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-model-card-handed-to-the-participant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model card handed to the participant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verified-starting-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verified starting state
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-participant-brief-hand-this-page-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Participant brief (hand this page out)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-marking-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Marking scheme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Marking scheme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-classification-40-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Classification — 40 marks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-fixes-and-the-point-in-time-join-35-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4b. Fixes and the point-in-time join — 35 marks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c-honest-metric-and-reporting-25-marks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4c. Honest metric and reporting — 25 marks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-caps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic caps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-answer-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Answer key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Answer key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5a-per-column-classification-the-complete-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5a. Per-column classification — the complete key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5b-the-two-defects-that-live-in-the-model-card-not-the-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5b. The two defects that live in the model card, not the table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5c-evidence-a-distinction-answer-produces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5c. Evidence a distinction answer produces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5d-reference-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5d. Reference metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5e-the-reference-paragraph-to-the-eta-squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5e. The reference paragraph to the ETA squad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-instructor-delivery-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Instructor delivery notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="pa-3-feature-leakage-audit-goldeta_features-and-a-model-card-that-lies">PA-3 — Feature Leakage Audit: <code>gold.eta_features</code> and a Model Card That Lies<a class="headerlink" href="#pa-3-feature-leakage-audit-goldeta_features-and-a-model-card-that-lies" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assessment ID</strong></td>
+<td>PA-3</td>
+</tr>
+<tr>
+<td><strong>Module</strong></td>
+<td>M8 — Serving Data to AI and BI Workloads</td>
+</tr>
+<tr>
+<td><strong>Day / Hour</strong></td>
+<td>Day 5, Hour 4 (first 30 minutes of capstone assembly, run as a timed individual break-out)</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td><strong>30 minutes</strong>, individual, open-repository / closed-collaboration</td>
+</tr>
+<tr>
+<td><strong>LO mapping</strong></td>
+<td>LO8 (primary) · LO6 (governance at the serving boundary) · LO7 (point-in-time correctness of a gold product) · LO3 (the training join is an ELT join)</td>
+</tr>
+<tr>
+<td><strong>Weight</strong></td>
+<td>One third of the 20% practical-assessment band</td>
+</tr>
+<tr>
+<td><strong>Sandbox</strong></td>
+<td><code>./lakehouse/_assessments/pa3/eta_features</code> — a rebuild of <code>gold.eta_features</code> with the <strong>same 13 CONVENTIONS columns</strong> and a <em>different</em> defect mix from the Lab-8 starter. The participant's own <code>gold.eta_features</code> is never touched.</td>
+</tr>
+<tr>
+<td><strong>Marking</strong></td>
+<td>Classification 40% · Fixes and the point-in-time join 35% · Honest metric and reporting 25%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>The course question, applied:</strong> <em>"What happens to Masar's AI system if THIS part of the data platform fails?"</em>
+Nothing visible. That is the point. Every check is green, every test passes, the model card reads R² 0.94, and the platform ships a model that will miss by three times what it promised — because the failure is not in the pipeline's mechanics but in <em>when</em> four of its numbers were written.</p>
+<p><strong>Scale note.</strong> Figures quoted in this document assume the full-scale generator run (<code>--scale 1.0</code>); the shipped sample is <code>--scale 0.15</code> — 7,230 trips/day over 5 days (36,150 trips), 873,763 GPS pings, 3,450 drivers, 3,864 vehicles, 48 zones. Grains, ratios and file-count reductions hold at either scale; absolute row counts do not.</p>
+</blockquote>
+<hr />
+<h2 id="1-why-this-exists-separately-from-the-lab-8-drill">1. Why this exists separately from the Lab-8 drill<a class="headerlink" href="#1-why-this-exists-separately-from-the-lab-8-drill" title="Permanent link">&para;</a></h2>
+<p>Lab 8 Task 3 runs the leakage drill <strong>in pairs</strong>, with the instructor in the room and the diagnostics supplied. PA-3 is the individually assessed <strong>transfer</strong> test: the same 13-column contract, a different defect mix, no supplied diagnostics, no pair.</p>
+<p><strong>Two columns deliberately swap class relative to the lab.</strong> A participant who memorised the Lab-8 answer key will get both wrong:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Lab-8 starter</th>
+<th><strong>PA-3 variant</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rolling_avg_speed_10m</code></td>
+<td>LEAKAGE (averaged the trip's own pings)</td>
+<td><strong>VALID</strong> — correctly computed from <em>other</em> vehicles' pings strictly before <code>feature_ts</code></td>
+</tr>
+<tr>
+<td><code>historical_route_duration</code></td>
+<td>VALID (<code>rangeBetween(-2592000, -1)</code>)</td>
+<td><strong>LEAKAGE</strong> — the bound is now <code>(-2592000, 0)</code>, so the current trip's own duration is inside its own 30-day average</td>
+</tr>
+</tbody>
+</table>
+<p>The class <strong>tally</strong> is identical to the lab's (7 VALID / 1 STALE / 4 LEAKAGE / 1 UNAVAILABLE ONLINE), which is deliberate: a participant who counts rather than reasons will still be wrong on two rows, and the tally gives them no signal.</p>
+<p><strong>If PA-3 is delivered <em>before</em> Lab 8</strong> (a cohort running the assessment early, or a re-sit before the drill), use the same variant — nothing in it depends on having seen the lab. Note in the moderation record which order the cohort experienced, because the difficulty is not identical.</p>
+<hr />
+<h2 id="2-instructor-setup">2. Instructor setup<a class="headerlink" href="#2-instructor-setup" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># scripts/assessments/pa3_setup.py</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">&quot;&quot;&quot;PA-3 setup: build the PA-3 variant of gold.eta_features.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">EXACTLY the 13 CONVENTIONS columns. Five defects, listed in the answer key.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">Run:  python -m scripts.assessments.pa3_setup</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span><span class="p">,</span> <span class="n">Window</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">masar.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_spark</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">SILVER_TRIPS</span>     <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">SILVER_POSITIONS</span> <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/vehicle_positions&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">WEATHER</span>          <span class="o">=</span> <span class="s2">&quot;data/raw/weather_hourly.csv&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">OUT</span>              <span class="o">=</span> <span class="s2">&quot;./lakehouse/_assessments/pa3/eta_features&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;pa3-setup&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    <span class="n">trips</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER_TRIPS</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>             <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;completed&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>             <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;pickup_epoch&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="n">pos</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER_POSITIONS</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="n">weather</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;inferSchema&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">WEATHER</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>               <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;hour_ts&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(</span><span class="s2">&quot;hour_ts&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="c1"># (A) DEFECT 1 - zone demand: inclusive upper bound admits same-second trips.</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="n">w_demand</span> <span class="o">=</span> <span class="p">(</span><span class="n">Window</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;pickup_zone_id&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                      <span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;pickup_epoch&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rangeBetween</span><span class="p">(</span><span class="o">-</span><span class="mi">900</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="c1"># (B) driver recent trips: bound is correct; the STALENESS is an online problem.</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="n">w_driver</span> <span class="o">=</span> <span class="p">(</span><span class="n">Window</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="s2">&quot;driver_id&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>                      <span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;pickup_epoch&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rangeBetween</span><span class="p">(</span><span class="o">-</span><span class="mi">86400</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    <span class="c1"># (C) DEFECT 2 - historical route duration: upper bound 0 puts the trip&#39;s own</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="c1">#     duration inside its own 30-day route average.</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="n">w_route</span> <span class="o">=</span> <span class="p">(</span><span class="n">Window</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="s2">&quot;pickup_zone_id&quot;</span><span class="p">,</span> <span class="s2">&quot;dropoff_zone_id&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>                     <span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;pickup_epoch&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rangeBetween</span><span class="p">(</span><span class="o">-</span><span class="mi">2592000</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    <span class="c1"># (D) rolling average speed - CORRECT in this variant: other vehicles in the</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="c1">#     pickup zone, strictly before feature_ts, this trip excluded.</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    <span class="n">zone_speed</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">trips</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;t2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;t2_trip&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>                                       <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;pickup_zone_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;t2_zone&quot;</span><span class="p">)),</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>              <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;p.trip_id&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;t2_trip&quot;</span><span class="p">),</span> <span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>        <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;p.trip_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;src_trip&quot;</span><span class="p">),</span> <span class="s2">&quot;t2_zone&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>                <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;p.event_ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;ping_ts&quot;</span><span class="p">),</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;p.speed_kmh&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    <span class="n">feats</span> <span class="o">=</span> <span class="p">(</span><span class="n">trips</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;rolling_zone_demand_15m&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">w_demand</span><span class="p">))</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;driver_recent_trip_count&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">w_driver</span><span class="p">))</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;historical_route_duration&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="s2">&quot;duration_min&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">over</span><span class="p">(</span><span class="n">w_route</span><span class="p">))</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;hour_of_day&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">hour</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">dayofweek</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;feature_ts&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>    <span class="n">speed_10m</span> <span class="o">=</span> <span class="p">(</span><span class="n">feats</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">zone_speed</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>            <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;f.pickup_zone_id&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;z.t2_zone&quot;</span><span class="p">))</span> <span class="o">&amp;</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>            <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;z.src_trip&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;f.trip_id&quot;</span><span class="p">))</span> <span class="o">&amp;</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>            <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;z.ping_ts&quot;</span><span class="p">)</span> <span class="o">&lt;</span>  <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;f.feature_ts&quot;</span><span class="p">))</span> <span class="o">&amp;</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>            <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;z.ping_ts&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">F</span><span class="o">.</span><span class="n">expr</span><span class="p">(</span><span class="s2">&quot;f.feature_ts - INTERVAL 10 MINUTES&quot;</span><span class="p">)),</span> <span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>        <span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;f.trip_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="s2">&quot;z.speed_kmh&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;rolling_avg_speed_10m&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>    <span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">feats</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">speed_10m</span><span class="p">,</span> <span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>        <span class="c1"># DEFECT 3 - weather joined to the trip&#39;s OWN hour; the file lands after it.</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">weather</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;w_city&quot;</span><span class="p">),</span> <span class="s2">&quot;hour_ts&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>                             <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;condition&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;weather_condition&quot;</span><span class="p">)),</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>              <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;w_city&quot;</span><span class="p">))</span> <span class="o">&amp;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>              <span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">date_trunc</span><span class="p">(</span><span class="s2">&quot;hour&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;pickup_ts&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;hour_ts&quot;</span><span class="p">)),</span> <span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>        <span class="c1"># DEFECT 4 - distance_km is the METERED distance, written at dropoff_ts.</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>        <span class="c1"># DEFECT 5 - the label is present and is materialised downstream.</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>        <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pickup_zone_id&quot;</span><span class="p">,</span> <span class="s2">&quot;dropoff_zone_id&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>                <span class="s2">&quot;hour_of_day&quot;</span><span class="p">,</span> <span class="s2">&quot;day_of_week&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>                <span class="s2">&quot;rolling_zone_demand_15m&quot;</span><span class="p">,</span> <span class="s2">&quot;rolling_avg_speed_10m&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>                <span class="s2">&quot;driver_recent_trip_count&quot;</span><span class="p">,</span> <span class="s2">&quot;weather_condition&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>                <span class="s2">&quot;distance_km&quot;</span><span class="p">,</span> <span class="s2">&quot;historical_route_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;feature_ts&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>                <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;duration_min&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;label_actual_duration_min&quot;</span><span class="p">)))</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">13</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">columns</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[pa3-setup] eta_features: </span><span class="si">{</span><span class="n">out</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> rows, 13 columns -&gt; </span><span class="si">{</span><span class="n">OUT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="the-model-card-handed-to-the-participant">The model card handed to the participant<a class="headerlink" href="#the-model-card-handed-to-the-participant" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># MODEL CARD — masar-eta-duration  v3.1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gs">**Owner:**</span> ETA &amp; Demand squad          <span class="gs">**Status:**</span> approved for production rollout
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gs">**Task:**</span> predict <span class="sb">`label_actual_duration_min`</span> (trip duration, minutes)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="gs">**Training data:**</span> <span class="sb">`gold.eta_features`</span>, 42,038 rows, 2026-06-01 .. 2026-06-30
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="gs">**Split:**</span> random 75 / 25
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gs">**Algorithm:**</span> GradientBoostingRegressor (sklearn defaults, n_estimators=200)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="gu">## Offline performance</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| Metric | Value |
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>|---|---|
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>| R2   | <span class="gs">**0.941**</span> |
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>| MAE  | <span class="gs">**1.87 min**</span> |
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>| RMSE | 2.94 min |
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="gu">## Top features by gain</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>| Feature | Gain |
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>|---|---|
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>| distance_km               | 0.601 |
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>| historical_route_duration | 0.208 |
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>| rolling_zone_demand_15m   | 0.079 |
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>| rolling_avg_speed_10m     | 0.058 |
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>| driver_recent_trip_count  | 0.022 |
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="gu">## Serving</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>Online features are read from Redis <span class="sb">`masar:features:zone:{zone_id}`</span>, refreshed by
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>the nightly gold DAG. `ONLINE_COLUMNS = [rolling_zone_demand_15m,
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>rolling_avg_speed_10m, historical_route_duration, weather_condition,
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>driver_recent_trip_count, label_actual_duration_min]`.
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="gu">## Known limitations</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>None material. Model is stable across cities; no drift observed in 30 days.
+</code></pre></div>
+<p><strong>Two further defects are hidden in the card, not the table</strong>, and the marking scheme rewards finding them: the <strong>random 75/25 split</strong> (which leaks across time on a temporally ordered table) and the <strong>label in <code>ONLINE_COLUMNS</code></strong> (which materialises the answer into the online store).</p>
+<h3 id="verified-starting-state">Verified starting state<a class="headerlink" href="#verified-starting-state" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ python -m masar.tools.sql --query &quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    SELECT COUNT(*) rows, COUNT(DISTINCT trip_id) trips
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    FROM delta.\`./lakehouse/_assessments/pa3/eta_features\`&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>rows     trips
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>42,038   42,038
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$ python -m masar.serve.train_eta --features _assessments/pa3/eta_features --split random
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>[train] rows=42,038  train=31,528  test=10,510  (random 75/25)
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>[train] R2  = 0.941     MAE = 1.87 min
+</code></pre></div>
+<hr />
+<h2 id="3-participant-brief-hand-this-page-out">3. Participant brief <em>(hand this page out)</em><a class="headerlink" href="#3-participant-brief-hand-this-page-out" title="Permanent link">&para;</a></h2>
+<p><strong>PA-3 — Feature Leakage Audit · 30 minutes · individual</strong></p>
+<p>The ETA squad has submitted <code>masar-eta-duration v3.1</code> for production approval. The model card claims <strong>R² 0.941</strong> and <strong>MAE 1.87 minutes</strong> on trip-duration prediction. Your signature is required on the platform side before rollout.</p>
+<p>You have:</p>
+<ul>
+<li>The feature table <code>./lakehouse/_assessments/pa3/eta_features</code> — the 13 CONVENTIONS columns of <code>gold.eta_features</code>, one row per <code>trip_id</code>.</li>
+<li>The builder that produced it: <code>scripts/assessments/pa3_setup.py</code>.</li>
+<li>The model card above.</li>
+<li><code>silver.trips</code>, <code>silver.vehicle_positions</code>, <code>gold.dim_zone</code> and <code>data/raw/weather_hourly.csv</code>.</li>
+</ul>
+<p><strong>The single test you apply to every column:</strong></p>
+<blockquote>
+<p><strong>Could this value have been known at prediction time — that is, at <code>feature_ts</code>, the instant the rider taps <em>Request</em> — from data that had already been written?</strong></p>
+</blockquote>
+<p><strong>Your task, in order:</strong></p>
+<ol>
+<li><strong>Classify all 13 columns</strong> into exactly one of four classes. Ambiguity is not permitted; if a column could be two, choose the one that would cause the worse production failure and say so.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>The question to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VALID</strong></td>
+<td>Knowable at <code>feature_ts</code> from data that existed then, and reproducible online</td>
+<td>"At the moment of Request, could I compute this from data already written?"</td>
+</tr>
+<tr>
+<td><strong>STALE</strong></td>
+<td>Computable in principle, but the value the online path actually serves is materially older than <code>feature_ts</code></td>
+<td>"How old is the value Redis holds at 19:00 on a Thursday?"</td>
+</tr>
+<tr>
+<td><strong>LEAKAGE</strong></td>
+<td>Depends on information that did not exist at <code>feature_ts</code> — the current instant, the future, or the outcome</td>
+<td>"Does computing this require knowing anything at or after <code>feature_ts</code>?"</td>
+</tr>
+<tr>
+<td><strong>UNAVAILABLE ONLINE</strong></td>
+<td>Point-in-time correct offline, but no online path can supply it at inference latency</td>
+<td>"Is there a key or an API returning this in under 20 ms, right now?"</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Name the leaking features and prove each</strong> with a query or a computed number, not an assertion.</li>
+<li><strong>Fix the training join to be point-in-time correct.</strong> Keep every column name — the contract is fixed — and change only how each value is computed and how the training set is assembled. Include the split.</li>
+<li><strong>Report the honest metric</strong> and write the paragraph you would send the ETA squad.</li>
+</ol>
+<p><strong>Constraints</strong>
+- The output must still have <strong>exactly</strong> the 13 CONVENTIONS columns, correctly named, at one row per <code>trip_id</code>.
+- You may not drop a column to "fix" it; a contract column is fixed and must be re-sourced or re-computed.
+- Do not read the Lab-8 answer key. Two columns are not what they were in the lab.</p>
+<p><strong>Deliverable artefacts</strong> (all three required):</p>
+<table>
+<thead>
+<tr>
+<th>Artefact</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PA3_CLASSIFICATION.md</code></td>
+<td>The 13-row table: column, class, one-sentence justification naming <em>what the code actually used</em>, and the fix</td>
+</tr>
+<tr>
+<td><code>src/masar/transform/build_eta_features_pa3.py</code></td>
+<td>The corrected builder, plus the corrected training split</td>
+</tr>
+<tr>
+<td><code>PA3_REPORT.md</code></td>
+<td>Both metrics (claimed and honest), the delta, the evidence for each leak, and the paragraph to the ETA squad</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Time budget suggestion:</strong> 12 min classify and probe · 10 min fix · 6 min retrain and report · 2 min commit.</p>
+<hr />
+<h2 id="4-marking-scheme">4. Marking scheme<a class="headerlink" href="#4-marking-scheme" title="Permanent link">&para;</a></h2>
+<p><strong>Total 100. Pass ≥ 70 for badge contribution.</strong></p>
+<h3 id="4a-classification-40-marks">4a. Classification — 40 marks<a class="headerlink" href="#4a-classification-40-marks" title="Permanent link">&para;</a></h3>
+<p><strong>3 marks per correctly classified column (13 × 3 = 39), rounded to 40 with one discretionary mark for a justification that names the exact window bound or join key responsible.</strong></p>
+<p>A column scores its 3 marks only when the class <strong>and</strong> the justification are right. A right class with a wrong reason scores 1.</p>
+<table>
+<thead>
+<tr>
+<th>Partial-credit rule</th>
+<th>Marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correct class, justification names the mechanism (the bound, the join key, the source column)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Correct class, justification generic ("it leaks", "not available")</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>driver_recent_trip_count</code> marked LEAKAGE <strong>and</strong> the staleness also named</td>
+<td>3 (see key)</td>
+</tr>
+<tr>
+<td><code>weather_condition</code> marked LEAKAGE with a correct explanation of the arrival lag</td>
+<td>2 (the remediation differs; see key)</td>
+</tr>
+<tr>
+<td><code>label_actual_duration_min</code> marked "N/A" or "not a feature"</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Any column left unclassified or given two classes</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Band descriptors — Classification</strong></p>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Marks</th>
+<th>Descriptor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distinction</td>
+<td>36–40</td>
+<td>12 or 13 correct with mechanism-level justifications; the two Lab-8 reversals (<code>rolling_avg_speed_10m</code>, <code>historical_route_duration</code>) are both correct; the participant states the product assumption <code>dropoff_zone_id</code> rests on</td>
+</tr>
+<tr>
+<td>Proficient</td>
+<td>28–35</td>
+<td>10–11 correct; typically one of <code>weather_condition</code> / <code>driver_recent_trip_count</code> is misclassified, or one reversal is answered from memory of the lab</td>
+</tr>
+<tr>
+<td>Developing</td>
+<td>18–27</td>
+<td>7–9 correct; <code>distance_km</code> is found but the subtler window bounds are not; justifications assert rather than name</td>
+</tr>
+<tr>
+<td>Insufficient</td>
+<td>0–17</td>
+<td><code>distance_km</code> marked VALID, or fewer than 7 correct</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4b-fixes-and-the-point-in-time-join-35-marks">4b. Fixes and the point-in-time join — 35 marks<a class="headerlink" href="#4b-fixes-and-the-point-in-time-join-35-marks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sub-criterion</th>
+<th>Marks</th>
+<th>What earns it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1. <code>rolling_zone_demand_15m</code> bound corrected</td>
+<td>6</td>
+<td><code>rangeBetween(-900, -1)</code> — strictly prior; participant notes the feature's mean falls</td>
+</tr>
+<tr>
+<td>P2. <code>historical_route_duration</code> bound corrected</td>
+<td>6</td>
+<td><code>rangeBetween(-2592000, -1)</code>; the current trip is excluded from its own route average; null contract for unseen zone pairs stated (impute city median with an <code>is_imputed</code> flag, or omit)</td>
+</tr>
+<tr>
+<td>P3. <code>distance_km</code> re-sourced</td>
+<td>8</td>
+<td>Replaced with the planned/route distance at booking — routing-engine estimate, or the route/great-circle distance between <code>gold.dim_zone</code> centroids. Column name unchanged</td>
+</tr>
+<tr>
+<td>P4. <code>weather_condition</code> shifted on <strong>both</strong> sides</td>
+<td>5</td>
+<td><code>hour_ts &lt;= date_trunc('hour', feature_ts) - INTERVAL 1 HOUR</code>, applied identically in training and in materialisation</td>
+</tr>
+<tr>
+<td>P5. <code>driver_recent_trip_count</code> remediated as staleness</td>
+<td>4</td>
+<td>Online refresh cadence matched to volatility (hourly, not nightly) with <code>feature_ts</code> age monitoring; the offline bound is already correct and the participant says so</td>
+</tr>
+<tr>
+<td>P6. Split corrected to a time split</td>
+<td>6</td>
+<td>Random 75/25 replaced with a temporal split (train &lt; cut-off, test ≥ cut-off), because a random split over a temporally ordered table trains on the future of its own test set</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Band descriptors — Fixes</strong></p>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Marks</th>
+<th>Descriptor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distinction</td>
+<td>32–35</td>
+<td>All six; the label is also stripped from <code>ONLINE_COLUMNS</code>; the fixed builder still emits exactly 13 correctly named columns and the participant verifies that assertion</td>
+</tr>
+<tr>
+<td>Proficient</td>
+<td>25–31</td>
+<td>Four or five; typically the split or the <code>weather_condition</code> symmetry is missed</td>
+</tr>
+<tr>
+<td>Developing</td>
+<td>15–24</td>
+<td>The obvious leak (<code>distance_km</code>) fixed, the window bounds left alone</td>
+</tr>
+<tr>
+<td>Insufficient</td>
+<td>0–14</td>
+<td>A column dropped instead of re-sourced, the contract broken, or nothing rebuilt</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4c-honest-metric-and-reporting-25-marks">4c. Honest metric and reporting — 25 marks<a class="headerlink" href="#4c-honest-metric-and-reporting-25-marks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sub-criterion</th>
+<th>Marks</th>
+<th>What earns it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1. Both metrics reported with the delta</td>
+<td>8</td>
+<td>Claimed R² 0.941 / MAE 1.87 → honest R² ≈ 0.71 / MAE ≈ 4.7, with the delta stated</td>
+</tr>
+<tr>
+<td>M2. Evidence for each leak, computed not asserted</td>
+<td>8</td>
+<td>E.g. the correlation of <code>distance_km</code> with the label; the count of same-second trips admitted by the <code>0</code> bound; a row showing the trip's own duration inside its route average</td>
+</tr>
+<tr>
+<td>M3. The paragraph to the ETA squad</td>
+<td>6</td>
+<td>Explains <em>why the drop is the correct outcome</em> in operational terms, not statistical ones; makes the cost argument (a model promising ±1.9 that delivers ±5 is more expensive than one that promises ±4.7)</td>
+</tr>
+<tr>
+<td>M4. Governance callout</td>
+<td>3</td>
+<td>Flags the label in <code>ONLINE_COLUMNS</code> as serving the answer, and notes that the card's "Known limitations: none material" is itself the finding</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Band descriptors — Reporting</strong></p>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Marks</th>
+<th>Descriptor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distinction</td>
+<td>22–25</td>
+<td>All four; the report would survive being forwarded unedited to the squad lead; it names what the honest model still cannot do and what feature work would legitimately raise the number</td>
+</tr>
+<tr>
+<td>Proficient</td>
+<td>17–21</td>
+<td>Both metrics and most evidence; the paragraph argues statistically rather than operationally</td>
+</tr>
+<tr>
+<td>Developing</td>
+<td>10–16</td>
+<td>Metrics reported without evidence, or the drop framed as a regression</td>
+</tr>
+<tr>
+<td>Insufficient</td>
+<td>0–9</td>
+<td>No retrain, or the honest metric asserted without running it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="automatic-caps">Automatic caps<a class="headerlink" href="#automatic-caps" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Cap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A contract column dropped rather than re-sourced</td>
+<td>Fixes capped at 40%</td>
+</tr>
+<tr>
+<td>Output does not have exactly the 13 CONVENTIONS columns</td>
+<td>Overall capped at 60%</td>
+</tr>
+<tr>
+<td><code>label_actual_duration_min</code> retained in <code>ONLINE_COLUMNS</code> after the fix</td>
+<td>Reporting capped at 60%</td>
+</tr>
+<tr>
+<td>Honest metric quoted without a retrain transcript</td>
+<td>M1 scores 0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-answer-key">5. Answer key<a class="headerlink" href="#5-answer-key" title="Permanent link">&para;</a></h2>
+<h3 id="5a-per-column-classification-the-complete-key">5a. Per-column classification — the complete key<a class="headerlink" href="#5a-per-column-classification-the-complete-key" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Column</th>
+<th>Class</th>
+<th>Justification (what is known at <code>feature_ts</code> vs what the code used)</th>
+<th>Required fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>trip_id</code></td>
+<td><strong>VALID</strong></td>
+<td>The entity key, assigned at request time. An identifier, not a model input — it must be excluded from the feature vector, but it is knowable at <code>feature_ts</code> and reproducible online, so VALID rather than LEAKAGE. Accept a participant who argues it should be out of scope entirely, provided they say why</td>
+<td>None. Exclude from the feature vector; keep for joins and traceability</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>pickup_zone_id</code></td>
+<td><strong>VALID</strong></td>
+<td>The rider's current location resolved to a zone at request time; available online as a direct request parameter</td>
+<td>None</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>dropoff_zone_id</code></td>
+<td><strong>VALID</strong></td>
+<td>Masar's booking flow requires a stated destination before request, so this is an <em>input</em>, not an outcome. <strong>Product-dependent</strong> — if destination-less requests existed it would be UNAVAILABLE ONLINE for that segment</td>
+<td>None. Document the product assumption</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>hour_of_day</code></td>
+<td><strong>VALID</strong></td>
+<td>Derived purely from <code>feature_ts</code>, which at inference is the request timestamp. Deterministic, zero-latency, no source dependency</td>
+<td>None</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>day_of_week</code></td>
+<td><strong>VALID</strong></td>
+<td>As #4. Interpret against the KSA working week (Fri–Sat weekend), consistent with <code>gold.dim_date.is_weekend</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>rolling_zone_demand_15m</code></td>
+<td><strong>LEAKAGE</strong></td>
+<td><code>rangeBetween(-900, 0)</code>. <code>rangeBetween</code> bounds are inclusive and operate on the ordering column's <em>value</em> range, so an upper bound of <code>0</code> admits every trip whose <code>pickup_epoch</code> equals this one's — every trip starting in the same second, in the same zone. At Riyadh rush-hour density that is several trips, and they are the future</td>
+<td><code>rangeBetween(-900, -1)</code>. Expect the feature's mean to fall by a few percent — small, correlated with congestion, and therefore the dangerous kind</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>rolling_avg_speed_10m</code></td>
+<td><strong>VALID</strong></td>
+<td><strong>Reversed from the Lab-8 starter.</strong> Here it averages <code>speed_kmh</code> from <em>other</em> vehicles in the pickup zone over the 10 minutes strictly before <code>feature_ts</code>, with this <code>trip_id</code> excluded by the join predicate. Zone-grained, so it is materialisable to Redis. Verify the two guards explicitly: <code>z.src_trip != f.trip_id</code> and <code>z.ping_ts &lt; f.feature_ts</code></td>
+<td>None. Verify both guards; document the null contract for zones with no recent pings</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>driver_recent_trip_count</code></td>
+<td><strong>STALE</strong></td>
+<td><code>rangeBetween(-86400, -1)</code> is point-in-time correct offline. The failure is online: the model card says the online store is refreshed by the <em>nightly</em> DAG, so at 19:00 on a Thursday the value is 19 hours old — a driver who has completed 11 trips today reads as 0 and the model treats an exhausted driver as a fresh one. <strong>Accept LEAKAGE as a defensible second answer only if the participant also names the staleness</strong>, because that is the failure that actually bites</td>
+<td>Two-part: refresh the driver slice on a cadence matched to the feature's volatility (hourly), and monitor <code>feature_ts</code> age as a serving SLA</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>weather_condition</code></td>
+<td><strong>UNAVAILABLE ONLINE</strong></td>
+<td><code>data/raw/weather_hourly.csv</code> lands <em>after</em> the hour it describes. Joining a 07:14 trip to the 07:00 row is legitimate offline — that observation existed when the table was built — but at 07:14 live the 07:00 row has not arrived. Point-in-time correct and unobtainable. The distinction from LEAKAGE is operational: a leaking feature must be <em>changed</em>, an unavailable one must be <em>re-sourced</em></td>
+<td>Join to the last observed hour: <code>hour_ts &lt;= date_trunc('hour', feature_ts) - INTERVAL 1 HOUR</code>, applied identically in training and in materialisation, and served from the Redis zone key. One hour of staleness — but the <em>same</em> hour on both sides</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>distance_km</code></td>
+<td><strong>LEAKAGE</strong></td>
+<td>The <strong>metered</strong> distance the vehicle actually travelled, written at <code>dropoff_ts</code> in <code>silver.trips</code>. Pearson r with the label ≈ 0.95 and it carries 0.601 of the card's stated gain — the model is reading the answer. At inference the value does not exist, so serving must substitute something the model was trained to trust heavily. The single largest contributor to the inflated metric</td>
+<td>Recompute as the <strong>planned route distance at booking</strong>: the routing engine's estimate, or offline the route/great-circle distance between <code>gold.dim_zone</code> centroids. Keep the column name; change only the source. May be internally aliased <code>planned_distance_km</code> for clarity</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>historical_route_duration</code></td>
+<td><strong>LEAKAGE</strong></td>
+<td><strong>Reversed from the Lab-8 starter.</strong> <code>rangeBetween(-2592000, 0)</code> includes the current row, so each trip's own <code>duration_min</code> — the label itself — is one term inside its own 30-day route average. On a sparse zone pair with two prior trips that is a third of the feature; on an unseen pair it <em>is</em> the label. Subtle, plausible, and it survives every schema and range check</td>
+<td><code>rangeBetween(-2592000, -1)</code>. Define and document the null contract for zone pairs with no prior trips (impute the city median with an <code>is_imputed</code> flag, or omit)</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>feature_ts</code></td>
+<td><strong>VALID</strong></td>
+<td>The as-of timestamp itself — the anchor every other column's correctness is defined against. Metadata, not a model input; knowable by definition, because it <em>is</em> the request time</td>
+<td>None. Exclude from the feature vector; retain for point-in-time joins, materialisation and freshness monitoring</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>label_actual_duration_min</code></td>
+<td><strong>LEAKAGE</strong></td>
+<td>The target. Trivially leaking if it enters the feature vector, and — as the model card in fact specifies — a serving hazard, because it appears in <code>ONLINE_COLUMNS</code>, so the online store would be publishing the answer. Do not accept "N/A": classifying the label as LEAKAGE is the discipline that catches the non-obvious label proxies, which is exactly what #10 and #11 are</td>
+<td>Strip from the feature vector and from <code>ONLINE_COLUMNS</code>. Keep in the offline table — that is what a training set is</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tally:</strong> VALID 7 · STALE 1 · LEAKAGE 4 · UNAVAILABLE ONLINE 1.</p>
+<h3 id="5b-the-two-defects-that-live-in-the-model-card-not-the-table">5b. The two defects that live in the model card, not the table<a class="headerlink" href="#5b-the-two-defects-that-live-in-the-model-card-not-the-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Defect</th>
+<th>Why it matters</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Random 75/25 split</strong> on a temporally ordered table</td>
+<td>Every test row has training rows from <em>after</em> it. Even with all four leaking features repaired, a random split inflates the metric, because the model has seen the same evening's traffic conditions from both sides. A time split is the only honest estimator for a forecasting task</td>
+<td><code>--split time --test-days 2</code>: train on 2026-06-01..28, test on 29–30</td>
+</tr>
+<tr>
+<td><strong><code>label_actual_duration_min</code> in <code>ONLINE_COLUMNS</code></strong></td>
+<td>The online store would serve the answer to anyone who can read a zone key, and a downstream consumer would eventually "use the feature that correlates best". It is also a governance finding: the label is trip-grained and therefore should never be materialised at zone grain</td>
+<td>Remove it, and every trip-grained column, from <code>ONLINE_COLUMNS</code>; the online payload is zone-grained only</td>
+</tr>
+<tr>
+<td><strong>"Known limitations: none material"</strong></td>
+<td>Not a defect in itself but the finding that frames the report. A card claiming R² 0.94 on trip duration with no stated limitation has not been reviewed</td>
+<td>Rewrite the section with the honest metric, the point-in-time contract, and the serving staleness bound</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5c-evidence-a-distinction-answer-produces">5c. Evidence a distinction answer produces<a class="headerlink" href="#5c-evidence-a-distinction-answer-produces" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># The blunt one: correlation with the label.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$ python -m masar.serve.train_eta --corr-only --features _assessments/pa3/eta_features
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>pearson r with label_actual_duration_min
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  distance_km                 0.9483        &lt;- a feature does not do this
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  historical_route_duration   0.7742        &lt;- suspiciously high for a 30-day mean
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  rolling_avg_speed_10m      -0.3106
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  rolling_zone_demand_15m     0.2914
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  driver_recent_trip_count    0.0407
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a># The precise one: how many trips does the demand bound admit from the same second?
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>$ python -m masar.tools.sql --query &quot;
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>WITH probe AS (SELECT trip_id, city, pickup_zone_id, feature_ts, rolling_zone_demand_15m
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>               FROM delta.\`./lakehouse/_assessments/pa3/eta_features\`
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>               WHERE rolling_zone_demand_15m BETWEEN 10 AND 60 ORDER BY feature_ts LIMIT 1)
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>SELECT p.trip_id, p.feature_ts, p.rolling_zone_demand_15m AS as_built,
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a> (SELECT COUNT(*) FROM delta.\`./lakehouse/silver/trips\` s
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>   WHERE s.pickup_zone_id=p.pickup_zone_id AND s.city=p.city AND s.status=&#39;completed&#39;
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>     AND s.pickup_ts &gt;= p.feature_ts - INTERVAL 15 MINUTES
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>     AND s.pickup_ts &lt;  p.feature_ts)                    AS strictly_prior,
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a> (SELECT COUNT(*) FROM delta.\`./lakehouse/silver/trips\` s
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>   WHERE s.pickup_zone_id=p.pickup_zone_id AND s.city=p.city AND s.status=&#39;completed&#39;
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>     AND s.pickup_ts =  p.feature_ts)                    AS same_second
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>FROM probe p&quot;
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>trip_id     feature_ts           as_built  strictly_prior  same_second
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>TRP-770118  2026-06-28 07:14:33  17        14              3
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a># The one that finds defect 2: is the trip inside its own route average?
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>$ python -m masar.tools.sql --query &quot;
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>SELECT f.trip_id, t.duration_min AS own_duration, f.historical_route_duration AS as_built,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>  ROUND((SELECT AVG(s.duration_min) FROM delta.\`./lakehouse/silver/trips\` s
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>     WHERE s.pickup_zone_id=t.pickup_zone_id AND s.dropoff_zone_id=t.dropoff_zone_id
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>       AND s.status=&#39;completed&#39; AND s.pickup_ts &lt; t.pickup_ts
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>       AND s.pickup_ts &gt;= t.pickup_ts - INTERVAL 30 DAYS), 2) AS strictly_prior
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>FROM delta.\`./lakehouse/_assessments/pa3/eta_features\` f
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>JOIN delta.\`./lakehouse/silver/trips\` t USING (trip_id)
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>ORDER BY f.feature_ts LIMIT 3&quot;
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>trip_id     own_duration  as_built  strictly_prior
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>TRP-770118  21.6          19.44     18.36
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>TRP-770119  14.2          14.20     NULL          &lt;- first trip on this pair: the feature IS the label
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>TRP-770120  37.7          29.83     26.90
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a># The one that clears rolling_avg_speed_10m (the Lab-8 reversal):
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>$ python -m masar.tools.sql --query &quot;
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>SELECT COUNT(*) AS pings_from_this_trip_or_later
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>FROM delta.\`./lakehouse/_assessments/pa3/eta_features\` f
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>JOIN delta.\`./lakehouse/silver/vehicle_positions\` p ON p.trip_id = f.trip_id
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>WHERE p.event_ts &gt;= f.feature_ts&quot;
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>pings_from_this_trip_or_later
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>0                              &lt;- the trip&#39;s own pings are excluded; the feature is clean
+</code></pre></div>
+<blockquote>
+<p>Row 2 of the third query is the sentence to put in the report: on a zone pair with no prior trips, <code>historical_route_duration</code> equals the trip's own duration exactly. That is not a leak, it is the label wearing a different column name.</p>
+</blockquote>
+<h3 id="5d-reference-metrics">5d. Reference metrics<a class="headerlink" href="#5d-reference-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Claimed (card)</th>
+<th>Honest (fixed features + time split)</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R²</td>
+<td><strong>0.941</strong></td>
+<td><strong>0.706</strong></td>
+<td>−0.235</td>
+</tr>
+<tr>
+<td>MAE (min)</td>
+<td><strong>1.87</strong></td>
+<td><strong>4.71</strong></td>
+<td>+2.84 (×2.52)</td>
+</tr>
+<tr>
+<td>Top feature</td>
+<td><code>distance_km</code> 0.601</td>
+<td><code>historical_route_duration</code> 0.352</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Split</td>
+<td>random 75/25</td>
+<td>time, train &lt; 2026-06-29</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ python -m masar.transform.build_eta_features_pa3 --fixed
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[gold] eta_features (pa3, fixed): 42,038 rows, 13 columns
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$ python -m masar.serve.train_eta --features _assessments/pa3/eta_features \
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>      --split time --test-days 2
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>[train] rows=42,038  train=31,528  test=10,510  (time split at 2026-06-29 00:00)
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>[train] R2  = 0.706     (card claimed 0.941)
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>[train] MAE = 4.71 min  (card claimed 1.87)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>[train] top features by gain:
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>          historical_route_duration   0.352
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>          distance_km                 0.259   # planned route distance, from dim_zone centroids
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>          rolling_zone_demand_15m     0.166
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>          rolling_avg_speed_10m       0.129
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>          hour_of_day                 0.048
+</code></pre></div>
+<blockquote>
+<p><strong>These are PA-3's numbers, not Lab 8's.</strong> The canonical Lab-8 leakage drill runs R² <strong>0.943 → 0.712</strong> and MAE <strong>1.81 → 4.58 min</strong> on a different defect mix (<code>masar.transform.build_eta_features</code>). PA-3's variant claims 0.941 / 1.87 and lands at 0.706 / 4.71. Both sets are correct for their own artefact; do not "reconcile" them.</p>
+</blockquote>
+<p><strong>Accept ±0.03 on R² and ±0.4 min on MAE</strong> — the exact numbers depend on the participant's imputation choice for unseen zone pairs and on their planned-distance estimator. What must be true: R² falls into the <strong>0.66–0.76</strong> band and <code>distance_km</code> is no longer the dominant feature. A submission still reporting R² &gt; 0.85 has not fixed the leak, whatever the classification table says.</p>
+<h3 id="5e-the-reference-paragraph-to-the-eta-squad">5e. The reference paragraph to the ETA squad<a class="headerlink" href="#5e-the-reference-paragraph-to-the-eta-squad" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Recommendation: do not ship v3.1 as measured. The offline numbers are not wrong arithmetic; they are the right arithmetic on the wrong table.</strong></p>
+<p>Four of the thirteen features in <code>gold.eta_features</code> used information that did not exist when a prediction would be made. <code>distance_km</code> is the metered distance written at <code>dropoff_ts</code>, and it correlates 0.948 with the label — the model was reading the answer, and it carried 60% of the reported gain. <code>historical_route_duration</code> included the current trip inside its own 30-day route average; on a zone pair with no prior trips the feature <em>equals</em> the label exactly. <code>rolling_zone_demand_15m</code> counted every trip starting in the same second, which at rush hour in Riyadh is several trips that had not happened yet. And the label itself is listed in <code>ONLINE_COLUMNS</code>, so the online store is configured to publish the answer to anything that can read a zone key. Separately, the random 75/25 split trains on the future of its own test set, which inflates the number again even after the features are repaired.</p>
+<p>Rebuilt point-in-time correctly — planned route distance at booking instead of metered distance, both rolling windows made strictly prior, weather shifted to the last observed hour on <strong>both</strong> the training and the serving side, and a temporal split — the model scores <strong>R² 0.706, MAE 4.71 minutes</strong>. That is not a regression. It is the first honest measurement of this model, and it is the number that will hold up live.</p>
+<p>The operational case for the honest number is a cost argument, not a statistical one. The leaking model tells the dispatcher it will miss by 1.9 minutes and then misses by about 5; the honest model tells the dispatcher it will miss by 4.7 and misses by about 4.7. The second is cheaper precisely because you can plan against it. Two things would legitimately raise it: a live traffic-speed feed at zone grain served from Redis at under 20 ms, and a routing-engine ETA as a feature rather than a distance. Both are feature work. Neither is a metric change.</p>
+<p>One governance item, separate from accuracy: <code>driver_recent_trip_count</code> is point-in-time correct offline but refreshed nightly online, so at 19:00 it is 19 hours stale and an exhausted driver reads as fresh. Move that slice to an hourly refresh and monitor <code>feature_ts</code> age as a serving SLA. And the card's "Known limitations: none material" should be rewritten — a model card that claims R² 0.94 on trip duration with no stated limitation has not been reviewed, and that is the finding that should have caught this before I did.</p>
+</blockquote>
+<hr />
+<h2 id="6-instructor-delivery-notes">6. Instructor delivery notes<a class="headerlink" href="#6-instructor-delivery-notes" title="Permanent link">&para;</a></h2>
+<p><strong>Do not release this brief before every participant has submitted <code>LAB8_LEAKAGE.md</code>.</strong> The classification key overlaps the lab's on eleven rows.</p>
+<p><strong>Timing.</strong> At T+12 announce "you should be fixing, not still classifying" — participants over-invest in the table. At T+24 announce "retrain now, even if a fix is incomplete; an honest number on a partial fix scores; no number scores nothing."</p>
+<p><strong>What separates the bands in practice.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Frequency</th>
+<th>What it signals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Marks <code>distance_km</code> VALID</td>
+<td>Very high in a cohort that has <em>not</em> done Lab 8; rare after</td>
+<td>The anchor lesson. Ask: "when is that number written?"</td>
+</tr>
+<tr>
+<td>Marks <code>rolling_avg_speed_10m</code> LEAKAGE from memory of the lab</td>
+<td><strong>High</strong> — this is the trap</td>
+<td>Recall substituting for reasoning. Ask them to show the join predicate that would prove it, and let them find the two guards themselves</td>
+</tr>
+<tr>
+<td>Marks <code>historical_route_duration</code> VALID from memory of the lab</td>
+<td><strong>High</strong> — the other trap</td>
+<td>Same intervention: "read the upper bound aloud"</td>
+</tr>
+<tr>
+<td>Misses the random split</td>
+<td>High</td>
+<td>Treats leakage as a property of columns rather than of the whole training procedure</td>
+</tr>
+<tr>
+<td>Misses the label in <code>ONLINE_COLUMNS</code></td>
+<td>Medium</td>
+<td>Read the table, not the card. The card is part of the evidence</td>
+</tr>
+<tr>
+<td>Marks <code>weather_condition</code> LEAKAGE</td>
+<td>Medium</td>
+<td>Reasonable confusion; 2 of 3 marks. Draw the line: leaking = must change; unavailable = must re-source. The category exists to force different remediation</td>
+</tr>
+<tr>
+<td>Fixes only the serving side of <code>weather_condition</code></td>
+<td>Medium</td>
+<td>Textbook skew, manufactured while fixing skew. Say so plainly</td>
+</tr>
+<tr>
+<td>Notices that the tally matches the lab's while two rows differ</td>
+<td>Low</td>
+<td>Distinction signal — flag in moderation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Live verification (60 seconds, during marking).</strong> Point at one column the participant marked VALID and ask for the query that would prove it. A distinction answer names the predicate without opening a file.</p>
+<p><strong>Capstone linkage.</strong> PA-3 assesses capstone requirement 8 (Serving, LO8) and the point-in-time property of requirement 7. <em>Feature leakage</em> is a capstone anti-pattern flag capping a criterion at 70%, and the capstone's live verification explicitly authorises asking a participant to "run the leakage drill and explain the inflated metric" — PA-3 is the rehearsal for that question, marked.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SDAIA Academy — internal use only. Do not distribute.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../../assets/vendor/mermaid-11.17.2.min.js"></script>
+      
+        <script src="../../../../../../../../assets/hub.js"></script>
+      
+    
+  </body>
+</html>

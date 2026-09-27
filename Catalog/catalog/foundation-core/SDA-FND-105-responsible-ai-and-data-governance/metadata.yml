@@ -1,0 +1,67 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-FND-105
+course_title: Responsible AI and Data Governance
+course_title_ar: الذكاء الاصطناعي المسؤول وحوكمة البيانات
+aliases: []
+domain: ai-governance
+learning_path: foundation-core
+level: Practitioner
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: All AI and data practitioners, compliance and governance staff
+prerequisites: SDA-FND-101
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-06
+next_review: 2026-12-27
+tools:
+- Model cards
+- bias-audit toolkits
+- PDPL/NDMO checklists
+technologies: []
+keywords:
+- Responsible AI
+description: A governance-focused module aligning practice with Saudi national frameworks including PDPL,
+  NDMO data standards, and SDAIA AI-ethics principles. Participants learn to assess fairness, transparency,
+  privacy, and accountability across the AI lifecycle. The module prepares professionals to build and
+  operate AI systems that are compliant and trustworthy by design.
+description_ar: وحدة متخصصة في الحوكمة تواءم الممارسة مع الأطر الوطنية السعودية بما فيها نظام حماية البيانات
+  الشخصية ومعايير مكتب إدارة البيانات الوطنية ومبادئ أخلاقيات الذكاء الاصطناعي الصادرة عن سدايا. يتعلم
+  المشاركون تقييم العدالة والشفافية والخصوصية والمساءلة عبر دورة حياة الذكاء الاصطناعي لبناء أنظمة موثوقة
+  ومتوافقة تصميمًا.
+learning_outcomes:
+- Explain Saudi data-protection requirements (PDPL) and NDMO governance standards
+- Apply SDAIA AI-ethics principles across the AI system lifecycle
+- Analyze AI systems for bias, fairness, and disparate impact
+- Evaluate privacy risks and apply data-minimisation and anonymisation techniques
+- Design documentation, model cards, and audit trails for accountable AI
+- Assess third-party AI services for compliance and risk
+topics:
+- The responsible-AI landscape and SDAIA ethics principles
+- PDPL and NDMO data-governance frameworks
+- Bias, fairness, and impact assessment
+- Privacy-preserving data handling
+- Transparency, explainability, and documentation
+- AI risk management and compliance workflows
+- 'Case studies: governance in government AI deployments'
+assessment: Governance case analysis; compliance-assessment exercise
+next_modules: Role-track modules
+stackability: Foundation badge; required for Expert-level certificates in both tracks.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Foundation Core Track/Responsible AI and Data Governance
+  platform_workbook: Program Files (AthkaX)/Foundation Core/SDA-FND-105 - Responsible AI and Data Governance.xlsx
+known_issues: []
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

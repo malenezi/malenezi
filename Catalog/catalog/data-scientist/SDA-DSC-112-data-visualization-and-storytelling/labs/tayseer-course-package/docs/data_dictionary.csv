@@ -1,0 +1,406 @@
+﻿dataset,path,position,column,data_type,example_value,null_pct,distinct_values,description,notes
+tayseer_services,data/core/tayseer_services.csv,1,month,str,2021-07-01,0.0,9,"Reporting month, first day of month (YYYY-MM-01)",Join key to dim_calendar
+tayseer_services,data/core/tayseer_services.csv,2,region,str,Al-Baha,0.0,13,Administrative region (English),Join key to dim_regions.region
+tayseer_services,data/core/tayseer_services.csv,3,service_category,str,Business & Licensing,0.0,9,Service family,Join key to dim_services.service_category
+tayseer_services,data/core/tayseer_services.csv,4,channel,str,Branch,0.0,4,Delivery channel,Join key to dim_channels.channel
+tayseer_services,data/core/tayseer_services.csv,5,transactions,integer,5727,0.0,3713,Completed service transactions in the segment,ADDITIVE - safe to SUM
+tayseer_services,data/core/tayseer_services.csv,6,unique_users,integer,4745,0.0,3576,Distinct beneficiaries in the segment,Additive within a month only; do not sum across months
+tayseer_services,data/core/tayseer_services.csv,7,digital_adoption_pct,decimal,33.4,0.0,210,Share of the month x region x service_category segment delivered through digital channels,NON-ADDITIVE - repeated on all four channel rows of a segment. Recompute as SUM(pct/100*unique_users)/SUM(unique_users)*100
+tayseer_services,data/core/tayseer_services.csv,8,avg_completion_min,decimal,117.0,0.0,576,Mean end-to-end completion time,NON-ADDITIVE - weight by transactions; long right tail at branches
+tayseer_services,data/core/tayseer_services.csv,9,cost_per_txn_sar,decimal,51.88,0.0,2022,Fully loaded unit cost to deliver one transaction,NON-ADDITIVE - weight by transactions
+tayseer_services,data/core/tayseer_services.csv,10,csat,decimal,3.05,0.0,195,"Mean satisfaction score, 1-5",NON-ADDITIVE - weight by transactions
+tayseer_services,data/core/tayseer_services.csv,11,sla_met_pct,decimal,80.7,0.0,198,Share of transactions inside the service-level target,NON-ADDITIVE - weight by transactions
+tayseer_services,data/core/tayseer_services.csv,12,complaints,integer,10,0.0,200,Formal complaints logged in the segment,ADDITIVE - safe to SUM
+tayseer_services_raw,data/core/tayseer_services_raw.csv,1,month,str,2026-01-01,0.0,60,Month,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,2,region,str,Riyadh,0.0,65,Region,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,3,service_category,str,Justice & Notary,0.0,9,Service category,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,4,channel,str,Mobile App,0.0,20,Channel,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,5,transactions,str,87504,0.0,3681,Transactions,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,6,unique_users,str,33372,1.7,3393,Unique users,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,7,digital_adoption_pct,str,64.4,0.0,385,Digital adoption (%),
+tayseer_services_raw,data/core/tayseer_services_raw.csv,8,avg_completion_min,decimal,10.3,0.0,516,Avg completion min,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,9,cost_per_txn_sar,decimal,4.88,3.2,2040,Cost per txn (sar),
+tayseer_services_raw,data/core/tayseer_services_raw.csv,10,csat,str,4.4,3.2,194,Csat,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,11,sla_met_pct,str,99.0,1.8,173,Sla met (%),
+tayseer_services_raw,data/core/tayseer_services_raw.csv,12,complaints,integer,26,0.0,127,Complaints,
+tayseer_services_raw,data/core/tayseer_services_raw.csv,13,source_system,str,CHANNEL_API,0.0,3,System that supplied the row,Regional uploads carry most of the defects
+tayseer_services_raw,data/core/tayseer_services_raw.csv,14,extract_ts,str,2026-07-09 03:15:00,0.0,2,Extraction timestamp,Use to resolve duplicate loads - keep the latest
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,1,transaction_id,str,TX-2026-002971,0.0,4000,Transaction id,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,2,transaction_ts,str,2026-04-01 06:05:00,0.0,3560,Transaction ts,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,3,month,str,2026-04-01,0.0,1,Month,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,4,region,str,Makkah,0.0,13,Region,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,5,region_code,str,MAK,0.0,13,Region code,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,6,service_id,str,SVC-024,0.0,36,Service id,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,7,service_category,str,Labour & HR Services,0.0,9,Service category,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,8,channel,str,Mobile App,0.0,4,Channel,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,9,user_type,str,Citizen,0.0,4,User type,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,10,device_os,str,iOS,36.4,4,Device os,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,11,duration_min,decimal,2.6,0.0,530,Duration of the individual transaction,"Right-skewed; use median or a box plot, never a bar of means"
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,12,wait_min,decimal,0.0,0.0,327,Queue or hold time before service starts,Zero by definition for digital channels
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,13,completed_flag,integer,1,0.0,2,Completed flag,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,14,reopened_flag,integer,0,0.0,2,Reopened flag,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,15,first_time_right,integer,1,0.0,2,First time right,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,16,assisted_by_agent,integer,0,0.0,2,Assisted by agent,
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,17,fee_paid_sar,integer,0,0.0,7,Fee paid (sar),
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,18,unit_cost_sar,decimal,5.35,0.0,1828,Unit cost (sar),
+tayseer_transactions_sample,data/core/tayseer_transactions_sample.csv,19,csat_score,decimal,4.0,69.3,5,"Post-transaction rating, 1-5","NULL for ~68% of rows - survey non-response, not a data error"
+dim_calendar,data/dimensions/dim_calendar.csv,1,month,str,2021-07-01,0.0,60,Month,
+dim_calendar,data/dimensions/dim_calendar.csv,2,year,integer,2021,0.0,6,Year,
+dim_calendar,data/dimensions/dim_calendar.csv,3,month_num,integer,7,0.0,12,Month num,
+dim_calendar,data/dimensions/dim_calendar.csv,4,quarter,str,Q3,0.0,4,Quarter,
+dim_calendar,data/dimensions/dim_calendar.csv,5,fiscal_quarter,str,Q3,0.0,4,Fiscal quarter,
+dim_calendar,data/dimensions/dim_calendar.csv,6,month_name_en,str,July,0.0,12,Month name en,
+dim_calendar,data/dimensions/dim_calendar.csv,7,month_name_ar,str,يوليو,0.0,12,Month name ar,
+dim_calendar,data/dimensions/dim_calendar.csv,8,hijri_month_approx,str,Ramadan,0.0,12,Hijri month approx,
+dim_calendar,data/dimensions/dim_calendar.csv,9,ramadan_flag,integer,0,0.0,2,1 when the month overlaps Ramadan,Branch volume falls ~28%; explains the annual dip
+dim_calendar,data/dimensions/dim_calendar.csv,10,hajj_season_flag,integer,0,0.0,2,1 when the month overlaps Hajj,Makkah and Madinah surge ~34%
+dim_calendar,data/dimensions/dim_calendar.csv,11,eid_flag,integer,0,0.0,2,Eid flag,
+dim_calendar,data/dimensions/dim_calendar.csv,12,school_term_flag,integer,0,0.0,2,School term flag,
+dim_calendar,data/dimensions/dim_calendar.csv,13,national_day_flag,integer,0,0.0,2,National day flag,
+dim_calendar,data/dimensions/dim_calendar.csv,14,working_days,integer,22,0.0,6,Working days in the month,Normalise volumes before comparing months
+dim_calendar,data/dimensions/dim_calendar.csv,15,seasonality_note,str,Normal,0.0,5,Seasonality note,
+dim_channels,data/dimensions/dim_channels.csv,1,channel,str,Mobile App,0.0,4,Channel,
+dim_channels,data/dimensions/dim_channels.csv,2,channel_ar,str,تطبيق الجوال,0.0,4,Channel ar,
+dim_channels,data/dimensions/dim_channels.csv,3,channel_type,str,Digital,0.0,3,Channel type,
+dim_channels,data/dimensions/dim_channels.csv,4,is_digital,str,Yes,0.0,2,Is digital,
+dim_channels,data/dimensions/dim_channels.csv,5,unit_cost_2026_sar,decimal,5.1,0.0,4,Unit cost 2026 (sar),
+dim_channels,data/dimensions/dim_channels.csv,6,unit_cost_2021_sar,decimal,7.4,0.0,4,Unit cost 2021 (sar),
+dim_channels,data/dimensions/dim_channels.csv,7,relative_handling_time,decimal,0.22,0.0,4,Handling time relative to a branch visit (branch = 1.00),
+dim_channels,data/dimensions/dim_channels.csv,8,baseline_csat,decimal,4.42,0.0,4,Baseline csat,
+dim_channels,data/dimensions/dim_channels.csv,9,avg_transactions_per_user,decimal,2.6,0.0,4,Repeat rate used to derive unique_users from transactions,
+dim_channels,data/dimensions/dim_channels.csv,10,availability_hours,str,24/7,0.0,3,Availability hours,
+dim_channels,data/dimensions/dim_channels.csv,11,launch_year,integer,2019,0.0,4,Launch year,
+dim_channels,data/dimensions/dim_channels.csv,12,accessibility_support,str,Full (WCAG 2.1 AA),0.0,3,Accessibility support,
+dim_regions,data/dimensions/dim_regions.csv,1,region_code,str,RIY,0.0,13,Region code,
+dim_regions,data/dimensions/dim_regions.csv,2,region,str,Riyadh,0.0,13,Region,
+dim_regions,data/dimensions/dim_regions.csv,3,region_ar,str,منطقة الرياض,0.0,13,Region ar,
+dim_regions,data/dimensions/dim_regions.csv,4,capital_en,str,Riyadh,0.0,13,Capital en,
+dim_regions,data/dimensions/dim_regions.csv,5,capital_ar,str,الرياض,0.0,13,Capital ar,
+dim_regions,data/dimensions/dim_regions.csv,6,population_2025,integer,9050000,0.0,13,Regional population estimate,Denominator for every per-capita measure
+dim_regions,data/dimensions/dim_regions.csv,7,households_2025,integer,1930500,0.0,13,Households 2025,
+dim_regions,data/dimensions/dim_regions.csv,8,area_km2,integer,404240,0.0,13,Area km2,
+dim_regions,data/dimensions/dim_regions.csv,9,internet_penetration_pct,decimal,99.1,0.0,13,Internet penetration (%),
+dim_regions,data/dimensions/dim_regions.csv,10,smartphone_penetration_pct,decimal,94.8,0.0,11,Smartphone penetration (%),
+dim_regions,data/dimensions/dim_regions.csv,11,digital_readiness_index,decimal,0.97,0.0,13,"Composite readiness score, 0-1",Derived from connectivity indicators
+dim_regions,data/dimensions/dim_regions.csv,12,service_branches,integer,77,0.0,11,Service branches,
+dim_regions,data/dimensions/dim_regions.csv,13,adoption_trend_class,str,rising,0.0,2,Rising or stalled over the last nine months,Drives the Tier 1 intervention list
+dim_regions,data/dimensions/dim_regions.csv,14,priority_tier,str,Tier 2 - monitor,0.0,2,Tier 1 - intervention or Tier 2 - monitor,Five Tier 1 regions
+dim_regions,data/dimensions/dim_regions.csv,15,lat,decimal,24.713,0.0,13,Lat,
+dim_regions,data/dimensions/dim_regions.csv,16,lon,decimal,46.675,0.0,13,Lon,
+dim_services,data/dimensions/dim_services.csv,1,service_id,str,SVC-001,0.0,36,Service id,
+dim_services,data/dimensions/dim_services.csv,2,service_name_en,str,National ID renewal,0.0,36,Service name en,
+dim_services,data/dimensions/dim_services.csv,3,service_name_ar,str,تجديد الهوية الوطنية,0.0,36,Service name ar,
+dim_services,data/dimensions/dim_services.csv,4,service_category,str,Identity & Civil Affairs,0.0,9,Service category,
+dim_services,data/dimensions/dim_services.csv,5,category_ar,str,الأحوال المدنية والهوية,0.0,9,Category ar,
+dim_services,data/dimensions/dim_services.csv,6,owning_entity,str,Ministry of Interior,0.0,8,Owning entity,
+dim_services,data/dimensions/dim_services.csv,7,digitally_available,str,Yes,0.0,2,Digitally available,
+dim_services,data/dimensions/dim_services.csv,8,complexity,str,Medium,0.0,3,Complexity,
+dim_services,data/dimensions/dim_services.csv,9,target_completion_min,integer,10,0.0,6,Target completion min,
+dim_services,data/dimensions/dim_services.csv,10,statutory_fee_sar,integer,100,0.0,7,Statutory fee (sar),
+dim_services,data/dimensions/dim_services.csv,11,launch_date,str,2020-10-01,0.0,32,Launch date,
+dim_services,data/dimensions/dim_services.csv,12,annual_volume_rank,integer,1,0.0,36,Annual volume rank,
+assessment_rubric,data/instructional/assessment_rubric.csv,1,criterion_id,str,CAP-D1,0.0,11,Criterion id,
+assessment_rubric,data/instructional/assessment_rubric.csv,2,component,str,Dashboard,0.0,3,Component,
+assessment_rubric,data/instructional/assessment_rubric.csv,3,criterion,str,Default state answers the primary questi,0.0,11,Criterion,
+assessment_rubric,data/instructional/assessment_rubric.csv,4,weight,decimal,0.1,0.0,3,Weight,
+assessment_rubric,data/instructional/assessment_rubric.csv,5,learning_outcome,str,LO3,0.0,7,Learning outcome,
+assessment_rubric,data/instructional/assessment_rubric.csv,6,level_1_descriptor,str,No primary question,0.0,11,Level 1 descriptor,
+assessment_rubric,data/instructional/assessment_rubric.csv,7,level_2_descriptor,str,Question implicit,0.0,11,Level 2 descriptor,
+assessment_rubric,data/instructional/assessment_rubric.csv,8,level_3_descriptor,str,Answerable in 3+ clicks,0.0,11,Level 3 descriptor,
+assessment_rubric,data/instructional/assessment_rubric.csv,9,level_4_descriptor,str,Answerable in 1 click,0.0,11,Level 4 descriptor,
+assessment_rubric,data/instructional/assessment_rubric.csv,10,level_5_descriptor,str,Answered with zero clicks,0.0,11,Level 5 descriptor,
+brand_palette,data/instructional/brand_palette.csv,1,token,str,brand-primary,0.0,16,Token,
+brand_palette,data/instructional/brand_palette.csv,2,hex,str,#0F5E4A,0.0,13,Hex,
+brand_palette,data/instructional/brand_palette.csv,3,name,str,Primary brand green,0.0,16,Name,
+brand_palette,data/instructional/brand_palette.csv,4,palette_type,str,Categorical / brand chrome,0.0,11,Palette type,
+brand_palette,data/instructional/brand_palette.csv,5,colour_blind_safe,str,Yes,12.5,1,Colour blind safe,
+brand_palette,data/instructional/brand_palette.csv,6,contrast_ratio_on_white,decimal,7.8,0.0,13,Contrast ratio on white,
+brand_palette,data/instructional/brand_palette.csv,7,usage_rule,str,"Reserve for chrome, never for the signal",0.0,11,Usage rule,
+chart_chooser,data/instructional/chart_chooser.csv,1,question_type,str,Comparison (ranking),0.0,8,Question type,
+chart_chooser,data/instructional/chart_chooser.csv,2,tayseer_question,str,Which regions lag on adoption?,0.0,8,Tayseer question,
+chart_chooser,data/instructional/chart_chooser.csv,3,default_chart,str,Sorted bar / dot plot,0.0,8,Default chart,
+chart_chooser,data/instructional/chart_chooser.csv,4,if_many_categories,str,Dot plot (compact),0.0,8,If many categories,
+chart_chooser,data/instructional/chart_chooser.csv,5,if_many_series,str,Small multiples,0.0,8,If many series,
+chart_chooser,data/instructional/chart_chooser.csv,6,avoid,str,"Pie, 3D bar, choropleth as primary",0.0,8,Avoid,
+chart_chooser,data/instructional/chart_chooser.csv,7,primary_encoding_channel,str,Position on a common scale,0.0,6,Primary encoding channel,
+chart_chooser,data/instructional/chart_chooser.csv,8,lab2_ref,str,Q1,0.0,8,Lab2 ref,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,1,test_id,str,UT-01-v1-T1,0.0,144,Test id,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,2,participant_id,str,P01,0.0,24,Participant id,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,3,dashboard_version,str,v1_gauge_wall,0.0,2,Dashboard version,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,4,task_id,str,T1,0.0,3,Task id,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,5,task,str,Which regions are below the 65% adoption,0.0,3,Task,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,6,time_to_answer_sec,decimal,68.1,0.0,105,Time to answer sec,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,7,gave_up,integer,0,0.0,2,Gave up,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,8,answer_correct,integer,0,0.0,2,Answer correct,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,9,clicks_used,integer,5,0.0,12,Clicks used,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,10,confidence_1_5,integer,2,0.0,5,Confidence 1 5,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,11,tested_on,str,Mobile,0.0,2,Tested on,
+dashboard_usability_tests,data/instructional/dashboard_usability_tests.csv,12,tester_role,str,Field manager,0.0,4,Tester role,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,1,rank,integer,1,0.0,7,Rank,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,2,channel_en,str,Position on a common scale,0.0,7,Channel en,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,3,channel_ar,str,الموضع على مقياس مشترك,0.0,7,Channel ar,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,4,decoding_accuracy,str,Best,0.0,7,Decoding accuracy,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,5,relative_accuracy_index,decimal,1.0,0.0,7,Relative accuracy index,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,6,use_for,str,Precise ranking and comparison,0.0,7,Use for,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,7,tayseer_example,str,Sorted bar of adoption by region,0.0,7,Tayseer example,
+encoding_accuracy_ranking,data/instructional/encoding_accuracy_ranking.csv,8,warning,str,Never wasted on decoration,0.0,7,Warning,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,1,item_id,str,KC-M1-1,0.0,30,Item id,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,2,module,integer,1,0.0,6,Module,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,3,question,str,Rank by decoding accuracy for exact valu,0.0,30,Question,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,4,model_answer,str,Position > length > angle > area.,0.0,30,Model answer,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,5,learning_outcome,str,LO1,0.0,6,Learning outcome,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,6,cognitive_level,str,Recall,0.0,5,Cognitive level,
+knowledge_check_bank,data/instructional/knowledge_check_bank.csv,7,benchmark_pass_mark,str,4 of 5,0.0,1,Benchmark pass mark,
+lab2_questions,data/instructional/lab2_questions.csv,1,question_id,str,Q1,0.0,5,Question id,
+lab2_questions,data/instructional/lab2_questions.csv,2,question,str,Which regions are lagging on digital ado,0.0,5,Question,
+lab2_questions,data/instructional/lab2_questions.csv,3,question_type,str,Comparison (ranking),0.0,5,Question type,
+lab2_questions,data/instructional/lab2_questions.csv,4,columns_needed,str,"digital_adoption_pct, region, month (lat",0.0,5,Columns needed,
+lab2_questions,data/instructional/lab2_questions.csv,5,expected_chart,str,Sorted horizontal bar,0.0,5,Expected chart,
+lab2_questions,data/instructional/lab2_questions.csv,6,rationale,str,Ranking needs position on a common scale,0.0,5,Rationale,
+lab2_questions,data/instructional/lab2_questions.csv,7,expected_insight,str,Three regions sit more than 9pp below ta,0.0,5,Expected insight,
+participants_roster,data/instructional/participants_roster.csv,1,participant_id,str,P01,0.0,24,Participant id,
+participants_roster,data/instructional/participants_roster.csv,2,display_name,str,Trainee 01,0.0,24,Display name,
+participants_roster,data/instructional/participants_roster.csv,3,entity,str,Ministry of Health,0.0,8,Entity,
+participants_roster,data/instructional/participants_roster.csv,4,job_family,str,BI Developer,0.0,5,Job family,
+participants_roster,data/instructional/participants_roster.csv,5,years_experience,integer,7,0.0,12,Years experience,
+participants_roster,data/instructional/participants_roster.csv,6,prerequisite_sda_fnd_104,str,Completed,0.0,2,Prerequisite sda fnd 104,
+participants_roster,data/instructional/participants_roster.csv,7,primary_tool,str,Python,0.0,4,Primary tool,
+participants_roster,data/instructional/participants_roster.csv,8,preferred_delivery_language,str,Arabic,0.0,2,Preferred delivery language,
+participants_roster,data/instructional/participants_roster.csv,9,pre_assessment_score_pct,integer,49,0.0,20,Pre assessment score (%),
+participants_roster,data/instructional/participants_roster.csv,10,cohort,str,SDA-DSC-112-2026-C03,0.0,1,Cohort,
+participants_roster,data/instructional/participants_roster.csv,11,attendance_day1,integer,1,0.0,1,Attendance day1,
+participants_roster,data/instructional/participants_roster.csv,12,attendance_day2,integer,1,0.0,1,Attendance day2,
+participants_roster,data/instructional/participants_roster.csv,13,attendance_day3,integer,1,0.0,1,Attendance day3,
+qa_bank,data/instructional/qa_bank.csv,1,qa_id,str,QA-01,0.0,12,Qa id,
+qa_bank,data/instructional/qa_bank.csv,2,question_type,str,Hostile,0.0,4,Question type,
+qa_bank,data/instructional/qa_bank.csv,3,question,str,Aren't those regions just small? Why spe,0.0,12,Question,
+qa_bank,data/instructional/qa_bank.csv,4,model_answer,str,"They hold 15.8% of the population, run 1",0.0,12,Model answer,
+qa_bank,data/instructional/qa_bank.csv,5,bridge_back_to_big_idea,str,"so targeted spend closes the real gap, n",0.0,12,Bridge back to big idea,
+qa_bank,data/instructional/qa_bank.csv,6,appendix_reference,str,A2 - per-capita evidence,0.0,10,Appendix reference,
+qa_bank,data/instructional/qa_bank.csv,7,likelihood,str,High,0.0,3,Likelihood,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,1,participant_id,str,P01,0.0,24,Participant id,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,2,round,integer,1,0.0,2,Round,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,3,criterion,str,Opening / BLUF,0.0,6,Criterion,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,4,weight,decimal,0.2,0.0,3,Weight,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,5,score_0_5,integer,2,0.0,5,Score 0 5,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,6,assessor,str,Peer B,0.0,3,Assessor,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,7,recorded,str,Yes,0.0,1,Recorded,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,8,round_total_pct,integer,53,0.0,30,Round total (%),
+rehearsal_scores,data/instructional/rehearsal_scores.csv,9,delta_vs_round1_pp,integer,0,0.0,15,Delta vs round1 pp,
+rehearsal_scores,data/instructional/rehearsal_scores.csv,10,time_used_sec,integer,500,0.0,143,Time used sec,
+branch_monthly,data/supporting/branch_monthly.csv,1,month,str,2024-07-01,0.0,24,Month,
+branch_monthly,data/supporting/branch_monthly.csv,2,branch_id,str,BR-RIY-01,0.0,122,Branch id,
+branch_monthly,data/supporting/branch_monthly.csv,3,branch_name_en,str,Riyadh Service Centre 1,0.0,122,Branch name en,
+branch_monthly,data/supporting/branch_monthly.csv,4,branch_name_ar,str,مركز خدمة الرياض 1,0.0,122,Branch name ar,
+branch_monthly,data/supporting/branch_monthly.csv,5,region,str,Riyadh,0.0,13,Region,
+branch_monthly,data/supporting/branch_monthly.csv,6,region_code,str,RIY,0.0,13,Region code,
+branch_monthly,data/supporting/branch_monthly.csv,7,city,str,Riyadh,0.0,13,City,
+branch_monthly,data/supporting/branch_monthly.csv,8,branch_size,str,Small,0.0,3,Branch size,
+branch_monthly,data/supporting/branch_monthly.csv,9,visits,integer,2293,0.0,2326,Visits,
+branch_monthly,data/supporting/branch_monthly.csv,10,appointments_share_pct,decimal,25.9,0.0,417,Appointments share (%),
+branch_monthly,data/supporting/branch_monthly.csv,11,avg_wait_min,decimal,5.6,0.0,434,Avg wait min,
+branch_monthly,data/supporting/branch_monthly.csv,12,staff_fte,integer,11,0.0,9,Staff fte,
+branch_monthly,data/supporting/branch_monthly.csv,13,operating_cost_sar,integer,176345,0.0,2839,Operating cost (sar),
+branch_monthly,data/supporting/branch_monthly.csv,14,cost_per_visit_sar,decimal,76.91,0.0,2175,Operating cost divided by visits,Rises as visits fall - fixed-cost evidence
+branch_monthly,data/supporting/branch_monthly.csv,15,utilisation_pct,decimal,36.4,0.0,423,Utilisation (%),
+branch_monthly,data/supporting/branch_monthly.csv,16,self_service_kiosk,str,No,0.0,2,Self service kiosk,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,1,response_id,str,CS-00001,0.0,4000,Response id,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,2,survey_date,str,2026-03-16,0.0,168,Survey date,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,3,month,str,2026-03-01,0.0,6,Month,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,4,region,str,Jazan,0.0,13,Region,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,5,region_code,str,JZN,0.0,13,Region code,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,6,service_category,str,Municipal Services,0.0,9,Service category,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,7,channel,str,Web Portal,0.0,4,Channel,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,8,respondent_type,str,Citizen,0.0,3,Respondent type,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,9,age_band,str,25-34,0.0,6,Age band,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,10,csat_1_5,integer,5,0.0,5,Csat 1 5,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,11,ease_of_use_1_5,integer,4,0.0,5,Ease of use 1 5,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,12,nps_0_10,integer,10,0.0,11,Nps 0 10,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,13,resolved_first_contact,integer,1,0.0,2,Resolved first contact,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,14,would_recommend,str,Yes,0.0,3,Would recommend,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,15,sentiment,str,Positive,0.0,3,Positive / Neutral / Negative derived from csat_1_5,Use for qualitative evidence scenes
+csat_survey_responses,data/supporting/csat_survey_responses.csv,16,comment_en,str,Much easier than going to the branch.,0.0,14,Comment en,
+csat_survey_responses,data/supporting/csat_survey_responses.csv,17,comment_ar,str,أنهيت المعاملة عبر الجوال خلال دقيقتين.,0.0,11,Free-text comment in Arabic,Synthetic; safe for RTL rendering practice
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,1,option_id,str,OPT-A,0.0,3,Option id,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,2,region,str,Jazan,0.0,13,Region,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,3,region_code,str,JZN,0.0,13,Region code,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,4,in_scope,str,Yes,0.0,2,In scope,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,5,intervention_type,str,Field activation + assisted-digital kios,0.0,3,Intervention type,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,6,current_adoption_pct,decimal,50.0,0.0,13,Current adoption (%),
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,7,expected_gain_pp,decimal,13.5,0.0,4,Expected gain pp,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,8,projected_adoption_dec_2026_pct,decimal,63.9,0.0,33,Projected adoption dec 2026 (%),
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,9,reaches_65_by_dec,str,No,0.0,2,Reaches 65 by dec,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,10,users_reached_monthly,integer,82358,0.0,32,Users reached monthly,
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,11,allocation_sar,integer,20127160,0.0,32,Allocation (sar),
+investment_option_region_allocation,data/supporting/investment_option_region_allocation.csv,12,cost_per_pp_sar_m,decimal,1.491,20.5,31,Cost per pp (sar) m,
+investment_options,data/supporting/investment_options.csv,1,option_id,str,OPT-A,0.0,3,Option id,
+investment_options,data/supporting/investment_options.csv,2,option_name_en,str,Targeted regional activation in the five,0.0,3,Option name en,
+investment_options,data/supporting/investment_options.csv,3,option_name_ar,str,تفعيل إقليمي موجّه في المناطق الخمس المت,0.0,3,Option name ar,
+investment_options,data/supporting/investment_options.csv,4,investment_sar,integer,40000000,0.0,1,Investment (sar),
+investment_options,data/supporting/investment_options.csv,5,time_to_impact_months,integer,6,0.0,3,Time to impact months,
+investment_options,data/supporting/investment_options.csv,6,expected_gain_in_scope_pp,decimal,13.5,0.0,3,Expected gain in scope pp,
+investment_options,data/supporting/investment_options.csv,7,realised_gain_by_dec_2026_pp,decimal,13.5,0.0,3,Portion of the full effect delivered before the December checkpoint,Pro-rated by time to impact
+investment_options,data/supporting/investment_options.csv,8,expected_national_gain_pp,decimal,2.13,0.0,3,Expected national gain pp,
+investment_options,data/supporting/investment_options.csv,9,projected_national_adoption_dec_2026_pct,decimal,66.0,0.0,3,Projected national adoption dec 2026 (%),
+investment_options,data/supporting/investment_options.csv,10,stalled_regions_reaching_65_by_dec,integer,4,0.0,2,How many of the five Tier 1 regions clear 65% by December,"The ask is regional, so this is the deciding column"
+investment_options,data/supporting/investment_options.csv,11,regions_below_target_dec_2026,integer,4,0.0,2,Regions below target dec 2026,
+investment_options,data/supporting/investment_options.csv,12,transactions_shifted_monthly,integer,265764,0.0,3,Transactions shifted monthly,
+investment_options,data/supporting/investment_options.csv,13,annual_cost_saving_sar_m,decimal,107.6,0.0,3,Annual cost saving (sar) m,
+investment_options,data/supporting/investment_options.csv,14,gap_closed_pp_per_sar_m,decimal,0.0532,0.0,3,National percentage points of adoption gained per SAR 1 million,The comparison metric for the capstone recommendation
+investment_options,data/supporting/investment_options.csv,15,payback_months_incl_lag,decimal,10.5,0.0,3,Payback months incl lag,
+investment_options,data/supporting/investment_options.csv,16,delivery_risk,str,Medium,0.0,3,Delivery risk,
+investment_options,data/supporting/investment_options.csv,17,key_dependency,str,"Regional offices, Nafath support capacit",0.0,3,Key dependency,
+investment_options,data/supporting/investment_options.csv,18,supporting_evidence,str,Stalled regions add under 0.08pp/month u,0.0,3,Supporting evidence,
+kpi_targets,data/supporting/kpi_targets.csv,1,kpi_id,str,KPI-01,0.0,10,Kpi id,
+kpi_targets,data/supporting/kpi_targets.csv,2,kpi_name_en,str,Digital Adoption %,0.0,10,Kpi name en,
+kpi_targets,data/supporting/kpi_targets.csv,3,kpi_name_ar,str,نسبة التبني الرقمي,0.0,10,Kpi name ar,
+kpi_targets,data/supporting/kpi_targets.csv,4,unit,str,%,0.0,6,Unit,
+kpi_targets,data/supporting/kpi_targets.csv,5,direction,str,higher_is_better,0.0,2,Direction,
+kpi_targets,data/supporting/kpi_targets.csv,6,grain,str,month x region x service_category,0.0,4,Grain,
+kpi_targets,data/supporting/kpi_targets.csv,7,formula,str,SUM(digital_adoption_pct/100 * unique_us,0.0,10,Query-time definition of the measure,Mirror this in DAX or a Tableau calculated field
+kpi_targets,data/supporting/kpi_targets.csv,8,is_additive,str,No,0.0,3,Whether the measure may be summed or averaged directly,'No' means recompute from components
+kpi_targets,data/supporting/kpi_targets.csv,9,baseline_2021,decimal,33.9,0.0,10,Baseline 2021,
+kpi_targets,data/supporting/kpi_targets.csv,10,current_value,decimal,63.8,0.0,10,Current value,
+kpi_targets,data/supporting/kpi_targets.csv,11,target_2026,decimal,65.0,0.0,9,Target 2026,
+kpi_targets,data/supporting/kpi_targets.csv,12,threshold_red,decimal,55.0,0.0,10,Threshold red,
+kpi_targets,data/supporting/kpi_targets.csv,13,threshold_amber,decimal,62.0,0.0,10,Threshold amber,
+kpi_targets,data/supporting/kpi_targets.csv,14,threshold_green,decimal,65.0,0.0,10,Threshold green,
+kpi_targets,data/supporting/kpi_targets.csv,15,owner,str,Digital Channels Directorate,0.0,8,Owner,
+kpi_targets,data/supporting/kpi_targets.csv,16,cadence,str,Monthly,0.0,1,Cadence,
+region_directors,data/supporting/region_directors.csv,1,email,str,riy.director@tayseer.gov.sa,0.0,13,Email,
+region_directors,data/supporting/region_directors.csv,2,display_name_en,str,Faisal Al-Otaibi,0.0,13,Display name en,
+region_directors,data/supporting/region_directors.csv,3,display_name_ar,str,فيصل العتيبي,0.0,13,Display name ar,
+region_directors,data/supporting/region_directors.csv,4,region,str,Riyadh,0.0,13,Region,
+region_directors,data/supporting/region_directors.csv,5,region_code,str,RIY,0.0,13,Region code,
+region_directors,data/supporting/region_directors.csv,6,role_title,str,Regional Delivery Director,0.0,1,Role title,
+region_directors,data/supporting/region_directors.csv,7,rls_role,str,RegionDirector,0.0,1,Rls role,
+region_directors,data/supporting/region_directors.csv,8,entity,str,Tayseer National Digital Services Progra,0.0,1,Entity,
+region_directors,data/supporting/region_directors.csv,9,reports_to,str,deputy.gm.operations@tayseer.gov.sa,0.0,1,Reports to,
+region_directors,data/supporting/region_directors.csv,10,appointed_date,str,2022-06-01,0.0,12,Appointed date,
+region_directors,data/supporting/region_directors.csv,11,dashboard_access_level,str,Region only,0.0,2,Dashboard access level,
+region_directors,data/supporting/region_directors.csv,12,is_active,integer,1,0.0,1,Is active,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,1,region,str,Jazan,0.0,13,Region,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,2,region_code,str,JZN,0.0,13,Region code,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,3,region_ar,str,منطقة جازان,0.0,13,Region ar,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,4,population_2025,integer,1720000,0.0,13,Population 2025,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,5,digital_adoption_pct,decimal,50.0,0.0,13,Digital adoption (%),
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,6,gap_to_target_pp,decimal,15.0,0.0,13,Gap to target pp,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,7,cost_per_txn_sar,decimal,24.6,0.0,13,Cost per txn (sar),
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,8,csat,decimal,3.78,0.0,12,Csat,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,9,avg_completion_min,decimal,21.2,0.0,13,Avg completion min,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,10,monthly_transactions,integer,610056,0.0,13,Monthly transactions,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,11,monthly_unique_users,integer,348472,0.0,13,Monthly unique users,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,12,digital_txn_per_1k_pop,decimal,180.0,0.0,13,"Digital transactions per 1,000 residents",Retires the 'those regions are just small' objection
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,13,txn_per_1k_pop,decimal,354.7,0.0,13,Txn per 1k pop,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,14,adoption_9m_ago_pct,decimal,49.4,0.0,12,Adoption 9m ago (%),
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,15,adoption_slope_pp_per_month,decimal,0.067,0.0,8,Percentage points of adoption gained per month over the last nine months,The stall detector
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,16,trend_class,str,Stalled,0.0,2,Trend class,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,17,priority_tier,str,Tier 1 - intervention,0.0,2,Priority tier,
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,18,projected_dec_2026_pct,decimal,50.4,0.0,12,Current adoption plus six months at the current slope,Do-nothing projection
+regional_scorecard_latest,data/supporting/regional_scorecard_latest.csv,19,reaches_target_unaided,str,No,0.0,2,Reaches target unaided,
+support_tickets,data/supporting/support_tickets.csv,1,ticket_id,str,TCK-2026-00001,0.0,4000,Ticket id,
+support_tickets,data/supporting/support_tickets.csv,2,opened_ts,str,2026-01-06 13:38:00,0.0,3936,Opened ts,
+support_tickets,data/supporting/support_tickets.csv,3,region,str,Riyadh,0.0,13,Region,
+support_tickets,data/supporting/support_tickets.csv,4,region_code,str,RIY,0.0,13,Region code,
+support_tickets,data/supporting/support_tickets.csv,5,service_category,str,Justice & Notary,0.0,9,Service category,
+support_tickets,data/supporting/support_tickets.csv,6,channel,str,Mobile App,0.0,4,Channel,
+support_tickets,data/supporting/support_tickets.csv,7,issue_category,str,Network / connectivity,0.0,9,Operational issue type,Authentication dominates in the five stalled regions
+support_tickets,data/supporting/support_tickets.csv,8,severity,str,S3 - Medium,0.0,4,Severity,
+support_tickets,data/supporting/support_tickets.csv,9,reported_by,str,Contact centre,0.0,4,Reported by,
+support_tickets,data/supporting/support_tickets.csv,10,resolution_hours,decimal,28.3,0.0,569,Resolution hours,
+support_tickets,data/supporting/support_tickets.csv,11,sla_target_hours,integer,72,0.0,4,Sla target hours,
+support_tickets,data/supporting/support_tickets.csv,12,reopened,integer,0,0.0,2,Reopened,
+support_tickets,data/supporting/support_tickets.csv,13,root_cause,str,File size / format rule,0.0,9,Root cause,
+support_tickets,data/supporting/support_tickets.csv,14,resolved_by_team,str,Content,0.0,5,Resolved by team,
+support_tickets,data/supporting/support_tickets.csv,15,escalated_flag,integer,0,0.0,2,Escalated flag,
+support_tickets,data/supporting/support_tickets.csv,16,sla_breached,integer,0,0.0,2,1 when resolution_hours exceeded sla_target_hours,Derived field
+data_quality_issue_key,docs/data_quality_issue_key.csv,1,row_hint,integer,3169,0.0,58,Row hint,
+data_quality_issue_key,docs/data_quality_issue_key.csv,2,column,str,region,0.0,11,Column,
+data_quality_issue_key,docs/data_quality_issue_key.csv,3,issue_type,str,"Inconsistent region labels (case, spacin",0.0,12,Issue type,
+data_quality_issue_key,docs/data_quality_issue_key.csv,4,expected_fix,str,Standardise against dim_regions.region; ,0.0,12,Expected fix,
+regional_equity_latest,data/supporting/regional_equity_latest.csv,1,region,str,Riyadh,0.0,13,Administrative region (English),Join key to dim_regions.region
+regional_equity_latest,data/supporting/regional_equity_latest.csv,2,region_code,str,RIY,0.0,13,Three-letter region code,Join key to dim_regions.region_code
+regional_equity_latest,data/supporting/regional_equity_latest.csv,3,region_ar,str,منطقة الرياض,0.0,13,Administrative region (Arabic),RTL label for Module 3
+regional_equity_latest,data/supporting/regional_equity_latest.csv,4,population_2025,integer,9050000,0.0,13,"Resident population, 2025",The per-capita denominator; copied from dim_regions
+regional_equity_latest,data/supporting/regional_equity_latest.csv,5,households_2025,integer,1930500,0.0,13,"Households, 2025",Alternative denominator for household-level services
+regional_equity_latest,data/supporting/regional_equity_latest.csv,6,area_km2,integer,404240,0.0,13,Region area in square kilometres,Denominator for the density column
+regional_equity_latest,data/supporting/regional_equity_latest.csv,7,population_density_per_km2,decimal,22.39,0.0,13,population_2025 / area_km2,Explains why a raw-count choropleth reads as a population map
+regional_equity_latest,data/supporting/regional_equity_latest.csv,8,service_branches,integer,77,0.0,11,Physical service branches in the region,Supply-side capacity
+regional_equity_latest,data/supporting/regional_equity_latest.csv,9,branches_per_100k_pop,decimal,0.85,0.0,11,"service_branches / population_2025 * 100,000",Supply normalised - the coverage half of the equity question
+regional_equity_latest,data/supporting/regional_equity_latest.csv,10,monthly_transactions,integer,3229163,0.0,13,All transactions in the latest month (2026-06),ADDITIVE; matches regional_scorecard_latest.monthly_transactions
+regional_equity_latest,data/supporting/regional_equity_latest.csv,11,monthly_unique_users,integer,1687373,0.0,13,Distinct beneficiaries in the latest month,Semi-additive; the weight for digital_adoption_pct
+regional_equity_latest,data/supporting/regional_equity_latest.csv,12,monthly_digital_transactions,integer,2193502,0.0,13,Transactions on Mobile App and Web Portal in the latest month,SUM(transactions) WHERE dim_channels.is_digital = Yes
+regional_equity_latest,data/supporting/regional_equity_latest.csv,13,txn_per_1k_pop,decimal,356.8,0.0,13,"monthly_transactions / population_2025 * 1,000",Matches regional_scorecard_latest.txn_per_1k_pop
+regional_equity_latest,data/supporting/regional_equity_latest.csv,14,digital_txn_per_1k_pop,decimal,242.4,0.0,13,"monthly_digital_transactions / population_2025 * 1,000",The rate-map measure; matches regional_scorecard_latest.digital_txn_per_1k_pop
+regional_equity_latest,data/supporting/regional_equity_latest.csv,15,digital_adoption_pct,decimal,67.8,0.0,13,User-weighted digital adoption for the region,"NON-ADDITIVE - recomputed per KPI-01, not averaged"
+regional_equity_latest,data/supporting/regional_equity_latest.csv,16,cost_per_txn_sar,decimal,14.6,0.0,13,Transaction-weighted cost per transaction,NON-ADDITIVE - recomputed per KPI-02
+regional_equity_latest,data/supporting/regional_equity_latest.csv,17,csat,decimal,4.32,0.0,12,"Transaction-weighted satisfaction, 1-5",NON-ADDITIVE - recomputed per KPI-03; the package convention
+regional_equity_latest,data/supporting/regional_equity_latest.csv,18,csat_user_weighted,decimal,4.21,0.0,12,The same score weighted by unique_users instead of transactions,Shipped alongside csat so students can see that the weight is a choice; differs from csat by up to 0.12
+regional_equity_latest,data/supporting/regional_equity_latest.csv,19,avg_completion_min,decimal,12.1,0.0,13,Transaction-weighted mean completion time,NON-ADDITIVE - recomputed per KPI-04
+regional_equity_latest,data/supporting/regional_equity_latest.csv,20,internet_penetration_pct,decimal,99.1,0.0,13,Household internet penetration,Context variable from dim_regions; a candidate explanator
+regional_equity_latest,data/supporting/regional_equity_latest.csv,21,digital_readiness_index,decimal,0.97,0.0,13,"Composite readiness score, 0-1",Context variable from dim_regions
+regional_equity_latest,data/supporting/regional_equity_latest.csv,22,priority_tier,str,Tier 2 - monitor,0.0,2,Intervention tier,Tier 1 - intervention marks the five stalled regions
+regional_equity_latest,data/supporting/regional_equity_latest.csv,23,population_share_pct,decimal,25.53,0.0,13,Region share of national population,Lorenz x-axis input
+regional_equity_latest,data/supporting/regional_equity_latest.csv,24,digital_txn_share_pct,decimal,27.46,0.0,13,Region share of national digital transactions,Lorenz y-axis input
+regional_equity_latest,data/supporting/regional_equity_latest.csv,25,index_vs_national,decimal,107.6,0.0,13,digital_txn_per_1k_pop / national rate * 100,"100 = the national rate of 225.4 per 1,000; below 100 is underserved"
+regional_equity_latest,data/supporting/regional_equity_latest.csv,26,rank_by_raw_volume,integer,1,0.0,13,"Rank on monthly_digital_transactions, 1 = highest",What a raw-count choropleth shows
+regional_equity_latest,data/supporting/regional_equity_latest.csv,27,rank_by_per_capita,integer,1,0.0,13,"Rank on digital_txn_per_1k_pop, 1 = highest",What a rate map shows
+regional_equity_latest,data/supporting/regional_equity_latest.csv,28,rank_shift,integer,0,0.0,8,rank_by_raw_volume - rank_by_per_capita,"The Case C headline. Negative = flattered by the raw-count map. Jazan is -6: 7th by volume, 13th per capita"
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,1,lorenz_rank,integer,1,0.0,13,"Position in the sort, 1 = lowest digital transactions per capita",Draw the curve in this order
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,2,region,str,Jazan,0.0,13,Administrative region (English),Join key to dim_regions.region
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,3,region_code,str,JZN,0.0,13,Three-letter region code,Join key to dim_regions.region_code
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,4,region_ar,str,منطقة جازان,0.0,13,Administrative region (Arabic),RTL label
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,5,population_2025,integer,1720000,0.0,13,"Resident population, 2025",Lorenz x-axis weight
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,6,monthly_digital_transactions,integer,309528,0.0,13,Digital transactions in the latest month,Lorenz y-axis quantity
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,7,digital_txn_per_1k_pop,decimal,180.0,0.0,13,"Digital transactions per 1,000 residents",The sort key
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,8,population_share,decimal,0.04851904,0.0,13,"Region share of national population, 0-1",Sums to 1.0 across the 13 rows
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,9,digital_txn_share,decimal,0.03874628,0.0,13,"Region share of national digital transactions, 0-1",Sums to 1.0 across the 13 rows
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,10,cum_population_share_start,decimal,0.0,0.0,13,Cumulative population share at the start of this segment,"0.0 on the first row - gives the curve its (0,0) origin without a dummy row"
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,11,cum_population_share,decimal,0.04851904,0.0,13,Cumulative population share at the end of this segment,Lorenz x. Exactly 1.0 on the last row
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,12,cum_digital_txn_share_start,decimal,0.0,0.0,13,Cumulative transaction share at the start of this segment,0.0 on the first row
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,13,cum_digital_txn_share,decimal,0.03874628,0.0,13,Cumulative digital-transaction share at the end of this segment,Lorenz y. Exactly 1.0 on the last row
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,14,equality_reference,decimal,0.04851904,0.0,13,The 45-degree line of perfect equality,Equals cum_population_share; plot as the reference line
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,15,gap_to_equality,decimal,0.00977276,0.0,13,equality_reference - cum_digital_txn_share,The vertical gap students shade; peaks at 0.0274 at Al-Jouf
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,16,gini_segment_area,decimal,0.00093997,0.0,13,Trapezoidal area under the Lorenz curve for this segment,Gini = 1 - 2 * SUM(gini_segment_area)
+regional_equity_lorenz,data/supporting/regional_equity_lorenz.csv,17,gini_coefficient,decimal,0.0372,0.0,1,"The national Gini coefficient, 0.0372","Constant, repeated on every row so Excel users can reference it without a formula"
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,1,technique_id,str,SPIN-01,0.0,13,"Identifier, SPIN-01 to SPIN-13",
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,2,technique_en,str,Average of averages on a non-additive rate,0.0,13,Name of the spin technique (English),
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,3,technique_ar,str,متوسط المتوسطات لمؤشر غير قابل للجمع,0.0,13,Name of the spin technique (Arabic),RTL label
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,4,kpi_affected,str,KPI-01 Digital Adoption %,0.0,6,The KPI the technique distorts,"Join key to kpi_targets.kpi_id, given as ""KPI-nn name"""
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,5,figure_unit,str,%,0.0,11,"Unit that spun_figure, honest_figure and gap are expressed in",The pair is always like-for-like; the unit says what it is
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,6,spun_figure,decimal,61.19,0.0,12,The number the spun dashboard shows,Reproducible - see how_it_was_produced
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,7,honest_figure,decimal,63.84,0.0,12,The number the correct operation returns,Reproducible - see how_it_was_produced
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,8,gap,decimal,-2.65,0.0,13,spun_figure - honest_figure,"Signed. Negative means the wrong method understates, which happens in SPIN-01, -06, -08, -10 and -13"
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,9,how_it_was_produced,str,AVERAGE(digital_adoption_pct) over the 468 rows of the la...,0.0,13,The exact operation behind both figures,Every one is re-executed by scripts/validate_extensions.py
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,10,what_the_reader_concludes,str,Adoption is 61.2% - the programme is 3.8pp short of the 6...,0.0,13,The inference the spun figure invites,"The harm, stated as a sentence a committee member would say"
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,11,the_honest_statement,str,User-weighted adoption is 63.8%. The 61.2% figure average...,0.0,13,What the data actually supports,
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,12,the_fix,str,Recompute as SUM(digital_adoption_pct/100 * unique_users)...,0.0,13,The design or governance change that removes the technique,"Annotation, weighting, denominator or threshold binding"
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,13,severity,str,High,0.0,2,Low / Medium / High,How much the decision changes
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,14,detectability,str,Hard,0.0,3,Easy / Medium / Hard,How visible the technique is to a reader who does not have the data
+kpi_spin_pairs,data/instructional/kpi_spin_pairs.csv,15,source_file,str,data/core/tayseer_services.csv,0.0,3,The shipped CSV the figures come from,Always a path under data/
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,1,variant,str,spun,0.0,2,spun or honest,Two dashboards over identical underlying data
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,2,tile_id,str,T01,0.0,10,T01 to T10,"Identical across the two variants, so the tiles pair up"
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,3,tile_title_en,str,National Digital Adoption,0.0,10,Tile title (English),Identical across variants - only the treatment differs
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,4,tile_title_ar,str,نسبة التبني الرقمي على المستوى الوطني,0.0,10,Tile title (Arabic),RTL label
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,5,chart_type,str,KPI card (large number),0.0,20,The mark the tile uses,Gauges and donuts appear only on the spun variant
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,6,measure,str,AVERAGE(digital_adoption_pct),0.0,19,The measure expression the tile evaluates,Written in the same form as kpi_targets.formula
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,7,filter_applied,str,month = 2026-06,0.0,10,Every filter in force on the tile,The spun variant hides filters here that change the answer
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,8,axis_start,str,no axis,0.0,7,"Axis minimum, or ""no axis"" where the tile has none",T02 spun is the truncated axis: 60 instead of 0
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,9,axis_end,str,no axis,0.0,8,"Axis maximum, or ""no axis""",
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,10,value_shown,str,61.2%,0.0,20,The figure the tile displays,"Generated from the computed figures, not typed"
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,11,colour_rule,str,Amber fill because 61.2 sits between 55 and 62,0.0,20,How colour is assigned,Thresholds on the honest variant come from kpi_targets.csv
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,12,annotation,str,(none),0.0,18,Text on the tile,"""(none)"" on most spun tiles - the absence is the technique"
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,13,what_it_hides_or_reveals,str,Hides that the measure is non-additive and was averaged a...,0.0,20,What the treatment does to the reader,
+success_dashboard_spec,data/instructional/success_dashboard_spec.csv,14,teaching_note,str,SPIN-01. The card is the first thing read and the last th...,0.0,20,"Instructor note, cross-referenced to the SPIN id where one applies",
+critique_canon,data/instructional/critique_canon.csv,1,item_id,str,CAN-01,0.0,10,"Identifier, CAN-01 to CAN-10",
+critique_canon,data/instructional/critique_canon.csv,2,title,str,Map of the Broad Street cholera outbreak,0.0,10,Title of the visualization,
+critique_canon,data/instructional/critique_canon.csv,3,creator,str,John Snow; engraved by Charles Cheffins,0.0,10,"Creator and, where relevant, the engraver, team or publisher",
+critique_canon,data/instructional/critique_canon.csv,4,year,str,"1854 (shown to the London Epidemiological Society, Decemb...",0.0,10,"Year, with the publication or launch detail that matters","Text, not integer - several items have a shown-then-published split"
+critique_canon,data/instructional/critique_canon.csv,5,module_used_in,str,M2 - chart choice and the raw-count map,0.0,10,Course module the item is critiqued in,M1 to M6; one item per module plus four
+critique_canon,data/instructional/critique_canon.csv,6,encodings,str,Street base map; one stacked black bar per death at the v...,0.0,10,The visual encodings the item uses,The vocabulary Module 1 establishes
+critique_canon,data/instructional/critique_canon.csv,7,the_claim,str,"Cholera is transmitted by contaminated water, not miasma ...",0.0,10,The argument the graphic makes,
+critique_canon,data/instructional/critique_canon.csv,8,what_it_does_brilliantly,str,"The first dot map to make a spatial hypothesis testable, ...",0.0,10,"The defensible strengths, with figures where they are verified",
+critique_canon,data/instructional/critique_canon.csv,9,documented_flaw,str,"It is a raw-count map with no population denominator, mad...",0.0,10,The documented critique,Sourced only from research/famous_viz_verified.md; nothing added
+critique_canon,data/instructional/critique_canon.csv,10,transferable_lesson_for_tayseer,str,Our raw digital-transaction choropleth has the same defec...,0.0,10,How the lesson lands on this programme,Ties each exemplar back to the golden thread
+critique_canon,data/instructional/critique_canon.csv,11,critique_question_1,str,"What is the denominator on this map, and what happens to ...",0.0,10,First critique prompt for the class,
+critique_canon,data/instructional/critique_canon.csv,12,critique_question_2,str,"Snow's dotted line is a walking-distance boundary, not a ...",0.0,10,Second critique prompt,

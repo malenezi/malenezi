@@ -1,0 +1,56 @@
+{
+  "id": "TB-004",
+  "title": "Order value + refund-status question, no order given (Arabic)",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "orders",
+    "billing"
+  ],
+  "intent": "order_status",
+  "tags": [
+    "single_domain",
+    "clarifying_only"
+  ],
+  "customer_request": {
+    "text": "ما هي حالة طلبي؟ أبغى أعرف قيمته وهل يوجد أي مبلغ راجع لحسابي منه، بس ما أذكر رقمه بالضبط.",
+    "locale": "ar",
+    "customer_id": "CUST-1000",
+    "order_id": null
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "delivery_sla",
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "list_orders",
+    "get_order_items",
+    "get_invoice",
+    "get_payment"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "list_orders"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "list_orders"
+    ],
+    "must_not_call_tools": [
+      "issue_refund"
+    ],
+    "clarifying_question_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Amount + refund-state question (get_order would be the richer tool once an order is identified — see TB-006/orders.py's guidance on get_order vs track_shipment) but with no order id and a multi-order customer, the correct FIRST move is still list_orders + a clarifying question, never a guess at which order to look up."
+}

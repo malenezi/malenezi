@@ -1,0 +1,37 @@
+# Course metadata — field reference (values here are examples)
+schema_version: 1
+course_code: SDA-DSC-314            # SDA-(FND|AIE|DSC)-<level digit><seq> or L0-XXX
+course_title: Geospatial Analytics  # Module-catalog English title
+course_title_ar: التحليلات الجغرافية المكانية
+aliases: []                         # other titles/codes used in older documents (searchable)
+domain: data-science                # taxonomy.yml → domains
+learning_path: data-scientist       # taxonomy.yml → learning_paths (must match the catalog/ folder)
+level: Specialist                   # Beginner | Practitioner | Specialist | Expert
+duration: {days: 3, hours: 15}      # 5 learning hours per day
+delivery_mode: In-person            # taxonomy.yml → delivery_modes
+target_audience: "…"
+prerequisites: "SDA-DSC-214"        # course codes become links automatically
+status: Draft                       # Draft | Under Review | Approved | Published | Archived
+version: "0.1"                      # MAJOR.MINOR — see CONTENT_GOVERNANCE.md §6
+content_owner: "Name <email>"       # required before Approved
+reviewer: "Name <email>"            # required before Approved
+last_updated: 2026-10-01
+next_review: 2027-04-01
+tools: [GeoPandas, PostGIS]         # from the catalog "Tools & Platforms"
+technologies: []                    # additional technologies named in the instructor guide
+keywords: []                        # controlled vocabulary — taxonomy.yml → keywords
+description: "…"
+description_ar: "…"
+learning_outcomes: ["…"]
+topics: ["…"]
+assessment: "…"
+next_modules: "…"
+stackability: "…"
+trainer_only_paths: [solutions/]
+sources: {catalog: "…", drive_folder: none, platform_workbook: none}
+known_issues: []                    # open review items shown on the course page
+change_history:
+  - version: "0.1"
+    date: 2026-10-01
+    summary: Course scaffolded.
+    approver: TODO

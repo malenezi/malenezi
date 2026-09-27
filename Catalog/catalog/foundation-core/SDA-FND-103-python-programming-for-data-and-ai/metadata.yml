@@ -1,0 +1,73 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-FND-103
+course_title: Python Programming for Data and AI
+course_title_ar: برمجة بايثون للبيانات والذكاء الاصطناعي
+aliases: []
+domain: foundations
+learning_path: foundation-core
+level: Practitioner
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Aspiring AI engineers and data scientists, developers, technical graduates
+prerequisites: Basic computer literacy; programming logic recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-06
+next_review: 2026-12-27
+tools:
+- Python
+- NumPy
+- pandas
+- Git/GitHub
+- VS Code
+- pytest
+- Jupyter
+technologies: []
+keywords:
+- Data Engineering
+- Python
+- Software Engineering
+description: An intensive hands-on module that builds job-ready Python skills for data and AI work. Participants
+  progress from core language constructs to scientific computing with NumPy and pandas, version control,
+  and clean, testable code. It is the technical gateway to both the AI Engineer and Data Scientist tracks.
+description_ar: وحدة تطبيقية مكثفة تبني مهارات بايثون الجاهزة لسوق العمل في مجالي البيانات والذكاء الاصطناعي.
+  يتدرج المشاركون من أساسيات اللغة إلى الحوسبة العلمية باستخدام NumPy وPandas والتحكم بالإصدارات وكتابة
+  كود نظيف قابل للاختبار، وهي البوابة التقنية لمساري مهندس الذكاء الاصطناعي وعالم البيانات.
+learning_outcomes:
+- Develop structured Python programs using functions, data structures, and object-oriented design
+- Implement data manipulation and numerical computation workflows with pandas and NumPy
+- Apply version control with Git and collaborative repository workflows
+- Debug, test, and refactor Python code using systematic practices
+- Build reusable scripts and notebooks for data acquisition and processing
+- Organise projects with virtual environments and dependency management
+topics:
+- 'Python core: types, control flow, functions, OOP'
+- Data structures and file/API data handling
+- NumPy arrays and vectorised computation
+- pandas for tabular data manipulation
+- Git, GitHub, and collaboration workflows
+- Testing, debugging, and code quality
+- Environments and dependency management
+- 'Mini-project: end-to-end data processing pipeline'
+assessment: Daily labs; coding assignments; mini-project
+next_modules: SDA-FND-104
+stackability: Core technical badge; prerequisite for all track-level technical modules.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Foundation Core Track/Python Programming for Data and AI
+  platform_workbook: Program Files (AthkaX)/Foundation Core/SDA-FND-103 - Python Programming for Data
+    and AI.xlsx
+known_issues: []
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

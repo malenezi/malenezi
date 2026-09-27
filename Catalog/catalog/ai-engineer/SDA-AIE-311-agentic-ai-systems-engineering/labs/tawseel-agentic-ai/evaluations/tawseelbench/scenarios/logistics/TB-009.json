@@ -1,0 +1,55 @@
+{
+  "id": "TB-009",
+  "title": "Reschedule an already-delivered order",
+  "locale": "en",
+  "difficulty": "easy",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "reschedule",
+  "tags": [
+    "error_handling",
+    "should_refuse_escalate"
+  ],
+  "customer_request": {
+    "text": "I need to change delivery time for order TW-2026-10002 to tomorrow evening instead.",
+    "locale": "en",
+    "customer_id": "CUST-4144",
+    "order_id": "TW-2026-10002"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "rescheduling"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "reschedule_delivery"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "track_shipment"
+    ],
+    "requires_human_approval": false
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "track_shipment"
+    ],
+    "must_not_call_tools": [
+      "reschedule_delivery"
+    ],
+    "escalation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "TW-2026-10002 is already delivered — reschedule_delivery_impl rejects this (status precondition); the agent must check status FIRST and never call the write tool on an unreschedulable order."
+}

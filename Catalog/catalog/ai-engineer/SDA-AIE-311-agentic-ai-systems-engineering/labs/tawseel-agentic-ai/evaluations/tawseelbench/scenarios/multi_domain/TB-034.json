@@ -1,0 +1,62 @@
+{
+  "id": "TB-034",
+  "title": "Plus-tier: status + refund request combined",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "orders",
+    "logistics",
+    "billing"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain",
+    "tier_context"
+  ],
+  "customer_request": {
+    "text": "وش صاير بطلبي TW-2026-10623؟ ما وصل وأبغى ارجاع فلوسي.",
+    "locale": "ar",
+    "customer_id": "CUST-6819",
+    "order_id": "TW-2026-10623"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility",
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy"
+    ],
+    "state_diff": {}
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order"
+    ],
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "plus-tier customer asks about status AND money back in one message — the refund ask is the one that actually needs resolving (a status update alone would not satisfy 'I'd like my money back'). Order status is 'delivered'; eligibility follows from that, not from the customer's framing."
+}

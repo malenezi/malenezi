@@ -1,0 +1,84 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-214
+course_title: Modern Data Engineering for AI Systems
+course_title_ar: هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي
+aliases: []
+domain: data-engineering
+learning_path: data-scientist
+level: Specialist
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Data engineers, data scientists, systems and AI architects, data-infrastructure leads
+prerequisites: SDA-FND-104; SDA-FND-103
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-10
+next_review: 2026-12-27
+tools:
+- PySpark
+- Delta Lake
+- dbt
+- Kafka basics
+- Great Expectations
+technologies: []
+keywords:
+- LLMOps
+- Responsible AI
+- Data Engineering
+- Big Data
+- Streaming
+- Architecture
+description: A comprehensive module on building modern, scalable, production-ready data architectures
+  that feed AI and analytics. Participants trace the evolution from warehouses and lakes to the Lakehouse,
+  master Delta Lake with ACID transactions and compute-storage separation, and work with ELT, streaming,
+  data quality, and governance. A hands-on build of a local Mini-Lakehouse with Delta Lake and PySpark
+  anchors the learning.
+description_ar: وحدة شاملة لبناء معماريات بيانات حديثة قابلة للتوسع وجاهزة للإنتاج تغذي الذكاء الاصطناعي
+  والتحليلات. يتتبع المشاركون التطور من المستودعات والبحيرات إلى معمارية Lakehouse ويتقنون Delta Lake
+  مع معاملات ACID وفصل الحوسبة عن التخزين ويعملون مع ELT والتدفقات اللحظية وجودة البيانات والحوكمة، ويرسّخ
+  التعلمَ تطبيقٌ عملي لبناء Mini-Lakehouse محلي باستخدام Delta Lake وPySpark.
+learning_outcomes:
+- Compare data warehouses, data lakes, and Lakehouse architectures across use cases
+- Explain compute-storage separation and its impact on cost, elasticity, and scale
+- Design ELT pipelines suited to modern cloud data environments
+- Implement Delta Lake tables with ACID transactions and schema enforcement
+- Develop streaming and event-driven ingestion patterns for real-time data
+- Apply data-quality, observability, and governance controls across pipelines
+- Build a working Mini-Lakehouse with Delta Lake and PySpark
+- Connect Lakehouse components to AI, reporting, and analytics consumers
+topics:
+- 'Evolution of data architecture: warehouse, lake, Lakehouse'
+- Compute-storage separation and cloud economics
+- ETL versus ELT in modern stacks
+- Delta Lake and ACID transactions
+- Streaming data and event-driven architectures
+- Data quality, observability, and governance
+- 'Hands-on: building a Mini-Lakehouse'
+- Serving data to AI and BI workloads
+assessment: Labs; Mini-Lakehouse build project
+next_modules: SDA-DSC-215 / SDA-DSC-313
+stackability: Data-engineering badge; anchors the Data Engineering for AI specialisation. Derived from
+  the existing Modern Data Engineering programme.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Modern Data Engineering for AI Systems
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-214 - Modern Data Engineering
+    for AI Systems.xlsx
+known_issues:
+- '[Security Concern] data/raw/drivers.csv: Synthetic driver records with hashed national ID/phone — confirm
+  synthetic'
+- '[Security Concern] data/raw/vehicles.csv: Synthetic driver records with hashed national ID/phone —
+  confirm synthetic'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

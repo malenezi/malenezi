@@ -1,0 +1,72 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-111
+course_title: Statistical Foundations for Data Science
+course_title_ar: الأسس الإحصائية لعلم البيانات
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Practitioner
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: Analysts, graduates, and engineers entering data science
+prerequisites: SDA-FND-103; SDA-FND-104 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-08-29
+next_review: 2026-12-27
+tools:
+- Python
+- SciPy
+- statsmodels
+- Jupyter
+technologies: []
+keywords:
+- Statistics
+- Optimization
+- Python
+description: A rigorous, applied grounding in the statistics that underpin trustworthy data science. Participants
+  master probability, distributions, estimation, hypothesis testing, and regression, applying each concept
+  computationally in Python. The module builds the inferential judgement needed to draw valid conclusions
+  from data.
+description_ar: تأسيس تطبيقي دقيق في الإحصاء الذي يقوم عليه علم البيانات الموثوق. يتقن المشاركون الاحتمالات
+  والتوزيعات والتقدير واختبار الفرضيات والانحدار مع تطبيق كل مفهوم حاسوبيًا في بايثون، بما يبني الحكم
+  الاستدلالي اللازم لاستخلاص نتائج صحيحة من البيانات.
+learning_outcomes:
+- Apply probability rules and distributions to model real-world uncertainty
+- Analyze sampling variability using confidence intervals and standard errors
+- Implement hypothesis tests and interpret p-values and effect sizes correctly
+- Develop linear and logistic regression models and diagnose their assumptions
+- Evaluate statistical claims for common fallacies and misuse
+- Simulate statistical processes computationally to validate analytical results
+topics:
+- Probability and common distributions
+- Descriptive statistics and sampling
+- Estimation and confidence intervals
+- Hypothesis testing and effect sizes
+- Correlation, causation, and confounding
+- Linear and logistic regression
+- Simulation and resampling methods
+assessment: Labs; statistical analysis project
+next_modules: SDA-DSC-112 / SDA-AIE-111
+stackability: Core statistics badge; required for all Specialist Data Scientist modules.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Statistical Foundations for Data Science
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-111 - Statistical Foundations
+    for Data Science.xlsx
+known_issues:
+- '[Needs Review] cdc_nhcs_2022_ed_unweighted_appendix_extract.csv: Byte-identical to cdc_nhcs_2022_ed_extract.csv
+  — likely the wrong extract was saved'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

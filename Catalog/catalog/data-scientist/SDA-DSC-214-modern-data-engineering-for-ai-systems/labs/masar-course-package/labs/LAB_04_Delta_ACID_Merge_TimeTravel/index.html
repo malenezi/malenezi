@@ -1,0 +1,4326 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Private trainer portal for SDAIA Academy training content">
+      
+      
+        <meta name="author" content="SDAIA Academy">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>LAB 04 — Delta Lake: ACID, MERGE, Time Travel, Maintenance - SDAIA Academy Trainer Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <!-- Internal training material: keep out of search engines on any host -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-04-delta-lake-acid-merge-time-travel-maintenance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-header__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SDAIA Academy Trainer Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LAB 04 — Delta Lake: ACID, MERGE, Time Travel, Maintenance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../portal/catalog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../beginner/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../shared/trainer-resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Trainer resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../portal/feedback/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Help & governance
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-nav__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    SDAIA Academy Trainer Knowledge Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../TRAINER_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/domains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse by domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/recently-updated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recently updated
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Courses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Courses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../beginner/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner Level (Level 0)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Beginner Level (Level 0)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FAA-ai-powered-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAA · AI-Powered Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FAE-ai-fundamentals-for-the-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAE · AI Fundamentals for the Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FDL-data-literacy-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDL · Data Literacy Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FDS-practical-data-skills-with-spreadsheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDS · Practical Data Skills with Spreadsheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FDV-data-storytelling-and-data-driven-decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDV · Data Storytelling & Data-Driven Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../beginner/L0-FGP-generative-ai-for-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FGP · Generative AI for Productivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../foundation-core/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation Core
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-101-ai-and-data-literacy-for-professionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-101 · AI and Data Literacy for Professionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-102-generative-ai-and-prompt-engineering-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-102 · Generative AI and Prompt Engineering Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-103-python-programming-for-data-and-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-103 · Python Programming for Data and AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-104-data-wrangling-sql-and-exploratory-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-104 · Data Wrangling, SQL and Exploratory Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../foundation-core/SDA-FND-105-responsible-ai-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-105 · Responsible AI and Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../ai-engineer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineer Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Engineer Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-111-applied-machine-learning-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-111 · Applied Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-112-deep-learning-essentials-with-pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-112 · Deep Learning Essentials with PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-113-software-engineering-practices-for-ai-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-113 · Software Engineering Practices for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-211-natural-language-processing-with-transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-211 · Natural Language Processing with Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-212-computer-vision-systems-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-212 · Computer Vision Systems Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-213-large-language-model-application-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-213 · Large Language Model Application Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-214-building-retrieval-augmented-generation-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-214 · Building Retrieval-Augmented Generation Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-215-fine-tuning-and-adapting-foundation-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-215 · Fine-Tuning and Adapting Foundation Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-216-mlops-model-deployment-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-216 · MLOps: Model Deployment and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-311-agentic-ai-systems-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-311 · Agentic AI Systems Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-312-llmops-and-production-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-312 · LLMOps and Production AI Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-313-ai-security-guardrails-and-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-313 · AI Security, Guardrails and Red Teaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-314-ai-performance-scalability-and-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-314 · AI Performance, Scalability and Cost Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-315-enterprise-ai-solution-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-315 · Enterprise AI Solution Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai-engineer/SDA-AIE-390-ai-engineering-capstone-production-genai-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-390 · AI Engineering Capstone: Production GenAI System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Scientist Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Scientist Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-111-statistical-foundations-for-data-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-111 · Statistical Foundations for Data Science
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-112-data-visualization-and-storytelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-112 · Data Visualization and Storytelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-211-advanced-machine-learning-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-211 · Advanced Machine Learning Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-212-time-series-analysis-and-forecasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-212 · Time Series Analysis and Forecasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-213-experimentation-a-b-testing-and-causal-inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-213 · Experimentation, A/B Testing and Causal Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-214 · Modern Data Engineering for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-215-big-data-analytics-with-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-215 · Big Data Analytics with Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-311-decision-science-and-optimization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-311 · Decision Science and Optimization Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-312-genai-augmented-data-science-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-312 · GenAI-Augmented Data Science Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-313-real-time-and-streaming-data-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-313 · Real-Time and Streaming Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../SDA-DSC-390-data-science-capstone-from-data-to-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-390 · Data Science Capstone: From Data to Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../shared/trainer-resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trainer resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/assessment-guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assessment guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/classroom-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/delivery-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/technical-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/trainer-resources/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academy templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/branding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../shared/catalog-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog source documents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help & governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help & governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report a problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../portal/content-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../hub-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../CONTENT_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/ADMIN_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/HOSTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/LARGE_FILES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../docs/admin/PERMISSIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../migration/MIGRATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../migration/MISSING_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../migration/DUPLICATE_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-lab-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this lab matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-5-min-before-the-clock-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup (5 min, before the clock starts)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4a-enforcement-and-the-transaction-log-25-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4a — Enforcement and the transaction log (25 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4a — Enforcement and the transaction log (25 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-add-constraints-and-read-the-log-aloud-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1 — Add constraints and read the log aloud (15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-prove-enforcement-rejects-bad-writes-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2 — Prove enforcement rejects bad writes (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4b-merge-time-travel-pdpl-maintenance-65-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4b — MERGE, time travel, PDPL, maintenance (65 min)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4b — MERGE, time travel, PDPL, maintenance (65 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-3-idempotent-merge-upserts-20-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3 — Idempotent MERGE upserts (20 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-time-travel-audit-and-recovery-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4 — Time travel: audit and recovery (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-the-pdpl-erasure-drill-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5 — The PDPL erasure drill (10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-optimize-zorder-vacuum-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6 — OPTIMIZE, ZORDER, VACUUM (15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-record-the-benchmark-table-and-commit-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7 — Record the benchmark table and commit (5 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-check questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stretch-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stretch goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capstone-linkage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capstone linkage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="lab-04-delta-lake-acid-merge-time-travel-maintenance">LAB 04 — Delta Lake: ACID, MERGE, Time Travel, Maintenance<a class="headerlink" href="#lab-04-delta-lake-acid-merge-time-travel-maintenance" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lab ID</strong></td>
+<td>LAB-04 (delivered as 4a + 4b)</td>
+</tr>
+<tr>
+<td><strong>Module</strong></td>
+<td>M4 — Delta Lake and ACID Transactions</td>
+</tr>
+<tr>
+<td><strong>Day / Hour</strong></td>
+<td>Day 3, Hour 2 (Lab 4a) and Day 3, Hour 4 (Lab 4b), wrapped in Hour 5</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>90 minutes total — 4a: 25 min, 4b: 65 min (10–15% theory / 85–90% lab), pairs</td>
+</tr>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Intermediate–Advanced</td>
+</tr>
+<tr>
+<td><strong>LO mapping</strong></td>
+<td>LO4 (primary — Delta tables, ACID, schema enforcement), LO6 (secondary — audit trail, PDPL erasure, retention governance), LO2 (reinforced — small-files cost), LO7 (contributes — the hardened silver node)</td>
+</tr>
+<tr>
+<td><strong>Prerequisites</strong></td>
+<td>LAB-03 complete (<code>silver.trips</code> built by dbt, 42,038 rows, all tests passing); M4 lecture (transaction log, OCC, MERGE, time travel, OPTIMIZE/ZORDER/VACUUM)</td>
+</tr>
+<tr>
+<td><strong>Checkpoint git tags</strong></td>
+<td><code>lab4-start</code> (4a), <code>lab4b-start</code> (4b) · solutions: <code>lab4a-solution</code>, <code>lab4-solution</code></td>
+</tr>
+<tr>
+<td><strong>Deliverable</strong></td>
+<td><code>silver.trips</code> as a constrained Delta table with <code>positive_fare</code> and <code>valid_duration</code> CHECK constraints; an idempotent MERGE proven twice; a time-travel audit diff; a demonstrated PDPL erasure; OPTIMIZE/ZORDER/VACUUM run with before/after <code>numFiles</code>; <code>LAB4_NOTES.md</code> with the retention justification and the filled benchmark table</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Scale note.</strong> Figures quoted in this document assume the full-scale generator run (<code>--scale 1.0</code>); the shipped sample is <code>--scale 0.15</code> — 7,230 trips/day over 5 days (36,150 trips), 873,763 GPS pings, 3,450 drivers, 3,864 vehicles, 48 zones. Grains, ratios and file-count reductions hold at either scale; absolute row counts do not.</p>
+</blockquote>
+<hr />
+<h2 id="why-this-lab-matters">Why this lab matters<a class="headerlink" href="#why-this-lab-matters" title="Permanent link">&para;</a></h2>
+<p><code>silver.trips</code> is written by a nightly dbt job, corrected by ad-hoc upserts, read by the ETA model's training run and by the operations dashboard — sometimes at the same moment. <strong>Without a transaction layer, a reader that arrives mid-write sees a half-written table, and the AI system trains on a state that never existed.</strong> Delta's log makes that impossible, and it buys three more things Masar cannot operate without: schema enforcement, so a source that starts sending <code>fare_sar</code> as a string fails loudly instead of poisoning the feature table; time travel, so a disputed report can be recomputed from the exact table state it was filed from; and MERGE, so a PDPL erasure request is an atomic, auditable commit rather than a rewrite-and-pray. This lab also confronts the tension you will actually have to defend in a governance review: aggressive VACUUM saves storage but destroys the audit trail, while conservative VACUUM preserves history and can retain data an erasure was supposed to remove. There is no universal right answer — only a documented, defensible one, and you will write yours.</p>
+<hr />
+<h2 id="setup-5-min-before-the-clock-starts">Setup (5 min, before the clock starts)<a class="headerlink" href="#setup-5-min-before-the-clock-starts" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>~/masar-lakehouse
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>fetch<span class="w"> </span>--tags
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>git<span class="w"> </span>checkout<span class="w"> </span>lab4-start<span class="w">            </span><span class="c1"># Lab 4b: git checkout lab4b-start</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>make<span class="w"> </span>doctor
+</code></pre></div>
+<p>Confirm the Lab 3 output is present:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s">from masar.spark import get_spark</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">spark = get_spark(&quot;lab4-precheck&quot;)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">df = spark.table(&quot;silver.trips&quot;)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s">print(&quot;rows:&quot;, df.count(), &quot;cols:&quot;, len(df.columns))</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s">spark.sql(&quot;DESCRIBE DETAIL delta.`./lakehouse/silver/trips`&quot;) \</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s">     .select(&quot;format&quot;, &quot;numFiles&quot;, &quot;sizeInBytes&quot;, &quot;partitionColumns&quot;).show(truncate=False)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s">PY</span>
+</code></pre></div>
+<p>Expected: <code>rows: 42038 cols: 27</code>, <code>format: delta</code>, <code>partitionColumns: [city]</code>.</p>
+<blockquote>
+<p><code>silver.trips</code> is <strong>already</strong> a Delta table — dbt wrote it with <code>file_format='delta'</code> in Lab 3. Module 4's work is not "convert to Delta"; it is to make the table <em>self-defending</em> (constraints), <em>auditable</em> (history), <em>correctable</em> (MERGE), <em>compliant</em> (erasure) and <em>fast</em> (maintenance).</p>
+</blockquote>
+<p>Paths and fixtures used by this lab:</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target table</td>
+<td><code>lakehouse/silver/trips</code> (<code>silver.trips</code>)</td>
+</tr>
+<tr>
+<td>Transaction log</td>
+<td><code>lakehouse/silver/trips/_delta_log/</code></td>
+</tr>
+<tr>
+<td>Corrections fixture (5 re-scored trips)</td>
+<td><code>data/fixtures/corrections/trips_corrections_2026-06-03.csv</code></td>
+</tr>
+<tr>
+<td>PDPL erasure fixture (1 rider)</td>
+<td><code>data/fixtures/erasure_request/pdpl_erasure_2026-06-10.json</code></td>
+</tr>
+<tr>
+<td>Code</td>
+<td><code>src/masar/delta/create_silver.py</code>, <code>merge_ops.py</code>, <code>time_travel.py</code>, <code>maintain.sql</code></td>
+</tr>
+<tr>
+<td>Your notes</td>
+<td><code>LAB4_NOTES.md</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-4a-enforcement-and-the-transaction-log-25-min">Part 4a — Enforcement and the transaction log (25 min)<a class="headerlink" href="#part-4a-enforcement-and-the-transaction-log-25-min" title="Permanent link">&para;</a></h2>
+<h3 id="task-1-add-constraints-and-read-the-log-aloud-15-min">Task 1 — Add constraints and read the log aloud (15 min)<a class="headerlink" href="#task-1-add-constraints-and-read-the-log-aloud-15-min" title="Permanent link">&para;</a></h3>
+<p>Complete <code>src/masar/delta/create_silver.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># src/masar/delta/create_silver.py</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">&quot;&quot;&quot;Harden silver.trips into a self-validating Delta table.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">Partitioning is chosen to AVOID the small-files trap: `city` has 5 values,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">not 42,038. Constraints are checked on EVERY future write, so the table</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">defends its own contract without a downstream job having to remember to.</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">masar.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_spark</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">SILVER</span> <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">CONSTRAINTS</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="s2">&quot;positive_fare&quot;</span><span class="p">:</span>  <span class="s2">&quot;fare_sar &gt; 0&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="s2">&quot;valid_duration&quot;</span><span class="p">:</span> <span class="s2">&quot;dropoff_ts &gt; pickup_ts&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="s2">&quot;known_city&quot;</span><span class="p">:</span>     <span class="s2">&quot;city IN (&#39;Riyadh&#39;,&#39;Jeddah&#39;,&#39;Dammam&#39;,&#39;Mecca&#39;,&#39;Medina&#39;)&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_silver_trips</span><span class="p">(</span><span class="n">staged_df</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Only needed if silver.trips does not already exist (dbt normally builds it).&quot;&quot;&quot;</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="p">(</span><span class="n">staged_df</span><span class="o">.</span><span class="n">write</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">)</span>            <span class="c1"># low-cardinality: 5 cities, not trip_id</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>        <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;overwriteSchema&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        <span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">SILVER</span><span class="p">))</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_constraints</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Constraints apply to FUTURE writes; existing rows must already comply.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;delta-constraints&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">CONSTRAINTS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>        <span class="c1"># violating rows must be cleaned first, or the ALTER is rejected</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>        <span class="n">bad</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>            <span class="sa">f</span><span class="s2">&quot;SELECT count(*) AS n FROM delta.`</span><span class="si">{</span><span class="n">SILVER</span><span class="si">}</span><span class="s2">` WHERE NOT (</span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>        <span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>        <span class="k">if</span> <span class="n">bad</span><span class="p">:</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[skip] </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">bad</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> existing rows violate `</span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">` — clean first&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>            <span class="k">continue</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>        <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>            <span class="sa">f</span><span class="s2">&quot;ALTER TABLE delta.`</span><span class="si">{</span><span class="n">SILVER</span><span class="si">}</span><span class="s2">` ADD CONSTRAINT </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> CHECK (</span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>        <span class="p">)</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[ok]   </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: CHECK (</span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="k">def</span><span class="w"> </span><span class="nf">show_properties</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;delta-constraints&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>    <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SHOW TBLPROPERTIES delta.`</span><span class="si">{</span><span class="n">SILVER</span><span class="si">}</span><span class="s2">`&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>    <span class="n">add_constraints</span><span class="p">()</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>    <span class="n">show_properties</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.create_silver
+</code></pre></div>
+<p>Now <strong>open the log</strong>. This is the single most valuable five minutes of Module 4 — do not read about it, read <em>it</em>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ls<span class="w"> </span>-1<span class="w"> </span>lakehouse/silver/trips/_delta_log/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python<span class="w"> </span>-m<span class="w"> </span>json.tool<span class="w"> </span>&lt;<span class="w"> </span>lakehouse/silver/trips/_delta_log/00000000000000000000.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-60
+</code></pre></div>
+<p>Read aloud to your pair, naming each action:</p>
+<ul>
+<li><code>{"protocol": {...}}</code> — the reader/writer versions required to understand this table.</li>
+<li><code>{"metaData": {..., "schemaString": "...", "partitionColumns": ["city"], "configuration": {"delta.constraints.positive_fare": "fare_sar &gt; 0"}}}</code> — the schema <strong>is</strong> metadata in the log; so are your constraints.</li>
+<li><code>{"add": {"path": "city=Riyadh/part-00000-....snappy.parquet", "size": 984213, "stats": "{\"numRecords\":18418,\"minValues\":{...},\"maxValues\":{...}}"}}</code> — a file added by this commit, <strong>with its min/max statistics</strong>. Those statistics are exactly what powered the data skipping you measured in Lab 2.</li>
+<li><code>{"remove": {...}}</code> in a later commit — a file logically deleted (tombstoned). The bytes are still on disk until VACUUM.</li>
+<li><code>{"commitInfo": {"operation": "MERGE", "operationMetrics": {...}}}</code> — the audit record.</li>
+</ul>
+<p><strong>The insight to state out loud:</strong> the current table state is not a directory listing — it is the <em>replay of the log</em>. That is why a half-written set of Parquet files is invisible (atomicity), why a reader is pinned to one version (snapshot isolation), and why hand-copying a Parquet file into the directory corrupts nothing except your own understanding — Delta will simply ignore it, because it is not in the log.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># how many commits so far, and what did each one do?</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--history
+</code></pre></div>
+<hr />
+<h3 id="task-2-prove-enforcement-rejects-bad-writes-10-min">Task 2 — Prove enforcement rejects bad writes (10 min)<a class="headerlink" href="#task-2-prove-enforcement-rejects-bad-writes-10-min" title="Permanent link">&para;</a></h3>
+<p>Two negative tests. Both <strong>must fail</strong>; capture the exact error text in <code>LAB4_NOTES.md</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># run as: python - &lt;&lt;&#39;PY&#39; ... PY</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">masar.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_spark</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;negative-tests&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">SILVER</span> <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">good</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># --- Test A: CHECK constraint violation (negative fare) ---</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">bad_fare</span> <span class="o">=</span> <span class="n">good</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;trp_BADFARE&quot;</span><span class="p">))</span> \
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>               <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;fare_sar&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">))</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">bad_fare</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;append&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FAIL: the constraint did not fire&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PASS (constraint):&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="c1"># --- Test B: schema enforcement (wrong type) ---</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="n">bad_type</span> <span class="o">=</span> <span class="n">good</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;trp_BADTYPE&quot;</span><span class="p">))</span> \
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>               <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;fare_sar&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;forty-two&quot;</span><span class="p">))</span>     <span class="c1"># string, not double</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="n">bad_type</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;append&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FAIL: schema enforcement did not fire&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PASS (schema):&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="c1"># --- Test C: what mergeSchema would have done (DO NOT leave this enabled) ---</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="n">extra</span> <span class="o">=</span> <span class="n">good</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;trp_NEWCOL&quot;</span><span class="p">))</span> \
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;driver_mood&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">lit</span><span class="p">(</span><span class="s2">&quot;cheerful&quot;</span><span class="p">))</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="n">extra</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;append&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FAIL: a new column was accepted without mergeSchema&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PASS (new column rejected):&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;row count unchanged:&quot;</span><span class="p">,</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</code></pre></div>
+<p><strong>What to look for:</strong> all three rejected, and the row count is <strong>unchanged</strong> — the rejected writes left no partial data behind. That is atomicity: there is no such thing as a half-applied Delta write.</p>
+<p>Discuss with your pair: enforcement is the default and evolution is opt-in. <code>mergeSchema</code> / <code>on_schema_change='append_new_columns'</code> exists for changes you <em>decide</em>; the log records them as metadata commits so an auditor can see when the contract changed and who changed it. A schema surprise is a bug; a schema change is a reviewed event.</p>
+<hr />
+<h2 id="part-4b-merge-time-travel-pdpl-maintenance-65-min">Part 4b — MERGE, time travel, PDPL, maintenance (65 min)<a class="headerlink" href="#part-4b-merge-time-travel-pdpl-maintenance-65-min" title="Permanent link">&para;</a></h2>
+<h3 id="task-3-idempotent-merge-upserts-20-min">Task 3 — Idempotent MERGE upserts (20 min)<a class="headerlink" href="#task-3-idempotent-merge-upserts-20-min" title="Permanent link">&para;</a></h3>
+<p>Complete <code>src/masar/delta/merge_ops.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># src/masar/delta/merge_ops.py</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="sd">&quot;&quot;&quot;Upsert corrected trips and apply a PDPL right-to-erasure delete.</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="sd">Both are atomic Delta commits: auditable, retryable, isolated from readers.</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delta.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeltaTable</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">masar.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_spark</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">SILVER</span> <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">def</span><span class="w"> </span><span class="nf">load_corrections</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Corrections arrive with the silver grain: one row per corrected trip_id.&quot;&quot;&quot;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;merge-ops&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="n">target_schema</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span><span class="o">.</span><span class="n">schema</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">read</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>            <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>            <span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="n">target_schema</span><span class="p">)</span>          <span class="c1"># enforce the contract on the SOURCE too</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>            <span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="k">def</span><span class="w"> </span><span class="nf">upsert_corrections</span><span class="p">(</span><span class="n">corrections_df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;MERGE keyed on trip_id =&gt; re-running is a no-op (idempotent).</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="sd">    whenMatchedUpdateAll is safe here ONLY because the source has exactly the</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="sd">    target schema and exactly one row per key. Both are checked above.</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;merge-ops&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>    <span class="n">dupes</span> <span class="o">=</span> <span class="p">(</span><span class="n">corrections_df</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;trip_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>             <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;count &gt; 1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>    <span class="k">if</span> <span class="n">dupes</span><span class="p">:</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dupes</span><span class="si">}</span><span class="s2"> duplicate trip_id in corrections: MERGE would be ambiguous&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>    <span class="n">target</span> <span class="o">=</span> <span class="n">DeltaTable</span><span class="o">.</span><span class="n">forPath</span><span class="p">(</span><span class="n">spark</span><span class="p">,</span> <span class="n">SILVER</span><span class="p">)</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>    <span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>        <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">corrections_df</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">),</span> <span class="s2">&quot;t.trip_id = s.trip_id&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>        <span class="o">.</span><span class="n">whenMatchedUpdateAll</span><span class="p">()</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>        <span class="o">.</span><span class="n">whenNotMatchedInsertAll</span><span class="p">()</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>        <span class="o">.</span><span class="n">execute</span><span class="p">())</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>    <span class="n">metrics</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DESCRIBE HISTORY delta.`</span><span class="si">{</span><span class="n">SILVER</span><span class="si">}</span><span class="s2">` LIMIT 1&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>               <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="s2">&quot;operation&quot;</span><span class="p">,</span> <span class="s2">&quot;operationMetrics&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">())</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>    <span class="n">m</span> <span class="o">=</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;operationMetrics&quot;</span><span class="p">]</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;v</span><span class="si">{</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;operation&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">  &quot;</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>          <span class="sa">f</span><span class="s2">&quot;matched=</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;numTargetRowsMatchedUpdated&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;numTargetRowsUpdated&#39;</span><span class="p">))</span><span class="si">}</span><span class="s2"> &quot;</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>          <span class="sa">f</span><span class="s2">&quot;inserted=</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;numTargetRowsInserted&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>          <span class="sa">f</span><span class="s2">&quot;updated=</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;numTargetRowsUpdated&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="k">def</span><span class="w"> </span><span class="nf">erase_rider</span><span class="p">(</span><span class="n">rider_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;PDPL right to erasure: remove a data subject&#39;s rows. Atomic, logged commit.</span>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="sd">    Physical removal from history completes at the next VACUUM past retention.</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;merge-ops&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>    <span class="n">target</span> <span class="o">=</span> <span class="n">DeltaTable</span><span class="o">.</span><span class="n">forPath</span><span class="p">(</span><span class="n">spark</span><span class="p">,</span> <span class="n">SILVER</span><span class="p">)</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>    <span class="n">before</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span> \
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>                  <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;rider_id&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">rider_id</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>    <span class="n">target</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;rider_id&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">rider_id</span><span class="p">)</span>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>    <span class="n">after</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">)</span> \
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>                 <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;rider_id&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">rider_id</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;erasure committed for </span><span class="si">{</span><span class="n">rider_id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">before</span><span class="si">}</span><span class="s2"> rows removed, </span><span class="si">{</span><span class="n">after</span><span class="si">}</span><span class="s2"> remain &quot;</span>
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>          <span class="sa">f</span><span class="s2">&quot;in the CURRENT version; run VACUUM past retention to purge history&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--corrections&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;path to a corrections CSV&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--erase-request&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;path to a PDPL erasure request JSON&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>
+<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">corrections</span><span class="p">:</span>
+<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>        <span class="n">upsert_corrections</span><span class="p">(</span><span class="n">load_corrections</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">corrections</span><span class="p">))</span>
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">erase_request</span><span class="p">:</span>
+<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">erase_request</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>            <span class="n">req</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>        <span class="n">erase_rider</span><span class="p">(</span><span class="n">req</span><span class="p">[</span><span class="s2">&quot;rider_id&quot;</span><span class="p">])</span>
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>
+<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>
+<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Run the drill — <strong>twice</strong>, deliberately:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># what do the 5 trips look like before the correction?</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="s">from masar.spark import get_spark</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="s">spark = get_spark(&quot;before&quot;)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="s">ids = [r.trip_id for r in spark.read.option(&quot;header&quot;,True)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s">       .csv(&quot;data/fixtures/corrections/trips_corrections_2026-06-03.csv&quot;)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="s">       .select(&quot;trip_id&quot;).collect()]</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="s">spark.read.format(&quot;delta&quot;).load(&quot;./lakehouse/silver/trips&quot;) \</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="s">     .filter(f&quot;trip_id in ({&#39;,&#39;.join(repr(i) for i in ids)})&quot;) \</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="s">     .select(&quot;trip_id&quot;,&quot;fare_sar&quot;,&quot;surge_multiplier&quot;,&quot;duration_min&quot;).show()</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="s">PY</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.merge_ops<span class="w"> </span>--corrections<span class="w"> </span>data/fixtures/corrections/trips_corrections_2026-06-03.csv
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.merge_ops<span class="w"> </span>--corrections<span class="w"> </span>data/fixtures/corrections/trips_corrections_2026-06-03.csv<span class="w">   </span><span class="c1"># again</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--history
+</code></pre></div>
+<p><strong>What to look for:</strong> run 1 reports <code>updated=5</code>; run 2 reports <code>updated=0</code> — the source rows are already the target rows, so the MERGE has nothing to change. Note that a <em>commit is still written</em> on run 2 (a MERGE that changes nothing is still a transaction); idempotency is about the <strong>table state</strong>, not about the commit count. Record both <code>operationMetrics</code> blocks in <code>LAB4_NOTES.md</code>.</p>
+<hr />
+<h3 id="task-4-time-travel-audit-and-recovery-10-min">Task 4 — Time travel: audit and recovery (10 min)<a class="headerlink" href="#task-4-time-travel-audit-and-recovery-10-min" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># src/masar/delta/time_travel.py</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="sd">&quot;&quot;&quot;Read a past table state for audit or to reproduce a model&#39;s training set.&quot;&quot;&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">masar.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_spark</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">SILVER</span> <span class="o">=</span> <span class="s2">&quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">history</span><span class="p">(</span><span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;time-travel&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DESCRIBE HISTORY delta.`</span><span class="si">{</span><span class="n">SILVER</span><span class="si">}</span><span class="s2">` LIMIT </span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>          <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="s2">&quot;operation&quot;</span><span class="p">,</span> <span class="s2">&quot;operationMetrics&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>          <span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">as_of_version</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;time-travel&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;versionAsOf&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">))</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">as_of_date</span><span class="p">(</span><span class="n">ts</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;time-travel&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;timestampAsOf&quot;</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">SILVER</span><span class="p">))</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">diff_versions</span><span class="p">(</span><span class="n">v_old</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">v_new</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;trip_id&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>                  <span class="n">col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fare_sar&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Which rows changed between two versions, and by how much?&quot;&quot;&quot;</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>    <span class="n">old</span> <span class="o">=</span> <span class="n">as_of_version</span><span class="p">(</span><span class="n">v_old</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_old&quot;</span><span class="p">))</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    <span class="n">new</span> <span class="o">=</span> <span class="n">as_of_version</span><span class="p">(</span><span class="n">v_new</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_new&quot;</span><span class="p">))</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    <span class="p">(</span><span class="n">old</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_old&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_new&quot;</span><span class="p">))</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_new&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">F</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_old&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        <span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="k">def</span><span class="w"> </span><span class="nf">restore</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>    <span class="n">spark</span> <span class="o">=</span> <span class="n">get_spark</span><span class="p">(</span><span class="s2">&quot;time-travel&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>    <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RESTORE TABLE delta.`</span><span class="si">{</span><span class="n">SILVER</span><span class="si">}</span><span class="s2">` TO VERSION AS OF </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;restored to v</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">; note this creates a NEW version, it does not erase history&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--history&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--version&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--timestamp&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--diff&quot;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;OLD&quot;</span><span class="p">,</span> <span class="s2">&quot;NEW&quot;</span><span class="p">))</span>
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--restore&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>    <span class="n">a</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>        <span class="n">history</span><span class="p">()</span>
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rows at v</span><span class="si">%d</span><span class="s2">: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">as_of_version</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">version</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()))</span>
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">timestamp</span><span class="p">:</span>
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rows at </span><span class="si">%s</span><span class="s2">: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">as_of_date</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">timestamp</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()))</span>
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">diff</span><span class="p">:</span>
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>        <span class="n">diff_versions</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="o">.</span><span class="n">diff</span><span class="p">)</span>
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">restore</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>        <span class="n">restore</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">restore</span><span class="p">)</span>
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--history
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--diff<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w">          </span><span class="c1"># pre-merge vs post-merge versions</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--version<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--restore<span class="w"> </span><span class="m">2</span><span class="w">         </span><span class="c1"># recovery drill</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--history<span class="w">           </span><span class="c1"># RESTORE appears as a NEW version</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.time_travel<span class="w"> </span>--restore<span class="w"> </span><span class="m">3</span><span class="w">         </span><span class="c1"># and back again</span>
+</code></pre></div>
+<p>Or in SQL, which is the form an auditor will ask for:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span><span class="w"> </span><span class="k">VERSION</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="s1">&#39;2026-06-15 00:00:00&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>What to look for:</strong> <code>RESTORE</code> does not rewind history — it appends a new commit whose state equals the old one. The audit trail is append-only, which is precisely what makes it trustworthy: you cannot quietly un-happen a bad MERGE, you can only record the correction.</p>
+<hr />
+<h3 id="task-5-the-pdpl-erasure-drill-10-min">Task 5 — The PDPL erasure drill (10 min)<a class="headerlink" href="#task-5-the-pdpl-erasure-drill-10-min" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cat<span class="w"> </span>data/fixtures/erasure_request/pdpl_erasure_2026-06-10.json
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># {&quot;request_id&quot;:&quot;pdpl-2026-0184&quot;,&quot;rider_id&quot;:&quot;rid_0000042&quot;,&quot;received_at&quot;:&quot;2026-06-20T09:12:00+03:00&quot;,&quot;basis&quot;:&quot;PDPL Article 18 right to erasure&quot;}</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>python<span class="w"> </span>-m<span class="w"> </span>masar.delta.merge_ops<span class="w"> </span>--erase-request<span class="w"> </span>data/fixtures/erasure_request/pdpl_erasure_2026-06-10.json
+</code></pre></div>
+<p>Then prove the two-part truth that governance reviews turn on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s">from masar.spark import get_spark</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="s">spark = get_spark(&quot;pdpl-drill&quot;)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s">P = &quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="s">cur = spark.sql(f&quot;DESCRIBE HISTORY delta.`{P}` LIMIT 1&quot;).first()[&quot;version&quot;]</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="s">rid = &quot;rid_0000042&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="s">print(&quot;current version:&quot;, cur)</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="s">print(&quot;rows in CURRENT version :&quot;,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="s">      spark.read.format(&quot;delta&quot;).load(P).filter(f&quot;rider_id = &#39;{rid}&#39;&quot;).count())</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="s">print(&quot;rows in PREVIOUS version:&quot;,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="s">      spark.read.format(&quot;delta&quot;).option(&quot;versionAsOf&quot;, cur - 1).load(P)</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="s">           .filter(f&quot;rider_id = &#39;{rid}&#39;&quot;).count())</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="s">PY</span>
+</code></pre></div>
+<p>Expected: 0 rows in the current version, &gt; 0 in the previous one. <strong>The erasure is committed but not yet complete.</strong> The rider's data survives in time-travel history — and on disk in tombstoned Parquet files — until a VACUUM past the retention window removes it. Write in <code>LAB4_NOTES.md</code>:</p>
+<ol>
+<li>The date by which VACUUM must run for this request to be fully satisfied, given your retention setting.</li>
+<li>How you reconcile "reproduce the past for the regulator" with "erase this rider": the honest answer is that the <em>retention window</em> is the reconciliation — history is preserved only for as long as the documented policy allows, and any audit older than that window is answered from an immutable report artefact, not from the live table.</li>
+<li>Which other tables hold this rider's data (<code>bronze.trips</code> — immutable — and any gold/feature tables), and what your erasure runbook does about each. <em>An erasure applied to silver alone is not an erasure.</em></li>
+</ol>
+<hr />
+<h3 id="task-6-optimize-zorder-vacuum-15-min">Task 6 — OPTIMIZE, ZORDER, VACUUM (15 min)<a class="headerlink" href="#task-6-optimize-zorder-vacuum-15-min" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- src/masar/delta/maintain.sql  (run on a schedule, e.g. nightly)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">-- 0) Baseline: record numFiles and sizeInBytes BEFORE anything.</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">DETAIL</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span><span class="p">;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1">-- 1) Compact small files and cluster by the columns queries filter on.</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1">--    ZORDER co-locates related rows so min/max stats prune more aggressively.</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">OPTIMIZE</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">  </span><span class="n">ZORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">pickup_ts</span><span class="p">);</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="c1">-- 2) Verify: file count should drop sharply, average file size should rise.</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">DETAIL</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span><span class="p">;</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="c1">-- 3) Reclaim storage older than the retention window.</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="c1">--    RETENTION IS A GOVERNANCE DECISION: 168h keeps 7 days of time travel.</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="c1">--    Do NOT set 0 hours: it destroys audit history and can break concurrent readers.</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">VACUUM</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span><span class="w"> </span><span class="n">RETAIN</span><span class="w"> </span><span class="mi">168</span><span class="w"> </span><span class="n">HOURS</span><span class="p">;</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1">-- 4) What WOULD be deleted, without deleting it (always run this first in prod):</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="k">VACUUM</span><span class="w"> </span><span class="n">delta</span><span class="p">.</span><span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="n">lakehouse</span><span class="o">/</span><span class="n">silver</span><span class="o">/</span><span class="n">trips</span><span class="o">`</span><span class="w"> </span><span class="n">RETAIN</span><span class="w"> </span><span class="mi">168</span><span class="w"> </span><span class="n">HOURS</span><span class="w"> </span><span class="n">DRY</span><span class="w"> </span><span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
+<p>Run it with measurement on both sides:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="s">import time</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="s">from masar.spark import get_spark</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="s">spark = get_spark(&quot;maintenance&quot;)</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="s">P = &quot;./lakehouse/silver/trips&quot;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="s">def detail(tag):</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="s">    d = spark.sql(f&quot;DESCRIBE DETAIL delta.`{P}`&quot;).first()</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="s">    print(f&quot;{tag:8s} numFiles={d[&#39;numFiles&#39;]:&gt;4}  sizeMB={d[&#39;sizeInBytes&#39;]/1048576:7.1f}&quot;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="s">          f&quot;  avgFileKB={d[&#39;sizeInBytes&#39;]/max(d[&#39;numFiles&#39;],1)/1024:8.1f}&quot;)</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="s">def timed_query(tag):</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="s">    t = time.time()</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="s">    n = spark.sql(f&quot;&quot;&quot;SELECT count(*) FROM delta.`{P}`</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="s">                      WHERE city = &#39;Riyadh&#39;</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="s">                        AND pickup_ts &gt;= &#39;2026-06-01&#39; AND pickup_ts &lt; &#39;2026-06-02&#39;&quot;&quot;&quot;).first()[0]</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="s">    print(f&quot;{tag:8s} filtered read: {n:,} rows in {time.time()-t:.2f}s&quot;)</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="s">detail(&quot;before&quot;); timed_query(&quot;before&quot;)</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="s">spark.sql(f&quot;OPTIMIZE delta.`{P}` ZORDER BY (city, pickup_ts)&quot;).show(truncate=False)</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="s">detail(&quot;after&quot;);  timed_query(&quot;after&quot;)</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="s">spark.sql(f&quot;VACUUM delta.`{P}` RETAIN 168 HOURS DRY RUN&quot;).show(5, truncate=False)</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="s">spark.sql(f&quot;VACUUM delta.`{P}` RETAIN 168 HOURS&quot;).show(truncate=False)</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="s">detail(&quot;vacuum&quot;)</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="s">PY</span>
+</code></pre></div>
+<p>Now try the mistake, so you have seen the guardrail fire:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="s">from masar.spark import get_spark</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="s">spark = get_spark(&quot;vacuum0&quot;)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="s">try:</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="s">    spark.sql(&quot;VACUUM delta.`./lakehouse/silver/trips` RETAIN 0 HOURS&quot;).show()</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="s">except Exception as e:</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="s">    print(&quot;BLOCKED:&quot;, str(e).splitlines()[0])</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="s">PY</span>
+</code></pre></div>
+<p><strong>What to look for:</strong> Delta refuses <code>RETAIN 0 HOURS</code> unless <code>spark.databricks.delta.retentionDurationCheck.enabled</code> is disabled. <strong>Leave that check enabled.</strong> Zero retention destroys time travel <em>and</em> can break a reader or a concurrent writer that is still holding an older snapshot — it deletes files a running query is about to open.</p>
+<p>Write the retention decision in <code>LAB4_NOTES.md</code>. A defensible answer names three inputs: (a) the longest audit or dispute window you must serve from the live table, (b) the PDPL erasure SLA — data must not persist past its documented purpose, and (c) the storage cost of the tombstoned files. State your chosen number and what would change it.</p>
+<hr />
+<h3 id="task-7-record-the-benchmark-table-and-commit-5-min">Task 7 — Record the benchmark table and commit (5 min)<a class="headerlink" href="#task-7-record-the-benchmark-table-and-commit-5-min" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Before</th>
+<th>After</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numFiles</code></td>
+<td></td>
+<td></td>
+<td>after OPTIMIZE</td>
+</tr>
+<tr>
+<td>average file size</td>
+<td></td>
+<td></td>
+<td>target 128 MB–1 GB in production</td>
+</tr>
+<tr>
+<td>filtered read (Riyadh, 1 June)</td>
+<td></td>
+<td></td>
+<td>after ZORDER</td>
+</tr>
+<tr>
+<td>MERGE (5 corrections) run 1 / run 2</td>
+<td></td>
+<td></td>
+<td>idempotent</td>
+</tr>
+<tr>
+<td>storage reclaimed by VACUUM</td>
+<td></td>
+<td></td>
+<td>retention 168h</td>
+</tr>
+<tr>
+<td>rows visible: current / pre-erasure version</td>
+<td></td>
+<td></td>
+<td>PDPL drill</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>add<span class="w"> </span>src/masar/delta<span class="w"> </span>LAB4_NOTES.md
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(delta): constrained silver + merge/erasure + optimize/vacuum&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="expected-output">Expected output<a class="headerlink" href="#expected-output" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ python -m masar.delta.create_silver
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>[ok]   positive_fare: CHECK (fare_sar &gt; 0)
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>[ok]   valid_duration: CHECK (dropoff_ts &gt; pickup_ts)
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>[ok]   known_city: CHECK (city IN (&#39;Riyadh&#39;,&#39;Jeddah&#39;,&#39;Dammam&#39;,&#39;Mecca&#39;,&#39;Medina&#39;))
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>+--------------------------------+---------------------------------------------+
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>|key                             |value                                        |
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>+--------------------------------+---------------------------------------------+
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>|delta.constraints.positive_fare |fare_sar &gt; 0                                 |
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>|delta.constraints.valid_duration|dropoff_ts &gt; pickup_ts                       |
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>|delta.constraints.known_city    |city IN (&#39;Riyadh&#39;,&#39;Jeddah&#39;,&#39;Dammam&#39;,&#39;Mecca&#39;,&#39;Medina&#39;)|
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>|delta.minReaderVersion          |1                                            |
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>|delta.minWriterVersion          |3                                            |
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>+--------------------------------+---------------------------------------------+
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>$ python - &lt;&lt;&#39;PY&#39; ... negative tests ...
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>PASS (constraint): org.apache.spark.sql.delta.schema.DeltaInvariantViolationException:
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>                   CHECK constraint positive_fare (fare_sar &gt; 0) violated by row with values: fare_sar : -5.0
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>PASS (schema): org.apache.spark.sql.AnalysisException: Failed to merge fields &#39;fare_sar&#39; and &#39;fare_sar&#39;.
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>               Failed to merge incompatible data types DoubleType and StringType
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>PASS (new column rejected): AnalysisException: A schema mismatch detected when writing to the Delta table.
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>               To enable schema migration using DataFrameWriter, set option(&quot;mergeSchema&quot;,&quot;true&quot;)
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>row count unchanged: 42038
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>$ python -m masar.delta.merge_ops --corrections data/fixtures/corrections/trips_corrections_2026-06-03.csv
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>v3 MERGE  matched=5 inserted=0 updated=5
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>$ python -m masar.delta.merge_ops --corrections data/fixtures/corrections/trips_corrections_2026-06-03.csv
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>v4 MERGE  matched=0 inserted=0 updated=0        # idempotent: nothing changed second time
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>$ python -m masar.delta.time_travel --history
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>+-------+-----------------------+---------+------------------------------------------------------+
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>|version|timestamp              |operation|operationMetrics                                      |
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>+-------+-----------------------+---------+------------------------------------------------------+
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>|5      |2026-06-20 09:41:18    |DELETE   |{numDeletedRows -&gt; 27, numRemovedFiles -&gt; 3}          |
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>|4      |2026-06-20 09:37:02    |MERGE    |{numTargetRowsUpdated -&gt; 0, numTargetRowsInserted -&gt; 0}|
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>|3      |2026-06-20 09:36:44    |MERGE    |{numTargetRowsUpdated -&gt; 5, numTargetRowsInserted -&gt; 0}|
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>|2      |2026-06-19 19:14:55    |MERGE    |{numTargetRowsInserted -&gt; 1, numTargetRowsUpdated -&gt; 0}|
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>|1      |2026-06-19 19:08:22    |MERGE    |{numTargetRowsInserted -&gt; 0, numTargetRowsUpdated -&gt; 0}|
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>|0      |2026-06-19 19:07:53    |WRITE    |{numFiles -&gt; 12, numOutputRows -&gt; 42038}              |
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>+-------+-----------------------+---------+------------------------------------------------------+
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a>
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a>$ python -m masar.delta.time_travel --diff 2 3
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>+-------------------+------------+------------+------+
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a>|trip_id            |fare_sar_old|fare_sar_new|delta |
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a>+-------------------+------------+------------+------+
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>|trp_20260601_004417|38.5        |52.75       |14.25 |
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>|trp_20260601_011902|61.0        |47.5        |-13.5 |
+<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a>|trp_20260601_019338|24.25       |29.0        |4.75  |
+<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a>|trp_20260601_027104|93.75       |88.0        |-5.75 |
+<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>|trp_20260601_038820|17.5        |21.25       |3.75  |
+<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>+-------------------+------------+------------+------+
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a>
+<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a>$ python -m masar.delta.merge_ops --erase-request data/fixtures/erasure_request/pdpl_erasure_2026-06-10.json
+<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a>erasure committed for rid_0000042: 27 rows removed, 0 remain in the CURRENT version;
+<a id="__codelineno-18-55" name="__codelineno-18-55" href="#__codelineno-18-55"></a>run VACUUM past retention to purge history
+<a id="__codelineno-18-56" name="__codelineno-18-56" href="#__codelineno-18-56"></a>
+<a id="__codelineno-18-57" name="__codelineno-18-57" href="#__codelineno-18-57"></a>$ python - &lt;&lt;&#39;PY&#39; ... pdpl drill ...
+<a id="__codelineno-18-58" name="__codelineno-18-58" href="#__codelineno-18-58"></a>current version: 5
+<a id="__codelineno-18-59" name="__codelineno-18-59" href="#__codelineno-18-59"></a>rows in CURRENT version : 0
+<a id="__codelineno-18-60" name="__codelineno-18-60" href="#__codelineno-18-60"></a>rows in PREVIOUS version: 27
+<a id="__codelineno-18-61" name="__codelineno-18-61" href="#__codelineno-18-61"></a>
+<a id="__codelineno-18-62" name="__codelineno-18-62" href="#__codelineno-18-62"></a>$ python - &lt;&lt;&#39;PY&#39; ... maintenance ...
+<a id="__codelineno-18-63" name="__codelineno-18-63" href="#__codelineno-18-63"></a>before   numFiles= 214  sizeMB=   62.8  avgFileKB=   300.4
+<a id="__codelineno-18-64" name="__codelineno-18-64" href="#__codelineno-18-64"></a>before   filtered read: 18,418 rows in 1.91s
+<a id="__codelineno-18-65" name="__codelineno-18-65" href="#__codelineno-18-65"></a>+--------------------------------------------------------------+
+<a id="__codelineno-18-66" name="__codelineno-18-66" href="#__codelineno-18-66"></a>|metrics                                                       |
+<a id="__codelineno-18-67" name="__codelineno-18-67" href="#__codelineno-18-67"></a>+--------------------------------------------------------------+
+<a id="__codelineno-18-68" name="__codelineno-18-68" href="#__codelineno-18-68"></a>|{numFilesAdded -&gt; 9, numFilesRemoved -&gt; 214, ...}             |
+<a id="__codelineno-18-69" name="__codelineno-18-69" href="#__codelineno-18-69"></a>+--------------------------------------------------------------+
+<a id="__codelineno-18-70" name="__codelineno-18-70" href="#__codelineno-18-70"></a>after    numFiles=   9  sizeMB=   58.1  avgFileKB=  6612.3
+<a id="__codelineno-18-71" name="__codelineno-18-71" href="#__codelineno-18-71"></a>after    filtered read: 18,418 rows in 0.41s
+<a id="__codelineno-18-72" name="__codelineno-18-72" href="#__codelineno-18-72"></a>+----------------------------------------------------------+
+<a id="__codelineno-18-73" name="__codelineno-18-73" href="#__codelineno-18-73"></a>|path                                                      |
+<a id="__codelineno-18-74" name="__codelineno-18-74" href="#__codelineno-18-74"></a>+----------------------------------------------------------+
+<a id="__codelineno-18-75" name="__codelineno-18-75" href="#__codelineno-18-75"></a>|file:/home/dev/masar-lakehouse/lakehouse/silver/trips/... |
+<a id="__codelineno-18-76" name="__codelineno-18-76" href="#__codelineno-18-76"></a>+----------------------------------------------------------+
+<a id="__codelineno-18-77" name="__codelineno-18-77" href="#__codelineno-18-77"></a>vacuum   numFiles=   9  sizeMB=   58.1  avgFileKB=  6612.3
+<a id="__codelineno-18-78" name="__codelineno-18-78" href="#__codelineno-18-78"></a>
+<a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a>$ python - &lt;&lt;&#39;PY&#39; ... vacuum0 ...
+<a id="__codelineno-18-80" name="__codelineno-18-80" href="#__codelineno-18-80"></a>BLOCKED: java.lang.IllegalArgumentException: requirement failed: Are you sure you would like to
+<a id="__codelineno-18-81" name="__codelineno-18-81" href="#__codelineno-18-81"></a>vacuum files with such a low retention period? ... set spark.databricks.delta.retentionDurationCheck.enabled = false
+</code></pre></div>
+<p><em>(<code>numFiles = 214</code> assumes you have run several MERGE and backfill cycles from Lab 3 plus this lab's drills; a table built in one write will start lower. The </em><em>ratio</em><em> and the read-time improvement are the deliverable.)</em></p>
+<hr />
+<h2 id="acceptance-criteria">Acceptance criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>silver.trips</code> carries <code>positive_fare</code> and <code>valid_duration</code> CHECK constraints (visible in <code>SHOW TBLPROPERTIES</code>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A negative-fare write is <strong>rejected</strong> by the constraint, and the error text is captured</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A wrong-type write is <strong>rejected</strong> by schema enforcement, and an unexpected new column is rejected without <code>mergeSchema</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The row count is unchanged after all rejected writes (atomicity — no partial data)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The first commit JSON was opened and its <code>protocol</code> / <code>metaData</code> / <code>add</code> (with <code>stats</code>) actions identified</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> MERGE run 1 updated 5 rows; MERGE run 2 updated <strong>0</strong> rows; both <code>operationMetrics</code> recorded</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>DESCRIBE HISTORY</code> shows the full commit timeline with operation types</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A version diff shows the 5 corrected fares old vs new</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>RESTORE</code> was demonstrated and it is understood that restore <em>appends</em> a version rather than erasing history</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The erasure removes the rider from the current version while the pre-erasure version still contains them</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>LAB4_NOTES.md</code> names every other table holding that rider's data and what the runbook does about each</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>OPTIMIZE ... ZORDER BY (city, pickup_ts)</code> reduced <code>numFiles</code> by ≥ 10× with before/after <code>DESCRIBE DETAIL</code> recorded</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>VACUUM ... RETAIN 168 HOURS</code> ran (with a DRY RUN first), and <code>RETAIN 0 HOURS</code> was <strong>blocked</strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>LAB4_NOTES.md</code> justifies the retention window against audit needs, PDPL, and storage cost</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The benchmark table is filled from your own runs</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Commit <code>feat(delta): constrained silver + merge/erasure + optimize/vacuum</code> exists</li>
+</ul>
+<hr />
+<h2 id="self-check-questions">Self-check questions<a class="headerlink" href="#self-check-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q1.</strong> A concurrent reader starts a query at version 5 while a MERGE commits version 6. What does the reader see, and what mechanism guarantees it?</p>
+<details><summary>Answer</summary>
+The reader sees the complete, consistent state of version 5 for the whole query — snapshot isolation. Delta resolves the file list once, from the log up to version 5, and reads exactly those Parquet files. Version 6's commit adds new files and tombstones old ones in the log, but does not delete bytes, so the reader's files remain readable. The danger is VACUUM: if it physically removes those tombstoned files while the query is still running, the reader fails with a `FileNotFoundException`. That is the concurrency half of why `RETAIN 0 HOURS` is blocked.
+</details>
+
+<p><strong>Q2.</strong> Your second MERGE run reported <code>updated = 0</code> but still created a new version in the history. Is idempotency broken?</p>
+<details><summary>Answer</summary>
+No. Idempotency is a property of the resulting **table state**, not of the commit count. The second MERGE evaluated the same source against the same target, found every row already equal, and wrote a commit that changed no data. A consumer reading version *n* and version *n+1* gets identical results. If you need commit-level idempotency too (for example to avoid triggering a downstream change-data-feed), guard the operation with a source-batch marker so a repeated batch is skipped entirely.
+</details>
+
+<p><strong>Q3.</strong> Why is partitioning by <code>city</code> right here, and partitioning by <code>trip_id</code> catastrophic?</p>
+<details><summary>Answer</summary>
+`city` has five values, so each partition holds thousands of rows in a handful of large files, and a `city = 'Riyadh'` predicate eliminates whole directories before any file is opened. `trip_id` is unique, so partitioning by it creates one directory and one tiny file per trip — 42,038 objects here, hundreds of millions in production. Listing dominates every job, per-file metadata dwarfs the data, no filter can skip usefully, and OPTIMIZE cannot merge across partition boundaries. It converts a cheap decoupled read into an expensive one — the exact failure Module 2 warned about, self-inflicted at the table layer.
+</details>
+
+<p><strong>Q4.</strong> A regulator asks what <code>silver.trips</code> contained on 1 June. Under what conditions can Delta answer, and what would make the answer impossible?</p>
+<details><summary>Answer</summary>
+Delta answers with `TIMESTAMP AS OF '2026-06-01'` provided (a) the commits from that date are still in `_delta_log` (log retention, default 30 days, `delta.logRetentionDuration`) and (b) the Parquet files those commits reference have not been physically removed by VACUUM (`delta.deletedFileRetentionDuration`, default 7 days). A short VACUUM retention, or a log cleanup shorter than the audit window, makes the answer impossible — the query fails rather than returning wrong data, which is the correct failure mode but no help to the regulator. The operational habit that prevents the problem is pinning and recording the table version used for every filing.
+</details>
+
+<p><strong>Q5.</strong> You erased a rider from <code>silver.trips</code>. Name at least three places their data still exists and what your runbook must do about each.</p>
+<details><summary>Answer</summary>
+(1) Delta time-travel history and tombstoned files under `lakehouse/silver/trips` — removed by VACUUM once past retention; the erasure is only complete after that runs. (2) `bronze.trips`, which is immutable and append-only — the runbook must either apply a documented exception (bronze is the ledger, protected by access control and its own retention policy) or run a scoped delete against bronze as a deliberate, logged exception to immutability. (3) Downstream gold and feature tables (`gold.trip_features`, `gold.eta_features`) and the Redis online store, which must be rebuilt or key-deleted. Plus any exported reports and dbt test artefacts. An erasure that touches one table is not an erasure — this is why the classification and retention job in Module 6 is a platform-level control, not a per-table script.
+</details>
+
+<p><strong>Q6.</strong> OPTIMIZE cut <code>numFiles</code> from 214 to 9 and the filtered read from 1.9 s to 0.4 s. Which part of that improvement is compaction and which is ZORDER, and how would you separate them?</p>
+<details><summary>Answer</summary>
+Compaction removes per-file overhead: 214 file opens, 214 footer reads and 214 task launches collapse into 9. ZORDER changes *which* files a predicate can skip, by co-locating rows with similar `city` and `pickup_ts` so each file's min/max range is narrow. Separate them by running `OPTIMIZE` with no `ZORDER BY` on a copy of the table, measuring, then running `OPTIMIZE ... ZORDER BY (city, pickup_ts)` and measuring again. On a small single-day sample most of the win is compaction; at production scale, with months of data and selective predicates, ZORDER is usually the larger term because it multiplies the effect of the file statistics you saw in the log's `add` actions.
+</details>
+
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ConcurrentModificationException</code> / <code>ConcurrentAppendException</code></td>
+<td>Two writers hit optimistic-concurrency conflict on the same files</td>
+<td>Retry the commit; narrow each writer to disjoint partitions (<code>city</code>) so their file sets do not overlap; discuss OCC — no corruption occurred</td>
+</tr>
+<tr>
+<td>VACUUM removes nothing</td>
+<td>All tombstoned files are still inside the retention window</td>
+<td>Expected. Explain the default 7-day safety; use <code>DRY RUN</code> to see what <em>would</em> go, and re-run after the window passes</td>
+</tr>
+<tr>
+<td><code>VACUUM RETAIN 0 HOURS</code> blocked</td>
+<td>Delta's <code>retentionDurationCheck</code> safety</td>
+<td>Keep the check enabled. If a demo needs it, disable it on a throwaway copy only, never on <code>silver.trips</code> and never in production</td>
+</tr>
+<tr>
+<td>Constraint not enforced / <code>ALTER TABLE</code> fails</td>
+<td>Rows violating the predicate already exist</td>
+<td>Constraints validate future writes and are rejected if current data violates them — clean or quarantine the offending rows first (<code>create_silver.py</code> reports the count)</td>
+</tr>
+<tr>
+<td>Millions of tiny files</td>
+<td>Partitioned by a high-cardinality column, or a streaming sink with no maintenance</td>
+<td>Repartition by <code>city</code>; schedule <code>OPTIMIZE</code> as a nightly task, not as an incident response</td>
+</tr>
+<tr>
+<td><code>MERGE</code> fails: <code>Cannot perform Merge as multiple source rows matched ... the same target row</code></td>
+<td>The corrections source has duplicate <code>trip_id</code>s</td>
+<td>Deduplicate the source first (<code>merge_ops.py</code> raises on this deliberately); decide which version wins by an explicit ordering, never arbitrarily</td>
+</tr>
+<tr>
+<td>Time travel fails: <code>Cannot time travel Delta table to version 2</code></td>
+<td>The log was cleaned (<code>delta.logRetentionDuration</code>) or the files were vacuumed</td>
+<td>Nothing recovers it. Set <code>delta.logRetentionDuration</code> ≥ your audit window and <code>delta.deletedFileRetentionDuration</code> to match, <em>before</em> you need them</td>
+</tr>
+<tr>
+<td><code>RESTORE</code> appears to do nothing</td>
+<td>You restored to the version you are already on, or read the table by a stale cached snapshot</td>
+<td>Check <code>DESCRIBE HISTORY</code> — RESTORE writes a new version; call <code>spark.catalog.refreshTable("silver.trips")</code> if you cached it</td>
+</tr>
+<tr>
+<td>Erasure "succeeded" but the rider still appears in a dashboard</td>
+<td>Gold/feature tables and the online store were not rebuilt</td>
+<td>Erasure is a platform operation: re-run the gold models and purge the Redis keys; this is exactly why the runbook in <code>GOVERNANCE.md</code> is a capstone deliverable</td>
+</tr>
+<tr>
+<td><code>numFiles</code> did not drop after OPTIMIZE</td>
+<td>Files were already at target size, or the table is tiny</td>
+<td>Check the <code>metrics</code> map returned by OPTIMIZE (<code>numFilesAdded</code> / <code>numFilesRemoved</code>); on a sample table run several MERGE cycles first to create the small files</td>
+</tr>
+<tr>
+<td>Filtered read got <em>slower</em> after ZORDER</td>
+<td>ZORDER on columns nobody filters on, or the sample is too small for clustering to matter</td>
+<td>ZORDER only the columns that appear in real predicates (<code>city</code>, <code>pickup_ts</code>); measure with the Lab 2 scan-metrics helper, not by intuition</td>
+</tr>
+<tr>
+<td><code>DESCRIBE DETAIL</code> shows <code>format: parquet</code>, not <code>delta</code></td>
+<td>Someone wrote raw Parquet into the table directory, or the path is wrong</td>
+<td>Never write non-Delta files under a Delta path — the log will not see them and the table's view of reality diverges. Rebuild from Lab 3</td>
+</tr>
+<tr>
+<td>Every write is rejected after adding <code>known_city</code></td>
+<td>The data contains a city outside the constraint list (e.g. trailing whitespace, <code>riyadh</code> lowercase)</td>
+<td>This is the constraint doing its job — fix the staging normalisation (<code>initcap(trim(city))</code>) rather than dropping the constraint</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="stretch-goals">Stretch goals<a class="headerlink" href="#stretch-goals" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Concurrency drill.</strong> Open two terminals with two Spark sessions and start a MERGE in each against different cities. Observe both succeed (disjoint files). Then run both against the <em>same</em> city and observe the optimistic-concurrency retry or conflict. Record which exception you got and explain why no corruption is possible either way.</li>
+<li><strong>Change Data Feed.</strong> Enable <code>delta.enableChangeDataFeed = true</code>, run a MERGE, and read the change feed (<code>readChangeFeed</code>, <code>startingVersion</code>). Discuss how this would let a downstream gold table update incrementally instead of rebuilding.</li>
+<li><strong>Generated column for the partition key.</strong> Add a generated <code>trip_date</code> column derived from <code>pickup_ts</code> and partition a copy of the table by <code>(city, trip_date)</code>. Measure the effect on a single-day query and on the file count — is the extra partition level worth it at this data volume? At 100× the volume?</li>
+<li><strong>Retention policy as code.</strong> Set <code>delta.logRetentionDuration</code> and <code>delta.deletedFileRetentionDuration</code> as table properties to match the retention you justified, and write the one-paragraph policy that a governance reviewer would sign.</li>
+<li><strong>VACUUM-0 disaster simulation.</strong> On a <em>copy</em> of the table, disable the retention check, run <code>VACUUM RETAIN 0 HOURS</code>, then attempt a time-travel read and a concurrent query. Document both failures. Delete the copy afterwards.</li>
+</ol>
+<hr />
+<h2 id="capstone-linkage">Capstone linkage<a class="headerlink" href="#capstone-linkage" title="Permanent link">&para;</a></h2>
+<p>This lab delivers <strong>capstone mandatory requirement 4 (Delta Lake, LO4)</strong> in full: silver as constrained Delta with schema and CHECK enforcement, idempotent MERGE upserts, a time-travel audit, OPTIMIZE/VACUUM with a justified retention, and one demonstrated PDPL erasure. The before/after <code>numFiles</code> measurement is the "measured file-count reduction" required by <strong>capstone requirement 2</strong>, and it belongs in <code>BENCHMARKS.md</code> (deliverable 3) next to the Lab 2 scan analysis. The erasure drill and the retention justification are the core of <code>GOVERNANCE.md</code> (deliverable 4): <em>PII classification, access levels, retention policy with PDPL justification, and a demonstrated erasure.</em> Two of the five required <code>DECISIONS.md</code> entries (deliverable 6) come straight from here — <strong>VACUUM retention</strong> and <strong>partition-key choice</strong>. The time-travel audit and the idempotent second MERGE are both required beats of the 6-minute capstone demo, and the constrained <code>silver.trips</code> is the table that the Lab 6 quality gate, the Lab 7 orchestrated DAG, and the Lab 8 feature and BI layers all build on.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SDAIA Academy — internal use only. Do not distribute.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../assets/vendor/mermaid-11.17.2.min.js"></script>
+      
+        <script src="../../../../../../../assets/hub.js"></script>
+      
+    
+  </body>
+</html>

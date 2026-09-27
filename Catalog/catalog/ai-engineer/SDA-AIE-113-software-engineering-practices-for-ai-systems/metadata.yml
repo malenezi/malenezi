@@ -1,0 +1,70 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-113
+course_title: Software Engineering Practices for AI Systems
+course_title_ar: ممارسات هندسة البرمجيات لأنظمة الذكاء الاصطناعي
+aliases: []
+domain: ai-engineering
+learning_path: ai-engineer
+level: Practitioner
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: AI practitioners preparing for production engineering roles
+prerequisites: SDA-FND-103; SDA-AIE-111 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-08-28
+next_review: 2026-12-27
+tools:
+- FastAPI
+- Docker
+- pytest
+- GitHub Actions
+- pydantic
+technologies: []
+keywords:
+- Software Engineering
+- Architecture
+- Automation
+description: A production-engineering module that turns model builders into software engineers. Participants
+  design clean APIs around models, containerise services with Docker, automate testing and CI/CD, and
+  structure AI codebases for maintainability. These practices underpin every deployment module later in
+  the track.
+description_ar: وحدة هندسة إنتاجية تحوّل بناة النماذج إلى مهندسي برمجيات. يصمم المشاركون واجهات برمجية
+  نظيفة حول النماذج ويحوّلون الخدمات إلى حاويات باستخدام Docker ويؤتمتون الاختبارات وخطوط CI/CD وينظمون
+  قواعد الكود لقابلية الصيانة، وهي ممارسات تؤسس لكل وحدات النشر اللاحقة.
+learning_outcomes:
+- Design RESTful APIs that expose ML models as reliable services
+- Implement containerised AI services using Docker and compose workflows
+- Develop automated unit, integration, and model-behaviour tests
+- Build CI/CD pipelines that validate and ship AI code changes
+- Apply clean-architecture and configuration-management patterns to AI codebases
+- Evaluate code quality using reviews, linting, and static analysis
+topics:
+- Structuring AI projects and clean architecture
+- APIs for model serving with FastAPI
+- Docker and containerised services
+- Testing strategies for ML code
+- CI/CD automation with GitHub Actions
+- Configuration, secrets, and logging practices
+assessment: Labs; containerised model-service project
+next_modules: SDA-AIE-211 / SDA-AIE-216
+stackability: Engineering badge; required for MLOps and production modules.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Software Engineering Practices for AI Systems
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-113 - Software Engineering Practices
+    for AI Systems.xlsx
+known_issues: []
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

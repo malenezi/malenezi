@@ -1,0 +1,8 @@
+{
+  "transaction_id": "TXN-2026-00044",
+  "amount_sar": 99.0,
+  "merchant_category": "travel",
+  "customer_age_days": 950,
+  "distance_from_home_km": 14.0,
+  "amount_sr": 99.0
+}

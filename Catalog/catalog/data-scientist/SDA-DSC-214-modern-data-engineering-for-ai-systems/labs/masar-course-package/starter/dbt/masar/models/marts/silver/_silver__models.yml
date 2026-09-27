@@ -1,0 +1,98 @@
+version: 2
+
+models:
+  - name: silver_trips
+    description: >
+      Conformed, completed Masar trips. GRAIN: exactly one row per trip_id.
+      Timestamps are UTC; trip_date is the Asia/Riyadh business date.
+      This is THE contract for every downstream AI and BI consumer — changing
+      a column here is a breaking change and goes through review as one.
+    columns:
+      - name: trip_id
+        description: "Business key. Unique, non-null."
+        tests: [unique, not_null]
+
+      - name: city
+        description: "Conformed city name (not the raw code)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Riyadh', 'Jeddah', 'Dammam', 'Mecca', 'Medina']
+
+      - name: status
+        description: "Silver holds completed trips only; the rest stay in bronze."
+        tests:
+          - accepted_values:
+              values: ['completed']
+
+      - name: fare_sar
+        description: "Total charged, SAR. Strictly positive by construction."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5000
+              inclusive: false
+
+      - name: duration_min
+        description: "Derived from the timestamps, not from the reported value."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 480          # 8h: longer is a data problem, not a trip
+              inclusive: false
+
+      - name: distance_km
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 400
+              inclusive: false
+
+      - name: surge_multiplier
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1.0
+              max_value: 5.0
+
+      - name: payment_type
+        tests:
+          - accepted_values:
+              values: ['mada', 'credit_card', 'apple_pay', 'cash', 'wallet']
+
+      - name: driver_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_drivers')
+              field: driver_id
+
+      - name: pickup_ts
+        description: "UTC. Both source formats parsed; Asia/Riyadh normalised once."
+        tests: [not_null]
+
+      - name: rider_id
+        description: "PDPL: personal data. Never propagated raw to gold/BI/online store."
+        tests: [not_null]
+
+      - name: dropoff_geohash
+        description: >
+          PDPL: personal-coarse. ~3.1% missing in the source by design —
+          tolerated and MONITORED, never silently accepted.
+
+  - name: silver_drivers
+    description: "Conformed driver roster. GRAIN: one row per driver_id, type-1."
+    columns:
+      - name: driver_id
+        tests: [unique, not_null]
+      - name: rating
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1.0
+              max_value: 5.0
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive', 'suspended']

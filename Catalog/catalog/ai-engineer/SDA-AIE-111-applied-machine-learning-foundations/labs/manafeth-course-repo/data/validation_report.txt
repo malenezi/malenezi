@@ -1,0 +1,18 @@
+MANAFETH DATA VALIDATION REPORT (seed 42)
+============================================================
+shape: (48000, 19)  | customer_id unique: True
+churn rate: 0.140  (target 0.140)
+missingness: avg_rating 0.31 (spec 0.31), last_promo_used 0.22 (spec 0.22)
+avg_rating missing among new (<4mo) customers: 0.45 vs established: 0.29  (missingness is signal)
+split: train 38,400 / test 9,600  churn 0.140 / 0.140
+dummy (stratified) PR-AUC: 0.139  (~0.14)
+dummy regressor MAE on avg_basket_sar: 36.4 SAR
+21-day-silence heuristic recall@20%: 0.45  (spec ~0.41)
+logistic (honest, numeric only) PR-AUC: 0.482  recall@20%: 0.56  (spec ballpark 0.44 / 0.57)
+logistic WITH the 3 planted leaks PR-AUC: 0.889  (fiction — leaks work)
+shuffled-label test PR-AUC: 0.179  (~0.14 = honest)
+orders: 610,000 rows; Ramadan-25 daily volume x2.09; share of Ramadan orders 19:00-02:59: 1.00
+churn by recency quintile: [0.079, 0.09, 0.104, 0.119, 0.317]  (monotone signal)
+[arc 1] logistic CV PR-AUC: snapshot-only 0.462 -> +engineered 0.544  (features beat models)
+[arc 2] xgboost CV PR-AUC on same features: 0.574  (ensembles beat linear)
+[coherence] recomputed recency matches table within 1 day: 0.923

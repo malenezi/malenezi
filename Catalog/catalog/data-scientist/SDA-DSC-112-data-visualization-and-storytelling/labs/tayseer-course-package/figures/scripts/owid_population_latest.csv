@@ -1,0 +1,252 @@
+entity,iso_code,year,population,source
+Afghanistan,AFG,2022,41128772,https://population.un.org/wpp/Download/Standard/CSV/
+Africa,OWID_AFR,2022,1426736614,https://population.un.org/wpp/Download/Standard/CSV/
+Albania,ALB,2022,2842318,https://population.un.org/wpp/Download/Standard/CSV/
+Algeria,DZA,2022,44903228,https://population.un.org/wpp/Download/Standard/CSV/
+American Samoa,ASM,2022,44295,https://population.un.org/wpp/Download/Standard/CSV/
+Andorra,AND,2022,79843,https://population.un.org/wpp/Download/Standard/CSV/
+Angola,AGO,2022,35588996,https://population.un.org/wpp/Download/Standard/CSV/
+Anguilla,AIA,2022,15877,https://population.un.org/wpp/Download/Standard/CSV/
+Antigua and Barbuda,ATG,2022,93772,https://population.un.org/wpp/Download/Standard/CSV/
+Argentina,ARG,2022,45510324,https://population.un.org/wpp/Download/Standard/CSV/
+Armenia,ARM,2022,2780472,https://population.un.org/wpp/Download/Standard/CSV/
+Aruba,ABW,2022,106459,https://population.un.org/wpp/Download/Standard/CSV/
+Asia,OWID_ASI,2022,4721383370,https://population.un.org/wpp/Download/Standard/CSV/
+Australia,AUS,2022,26177410,https://population.un.org/wpp/Download/Standard/CSV/
+Austria,AUT,2022,8939617,https://population.un.org/wpp/Download/Standard/CSV/
+Azerbaijan,AZE,2022,10358078,https://population.un.org/wpp/Download/Standard/CSV/
+Bahamas,BHS,2022,409989,https://population.un.org/wpp/Download/Standard/CSV/
+Bahrain,BHR,2022,1472237,https://population.un.org/wpp/Download/Standard/CSV/
+Bangladesh,BGD,2022,171186368,https://population.un.org/wpp/Download/Standard/CSV/
+Barbados,BRB,2022,281646,https://population.un.org/wpp/Download/Standard/CSV/
+Belarus,BLR,2022,9534956,https://population.un.org/wpp/Download/Standard/CSV/
+Belgium,BEL,2022,11655923,https://population.un.org/wpp/Download/Standard/CSV/
+Belize,BLZ,2022,405285,https://population.un.org/wpp/Download/Standard/CSV/
+Benin,BEN,2022,13352864,https://population.un.org/wpp/Download/Standard/CSV/
+Bermuda,BMU,2022,64207,https://population.un.org/wpp/Download/Standard/CSV/
+Bhutan,BTN,2022,782457,https://population.un.org/wpp/Download/Standard/CSV/
+Bolivia,BOL,2022,12224114,https://population.un.org/wpp/Download/Standard/CSV/
+Bonaire Sint Eustatius and Saba,BES,2022,27052,https://population.un.org/wpp/Download/Standard/CSV/
+Bosnia and Herzegovina,BIH,2022,3233530,https://population.un.org/wpp/Download/Standard/CSV/
+Botswana,BWA,2022,2630300,https://population.un.org/wpp/Download/Standard/CSV/
+Brazil,BRA,2022,215313504,https://population.un.org/wpp/Download/Standard/CSV/
+British Virgin Islands,VGB,2022,31332,https://population.un.org/wpp/Download/Standard/CSV/
+Brunei,BRN,2022,449002,https://population.un.org/wpp/Download/Standard/CSV/
+Bulgaria,BGR,2022,6781955,https://population.un.org/wpp/Download/Standard/CSV/
+Burkina Faso,BFA,2022,22673764,https://population.un.org/wpp/Download/Standard/CSV/
+Burundi,BDI,2022,12889583,https://population.un.org/wpp/Download/Standard/CSV/
+Cambodia,KHM,2022,16767851,https://population.un.org/wpp/Download/Standard/CSV/
+Cameroon,CMR,2022,27914542,https://population.un.org/wpp/Download/Standard/CSV/
+Canada,CAN,2022,38454328,https://population.un.org/wpp/Download/Standard/CSV/
+Cape Verde,CPV,2022,593162,https://population.un.org/wpp/Download/Standard/CSV/
+Cayman Islands,CYM,2022,68722,https://population.un.org/wpp/Download/Standard/CSV/
+Central African Republic,CAF,2022,5579148,https://population.un.org/wpp/Download/Standard/CSV/
+Chad,TCD,2022,17723312,https://population.un.org/wpp/Download/Standard/CSV/
+Chile,CHL,2022,19603736,https://population.un.org/wpp/Download/Standard/CSV/
+China,CHN,2022,1425887360,https://population.un.org/wpp/Download/Standard/CSV/
+Colombia,COL,2022,51874028,https://population.un.org/wpp/Download/Standard/CSV/
+Comoros,COM,2022,836783,https://population.un.org/wpp/Download/Standard/CSV/
+Congo,COG,2022,5970430,https://population.un.org/wpp/Download/Standard/CSV/
+Cook Islands,COK,2022,17032,https://population.un.org/wpp/Download/Standard/CSV/
+Costa Rica,CRI,2022,5180836,https://population.un.org/wpp/Download/Standard/CSV/
+Cote d'Ivoire,CIV,2022,28160548,https://population.un.org/wpp/Download/Standard/CSV/
+Croatia,HRV,2022,4030361,https://population.un.org/wpp/Download/Standard/CSV/
+Cuba,CUB,2022,11212198,https://population.un.org/wpp/Download/Standard/CSV/
+Curacao,CUW,2022,191173,https://population.un.org/wpp/Download/Standard/CSV/
+Cyprus,CYP,2021,896007,https://ec.europa.eu/eurostat/databrowser/view/tps00001/default/table?lang=en
+Czechia,CZE,2022,10493990,https://population.un.org/wpp/Download/Standard/CSV/
+Democratic Republic of Congo,COD,2022,99010216,https://population.un.org/wpp/Download/Standard/CSV/
+Denmark,DNK,2022,5882259,https://population.un.org/wpp/Download/Standard/CSV/
+Djibouti,DJI,2022,1120851,https://population.un.org/wpp/Download/Standard/CSV/
+Dominica,DMA,2022,72758,https://population.un.org/wpp/Download/Standard/CSV/
+Dominican Republic,DOM,2022,11228821,https://population.un.org/wpp/Download/Standard/CSV/
+Ecuador,ECU,2022,18001002,https://population.un.org/wpp/Download/Standard/CSV/
+Egypt,EGY,2022,110990096,https://population.un.org/wpp/Download/Standard/CSV/
+El Salvador,SLV,2022,6336393,https://population.un.org/wpp/Download/Standard/CSV/
+Equatorial Guinea,GNQ,2022,1674916,https://population.un.org/wpp/Download/Standard/CSV/
+Eritrea,ERI,2022,3684041,https://population.un.org/wpp/Download/Standard/CSV/
+Estonia,EST,2022,1326064,https://population.un.org/wpp/Download/Standard/CSV/
+Eswatini,SWZ,2022,1201680,https://population.un.org/wpp/Download/Standard/CSV/
+Ethiopia,ETH,2022,123379928,https://population.un.org/wpp/Download/Standard/CSV/
+Europe,OWID_EUR,2022,744807803,https://population.un.org/wpp/Download/Standard/CSV/
+European Union,OWID_EUN,2022,450146793,https://population.un.org/wpp/Download/Standard/CSV/
+Faeroe Islands,FRO,2022,53117,https://population.un.org/wpp/Download/Standard/CSV/
+Falkland Islands,FLK,2022,3801,https://population.un.org/wpp/Download/Standard/CSV/
+Fiji,FJI,2022,929769,https://population.un.org/wpp/Download/Standard/CSV/
+Finland,FIN,2022,5540745,https://population.un.org/wpp/Download/Standard/CSV/
+France,FRA,2022,67813000,https://www.insee.fr/fr/statistiques/6024136
+French Guiana,GUF,2022,304568,https://population.un.org/wpp/Download/Standard/CSV/
+French Polynesia,PYF,2022,306292,https://population.un.org/wpp/Download/Standard/CSV/
+Gabon,GAB,2022,2388997,https://population.un.org/wpp/Download/Standard/CSV/
+Gambia,GMB,2022,2705995,https://population.un.org/wpp/Download/Standard/CSV/
+Georgia,GEO,2022,3744385,https://population.un.org/wpp/Download/Standard/CSV/
+Germany,DEU,2022,83369840,https://population.un.org/wpp/Download/Standard/CSV/
+Ghana,GHA,2022,33475870,https://population.un.org/wpp/Download/Standard/CSV/
+Gibraltar,GIB,2022,32677,https://population.un.org/wpp/Download/Standard/CSV/
+Greece,GRC,2022,10384972,https://population.un.org/wpp/Download/Standard/CSV/
+Greenland,GRL,2022,56494,https://population.un.org/wpp/Download/Standard/CSV/
+Grenada,GRD,2022,125459,https://population.un.org/wpp/Download/Standard/CSV/
+Guadeloupe,GLP,2022,395762,https://population.un.org/wpp/Download/Standard/CSV/
+Guam,GUM,2022,171783,https://population.un.org/wpp/Download/Standard/CSV/
+Guatemala,GTM,2022,17843914,https://population.un.org/wpp/Download/Standard/CSV/
+Guernsey,GGY,2022,63329,https://population.un.org/wpp/Download/Standard/CSV/
+Guinea,GIN,2022,13859349,https://population.un.org/wpp/Download/Standard/CSV/
+Guinea-Bissau,GNB,2022,2105580,https://population.un.org/wpp/Download/Standard/CSV/
+Guyana,GUY,2022,808727,https://population.un.org/wpp/Download/Standard/CSV/
+Haiti,HTI,2022,11585003,https://population.un.org/wpp/Download/Standard/CSV/
+High income,OWID_HIC,2022,1250514600,https://population.un.org/wpp/Download/Standard/CSV/
+Honduras,HND,2022,10432858,https://population.un.org/wpp/Download/Standard/CSV/
+Hong Kong,HKG,2022,7488863,https://population.un.org/wpp/Download/Standard/CSV/
+Hungary,HUN,2022,9967304,https://population.un.org/wpp/Download/Standard/CSV/
+Iceland,ISL,2022,372903,https://population.un.org/wpp/Download/Standard/CSV/
+India,IND,2022,1417173120,https://population.un.org/wpp/Download/Standard/CSV/
+Indonesia,IDN,2022,275501344,https://population.un.org/wpp/Download/Standard/CSV/
+Iran,IRN,2022,88550568,https://population.un.org/wpp/Download/Standard/CSV/
+Iraq,IRQ,2022,44496124,https://population.un.org/wpp/Download/Standard/CSV/
+Ireland,IRL,2022,5023108,https://population.un.org/wpp/Download/Standard/CSV/
+Isle of Man,IMN,2022,84534,https://population.un.org/wpp/Download/Standard/CSV/
+Israel,ISR,2022,9449000,https://www.cbs.gov.il/en/mediarelease/pages/2021/population-of-israel-on-the-eve-of-2022.aspx
+Italy,ITA,2022,59037472,https://population.un.org/wpp/Download/Standard/CSV/
+Jamaica,JAM,2022,2827382,https://population.un.org/wpp/Download/Standard/CSV/
+Japan,JPN,2022,123951696,https://population.un.org/wpp/Download/Standard/CSV/
+Jersey,JEY,2022,110796,https://population.un.org/wpp/Download/Standard/CSV/
+Jordan,JOR,2022,11285875,https://population.un.org/wpp/Download/Standard/CSV/
+Kazakhstan,KAZ,2022,19397998,https://population.un.org/wpp/Download/Standard/CSV/
+Kenya,KEN,2022,54027484,https://population.un.org/wpp/Download/Standard/CSV/
+Kiribati,KIR,2022,131237,https://population.un.org/wpp/Download/Standard/CSV/
+Kosovo,OWID_KOS,2021,1782115,https://ec.europa.eu/eurostat/databrowser/view/tps00001/default/table?lang=en
+Kuwait,KWT,2022,4268886,https://population.un.org/wpp/Download/Standard/CSV/
+Kyrgyzstan,KGZ,2022,6630621,https://population.un.org/wpp/Download/Standard/CSV/
+Laos,LAO,2022,7529477,https://population.un.org/wpp/Download/Standard/CSV/
+Latvia,LVA,2022,1850654,https://population.un.org/wpp/Download/Standard/CSV/
+Lebanon,LBN,2022,5489744,https://population.un.org/wpp/Download/Standard/CSV/
+Lesotho,LSO,2022,2305826,https://population.un.org/wpp/Download/Standard/CSV/
+Liberia,LBR,2022,5302690,https://population.un.org/wpp/Download/Standard/CSV/
+Libya,LBY,2022,6812344,https://population.un.org/wpp/Download/Standard/CSV/
+Liechtenstein,LIE,2022,39355,https://population.un.org/wpp/Download/Standard/CSV/
+Lithuania,LTU,2022,2750058,https://population.un.org/wpp/Download/Standard/CSV/
+Low income,OWID_LIC,2022,737604900,https://population.un.org/wpp/Download/Standard/CSV/
+Lower middle income,OWID_LMC,2022,3432097300,https://population.un.org/wpp/Download/Standard/CSV/
+Luxembourg,LUX,2022,647601,https://population.un.org/wpp/Download/Standard/CSV/
+Macao,MAC,2022,695180,https://population.un.org/wpp/Download/Standard/CSV/
+Madagascar,MDG,2022,29611718,https://population.un.org/wpp/Download/Standard/CSV/
+Malawi,MWI,2022,20405318,https://population.un.org/wpp/Download/Standard/CSV/
+Malaysia,MYS,2022,33938216,https://population.un.org/wpp/Download/Standard/CSV/
+Maldives,MDV,2022,523798,https://population.un.org/wpp/Download/Standard/CSV/
+Mali,MLI,2022,22593598,https://population.un.org/wpp/Download/Standard/CSV/
+Malta,MLT,2022,533293,https://population.un.org/wpp/Download/Standard/CSV/
+Marshall Islands,MHL,2022,41593,https://population.un.org/wpp/Download/Standard/CSV/
+Martinique,MTQ,2022,367512,https://population.un.org/wpp/Download/Standard/CSV/
+Mauritania,MRT,2022,4736146,https://population.un.org/wpp/Download/Standard/CSV/
+Mauritius,MUS,2022,1299478,https://population.un.org/wpp/Download/Standard/CSV/
+Mayotte,MYT,2022,326113,https://population.un.org/wpp/Download/Standard/CSV/
+Mexico,MEX,2022,127504120,https://population.un.org/wpp/Download/Standard/CSV/
+Micronesia (country),FSM,2022,114178,https://population.un.org/wpp/Download/Standard/CSV/
+Moldova,MDA,2022,3272993,https://population.un.org/wpp/Download/Standard/CSV/
+Monaco,MCO,2022,36491,https://population.un.org/wpp/Download/Standard/CSV/
+Mongolia,MNG,2022,3398373,https://population.un.org/wpp/Download/Standard/CSV/
+Montenegro,MNE,2022,627082,https://population.un.org/wpp/Download/Standard/CSV/
+Montserrat,MSR,2022,4413,https://population.un.org/wpp/Download/Standard/CSV/
+Morocco,MAR,2022,37457976,https://population.un.org/wpp/Download/Standard/CSV/
+Mozambique,MOZ,2022,32969520,https://population.un.org/wpp/Download/Standard/CSV/
+Myanmar,MMR,2022,54179312,https://population.un.org/wpp/Download/Standard/CSV/
+Namibia,NAM,2022,2567024,https://population.un.org/wpp/Download/Standard/CSV/
+Nauru,NRU,2022,12691,https://population.un.org/wpp/Download/Standard/CSV/
+Nepal,NPL,2022,30547586,https://population.un.org/wpp/Download/Standard/CSV/
+Netherlands,NLD,2022,17564020,https://population.un.org/wpp/Download/Standard/CSV/
+New Caledonia,NCL,2022,289959,https://population.un.org/wpp/Download/Standard/CSV/
+New Zealand,NZL,2022,5185289,https://population.un.org/wpp/Download/Standard/CSV/
+Nicaragua,NIC,2022,6948395,https://population.un.org/wpp/Download/Standard/CSV/
+Niger,NER,2022,26207982,https://population.un.org/wpp/Download/Standard/CSV/
+Nigeria,NGA,2022,218541216,https://population.un.org/wpp/Download/Standard/CSV/
+Niue,NIU,2022,1952,https://population.un.org/wpp/Download/Standard/CSV/
+North America,OWID_NAM,2022,600323657,https://population.un.org/wpp/Download/Standard/CSV/
+North Korea,PRK,2022,26069416,https://population.un.org/wpp/Download/Standard/CSV/
+North Macedonia,MKD,2022,2093606,https://population.un.org/wpp/Download/Standard/CSV/
+Northern Mariana Islands,MNP,2022,49574,https://population.un.org/wpp/Download/Standard/CSV/
+Norway,NOR,2022,5434324,https://population.un.org/wpp/Download/Standard/CSV/
+Oceania,OWID_OCE,2022,45038860,https://population.un.org/wpp/Download/Standard/CSV/
+Oman,OMN,2022,4576300,https://population.un.org/wpp/Download/Standard/CSV/
+Pakistan,PAK,2022,235824864,https://population.un.org/wpp/Download/Standard/CSV/
+Palau,PLW,2022,18084,https://population.un.org/wpp/Download/Standard/CSV/
+Palestine,PSE,2022,5250076,https://population.un.org/wpp/Download/Standard/CSV/
+Panama,PAN,2022,4408582,https://population.un.org/wpp/Download/Standard/CSV/
+Papua New Guinea,PNG,2022,10142625,https://population.un.org/wpp/Download/Standard/CSV/
+Paraguay,PRY,2022,6780745,https://population.un.org/wpp/Download/Standard/CSV/
+Peru,PER,2022,34049588,https://population.un.org/wpp/Download/Standard/CSV/
+Philippines,PHL,2022,115559008,https://population.un.org/wpp/Download/Standard/CSV/
+Pitcairn,PCN,2021,47,https://www.bbc.com/news/uk-56923016
+Poland,POL,2022,39857144,https://population.un.org/wpp/Download/Standard/CSV/
+Portugal,PRT,2022,10270857,https://population.un.org/wpp/Download/Standard/CSV/
+Puerto Rico,PRI,2022,3252412,https://population.un.org/wpp/Download/Standard/CSV/
+Qatar,QAT,2022,2695131,https://population.un.org/wpp/Download/Standard/CSV/
+Reunion,REU,2022,974062,https://population.un.org/wpp/Download/Standard/CSV/
+Romania,ROU,2022,19659270,https://population.un.org/wpp/Download/Standard/CSV/
+Russia,RUS,2022,144713312,https://population.un.org/wpp/Download/Standard/CSV/
+Rwanda,RWA,2022,13776702,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Barthelemy,BLM,2022,10994,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Helena,SHN,2022,5401,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Kitts and Nevis,KNA,2022,47681,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Lucia,LCA,2022,179872,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Martin (French part),MAF,2022,31816,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Pierre and Miquelon,SPM,2022,5885,https://population.un.org/wpp/Download/Standard/CSV/
+Saint Vincent and the Grenadines,VCT,2022,103959,https://population.un.org/wpp/Download/Standard/CSV/
+Samoa,WSM,2022,222390,https://population.un.org/wpp/Download/Standard/CSV/
+San Marino,SMR,2022,33690,https://population.un.org/wpp/Download/Standard/CSV/
+Sao Tome and Principe,STP,2022,227393,https://population.un.org/wpp/Download/Standard/CSV/
+Saudi Arabia,SAU,2022,36408824,https://population.un.org/wpp/Download/Standard/CSV/
+Senegal,SEN,2022,17316452,https://population.un.org/wpp/Download/Standard/CSV/
+Serbia,SRB,2021,6871547,https://ec.europa.eu/eurostat/databrowser/view/tps00001/default/table?lang=en
+Seychelles,SYC,2022,107135,https://population.un.org/wpp/Download/Standard/CSV/
+Sierra Leone,SLE,2022,8605723,https://population.un.org/wpp/Download/Standard/CSV/
+Singapore,SGP,2022,5637022,https://www.singstat.gov.sg/modules/infographics/populationx
+Sint Maarten (Dutch part),SXM,2022,44192,https://population.un.org/wpp/Download/Standard/CSV/
+Slovakia,SVK,2022,5643455,https://population.un.org/wpp/Download/Standard/CSV/
+Slovenia,SVN,2022,2119843,https://population.un.org/wpp/Download/Standard/CSV/
+Solomon Islands,SLB,2022,724272,https://population.un.org/wpp/Download/Standard/CSV/
+Somalia,SOM,2022,17597508,https://population.un.org/wpp/Download/Standard/CSV/
+South Africa,ZAF,2022,59893884,https://population.un.org/wpp/Download/Standard/CSV/
+South America,OWID_SAM,2022,436816679,https://population.un.org/wpp/Download/Standard/CSV/
+South Korea,KOR,2022,51815808,https://population.un.org/wpp/Download/Standard/CSV/
+South Sudan,SSD,2022,10913172,https://population.un.org/wpp/Download/Standard/CSV/
+Spain,ESP,2022,47558632,https://population.un.org/wpp/Download/Standard/CSV/
+Sri Lanka,LKA,2022,21832150,https://population.un.org/wpp/Download/Standard/CSV/
+Sudan,SDN,2022,46874200,https://population.un.org/wpp/Download/Standard/CSV/
+Suriname,SUR,2022,618046,https://population.un.org/wpp/Download/Standard/CSV/
+Sweden,SWE,2022,10549349,https://population.un.org/wpp/Download/Standard/CSV/
+Switzerland,CHE,2022,8740471,https://population.un.org/wpp/Download/Standard/CSV/
+Syria,SYR,2022,22125242,https://population.un.org/wpp/Download/Standard/CSV/
+Taiwan,TWN,2022,23893396,https://population.un.org/wpp/Download/Standard/CSV/
+Tajikistan,TJK,2022,9952789,https://population.un.org/wpp/Download/Standard/CSV/
+Tanzania,TZA,2022,65497752,https://population.un.org/wpp/Download/Standard/CSV/
+Thailand,THA,2022,71697024,https://population.un.org/wpp/Download/Standard/CSV/
+Timor,TLS,2022,1341298,https://population.un.org/wpp/Download/Standard/CSV/
+Togo,TGO,2022,8848700,https://population.un.org/wpp/Download/Standard/CSV/
+Tokelau,TKL,2022,1893,https://population.un.org/wpp/Download/Standard/CSV/
+Tonga,TON,2022,106867,https://population.un.org/wpp/Download/Standard/CSV/
+Trinidad and Tobago,TTO,2022,1531043,https://population.un.org/wpp/Download/Standard/CSV/
+Tunisia,TUN,2022,12356116,https://population.un.org/wpp/Download/Standard/CSV/
+Turkey,TUR,2022,85341248,https://population.un.org/wpp/Download/Standard/CSV/
+Turkmenistan,TKM,2022,6430777,https://population.un.org/wpp/Download/Standard/CSV/
+Turks and Caicos Islands,TCA,2022,45726,https://population.un.org/wpp/Download/Standard/CSV/
+Tuvalu,TUV,2022,11335,https://population.un.org/wpp/Download/Standard/CSV/
+Uganda,UGA,2022,47249588,https://population.un.org/wpp/Download/Standard/CSV/
+Ukraine,UKR,2022,39701744,https://population.un.org/wpp/Download/Standard/CSV/
+United Arab Emirates,ARE,2022,9441138,https://population.un.org/wpp/Download/Standard/CSV/
+United Kingdom,GBR,2022,67508936,https://population.un.org/wpp/Download/Standard/CSV/
+United States,USA,2022,338289856,https://population.un.org/wpp/Download/Standard/CSV/
+United States Virgin Islands,VIR,2022,99479,https://population.un.org/wpp/Download/Standard/CSV/
+Upper middle income,OWID_UMC,2022,2525921300,https://population.un.org/wpp/Download/Standard/CSV/
+Uruguay,URY,2022,3422796,https://population.un.org/wpp/Download/Standard/CSV/
+Uzbekistan,UZB,2022,34627648,https://population.un.org/wpp/Download/Standard/CSV/
+Vanuatu,VUT,2022,326744,https://population.un.org/wpp/Download/Standard/CSV/
+Vatican,VAT,2022,808,https://population.un.org/wpp/Download/Standard/CSV/
+Venezuela,VEN,2022,28301700,https://population.un.org/wpp/Download/Standard/CSV/
+Vietnam,VNM,2022,98186856,https://population.un.org/wpp/Download/Standard/CSV/
+Wallis and Futuna,WLF,2022,11596,https://population.un.org/wpp/Download/Standard/CSV/
+Western Sahara,ESH,2022,576005,https://population.un.org/wpp/Download/Standard/CSV/
+World,OWID_WRL,2022,7975105024,https://population.un.org/wpp/Download/Standard/CSV/
+World excl. China,OWID_WEC,2022,6549217664,https://population.un.org/wpp/Download/Standard/CSV/
+Yemen,YEM,2022,33696612,https://population.un.org/wpp/Download/Standard/CSV/
+Zambia,ZMB,2022,20017670,https://population.un.org/wpp/Download/Standard/CSV/
+Zimbabwe,ZWE,2022,16320539,https://population.un.org/wpp/Download/Standard/CSV/

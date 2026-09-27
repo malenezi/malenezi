@@ -1,0 +1,201 @@
+﻿feedback_id,lang,raw_text,expected_clean_text,defect_hint
+FB-000001,ar,  لووووسمحت ألطريق المؤدي إلى حي الياسمين يحتاج صيانة عاجلة 😡 <br> 0551234567 1023456789   ,لووووسمحت ألطريق المؤدي إلى حي الياسمين يحتاج صيانة عاجلة 😡   <PHONE> <NATIONAL_ID>,mixed defects
+FB-000002,ar,إنارة الممر لا تعمل عند حي النرجس,إنارة الممر لا تعمل عند حي النرجس,mixed defects
+FB-000003,ar,الحاوية ممتلئة في حي العليا ولم تُفرغ منذ 3 أيام,الحاوية ممتلئة في حي العليا ولم تُفرغ منذ 3 أيام,mixed defects
+FB-000004,en,There is a water leak at Jeddah; reference BYN-2026-000003,There is a water leak at Jeddah; reference BYN-2026-000003,mixed defects
+FB-000005,en,I paid the bill but it still shows as unpaid,I paid the bill but it still shows as unpaid,mixed defects
+FB-000006,ar,تطبيق خدمات المياه يتوقف عند تسجيل الدخول,تطبيق خدمات المياه يتوقف عند تسجيل الدخول,mixed defects
+FB-000007,ar,طلب ترخيص بوابة المرافق متوقف عند المراجعة منذ 7 أيام,طلب ترخيص بوابة المرافق متوقف عند المراجعة منذ 7 أيام,mixed defects
+FB-000008,ar,  ألعاب الأطفال في حديقة حي العليا تحتاج صيانة   ,ألعاب الأطفال في حديقة حي العليا تحتاج صيانة,mixed defects
+FB-000009,en,Damaged asphalt near Jeddah is making driving unsafe,Damaged asphalt near Jeddah is making driving unsafe,mixed defects
+FB-000010,en,The walkway lights are not working at Dammam,The walkway lights are not working at Dammam,mixed defects
+FB-000011,ar,تراكمت النفايات قرب حي العليا وتسبب رائحة قوية,تراكمت النفايات قرب حي العليا وتسبب رائحة قوية,mixed defects
+FB-000012,ar,ضغط المياه منخفض جداً في الرياض,ضغط المياه منخفض جداً في الرياض,mixed defects
+FB-000013,ar,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000012,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000012,mixed defects
+FB-000014,en,An error appears when I upload a document in Maintenance Appointments — very frustrating 😡,An error appears when I upload a document in Maintenance Appointments — very frustrating 😡,mixed defects
+FB-000015,en,  My My Licence licence request has been under review for 15 days   ,My My Licence licence request has been under review for 15 days,mixed defects
+FB-000016,ar,الري متوقف في حديقة حي الياسمين,الري متوقف في حديقة حي الياسمين,mixed defects
+FB-000017,ar,حفرة في الطريق أمام حي الياسمين منذ 17 أيام,حفرة في الطريق أمام حي الياسمين منذ 17 أيام,mixed defects
+FB-000018,ar,الشارع مظلم قرب حي الياسمين ونحتاج إصلاح الإنارة,الشارع مظلم قرب حي الياسمين ونحتاج إصلاح الإنارة,mixed defects
+FB-000019,en,The waste bin at Dammam has not been emptied for 19 days,The waste bin at Dammam has not been emptied for 19 days,mixed defects
+FB-000020,en,THERE IS A WATER LEAK AT DAMMAM; REFERENCE BYN-2026-000019,THERE IS A WATER LEAK AT DAMMAM; REFERENCE BYN-2026-000019,mixed defects
+FB-000021,ar,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,mixed defects
+FB-000022,ar,  لا يصل رمز التحقق إلى هاتفي لخدمة بوابة المرافق   ,لا يصل رمز التحقق إلى هاتفي لخدمة بوابة المرافق,mixed defects
+FB-000023,ar,أحتاج توضيح المستندات المطلوبة لترخيص بلدي,أحتاج توضيح المستندات المطلوبة لترخيص بلدي,mixed defects
+FB-000024,en,Irrigation is not working in Tahlia Street park,Irrigation is not working in Tahlia Street park,mixed defects
+FB-000025,en,There is a pothole near Jeddah for 4 days,There is a pothole near Jeddah for 4 days,mixed defects
+FB-000026,ar,عمود الإنارة معطل في حي الياسمين منذ أسبوعين,عمود الإنارة معطل في حي الياسمين منذ أسبوعين,mixed defects
+FB-000027,ar,الحاوية ممتلئة في الرياض ولم تُفرغ منذ 6 أيام 😡,الحاوية ممتلئة في الرياض ولم تُفرغ منذ 6 أيام 😡,mixed defects
+FB-000028,ar,ضغط المياه منخفض جداً في طريق الملك فهد,ضغط المياه منخفض جداً في طريق الملك فهد,mixed defects
+FB-000029,en,  The fees for Balady are unclear   ,The fees for Balady are unclear,mixed defects
+FB-000030,en,The verification code for Facilities Portal never reaches my phone,The verification code for Facilities Portal never reaches my phone,mixed defects
+FB-000031,ar,أحتاج توضيح المستندات المطلوبة لترخيص خدمات المياه,أحتاج توضيح المستندات المطلوبة لترخيص خدمات المياه,mixed defects
+FB-000032,ar,الممر في حديقة شارع التحلية غير مناسب للكراسي المتحركة <br>,الممر في حديقة شارع التحلية غير مناسب للكراسي المتحركة  ,mixed defects
+FB-000033,ar,الأسفلت متضرر قرب جدة والقيادة أصبحت خطرة,الأسفلت متضرر قرب جدة والقيادة أصبحت خطرة,mixed defects
+FB-000034,en,The walkway lights are not working at Al Yasmin,The walkway lights are not working at Al Yasmin,mixed defects
+FB-000035,en,The waste bin at King Fahd Road has not been emptied for 14 days,The waste bin at King Fahd Road has not been emptied for 14 days,mixed defects
+FB-000036,ar,  يوجد تسرب مياه في الدمام والبلاغ رقم BYN-2026-000035   ,يوجد تسرب مياه في الدمام والبلاغ رقم BYN-2026-000035,mixed defects
+FB-000037,ar,الرسوم في خدمة مواعيد الصيانة غير واضحة,الرسوم في خدمة مواعيد الصيانة غير واضحة,mixed defects
+FB-000038,ar,تطبيق خدمات المياه يتوقف عند تسجيل الدخول 0551234567,تطبيق خدمات المياه يتوقف عند تسجيل الدخول <PHONE>,mixed defects
+FB-000039,en,MY MY LICENCE LICENCE REQUEST HAS BEEN UNDER REVIEW FOR 18 DAYS,MY MY LICENCE LICENCE REQUEST HAS BEEN UNDER REVIEW FOR 18 DAYS,mixed defects
+FB-000040,en,Irrigation is not working in Tahlia Street park — very frustrating 😡,Irrigation is not working in Tahlia Street park — very frustrating 😡,mixed defects
+FB-000041,ar,الأسفلت متضرر قرب حي الياسمين والقيادة أصبحت خطرة,الأسفلت متضرر قرب حي الياسمين والقيادة أصبحت خطرة,mixed defects
+FB-000042,ar,إنارة الممر لا تعمل عند طريق الملك فهد 1023456789,إنارة الممر لا تعمل عند طريق الملك فهد <NATIONAL_ID>,mixed defects
+FB-000043,ar,  الحاوية ممتلئة في حي النرجس ولم تُفرغ منذ 1 أيام   ,الحاوية ممتلئة في حي النرجس ولم تُفرغ منذ 1 أيام,mixed defects
+FB-000044,en,Water pressure is very low in Jeddah,Water pressure is very low in Jeddah,mixed defects
+FB-000045,en,Incorrect fees were charged on invoice BYN-2025-000044,Incorrect fees were charged on invoice BYN-2025-000044,mixed defects
+FB-000046,ar,تطبيق خدمات المياه يتوقف عند تسجيل الدخول,تطبيق خدمات المياه يتوقف عند تسجيل الدخول,mixed defects
+FB-000047,ar,طلب ترخيص بلدي متوقف عند المراجعة منذ 5 أيام,طلب ترخيص بلدي متوقف عند المراجعة منذ 5 أيام,mixed defects
+FB-000048,ar,ألعاب الأطفال في حديقة طريق الملك فهد تحتاج صيانة,ألعاب الأطفال في حديقة طريق الملك فهد تحتاج صيانة,mixed defects
+FB-000049,en,There is a pothole near Al Narjis for 7 days,There is a pothole near Al Narjis for 7 days,mixed defects
+FB-000050,en,  The walkway lights are not working at Al Narjis   ,The walkway lights are not working at Al Narjis,mixed defects
+FB-000051,ar,نحتاج حاوية إضافية في الرياض,نحتاج حاوية إضافية في الرياض,mixed defects
+FB-000052,ar,يوجد تسرب مياه في شارع التحلية والبلاغ رقم BYN-2026-000051,يوجد تسرب مياه في شارع التحلية والبلاغ رقم BYN-2026-000051,mixed defects
+FB-000053,ar,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000052 😡,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000052 😡,mixed defects
+FB-000054,en,The verification code for My Licence never reaches my phone,The verification code for My Licence never reaches my phone,mixed defects
+FB-000055,en,I need clarification on the documents required for Facilities Portal,I need clarification on the documents required for Facilities Portal,mixed defects
+FB-000056,ar,الممر في حديقة حي الياسمين غير مناسب للكراسي المتحركة,الممر في حديقة حي الياسمين غير مناسب للكراسي المتحركة,mixed defects
+FB-000057,ar,  الأسفلت متضرر قرب شارع التحلية والقيادة أصبحت خطرة   ,الأسفلت متضرر قرب شارع التحلية والقيادة أصبحت خطرة,mixed defects
+FB-000058,ar,عمود ألإنارة معطل في حي النرجس منذ أسبوعين,عمود ألإنارة معطل في حي النرجس منذ أسبوعين,mixed defects
+FB-000059,en,We need an additional waste container at Tahlia Street,We need an additional waste container at Tahlia Street,mixed defects
+FB-000060,en,Water pressure is very low in Al Olaya,Water pressure is very low in Al Olaya,mixed defects
+FB-000061,ar,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,mixed defects
+FB-000062,ar,ظهرت رسالة خطأ عند رفع المستند في خدمات المياه,ظهرت رسالة خطأ عند رفع المستند في خدمات المياه,mixed defects
+FB-000063,ar,لم تتغير حالة الطلب رقم BYN-2025-000062 <br>,لم تتغير حالة الطلب رقم BYN-2025-000062  ,mixed defects
+FB-000064,en,  The path at Tahlia Street is not wheelchair accessible   ,The path at Tahlia Street is not wheelchair accessible,mixed defects
+FB-000065,en,There is a pothole near King Fahd Road for 2 days,There is a pothole near King Fahd Road for 2 days,mixed defects
+FB-000066,ar,إنارة الممر لا تعمل عند حي النرجس 😡,إنارة الممر لا تعمل عند حي النرجس 😡,mixed defects
+FB-000067,ar,الحاوية ممتلئة في حي الياسمين ولم تُفرغ منذ 4 أيام,الحاوية ممتلئة في حي الياسمين ولم تُفرغ منذ 4 أيام,mixed defects
+FB-000068,ar,يوجد تسرب مياه في الرياض والبلاغ رقم BYN-2026-000067,يوجد تسرب مياه في الرياض والبلاغ رقم BYN-2026-000067,mixed defects
+FB-000069,en,The fees for My Licence are unclear,The fees for My Licence are unclear,mixed defects
+FB-000070,en,An error appears when I upload a document in Balady,An error appears when I upload a document in Balady,mixed defects
+FB-000071,ar,  لم تتغير حالة الطلب رقم BYN-2025-000070   ,لم تتغير حالة الطلب رقم BYN-2025-000070,mixed defects
+FB-000072,ar,الري متوقف في حديقة حي العليا,الري متوقف في حديقة حي العليا,mixed defects
+FB-000073,ar,حفرة في الطريق أمام الدمام منذ 10 أيام,حفرة في الطريق أمام الدمام منذ 10 أيام,mixed defects
+FB-000074,en,The street is dark near Dammam and the lighting needs repair,The street is dark near Dammam and the lighting needs repair,mixed defects
+FB-000075,en,Waste is piling up near Al Narjis and causing a strong smell 0551234567,Waste is piling up near Al Narjis and causing a strong smell <PHONE>,mixed defects
+FB-000076,ar,يوجد تسرب مياه في حي النرجس والبلاغ رقم BYN-2026-000075,يوجد تسرب مياه في حي النرجس والبلاغ رقم BYN-2026-000075,mixed defects
+FB-000077,ar,تم أحتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000076,تم أحتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000076,mixed defects
+FB-000078,ar,  تطبيق مواعيد الصيانة يتوقف عند تسجيل الدخول   ,تطبيق مواعيد الصيانة يتوقف عند تسجيل الدخول,mixed defects
+FB-000079,en,I need clarification on the documents required for Maintenance Appointments — very frustrating 😡,I need clarification on the documents required for Maintenance Appointments — very frustrating 😡,mixed defects
+FB-000080,en,The path at Tahlia Street is not wheelchair accessible,The path at Tahlia Street is not wheelchair accessible,mixed defects
+FB-000081,ar,الطريق المؤدي إلى حي الياسمين يحتاج صيانة عاجلة,الطريق المؤدي إلى حي الياسمين يحتاج صيانة عاجلة,mixed defects
+FB-000082,ar,عمود الإنارة معطل في حي العليا منذ أسبوعين,عمود الإنارة معطل في حي العليا منذ أسبوعين,mixed defects
+FB-000083,ar,الحاوية ممتلئة في جدة ولم تُفرغ منذ 20 أيام 1023456789,الحاوية ممتلئة في جدة ولم تُفرغ منذ 20 أيام <NATIONAL_ID>,mixed defects
+FB-000084,en,Water pressure is very low in Tahlia Street,Water pressure is very low in Tahlia Street,mixed defects
+FB-000085,en,  Incorrect fees were charged on invoice BYN-2025-000084   ,Incorrect fees were charged on invoice BYN-2025-000084,mixed defects
+FB-000086,ar,تطبيق بوابة المرافق يتوقف عند تسجيل الدخول,تطبيق بوابة المرافق يتوقف عند تسجيل الدخول,mixed defects
+FB-000087,ar,لم تتغير حالة الطلب رقم BYN-2025-000086,لم تتغير حالة الطلب رقم BYN-2025-000086,mixed defects
+FB-000088,ar,لووووسمحت الري متوقف في حديقة طريق الملك فهد,لووووسمحت الري متوقف في حديقة طريق الملك فهد,mixed defects
+FB-000089,en,The road leading to Tahlia Street needs urgent maintenance,The road leading to Tahlia Street needs urgent maintenance,mixed defects
+FB-000090,en,The streetlight at Dammam has been out for two weeks,The streetlight at Dammam has been out for two weeks,mixed defects
+FB-000091,ar,تراكمت النفايات قرب حي العليا وتسبب رائحة قوية,تراكمت النفايات قرب حي العليا وتسبب رائحة قوية,mixed defects
+FB-000092,ar,  انقطاع المياه مستمر في حي العليا منذ الصباح 😡   ,انقطاع المياه مستمر في حي العليا منذ الصباح 😡,mixed defects
+FB-000093,ar,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,mixed defects
+FB-000094,en,An error appears when I upload a document in My Licence <br>,An error appears when I upload a document in My Licence  ,mixed defects
+FB-000095,en,I need clarification on the documents required for Maintenance Appointments,I need clarification on the documents required for Maintenance Appointments,mixed defects
+FB-000096,ar,ألعأب الأطفال في حديقة شارع التحلية تحتاج صيانة,ألعأب الأطفال في حديقة شارع التحلية تحتاج صيانة,mixed defects
+FB-000097,ar,حفرة في الطريق أمام حي النرجس منذ 13 أيام,حفرة في الطريق أمام حي النرجس منذ 13 أيام,mixed defects
+FB-000098,ar,الشارع مظلم قرب شارع التحلية ونحتاج إصلاح الإنارة,الشارع مظلم قرب شارع التحلية ونحتاج إصلاح الإنارة,mixed defects
+FB-000099,en,  Waste is piling up near Al Narjis and causing a strong smell   ,Waste is piling up near Al Narjis and causing a strong smell,mixed defects
+FB-000100,en,Water has been unavailable in Riyadh since this morning,Water has been unavailable in Riyadh since this morning,mixed defects
+FB-000101,ar,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000100,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000100,mixed defects
+FB-000102,ar,لا يصل رمز التحقق إلى هاتفي لخدمة رخصتي,لا يصل رمز التحقق إلى هاتفي لخدمة رخصتي,mixed defects
+FB-000103,ar,لم تتغير حالة الطلب رقم BYN-2025-000102,لم تتغير حالة الطلب رقم BYN-2025-000102,mixed defects
+FB-000104,en,The playground equipment at King Fahd Road needs maintenance,The playground equipment at King Fahd Road needs maintenance,mixed defects
+FB-000105,en,There is a pothole near Tahlia Street for 21 days — very frustrating 😡,There is a pothole near Tahlia Street for 21 days — very frustrating 😡,mixed defects
+FB-000106,ar,  الشارع مظلم قرب شارع التحلية ونحتاج إصلاح الإنارة   ,الشارع مظلم قرب شارع التحلية ونحتاج إصلاح الإنارة,mixed defects
+FB-000107,ar,تراكمت النفايات قرب شارع التحلية وتسبب رائحة قوية,تراكمت النفايات قرب شارع التحلية وتسبب رائحة قوية,mixed defects
+FB-000108,ar,ضغط المياه منخفض جداً في الدمام,ضغط المياه منخفض جداً في الدمام,mixed defects
+FB-000109,en,I paid the bill but it still shows as unpaid,I paid the bill but it still shows as unpaid,mixed defects
+FB-000110,en,The Balady app crashes during sign-in,The Balady app crashes during sign-in,mixed defects
+FB-000111,ar,لم تتغير حالة الطلب رقم BYN-2025-000110,لم تتغير حالة الطلب رقم BYN-2025-000110,mixed defects
+FB-000112,ar,الممر في حديقة طريق الملك فهد غير مناسب للكراسي المتحركة 0551234567,الممر في حديقة طريق الملك فهد غير مناسب للكراسي المتحركة <PHONE>,mixed defects
+FB-000113,ar,  الطريق المؤدي إلى حي العليا يحتاج صيانة عاجلة   ,الطريق المؤدي إلى حي العليا يحتاج صيانة عاجلة,mixed defects
+FB-000114,en,The walkway lights are not working at Al Narjis,The walkway lights are not working at Al Narjis,mixed defects
+FB-000115,en,WASTE IS PILING UP NEAR KING FAHD ROAD AND CAUSING A STRONG SMELL,WASTE IS PILING UP NEAR KING FAHD ROAD AND CAUSING A STRONG SMELL,mixed defects
+FB-000116,ar,ضغط المياه منخفض جداً في حي الياسمين,ضغط المياه منخفض جداً في حي الياسمين,mixed defects
+FB-000117,ar,لووووسمحت دفعت الفاتورة لكن الحالة ما زالت غير مسددة,لووووسمحت دفعت الفاتورة لكن الحالة ما زالت غير مسددة,mixed defects
+FB-000118,ar,تطبيق بلدي يتوقف عند تسجيل الدخول 😡,تطبيق بلدي يتوقف عند تسجيل الدخول 😡,mixed defects
+FB-000119,en,Request BYN-2025-000118 has not changed status,Request BYN-2025-000118 has not changed status,mixed defects
+FB-000120,en,  The path at King Fahd Road is not wheelchair accessible   ,The path at King Fahd Road is not wheelchair accessible,mixed defects
+FB-000121,ar,حفرة في الطريق أمام الرياض منذ 16 أيام,حفرة في الطريق أمام الرياض منذ 16 أيام,mixed defects
+FB-000122,ar,الشارع مظلم قرب حي العليا ونحتاج إصلاح الإنارة,الشارع مظلم قرب حي العليا ونحتاج إصلاح الإنارة,mixed defects
+FB-000123,ar,نحتاج حاوية إضافية في جدة,نحتاج حاوية إضافية في جدة,mixed defects
+FB-000124,en,There is a water leak at Al Olaya; reference BYN-2026-000123 1023456789,There is a water leak at Al Olaya; reference BYN-2026-000123 <NATIONAL_ID>,mixed defects
+FB-000125,en,The fees for My Licence are unclear <br>,The fees for My Licence are unclear  ,mixed defects
+FB-000126,ar,تطبيق خدمات المياه يتوقف عند تسجيل الدخول,تطبيق خدمات المياه يتوقف عند تسجيل الدخول,mixed defects
+FB-000127,ar,  لم تتغير حالة الطلب رقم BYN-2025-000126   ,لم تتغير حالة الطلب رقم BYN-2025-000126,mixed defects
+FB-000128,ar,الري متوقف في حديقة حي النرجس,الري متوقف في حديقة حي النرجس,mixed defects
+FB-000129,en,Damaged asphalt near Riyadh is making driving unsafe,Damaged asphalt near Riyadh is making driving unsafe,mixed defects
+FB-000130,en,The street is dark near Al Yasmin and the lighting needs repair,The street is dark near Al Yasmin and the lighting needs repair,mixed defects
+FB-000131,ar,تراكمت النفايات قرب شارع التحلية وتسبب رائحة قوية 😡,تراكمت النفايات قرب شارع التحلية وتسبب رائحة قوية 😡,mixed defects
+FB-000132,ar,يوجد تسرب مياه في جدة والبلاغ رقم BYN-2026-000131,يوجد تسرب مياه في جدة والبلاغ رقم BYN-2026-000131,mixed defects
+FB-000133,ar,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000132,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000132,mixed defects
+FB-000134,en,  THE MAINTENANCE APPOINTMENTS APP CRASHES DURING SIGN-IN   ,THE MAINTENANCE APPOINTMENTS APP CRASHES DURING SIGN-IN,mixed defects
+FB-000135,en,My Maintenance Appointments licence request has been under review for 9 days,My Maintenance Appointments licence request has been under review for 9 days,mixed defects
+FB-000136,ar,الممر في حديقة جدة غير مناسب للكراسي المتحركة,الممر في حديقة جدة غير مناسب للكراسي المتحركة,mixed defects
+FB-000137,ar,الطريق المؤدي إلى حي الياسمين يحتاج صيانة عاجلة,الطريق المؤدي إلى حي الياسمين يحتاج صيانة عاجلة,mixed defects
+FB-000138,ar,إنارة الممر لا تعمل عند حي العليا,إنارة الممر لا تعمل عند حي العليا,mixed defects
+FB-000139,en,The waste bin at Al Olaya has not been emptied for 13 days,The waste bin at Al Olaya has not been emptied for 13 days,mixed defects
+FB-000140,en,Water pressure is very low in Al Narjis,Water pressure is very low in Al Narjis,mixed defects
+FB-000141,ar,  تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000140   ,تم احتساب رسوم غير صحيحة على الفاتورة رقم BYN-2025-000140,mixed defects
+FB-000142,ar,تطبيق مواعيد الصيانة يتوقف عند تسجيل الدخول,تطبيق مواعيد الصيانة يتوقف عند تسجيل الدخول,mixed defects
+FB-000143,ar,لم تتغير حالة الطلب رقم BYN-2025-000142,لم تتغير حالة الطلب رقم BYN-2025-000142,mixed defects
+FB-000144,en,Irrigation is not working in Riyadh park — very frustrating 😡,Irrigation is not working in Riyadh park — very frustrating 😡,mixed defects
+FB-000145,en,The road leading to Al Olaya needs urgent maintenance,The road leading to Al Olaya needs urgent maintenance,mixed defects
+FB-000146,ar,لووووسمحت عمود الإنارة معطل في طريق الملك فهد منذ أسبوعين,لووووسمحت عمود الإنارة معطل في طريق الملك فهد منذ أسبوعين,mixed defects
+FB-000147,ar,الحاوية ممتلئة في جدة ولم تُفرغ منذ 21 أيام,الحاوية ممتلئة في جدة ولم تُفرغ منذ 21 أيام,mixed defects
+FB-000148,ar,  يوجد تسرب مياه في طريق الملك فهد والبلاغ رقم BYN-2026-000147   ,يوجد تسرب مياه في طريق الملك فهد والبلاغ رقم BYN-2026-000147,mixed defects
+FB-000149,en,Incorrect fees were charged on invoice BYN-2025-000148 0551234567,Incorrect fees were charged on invoice BYN-2025-000148 <PHONE>,mixed defects
+FB-000150,en,The Water Services app crashes during sign-in,The Water Services app crashes during sign-in,mixed defects
+FB-000151,ar,لم تتغير حالة الطلب رقم BYN-2025-000150,لم تتغير حالة الطلب رقم BYN-2025-000150,mixed defects
+FB-000152,ar,ألعاب الأطفال في حديقة شارع التحلية تحتاج صيانة,ألعاب الأطفال في حديقة شارع التحلية تحتاج صيانة,mixed defects
+FB-000153,ar,ألطريق المؤدي إلى طريق الملك فهد يحتاج صيانة عاجلة,ألطريق المؤدي إلى طريق الملك فهد يحتاج صيانة عاجلة,mixed defects
+FB-000154,en,The street is dark near Jeddah and the lighting needs repair,The street is dark near Jeddah and the lighting needs repair,mixed defects
+FB-000155,en,  The waste bin at King Fahd Road has not been emptied for 8 days   ,The waste bin at King Fahd Road has not been emptied for 8 days,mixed defects
+FB-000156,ar,يوجد تسرب مياه في شارع التحلية والبلاغ رقم BYN-2026-000155 <br>,يوجد تسرب مياه في شارع التحلية والبلاغ رقم BYN-2026-000155  ,mixed defects
+FB-000157,ar,الرسوم في خدمة خدمات المياه غير واضحة 😡,الرسوم في خدمة خدمات المياه غير واضحة 😡,mixed defects
+FB-000158,ar,لا يصل رمز التحقق إلى هاتفي لخدمة خدمات المياه,لا يصل رمز التحقق إلى هاتفي لخدمة خدمات المياه,mixed defects
+FB-000159,en,Request BYN-2025-000158 has not changed status,Request BYN-2025-000158 has not changed status,mixed defects
+FB-000160,en,Irrigation is not working in Tahlia Street park,Irrigation is not working in Tahlia Street park,mixed defects
+FB-000161,ar,الطريق المؤدي إلى شارع التحلية يحتاج صيانة عاجلة,الطريق المؤدي إلى شارع التحلية يحتاج صيانة عاجلة,mixed defects
+FB-000162,ar,  إنارة الممر لا تعمل عند شارع التحلية   ,إنارة الممر لا تعمل عند شارع التحلية,mixed defects
+FB-000163,ar,الحاوية ممتلئة في شارع التحلية ولم تُفرغ منذ 16 أيام,الحاوية ممتلئة في شارع التحلية ولم تُفرغ منذ 16 أيام,mixed defects
+FB-000164,en,Water has been unavailable in Al Olaya since this morning,Water has been unavailable in Al Olaya since this morning,mixed defects
+FB-000165,en,The fees for My Licence are unclear 1023456789,The fees for My Licence are unclear <NATIONAL_ID>,mixed defects
+FB-000166,ar,ظهرت رسالة خطأ عند رفع المستند في رخصتي,ظهرت رسالة خطأ عند رفع المستند في رخصتي,mixed defects
+FB-000167,ar,لم تتغير حالة الطلب رقم BYN-2025-000166,لم تتغير حالة الطلب رقم BYN-2025-000166,mixed defects
+FB-000168,ar,ألعاب الأطفال في حديقة حي العليا تحتاج صيانة,ألعاب الأطفال في حديقة حي العليا تحتاج صيانة,mixed defects
+FB-000169,en,  Damaged asphalt near Al Narjis is making driving unsafe   ,Damaged asphalt near Al Narjis is making driving unsafe,mixed defects
+FB-000170,en,The streetlight at King Fahd Road has been out for two weeks — very frustrating 😡,The streetlight at King Fahd Road has been out for two weeks — very frustrating 😡,mixed defects
+FB-000171,ar,الحاوية ممتلئة في حي النرجس ولم تُفرغ منذ 3 أيام,الحاوية ممتلئة في حي النرجس ولم تُفرغ منذ 3 أيام,mixed defects
+FB-000172,ar,ضغط ألمياه منخفض جداً في جدة,ضغط ألمياه منخفض جداً في جدة,mixed defects
+FB-000173,ar,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,mixed defects
+FB-000174,en,The Facilities Portal app crashes during sign-in,The Facilities Portal app crashes during sign-in,mixed defects
+FB-000175,en,Request BYN-2025-000174 has not changed status,Request BYN-2025-000174 has not changed status,mixed defects
+FB-000176,ar,  الممر في حديقة الرياض غير مناسب للكراسي المتحركة   ,الممر في حديقة الرياض غير مناسب للكراسي المتحركة,mixed defects
+FB-000177,ar,حفرة في الطريق أمام شارع التحلية منذ 9 أيام,حفرة في الطريق أمام شارع التحلية منذ 9 أيام,mixed defects
+FB-000178,ar,إنارة الممر لا تعمل عند حي العليا,إنارة الممر لا تعمل عند حي العليا,mixed defects
+FB-000179,en,We need an additional waste container at Riyadh,We need an additional waste container at Riyadh,mixed defects
+FB-000180,en,There is a water leak at Jeddah; reference BYN-2026-000179,There is a water leak at Jeddah; reference BYN-2026-000179,mixed defects
+FB-000181,ar,الرسوم في خدمة بلدي غير واضحة,الرسوم في خدمة بلدي غير واضحة,mixed defects
+FB-000182,ar,تطبيق بوابة المرافق يتوقف عند تسجيل الدخول,تطبيق بوابة المرافق يتوقف عند تسجيل الدخول,mixed defects
+FB-000183,ar,  طلب ترخيص رخصتي متوقف عند المراجعة منذ 15 أيام 😡   ,طلب ترخيص رخصتي متوقف عند المراجعة منذ 15 أيام 😡,mixed defects
+FB-000184,en,Irrigation is not working in Dammam park,Irrigation is not working in Dammam park,mixed defects
+FB-000185,en,The road leading to Al Narjis needs urgent maintenance,The road leading to Al Narjis needs urgent maintenance,mixed defects
+FB-000186,ar,عمود الإنارة معطل في الرياض منذ أسبوعين 0551234567,عمود الإنارة معطل في الرياض منذ أسبوعين <PHONE>,mixed defects
+FB-000187,ar,الحاوية ممتلئة في حي العليا ولم تُفرغ منذ 19 أيام <br>,الحاوية ممتلئة في حي العليا ولم تُفرغ منذ 19 أيام  ,mixed defects
+FB-000188,ar,يوجد تسرب مياه في جدة والبلاغ رقم BYN-2026-000187,يوجد تسرب مياه في جدة والبلاغ رقم BYN-2026-000187,mixed defects
+FB-000189,en,I paid the bill but it still shows as unpaid,I paid the bill but it still shows as unpaid,mixed defects
+FB-000190,en,  The My Licence app crashes during sign-in   ,The My Licence app crashes during sign-in,mixed defects
+FB-000191,ar,طلب ترخيص موأعيد الصيانة متوقف عند المراجعة منذ 2 أيام,طلب ترخيص موأعيد الصيانة متوقف عند المراجعة منذ 2 أيام,mixed defects
+FB-000192,ar,ألعاب الأطفال في حديقة الدمام تحتاج صيانة,ألعاب الأطفال في حديقة الدمام تحتاج صيانة,mixed defects
+FB-000193,ar,الطريق المؤدي إلى حي العليا يحتاج صيانة عاجلة,الطريق المؤدي إلى حي العليا يحتاج صيانة عاجلة,mixed defects
+FB-000194,en,The walkway lights are not working at Dammam,The walkway lights are not working at Dammam,mixed defects
+FB-000195,en,Waste is piling up near Al Yasmin and causing a strong smell,Waste is piling up near Al Yasmin and causing a strong smell,mixed defects
+FB-000196,ar,يوجد تسرب مياه في حي العليا والبلاغ رقم BYN-2026-000195 😡,يوجد تسرب مياه في حي العليا والبلاغ رقم BYN-2026-000195 😡,mixed defects
+FB-000197,ar,  دفعت الفاتورة لكن الحالة ما زالت غير مسددة   ,دفعت الفاتورة لكن الحالة ما زالت غير مسددة,mixed defects
+FB-000198,ar,ظهرت رسالة خطأ عند رفع المستند في رخصتي,ظهرت رسالة خطأ عند رفع المستند في رخصتي,mixed defects
+FB-000199,en,Request BYN-2025-000198 has not changed status,Request BYN-2025-000198 has not changed status,mixed defects
+FB-000200,en,Irrigation is not working in Riyadh park,Irrigation is not working in Riyadh park,mixed defects

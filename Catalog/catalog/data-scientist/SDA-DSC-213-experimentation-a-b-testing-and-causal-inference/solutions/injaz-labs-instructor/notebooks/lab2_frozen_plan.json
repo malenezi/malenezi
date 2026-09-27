@@ -1,0 +1,23 @@
+{
+  "alpha": 0.05,
+  "correction_family": "no correction for the single OEC; Bonferroni across the guardrail family; Benjamini-Hochberg for any segment sweep",
+  "decision": "Ship the guided document uploader to all Injaz users, or keep the current plain uploader?",
+  "experiment_name": "injaz-guided-uploader-2026q2",
+  "frozen_at": "2026-09-07T17:21:00+00:00",
+  "guardrails": [
+    "time-to-complete (session_duration_sec) - must not rise materially",
+    "support-contact rate - must not rise",
+    "upload-error rate (error_flag) - must not rise"
+  ],
+  "mde": 0.02,
+  "oec": "service-completion rate among triggered users",
+  "plan_hash": "b47e305fe7c01612",
+  "planned_n_per_arm": null,
+  "planned_run_days": null,
+  "power": 0.8,
+  "practical_threshold": 0.01,
+  "randomisation_unit": "user (national-ID hash)",
+  "stopping_rule": "fixed horizon; no interim stopping for significance",
+  "trigger_definition": "user reaches the document-upload step at least once",
+  "unit_of_analysis": "user"
+}

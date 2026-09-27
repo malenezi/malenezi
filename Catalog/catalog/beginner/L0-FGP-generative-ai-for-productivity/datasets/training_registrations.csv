@@ -1,0 +1,73 @@
+﻿Registration ID,Employee Name,Department,City,Program,Track,Month,Status,Assessment Score (%),Satisfaction (1-5),Delivery Mode
+REG-1001,Turki Al-Shammari,Digital Transformation,Dammam,Effective Business Communication,Skills,2026-06,Completed,63,5,In-person
+REG-1002,Dana Al-Otaibi,Strategy & Planning,Riyadh,Effective Business Communication,Skills,2026-01,Withdrawn,,,In-person
+REG-1003,Abdullah Al-Subaie,Digital Transformation,Tabuk,Generative AI for Productivity,AI,2026-02,Completed,94,5,Virtual
+REG-1004,Reem Al-Zahrani,Procurement,Riyadh,AI Awareness for Leaders,AI,2026-02,Completed,62,5,In-person
+REG-1005,Noura Al-Mutairi,Procurement,Riyadh,Digital Government Services,Digital,2026-01,Completed,67,4,In-person
+REG-1006,Noura Al-Zahrani,Finance,Riyadh,Advanced Excel for Analysts,Data,2026-06,In Progress,,,In-person
+REG-1007,Khalid Al-Otaibi,Human Resources,Riyadh,Digital Government Services,Digital,2026-03,In Progress,,,In-person
+REG-1008,Noura Al-Zahrani,Legal Affairs,Riyadh,Generative AI for Productivity,AI,2026-06,Registered,,,Virtual
+REG-1009,Turki Al-Otaibi,Corporate Communications,Riyadh,Generative AI for Productivity,AI,2026-02,Completed,84,4,Virtual
+REG-1010,Saad Al-Qahtani,Digital Transformation,Riyadh,Advanced Excel for Analysts,Data,2026-03,Completed,97,4,Virtual
+REG-1011,Saad Al-Shammari,Customer Experience,Tabuk,Digital Government Services,Digital,2026-06,Completed,75,5,Virtual
+REG-1012,Dana Al-Subaie,Legal Affairs,Tabuk,Generative AI for Productivity,AI,2026-05,Completed,70,4,Virtual
+REG-1013,Jawaher Al-Otaibi,Human Resources,Jeddah,Digital Government Services,Digital,2026-02,Completed,70,5,In-person
+REG-1014,Maha Al-Ghamdi,Finance,Tabuk,Generative AI for Productivity,AI,2026-04,Registered,,,In-person
+REG-1015,Turki Al-Subaie,Human Resources,Jeddah,Advanced Excel for Analysts,Data,2026-06,In Progress,,,In-person
+REG-1016,Saad Al-Otaibi,Legal Affairs,Tabuk,Digital Government Services,Digital,2026-02,Registered,,,Virtual
+REG-1017,Turki Al-Subaie,Corporate Communications,Jeddah,Data Literacy Essentials,Data,2026-06,Withdrawn,,,Virtual
+REG-1018,Amal Al-Shammari,Corporate Communications,Abha,Effective Business Communication,Skills,2026-02,In Progress,,,In-person
+REG-1019,Abdullah Al-Otaibi,Procurement,Riyadh,AI Awareness for Leaders,AI,2026-02,Completed,82,4,In-person
+REG-1020,Mohammed Al-Otaibi,Customer Experience,Jeddah,Generative AI for Productivity,AI,2026-05,In Progress,,,In-person
+REG-1021,Jawaher Al-Subaie,Corporate Communications,Riyadh,Generative AI for Productivity,AI,2026-05,Withdrawn,,,In-person
+REG-1022,Khalid Al-Dossari,Strategy & Planning,Abha,Advanced Excel for Analysts,Data,2026-04,Completed,96,5,In-person
+REG-1023,Mohammed Al-Mutairi,Human Resources,Riyadh,Advanced Excel for Analysts,Data,2026-05,Completed,77,4,In-person
+REG-1024,Mohammed Al-Qahtani,Procurement,Jeddah,Data Literacy Essentials,Data,2026-05,Completed,65,4,In-person
+REG-1025,Jawaher Al-Shammari,Corporate Communications,Riyadh,Digital Government Services,Digital,2026-02,Withdrawn,,,Virtual
+REG-1026,Maha Al-Mutairi,Strategy & Planning,Tabuk,Advanced Excel for Analysts,Data,2026-04,Completed,68,3,In-person
+REG-1027,Noura Al-Qahtani,Strategy & Planning,Abha,Data Literacy Essentials,Data,2026-01,Withdrawn,,,In-person
+REG-1028,Fahad Al-Zahrani,Corporate Communications,Riyadh,Generative AI for Productivity,AI,2026-04,Completed,96,4,In-person
+REG-1029,Sara Al-Subaie,Human Resources,Jeddah,Data Literacy Essentials,Data,2026-02,Completed,97,3,In-person
+REG-1030,Nasser Al-Qahtani,Corporate Communications,Tabuk,Advanced Excel for Analysts,Data,2026-01,Completed,92,4,Virtual
+REG-1031,Bandar Al-Dossari,Strategy & Planning,Riyadh,Digital Government Services,Digital,2026-02,Registered,,,In-person
+REG-1032,Dana Al-Qahtani,Procurement,Riyadh,Digital Government Services,Digital,2026-01,Completed,65,5,In-person
+REG-1033,Yousef Al-Harbi,Human Resources,Jeddah,Advanced Excel for Analysts,Data,2026-02,In Progress,,,In-person
+REG-1034,Noura Al-Ghamdi,Digital Transformation,Riyadh,AI Awareness for Leaders,AI,2026-05,Completed,77,4,In-person
+REG-1035,Majed Al-Ghamdi,Procurement,Riyadh,Advanced Excel for Analysts,Data,2026-02,Withdrawn,,,In-person
+REG-1036,Nasser Al-Harbi,Legal Affairs,Riyadh,Effective Business Communication,Skills,2026-03,Completed,77,4,In-person
+REG-1037,Mohammed Al-Subaie,Digital Transformation,Riyadh,Data Literacy Essentials,Data,2026-02,Completed,98,3,Virtual
+REG-1038,Reem Al-Anazi,Legal Affairs,Riyadh,Data Literacy Essentials,Data,2026-06,Completed,85,4,In-person
+REG-1039,Noura Al-Harbi,Legal Affairs,Jeddah,Digital Government Services,Digital,2026-01,Withdrawn,,,In-person
+REG-1040,Amal Al-Shammari,Procurement,Riyadh,AI Awareness for Leaders,AI,2026-06,Completed,79,4,In-person
+REG-1041,Jawaher Al-Dossari,Human Resources,Jeddah,Digital Government Services,Digital,2026-06,In Progress,,,Virtual
+REG-1042,Fahad Al-Dossari,Corporate Communications,Riyadh,Digital Government Services,Digital,2026-05,Completed,62,4,In-person
+REG-1043,Abdullah Al-Otaibi,Finance,Dammam,Advanced Excel for Analysts,Data,2026-05,In Progress,,,In-person
+REG-1044,Dana Al-Harbi,Strategy & Planning,Dammam,Digital Government Services,Digital,2026-01,In Progress,,,Virtual
+REG-1045,Sara Al-Mutairi,Digital Transformation,Riyadh,Digital Government Services,Digital,2026-06,Registered,,,In-person
+REG-1046,Dana Al-Zahrani,Corporate Communications,Riyadh,Digital Government Services,Digital,2026-02,Registered,,,In-person
+REG-1047,Saad Al-Zahrani,Digital Transformation,Riyadh,Advanced Excel for Analysts,Data,2026-02,Completed,73,5,In-person
+REG-1048,Jawaher Al-Shammari,Digital Transformation,Riyadh,Data Literacy Essentials,Data,2026-03,Completed,64,5,Virtual
+REG-1049,Khalid Al-Zahrani,Procurement,Riyadh,Generative AI for Productivity,AI,2026-01,Completed,63,5,Virtual
+REG-1050,Yousef Al-Zahrani,Procurement,Riyadh,Digital Government Services,Digital,2026-01,Withdrawn,,,Virtual
+REG-1051,Turki Al-Qahtani,Finance,Tabuk,Generative AI for Productivity,AI,2026-03,In Progress,,,In-person
+REG-1052,Nasser Al-Ghamdi,Digital Transformation,Riyadh,Digital Government Services,Digital,2026-01,Completed,94,3,In-person
+REG-1053,Dana Al-Shammari,Procurement,Tabuk,Advanced Excel for Analysts,Data,2026-01,Completed,95,5,In-person
+REG-1054,Saad Al-Otaibi,Legal Affairs,Riyadh,Digital Government Services,Digital,2026-06,In Progress,,,Virtual
+REG-1055,Fahad Al-Shammari,Strategy & Planning,Tabuk,Digital Government Services,Digital,2026-06,Completed,80,5,In-person
+REG-1056,Majed Al-Dossari,Strategy & Planning,Riyadh,Generative AI for Productivity,AI,2026-03,In Progress,,,Virtual
+REG-1057,Bandar Al-Anazi,Digital Transformation,Riyadh,Generative AI for Productivity,AI,2026-06,Completed,82,4,In-person
+REG-1058,Amal Al-Mutairi,Finance,Riyadh,Effective Business Communication,Skills,2026-06,Completed,80,5,Virtual
+REG-1059,Khalid Al-Harbi,Human Resources,Riyadh,Generative AI for Productivity,AI,2026-02,Registered,,,Virtual
+REG-1060,Mohammed Al-Anazi,Strategy & Planning,Riyadh,AI Awareness for Leaders,AI,2026-06,Registered,,,In-person
+REG-1061,Fahad Al-Qahtani,Finance,Tabuk,Advanced Excel for Analysts,Data,2026-02,Completed,87,4,In-person
+REG-1062,Bandar Al-Qahtani,Digital Transformation,Jeddah,Effective Business Communication,Skills,2026-04,In Progress,,,In-person
+REG-1063,Yousef Al-Subaie,Procurement,Riyadh,Advanced Excel for Analysts,Data,2026-05,Withdrawn,,,In-person
+REG-1064,Reem Al-Anazi,Customer Experience,Riyadh,AI Awareness for Leaders,AI,2026-02,Completed,97,4,In-person
+REG-1065,Yousef Al-Anazi,Digital Transformation,Riyadh,Digital Government Services,Digital,2026-04,Registered,,,In-person
+REG-1066,Saad Al-Mutairi,Finance,Dammam,Effective Business Communication,Skills,2026-02,Completed,77,4,In-person
+REG-1067,Fahad Al-Shammari,Finance,Tabuk,Advanced Excel for Analysts,Data,2026-04,Withdrawn,,,Virtual
+REG-1068,Khalid Al-Zahrani,Strategy & Planning,Riyadh,AI Awareness for Leaders,AI,2026-05,Completed,88,3,Virtual
+REG-1069,Nasser Al-Zahrani,Digital Transformation,Riyadh,Advanced Excel for Analysts,Data,2026-02,Completed,84,4,Virtual
+REG-1070,Saad Al-Zahrani,Corporate Communications,Riyadh,Advanced Excel for Analysts,Data,2026-02,Completed,63,4,In-person
+REG-1071,Majed Al-Qahtani,Finance,Tabuk,AI Awareness for Leaders,AI,2026-02,Completed,87,5,Virtual
+REG-1072,Saad Al-Shammari,Customer Experience,Abha,Generative AI for Productivity,AI,2026-03,Completed,78,4,Virtual

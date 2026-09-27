@@ -1,0 +1,60 @@
+﻿row_hint,column,issue_type,expected_fix
+3169,region,"Inconsistent region labels (case, spacing, transliteration)",Standardise against dim_regions.region; map aliases before joining
+3290,region,"Inconsistent region labels (case, spacing, transliteration)",Standardise against dim_regions.region; map aliases before joining
+798,region,"Inconsistent region labels (case, spacing, transliteration)",Standardise against dim_regions.region; map aliases before joining
+3066,region,"Inconsistent region labels (case, spacing, transliteration)",Standardise against dim_regions.region; map aliases before joining
+771,region,"Inconsistent region labels (case, spacing, transliteration)",Standardise against dim_regions.region; map aliases before joining
+1456,region,Arabic region names mixed into an English key column,Normalise to a single language key; keep Arabic labels in dim_regions.region_ar
+1345,region,Arabic region names mixed into an English key column,Normalise to a single language key; keep Arabic labels in dim_regions.region_ar
+5559,region,Arabic region names mixed into an English key column,Normalise to a single language key; keep Arabic labels in dim_regions.region_ar
+2102,region,Arabic region names mixed into an English key column,Normalise to a single language key; keep Arabic labels in dim_regions.region_ar
+730,region,Arabic region names mixed into an English key column,Normalise to a single language key; keep Arabic labels in dim_regions.region_ar
+450,month,"Mixed date formats (dd/mm/yyyy, Mon-YYYY, mm-dd-yyyy)",Parse with an explicit format map; coerce to YYYY-MM-01
+2541,month,"Mixed date formats (dd/mm/yyyy, Mon-YYYY, mm-dd-yyyy)",Parse with an explicit format map; coerce to YYYY-MM-01
+263,month,"Mixed date formats (dd/mm/yyyy, Mon-YYYY, mm-dd-yyyy)",Parse with an explicit format map; coerce to YYYY-MM-01
+5025,month,"Mixed date formats (dd/mm/yyyy, Mon-YYYY, mm-dd-yyyy)",Parse with an explicit format map; coerce to YYYY-MM-01
+5069,month,"Mixed date formats (dd/mm/yyyy, Mon-YYYY, mm-dd-yyyy)",Parse with an explicit format map; coerce to YYYY-MM-01
+347,transactions,Thousands separators - numeric column read as text,Strip separators and cast to int
+2450,transactions,Thousands separators - numeric column read as text,Strip separators and cast to int
+3124,transactions,Thousands separators - numeric column read as text,Strip separators and cast to int
+3581,transactions,Thousands separators - numeric column read as text,Strip separators and cast to int
+5535,transactions,Thousands separators - numeric column read as text,Strip separators and cast to int
+2619,digital_adoption_pct,Percent sign appended - numeric column read as text,Strip '%' and cast to float
+5373,digital_adoption_pct,Percent sign appended - numeric column read as text,Strip '%' and cast to float
+3326,digital_adoption_pct,Percent sign appended - numeric column read as text,Strip '%' and cast to float
+4518,digital_adoption_pct,Percent sign appended - numeric column read as text,Strip '%' and cast to float
+97,digital_adoption_pct,Percent sign appended - numeric column read as text,Strip '%' and cast to float
+4328,csat,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+2046,csat,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+3598,csat,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+663,csat,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+599,cost_per_txn_sar,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+2081,cost_per_txn_sar,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+2108,cost_per_txn_sar,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+3599,cost_per_txn_sar,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+1304,unique_users,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+5121,unique_users,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+3595,unique_users,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+2480,unique_users,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+3283,sla_met_pct,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+1972,sla_met_pct,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+2384,sla_met_pct,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+2542,sla_met_pct,"Missing values encoded four different ways ('', 'N/A', 'null', '-')",Convert all placeholders to NaN; decide impute vs drop and document it
+3841,digital_adoption_pct,Adoption above 100% (double-counted digital transactions),Range-check 0-100; quarantine and recompute from channel transactions
+3493,digital_adoption_pct,Adoption above 100% (double-counted digital transactions),Range-check 0-100; quarantine and recompute from channel transactions
+3558,digital_adoption_pct,Adoption above 100% (double-counted digital transactions),Range-check 0-100; quarantine and recompute from channel transactions
+1397,digital_adoption_pct,Adoption above 100% (double-counted digital transactions),Range-check 0-100; quarantine and recompute from channel transactions
+1414,cost_per_txn_sar,Negative unit cost (credit note posted to the wrong sign),Reject negatives; take absolute value only after confirming with finance
+525,cost_per_txn_sar,Negative unit cost (credit note posted to the wrong sign),Reject negatives; take absolute value only after confirming with finance
+3007,cost_per_txn_sar,Negative unit cost (credit note posted to the wrong sign),Reject negatives; take absolute value only after confirming with finance
+4839,cost_per_txn_sar,Negative unit cost (credit note posted to the wrong sign),Reject negatives; take absolute value only after confirming with finance
+4274,avg_completion_min,Sentinel values 0 / 1440 / 9999 instead of nulls,Treat sentinels as missing; do not average them into the mean
+1474,avg_completion_min,Sentinel values 0 / 1440 / 9999 instead of nulls,Treat sentinels as missing; do not average them into the mean
+5043,avg_completion_min,Sentinel values 0 / 1440 / 9999 instead of nulls,Treat sentinels as missing; do not average them into the mean
+4517,avg_completion_min,Sentinel values 0 / 1440 / 9999 instead of nulls,Treat sentinels as missing; do not average them into the mean
+256,channel,"Channel label drift (case, underscores, US/UK spelling, padding)","Trim, casefold and map to dim_channels.channel"
+5216,channel,"Channel label drift (case, underscores, US/UK spelling, padding)","Trim, casefold and map to dim_channels.channel"
+1572,channel,"Channel label drift (case, underscores, US/UK spelling, padding)","Trim, casefold and map to dim_channels.channel"
+574,channel,"Channel label drift (case, underscores, US/UK spelling, padding)","Trim, casefold and map to dim_channels.channel"
+-1,(all),180 exact duplicate rows + 90 re-uploaded near-duplicates,"Deduplicate on the grain key month+region+service_category+channel, keeping the latest extract_ts"
+-1,(all),Row order shuffled; grain key not unique on load,Assert uniqueness on the four grain columns before any aggregation

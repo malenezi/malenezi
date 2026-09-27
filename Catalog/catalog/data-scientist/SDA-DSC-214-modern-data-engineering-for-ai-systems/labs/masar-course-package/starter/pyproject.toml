@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "masar"
+version = "1.0.0"
+description = "Masar (مسار) Lakehouse — starter repository for SDA-DSC-214, Modern Data Engineering for AI Systems"
+readme = "README.md"
+requires-python = "==3.11.*"
+license = { text = "Proprietary — SDAIA Academy course material" }
+authors = [{ name = "SDAIA Academy", email = "academy@sdaia.gov.sa" }]
+keywords = ["lakehouse", "delta", "spark", "dbt", "data-engineering", "masar"]
+
+# Runtime pins live in requirements.txt (CONVENTIONS.md is the source of truth).
+# They are repeated here so `pip install -e .` alone still gives a working stack.
+dependencies = [
+  "pyspark==3.5.*",
+  "delta-spark==3.2.*",
+  "pandas==2.2.*",
+  "pyarrow==15.*",
+  "python-dotenv==1.0.*",
+  "PyYAML==6.0.*",
+]
+
+[project.optional-dependencies]
+elt = ["dbt-core==1.7.*", "dbt-spark[session]==1.7.*"]
+stream = ["kafka-python==2.0.*"]
+serve = ["redis==5.0.*", "scikit-learn==1.4.*"]
+quality = ["great-expectations==0.18.*"]
+dev = ["pytest==8.2.*", "ruff==0.4.*", "black==24.4.*"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["masar*"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --strict-markers"
+markers = [
+  "spark: test requires a working PySpark + Delta installation (deselected by default in CI)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "W"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]

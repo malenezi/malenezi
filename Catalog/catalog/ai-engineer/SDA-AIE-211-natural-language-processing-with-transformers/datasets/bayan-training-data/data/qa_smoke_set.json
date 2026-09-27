@@ -1,0 +1,147 @@
+{
+  "version": "bayan-squad2-1.0",
+  "data": [
+    {
+      "title": "Service 01",
+      "paragraphs": [
+        {
+          "context": "Service 01 requires a verified account. The processing time is 2 business days. The service fee is 50 SAR. Applications are submitted through the Bayan portal.",
+          "qas": [
+            {
+              "id": "QA-0001",
+              "question": "How long does Service 01 take?",
+              "answers": [
+                {
+                  "text": "2 business days",
+                  "answer_start": 63
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0002",
+              "question": "What is the fee for Service 01?",
+              "answers": [
+                {
+                  "text": "50 SAR",
+                  "answer_start": 99
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0003",
+              "question": "Where is the application for Service 01 submitted?",
+              "answers": [
+                {
+                  "text": "Bayan portal",
+                  "answer_start": 146
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0004",
+              "question": "How long does Service 01 take?",
+              "answers": [
+                {
+                  "text": "2 business days",
+                  "answer_start": 63
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0005",
+              "question": "What is the fee for Service 01?",
+              "answers": [
+                {
+                  "text": "50 SAR",
+                  "answer_start": 99
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0006",
+              "question": "Where is the application for Service 01 submitted?",
+              "answers": [
+                {
+                  "text": "Bayan portal",
+                  "answer_start": 146
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0007",
+              "question": "How long does Service 01 take?",
+              "answers": [
+                {
+                  "text": "2 business days",
+                  "answer_start": 63
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0008",
+              "question": "What is the fee for Service 01?",
+              "answers": [
+                {
+                  "text": "50 SAR",
+                  "answer_start": 99
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0009",
+              "question": "Where is the application for Service 01 submitted?",
+              "answers": [
+                {
+                  "text": "Bayan portal",
+                  "answer_start": 146
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0010",
+              "question": "How long does Service 01 take?",
+              "answers": [
+                {
+                  "text": "2 business days",
+                  "answer_start": 63
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0011",
+              "question": "What is the fee for Service 01?",
+              "answers": [
+                {
+                  "text": "50 SAR",
+                  "answer_start": 99
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "id": "QA-0012",
+              "question": "Where is the application for Service 01 submitted?",
+              "answers": [
+                {
+                  "text": "Bayan portal",
+                  "answer_start": 146
+                }
+              ],
+              "is_impossible": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

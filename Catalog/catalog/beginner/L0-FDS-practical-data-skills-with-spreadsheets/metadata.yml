@@ -1,0 +1,108 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: L0-FDS
+course_title: Practical Data Skills with Spreadsheets
+course_title_ar: مهارات البيانات العملية بالجداول الإلكترونية
+aliases:
+- FDS
+domain: foundations
+learning_path: beginner
+level: Beginner
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: 'TODO: Information not available in source material.'
+prerequisites: None stated in source material.
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-12
+next_review: 2026-12-27
+tools: []
+technologies: []
+keywords:
+- Spreadsheets
+description: This training program enables participants to gain practical skills in working with data
+  using spreadsheets, through a simple hands-on approach that requires no programming experience. The
+  program focuses on the fundamentals of organising and entering data correctly, using basic formulas
+  and functions, and cleaning and preparing data, before moving on to sorting, filtering, summarising
+  data with pivot tables, and creating clear charts. Participants apply these skills through progressive
+  practical exercises on realistic data, ending with the preparation of a simple, complete data report,
+  enabling them to handle everyday data tasks in their work efficiently and confidently.
+description_ar: يهدف هذا البرنامج التدريبي إلى تمكين المشاركين من اكتساب مهارات عملية في التعامل مع البيانات
+  باستخدام الجداول الإلكترونية، بأسلوب تطبيقي مبسط لا يتطلب أي خبرة برمجية. يركز البرنامج على أساسيات
+  تنظيم البيانات وإدخالها بشكل صحيح، واستخدام الصيغ والدوال الأساسية، وتنظيف البيانات وتجهيزها، ثم الانتقال
+  إلى الفرز والتصفية وتلخيص البيانات بالجداول المحورية وإنشاء الرسوم البيانية الواضحة. ويطبق المشاركون
+  هذه المهارات عبر تمارين عملية متدرجة على بيانات واقعية تنتهي بإعداد تقرير بيانات بسيط ومتكامل، بما يمكنهم
+  من إنجاز مهام البيانات اليومية في أعمالهم بكفاءة وثقة.
+learning_outcomes:
+- Work confidently with the spreadsheet interface and organise data in it correctly.
+- Use basic formulas and functions to perform calculations on data.
+- Clean and prepare data for analysis by detecting and fixing errors and duplicates.
+- Apply sorting and filtering to organise data and extract the required information.
+- Summarise data using pivot tables to draw quick insights.
+- Create clear charts that present data in an understandable and engaging way.
+- Prepare a simple practical data report that brings together the acquired skills on realistic data.
+topics:
+- Spreadsheet Fundamentals
+- Entering and Organising Data
+- Basic Formulas and Functions
+- Cleaning and Preparing Data
+- Sorting and Filtering
+- Pivot Tables
+- Charts
+- 'Hands-On Application: Preparing a Data Report'
+topic_details:
+  Spreadsheet Fundamentals:
+  - Get to know the spreadsheet interface and its components, including cells, rows, columns, and worksheets.
+  - Practise the basic skills of navigating, selecting, copying, pasting, and formatting.
+  - Understand best practices for saving, organising, and sharing files in the workplace.
+  Entering and Organising Data:
+  - Practise entering different types of data, including numbers, text, and dates, correctly.
+  - Organise data into well-structured tables that can be analysed and filtered.
+  - Apply data-validation rules to reduce errors during data entry.
+  Basic Formulas and Functions:
+  - Understand how to write formulas and use cell references.
+  - Practise common functions such as sum, average, count, minimum, and maximum.
+  - Apply basic conditional and lookup functions to realistic work tasks.
+  Cleaning and Preparing Data:
+  - Detect common data errors such as duplicates, missing values, and inconsistencies.
+  - Practise text-handling tools, standardising formats, and removing duplicates.
+  - Prepare data in a clean form that is ready for analysis and reporting.
+  Sorting and Filtering:
+  - Apply simple and multi-level sorting to arrange data as needed.
+  - Use filtering to quickly extract specific categories of data.
+  - Complete practical exercises answering work questions using sorting and filtering.
+  Pivot Tables:
+  - Understand the concept of a pivot table and its role in summarising large amounts of data.
+  - Practise creating pivot tables and changing how summaries are displayed.
+  - Draw quick insights from data by grouping and analysing it with pivot tables.
+  Charts:
+  - Learn the common chart types and when to use each one.
+  - Practise creating and formatting charts to present data clearly.
+  - Improve charts with titles, colours, and labels suited to the audience.
+  'Hands-On Application: Preparing a Data Report':
+  - Apply the acquired skills to a realistic dataset from cleaning through to summarising.
+  - Prepare a simple report that brings tables, summaries, and charts together in one view.
+  - Present and discuss the results and receive feedback to improve the quality of the report.
+assessment: Qualification form + pre-/post-test (AthkaX platform workbook)
+next_modules: 'TODO: Information not available in source material.'
+stackability: 'TODO: Information not available in source material.'
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: Program Files (AthkaX)/Beginner-Level/L0-FDS - Practical Data Skills with Spreadsheets.xlsx
+  drive_folder: none
+  platform_workbook: Program Files (AthkaX)/Beginner-Level/L0-FDS - Practical Data Skills with Spreadsheets.xlsx
+known_issues:
+- '[Needs Review] L0-FDS - Practical Data Skills with Spreadsheets.xlsx: Qualification form + pre/post-test
+  (7 MCQs each). Questions were generated from the workbook description because no instructor package
+  exists — review first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

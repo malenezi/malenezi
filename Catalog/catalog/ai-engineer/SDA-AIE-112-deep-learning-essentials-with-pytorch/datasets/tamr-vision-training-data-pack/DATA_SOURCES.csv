@@ -1,0 +1,7 @@
+﻿asset,source,purpose
+digits_500.npz,Deterministic synthetic digit glyph generator included in this package; seed 112,Lab 1 micro-network
+conveyor_vibration.npz,Synthetic generator included in this package; seed 112,Module 3 GRU mini-lab
+curve_atlas.csv,Synthetic pedagogical curves derived from the instructor package's four regimes,Module 4 diagnosis drills
+sweep_results_sample.csv,Synthetic sample; not real model performance,Module 6 tracking analysis
+Tamr-9 images,NOT ATTACHED; course-owned/licensed corpus required,Labs 3–6 and capstone
+Fashion-MNIST,Downloaded at runtime by torchvision,Lab 2 engine validation

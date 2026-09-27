@@ -1,0 +1,187 @@
+{
+  "generator": "generate_masar.py",
+  "generator_version": "1.0.0",
+  "course": "SDA-DSC-214",
+  "dataset": "Masar (مسار) synthetic mobility lakehouse — raw zone",
+  "synthetic": true,
+  "personal_data": "none — all identifiers are synthetic or hashed",
+  "seed": 20260601,
+  "generated_at_utc": "2026-09-10T09:25:52Z",
+  "args": {
+    "start": "2026-06-01",
+    "days": 5,
+    "scale": 0.15,
+    "out": "../raw",
+    "gzip_gps": true,
+    "defects": true,
+    "null_geohash_rate": 0.031,
+    "mixed_ts_rate": 0.02,
+    "gps_dup_rate": 0.004,
+    "gps_ooo_rate": 0.01,
+    "negative_duration_per_day": 12,
+    "hire_date_formats": true
+  },
+  "timezone": {
+    "business": "Asia/Riyadh (UTC+3)",
+    "stored": "UTC"
+  },
+  "currency": "SAR",
+  "documented_defect_rates": {
+    "trips.dropoff_geohash_null_rate_of_completed": 0.031,
+    "trips.mixed_timestamp_format_rate": 0.02,
+    "trips.negative_duration_rows_per_day_at_scale_1": 12,
+    "gps.duplicate_event_id_rate": 0.004,
+    "gps.out_of_order_ts_rate": 0.01,
+    "drivers.hire_date_formats": 3
+  },
+  "observed_defect_counts": {
+    "defect_gps_duplicate_event_id": 3475,
+    "defect_gps_out_of_order": 8692,
+    "defect_mixed_timestamp_rows": 729,
+    "defect_negative_duration": 15,
+    "defect_null_geohash_injected": 1036,
+    "drivers_hire_date_DD/MM/YYYY": 835,
+    "drivers_hire_date_Mon DD, YYYY": 478,
+    "drivers_hire_date_YYYY-MM-DD": 2137,
+    "status_cancelled_driver": 702,
+    "status_cancelled_rider": 1502,
+    "status_completed": 33629,
+    "status_no_show": 317,
+    "trips_non_completed": 2521
+  },
+  "files": [
+    {
+      "path": "zones.csv",
+      "kind": "dimension",
+      "rows": 48,
+      "bytes": 3242,
+      "sha256": "dd6c78486055c6208643c5f7be9a239fdc777530e710ff6709e7498aeb87d3a9"
+    },
+    {
+      "path": "drivers.csv",
+      "kind": "dimension",
+      "rows": 3450,
+      "bytes": 415523,
+      "sha256": "72550db077d7d3d967201c53766399885269f61f34767e2f02a6f6f1316a47fc"
+    },
+    {
+      "path": "vehicles.csv",
+      "kind": "dimension",
+      "rows": 3864,
+      "bytes": 293060,
+      "sha256": "c22df3e5406f4909f0b3d93b65e37aa968e7dd8047fbe148e6b11dd27b15cf78"
+    },
+    {
+      "path": "weather_hourly.csv",
+      "kind": "reference",
+      "rows": 360,
+      "bytes": 14512,
+      "sha256": "ee9311960c62b167b388399cb46ecb3ab878073cccf219a186e665150eb63abd"
+    },
+    {
+      "path": "trips_2026-06-01.csv",
+      "kind": "fact_trips",
+      "rows": 7230,
+      "bytes": 1144592,
+      "sha256": "26503d3e46e42485f515434f06b2f6a35997e31d9b71f70efa54f6124964f0ec"
+    },
+    {
+      "path": "gps/gps_2026-06-01.ndjson.gz",
+      "kind": "fact_gps",
+      "rows": 173500,
+      "bytes": 5351606,
+      "sha256": "ac97e8877eb763b67885f3f0de89372ce351219b266f6f8eb2ac2544d1ef08ac"
+    },
+    {
+      "path": "payments_2026-06-01.csv",
+      "kind": "fact_payments",
+      "rows": 6934,
+      "bytes": 586576,
+      "sha256": "e1c499a43ab890ee714ea068c80fffafc6641eaf770c4af844bf024967eff0cb"
+    },
+    {
+      "path": "trips_2026-06-02.csv",
+      "kind": "fact_trips",
+      "rows": 7230,
+      "bytes": 1145004,
+      "sha256": "49da5f8fbdf70b823dab91507bdeb38a76326af2e0c8efd6d8d8319e1afe9726"
+    },
+    {
+      "path": "gps/gps_2026-06-02.ndjson.gz",
+      "kind": "fact_gps",
+      "rows": 174951,
+      "bytes": 5395001,
+      "sha256": "da34ed1019f7d04f803df130b8732f81b0e21db76556c59fe5e2fa73e5941554"
+    },
+    {
+      "path": "payments_2026-06-02.csv",
+      "kind": "fact_payments",
+      "rows": 6969,
+      "bytes": 589526,
+      "sha256": "62c8aa949186ce3bf06010be8c5f2910440826c7b087bc17993147f82dbb79a5"
+    },
+    {
+      "path": "trips_2026-06-03.csv",
+      "kind": "fact_trips",
+      "rows": 7230,
+      "bytes": 1145457,
+      "sha256": "2126da62906bc4c807b245d48dd9d99a2d43a69b29729f8107c2f8c782485be7"
+    },
+    {
+      "path": "gps/gps_2026-06-03.ndjson.gz",
+      "kind": "fact_gps",
+      "rows": 175022,
+      "bytes": 5397695,
+      "sha256": "e7a5f685a5596259d5fa33eb2e37e6b2c34fdf0bff13f167a350142c78976caf"
+    },
+    {
+      "path": "payments_2026-06-03.csv",
+      "kind": "fact_payments",
+      "rows": 6969,
+      "bytes": 589229,
+      "sha256": "29118cb5bdae167e1eab412dadc659af0c50b2ba96517d6fd16e3cda91a5c0e8"
+    },
+    {
+      "path": "trips_2026-06-04.csv",
+      "kind": "fact_trips",
+      "rows": 7230,
+      "bytes": 1146267,
+      "sha256": "5f1b1899847473ad511fe0ae16dbc0a07d4eb5855944da2eaef1d12a4cba8d30"
+    },
+    {
+      "path": "gps/gps_2026-06-04.ndjson.gz",
+      "kind": "fact_gps",
+      "rows": 175356,
+      "bytes": 5408266,
+      "sha256": "d835ff19da0b5955cd71e0fbaf95f5f1dde1e7ad25b38ba1a0b93fa69120434c"
+    },
+    {
+      "path": "payments_2026-06-04.csv",
+      "kind": "fact_payments",
+      "rows": 6980,
+      "bytes": 590494,
+      "sha256": "a4aa64f5452d148367675ce039d61eaa8e2a10a8bcc22865a8713b6273cd1000"
+    },
+    {
+      "path": "trips_2026-06-05.csv",
+      "kind": "fact_trips",
+      "rows": 7230,
+      "bytes": 1144775,
+      "sha256": "58c7d9fb78fc6a52d7df9aae0ef606a40183c1e40c7183cdbe9855113aceb180"
+    },
+    {
+      "path": "gps/gps_2026-06-05.ndjson.gz",
+      "kind": "fact_gps",
+      "rows": 174934,
+      "bytes": 5392393,
+      "sha256": "ffbcdeab5c3058f1e30d3bf960d84dcb4ecf90f7b75e722b087a16c4f9ae0685"
+    },
+    {
+      "path": "payments_2026-06-05.csv",
+      "kind": "fact_payments",
+      "rows": 6951,
+      "bytes": 588128,
+      "sha256": "94822359ab0f76f872d6a3d886cb01e2330728ca9afa3168176f5e555eb4e493"
+    }
+  ]
+}

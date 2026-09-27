@@ -1,0 +1,72 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-215
+course_title: Fine-Tuning and Adapting Foundation Models
+course_title_ar: الضبط الدقيق وتكييف النماذج الأساسية
+aliases: []
+domain: generative-ai
+learning_path: ai-engineer
+level: Specialist
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: GenAI engineers customising models for domain tasks
+prerequisites: SDA-AIE-112; SDA-AIE-213 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-08
+next_review: 2026-12-27
+tools:
+- Hugging Face PEFT/TRL
+- bitsandbytes
+- Axolotl
+- lm-eval-harness
+technologies: []
+keywords:
+- RAG
+- LLM
+- Fine-Tuning
+- Statistics
+- Optimization
+description: A specialist module on customising foundation models efficiently. Participants prepare instruction
+  datasets, apply parameter-efficient fine-tuning (LoRA/QLoRA), align models with preference optimisation,
+  and quantise them for deployment. The module gives engineers a decision framework for when to prompt,
+  retrieve, or fine-tune.
+description_ar: وحدة تخصصية في تخصيص النماذج الأساسية بكفاءة. يجهّز المشاركون بيانات التعليمات ويطبقون
+  الضبط الدقيق الموفر للمعاملات (LoRA/QLoRA) ومواءمة النماذج بتحسين التفضيلات وتكميمها للنشر، وتمنح الوحدة
+  المهندسين إطار قرار للاختيار بين الأوامر أو الاسترجاع أو الضبط الدقيق.
+learning_outcomes:
+- Compare prompting, RAG, and fine-tuning strategies for a given requirement
+- Design high-quality instruction and preference datasets
+- Implement parameter-efficient fine-tuning using LoRA and QLoRA
+- Apply quantisation techniques to reduce model footprint
+- Evaluate fine-tuned models against baselines with rigorous benchmarks
+- Validate adapted models for regression, safety, and domain fitness
+topics:
+- 'Adaptation strategy: prompt vs RAG vs fine-tune'
+- Instruction dataset design and curation
+- 'PEFT methods: LoRA, QLoRA, adapters'
+- Preference alignment (DPO) overview
+- Quantisation and efficient inference
+- Evaluation and regression testing of tuned models
+assessment: Labs; domain fine-tuning project
+next_modules: SDA-AIE-311 / SDA-AIE-312
+stackability: Model-adaptation badge; elective within GenAI Engineering specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Fine-Tuning and Adapting Foundation Models
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-215 - Fine-Tuning and Adapting Foundation
+    Models.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''ضبط وتكييف النماذج الأساسية'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

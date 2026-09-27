@@ -1,0 +1,69 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-390
+course_title: 'Data Science Capstone: From Data to Decision'
+course_title_ar: 'مشروع التخرج: من البيانات إلى القرار'
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Expert
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Candidates completing the Data Scientist Expert certificate
+prerequisites: SDA-DSC-211 + SDA-DSC-213 + SDA-DSC-214 (or equivalent portfolio)
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-12
+next_review: 2026-12-27
+tools:
+- Full track toolchain as selected by teams
+technologies: []
+keywords:
+- Responsible AI
+- Data Engineering
+description: The integrative capstone of the Data Scientist pathway. Teams take an ambiguous organisational
+  question through framing, data engineering, modelling, validation, and a decision-ready recommendation,
+  defended before an expert panel. The project produces a portfolio-grade artefact demonstrating end-to-end
+  professional competence.
+description_ar: المشروع التكاملي الختامي لمسار عالم البيانات. تأخذ الفرق سؤالًا مؤسسيًا غامضًا عبر الصياغة
+  وهندسة البيانات والنمذجة والتحقق وصولًا إلى توصية جاهزة للقرار تُعرض أمام لجنة خبراء، وينتج المشروع
+  عملًا احترافيًا يثبت الكفاءة المهنية المتكاملة.
+learning_outcomes:
+- Frame an ambiguous organisational question as a tractable analytical problem
+- Design and build the data pipeline supporting the analysis
+- Develop and validate models with rigorous, leakage-free methodology
+- Analyze results for robustness, fairness, and practical significance
+- Construct a decision-ready recommendation with quantified uncertainty
+- Defend methodology and findings before a technical panel
+topics:
+- Problem framing and scoping workshop
+- Data acquisition and pipeline build
+- Modelling and validation sprints
+- Robustness, fairness, and sensitivity checks
+- Decision memo and visual narrative
+- Final presentation and panel defence
+assessment: Portfolio project; decision memo; panel defence
+next_modules: —
+stackability: Completes the Data Scientist Expert (Professional) Certificate.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: none
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-390 - Data Science Capstone —
+    From Data to Decision.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''المشروع الختامي لعلم البيانات'''
+- '[Needs Review] SDA-DSC-390 - Data Science Capstone — From Data to Decision.xlsx: Qualification form
+  + pre/post-test (7 MCQs each). Questions were generated from the workbook description because no instructor
+  package exists — review first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

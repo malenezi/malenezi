@@ -1,0 +1,13 @@
+﻿run_id,lr,weight_decay,augmentation_strength,batch_size,val_accuracy,epoch_stopped,status,data_hash,git_commit
+sweep-01,0.000914,0.0001022,0.2,64,0.9168,10,completed,tamr9-demo-hash,demo0001
+sweep-02,0.0018341,0.0005631,0.1,64,0.8716,9,completed,tamr9-demo-hash,demo0002
+sweep-03,0.0002989,7.13e-05,0.1,64,0.9167,13,completed,tamr9-demo-hash,demo0003
+sweep-04,0.0002918,3.33e-05,0.4,64,0.9184,8,completed,tamr9-demo-hash,demo0004
+sweep-05,0.0011001,0.0002837,0.1,64,0.8904,8,completed,tamr9-demo-hash,demo0005
+sweep-06,0.0013794,0.000617,0.4,32,0.8828,14,completed,tamr9-demo-hash,demo0006
+sweep-07,7.34e-05,2.26e-05,0.3,64,0.8849,12,completed,tamr9-demo-hash,demo0007
+sweep-08,0.0001944,7.11e-05,0.4,64,0.904,10,completed,tamr9-demo-hash,demo0008
+sweep-09,9.88e-05,0.0001242,0.2,32,0.881,20,completed,tamr9-demo-hash,demo0009
+sweep-10,0.0011195,0.000408,0.2,64,0.9044,18,completed,tamr9-demo-hash,demo0010
+sweep-11,0.0010166,7.78e-05,0.4,32,0.9065,16,completed,tamr9-demo-hash,demo0011
+sweep-12,0.0001259,1.04e-05,0.1,64,0.882,16,completed,tamr9-demo-hash,demo0012

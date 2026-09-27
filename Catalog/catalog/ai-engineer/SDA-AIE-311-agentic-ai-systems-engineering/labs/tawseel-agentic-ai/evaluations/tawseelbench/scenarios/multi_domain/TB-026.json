@@ -1,0 +1,79 @@
+{
+  "id": "TB-026",
+  "title": "Late delivery, full refund + resend request (Arabic)",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "orders",
+    "logistics",
+    "billing"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain"
+  ],
+  "customer_request": {
+    "text": "توصيل طلبي TW-2026-11713 متأخر يومين. أبغى استرداد كامل المبلغ وطلب بديل يوصل اليوم.",
+    "locale": "ar",
+    "customer_id": "CUST-2082",
+    "order_id": "TW-2026-11713"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility",
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-11713": {
+          "sla_breached": true
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-11713.refunded": true,
+      "orders.TW-2026-11713.refund_amount_sar": 69.97
+    },
+    "requires_human_approval": false
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "get_delivery_events",
+      "issue_refund"
+    ],
+    "must_not_call_tools": [
+      "mark_refunded"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Arabic mirror of TB-025's worked example, different order — the same policy chain must hold regardless of the customer's language."
+}

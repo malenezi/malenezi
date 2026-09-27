@@ -1,0 +1,65 @@
+{
+  "generator": "inject_defects.py",
+  "version": "1.0.0",
+  "seed": 20260601,
+  "raw_source": "../raw",
+  "generated_at_utc": "2026-09-10T09:25:55Z",
+  "fixtures": [
+    {
+      "folder": "corrections",
+      "rows": 5,
+      "path": "../fixtures/corrections/trips_corrections_2026-06-03.csv"
+    },
+    {
+      "folder": "late_trips",
+      "rows": 126,
+      "new_trip_ids": 120,
+      "path": "../fixtures/late_trips/trips_late_2026-06-02.csv"
+    },
+    {
+      "folder": "late_pings",
+      "rows": 520,
+      "within": 284,
+      "beyond": 216,
+      "dupes": 20,
+      "path": "../fixtures/late_pings/gps_late_2026-06-04.ndjson"
+    },
+    {
+      "folder": "dirty_batch",
+      "rows": 7238,
+      "counts": {
+        "null_trip_id": 20,
+        "null_rider_id": 20,
+        "negative_fare": 40,
+        "absurd_fare": 40,
+        "zero_fare_completed": 40,
+        "bad_city_code": 25,
+        "duplicate_trip_id": 8,
+        "dropoff_before_pickup": 15
+      },
+      "path": "../fixtures/dirty_batch/trips_2026-06-05_dirty.csv"
+    },
+    {
+      "folder": "currency_shift",
+      "rows": 7230,
+      "shifted": 2125,
+      "mean_before": 37.4,
+      "mean_after": 3739.86,
+      "path": "../fixtures/currency_shift/trips_2026-06-05_currency_shift.csv"
+    },
+    {
+      "folder": "erasure_request",
+      "riders": 7,
+      "rows_to_delete": 29,
+      "path": "../fixtures/erasure_request/pdpl_erasure_2026-06-10.json"
+    },
+    {
+      "folder": "incident_speed_unit",
+      "rows": 47583,
+      "vehicles": 1004,
+      "mean_kmh_if_kmh": 35.45,
+      "mean_as_shipped_mps": 9.85,
+      "path": "../fixtures/incident_speed_unit/gps_2026-06-05_v250.ndjson.gz"
+    }
+  ]
+}

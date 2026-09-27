@@ -1,0 +1,31 @@
+﻿item_id,module,question,model_answer,learning_outcome,cognitive_level,benchmark_pass_mark
+KC-M1-1,1,"Rank by decoding accuracy for exact values: area, position, angle, length.",Position > length > angle > area.,LO1,Recall,4 of 5
+KC-M1-2,1,Which processing stage finds one red dot among grey instantly?,Pre-attentive processing.,LO1,Recall,4 of 5
+KC-M1-3,1,May a line chart truncate its Y axis? A bar chart?,Line yes (encodes slope/position); bar no (encodes length from zero).,LO2,Apply,4 of 5
+KC-M1-4,1,Why is a 3D bar chart never acceptable in analytics?,Perspective and volume distortion change the apparent value; depth encodes nothing.,LO2,Understand,4 of 5
+KC-M1-5,1,A task needs only 'hot vs cold across a 13x6 matrix'. Is a heatmap legitimate?,Yes - exact decoding is not the task; saturation conveys the pattern.,LO1,Analyse,4 of 5
+KC-M2-1,2,Compare 40 store conversion rates - which chart?,"A sorted dot plot (compact ranking), not a pie or a clustered bar.",LO1,Apply,4 of 5
+KC-M2-2,2,When are clustered bars acceptable?,Two to three series at most; beyond that use small multiples or slope charts.,LO1,Apply,4 of 5
+KC-M2-3,2,Why direct-label instead of using a legend?,It removes the eye's round trip between the legend and the data.,LO2,Understand,4 of 5
+KC-M2-4,2,What does a reference line convert a chart into?,A chart of judgements - above or below target - i.e. decision support.,LO2,Understand,4 of 5
+KC-M2-5,2,Thirteen overlapping regional lines - the fix?,"Small multiples (shared scale, sorted panels) or highlight-one.",LO1,Apply,4 of 5
+KC-M3-1,3,Data is 'variance from target'. Which palette?,"Diverging, centred on the target.",LO2,Apply,4 of 5
+KC-M3-2,3,Why is red/green-only encoding a defect?,It excludes roughly 8% of men (colour vision deficiency) and violates redundancy.,LO2,Understand,4 of 5
+KC-M3-3,3,How do you raise the data-ink ratio?,"Remove non-data ink (junk, gridlines, borders, legend) without touching data ink.",LO2,Apply,4 of 5
+KC-M3-4,3,How many callout annotations should carry the argument?,"One, maybe two - state the point, do not restate the axis.",LO2,Apply,4 of 5
+KC-M3-5,3,"In an Arabic chart, which way does the time axis run?",Right to left (earliest on the right).,LO2,Recall,4 of 5
+KC-M4-1,4,A dashboard shows 20 gauges. Name the core failure and the fix.,No hierarchy or primary question; restructure as an inverted pyramid around one question.,LO3,Analyse,4 of 5
+KC-M4-2,4,"Which interaction pattern for 'click a region, update every view'?",Cross-filter (linked views).,LO3,Recall,4 of 5
+KC-M4-3,4,Why can you not AVERAGE digital_adoption_pct across regions?,It is non-additive; recompute it from the unique_users components.,LO3,Analyse,4 of 5
+KC-M4-4,4,What must a dashboard answer with zero clicks?,"Its primary question, in the default state; interaction only refines the answer.",LO3,Understand,4 of 5
+KC-M4-5,4,What does RLS give a national dashboard?,"Each viewer sees only permitted rows, which makes the dashboard safe to share.",LO3,Understand,4 of 5
+KC-M5-1,5,Exploratory vs explanatory - which is linear and author-controlled?,Explanatory; exploration is open and user-driven.,LO4,Understand,4 of 5
+KC-M5-2,5,Name the three parts of a Big Idea.,"Point of view, what is at stake, and the implied action.",LO4,Recall,4 of 5
+KC-M5-3,5,Which arc best fits recommending an investment to a committee?,Situation-Complication-Resolution (SCR).,LO4,Apply,4 of 5
+KC-M5-4,5,"What does BLUF invert, and why?",Methodology-first to conclusion-first; executives may never reach the last slide.,LO4,Understand,4 of 5
+KC-M5-5,5,The single test for keeping a slide?,"Does it advance the decision? If not, appendix.",LO5,Evaluate,4 of 5
+KC-M6-1,6,When must the ask be stated?,In the first 30 seconds (BLUF) and again at the close.,LO6,Recall,4 of 5
+KC-M6-2,6,"Before asserting a chart's point, what must you do?",Orient the audience to the axes in one sentence.,LO6,Apply,4 of 5
+KC-M6-3,6,A committee member says 'your data is wrong.' First move?,"Separate the number from the recommendation, route to the appendix, and show the recommendation holds.",LO6,Evaluate,4 of 5
+KC-M6-4,6,"After any Q&A answer, where do you return?",The Big Idea - bridge back.,LO6,Apply,4 of 5
+KC-M6-5,6,Why record rehearsals?,Self-review of delivery is the most effective feedback; the round-to-round delta is the learning signal.,LO5,Understand,4 of 5

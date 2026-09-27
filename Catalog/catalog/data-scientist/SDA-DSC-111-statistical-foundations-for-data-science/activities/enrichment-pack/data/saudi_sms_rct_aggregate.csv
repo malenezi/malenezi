@@ -1,0 +1,4 @@
+arm,n,attended,non_attended,non_attendance_rate,source
+sms_reminder,251,185,66,0.263,"Youssef A. East Mediterr Health J. 2014;20(5):317-323"
+no_reminder,251,151,100,0.398,"Youssef A. East Mediterr Health J. 2014;20(5):317-323"
+

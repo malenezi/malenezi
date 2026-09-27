@@ -1,0 +1,109 @@
+{
+  "package": "Bayan Training Data",
+  "module": "SDA-AIE-211",
+  "seed": 21142,
+  "generated_at": "2026-08-26T11:14:58Z",
+  "synthetic": true,
+  "files": [
+    {
+      "path": "data/arabic_normalize_golden.csv",
+      "bytes": 2133,
+      "sha256": "48c14ec97e89a59a2d0836e243ce3e89c279c921fb3e469bd169db8350377101"
+    },
+    {
+      "path": "data/bayan_cases.csv",
+      "bytes": 3828296,
+      "sha256": "13dc7df7eed8f1be3d741495f91a063999e6c5372ca3d987d661222843d77f62"
+    },
+    {
+      "path": "data/bayan_feedback.csv",
+      "bytes": 1982863,
+      "sha256": "6ecc9edc4a30440fe5d04ea45d04346715b97d6f3600faea06980d947fc0ae15"
+    },
+    {
+      "path": "data/bayan_ner.conll",
+      "bytes": 568107,
+      "sha256": "4d0adae95c44d92ea81c08ffdb2763772f3bd6602a4d94485e9fa4acab070784"
+    },
+    {
+      "path": "data/bayan_ner_segmented.conll",
+      "bytes": 576107,
+      "sha256": "eeef78201352e8f0f1a6b20ac9c9453994341f25ec5004377d907b4633378fec"
+    },
+    {
+      "path": "data/bayan_qa.json",
+      "bytes": 200545,
+      "sha256": "d5a51b8213f5c5b2caeec6b2b8e741c64c2597f500ee39a196e4727cbcbee564"
+    },
+    {
+      "path": "data/bayan_queries.jsonl",
+      "bytes": 32482,
+      "sha256": "d4d6b56e6d6d6aa37810e2c809ecf0c796b4f464431989d0030a83b25715989f"
+    },
+    {
+      "path": "data/bayan_raw_sample.csv",
+      "bytes": 34015,
+      "sha256": "95239dff1ddbabbf6efa1d1c5b36046e3c70981640e47c629d767b4b5a493433"
+    },
+    {
+      "path": "data/behavioural_templates.csv",
+      "bytes": 39819,
+      "sha256": "7f8097d6f9191a71ca794ee427fbf363d1781526cc87a80776c5002531b41036"
+    },
+    {
+      "path": "data/bench_mix.npy",
+      "bytes": 768128,
+      "sha256": "6cb4fa52c183a54022b23c79cd8b56134779c94e503fcba41edf00da34ba6865"
+    },
+    {
+      "path": "data/bm25_baseline_results.jsonl",
+      "bytes": 15450,
+      "sha256": "7120a1034c8b4de6975daf6e48db56f5232aaa7e0ca1e9214d7ce8a6430400b2"
+    },
+    {
+      "path": "data/load_test_config.yaml",
+      "bytes": 103,
+      "sha256": "fa2782e5ae7cea10aaf460dd17b1cc42f9cbdab3a24b2680a7347a20320dd6aa"
+    },
+    {
+      "path": "data/pii_test_set.csv",
+      "bytes": 5886,
+      "sha256": "ec71d5b0e6debf6a4c1773f235dc289af4699f4293296d89ceeac15267d255fb"
+    },
+    {
+      "path": "data/qa_smoke_set.json",
+      "bytes": 4371,
+      "sha256": "5a0949939f70dbdada7ca81561e5326870ce9cc570f1833a47d7ff4d6c0d9d3c"
+    },
+    {
+      "path": "data/service_registry.txt",
+      "bytes": 829,
+      "sha256": "616b10da762ae5f32e2f3a6f6982748223ebd6486e69860607790d5aa47d6954"
+    },
+    {
+      "path": "data/validation_predictions.csv",
+      "bytes": 110681,
+      "sha256": "821f3616dccce471116bcfc47a98b4ad315e7d78f8490f54557050589fa98abc"
+    },
+    {
+      "path": "documentation/DATA_DICTIONARY.md",
+      "bytes": 1037,
+      "sha256": "3b8bb6f6d02b5ab29368432c16d8ea5e31b435eb15151c1d7a91b34013ce5769"
+    },
+    {
+      "path": "documentation/ERROR_TAXONOMY.md",
+      "bytes": 269,
+      "sha256": "625b1437770628e153d5400dd13324fbf72d0a83147176bab7a00f22cb8825ee"
+    },
+    {
+      "path": "documentation/LICENSE.txt",
+      "bytes": 97,
+      "sha256": "eb00c6b0ef73d42e0f67859e09c9824d28991d50541bb81c7429e3896a6144f3"
+    },
+    {
+      "path": "documentation/README.md",
+      "bytes": 1031,
+      "sha256": "6678dc330bdeae6ff8e45bf2dff7d1689b502926e03a9e989417379ea998e835"
+    }
+  ]
+}

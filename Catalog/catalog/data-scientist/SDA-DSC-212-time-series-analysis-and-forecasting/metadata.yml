@@ -1,0 +1,72 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-212
+course_title: Time Series Analysis and Forecasting
+course_title_ar: تحليل السلاسل الزمنية والتنبؤ
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Specialist
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Data scientists and analysts working with temporal data
+prerequisites: SDA-DSC-111; SDA-DSC-211 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-02
+next_review: 2026-12-27
+tools:
+- statsmodels
+- Prophet
+- sktime
+- LightGBM
+technologies:
+- 'LightGBM (also: pandas'
+- pmdarima
+- darts)
+keywords:
+- Machine Learning
+- Statistics
+- Time Series
+description: A specialist module on modelling data that evolves over time. Participants decompose series,
+  build statistical and ML-based forecasting models, and evaluate them with time-aware backtesting. Applications
+  include demand planning, workforce projections, and economic indicators relevant to national programmes.
+description_ar: وحدة تخصصية في نمذجة البيانات المتغيرة عبر الزمن. يفكك المشاركون السلاسل ويبنون نماذج
+  تنبؤ إحصائية وقائمة على تعلم الآلة ويقيّمونها باختبار رجعي مراعٍ للزمن، مع تطبيقات تشمل تخطيط الطلب
+  وإسقاطات القوى العاملة والمؤشرات الاقتصادية ذات الصلة بالبرامج الوطنية.
+learning_outcomes:
+- Analyze trend, seasonality, and autocorrelation structure in time series
+- Develop classical forecasting models including ARIMA and exponential smoothing
+- Implement ML and gradient-boosting approaches with engineered temporal features
+- Design backtesting frameworks with proper time-based validation
+- Evaluate forecasts using scale-appropriate accuracy and uncertainty metrics
+- Compare model families to select the right approach per use case
+topics:
+- Time-series structure and decomposition
+- Stationarity and autocorrelation
+- ARIMA and exponential smoothing
+- Feature-based ML forecasting
+- Probabilistic forecasts and intervals
+- Backtesting and forecast evaluation
+- Forecasting case study
+assessment: Forecasting project with backtest report
+next_modules: SDA-DSC-311
+stackability: Forecasting badge; part of Analytics & Experimentation specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Time Series Analysis and Forecasting
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-212 - Time Series Analysis and
+    Forecasting.xlsx
+known_issues: []
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

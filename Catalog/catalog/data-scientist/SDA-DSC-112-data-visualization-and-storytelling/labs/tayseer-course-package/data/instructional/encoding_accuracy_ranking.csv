@@ -1,0 +1,8 @@
+﻿rank,channel_en,channel_ar,decoding_accuracy,relative_accuracy_index,use_for,tayseer_example,warning
+1,Position on a common scale,الموضع على مقياس مشترك,Best,1.0,Precise ranking and comparison,Sorted bar of adoption by region,Never wasted on decoration
+2,Position on non-aligned scales,الموضع على مقاييس غير متطابقة,Very good,0.92,Comparison across small multiples,13-panel regional trend grid,Requires a shared scale
+3,Length,الطول,Good,0.85,Magnitude comparison from a zero baseline,Transactions by channel,Never truncate the axis
+4,Angle / slope,الزاوية / الميل,Moderate,0.63,Rate of change between two points,Slope chart 2021 vs 2026,Routinely misjudged in pie charts
+5,Area,المساحة,Poor,0.42,Rough magnitude only,Treemap of service mix,Perceived at roughly a 0.7 power
+6,Volume,الحجم,Worse,0.28,Almost never appropriate,3D column chart,Perspective changes the apparent value
+7,Colour saturation / intensity,تشبع اللون,Worst for exact values,0.19,Gestalt hot-vs-cold patterns,Region x month heatmap,Never for a ranking task

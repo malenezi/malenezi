@@ -1,0 +1,63 @@
+{
+  "note": "INSTRUCTOR KEY — do not distribute before the lab.",
+  "failure_gallery_reference": {
+    "fg-01": {
+      "class": "F1",
+      "why": "The answer is a cell in an XLSX. A loader that flattens tables with ' '.join(cells) destroys the Grade-11-to-amount adjacency and the fact stops being retrievable at all. Fixed in Module 2."
+    },
+    "fg-02": {
+      "class": "F1",
+      "why": "Image-only Arabic PDF. The naive loader returns an empty string and reports success. Fixed in Module 2 (detect-then-OCR)."
+    },
+    "fg-03": {
+      "class": "F2",
+      "why": "Two facts one clause apart. 500-char blind splitting cuts between them, so each chunk answers half. Fixed by structure-aware chunking."
+    },
+    "fg-04": {
+      "class": "F3",
+      "why": "Arabic query, English document. An English-only embedding model puts them in different regions of the vector space. Fixed in Module 3 (bge-m3 + normalisation on BOTH paths)."
+    },
+    "fg-05": {
+      "class": "F3",
+      "why": "Arabic query against the real SDAIA guideline. Tests Arabic normalisation on a document nobody in the room wrote."
+    },
+    "fg-06": {
+      "class": "F4",
+      "why": "Dense retrieval blurs exact tokens by design: '10/2024' and '11/2024' are near-identical vectors. Only sparse/hybrid fixes this (Module 4)."
+    },
+    "fg-07": {
+      "class": "F4",
+      "why": "Same failure, Arabic-Indic digits. Also tests digit normalisation: '٤٤/٢٠٢٥' and '44/2025' must reach the same postings."
+    },
+    "fg-08": {
+      "class": "F5",
+      "why": "The Data Sharing Policy is semantically adjacent and will crowd the top-k. The reranker's job, and the cleanest live demo of why it earns its latency (Module 4)."
+    },
+    "fg-09": {
+      "class": "F6",
+      "why": "Evidence is spread across several chunks; stuffing 16 chunks buries the middle ones. Fixed by budgeting + edge ordering (Module 5)."
+    },
+    "fg-10": {
+      "class": "F7",
+      "why": "Plausible, adjacent to real policies, and absent from the corpus. The naive baseline answers it fluently and inventively. This is the probe to read aloud."
+    },
+    "fg-11": {
+      "class": "F7",
+      "why": "Arabic twin of fg-10. Refusal must work identically in both languages; systems that refuse in English and confabulate in Arabic are common."
+    },
+    "fg-12": {
+      "class": "F8",
+      "why": "Two editions of the same circular exist in corpus_v2. Without lifecycle metadata and filtering, the superseded one wins on lexical overlap. This is the Day-4 drill in one probe."
+    }
+  },
+  "expected_lab1_distribution": {
+    "F1": 2,
+    "F2": 1,
+    "F3": 2,
+    "F4": 2,
+    "F5": 1,
+    "F6": 1,
+    "F7": 2,
+    "F8": 1
+  }
+}

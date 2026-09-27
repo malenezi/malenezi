@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sdaia-academy/schemas/course-metadata.schema.json",
+  "title": "SDAIA Academy course metadata (metadata.yml)",
+  "description": "Enumerated values (domain, learning_path, level, status, delivery_mode) are additionally checked against taxonomy.yml by scripts/validate_repo.py.",
+  "type": "object",
+  "required": [
+    "schema_version", "course_code", "course_title", "course_title_ar", "domain", "learning_path",
+    "level", "duration", "delivery_mode", "target_audience", "prerequisites", "status", "version",
+    "content_owner", "reviewer", "last_updated", "next_review", "tools", "technologies",
+    "description", "learning_outcomes", "topics", "change_history"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "course_code": {"type": "string", "pattern": "^(SDA-(FND|AIE|DSC)-[1-3][0-9]{2}|L0-[A-Z]{3})$"},
+    "course_title": {"type": "string", "minLength": 3},
+    "course_title_ar": {"type": "string", "minLength": 2},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "domain": {"type": "string"},
+    "learning_path": {"type": "string"},
+    "level": {"type": "string"},
+    "duration": {
+      "type": "object",
+      "required": ["days", "hours"],
+      "additionalProperties": false,
+      "properties": {
+        "days": {"type": ["integer", "null"], "minimum": 1, "maximum": 30},
+        "hours": {"type": ["integer", "null"], "minimum": 1, "maximum": 200}
+      }
+    },
+    "delivery_mode": {"type": "string"},
+    "target_audience": {"type": "string"},
+    "prerequisites": {"type": "string"},
+    "status": {"type": "string"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+    "content_owner": {"type": "string"},
+    "reviewer": {"type": "string"},
+    "last_updated": {"type": "string", "format": "date"},
+    "next_review": {"type": "string", "format": "date"},
+    "tools": {"type": "array", "items": {"type": "string"}},
+    "technologies": {"type": "array", "items": {"type": "string"}},
+    "keywords": {"type": "array", "items": {"type": "string"}},
+    "description": {"type": "string", "minLength": 20},
+    "description_ar": {"type": "string"},
+    "learning_outcomes": {"type": "array", "items": {"type": "string"}},
+    "topics": {"type": "array", "items": {"type": "string"}},
+    "topic_details": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+    "assessment": {"type": "string"},
+    "next_modules": {"type": "string"},
+    "stackability": {"type": "string"},
+    "featured": {"type": "boolean"},
+    "trainer_only_paths": {"type": "array", "items": {"type": "string"}},
+    "sources": {"type": "object", "additionalProperties": {"type": "string"}},
+    "known_issues": {"type": "array", "items": {"type": "string"}},
+    "change_history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["version", "date", "summary", "approver"],
+        "additionalProperties": false,
+        "properties": {
+          "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+          "previous_version": {"type": "string"},
+          "date": {"type": "string", "format": "date"},
+          "summary": {"type": "string", "minLength": 5},
+          "approver": {"type": "string"},
+          "pull_request": {"type": "string"}
+        }
+      }
+    }
+  }
+}

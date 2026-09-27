@@ -1,0 +1,7 @@
+{
+  "transaction_id": "TXN-2026-00043",
+  "amount_sar": -1,
+  "merchant_category": "grocery",
+  "customer_age_days": 120,
+  "distance_from_home_km": 2.1
+}

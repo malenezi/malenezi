@@ -1,0 +1,25 @@
+﻿participant_id,display_name,entity,job_family,years_experience,prerequisite_sda_fnd_104,primary_tool,preferred_delivery_language,pre_assessment_score_pct,cohort,attendance_day1,attendance_day2,attendance_day3
+P01,Trainee 01,Ministry of Health,BI Developer,7,Completed,Python,Arabic,49,SDA-DSC-112-2026-C03,1,1,1
+P02,Trainee 02,Ministry of Municipal Affairs,Data Scientist,8,Completed,Power BI,English,43,SDA-DSC-112-2026-C03,1,1,1
+P03,Trainee 03,Ministry of Education,Product Owner,4,Completed,Excel,Arabic,50,SDA-DSC-112-2026-C03,1,1,1
+P04,Trainee 04,Ministry of Health,BI Developer,3,Completed,Python,Arabic,46,SDA-DSC-112-2026-C03,1,1,1
+P05,Trainee 05,Ministry of Interior,Data Analyst,4,Completed,Tableau,English,38,SDA-DSC-112-2026-C03,1,1,1
+P06,Trainee 06,Ministry of Interior,Product Owner,12,Completed,Power BI,Arabic,51,SDA-DSC-112-2026-C03,1,1,1
+P07,Trainee 07,Ministry of Commerce,Data Scientist,7,Completed,Power BI,English,52,SDA-DSC-112-2026-C03,1,1,1
+P08,Trainee 08,SDAIA,Product Owner,1,Completed,Tableau,Arabic,59,SDA-DSC-112-2026-C03,1,1,1
+P09,Trainee 09,SDAIA,Data Analyst,5,Completed,Excel,Arabic,61,SDA-DSC-112-2026-C03,1,1,1
+P10,Trainee 10,Ministry of Commerce,Data Scientist,1,Completed,Power BI,Arabic,66,SDA-DSC-112-2026-C03,1,1,1
+P11,Trainee 11,SDAIA,Data Analyst,8,Waived,Python,Arabic,56,SDA-DSC-112-2026-C03,1,1,1
+P12,Trainee 12,Ministry of Education,Data Analyst,13,Completed,Python,Arabic,46,SDA-DSC-112-2026-C03,1,1,1
+P13,Trainee 13,Ministry of Health,Data Analyst,5,Completed,Python,English,55,SDA-DSC-112-2026-C03,1,1,1
+P14,Trainee 14,SDAIA,Data Analyst,3,Completed,Python,Arabic,55,SDA-DSC-112-2026-C03,1,1,1
+P15,Trainee 15,Ministry of Municipal Affairs,Product Owner,6,Completed,Python,Arabic,77,SDA-DSC-112-2026-C03,1,1,1
+P16,Trainee 16,SDAIA,Data Scientist,6,Completed,Python,Arabic,42,SDA-DSC-112-2026-C03,1,1,1
+P17,Trainee 17,GASTAT,Data Analyst,2,Completed,Excel,Arabic,62,SDA-DSC-112-2026-C03,1,1,1
+P18,Trainee 18,Ministry of Municipal Affairs,Product Owner,7,Completed,Excel,English,54,SDA-DSC-112-2026-C03,1,1,1
+P19,Trainee 19,Ministry of Municipal Affairs,Data Scientist,1,Completed,Python,Arabic,54,SDA-DSC-112-2026-C03,1,1,1
+P20,Trainee 20,Ministry of Education,BI Developer,5,Completed,Power BI,English,47,SDA-DSC-112-2026-C03,1,1,1
+P21,Trainee 21,Ministry of Transport,Data Analyst,2,Completed,Power BI,English,57,SDA-DSC-112-2026-C03,1,1,1
+P22,Trainee 22,Ministry of Municipal Affairs,BI Developer,11,Completed,Python,Arabic,55,SDA-DSC-112-2026-C03,1,1,1
+P23,Trainee 23,Ministry of Municipal Affairs,Data Analyst,13,Completed,Python,Arabic,81,SDA-DSC-112-2026-C03,1,1,1
+P24,Trainee 24,Ministry of Municipal Affairs,Policy Analyst,9,Waived,Power BI,Arabic,64,SDA-DSC-112-2026-C03,1,1,1

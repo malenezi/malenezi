@@ -1,0 +1,121 @@
+﻿Response_ID,Department,Weekly_AI_Use,Confidence_Before_1_5,Confidence_After_1_5,Primary_Use,Primary_Concern,Plan_30_Days
+ES-001,Operations,0,1,2,Drafting,Accuracy,Needs manager approval
+ES-002,HR,8,4,5,Analysis,Skills,Yes
+ES-003,Finance,5,2,3,Research support,Privacy,Yes
+ES-004,Customer Experience,3,5,5,Drafting,No major concern,Yes
+ES-005,Projects,2,3,4,Analysis,Policy clarity,Needs manager approval
+ES-006,IT,1,1,3,Research support,Accuracy,Yes
+ES-007,Operations,1,4,5,Drafting,Skills,Yes
+ES-008,HR,0,2,4,Analysis,Privacy,Yes
+ES-009,Finance,8,5,5,Research support,No major concern,Needs manager approval
+ES-010,Customer Experience,5,3,5,Drafting,Policy clarity,Yes
+ES-011,Projects,3,1,2,Analysis,Accuracy,Yes
+ES-012,IT,2,4,5,Research support,Skills,Yes
+ES-013,Operations,2,2,3,Drafting,Privacy,Needs manager approval
+ES-014,HR,1,5,5,Analysis,No major concern,Yes
+ES-015,Finance,0,3,4,Research support,Policy clarity,Yes
+ES-016,Customer Experience,8,1,3,Drafting,Accuracy,Yes
+ES-017,Projects,5,4,5,Analysis,Skills,Needs manager approval
+ES-018,IT,3,2,4,Research support,Privacy,Yes
+ES-019,Operations,3,5,5,Drafting,No major concern,Yes
+ES-020,HR,2,3,5,Analysis,Policy clarity,Yes
+ES-021,Finance,1,1,2,Research support,Accuracy,Needs manager approval
+ES-022,Customer Experience,0,4,5,Drafting,Skills,Yes
+ES-023,Projects,8,2,3,Analysis,Privacy,Yes
+ES-024,IT,5,5,5,Research support,No major concern,Yes
+ES-025,Operations,5,3,4,Drafting,Policy clarity,Needs manager approval
+ES-026,HR,3,1,3,Analysis,Accuracy,Yes
+ES-027,Finance,2,4,5,Research support,Skills,Yes
+ES-028,Customer Experience,1,2,4,Drafting,Privacy,Yes
+ES-029,Projects,0,5,5,Analysis,No major concern,Needs manager approval
+ES-030,IT,8,3,5,Research support,Policy clarity,Yes
+ES-031,Operations,8,1,2,Drafting,Accuracy,Yes
+ES-032,HR,5,4,5,Analysis,Skills,Yes
+ES-033,Finance,3,2,3,Research support,Privacy,Needs manager approval
+ES-034,Customer Experience,2,5,5,Drafting,No major concern,Yes
+ES-035,Projects,1,3,4,Analysis,Policy clarity,Yes
+ES-036,IT,0,1,3,Research support,Accuracy,Yes
+ES-037,Operations,0,4,5,Drafting,Skills,Needs manager approval
+ES-038,HR,8,2,4,Analysis,Privacy,Yes
+ES-039,Finance,5,5,5,Research support,No major concern,Yes
+ES-040,Customer Experience,3,3,5,Drafting,Policy clarity,Yes
+ES-041,Projects,2,1,2,Analysis,Accuracy,Needs manager approval
+ES-042,IT,1,4,5,Research support,Skills,Yes
+ES-043,Operations,1,2,3,Drafting,Privacy,Yes
+ES-044,HR,0,5,5,Analysis,No major concern,Yes
+ES-045,Finance,8,3,4,Research support,Policy clarity,Needs manager approval
+ES-046,Customer Experience,5,1,3,Drafting,Accuracy,Yes
+ES-047,Projects,3,4,5,Analysis,Skills,Yes
+ES-048,IT,2,2,4,Research support,Privacy,Yes
+ES-049,Operations,2,5,5,Drafting,No major concern,Needs manager approval
+ES-050,HR,1,3,5,Analysis,Policy clarity,Yes
+ES-051,Finance,0,1,2,Research support,Accuracy,Yes
+ES-052,Customer Experience,8,4,5,Drafting,Skills,Yes
+ES-053,Projects,5,2,3,Analysis,Privacy,Needs manager approval
+ES-054,IT,3,5,5,Research support,No major concern,Yes
+ES-055,Operations,3,3,4,Drafting,Policy clarity,Yes
+ES-056,HR,2,1,3,Analysis,Accuracy,Yes
+ES-057,Finance,1,4,5,Research support,Skills,Needs manager approval
+ES-058,Customer Experience,0,2,4,Drafting,Privacy,Yes
+ES-059,Projects,8,5,5,Analysis,No major concern,Yes
+ES-060,IT,5,3,5,Research support,Policy clarity,Yes
+ES-061,Operations,5,1,2,Drafting,Accuracy,Needs manager approval
+ES-062,HR,3,4,5,Analysis,Skills,Yes
+ES-063,Finance,2,2,3,Research support,Privacy,Yes
+ES-064,Customer Experience,1,5,5,Drafting,No major concern,Yes
+ES-065,Projects,0,3,4,Analysis,Policy clarity,Needs manager approval
+ES-066,IT,8,1,3,Research support,Accuracy,Yes
+ES-067,Operations,8,4,5,Drafting,Skills,Yes
+ES-068,HR,5,2,4,Analysis,Privacy,Yes
+ES-069,Finance,3,5,5,Research support,No major concern,Needs manager approval
+ES-070,Customer Experience,2,3,5,Drafting,Policy clarity,Yes
+ES-071,Projects,1,1,2,Analysis,Accuracy,Yes
+ES-072,IT,0,4,5,Research support,Skills,Yes
+ES-073,Operations,0,2,3,Drafting,Privacy,Needs manager approval
+ES-074,HR,8,5,5,Analysis,No major concern,Yes
+ES-075,Finance,5,3,4,Research support,Policy clarity,Yes
+ES-076,Customer Experience,3,1,3,Drafting,Accuracy,Yes
+ES-077,Projects,2,4,5,Analysis,Skills,Needs manager approval
+ES-078,IT,1,2,4,Research support,Privacy,Yes
+ES-079,Operations,1,5,5,Drafting,No major concern,Yes
+ES-080,HR,0,3,5,Analysis,Policy clarity,Yes
+ES-081,Finance,8,1,2,Research support,Accuracy,Needs manager approval
+ES-082,Customer Experience,5,4,5,Drafting,Skills,Yes
+ES-083,Projects,3,2,3,Analysis,Privacy,Yes
+ES-084,IT,2,5,5,Research support,No major concern,Yes
+ES-085,Operations,2,3,4,Drafting,Policy clarity,Needs manager approval
+ES-086,HR,1,1,3,Analysis,Accuracy,Yes
+ES-087,Finance,0,4,5,Research support,Skills,Yes
+ES-088,Customer Experience,8,2,4,Drafting,Privacy,Yes
+ES-089,Projects,5,5,5,Analysis,No major concern,Needs manager approval
+ES-090,IT,3,3,5,Research support,Policy clarity,Yes
+ES-091,Operations,3,1,2,Drafting,Accuracy,Yes
+ES-092,HR,2,4,5,Analysis,Skills,Yes
+ES-093,Finance,1,2,3,Research support,Privacy,Needs manager approval
+ES-094,Customer Experience,0,5,5,Drafting,No major concern,Yes
+ES-095,Projects,8,3,4,Analysis,Policy clarity,Yes
+ES-096,IT,5,1,3,Research support,Accuracy,Yes
+ES-097,Operations,5,4,5,Drafting,Skills,Needs manager approval
+ES-098,HR,3,2,4,Analysis,Privacy,Yes
+ES-099,Finance,2,5,5,Research support,No major concern,Yes
+ES-100,Customer Experience,1,3,5,Drafting,Policy clarity,Yes
+ES-101,Projects,0,1,2,Analysis,Accuracy,Needs manager approval
+ES-102,IT,8,4,5,Research support,Skills,Yes
+ES-103,Operations,8,2,3,Drafting,Privacy,Yes
+ES-104,HR,5,5,5,Analysis,No major concern,Yes
+ES-105,Finance,3,3,4,Research support,Policy clarity,Needs manager approval
+ES-106,Customer Experience,2,1,3,Drafting,Accuracy,Yes
+ES-107,Projects,1,4,5,Analysis,Skills,Yes
+ES-108,IT,0,2,4,Research support,Privacy,Yes
+ES-109,Operations,0,5,5,Drafting,No major concern,Needs manager approval
+ES-110,HR,8,3,5,Analysis,Policy clarity,Yes
+ES-111,Finance,5,1,2,Research support,Accuracy,Yes
+ES-112,Customer Experience,3,4,5,Drafting,Skills,Yes
+ES-113,Projects,2,2,3,Analysis,Privacy,Needs manager approval
+ES-114,IT,1,5,5,Research support,No major concern,Yes
+ES-115,Operations,1,3,4,Drafting,Policy clarity,Yes
+ES-116,HR,0,1,3,Analysis,Accuracy,Yes
+ES-117,Finance,8,4,5,Research support,Skills,Needs manager approval
+ES-118,Customer Experience,5,2,4,Drafting,Privacy,Yes
+ES-119,Projects,3,5,5,Analysis,No major concern,Yes
+ES-120,IT,2,3,5,Research support,Policy clarity,Yes

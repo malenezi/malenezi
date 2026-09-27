@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_trips
+    description: >
+      Bronze trips, renamed and cast. GRAIN: as landed — duplicates from
+      re-landed batches are still present and are removed in silver_trips.
+    columns:
+      - name: trip_id
+        description: "Business key. Non-null here; uniqueness is a silver guarantee."
+        tests: [not_null]
+      - name: city
+        description: "Conformed city NAME. Codes are mapped exactly once, here."
+      - name: pickup_ts
+        description: "UTC. Source wall-clock is Asia/Riyadh and both formats are parsed."
+      - name: rider_id
+        description: "PDPL: personal data. Never propagated raw beyond silver."
+
+  - name: stg_drivers
+    description: "Bronze drivers, deduplicated to the latest landed row per driver_id."
+    columns:
+      - name: driver_id
+        tests: [not_null, unique]
+      - name: hire_date
+        description: "Parsed from three observed source formats."
+      - name: national_id_hash
+        description: "PDPL: pseudonymised personal data. Never exposed to BI."
+
+  - name: stg_gps
+    description: >
+      Bronze GPS pings, payload flattened and speed normalised to km/h across
+      producer versions. GRAIN: as landed; deduplication happens in silver.
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: speed_kmh
+        description: "ALWAYS km/h. Producer 2.5.0 emits m/s and is converted here."
+      - name: lat
+        description: "PDPL: sensitive location. Never leaves silver."
+      - name: lon
+        description: "PDPL: sensitive location. Never leaves silver."
+
+  - name: stg_vehicles
+    description: "Bronze vehicles, deduplicated to the latest landed row."
+    columns:
+      - name: vehicle_id
+        tests: [not_null, unique]
+
+  - name: stg_zones
+    description: "Bronze zones, deduplicated. Centroids are at zone resolution."
+    columns:
+      - name: zone_id
+        tests: [not_null, unique]

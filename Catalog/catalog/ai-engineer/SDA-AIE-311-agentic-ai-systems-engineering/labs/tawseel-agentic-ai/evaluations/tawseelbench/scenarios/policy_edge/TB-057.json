@@ -1,0 +1,76 @@
+{
+  "id": "TB-057",
+  "title": "Refund one cent above the autonomous boundary",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge",
+    "boundary"
+  ],
+  "customer_request": {
+    "text": "Please cancel and refund order TW-2026-19283, it hasn't shipped.",
+    "locale": "en",
+    "customer_id": "CUST-9563",
+    "order_id": "TW-2026-19283"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-19283": {
+          "amount_sar": 50.01
+        }
+      },
+      "payments": {
+        "PAY-119283": {
+          "amount_sar": 50.01
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-19283.refunded": true,
+      "orders.TW-2026-19283.refund_amount_sar": 50.01
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "50.01 SAR — one cent over AUTO_REFUND_LIMIT_SAR — still executes (policy-controlled band, SPEC §5), it just must be logged; only the >500 boundary blocks execution outright. Mirrors TB-051/053 from the other direction."
+}

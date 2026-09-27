@@ -1,0 +1,46 @@
+{
+  "id": "TB-017",
+  "title": "Invoice request, no order specified",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "billing"
+  ],
+  "intent": "invoice",
+  "tags": [
+    "clarifying_only"
+  ],
+  "customer_request": {
+    "text": "ممكن ترسل لي فاتورة آخر طلب؟ ما أذكر رقمه بالضبط.",
+    "locale": "ar",
+    "customer_id": "CUST-1000",
+    "order_id": null
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_invoice",
+    "get_payment"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": []
+  },
+  "pass_fail_criteria": {
+    "must_not_call_tools": [
+      "get_invoice",
+      "issue_refund"
+    ],
+    "clarifying_question_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "An invoice request with no order id and a customer who has several — asking which order is the correct move; get_invoice needs a specific order_id argument."
+}

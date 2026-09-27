@@ -1,0 +1,66 @@
+# Tayyar — the single committed config. Every reported number regenerates from this.
+seed: 212
+
+data:
+  demand: data/ksa_grid_demand.csv
+  calendar: data/ksa_calendar.csv
+  timezone: Asia/Riyadh
+  freq: h
+  max_impute_hours: 3
+
+transform:
+  decide_on_evidence: true        # level/swing correlation; > 0.4 -> multiplicative
+  forced: null                    # null | none | log
+
+decompose:
+  periods: [24, 168]
+
+stationarity:
+  alpha: 0.05
+  m: 24
+  max_d: 2
+  max_D: 1
+
+features:
+  lags: [1, 2, 3, 24, 25, 48, 168, 169, 336]
+  rolling_windows: [24, 168]
+  fourier:
+    daily: {period: 24, k: 3}
+    weekly: {period: 168, k: 2}
+    annual: {period: 8760, k: 2}
+  use_temperature: true
+  temperature_source: forecast    # forecast | realised  (realised is a LEAK in production)
+
+splits:
+  train_end: "2023-09-30 23:00"
+  calibration_end: "2023-10-31 23:00"
+  # test is everything after calibration_end
+
+models:
+  horizon: 24
+  seasonal_naive: {m: 24}
+  sarimax:  {order: [2, 1, 1], seasonal_order: [1, 1, 1, 7], on: daily_max}
+  ets:      {trend: add, damped: true, seasonal: add, seasonal_periods: 7, on: daily_max}
+  lightgbm: {objective: l1, n_estimators: 400, learning_rate: 0.06, num_leaves: 63,
+             min_child_samples: 30, subsample: 0.9, colsample_bytree: 0.85}
+  quantiles: [0.05, 0.50, 0.95]
+
+intervals:
+  alpha: 0.10                     # a 90% prediction interval
+  method: cqr                     # cqr | split_conformal | analytic
+  report_conditional_by: hour_band
+
+backtest:
+  window: expanding               # expanding | sliding
+  n_origins: 60
+  step: 24
+  horizon: 24
+  initial_train: 8760             # one year of hourly observations
+  refit: true
+
+selection:
+  weights: {accuracy: 0.40, calibration: 0.20, latency: 0.15,
+            explainability: 0.15, maintainability: 0.10}
+  hard_constraints:
+    max_fit_seconds: 120
+    require_explainable: false

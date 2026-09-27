@@ -1,0 +1,75 @@
+# Masar Lakehouse — local event backbone and online feature store.
+#
+#   docker compose up -d          # start Kafka + Redis
+#   docker compose ps             # both must report (healthy)
+#   docker compose down           # stop; add -v to discard volumes
+#
+# Kafka runs in KRaft mode: ONE broker that is also its own controller, so
+# there is no ZooKeeper to start, wait for, or debug. Both images publish
+# linux/arm64 manifests, so this file runs unchanged on Apple Silicon and on
+# Colima (`colima start --arch aarch64`).
+name: masar
+
+services:
+  kafka:
+    # Pinned tag: an unpinned `latest` is how a classroom loses Day 4.
+    image: bitnami/kafka:3.7.0
+    container_name: masar-kafka
+    ports:
+      - "${KAFKA_PORT:-9092}:9092"
+    environment:
+      # ---- KRaft: broker + controller in one process, no ZooKeeper --------
+      KAFKA_ENABLE_KRAFT: "yes"
+      KAFKA_CFG_NODE_ID: "1"
+      KAFKA_CFG_PROCESS_ROLES: "broker,controller"
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_KRAFT_CLUSTER_ID: "masar-lakehouse-kraft-01"
+      # ---- Listeners: INTERNAL for containers, EXTERNAL for your laptop ---
+      KAFKA_CFG_LISTENERS: "INTERNAL://:29092,EXTERNAL://:9092,CONTROLLER://:9093"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "INTERNAL://kafka:29092,EXTERNAL://localhost:${KAFKA_PORT:-9092}"
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "INTERNAL"
+      # ---- Single broker: replication factor MUST be 1 --------------------
+      KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
+      KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR: "1"
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_CFG_NUM_PARTITIONS: "3"
+      # Lab 5 replays a whole day of pings; keep them long enough to re-run.
+      KAFKA_CFG_LOG_RETENTION_HOURS: "168"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      BITNAMI_DEBUG: "false"
+    volumes:
+      - kafka_data:/bitnami/kafka
+    healthcheck:
+      # Asking the broker to list topics proves the listener is actually up —
+      # a TCP port check passes long before the broker can serve metadata.
+      test: ["CMD-SHELL", "kafka-topics.sh --bootstrap-server localhost:9092 --list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: masar-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    # Feature values are a derived copy of gold; an AOF rewrite on every write
+    # buys nothing here, so keep the default snapshot policy and stay fast.
+    command: ["redis-server", "--save", "60", "1", "--loglevel", "warning"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 5s
+    restart: unless-stopped
+
+volumes:
+  kafka_data:
+  redis_data:

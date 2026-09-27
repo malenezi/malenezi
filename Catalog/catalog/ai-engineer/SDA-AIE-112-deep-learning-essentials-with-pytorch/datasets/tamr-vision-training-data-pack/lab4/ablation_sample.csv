@@ -1,0 +1,5 @@
+﻿run_id,change_from_previous,lr,weight_decay,dropout,augmentation,normalization,scheduler,best_val_accuracy,delta_pp,evidence_note
+baseline,none,0.003,0.0,0.0,weak,batchnorm,none,0.741,,overfits after epoch 7
+r02,AdamW + weight decay,0.003,0.0001,0.0,weak,batchnorm,none,0.781,4.0,gap narrows
+r03,stronger augmentation,0.003,0.0001,0.0,medium,batchnorm,none,0.812,3.1,colour jitter kept conservative
+r04,cosine schedule,0.003,0.0001,0.0,medium,batchnorm,cosine,0.829,1.7,actual LR logged per step

@@ -1,0 +1,289 @@
+﻿participant_id,round,criterion,weight,score_0_5,assessor,recorded,round_total_pct,delta_vs_round1_pp,time_used_sec
+P01,1,Opening / BLUF,0.2,2,Peer B,Yes,53,0,500
+P01,1,One message per slide,0.15,4,Peer A,Yes,53,0,431
+P01,1,Chart delivery,0.2,2,Instructor,Yes,53,0,533
+P01,1,Q&A handling,0.2,3,Peer B,Yes,53,0,521
+P01,1,Time discipline,0.15,3,Instructor,Yes,53,0,452
+P01,1,Presence,0.1,2,Peer A,Yes,53,0,483
+P01,2,Opening / BLUF,0.2,4,Instructor,Yes,88,35,424
+P01,2,One message per slide,0.15,5,Peer A,Yes,88,35,410
+P01,2,Chart delivery,0.2,4,Peer A,Yes,88,35,404
+P01,2,Q&A handling,0.2,4,Peer B,Yes,88,35,377
+P01,2,Time discipline,0.15,5,Peer B,Yes,88,35,413
+P01,2,Presence,0.1,5,Instructor,Yes,88,35,411
+P02,1,Opening / BLUF,0.2,3,Peer A,Yes,57,0,531
+P02,1,One message per slide,0.15,2,Peer A,Yes,57,0,470
+P02,1,Chart delivery,0.2,2,Instructor,Yes,57,0,440
+P02,1,Q&A handling,0.2,4,Peer A,Yes,57,0,434
+P02,1,Time discipline,0.15,3,Instructor,Yes,57,0,485
+P02,1,Presence,0.1,3,Peer A,Yes,57,0,534
+P02,2,Opening / BLUF,0.2,5,Peer B,Yes,90,33,388
+P02,2,One message per slide,0.15,3,Instructor,Yes,90,33,411
+P02,2,Chart delivery,0.2,4,Peer B,Yes,90,33,418
+P02,2,Q&A handling,0.2,5,Peer A,Yes,90,33,422
+P02,2,Time discipline,0.15,5,Instructor,Yes,90,33,414
+P02,2,Presence,0.1,5,Peer A,Yes,90,33,417
+P03,1,Opening / BLUF,0.2,2,Peer B,Yes,47,0,538
+P03,1,One message per slide,0.15,2,Peer B,Yes,47,0,534
+P03,1,Chart delivery,0.2,3,Peer B,Yes,47,0,492
+P03,1,Q&A handling,0.2,2,Peer B,Yes,47,0,456
+P03,1,Time discipline,0.15,3,Instructor,Yes,47,0,489
+P03,1,Presence,0.1,2,Instructor,Yes,47,0,471
+P03,2,Opening / BLUF,0.2,4,Instructor,Yes,90,43,405
+P03,2,One message per slide,0.15,3,Instructor,Yes,90,43,407
+P03,2,Chart delivery,0.2,5,Instructor,Yes,90,43,407
+P03,2,Q&A handling,0.2,5,Peer A,Yes,90,43,402
+P03,2,Time discipline,0.15,5,Instructor,Yes,90,43,395
+P03,2,Presence,0.1,5,Peer A,Yes,90,43,422
+P04,1,Opening / BLUF,0.2,2,Peer A,Yes,45,0,504
+P04,1,One message per slide,0.15,2,Instructor,Yes,45,0,451
+P04,1,Chart delivery,0.2,2,Instructor,Yes,45,0,540
+P04,1,Q&A handling,0.2,2,Peer B,Yes,45,0,430
+P04,1,Time discipline,0.15,3,Instructor,Yes,45,0,435
+P04,1,Presence,0.1,3,Peer B,Yes,45,0,474
+P04,2,Opening / BLUF,0.2,4,Instructor,Yes,79,34,370
+P04,2,One message per slide,0.15,4,Peer A,Yes,79,34,408
+P04,2,Chart delivery,0.2,4,Instructor,Yes,79,34,377
+P04,2,Q&A handling,0.2,3,Peer B,Yes,79,34,374
+P04,2,Time discipline,0.15,5,Peer B,Yes,79,34,388
+P04,2,Presence,0.1,4,Peer A,Yes,79,34,404
+P05,1,Opening / BLUF,0.2,3,Peer A,Yes,53,0,471
+P05,1,One message per slide,0.15,2,Peer B,Yes,53,0,539
+P05,1,Chart delivery,0.2,3,Peer B,Yes,53,0,534
+P05,1,Q&A handling,0.2,2,Instructor,Yes,53,0,544
+P05,1,Time discipline,0.15,3,Peer A,Yes,53,0,530
+P05,1,Presence,0.1,3,Peer A,Yes,53,0,487
+P05,2,Opening / BLUF,0.2,5,Peer B,Yes,93,40,383
+P05,2,One message per slide,0.15,4,Peer B,Yes,93,40,412
+P05,2,Chart delivery,0.2,5,Instructor,Yes,93,40,414
+P05,2,Q&A handling,0.2,4,Instructor,Yes,93,40,419
+P05,2,Time discipline,0.15,5,Instructor,Yes,93,40,418
+P05,2,Presence,0.1,5,Instructor,Yes,93,40,376
+P06,1,Opening / BLUF,0.2,2,Peer A,Yes,56,0,444
+P06,1,One message per slide,0.15,4,Instructor,Yes,56,0,553
+P06,1,Chart delivery,0.2,2,Instructor,Yes,56,0,531
+P06,1,Q&A handling,0.2,3,Instructor,Yes,56,0,442
+P06,1,Time discipline,0.15,4,Instructor,Yes,56,0,548
+P06,1,Presence,0.1,2,Instructor,Yes,56,0,529
+P06,2,Opening / BLUF,0.2,3,Instructor,Yes,82,26,400
+P06,2,One message per slide,0.15,5,Peer A,Yes,82,26,418
+P06,2,Chart delivery,0.2,3,Instructor,Yes,82,26,421
+P06,2,Q&A handling,0.2,5,Peer A,Yes,82,26,404
+P06,2,Time discipline,0.15,5,Peer B,Yes,82,26,401
+P06,2,Presence,0.1,4,Peer B,Yes,82,26,399
+P07,1,Opening / BLUF,0.2,2,Peer B,Yes,48,0,442
+P07,1,One message per slide,0.15,3,Peer A,Yes,48,0,439
+P07,1,Chart delivery,0.2,3,Instructor,Yes,48,0,552
+P07,1,Q&A handling,0.2,1,Instructor,Yes,48,0,480
+P07,1,Time discipline,0.15,3,Peer A,Yes,48,0,445
+P07,1,Presence,0.1,3,Peer A,Yes,48,0,503
+P07,2,Opening / BLUF,0.2,5,Peer B,Yes,84,36,379
+P07,2,One message per slide,0.15,5,Peer A,Yes,84,36,373
+P07,2,Chart delivery,0.2,4,Instructor,Yes,84,36,392
+P07,2,Q&A handling,0.2,2,Instructor,Yes,84,36,371
+P07,2,Time discipline,0.15,5,Instructor,Yes,84,36,404
+P07,2,Presence,0.1,5,Peer A,Yes,84,36,421
+P08,1,Opening / BLUF,0.2,4,Peer B,Yes,63,0,433
+P08,1,One message per slide,0.15,3,Instructor,Yes,63,0,437
+P08,1,Chart delivery,0.2,3,Instructor,Yes,63,0,480
+P08,1,Q&A handling,0.2,2,Instructor,Yes,63,0,453
+P08,1,Time discipline,0.15,4,Peer A,Yes,63,0,438
+P08,1,Presence,0.1,3,Instructor,Yes,63,0,461
+P08,2,Opening / BLUF,0.2,5,Instructor,Yes,95,32,401
+P08,2,One message per slide,0.15,4,Peer B,Yes,95,32,375
+P08,2,Chart delivery,0.2,5,Peer A,Yes,95,32,371
+P08,2,Q&A handling,0.2,5,Peer B,Yes,95,32,374
+P08,2,Time discipline,0.15,5,Peer A,Yes,95,32,407
+P08,2,Presence,0.1,4,Instructor,Yes,95,32,380
+P09,1,Opening / BLUF,0.2,2,Peer A,Yes,48,0,472
+P09,1,One message per slide,0.15,4,Peer B,Yes,48,0,541
+P09,1,Chart delivery,0.2,2,Instructor,Yes,48,0,458
+P09,1,Q&A handling,0.2,2,Peer A,Yes,48,0,498
+P09,1,Time discipline,0.15,2,Instructor,Yes,48,0,528
+P09,1,Presence,0.1,3,Instructor,Yes,48,0,547
+P09,2,Opening / BLUF,0.2,5,Instructor,Yes,80,32,396
+P09,2,One message per slide,0.15,5,Instructor,Yes,80,32,409
+P09,2,Chart delivery,0.2,4,Peer A,Yes,80,32,415
+P09,2,Q&A handling,0.2,3,Instructor,Yes,80,32,381
+P09,2,Time discipline,0.15,3,Instructor,Yes,80,32,379
+P09,2,Presence,0.1,4,Instructor,Yes,80,32,417
+P10,1,Opening / BLUF,0.2,4,Instructor,Yes,54,0,470
+P10,1,One message per slide,0.15,1,Peer B,Yes,54,0,559
+P10,1,Chart delivery,0.2,4,Instructor,Yes,54,0,483
+P10,1,Q&A handling,0.2,1,Peer A,Yes,54,0,531
+P10,1,Time discipline,0.15,3,Instructor,Yes,54,0,431
+P10,1,Presence,0.1,3,Peer A,Yes,54,0,507
+P10,2,Opening / BLUF,0.2,5,Instructor,Yes,83,29,393
+P10,2,One message per slide,0.15,4,Peer B,Yes,83,29,406
+P10,2,Chart delivery,0.2,5,Instructor,Yes,83,29,384
+P10,2,Q&A handling,0.2,2,Peer B,Yes,83,29,379
+P10,2,Time discipline,0.15,5,Instructor,Yes,83,29,424
+P10,2,Presence,0.1,4,Peer B,Yes,83,29,385
+P11,1,Opening / BLUF,0.2,3,Peer A,Yes,57,0,449
+P11,1,One message per slide,0.15,4,Peer A,Yes,57,0,443
+P11,1,Chart delivery,0.2,3,Instructor,Yes,57,0,436
+P11,1,Q&A handling,0.2,2,Instructor,Yes,57,0,433
+P11,1,Time discipline,0.15,3,Peer B,Yes,57,0,484
+P11,1,Presence,0.1,2,Peer A,Yes,57,0,554
+P11,2,Opening / BLUF,0.2,4,Instructor,Yes,81,24,385
+P11,2,One message per slide,0.15,5,Peer B,Yes,81,24,377
+P11,2,Chart delivery,0.2,4,Instructor,Yes,81,24,377
+P11,2,Q&A handling,0.2,4,Instructor,Yes,81,24,406
+P11,2,Time discipline,0.15,4,Instructor,Yes,81,24,382
+P11,2,Presence,0.1,3,Instructor,Yes,81,24,408
+P12,1,Opening / BLUF,0.2,1,Instructor,Yes,51,0,510
+P12,1,One message per slide,0.15,3,Instructor,Yes,51,0,535
+P12,1,Chart delivery,0.2,3,Peer A,Yes,51,0,443
+P12,1,Q&A handling,0.2,4,Peer B,Yes,51,0,543
+P12,1,Time discipline,0.15,2,Peer A,Yes,51,0,524
+P12,1,Presence,0.1,2,Peer B,Yes,51,0,549
+P12,2,Opening / BLUF,0.2,2,Instructor,Yes,77,26,398
+P12,2,One message per slide,0.15,5,Instructor,Yes,77,26,419
+P12,2,Chart delivery,0.2,4,Peer B,Yes,77,26,374
+P12,2,Q&A handling,0.2,5,Instructor,Yes,77,26,424
+P12,2,Time discipline,0.15,4,Peer B,Yes,77,26,409
+P12,2,Presence,0.1,3,Instructor,Yes,77,26,395
+P13,1,Opening / BLUF,0.2,3,Instructor,Yes,63,0,516
+P13,1,One message per slide,0.15,4,Peer A,Yes,63,0,448
+P13,1,Chart delivery,0.2,3,Instructor,Yes,63,0,444
+P13,1,Q&A handling,0.2,3,Instructor,Yes,63,0,478
+P13,1,Time discipline,0.15,3,Instructor,Yes,63,0,538
+P13,1,Presence,0.1,3,Peer A,Yes,63,0,462
+P13,2,Opening / BLUF,0.2,4,Instructor,Yes,93,30,388
+P13,2,One message per slide,0.15,5,Peer B,Yes,93,30,401
+P13,2,Chart delivery,0.2,5,Instructor,Yes,93,30,374
+P13,2,Q&A handling,0.2,5,Peer B,Yes,93,30,395
+P13,2,Time discipline,0.15,4,Peer A,Yes,93,30,380
+P13,2,Presence,0.1,5,Peer A,Yes,93,30,413
+P14,1,Opening / BLUF,0.2,3,Instructor,Yes,65,0,504
+P14,1,One message per slide,0.15,4,Instructor,Yes,65,0,463
+P14,1,Chart delivery,0.2,3,Peer B,Yes,65,0,471
+P14,1,Q&A handling,0.2,4,Peer A,Yes,65,0,516
+P14,1,Time discipline,0.15,3,Instructor,Yes,65,0,541
+P14,1,Presence,0.1,2,Peer A,Yes,65,0,509
+P14,2,Opening / BLUF,0.2,5,Peer B,Yes,98,33,399
+P14,2,One message per slide,0.15,5,Instructor,Yes,98,33,422
+P14,2,Chart delivery,0.2,5,Peer B,Yes,98,33,412
+P14,2,Q&A handling,0.2,5,Peer B,Yes,98,33,413
+P14,2,Time discipline,0.15,5,Peer A,Yes,98,33,402
+P14,2,Presence,0.1,4,Peer B,Yes,98,33,375
+P15,1,Opening / BLUF,0.2,2,Instructor,Yes,44,0,438
+P15,1,One message per slide,0.15,1,Instructor,Yes,44,0,524
+P15,1,Chart delivery,0.2,2,Peer A,Yes,44,0,555
+P15,1,Q&A handling,0.2,3,Peer B,Yes,44,0,538
+P15,1,Time discipline,0.15,3,Instructor,Yes,44,0,524
+P15,1,Presence,0.1,2,Peer A,Yes,44,0,444
+P15,2,Opening / BLUF,0.2,5,Peer A,Yes,79,35,422
+P15,2,One message per slide,0.15,2,Instructor,Yes,79,35,402
+P15,2,Chart delivery,0.2,3,Instructor,Yes,79,35,400
+P15,2,Q&A handling,0.2,5,Peer A,Yes,79,35,370
+P15,2,Time discipline,0.15,5,Peer B,Yes,79,35,392
+P15,2,Presence,0.1,3,Instructor,Yes,79,35,396
+P16,1,Opening / BLUF,0.2,3,Instructor,Yes,63,0,526
+P16,1,One message per slide,0.15,3,Peer A,Yes,63,0,458
+P16,1,Chart delivery,0.2,3,Peer B,Yes,63,0,515
+P16,1,Q&A handling,0.2,3,Peer B,Yes,63,0,505
+P16,1,Time discipline,0.15,4,Peer A,Yes,63,0,465
+P16,1,Presence,0.1,3,Peer A,Yes,63,0,459
+P16,2,Opening / BLUF,0.2,5,Peer A,Yes,93,30,389
+P16,2,One message per slide,0.15,4,Instructor,Yes,93,30,416
+P16,2,Chart delivery,0.2,4,Instructor,Yes,93,30,383
+P16,2,Q&A handling,0.2,5,Instructor,Yes,93,30,371
+P16,2,Time discipline,0.15,5,Peer B,Yes,93,30,393
+P16,2,Presence,0.1,5,Peer B,Yes,93,30,392
+P17,1,Opening / BLUF,0.2,3,Instructor,Yes,49,0,459
+P17,1,One message per slide,0.15,3,Peer B,Yes,49,0,448
+P17,1,Chart delivery,0.2,1,Peer B,Yes,49,0,443
+P17,1,Q&A handling,0.2,3,Instructor,Yes,49,0,496
+P17,1,Time discipline,0.15,2,Instructor,Yes,49,0,514
+P17,1,Presence,0.1,3,Peer A,Yes,49,0,517
+P17,2,Opening / BLUF,0.2,5,Instructor,Yes,90,41,417
+P17,2,One message per slide,0.15,5,Instructor,Yes,90,41,397
+P17,2,Chart delivery,0.2,4,Peer B,Yes,90,41,382
+P17,2,Q&A handling,0.2,5,Instructor,Yes,90,41,390
+P17,2,Time discipline,0.15,3,Peer A,Yes,90,41,391
+P17,2,Presence,0.1,5,Instructor,Yes,90,41,400
+P18,1,Opening / BLUF,0.2,3,Instructor,Yes,47,0,477
+P18,1,One message per slide,0.15,1,Instructor,Yes,47,0,452
+P18,1,Chart delivery,0.2,1,Peer B,Yes,47,0,437
+P18,1,Q&A handling,0.2,4,Peer A,Yes,47,0,482
+P18,1,Time discipline,0.15,2,Peer A,Yes,47,0,538
+P18,1,Presence,0.1,3,Peer A,Yes,47,0,443
+P18,2,Opening / BLUF,0.2,5,Instructor,Yes,80,33,403
+P18,2,One message per slide,0.15,3,Peer B,Yes,80,33,415
+P18,2,Chart delivery,0.2,3,Peer B,Yes,80,33,381
+P18,2,Q&A handling,0.2,5,Peer A,Yes,80,33,387
+P18,2,Time discipline,0.15,3,Instructor,Yes,80,33,413
+P18,2,Presence,0.1,5,Instructor,Yes,80,33,403
+P19,1,Opening / BLUF,0.2,2,Peer A,Yes,53,0,454
+P19,1,One message per slide,0.15,3,Instructor,Yes,53,0,493
+P19,1,Chart delivery,0.2,3,Peer B,Yes,53,0,526
+P19,1,Q&A handling,0.2,3,Peer A,Yes,53,0,500
+P19,1,Time discipline,0.15,2,Instructor,Yes,53,0,532
+P19,1,Presence,0.1,3,Instructor,Yes,53,0,445
+P19,2,Opening / BLUF,0.2,3,Peer A,Yes,77,24,395
+P19,2,One message per slide,0.15,4,Instructor,Yes,77,24,382
+P19,2,Chart delivery,0.2,5,Instructor,Yes,77,24,377
+P19,2,Q&A handling,0.2,4,Peer B,Yes,77,24,402
+P19,2,Time discipline,0.15,3,Instructor,Yes,77,24,396
+P19,2,Presence,0.1,4,Peer B,Yes,77,24,383
+P20,1,Opening / BLUF,0.2,3,Instructor,Yes,62,0,517
+P20,1,One message per slide,0.15,3,Instructor,Yes,62,0,546
+P20,1,Chart delivery,0.2,3,Instructor,Yes,62,0,547
+P20,1,Q&A handling,0.2,4,Peer A,Yes,62,0,483
+P20,1,Time discipline,0.15,3,Instructor,Yes,62,0,499
+P20,1,Presence,0.1,2,Instructor,Yes,62,0,511
+P20,2,Opening / BLUF,0.2,5,Peer B,Yes,97,35,412
+P20,2,One message per slide,0.15,5,Peer A,Yes,97,35,398
+P20,2,Chart delivery,0.2,5,Instructor,Yes,97,35,416
+P20,2,Q&A handling,0.2,5,Peer A,Yes,97,35,405
+P20,2,Time discipline,0.15,4,Peer A,Yes,97,35,402
+P20,2,Presence,0.1,5,Peer B,Yes,97,35,419
+P21,1,Opening / BLUF,0.2,3,Peer B,Yes,56,0,533
+P21,1,One message per slide,0.15,3,Instructor,Yes,56,0,483
+P21,1,Chart delivery,0.2,2,Instructor,Yes,56,0,492
+P21,1,Q&A handling,0.2,3,Peer B,Yes,56,0,536
+P21,1,Time discipline,0.15,3,Peer B,Yes,56,0,549
+P21,1,Presence,0.1,3,Instructor,Yes,56,0,512
+P21,2,Opening / BLUF,0.2,4,Instructor,Yes,85,29,373
+P21,2,One message per slide,0.15,4,Peer A,Yes,85,29,377
+P21,2,Chart delivery,0.2,3,Instructor,Yes,85,29,423
+P21,2,Q&A handling,0.2,5,Peer A,Yes,85,29,410
+P21,2,Time discipline,0.15,5,Instructor,Yes,85,29,407
+P21,2,Presence,0.1,5,Instructor,Yes,85,29,406
+P22,1,Opening / BLUF,0.2,2,Instructor,Yes,48,0,464
+P22,1,One message per slide,0.15,2,Peer B,Yes,48,0,504
+P22,1,Chart delivery,0.2,2,Peer A,Yes,48,0,509
+P22,1,Q&A handling,0.2,3,Peer B,Yes,48,0,454
+P22,1,Time discipline,0.15,4,Peer A,Yes,48,0,523
+P22,1,Presence,0.1,1,Peer B,Yes,48,0,455
+P22,2,Opening / BLUF,0.2,5,Instructor,Yes,83,35,404
+P22,2,One message per slide,0.15,4,Instructor,Yes,83,35,382
+P22,2,Chart delivery,0.2,3,Peer B,Yes,83,35,393
+P22,2,Q&A handling,0.2,5,Peer A,Yes,83,35,389
+P22,2,Time discipline,0.15,5,Instructor,Yes,83,35,386
+P22,2,Presence,0.1,2,Instructor,Yes,83,35,382
+P23,1,Opening / BLUF,0.2,2,Instructor,Yes,55,0,438
+P23,1,One message per slide,0.15,1,Peer B,Yes,55,0,505
+P23,1,Chart delivery,0.2,3,Instructor,Yes,55,0,508
+P23,1,Q&A handling,0.2,3,Peer B,Yes,55,0,470
+P23,1,Time discipline,0.15,4,Instructor,Yes,55,0,528
+P23,1,Presence,0.1,4,Peer A,Yes,55,0,496
+P23,2,Opening / BLUF,0.2,3,Peer A,Yes,78,23,414
+P23,2,One message per slide,0.15,3,Instructor,Yes,78,23,383
+P23,2,Chart delivery,0.2,4,Peer B,Yes,78,23,399
+P23,2,Q&A handling,0.2,4,Instructor,Yes,78,23,377
+P23,2,Time discipline,0.15,5,Peer B,Yes,78,23,406
+P23,2,Presence,0.1,5,Peer A,Yes,78,23,387
+P24,1,Opening / BLUF,0.2,3,Instructor,Yes,48,0,449
+P24,1,One message per slide,0.15,2,Peer B,Yes,48,0,468
+P24,1,Chart delivery,0.2,3,Instructor,Yes,48,0,540
+P24,1,Q&A handling,0.2,2,Peer B,Yes,48,0,495
+P24,1,Time discipline,0.15,2,Instructor,Yes,48,0,522
+P24,1,Presence,0.1,2,Peer B,Yes,48,0,521
+P24,2,Opening / BLUF,0.2,5,Instructor,Yes,87,39,389
+P24,2,One message per slide,0.15,4,Instructor,Yes,87,39,374
+P24,2,Chart delivery,0.2,5,Peer A,Yes,87,39,390
+P24,2,Q&A handling,0.2,5,Instructor,Yes,87,39,392
+P24,2,Time discipline,0.15,3,Instructor,Yes,87,39,385
+P24,2,Presence,0.1,3,Instructor,Yes,87,39,410

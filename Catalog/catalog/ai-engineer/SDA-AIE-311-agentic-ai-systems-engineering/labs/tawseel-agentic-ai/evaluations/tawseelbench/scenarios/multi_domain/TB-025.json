@@ -1,0 +1,83 @@
+{
+  "id": "TB-025",
+  "title": "Worked example: late delivery, full refund + resend request",
+  "locale": "en",
+  "difficulty": "hard",
+  "domains": [
+    "orders",
+    "logistics",
+    "billing"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain",
+    "worked_example"
+  ],
+  "customer_request": {
+    "text": "My delivery is two days late. Please refund the entire order and send another one today.",
+    "locale": "en",
+    "customer_id": "CUST-6425",
+    "order_id": "TW-2026-10030"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility",
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-10030": {
+          "sla_breached": true,
+          "promised_at": "2026-03-02T18:00:00+03:00",
+          "eta_iso": "2026-03-03T10:00:00+03:00"
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-10030.refunded": true,
+      "orders.TW-2026-10030.refund_amount_sar": 68.77
+    },
+    "requires_human_approval": false,
+    "notes": "check-order -> check-delivery-event -> check-eligibility-policy -> determine entitlement -> request approval (amount-gate: policy-controlled, no human needed) -> execute -> confirm. THE worked example from the course brief."
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "get_delivery_events",
+      "issue_refund"
+    ],
+    "must_not_call_tools": [
+      "mark_refunded"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "THE worked example (course brief, verbatim request text). Two asks in one message: a refund AND a same-day resend. There is no place_order/create_shipment tool in this repo's governed catalogue (SPEC §4/§5) — Rafeeq cannot autonomously create a new shipment, so the correct scope for an agent here is the refund half of the request only; a new order requires a separate customer-initiated purchase or a human-handled goodwill reorder. The refund itself: sla_breached (patched true, 2 days late) makes it eligible; amount is in the 50-500 SAR policy-controlled band, so it executes autonomously but is logged (the issue_refund call IS the audit record)."
+}

@@ -1,0 +1,121 @@
+clinic_id,region,clinic_type,avg_daily_slots,n_appointments,baseline_noshow_rate
+CL001,Riyadh,urban,92,369,0.163
+CL002,Riyadh,rural,31,353,0.334
+CL003,Riyadh,urban,124,658,0.176
+CL004,Riyadh,urban,191,348,0.155
+CL005,Riyadh,urban,70,473,0.173
+CL006,Riyadh,rural,88,286,0.29
+CL007,Riyadh,urban,118,550,0.155
+CL008,Riyadh,urban,214,338,0.151
+CL009,Riyadh,urban,210,370,0.149
+CL010,Riyadh,urban,129,324,0.188
+CL011,Riyadh,urban,161,475,0.154
+CL012,Riyadh,urban,82,478,0.172
+CL013,Riyadh,urban,65,431,0.195
+CL014,Riyadh,urban,82,374,0.176
+CL015,Riyadh,urban,187,529,0.164
+CL016,Riyadh,urban,108,384,0.133
+CL017,Riyadh,rural,84,245,0.335
+CL018,Riyadh,urban,106,405,0.141
+CL019,Riyadh,urban,76,587,0.143
+CL020,Riyadh,urban,74,594,0.167
+CL021,Riyadh,urban,98,552,0.154
+CL022,Riyadh,urban,108,255,0.176
+CL023,Riyadh,rural,74,410,0.298
+CL024,Riyadh,urban,215,600,0.153
+CL025,Riyadh,urban,175,420,0.186
+CL026,Riyadh,urban,108,413,0.145
+CL027,Riyadh,urban,75,509,0.167
+CL028,Riyadh,urban,163,541,0.163
+CL029,Riyadh,urban,186,545,0.169
+CL030,Makkah,rural,36,272,0.327
+CL031,Makkah,urban,70,260,0.165
+CL032,Makkah,urban,73,1088,0.202
+CL033,Makkah,urban,195,390,0.154
+CL034,Makkah,urban,130,585,0.159
+CL035,Makkah,urban,176,212,0.156
+CL036,Makkah,urban,176,576,0.182
+CL037,Makkah,urban,133,313,0.224
+CL038,Makkah,urban,189,522,0.174
+CL039,Makkah,urban,107,320,0.178
+CL040,Makkah,rural,53,328,0.36
+CL041,Makkah,rural,46,321,0.402
+CL042,Makkah,urban,165,441,0.168
+CL043,Makkah,rural,82,178,0.388
+CL044,Makkah,urban,84,617,0.175
+CL045,Makkah,urban,209,354,0.181
+CL046,Makkah,urban,62,433,0.187
+CL047,Makkah,urban,198,294,0.17
+CL048,Makkah,urban,188,272,0.173
+CL049,Makkah,urban,143,579,0.185
+CL050,Makkah,rural,43,300,0.393
+CL051,Makkah,urban,86,405,0.173
+CL052,Makkah,rural,63,242,0.302
+CL053,Makkah,urban,134,586,0.188
+CL054,Makkah,urban,97,253,0.15
+CL055,Makkah,urban,102,199,0.231
+CL056,Makkah,urban,97,726,0.189
+CL057,Eastern Province,urban,207,403,0.084
+CL058,Eastern Province,rural,34,330,0.218
+CL059,Eastern Province,urban,192,359,0.111
+CL060,Eastern Province,urban,68,563,0.147
+CL061,Eastern Province,urban,138,362,0.099
+CL062,Eastern Province,urban,89,787,0.151
+CL063,Eastern Province,urban,124,253,0.123
+CL064,Eastern Province,urban,207,511,0.127
+CL065,Eastern Province,rural,73,297,0.236
+CL066,Eastern Province,urban,81,374,0.115
+CL067,Eastern Province,urban,129,360,0.103
+CL068,Eastern Province,urban,136,660,0.106
+CL069,Eastern Province,urban,186,348,0.08
+CL070,Eastern Province,rural,86,514,0.288
+CL071,Eastern Province,rural,74,338,0.222
+CL072,Eastern Province,urban,161,538,0.128
+CL073,Eastern Province,rural,65,295,0.288
+CL074,Eastern Province,urban,176,235,0.115
+CL075,Eastern Province,rural,85,430,0.256
+CL076,Asir,urban,211,263,0.122
+CL077,Asir,rural,72,304,0.234
+CL078,Asir,rural,74,532,0.244
+CL079,Asir,urban,176,203,0.079
+CL080,Asir,rural,52,368,0.285
+CL081,Asir,rural,45,323,0.257
+CL082,Asir,urban,85,524,0.174
+CL083,Asir,rural,64,221,0.285
+CL084,Asir,urban,136,585,0.147
+CL085,Asir,urban,136,881,0.116
+CL086,Madinah,urban,154,511,0.145
+CL087,Madinah,urban,142,283,0.145
+CL088,Madinah,rural,84,224,0.281
+CL089,Madinah,urban,159,540,0.156
+CL090,Madinah,rural,30,430,0.263
+CL091,Madinah,rural,84,432,0.285
+CL092,Madinah,urban,65,667,0.13
+CL093,Madinah,urban,214,218,0.128
+CL094,Jazan,rural,85,531,0.299
+CL095,Jazan,urban,73,470,0.138
+CL096,Jazan,urban,196,268,0.116
+CL097,Jazan,rural,29,583,0.201
+CL098,Jazan,urban,158,419,0.11
+CL099,Jazan,urban,146,385,0.099
+CL100,Qassim,rural,75,449,0.287
+CL101,Qassim,urban,130,315,0.095
+CL102,Qassim,urban,210,505,0.141
+CL103,Qassim,urban,158,533,0.144
+CL104,Qassim,rural,52,396,0.273
+CL105,Tabuk,urban,107,266,0.124
+CL106,Tabuk,urban,126,757,0.132
+CL107,Tabuk,rural,41,355,0.285
+CL108,Tabuk,rural,76,263,0.308
+CL109,Hail,rural,80,569,0.211
+CL110,Hail,rural,57,274,0.168
+CL111,Hail,rural,78,409,0.188
+CL112,Najran,urban,68,480,0.144
+CL113,Najran,rural,51,245,0.233
+CL114,Najran,urban,119,333,0.135
+CL115,Al-Bahah,rural,75,608,0.171
+CL116,Al-Bahah,rural,69,227,0.167
+CL117,Northern Borders,urban,126,409,0.174
+CL118,Northern Borders,rural,79,189,0.27
+CL119,Al-Jouf,urban,193,230,0.104
+CL120,Al-Jouf,rural,74,184,0.223

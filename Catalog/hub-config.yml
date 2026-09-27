@@ -1,0 +1,27 @@
+# SDAIA Academy Trainer Knowledge Hub — site configuration
+# Edit through a pull request (Academy Admins). Values marked TODO must be set
+# before the portal goes live.
+
+# GitHub repository that hosts this hub (owner/name). Used for "Report an issue"
+# and "Suggest an edit" links in the portal and in generated READMEs.
+github_repo: SDAIA-Academy/sdaia-academy-training   # TODO: confirm the organisation name
+
+# Private portal URL once deployed (see docs/admin/HOSTING.md).
+portal_url: TODO
+
+# Default review cycle for Published content (CONTENT_GOVERNANCE.md §8).
+review_cycle_months: 6
+
+# Courses highlighted on the portal home page.
+featured:
+  - SDA-AIE-311
+  - SDA-AIE-214
+  - SDA-DSC-214
+  - SDA-DSC-212
+  - L0-FAE
+
+# Number of rows in the "Recently updated" list on the home page.
+recently_updated_count: 8
+
+# Academy contact for escalations that are not about a specific course.
+academy_support_contact: TODO   # e.g. a shared mailbox or Teams channel

@@ -1,0 +1,173 @@
+# Masar quality gate — the routing policy for expectation failures.
+#
+# This file answers ONE question, and it is the question Module 6 is about:
+# when a check fails, does the pipeline STOP or does it ISOLATE?
+#
+#   fail_fast   The failure means nothing in the batch can be trusted.
+#               Promoting anything is worse than promoting nothing.
+#               The gate raises, the DAG task fails, downstream is skipped.
+#
+#   quarantine  The failure is about specific ROWS in an otherwise sound
+#               batch. Isolate them WITH THEIR REASON, promote the rest,
+#               alert either way.
+#
+# Getting this split wrong has two failure modes, and the second is worse:
+#   * too much fail_fast -> the pipeline stops nightly for 40 bad rows,
+#     someone adds a bypass flag, and the gate becomes decoration;
+#   * too much quarantine -> a batch with duplicated keys is promoted, MERGE
+#     becomes ambiguous, and silver is quietly wrong with no alert at all.
+#
+# Read by masar.quality.gate; the same rule names appear in
+# masar.quality.rules and in quality/suites/*.py meta.response_class.
+version: 1
+
+defaults:
+  # Anything not listed below quarantines. Fail-fast is opt-in, on purpose:
+  # an unclassified new check should not be able to halt the platform on the
+  # night it is merged.
+  response_class: quarantine
+  alert_always: true
+  quarantine_table: silver.trips_quarantine
+  # A batch where MOST rows quarantine is not a row problem; it is a batch
+  # problem wearing a row problem's clothes. Escalate to fail_fast.
+  escalate_to_fail_fast_when:
+    quarantine_ratio_above: 0.25
+
+silver_trips:
+  suite: silver_trips.contract
+
+  fail_fast:
+    - rule: trip_id_null
+      expectation: expect_column_values_to_not_be_null
+      column: trip_id
+      why: "Unkeyed rows cannot be merged, deduplicated, or erased on request."
+    - rule: trip_id_unique
+      expectation: expect_column_values_to_be_unique
+      column: trip_id
+      why: "A duplicated key makes MERGE ambiguous: the result is undefined, not merely wrong."
+    - rule: pickup_ts_null
+      expectation: expect_column_values_to_not_be_null
+      column: pickup_ts
+      why: "No event time means no window, no partition, and no point-in-time feature."
+    - rule: rider_id_null
+      expectation: expect_column_values_to_not_be_null
+      column: rider_id
+      why: "No data subject: a PDPL erasure request could never reach the row."
+    - rule: schema_columns
+      expectation: expect_table_columns_to_match_set
+      column: null
+      why: "A renamed or missing column breaks every consumer at once; no row filter repairs it."
+    - rule: fare_sar_type
+      expectation: expect_column_values_to_be_of_type
+      column: fare_sar
+      why: "A type change is a contract break; downstream arithmetic silently coerces or nulls."
+
+  quarantine:
+    - rule: fare_non_positive
+      expectation: expect_column_values_to_be_between
+      column: fare_sar
+      why: "A completed trip with a fare <= 0 is a billing fault in one row, not a bad batch."
+    - rule: fare_implausible
+      expectation: expect_column_values_to_be_between
+      column: fare_sar
+      why: "Fares above SAR 5,000 are the currency-shift fixture's signature (SAR read as halalas)."
+    - rule: duration_non_positive
+      expectation: expect_column_values_to_be_between
+      column: duration_min
+      why: "The source ships a few negative durations on purpose; isolate and count them."
+    - rule: duration_implausible
+      expectation: expect_column_values_to_be_between
+      column: duration_min
+      why: "Over 600 minutes is a data problem, not a ten-hour taxi ride."
+    - rule: distance_non_positive
+      expectation: expect_column_values_to_be_between
+      column: distance_km
+      why: "Zero distance makes fare_per_km undefined and poisons every rate metric."
+    - rule: city_not_in_ksa_set
+      expectation: expect_column_values_to_be_in_set
+      column: city
+      why: "Out-of-domain city codes are injected by the dirty batch; they must not reach a mart."
+    - rule: status_unknown
+      expectation: expect_column_values_to_be_in_set
+      column: status
+      why: "An unknown status is a source contract change; isolate it and ask the producer."
+    - rule: payment_type_unknown
+      expectation: expect_column_values_to_be_in_set
+      column: payment_type
+      why: "A new payment method is usually legitimate — and must be reviewed, not absorbed."
+    - rule: surge_out_of_range
+      expectation: expect_column_values_to_be_between
+      column: surge_multiplier
+      why: "Surge outside [1.0, 5.0] is either a pricing bug or a parsing bug. Both need a human."
+    - rule: dropoff_before_pickup
+      expectation: expect_column_pair_values_A_to_be_greater_than_B
+      column: dropoff_ts
+      why: "Reversed timestamps indicate a clock or timezone fault in one source system."
+    - rule: dropoff_geohash_missing
+      expectation: expect_column_values_to_not_be_null
+      column: dropoff_geohash
+      mostly: 0.95
+      why: >
+        ~3.1% missing is KNOWN and tolerated. The expectation exists so a
+        DEGRADATION beyond 5% is an event, rather than a number nobody watches.
+
+  distribution:
+    # Scheduled drift guards. These compare the batch to a FROZEN baseline
+    # (2026-05-01..2026-05-31), never to itself.
+    - rule: fare_mean_drift
+      expectation: expect_column_mean_to_be_between
+      column: fare_sar
+      response_class: quarantine
+      why: "Catches the currency shift: every row valid, the whole city's fares x100."
+    - rule: duration_median_drift
+      expectation: expect_column_median_to_be_between
+      column: duration_min
+      response_class: quarantine
+      why: "Catches a routing or clock change that leaves every individual value plausible."
+
+gps_events:
+  suite: gps_events.contract
+
+  fail_fast:
+    - rule: event_id_null
+      expectation: expect_column_values_to_not_be_null
+      column: event_id
+      why: "Without an event id, deduplication is impossible and exactly-once is a claim."
+    - rule: event_id_unique
+      expectation: expect_column_values_to_be_unique
+      column: event_id
+      why: "Duplicate ids in SILVER mean the watermark dedup failed — a pipeline fault."
+    - rule: event_ts_null
+      expectation: expect_column_values_to_not_be_null
+      column: event_ts
+      why: "No event time means the ping cannot be placed in any window."
+
+  quarantine:
+    - rule: lat_out_of_ksa
+      expectation: expect_column_values_to_be_between
+      column: lat
+      why: "A fix outside Saudi Arabia is a sensor fault in one ping."
+    - rule: lon_out_of_ksa
+      expectation: expect_column_values_to_be_between
+      column: lon
+      why: "As above; isolate the ping, keep the trip."
+    - rule: accuracy_degraded
+      expectation: expect_column_values_to_be_between
+      column: accuracy_m
+      why: "A fix worse than 50 m is noise; averaging it into a speed feature adds error."
+    - rule: producer_version_unknown
+      expectation: expect_column_values_to_be_in_set
+      column: producer_version
+      why: "An unannounced producer version is the leading indicator of semantic drift."
+
+  distribution:
+    - rule: speed_mean_drift
+      expectation: expect_column_mean_to_be_between
+      column: speed_kmh
+      response_class: quarantine
+      group_by: producer_version
+      why: >
+        THE incident. Producer 2.5.0 emits speed_kmh in m/s: same key, same
+        type, values ~3.6x too small. No schema, null, uniqueness or range
+        rule can see it. Grouping by producer_version turns "something
+        changed" into "2.5.0 changed", which names a deployment and an owner.

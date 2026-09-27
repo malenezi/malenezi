@@ -1,0 +1,106 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: L0-FGP
+course_title: Generative AI for Productivity
+course_title_ar: الذكاء الاصطناعي التوليدي لرفع الإنتاجية
+aliases:
+- FGP
+domain: generative-ai
+learning_path: beginner
+level: Beginner
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: 'TODO: Information not available in source material.'
+prerequisites: None stated in source material.
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-08-26
+next_review: 2026-12-27
+tools: []
+technologies: []
+keywords:
+- LLM
+- Prompt Engineering
+description: This training program enables participants to use generative AI tools to raise their productivity
+  in everyday work, introducing the concept and capabilities of generative AI in simple language that
+  requires no technical background. The program focuses on mastering the basics of writing effective prompts
+  and applying generative tools to writing, summarising, drafting correspondence, generating ideas, and
+  organising work, with intensive hands-on exercises on realistic workplace use cases. It also covers
+  reviewing and improving outputs and the safe and responsible use of these tools, so that participants
+  leave with a practical toolkit and productivity habits they can apply directly to their daily tasks.
+description_ar: يهدف هذا البرنامج التدريبي إلى تمكين المشاركين من توظيف أدوات الذكاء الاصطناعي التوليدي
+  لرفع إنتاجيتهم في العمل اليومي، من خلال التعرف على مفهوم الذكاء الاصطناعي التوليدي وقدراته بلغة مبسطة
+  لا تتطلب خلفية تقنية. يركز البرنامج على إتقان أساسيات صياغة الموجهات (Prompts) الفعالة، وتطبيق الأدوات
+  التوليدية في مهام الكتابة والتلخيص وإعداد المراسلات وتوليد الأفكار وتنظيم العمل، مع تدريبات عملية مكثفة
+  على حالات استخدام واقعية من بيئة العمل. كما يتناول البرنامج مراجعة المخرجات وتحسينها والاستخدام الآمن
+  والمسؤول لهذه الأدوات، ويخرج المشاركون بمجموعة أدوات عملية وعادات إنتاجية قابلة للتطبيق المباشر في مهامهم
+  اليومية.
+learning_outcomes:
+- Understand the concept, capabilities, and limitations of generative AI in simple language.
+- Write clear and effective prompts to obtain high-quality results.
+- Use generative AI tools for writing, summarising, and drafting correspondence.
+- Apply generative tools to idea generation, planning, and organising work tasks.
+- Review and improve generative AI outputs and verify their accuracy before use.
+- Apply safe and responsible practices when using generative tools in the work environment.
+- Build a practical toolkit and set of habits for applying generative AI to daily tasks.
+topics:
+- Introduction to Generative AI
+- Fundamentals of Effective Prompting
+- Generative AI for Writing and Correspondence
+- Summarising and Handling Information
+- Idea Generation, Planning, and Organising Work
+- Reviewing Outputs and Responsible Use
+- Hands-On Application to Daily Work Tasks
+topic_details:
+  Introduction to Generative AI:
+  - Understand the concept of generative AI and how it differs from other AI technologies.
+  - Review the leading generative tools available and their common uses in the workplace.
+  - Understand the capabilities and limitations of these tools to build realistic expectations when using
+    them.
+  Fundamentals of Effective Prompting:
+  - Learn the components of a good prompt, including role, context, task, and output format.
+  - Practise writing clear prompts for a variety of work tasks.
+  - Improve results iteratively by rephrasing prompts and adding details and examples.
+  Generative AI for Writing and Correspondence:
+  - Use generative tools to draft emails, letters, and memos.
+  - Practise improving style and adjusting tone to suit the target audience.
+  - Prepare drafts of documents and short reports faster while maintaining quality.
+  Summarising and Handling Information:
+  - Use generative tools to summarise long documents and reports into clear points.
+  - Practise extracting key ideas from texts, meetings, and correspondence.
+  - Organise information and re-present it in different formats to suit the intended use.
+  Idea Generation, Planning, and Organising Work:
+  - Apply generative tools to brainstorming and generating diverse ideas and solutions.
+  - Use the tools to prepare plans, agendas, and task lists.
+  - Practise practical scenarios for organising daily work with the help of AI.
+  Reviewing Outputs and Responsible Use:
+  - Apply practical steps to review generative tool outputs and verify their accuracy.
+  - Recognise common errors such as incorrect information and how to detect them.
+  - Follow the principles of safe and responsible use and protect sensitive data in the work environment.
+  Hands-On Application to Daily Work Tasks:
+  - Complete comprehensive practical exercises on realistic workplace use cases.
+  - Build a personal library of reusable prompts for recurring tasks.
+  - Create a practical plan to integrate generative AI tools into the daily work routine.
+assessment: Qualification form + pre-/post-test (AthkaX platform workbook)
+next_modules: 'TODO: Information not available in source material.'
+stackability: 'TODO: Information not available in source material.'
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: Program Files (AthkaX)/Beginner-Level/L0-FGP - Generative AI for Productivity.xlsx
+  drive_folder: Level-0-Beginners/AI/Generative AI for Productivity
+  platform_workbook: Program Files (AthkaX)/Beginner-Level/L0-FGP - Generative AI for Productivity.xlsx
+known_issues:
+- '[Needs Review] L0-FGP - Generative AI for Productivity.xlsx: Qualification form + pre/post-test (7
+  MCQs each). Questions were generated from the workbook description because no instructor package exists
+  — review first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

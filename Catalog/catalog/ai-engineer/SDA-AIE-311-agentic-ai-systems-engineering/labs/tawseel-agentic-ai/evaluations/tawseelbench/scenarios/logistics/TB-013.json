@@ -1,0 +1,55 @@
+{
+  "id": "TB-013",
+  "title": "Investigate exception then offer reschedule",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "complaint",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "طلبي TW-2026-11013 فيه مشكلة بالتوصيل، ايش السبب؟ هذا غير مقبول.",
+    "locale": "ar",
+    "customer_id": "CUST-9354",
+    "order_id": "TW-2026-11013"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "lost_or_damaged",
+      "escalation"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "find_delivery_exception",
+      "track_shipment"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "find_delivery_exception"
+    ],
+    "must_not_call_tools": [
+      "reschedule_delivery",
+      "issue_refund"
+    ],
+    "escalation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "An exception-status order investigated via find_delivery_exception; the agent must not silently reschedule or refund on its own initiative — it escalates with the finding."
+}

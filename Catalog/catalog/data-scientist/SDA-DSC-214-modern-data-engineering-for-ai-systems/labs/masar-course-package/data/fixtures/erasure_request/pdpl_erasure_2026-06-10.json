@@ -1,0 +1,57 @@
+{
+  "request_id": "PDPL-ER-2026-0417",
+  "regulation": "Saudi Personal Data Protection Law (PDPL), Article 18 — right to erasure",
+  "received_utc": "2026-06-10T08:12:00Z",
+  "sla_days": 30,
+  "due_utc": "2026-07-10T23:59:59Z",
+  "requested_by": "Masar Data Protection Office",
+  "controller": "Masar (مسار) — synthetic training entity, SDA-DSC-214",
+  "lawful_basis_withdrawn": true,
+  "scope": {
+    "subject_key": "rider_id",
+    "rider_ids": [
+      "RDR-006890",
+      "RDR-007660",
+      "RDR-009268",
+      "RDR-015753",
+      "RDR-016006",
+      "RDR-016557",
+      "RDR-017976"
+    ],
+    "tables_in_scope": [
+      "bronze.trips",
+      "silver.trips",
+      "gold.fact_trip",
+      "gold.trip_features",
+      "gold.eta_features"
+    ],
+    "columns_in_scope": [
+      "rider_id",
+      "dropoff_geohash",
+      "pickup_ts",
+      "dropoff_ts"
+    ],
+    "note": "GPS pings are keyed by trip_id/vehicle_id, not rider_id. Erasure must follow the trip_id join, or precise location for the data subject survives the delete."
+  },
+  "expected_effect": {
+    "rider_trip_counts_in_sample": {
+      "RDR-006890": 4,
+      "RDR-007660": 4,
+      "RDR-009268": 4,
+      "RDR-015753": 3,
+      "RDR-016006": 5,
+      "RDR-016557": 3,
+      "RDR-017976": 6
+    },
+    "total_rows_to_delete_from_silver_trips": 29,
+    "dates_touched": [
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-05"
+    ]
+  },
+  "retention_note": "After the MERGE DELETE, run VACUUM with a retention shorter than the audit window only if the retention policy permits: VACUUM removes time-travel history and is what makes the erasure physical.",
+  "synthetic": true
+}

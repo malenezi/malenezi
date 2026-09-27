@@ -1,0 +1,60 @@
+# Bronze Delta tables declared as dbt sources, with a freshness SLA each.
+#
+# Freshness is a CONTRACT, not a nicety: `dbt source freshness` fails the build
+# when bronze is stale, which stops silver from quietly rebuilding itself out
+# of yesterday's data and reporting success.
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    description: "Append-only landing zone. Never mutated. Lab 1 output."
+    tables:
+      - name: trips
+        identifier: trips
+        description: "Raw trips as received. Duplicates ARE expected here."
+        loaded_at_field: _ingested_at
+        freshness:
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 24, period: hour}
+        columns:
+          - name: trip_id
+            description: "Business key as received. May be duplicated at bronze."
+          - name: _batch_id
+            description: "Landing batch. Distinguishes re-runs of the same day."
+          - name: _source_file
+            description: "The file this row came from. The regulator's question."
+          - name: _ingested_at
+            description: "When the platform saw it (processing time)."
+
+      - name: drivers
+        identifier: drivers
+        description: "Driver roster. hire_date arrives in three formats."
+        loaded_at_field: _ingested_at
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 72, period: hour}
+
+      - name: vehicles
+        identifier: vehicles
+        description: "Vehicle roster. Reference data, slowly changing."
+        loaded_at_field: _ingested_at
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 72, period: hour}
+
+      - name: zones
+        identifier: zones
+        description: "Operating zones with bilingual labels and centroids."
+        loaded_at_field: _ingested_at
+        freshness:
+          warn_after: {count: 72, period: hour}
+          error_after: {count: 168, period: hour}
+
+      - name: gps_events
+        identifier: gps_events
+        description: "Raw GPS pings, payload struct as received."
+        loaded_at_field: _ingested_at
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 6, period: hour}

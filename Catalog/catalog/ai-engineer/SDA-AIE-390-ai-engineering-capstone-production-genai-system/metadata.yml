@@ -1,0 +1,72 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-390
+course_title: 'AI Engineering Capstone: Production GenAI System'
+course_title_ar: 'مشروع التخرج: نظام ذكاء توليدي إنتاجي'
+aliases: []
+domain: generative-ai
+learning_path: ai-engineer
+level: Expert
+duration:
+  days: 5
+  hours: 25
+delivery_mode: Remote (live online)
+target_audience: Candidates completing the AI Engineer Expert certificate
+prerequisites: SDA-AIE-311 + SDA-AIE-312 + SDA-AIE-313 (or equivalent portfolio)
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-08
+next_review: 2026-12-27
+tools:
+- Full track toolchain as selected by teams
+technologies: []
+keywords:
+- Agentic AI
+- RAG
+- MLOps
+- LLMOps
+- AI Security
+- Architecture
+- Automation
+description: The integrative capstone of the AI Engineer pathway. Teams scope, design, build, secure,
+  and deploy a complete generative-AI system — combining RAG or agents, MLOps automation, observability,
+  and guardrails — for a realistic enterprise brief. Work is assessed through a production demo, security
+  review, and architecture defence before an expert panel.
+description_ar: المشروع التكاملي الختامي لمسار مهندس الذكاء الاصطناعي. تتولى الفرق تحديد نطاق نظام ذكاء
+  توليدي متكامل وتصميمه وبنائه وتأمينه ونشره — يجمع بين RAG أو الوكلاء وأتمتة MLOps والمراقبة والحواجز
+  الوقائية — وفق موجز مؤسسي واقعي، ويُقيَّم العمل عبر عرض إنتاجي ومراجعة أمنية ودفاع معماري أمام لجنة
+  خبراء.
+learning_outcomes:
+- Design a complete production architecture for an enterprise GenAI use case
+- Implement an integrated system combining retrieval, agents, and serving infrastructure
+- Develop automated evaluation, monitoring, and guardrail layers
+- Validate the system through security testing and load benchmarks
+- Optimize cost and performance against defined service objectives
+- Defend design decisions and results before a technical panel
+topics:
+- Project scoping and requirements engineering
+- System design and architecture review
+- Sprint-based build with mentor checkpoints
+- Evaluation, security, and performance hardening
+- Deployment and operations readiness
+- Final demo, documentation, and panel defence
+assessment: Deployed system; documentation package; panel defence
+next_modules: —
+stackability: Completes the AI Engineer Expert (Professional) Certificate.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/AI Engineering Capstone — Production GenAI System
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-390 - AI Engineering Capstone —
+    Production GenAI System.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''المشروع الختامي لهندسة الذكاء الاصطناعي'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

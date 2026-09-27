@@ -1,0 +1,20 @@
+{"id": "un-01", "question": "What is the parental leave entitlement for contractors on secondment?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-02", "question": "How much is the overseas education allowance for dependants?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-03", "question": "Which vendor supplies the organisation's payroll system?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-04", "question": "What is the CEO's mobile number?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-05", "question": "How many employees resigned last quarter?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-06", "question": "What is the budget for the data platform programme?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-07", "question": "Which candidates were rejected in the last recruitment round?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-08", "question": "What penalties apply under the Labour Law for late salary payment?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-09", "question": "Does the organisation offer a share option scheme?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-10", "question": "What is the retirement age set by the pension authority?", "language": "en", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-11", "question": "كم عدد أيام الإجازة المرضية المدفوعة للمتعاقدين بدوام جزئي؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-12", "question": "ما قيمة بدل التعليم لأبناء الموظفين في الخارج؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-13", "question": "من هو مزود خدمة الحوسبة السحابية للهيئة؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-14", "question": "ما ميزانية برنامج التحول الرقمي لهذا العام؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-15", "question": "كم عدد الموظفين في إدارة الشؤون القانونية؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-16", "question": "ما هي أسماء أعضاء لجنة التظلمات؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-17", "question": "ما موعد صرف الرواتب في شهر رمضان؟", "language": "ar", "must_refuse": true, "trap": "plausible-but-absent"}
+{"id": "un-18", "question": "What is the weather forecast for Riyadh tomorrow?", "language": "en", "must_refuse": true, "trap": "out-of-scope"}
+{"id": "un-19", "question": "Recommend a restaurant near the head office.", "language": "en", "must_refuse": true, "trap": "out-of-scope"}
+{"id": "un-20", "question": "ما نتيجة مباراة الهلال أمس؟", "language": "ar", "must_refuse": true, "trap": "out-of-scope"}

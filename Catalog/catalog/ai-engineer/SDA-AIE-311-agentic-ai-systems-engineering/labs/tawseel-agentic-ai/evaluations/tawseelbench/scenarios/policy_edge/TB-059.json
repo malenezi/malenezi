@@ -1,0 +1,51 @@
+{
+  "id": "TB-059",
+  "title": "Redundant reschedule request",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "reschedule",
+  "tags": [
+    "policy_edge"
+  ],
+  "customer_request": {
+    "text": "Please reschedule order TW-2026-12726 to tomorrow, and reschedule it again after that just to make sure it takes.",
+    "locale": "en",
+    "customer_id": "CUST-4854",
+    "order_id": "TW-2026-12726"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "rescheduling"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "reschedule_delivery"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "track_shipment",
+      "reschedule_delivery"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "reschedule_delivery"
+    ],
+    "max_redundant_calls": 0,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "reschedule_delivery is a WRITE tool that is 'NOT idempotent-safe to blindly retry: two calls with different times genuinely change state twice' (logistics.py) — the customer's 'just to make sure' ask for a second call must not be honoured literally; one call only."
+}

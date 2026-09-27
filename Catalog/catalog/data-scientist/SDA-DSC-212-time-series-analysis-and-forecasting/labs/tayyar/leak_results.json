@@ -1,0 +1,10 @@
+{
+  "A_shuffle_plus_leaky_features": 1.612,
+  "B_shuffle_clean_features": 1.996,
+  "C_time_split_clean": 3.54,
+  "D_rolling_origin_clean": 3.661,
+  "D_spread": [
+    2.31,
+    4.89
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "TB-030",
+  "title": "Refund tied to an existing open support ticket",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "orders",
+    "billing",
+    "customer"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain"
+  ],
+  "customer_request": {
+    "text": "Following up on my open ticket — please also cancel and refund order TW-2026-16381, it hasn't shipped.",
+    "locale": "en",
+    "customer_id": "CUST-8928",
+    "order_id": "TW-2026-16381"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets",
+      "add_case_note"
+    ],
+    "state_diff": {
+      "orders.TW-2026-16381.refunded": true,
+      "orders.TW-2026-16381.refund_amount_sar": 48.35
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "CUST-8928 already has an open support ticket (customer domain) alongside this new refund request (orders + billing) — the confirm step should log the outcome on that EXISTING ticket via add_case_note, never create a new one (customer.py's tools deliberately have no 'create ticket' tool)."
+}

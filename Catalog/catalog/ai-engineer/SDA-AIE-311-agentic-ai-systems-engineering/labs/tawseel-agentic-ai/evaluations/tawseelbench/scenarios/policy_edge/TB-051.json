@@ -1,0 +1,76 @@
+{
+  "id": "TB-051",
+  "title": "Refund exactly at the 50 SAR autonomous boundary",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge",
+    "boundary"
+  ],
+  "customer_request": {
+    "text": "من فضلك ألغِ واسترد المبلغ لطلبي TW-2026-16948، ما شُحن بعد.",
+    "locale": "ar",
+    "customer_id": "CUST-3725",
+    "order_id": "TW-2026-16948"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-16948": {
+          "amount_sar": 50.0
+        }
+      },
+      "payments": {
+        "PAY-116948": {
+          "amount_sar": 50.0
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-16948.refunded": true,
+      "orders.TW-2026-16948.refund_amount_sar": 50.0
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 50.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "refund_eligibility.md: 'Up to 50 SAR -> autonomous.' Exactly 50.00 SAR must land in the autonomous band (<=), not the policy-controlled one — action_risk.classify()'s `amount <= AUTO_REFUND_LIMIT_SAR` boundary test."
+}

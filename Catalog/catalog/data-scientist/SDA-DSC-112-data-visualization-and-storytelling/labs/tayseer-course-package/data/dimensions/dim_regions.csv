@@ -1,0 +1,14 @@
+﻿region_code,region,region_ar,capital_en,capital_ar,population_2025,households_2025,area_km2,internet_penetration_pct,smartphone_penetration_pct,digital_readiness_index,service_branches,adoption_trend_class,priority_tier,lat,lon
+RIY,Riyadh,منطقة الرياض,Riyadh,الرياض,9050000,1930500,404240,99.1,94.8,0.97,77,Rising,Tier 2 - monitor,24.713,46.675
+MAK,Makkah,منطقة مكة المكرمة,Makkah,مكة المكرمة,9230000,2005500,153128,98.4,96.4,0.92,80,Rising,Tier 2 - monitor,21.389,39.857
+EAS,Eastern Province,المنطقة الشرقية,Dammam,الدمام,5410000,1113700,672522,98.8,95.2,0.95,47,Rising,Tier 2 - monitor,26.42,50.088
+MAD,Madinah,منطقة المدينة المنورة,Madinah,المدينة المنورة,2290000,478700,151990,97.2,92.5,0.84,18,Rising,Tier 2 - monitor,24.524,39.569
+ASR,Asir,منطقة عسير,Abha,أبها,2310000,464000,76693,94.1,91.5,0.62,19,Stalled,Tier 1 - intervention,18.216,42.505
+QSM,Qassim,منطقة القصيم,Buraydah,بريدة,1520000,285100,58046,96.5,92.5,0.79,14,Rising,Tier 2 - monitor,26.359,43.981
+JZN,Jazan,منطقة جازان,Jazan,جازان,1720000,340200,11671,91.3,85.4,0.42,15,Stalled,Tier 1 - intervention,16.889,42.551
+TBK,Tabuk,منطقة تبوك,Tabuk,تبوك,1040000,212600,146072,95.4,90.8,0.71,7,Rising,Tier 2 - monitor,28.384,36.566
+HAL,Hail,منطقة حائل,Hail,حائل,760000,145600,103887,94.8,91.6,0.67,9,Rising,Tier 2 - monitor,27.522,41.69
+NJR,Najran,منطقة نجران,Najran,نجران,660000,123700,149511,92.0,88.5,0.47,6,Stalled,Tier 1 - intervention,17.492,44.132
+JOF,Al-Jouf,منطقة الجوف,Sakaka,سكاكا,560000,111300,100212,93.6,91.6,0.58,6,Rising,Tier 2 - monitor,29.969,40.206
+BAH,Al-Baha,منطقة الباحة,Al-Baha,الباحة,500000,95000,36000,92.7,88.6,0.52,6,Stalled,Tier 1 - intervention,20.013,41.468
+NBR,Northern Borders,منطقة الحدود الشمالية,Arar,عرعر,400000,75700,111797,93.2,90.2,0.55,4,Stalled,Tier 1 - intervention,30.983,41.018

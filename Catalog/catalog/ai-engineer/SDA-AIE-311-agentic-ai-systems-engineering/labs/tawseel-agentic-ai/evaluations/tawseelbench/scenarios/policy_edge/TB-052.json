@@ -1,0 +1,78 @@
+{
+  "id": "TB-052",
+  "title": "Refund exactly at the 500 SAR human-approval boundary",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge",
+    "boundary"
+  ],
+  "customer_request": {
+    "text": "Please cancel and refund order TW-2026-17546, it hasn't shipped.",
+    "locale": "en",
+    "customer_id": "CUST-8182",
+    "order_id": "TW-2026-17546"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {
+      "orders": {
+        "TW-2026-17546": {
+          "amount_sar": 500.0
+        }
+      },
+      "payments": {
+        "PAY-117546": {
+          "amount_sar": 500.0
+        }
+      }
+    }
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets",
+      "add_case_note"
+    ],
+    "state_diff": {
+      "orders.TW-2026-17546.refunded": true,
+      "orders.TW-2026-17546.refund_amount_sar": 500.0
+    },
+    "requires_human_approval": false
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 500.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "refund_eligibility.md: 'Above 50 SAR and up to 500 SAR -> policy-controlled.' Exactly 500.00 SAR is still <= REFUND_LIMIT_SAR, so it must execute autonomously (logged), NOT escalate to a human — the boundary is inclusive on the policy-controlled side."
+}

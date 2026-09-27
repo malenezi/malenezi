@@ -1,0 +1,3034 @@
+{
+  "spec_version": "1.0",
+  "seed": 20260909,
+  "organisation": {
+    "name_en": "National Digital Services Authority",
+    "name_ar": "الهيئة الوطنية للخدمات الرقمية",
+    "short": "NDSA",
+    "disclaimer_en": "FICTIONAL TRAINING DOCUMENT — SDAIA Academy SDA-AIE-214. Not a real instrument.",
+    "disclaimer_ar": "وثيقة تدريبية افتراضية — أكاديمية سدايا SDA-AIE-214. ليست وثيقة رسمية."
+  },
+  "generated_documents": 134,
+  "documents": [
+    {
+      "doc_id": "ndsa-hr-remote-work-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-remote-work-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-02-14",
+      "title_ar": "سياسة العمل عن بُعد",
+      "title_en": "Remote Work Policy",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-remote-work-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 18,
+        "notice_days": 22,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-remote-work-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-remote-work-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-03-15",
+      "title_ar": "سياسة العمل عن بُعد",
+      "title_en": "Remote Work Policy",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-remote-work-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 21,
+        "notice_days": 24,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-housing-allowance-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-housing-allowance-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-04-14",
+      "title_ar": "سياسة بدل السكن",
+      "title_en": "Housing Allowance Policy",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-housing-allowance-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 24,
+        "notice_days": 26,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-housing-allowance-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-housing-allowance-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-05-14",
+      "title_ar": "سياسة بدل السكن",
+      "title_en": "Housing Allowance Policy",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-housing-allowance-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 27,
+        "notice_days": 28,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-travel-allowance-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-travel-allowance-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-06-13",
+      "title_ar": "سياسة السفر في مهمة عمل والبدلات",
+      "title_en": "Business Travel and Per-Diem Policy",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-travel-allowance-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 30,
+        "notice_days": 30,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-travel-allowance-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-travel-allowance-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-07-13",
+      "title_ar": "سياسة السفر في مهمة عمل والبدلات",
+      "title_en": "Business Travel and Per-Diem Policy",
+      "cites": [
+        "pdpl-law"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-travel-allowance-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 33,
+        "notice_days": 32,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-annual-leave-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-annual-leave-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-08-12",
+      "title_ar": "سياسة الإجازة السنوية",
+      "title_en": "Annual Leave Policy",
+      "cites": [
+        "data-destruction-guideline"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-annual-leave-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 36,
+        "notice_days": 34,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-annual-leave-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-annual-leave-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-09-11",
+      "title_ar": "سياسة الإجازة السنوية",
+      "title_en": "Annual Leave Policy",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-annual-leave-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 39,
+        "notice_days": 21,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-training-sponsorship-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-training-sponsorship-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-10-11",
+      "title_ar": "سياسة التدريب والابتعاث",
+      "title_en": "Training and Sponsorship Policy",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-training-sponsorship-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 17,
+        "notice_days": 23,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-training-sponsorship-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-training-sponsorship-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-11-10",
+      "title_ar": "سياسة التدريب والابتعاث",
+      "title_en": "Training and Sponsorship Policy",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-training-sponsorship-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 20,
+        "notice_days": 25,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-performance-review-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-performance-review-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-12-10",
+      "title_ar": "سياسة إدارة الأداء",
+      "title_en": "Performance Management Policy",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-performance-review-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 23,
+        "notice_days": 27,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-performance-review-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-performance-review-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-01-09",
+      "title_ar": "سياسة إدارة الأداء",
+      "title_en": "Performance Management Policy",
+      "cites": [
+        "pdpl-law"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-performance-review-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 26,
+        "notice_days": 29,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-secondment-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-secondment-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-02-08",
+      "title_ar": "سياسة الإعارة والانتداب",
+      "title_en": "Secondment and Assignment Policy",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-secondment-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 29,
+        "notice_days": 31,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-secondment-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-secondment-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-03-10",
+      "title_ar": "سياسة الإعارة والانتداب",
+      "title_en": "Secondment and Assignment Policy",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-secondment-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 32,
+        "notice_days": 33,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-grievance-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-grievance-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-04-09",
+      "title_ar": "سياسة التظلمات",
+      "title_en": "Grievance and Appeals Policy",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-grievance-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 35,
+        "notice_days": 20,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-grievance-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-grievance-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-05-09",
+      "title_ar": "سياسة التظلمات",
+      "title_en": "Grievance and Appeals Policy",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-grievance-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 38,
+        "notice_days": 22,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-recruitment-data-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-recruitment-data-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-06-08",
+      "title_ar": "سياسة معالجة بيانات المرشحين",
+      "title_en": "Candidate Data Handling Policy",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-recruitment-data-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 16,
+        "notice_days": 24,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-recruitment-data-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-recruitment-data-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-07-08",
+      "title_ar": "سياسة معالجة بيانات المرشحين",
+      "title_en": "Candidate Data Handling Policy",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-recruitment-data-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 19,
+        "notice_days": 26,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-employee-records-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-employee-records-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-08-07",
+      "title_ar": "سياسة الاحتفاظ بسجلات الموظفين",
+      "title_en": "Employee Records Retention Policy",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-employee-records-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 22,
+        "notice_days": 28,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-employee-records-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-employee-records-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-09-06",
+      "title_ar": "سياسة الاحتفاظ بسجلات الموظفين",
+      "title_en": "Employee Records Retention Policy",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-employee-records-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 25,
+        "notice_days": 30,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-disciplinary-ar-1",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-disciplinary-ar-1.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-10-06",
+      "title_ar": "لائحة الجزاءات",
+      "title_en": "Disciplinary Procedure",
+      "cites": [
+        "pdpl-law"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-disciplinary-ar-1.txt",
+      "facts": {
+        "max_entitlement_pct": 28,
+        "notice_days": 32,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-disciplinary-ar-2",
+      "family": "hr_policy_scanned_ar",
+      "path": "corpus_v1/hr/ndsa-hr-disciplinary-ar-2.pdf",
+      "format": "pdf_scanned",
+      "language": "ar",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-11-05",
+      "title_ar": "لائحة الجزاءات",
+      "title_en": "Disciplinary Procedure",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "ocr_gold": "ocr_gold/ndsa-hr-disciplinary-ar-2.txt",
+      "facts": {
+        "max_entitlement_pct": 31,
+        "notice_days": 34,
+        "retention_years": 5
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-remote-work-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-remote-work-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-02-21",
+      "title_en": "Remote Work Policy",
+      "title_ar": "سياسة العمل عن بُعد",
+      "cites": [
+        "data-destruction-guideline"
+      ],
+      "facts": {
+        "max_entitlement_pct": 18,
+        "notice_days": 22,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-remote-work-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-remote-work-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-03-22",
+      "title_en": "Remote Work Policy",
+      "title_ar": "سياسة العمل عن بُعد",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "max_entitlement_pct": 21,
+        "notice_days": 24,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-housing-allowance-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-housing-allowance-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-04-21",
+      "title_en": "Housing Allowance Policy",
+      "title_ar": "سياسة بدل السكن",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "max_entitlement_pct": 24,
+        "notice_days": 26,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-housing-allowance-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-housing-allowance-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-05-21",
+      "title_en": "Housing Allowance Policy",
+      "title_ar": "سياسة بدل السكن",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "max_entitlement_pct": 27,
+        "notice_days": 28,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-travel-allowance-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-travel-allowance-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-06-20",
+      "title_en": "Business Travel and Per-Diem Policy",
+      "title_ar": "سياسة السفر في مهمة عمل والبدلات",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "max_entitlement_pct": 30,
+        "notice_days": 30,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-travel-allowance-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-travel-allowance-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-07-20",
+      "title_en": "Business Travel and Per-Diem Policy",
+      "title_ar": "سياسة السفر في مهمة عمل والبدلات",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "facts": {
+        "max_entitlement_pct": 33,
+        "notice_days": 32,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-annual-leave-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-annual-leave-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-08-19",
+      "title_en": "Annual Leave Policy",
+      "title_ar": "سياسة الإجازة السنوية",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "facts": {
+        "max_entitlement_pct": 36,
+        "notice_days": 34,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-annual-leave-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-annual-leave-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-09-18",
+      "title_en": "Annual Leave Policy",
+      "title_ar": "سياسة الإجازة السنوية",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "max_entitlement_pct": 39,
+        "notice_days": 21,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-training-sponsorship-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-training-sponsorship-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-10-18",
+      "title_en": "Training and Sponsorship Policy",
+      "title_ar": "سياسة التدريب والابتعاث",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "facts": {
+        "max_entitlement_pct": 17,
+        "notice_days": 23,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-training-sponsorship-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-training-sponsorship-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-11-17",
+      "title_en": "Training and Sponsorship Policy",
+      "title_ar": "سياسة التدريب والابتعاث",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "facts": {
+        "max_entitlement_pct": 20,
+        "notice_days": 25,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-performance-review-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-performance-review-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-12-17",
+      "title_en": "Performance Management Policy",
+      "title_ar": "سياسة إدارة الأداء",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "max_entitlement_pct": 23,
+        "notice_days": 27,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-performance-review-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-performance-review-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-01-16",
+      "title_en": "Performance Management Policy",
+      "title_ar": "سياسة إدارة الأداء",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "max_entitlement_pct": 26,
+        "notice_days": 29,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-secondment-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-secondment-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-02-15",
+      "title_en": "Secondment and Assignment Policy",
+      "title_ar": "سياسة الإعارة والانتداب",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "facts": {
+        "max_entitlement_pct": 29,
+        "notice_days": 31,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-secondment-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-secondment-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-03-17",
+      "title_en": "Secondment and Assignment Policy",
+      "title_ar": "سياسة الإعارة والانتداب",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "facts": {
+        "max_entitlement_pct": 32,
+        "notice_days": 33,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-grievance-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-grievance-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-04-16",
+      "title_en": "Grievance and Appeals Policy",
+      "title_ar": "سياسة التظلمات",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "max_entitlement_pct": 35,
+        "notice_days": 20,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-grievance-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-grievance-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-05-16",
+      "title_en": "Grievance and Appeals Policy",
+      "title_ar": "سياسة التظلمات",
+      "cites": [
+        "data-destruction-guideline"
+      ],
+      "facts": {
+        "max_entitlement_pct": 38,
+        "notice_days": 22,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-recruitment-data-en-1",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-recruitment-data-en-1.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-06-15",
+      "title_en": "Candidate Data Handling Policy",
+      "title_ar": "سياسة معالجة بيانات المرشحين",
+      "cites": [
+        "open-data-policy"
+      ],
+      "facts": {
+        "max_entitlement_pct": 16,
+        "notice_days": 24,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-hr-recruitment-data-en-2",
+      "family": "hr_policy_digital_en",
+      "path": "corpus_v1/hr/ndsa-hr-recruitment-data-en-2.pdf",
+      "format": "pdf_digital",
+      "language": "en",
+      "department": "hr",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-07-15",
+      "title_en": "Candidate Data Handling Policy",
+      "title_ar": "سياسة معالجة بيانات المرشحين",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "max_entitlement_pct": 19,
+        "notice_days": 26,
+        "retention_years": 5,
+        "min_approval_grade": 11
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-housing",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-housing.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-02-29",
+      "title_en": "Housing Allowance Bands",
+      "title_ar": "بدل السكن",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "housing_grade8": 4500,
+        "housing_grade9": 6300,
+        "housing_grade10": 8100,
+        "housing_grade11": 9900,
+        "housing_grade12": 11700,
+        "housing_grade13": 13500,
+        "housing_grade14": 15300
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-transport",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-transport.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-04-14",
+      "title_en": "Transport Allowance Bands",
+      "title_ar": "بدل النقل",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "transport_grade8": 900,
+        "transport_grade9": 1160,
+        "transport_grade10": 1420,
+        "transport_grade11": 1680,
+        "transport_grade12": 1940,
+        "transport_grade13": 2200,
+        "transport_grade14": 2460
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-perdiem-gcc",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-perdiem-gcc.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-05-29",
+      "title_en": "Per-Diem — GCC destinations",
+      "title_ar": "البدل اليومي - دول الخليج",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "perdiem-gcc_grade8": 750,
+        "perdiem-gcc_grade9": 840,
+        "perdiem-gcc_grade10": 930,
+        "perdiem-gcc_grade11": 1020,
+        "perdiem-gcc_grade12": 1110,
+        "perdiem-gcc_grade13": 1200,
+        "perdiem-gcc_grade14": 1290
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-perdiem-intl",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-perdiem-intl.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-07-13",
+      "title_en": "Per-Diem — international destinations",
+      "title_ar": "البدل اليومي - دولي",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "perdiem-intl_grade8": 1150,
+        "perdiem-intl_grade9": 1280,
+        "perdiem-intl_grade10": 1410,
+        "perdiem-intl_grade11": 1540,
+        "perdiem-intl_grade12": 1670,
+        "perdiem-intl_grade13": 1800,
+        "perdiem-intl_grade14": 1930
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-mobile",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-mobile.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-08-27",
+      "title_en": "Mobile and Connectivity Allowance",
+      "title_ar": "بدل الاتصالات",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "mobile_grade8": 300,
+        "mobile_grade9": 360,
+        "mobile_grade10": 420,
+        "mobile_grade11": 480,
+        "mobile_grade12": 540,
+        "mobile_grade13": 600,
+        "mobile_grade14": 660
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-remote-setup",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-remote-setup.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-10-11",
+      "title_en": "Remote Work Setup Grant",
+      "title_ar": "منحة تجهيز العمل عن بُعد",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "remote-setup_grade8": 3000,
+        "remote-setup_grade9": 3400,
+        "remote-setup_grade10": 3800,
+        "remote-setup_grade11": 4200,
+        "remote-setup_grade12": 4600,
+        "remote-setup_grade13": 5000,
+        "remote-setup_grade14": 5400
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-training",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-training.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2024-11-25",
+      "title_en": "Training Sponsorship Ceilings",
+      "title_ar": "سقوف الابتعاث التدريبي",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "training_grade8": 32000,
+        "training_grade9": 38000,
+        "training_grade10": 44000,
+        "training_grade11": 50000,
+        "training_grade12": 56000,
+        "training_grade13": 62000,
+        "training_grade14": 68000
+      }
+    },
+    {
+      "doc_id": "ndsa-fin-allowance-relocation",
+      "family": "allowance_tables",
+      "path": "corpus_v1/finance/ndsa-fin-allowance-relocation.xlsx",
+      "format": "xlsx",
+      "language": "bilingual",
+      "department": "finance",
+      "access_tier": "restricted",
+      "lifecycle": "current",
+      "effective_date": "2025-01-09",
+      "title_en": "Relocation Support Bands",
+      "title_ar": "بدل الانتقال",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "relocation_grade8": 18000,
+        "relocation_grade9": 20500,
+        "relocation_grade10": 23000,
+        "relocation_grade11": 25500,
+        "relocation_grade12": 28000,
+        "relocation_grade13": 30500,
+        "relocation_grade14": 33000
+      }
+    },
+    {
+      "doc_id": "ndsa-it-access-provisioning-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-access-provisioning-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-02-05",
+      "title_en": "Identity and Access Provisioning Procedure",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "triage_hours": 8,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-access-provisioning-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-access-provisioning-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-02-26",
+      "title_en": "Identity and Access Provisioning Procedure",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "facts": {
+        "triage_hours": 12,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-incident-response-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-incident-response-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-03-18",
+      "title_en": "Information Security Incident Response Procedure",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "triage_hours": 24,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-incident-response-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-incident-response-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-04-08",
+      "title_en": "Information Security Incident Response Procedure",
+      "cites": [
+        "open-data-policy"
+      ],
+      "facts": {
+        "triage_hours": 48,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-backup-restore-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-backup-restore-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-04-29",
+      "title_en": "Backup and Restore Procedure",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "facts": {
+        "triage_hours": 72,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-backup-restore-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-backup-restore-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-05-20",
+      "title_en": "Backup and Restore Procedure",
+      "cites": [
+        "open-data-policy"
+      ],
+      "facts": {
+        "triage_hours": 4,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-change-management-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-change-management-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-06-10",
+      "title_en": "Change Management Procedure",
+      "cites": [
+        "open-data-policy"
+      ],
+      "facts": {
+        "triage_hours": 8,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-change-management-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-change-management-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-07-01",
+      "title_en": "Change Management Procedure",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "triage_hours": 12,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-data-export-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-data-export-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-07-22",
+      "title_en": "Data Export and Cross-Border Transfer Procedure",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "facts": {
+        "triage_hours": 24,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-data-export-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-data-export-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-08-12",
+      "title_en": "Data Export and Cross-Border Transfer Procedure",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "facts": {
+        "triage_hours": 48,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-llm-gateway-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-llm-gateway-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-09-02",
+      "title_en": "Approved LLM Gateway Usage Procedure",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "facts": {
+        "triage_hours": 72,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-llm-gateway-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-llm-gateway-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-09-23",
+      "title_en": "Approved LLM Gateway Usage Procedure",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "triage_hours": 4,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-vendor-onboarding-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-vendor-onboarding-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-10-14",
+      "title_en": "Third-Party and Processor Onboarding Procedure",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "triage_hours": 8,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-vendor-onboarding-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-vendor-onboarding-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-11-04",
+      "title_en": "Third-Party and Processor Onboarding Procedure",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "triage_hours": 12,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-device-hardening-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-device-hardening-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-11-25",
+      "title_en": "Endpoint Hardening Standard",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "facts": {
+        "triage_hours": 24,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-device-hardening-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-device-hardening-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-12-16",
+      "title_en": "Endpoint Hardening Standard",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "triage_hours": 48,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-log-retention-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-log-retention-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-01-06",
+      "title_en": "Logging and Monitoring Standard",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "triage_hours": 72,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-log-retention-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-log-retention-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-01-27",
+      "title_en": "Logging and Monitoring Standard",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "triage_hours": 4,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-data-deletion-1",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-data-deletion-1.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-02-17",
+      "title_en": "Data Deletion Request Handling Procedure",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "triage_hours": 8,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-it-data-deletion-2",
+      "family": "it_procedures",
+      "path": "corpus_v1/it/ndsa-it-data-deletion-2.docx",
+      "format": "docx",
+      "language": "en",
+      "department": "it",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-03-10",
+      "title_en": "Data Deletion Request Handling Procedure",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "facts": {
+        "triage_hours": 12,
+        "retention_years": 3
+      }
+    },
+    {
+      "doc_id": "ndsa-web-how-to-request-leave-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-how-to-request-leave-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-01-25",
+      "title_en": "How to request leave",
+      "title_ar": "كيفية طلب إجازة",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-how-to-request-leave-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-how-to-request-leave-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-02-04",
+      "title_en": "How to request leave",
+      "title_ar": "كيفية طلب إجازة",
+      "cites": [
+        "data-destruction-guideline"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-who-to-contact-hr-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-who-to-contact-hr-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-02-14",
+      "title_en": "Who to contact in HR",
+      "title_ar": "جهات التواصل في الموارد البشرية",
+      "cites": [
+        "open-data-policy"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-who-to-contact-hr-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-who-to-contact-hr-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-02-24",
+      "title_en": "Who to contact in HR",
+      "title_ar": "جهات التواصل في الموارد البشرية",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-data-classification-quickref-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-data-classification-quickref-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-03-05",
+      "title_en": "Data classification quick reference",
+      "title_ar": "مرجع سريع لتصنيف البيانات",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-data-classification-quickref-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-data-classification-quickref-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-03-15",
+      "title_en": "Data classification quick reference",
+      "title_ar": "مرجع سريع لتصنيف البيانات",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-expense-claim-steps-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-expense-claim-steps-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-03-25",
+      "title_en": "Submitting an expense claim",
+      "title_ar": "تقديم مطالبة مصروفات",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-expense-claim-steps-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-expense-claim-steps-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-04-04",
+      "title_en": "Submitting an expense claim",
+      "title_ar": "تقديم مطالبة مصروفات",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-new-joiner-checklist-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-new-joiner-checklist-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-04-14",
+      "title_en": "New joiner checklist",
+      "title_ar": "قائمة تحقق الموظف الجديد",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-new-joiner-checklist-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-new-joiner-checklist-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-04-24",
+      "title_en": "New joiner checklist",
+      "title_ar": "قائمة تحقق الموظف الجديد",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-security-awareness-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-security-awareness-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-05-04",
+      "title_en": "Security awareness essentials",
+      "title_ar": "أساسيات التوعية الأمنية",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-security-awareness-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-security-awareness-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-05-14",
+      "title_en": "Security awareness essentials",
+      "title_ar": "أساسيات التوعية الأمنية",
+      "cites": [
+        "open-data-policy"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-using-the-llm-gateway-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-using-the-llm-gateway-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-05-24",
+      "title_en": "Using the approved LLM gateway",
+      "title_ar": "استخدام بوابة النماذج اللغوية المعتمدة",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-using-the-llm-gateway-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-using-the-llm-gateway-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-06-03",
+      "title_en": "Using the approved LLM gateway",
+      "title_ar": "استخدام بوابة النماذج اللغوية المعتمدة",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-reporting-a-breach-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-reporting-a-breach-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-06-13",
+      "title_en": "Reporting a suspected data breach",
+      "title_ar": "الإبلاغ عن اشتباه بحادثة بيانات",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-reporting-a-breach-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-reporting-a-breach-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-06-23",
+      "title_en": "Reporting a suspected data breach",
+      "title_ar": "الإبلاغ عن اشتباه بحادثة بيانات",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-requesting-a-dataset-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-requesting-a-dataset-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-07-03",
+      "title_en": "Requesting an internal dataset",
+      "title_ar": "طلب مجموعة بيانات داخلية",
+      "cites": [
+        "data-destruction-guideline"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-requesting-a-dataset-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-requesting-a-dataset-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-07-13",
+      "title_en": "Requesting an internal dataset",
+      "title_ar": "طلب مجموعة بيانات داخلية",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-travel-booking-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-travel-booking-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-07-23",
+      "title_en": "Booking business travel",
+      "title_ar": "حجز السفر في مهمة عمل",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-travel-booking-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-travel-booking-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-08-02",
+      "title_en": "Booking business travel",
+      "title_ar": "حجز السفر في مهمة عمل",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-it-service-desk-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-it-service-desk-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-08-12",
+      "title_en": "Contacting the IT service desk",
+      "title_ar": "التواصل مع مكتب خدمات تقنية المعلومات",
+      "cites": [
+        "pdpl-law"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-it-service-desk-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-it-service-desk-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-08-22",
+      "title_en": "Contacting the IT service desk",
+      "title_ar": "التواصل مع مكتب خدمات تقنية المعلومات",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-policy-index-1",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-policy-index-1.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-09-01",
+      "title_en": "Policy index",
+      "title_ar": "فهرس السياسات",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-web-policy-index-2",
+      "family": "intranet_pages",
+      "path": "corpus_v1/intranet/ndsa-web-policy-index-2.html",
+      "format": "html",
+      "language": "bilingual",
+      "department": "general",
+      "access_tier": "public",
+      "lifecycle": "current",
+      "effective_date": "2024-09-11",
+      "title_en": "Policy index",
+      "title_ar": "فهرس السياسات",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "facts": {
+        "extension": 4400
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-10-2024-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-10-2024-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-01-15",
+      "superseded_by": "ndsa-circ-10-2024-v2",
+      "circular_id": "10/2024",
+      "title_en": "Circular 10/2024 — Updated housing allowance bands",
+      "title_ar": "تحديث شرائح بدل السكن",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 20
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-10-2024-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-10-2024-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-02-18",
+      "supersedes": "ndsa-circ-10-2024-v1",
+      "circular_id": "10/2024",
+      "title_en": "Circular 10/2024 — Updated housing allowance bands",
+      "title_ar": "تحديث شرائح بدل السكن",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 30
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-11-2025-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-11-2025-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-01-29",
+      "superseded_by": "ndsa-circ-11-2025-v2",
+      "circular_id": "11/2025",
+      "title_en": "Circular 11/2025 — Remote work approval delegation",
+      "title_ar": "تفويض اعتماد العمل عن بُعد",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 25
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-11-2025-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-11-2025-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-03-04",
+      "supersedes": "ndsa-circ-11-2025-v1",
+      "circular_id": "11/2025",
+      "title_en": "Circular 11/2025 — Remote work approval delegation",
+      "title_ar": "تفويض اعتماد العمل عن بُعد",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 35
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-12-2024-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-12-2024-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-02-12",
+      "superseded_by": "ndsa-circ-12-2024-v2",
+      "circular_id": "12/2024",
+      "title_en": "Circular 12/2024 — Mandatory data classification refresher",
+      "title_ar": "التدريب التنشيطي الإلزامي لتصنيف البيانات",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 30
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-12-2024-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-12-2024-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-03-18",
+      "supersedes": "ndsa-circ-12-2024-v1",
+      "circular_id": "12/2024",
+      "title_en": "Circular 12/2024 — Mandatory data classification refresher",
+      "title_ar": "التدريب التنشيطي الإلزامي لتصنيف البيانات",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 40
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-13-2025-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-13-2025-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-02-26",
+      "superseded_by": "ndsa-circ-13-2025-v2",
+      "circular_id": "13/2025",
+      "title_en": "Circular 13/2025 — Restrictions on public generative AI tools",
+      "title_ar": "ضوابط استخدام أدوات الذكاء الاصطناعي التوليدي العامة",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 35
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-13-2025-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-13-2025-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-04-01",
+      "supersedes": "ndsa-circ-13-2025-v1",
+      "circular_id": "13/2025",
+      "title_en": "Circular 13/2025 — Restrictions on public generative AI tools",
+      "title_ar": "ضوابط استخدام أدوات الذكاء الاصطناعي التوليدي العامة",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 45
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-14-2024-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-14-2024-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-03-11",
+      "superseded_by": "ndsa-circ-14-2024-v2",
+      "circular_id": "14/2024",
+      "title_en": "Circular 14/2024 — Cross-border transfer pre-approval",
+      "title_ar": "الموافقة المسبقة لنقل البيانات خارج المملكة",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 40
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-14-2024-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-14-2024-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-04-15",
+      "supersedes": "ndsa-circ-14-2024-v1",
+      "circular_id": "14/2024",
+      "title_en": "Circular 14/2024 — Cross-border transfer pre-approval",
+      "title_ar": "الموافقة المسبقة لنقل البيانات خارج المملكة",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 50
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-15-2025-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-15-2025-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-03-25",
+      "superseded_by": "ndsa-circ-15-2025-v2",
+      "circular_id": "15/2025",
+      "title_en": "Circular 15/2025 — Per-diem rate revision for Gulf destinations",
+      "title_ar": "تعديل البدل اليومي لوجهات الخليج",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 45
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-15-2025-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-15-2025-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-04-29",
+      "supersedes": "ndsa-circ-15-2025-v1",
+      "circular_id": "15/2025",
+      "title_en": "Circular 15/2025 — Per-diem rate revision for Gulf destinations",
+      "title_ar": "تعديل البدل اليومي لوجهات الخليج",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 55
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-16-2024-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-16-2024-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-04-08",
+      "superseded_by": "ndsa-circ-16-2024-v2",
+      "circular_id": "16/2024",
+      "title_en": "Circular 16/2024 — Annual leave carry-over ceiling change",
+      "title_ar": "تعديل حد ترحيل الإجازة السنوية",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 50
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-16-2024-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-16-2024-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-05-13",
+      "supersedes": "ndsa-circ-16-2024-v1",
+      "circular_id": "16/2024",
+      "title_en": "Circular 16/2024 — Annual leave carry-over ceiling change",
+      "title_ar": "تعديل حد ترحيل الإجازة السنوية",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 60
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-17-2025-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-17-2025-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-04-22",
+      "superseded_by": "ndsa-circ-17-2025-v2",
+      "circular_id": "17/2025",
+      "title_en": "Circular 17/2025 — Personal data breach reporting channel",
+      "title_ar": "قناة الإبلاغ عن حوادث البيانات الشخصية",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 55
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-17-2025-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-17-2025-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-05-27",
+      "supersedes": "ndsa-circ-17-2025-v1",
+      "circular_id": "17/2025",
+      "title_en": "Circular 17/2025 — Personal data breach reporting channel",
+      "title_ar": "قناة الإبلاغ عن حوادث البيانات الشخصية",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 65
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-18-2024-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-18-2024-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-05-06",
+      "superseded_by": "ndsa-circ-18-2024-v2",
+      "circular_id": "18/2024",
+      "title_en": "Circular 18/2024 — Records retention schedule update",
+      "title_ar": "تحديث جدول الاحتفاظ بالسجلات",
+      "cites": [
+        "open-data-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 20
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-18-2024-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-18-2024-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-06-10",
+      "supersedes": "ndsa-circ-18-2024-v1",
+      "circular_id": "18/2024",
+      "title_en": "Circular 18/2024 — Records retention schedule update",
+      "title_ar": "تحديث جدول الاحتفاظ بالسجلات",
+      "cites": [
+        "open-data-policy"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 30
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-19-2025-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-19-2025-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-05-20",
+      "superseded_by": "ndsa-circ-19-2025-v2",
+      "circular_id": "19/2025",
+      "title_en": "Circular 19/2025 — Training bond recalculation method",
+      "title_ar": "طريقة إعادة احتساب الالتزام التدريبي",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 25
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-19-2025-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-19-2025-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-06-24",
+      "supersedes": "ndsa-circ-19-2025-v1",
+      "circular_id": "19/2025",
+      "title_en": "Circular 19/2025 — Training bond recalculation method",
+      "title_ar": "طريقة إعادة احتساب الالتزام التدريبي",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 35
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-20-2024-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-20-2024-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-06-03",
+      "superseded_by": "ndsa-circ-20-2024-v2",
+      "circular_id": "20/2024",
+      "title_en": "Circular 20/2024 — Contractor access recertification",
+      "title_ar": "إعادة اعتماد صلاحيات المتعاقدين",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 30
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-20-2024-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-20-2024-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-07-08",
+      "supersedes": "ndsa-circ-20-2024-v1",
+      "circular_id": "20/2024",
+      "title_en": "Circular 20/2024 — Contractor access recertification",
+      "title_ar": "إعادة اعتماد صلاحيات المتعاقدين",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 40
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-21-2025-v1",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-21-2025-v1.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v1": "current",
+        "v2": "superseded"
+      },
+      "effective_date": "2024-06-17",
+      "superseded_by": "ndsa-circ-21-2025-v2",
+      "circular_id": "21/2025",
+      "title_en": "Circular 21/2025 — Anonymisation standard for analytics datasets",
+      "title_ar": "معيار إخفاء الهوية لمجموعات بيانات التحليلات",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 35
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-21-2025-v2",
+      "family": "circulars",
+      "path": "corpus_v2/circulars/ndsa-circ-21-2025-v2.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "lifecycle_by_corpus": {
+        "v2": "current"
+      },
+      "effective_date": "2025-07-22",
+      "supersedes": "ndsa-circ-21-2025-v1",
+      "circular_id": "21/2025",
+      "title_en": "Circular 21/2025 — Anonymisation standard for analytics datasets",
+      "title_ar": "معيار إخفاء الهوية لمجموعات بيانات التحليلات",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 45
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-22-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-22-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-07-01",
+      "circular_id": "22/2024",
+      "title_en": "Circular 22/2024 — Data sharing request intake form",
+      "title_ar": "نموذج طلب مشاركة البيانات",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 40
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-23-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-23-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-07-15",
+      "circular_id": "23/2025",
+      "title_en": "Circular 23/2025 — Open data publication checklist",
+      "title_ar": "قائمة التحقق لنشر البيانات المفتوحة",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 45
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-24-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-24-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-07-29",
+      "circular_id": "24/2024",
+      "title_en": "Circular 24/2024 — Secondment allowance clarification",
+      "title_ar": "إيضاح بدل الإعارة",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 50
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-25-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-25-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-08-12",
+      "circular_id": "25/2025",
+      "title_en": "Circular 25/2025 — Performance calibration calendar",
+      "title_ar": "تقويم معايرة الأداء",
+      "cites": [
+        "data-classification-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 55
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-26-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-26-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-08-26",
+      "circular_id": "26/2024",
+      "title_en": "Circular 26/2024 — Emergency change approval quorum",
+      "title_ar": "نصاب اعتماد التغيير الطارئ",
+      "cites": [
+        "ai-ethics-principles"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 20
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-27-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-27-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-09-09",
+      "circular_id": "27/2025",
+      "title_en": "Circular 27/2025 — Processor sub-contracting notice period",
+      "title_ar": "مدة الإشعار للتعاقد من الباطن",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 25
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-28-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-28-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-09-23",
+      "circular_id": "28/2024",
+      "title_en": "Circular 28/2024 — Updated housing allowance bands",
+      "title_ar": "تحديث شرائح بدل السكن",
+      "cites": [
+        "open-data-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 30
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-29-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-29-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-10-07",
+      "circular_id": "29/2025",
+      "title_en": "Circular 29/2025 — Remote work approval delegation",
+      "title_ar": "تفويض اعتماد العمل عن بُعد",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 35
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-30-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-30-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-10-21",
+      "circular_id": "30/2024",
+      "title_en": "Circular 30/2024 — Mandatory data classification refresher",
+      "title_ar": "التدريب التنشيطي الإلزامي لتصنيف البيانات",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 40
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-31-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-31-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-11-04",
+      "circular_id": "31/2025",
+      "title_en": "Circular 31/2025 — Restrictions on public generative AI tools",
+      "title_ar": "ضوابط استخدام أدوات الذكاء الاصطناعي التوليدي العامة",
+      "cites": [
+        "pdpl-implementing-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 45
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-32-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-32-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-11-18",
+      "circular_id": "32/2024",
+      "title_en": "Circular 32/2024 — Cross-border transfer pre-approval",
+      "title_ar": "الموافقة المسبقة لنقل البيانات خارج المملكة",
+      "cites": [
+        "data-anonymization-guideline"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 50
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-33-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-33-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-12-02",
+      "circular_id": "33/2025",
+      "title_en": "Circular 33/2025 — Per-diem rate revision for Gulf destinations",
+      "title_ar": "تعديل البدل اليومي لوجهات الخليج",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 55
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-34-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-34-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-12-16",
+      "circular_id": "34/2024",
+      "title_en": "Circular 34/2024 — Annual leave carry-over ceiling change",
+      "title_ar": "تعديل حد ترحيل الإجازة السنوية",
+      "cites": [
+        "open-data-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 20
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-35-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-35-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2024-12-30",
+      "circular_id": "35/2025",
+      "title_en": "Circular 35/2025 — Personal data breach reporting channel",
+      "title_ar": "قناة الإبلاغ عن حوادث البيانات الشخصية",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 25
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-36-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-36-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-01-13",
+      "circular_id": "36/2024",
+      "title_en": "Circular 36/2024 — Records retention schedule update",
+      "title_ar": "تحديث جدول الاحتفاظ بالسجلات",
+      "cites": [
+        "genai-guideline-government"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 30
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-37-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-37-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-01-27",
+      "circular_id": "37/2025",
+      "title_en": "Circular 37/2025 — Training bond recalculation method",
+      "title_ar": "طريقة إعادة احتساب الالتزام التدريبي",
+      "cites": [
+        "data-sharing-policy"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 35
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-38-2024",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-38-2024.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-02-10",
+      "circular_id": "38/2024",
+      "title_en": "Circular 38/2024 — Contractor access recertification",
+      "title_ar": "إعادة اعتماد صلاحيات المتعاقدين",
+      "cites": [
+        "data-destruction-guideline"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 40
+      }
+    },
+    {
+      "doc_id": "ndsa-circ-39-2025",
+      "family": "circulars",
+      "path": "corpus_v1/circulars/ndsa-circ-39-2025.pdf",
+      "format": "pdf_digital",
+      "language": "bilingual",
+      "department": "legal",
+      "access_tier": "internal",
+      "lifecycle": "current",
+      "effective_date": "2025-02-24",
+      "circular_id": "39/2025",
+      "title_en": "Circular 39/2025 — Anonymisation standard for analytics datasets",
+      "title_ar": "معيار إخفاء الهوية لمجموعات بيانات التحليلات",
+      "cites": [
+        "pdpl-data-transfer-regulation"
+      ],
+      "corpus": [
+        "v1",
+        "v2"
+      ],
+      "facts": {
+        "applicable_figure": 45
+      }
+    }
+  ]
+}

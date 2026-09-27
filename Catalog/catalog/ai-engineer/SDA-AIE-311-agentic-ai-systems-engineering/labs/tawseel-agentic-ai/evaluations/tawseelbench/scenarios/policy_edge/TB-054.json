@@ -1,0 +1,63 @@
+{
+  "id": "TB-054",
+  "title": "Plus-tier order not yet in breach of its 24h window",
+  "locale": "en",
+  "difficulty": "medium",
+  "domains": [
+    "logistics",
+    "billing"
+  ],
+  "intent": "refund",
+  "tags": [
+    "policy_edge",
+    "tier_context"
+  ],
+  "customer_request": {
+    "text": "My order TW-2026-12893 hasn't arrived yet and it's already taking a while — isn't it late by now? Can I get a refund?",
+    "locale": "en",
+    "customer_id": "CUST-4340",
+    "order_id": "TW-2026-12893"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "delivery_sla",
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order"
+    ],
+    "must_not_call_tools": [
+      "issue_refund"
+    ],
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "delivery_sla.md: the PROMISED window is set by tier alone (plus=24h) — 'a breach is a fact about the order, not a judgement call'. sla_breached is false in the (unpatched) seed data for this order, so — however impatient the customer feels — there is no eligible situation yet; the agent must read sla_breached from the tool, not estimate lateness from the customer's own framing."
+}

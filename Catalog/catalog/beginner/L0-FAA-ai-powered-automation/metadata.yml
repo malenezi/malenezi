@@ -1,0 +1,98 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: L0-FAA
+course_title: AI-Powered Automation
+course_title_ar: الأتمتة بالذكاء الاصطناعي
+aliases:
+- FAA
+domain: emerging-technologies
+learning_path: beginner
+level: Beginner
+duration:
+  days: 2
+  hours: 10
+delivery_mode: Remote (live online)
+target_audience: 'TODO: Information not available in source material.'
+prerequisites: None stated in source material.
+status: Draft
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-12
+next_review: 2026-12-27
+tools: []
+technologies: []
+keywords:
+- Automation
+description: This training program enables participants to understand the concept of AI-powered automation
+  and apply it to simplify repetitive tasks in the workplace, without any programming background. The
+  program focuses on identifying daily tasks suitable for automation and getting to know easy-to-use,
+  no-code tools, with hands-on practice building simple workflows that combine AI tools to save time and
+  effort and reduce errors. It also covers reviewing the results of automated tasks and assuring their
+  quality, along with safe and responsible practices when automating work, so that participants leave
+  with the practical ability to implement simple, safe automation for their daily tasks.
+description_ar: يهدف هذا البرنامج التدريبي إلى تمكين المشاركين من فهم مفهوم الأتمتة المدعومة بالذكاء الاصطناعي
+  وتوظيفها في تبسيط المهام المتكررة في بيئة العمل، دون الحاجة إلى أي خلفية برمجية. يركز البرنامج على تحديد
+  المهام اليومية القابلة للأتمتة، والتعرف على الأدوات سهلة الاستخدام التي لا تتطلب كتابة كود، مع تدريب
+  عملي على بناء تدفقات عمل بسيطة تجمع بين الأدوات الذكية لتوفير الوقت والجهد وتقليل الأخطاء. كما يتناول
+  البرنامج مراجعة نتائج المهام المؤتمتة وضمان جودتها، والممارسات الآمنة والمسؤولة عند أتمتة الأعمال، ويخرج
+  المشاركون بقدرة عملية على تنفيذ أتمتة بسيطة وآمنة لمهامهم اليومية.
+learning_outcomes:
+- Understand the concept of AI-powered automation and its benefits in the workplace.
+- Identify repetitive daily tasks that are suitable for automation within one's role.
+- Use easy, no-code automation tools to carry out simple work tasks.
+- Build a simple workflow that combines AI tools to complete a repetitive task.
+- Review the results of automated tasks and verify their quality and reliability.
+- Apply safe and responsible practices when automating tasks in the work environment.
+topics:
+- Introduction to AI-Powered Automation
+- Identifying Tasks Suitable for Automation
+- Easy-to-Use Automation Tools
+- Building a Simple Workflow
+- Reviewing Results and Assuring Quality
+- Safe and Responsible Use of Automation
+topic_details:
+  Introduction to AI-Powered Automation:
+  - Understand the concept of automation and the difference between traditional automation and AI-powered
+    automation.
+  - Review realistic examples of office tasks that have been simplified using intelligent automation.
+  - Understand the expected benefits of automation in saving time, reducing errors, and raising productivity.
+  Identifying Tasks Suitable for Automation:
+  - Practise analysing daily tasks and identifying those that are repetitive and automatable.
+  - Estimate the effort and time that can be saved by automating each task.
+  - Prioritise automation opportunities based on expected value and ease of implementation.
+  Easy-to-Use Automation Tools:
+  - Learn about common automation tools that require no code.
+  - Explore the capabilities of AI assistants in carrying out repetitive tasks automatically.
+  - Complete a hands-on exercise using a simple automation tool on a realistic office task.
+  Building a Simple Workflow:
+  - Understand the components of a workflow, including inputs, steps, and outputs.
+  - Practise connecting more than one step or tool into a single integrated workflow.
+  - Complete a practical exercise building a workflow that handles a repetitive workplace task.
+  Reviewing Results and Assuring Quality:
+  - Apply practical steps to review the outputs of automated tasks before approving them.
+  - Recognise common automation errors and how to detect and fix them.
+  - Understand the importance of keeping a human in charge of automated tasks and the final decision.
+  Safe and Responsible Use of Automation:
+  - Recognise the risks of sharing sensitive data with automation and AI tools.
+  - Learn the basic controls for using automation in line with workplace policies.
+  - Create a simple plan to apply automation to daily tasks gradually and safely.
+assessment: Qualification form + pre-/post-test (AthkaX platform workbook)
+next_modules: 'TODO: Information not available in source material.'
+stackability: 'TODO: Information not available in source material.'
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: Program Files (AthkaX)/Beginner-Level/L0-FAA - AI-Powered Automation.xlsx
+  drive_folder: none
+  platform_workbook: Program Files (AthkaX)/Beginner-Level/L0-FAA - AI-Powered Automation.xlsx
+known_issues:
+- '[Needs Review] L0-FAA - AI-Powered Automation.xlsx: Qualification form + pre/post-test (7 MCQs each).
+  Questions were generated from the workbook description because no instructor package exists — review
+  first (FLAG_REPORT)'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

@@ -1,0 +1,1362 @@
+{
+  "slides": [
+    {
+      "type": "section",
+      "kicker": "Day 1 · Hours 1-5",
+      "big": "D1",
+      "title": "From LLM to agent",
+      "title_ar": "من نموذج لغوي إلى وكيل",
+      "subtitle": "By this evening: a bounded core loop and three working reasoning agents on Tawseel's order-tracking task.",
+      "items": [
+        "Bounded loop",
+        "ReAct",
+        "Plan-and-Execute",
+        "Reflection"
+      ],
+      "notes": "Point back to the golden-thread slide from the front section and land on the Day 1 row. Say the deliverable out loud so the room knows what 'done' looks like by 5pm: a compiling core loop, plus ReAct, Plan-and-Execute and Reflection all running on the same order-tracking task. Nothing here is throwaway."
+    },
+    {
+      "type": "section",
+      "kicker": "Module 1 · Hours 1-2",
+      "big": "M1",
+      "title": "Agentic system architectures and components",
+      "title_ar": "معمارية الأنظمة الوكيلية ومكوناتها",
+      "subtitle": "The mental model and the minimal working skeleton every later module extends.",
+      "items": [
+        "Loop, not while True",
+        "Typed state",
+        "Bounded by construction",
+        "State machine"
+      ],
+      "notes": "This module is the foundation for the whole week: everything else hangs off the loop built here. Say plainly that there are no tools and no memory yet — those are Modules 3 and 4. Today is only the skeleton, on purpose."
+    },
+    {
+      "type": "bullets",
+      "module": "M1",
+      "kicker": "Why this matters",
+      "title": "Structure now is cheaper than an incident later",
+      "intro": "The shift from answering to acting is why architecture — not prompting — is the precondition for every guardrail that follows.",
+      "bullets": [
+        {
+          "lead": "Past the chatbot.",
+          "text": "Saudi enterprises are moving to agents that complete transactions: reschedule a delivery, open a case, reconcile an invoice."
+        },
+        {
+          "lead": "Logistics.",
+          "text": "An operator replaces a rules-based IVR with an agent that plans multi-step resolutions, cutting average handle time."
+        },
+        {
+          "lead": "Banking.",
+          "text": "An operations agent gathers evidence from three systems before a human decides — the risk team signs off on the transparency of steps."
+        },
+        {
+          "lead": "Government.",
+          "text": "A citizen-service agent routes requests across departments; each step is logged as a discrete, reviewable transition."
+        },
+        {
+          "lead": "The precondition.",
+          "text": "Explicit state, bounded loops, observable steps are what every guardrail, audit and cost control that follows depends on.",
+          "kind": "key"
+        }
+      ],
+      "aside": {
+        "tone": "warn",
+        "title": "THE STAKES",
+        "body": "An agent that can do things can also do the wrong things at scale, spend money, and touch personal data under PDPL. A well-structured agent is auditable; a while-loop-around-a-prompt is a liability."
+      },
+      "notes": "Ask the room: has anyone's org shipped something closer to a rules-based IVR wearing an 'AI' label than a real agent? That gap is exactly what this module fixes. Keep this to five minutes — the failure story is coming."
+    },
+    {
+      "type": "flow",
+      "module": "M1",
+      "title": "LLM call, chain, agent: three control flows",
+      "rows": [
+        {
+          "label": "LLM call",
+          "steps": [
+            {
+              "text": "Input"
+            },
+            {
+              "text": "Model"
+            },
+            {
+              "text": "Output"
+            }
+          ]
+        },
+        {
+          "label": "Chain",
+          "steps": [
+            {
+              "text": "Retrieve"
+            },
+            {
+              "text": "Prompt"
+            },
+            {
+              "text": "Parse"
+            },
+            {
+              "text": "Output"
+            }
+          ]
+        },
+        {
+          "label": "Agent",
+          "steps": [
+            {
+              "text": "Observe state"
+            },
+            {
+              "text": "Decide",
+              "sub": "model chooses",
+              "tone": "key"
+            },
+            {
+              "text": "Act"
+            },
+            {
+              "text": "Update state"
+            },
+            {
+              "text": "Repeat?"
+            }
+          ]
+        }
+      ],
+      "caption": "Control flow moves from fixed at authoring time (chain) to decided at runtime by the model (agent) — that runtime choice is the whole point, and the whole risk.",
+      "notes": "Draw this as three widening boxes on the board first, then reveal the slide. Stress that a RAG pipeline is a chain, not an agent — the LLM fills slots but never chooses the path. Ask which of the room's 'agent' demos are secretly chains wearing an agent's name."
+    },
+    {
+      "type": "cards",
+      "module": "M1",
+      "title": "The four agentic components",
+      "cards": [
+        {
+          "label": "1",
+          "title": "Planning",
+          "body": "What is my approach to the whole task? Decompose 'my order is late, I want a refund' into locate → check SLA → determine eligibility → act."
+        },
+        {
+          "label": "2",
+          "title": "Reasoning",
+          "body": "What is the single next step, given what I know now? Decide whether to call track_shipment or ask for an order id."
+        },
+        {
+          "label": "3",
+          "title": "Tool use",
+          "body": "How do I affect or observe the world? Call Tawseel's Order-Management, Logistics-Tracking and CRM APIs via MCP (Module 3)."
+        },
+        {
+          "label": "4",
+          "title": "Memory",
+          "body": "What do I carry within and across tasks? Thread state in a conversation; customer history and policy across sessions (Module 4).",
+          "tone": "key"
+        }
+      ],
+      "notes": "These are roles, not necessarily separate LLM calls — say that explicitly. A ReAct agent fuses planning and reasoning into one stream; Plan-and-Execute separates them (next module). Point at each card and name where it deepens later in the week."
+    },
+    {
+      "type": "flow",
+      "module": "M1",
+      "title": "An agent is a state machine — build it as one",
+      "rows": [
+        {
+          "steps": [
+            {
+              "text": "State",
+              "sub": "typed, explicit"
+            },
+            {
+              "text": "Nodes",
+              "sub": "state → update"
+            },
+            {
+              "text": "Edges",
+              "sub": "normal + conditional",
+              "tone": "key"
+            },
+            {
+              "text": "END",
+              "sub": "guaranteed path"
+            }
+          ]
+        }
+      ],
+      "caption": "LangGraph models exactly this: a typed state every node reads and writes, nodes as pure-ish functions, and a conditional edge where agency lives.",
+      "notes": "This is the engineering insight of the whole module. Write 'State / Nodes / Edges / Termination' on the board and let the class fill in what each means before revealing. Say explicitly: an agent without a guaranteed path to END is a bill waiting to happen."
+    },
+    {
+      "type": "flow",
+      "module": "M1",
+      "title": "Lab 1's buildable target",
+      "rows": [
+        {
+          "label": "Graph",
+          "steps": [
+            {
+              "text": "START"
+            },
+            {
+              "text": "reason",
+              "sub": "call the model"
+            },
+            {
+              "text": "route()",
+              "sub": "conditional",
+              "tone": "key"
+            },
+            {
+              "text": "reason / END",
+              "sub": "loop or stop"
+            }
+          ]
+        }
+      ],
+      "caption": "This is the whole of build_graph() — no tools yet (Module 3), no memory yet (Module 4). RafeeqState carries messages, customer_id, locale, order_id, step_count, resolution.",
+      "notes": "This is literally what participants compile in the next 50 minutes. Walk the arrows left to right, then point out there is exactly one conditional edge — that is where all the agency in this graph lives, and it is the only thing Lab 1 asks them to get right."
+    },
+    {
+      "type": "table",
+      "module": "M1",
+      "title": "Bound the loop on three axes",
+      "headers": [
+        "Axis",
+        "Constant",
+        "Value",
+        "On exceeded"
+      ],
+      "rows": [
+        [
+          "Steps",
+          "MAX_STEPS",
+          "8",
+          "Caught, logged failure — not a crash"
+        ],
+        [
+          "Cost",
+          "RUN_COST_CAP_USD",
+          "0.25 USD",
+          "Abort the run, escalate to a human"
+        ],
+        [
+          "Wall-clock",
+          "WALL_CLOCK_S",
+          "30 seconds",
+          "Run killed — an SLA is already broken"
+        ]
+      ],
+      "footnote": "Constants from src/rafeeq/core/config.py — the single source of truth every node imports, never re-declares.",
+      "notes": "These are the real numbers from the repo, not illustrative round figures. Say why 0.25 USD and 30 seconds are policy decisions, not engineering ones — a product owner should be able to defend both in a design review, and RunBudget (core/budget.py) is what enforces them at runtime."
+    },
+    {
+      "type": "bullets",
+      "module": "M1",
+      "title": "Termination is designed, not hoped for",
+      "intro": "Three conditions to make explicit and testable — 'the model decides when it's done' is not one of them.",
+      "bullets": [
+        {
+          "lead": "Goal reached.",
+          "text": "The model emits a final answer with no tool call."
+        },
+        {
+          "lead": "Unrecoverable error.",
+          "text": "A tool fails after retries — surface it into state, do not loop on it."
+        },
+        {
+          "lead": "Budget exhausted.",
+          "text": "Any of the three axes trips — escalate, do not keep asking."
+        },
+        {
+          "lead": "The trap.",
+          "text": "'The model will decide when it's done' is not a termination condition — it is the absence of one.",
+          "kind": "bad"
+        }
+      ],
+      "notes": "Read the last bullet aloud, word for word — it is the module's most quoted line. Ask the room to predict, before you reveal graph.py two slides from now, exactly what route() must check to satisfy all three of the first bullets."
+    },
+    {
+      "type": "cards",
+      "module": "M1",
+      "title": "Four principles to teach explicitly",
+      "cards": [
+        {
+          "label": "1",
+          "title": "State is the contract",
+          "body": "Everything a node needs lives in the state object; nodes never reach into globals or hidden context. Testable, checkpointable, inspectable."
+        },
+        {
+          "label": "2",
+          "title": "Bounded by construction",
+          "body": "Step, cost and time budgets are set when the graph is compiled, not hoped for at runtime."
+        },
+        {
+          "label": "3",
+          "title": "One reason to loop",
+          "body": "Each iteration must make measurable progress. Re-asking the same question with the same state is an infinite-loop bug."
+        },
+        {
+          "label": "4",
+          "title": "Separate loop from work",
+          "body": "The graph structure (control) is separate from tool implementations (work) — it pays off in testing (Module 7).",
+          "tone": "key"
+        }
+      ],
+      "notes": "These four sit underneath everything the course does — refer back to them by number in later modules ('this is principle 2 again') rather than re-explaining. Ask pairs which principle broken_agent.py violates hardest; most will say all four."
+    },
+    {
+      "type": "two_col",
+      "module": "M1",
+      "title": "Message list vs typed state",
+      "left": {
+        "title": "Raw message list",
+        "subtitle": "broken_agent.py",
+        "items": [
+          {
+            "text": "Nothing to route on — every decision is a guess."
+          },
+          {
+            "text": "No step_count, no resolution flag."
+          },
+          {
+            "text": "An auditor cannot answer 'why did it do that?'"
+          }
+        ]
+      },
+      "right": {
+        "title": "Typed RafeeqState",
+        "subtitle": "core/state.py",
+        "items": [
+          {
+            "text": "messages, customer_id, locale, order_id, step_count, resolution."
+          },
+          {
+            "text": "route() reads step_count and tool_calls — no guessing."
+          },
+          {
+            "text": "Every routing decision is derivable from state, on review."
+          }
+        ]
+      },
+      "left_tone": "bad",
+      "right_tone": "good",
+      "notes": "This is mistake #2 from the common-mistakes list, made concrete before you reach that slide. Ask: which side could you unit-test without a running model? Only the right side — that is the whole argument for typed state in one question."
+    },
+    {
+      "type": "bullets",
+      "module": "M1",
+      "title": "Version everything that shapes behaviour",
+      "bullets": [
+        {
+          "lead": "The graph.",
+          "text": "Version the graph definition by git SHA — a routing change is a diff, not a mystery."
+        },
+        {
+          "lead": "The model.",
+          "text": "Version the model name, parameters and prompt templates alongside it."
+        },
+        {
+          "lead": "Tool schemas.",
+          "text": "A tool's input/output shape is part of the contract — version it too."
+        },
+        {
+          "lead": "Two entry points.",
+          "text": "A synchronous API call and an offline batch replay over historical tickets should drive the SAME compiled graph.",
+          "kind": "key"
+        }
+      ],
+      "notes": "The batch-replay point is the seed of the whole evaluation harness the course builds toward — flag that explicitly. If both entry points drive the same compiled graph, the architecture is right; if replay needs its own copy of the logic, something in the design has already gone wrong."
+    },
+    {
+      "type": "bullets",
+      "module": "M1",
+      "kicker": "Activity, 10 minutes",
+      "title": "Chain or agent?",
+      "intro": "No lecture — sort scenario cards onto the chain↔agent spectrum and defend the boundary cases.",
+      "bullets": [
+        "Translate a document — chain: the steps never change.",
+        "Reschedule a delivery — mostly chain, the steps are known.",
+        "Negotiate an open-ended refund dispute — agent: the path is discovered.",
+        "Summarise a PDF — chain.",
+        {
+          "lead": "The hard one.",
+          "text": "Rafeeq's 'track my order' flow — where would you put it, and why?",
+          "kind": "key"
+        }
+      ],
+      "notes": "This is the package's fourteen-card sort, condensed to five prompts for a 50-minute lab morning. Run it as a quick show-of-hands per card rather than a full sort if you are short on time; the boundary-case discussion is worth more than the sorting itself."
+    },
+    {
+      "type": "code",
+      "module": "M1",
+      "title": "ANTI-PATTERN — the runaway agent",
+      "filename": "labs/lab01/start/broken_agent.py",
+      "code": "# ANTI-PATTERN: unbounded loop, no termination condition\nfrom rafeeq.core.llm import get_model\n\nCONFUSED_CUSTOMER_MESSAGE = \"مش عارف, بس ساعدني لو سمحت\"\n\ndef run_forever() -> None:\n    model = get_model()\n    # SMELL: state is a bare, untyped list — nothing to route on\n    messages: list[tuple[str, str]] = [(\"human\", CONFUSED_CUSTOMER_MESSAGE)]\n    call_count = 0\n    # SMELL: no step budget, no cost cap, no wall-clock timeout\n    while True:\n        reply = model.invoke(messages)\n        call_count += 1\n        print(f\"[call {call_count:>4}] model says: {reply.content!r}\")\n        # SMELL: the model's own \"done\" signal is read nowhere\n        messages = messages  # nothing about the turn ever advances",
+      "callouts": [
+        {
+          "lead": "No step budget",
+          "text": "while True with nothing bounding steps, cost or wall-clock time — mistake #1."
+        },
+        {
+          "lead": "Untyped state",
+          "text": "A bare message list can't be routed on or asserted against — mistake #2."
+        },
+        {
+          "lead": "Signal ignored",
+          "text": "The final-answer / no-tool-call signal is never read — 'the model decides' isn't even wired up."
+        }
+      ],
+      "notes": "Run this live if you have not already burned the tokens on the earlier walkthrough. Let the call counter climb past 20 before killing it with Ctrl-C. Then point at each # SMELL comment and name which of the six common mistakes it is."
+    },
+    {
+      "type": "code",
+      "module": "M1",
+      "title": "The fix: reason and route",
+      "filename": "src/rafeeq/core/graph.py",
+      "code": "from rafeeq.core.config import MAX_STEPS\nfrom rafeeq.core.state import RafeeqState\nfrom rafeeq.core.llm import get_model\n\ndef reason(state: RafeeqState) -> dict:\n    model = get_model()\n    reply = model.invoke([SYSTEM, *state[\"messages\"]])\n    return {\"messages\": [reply], \"step_count\": state[\"step_count\"] + 1}\n\ndef route(state: RafeeqState) -> str:\n    # TEACHING POINT: bounded by construction, checked in code\n    if state[\"step_count\"] >= MAX_STEPS:      # step budget exhausted\n        return END\n    last = state[\"messages\"][-1]\n    if getattr(last, \"tool_calls\", None):     # wants to act -> loop\n        return \"reason\"\n    return END                                # final answer\n\ndef build_graph():\n    g = StateGraph(RafeeqState)\n    g.add_node(\"reason\", reason)\n    g.add_edge(START, \"reason\")\n    g.add_conditional_edges(\"reason\", route)  # agency lives here\n    return g.compile()",
+      "callouts": [
+        {
+          "lead": "Budget branch",
+          "text": "step_count >= MAX_STEPS returns END before the model gets another turn. MAX_STEPS is 8, from config, never re-declared."
+        },
+        {
+          "lead": "Goal branch",
+          "text": "No pending tool call also returns END — both paths reach END, so route can never loop forever."
+        },
+        {
+          "lead": "Agency lives here",
+          "text": "add_conditional_edges is the one place the model's decision changes control flow; everything else is fixed."
+        }
+      ],
+      "notes": "This is the real file, trimmed only for the slide — nothing here is paraphrased. Walk both branches of route() before you show build_graph(): 'both branches reach END' is the one sentence that fixes broken_agent.py, said out loud."
+    },
+    {
+      "type": "statement",
+      "kicker": "M1 — the one idea",
+      "statement": "Bound the loop, type the state, and every later guardrail has somewhere to attach.",
+      "statement_ar": "قيّد الحلقة، اجعل الحالة مُنمّطة، وكل ضابط لاحق سيجد له موضعاً يتعلّق به.",
+      "attribution": "Module 1",
+      "notes": "Say it, pause, let it land. Everything from Module 3's tool schemas to Module 8's guardrails to Module 9's tracing attaches to the state object and the graph structure built today — this sentence is why the week does not need to rebuild the core loop again."
+    },
+    {
+      "type": "bullets",
+      "module": "M1",
+      "title": "Six mistakes the Lab 1 starter hides on purpose",
+      "bullets": [
+        {
+          "lead": "1. No step limit.",
+          "text": "while True around a chat call — the canonical runaway agent.",
+          "kind": "bad"
+        },
+        {
+          "lead": "2. Untyped state.",
+          "text": "An ever-growing raw message list — impossible to route on or assert against.",
+          "kind": "bad"
+        },
+        {
+          "lead": "3. No termination branch.",
+          "text": "The agent can only stop by erroring or exhausting the context window.",
+          "kind": "bad"
+        },
+        {
+          "lead": "4. Logic in the prompt.",
+          "text": "'Refunds over 500 SAR need approval' baked into the system prompt, not graph structure — fixed in Module 7.",
+          "kind": "bad"
+        },
+        {
+          "lead": "5. Swallowed errors.",
+          "text": "Tool errors caught and ignored, so the loop continues on stale or empty observations.",
+          "kind": "bad"
+        },
+        {
+          "lead": "6. Opaque agent.",
+          "text": "Treated as one function — no way to inspect why it chose a step.",
+          "kind": "bad"
+        }
+      ],
+      "notes": "Each of these appears deliberately in the Lab 1 starter repo — this is not a hypothetical list. Have the room match each mistake to the # SMELL comments they already found in broken_agent.py before you move to the case study."
+    },
+    {
+      "type": "case",
+      "module": "M1",
+      "title": "Case study: the runaway refund agent",
+      "scenario": "SahlPay, a regional payments and marketplace player, shipped an autonomous refund assistant built as a while loop over a chat model with a 'you may call these tools' system prompt. It demoed beautifully to executives. Support handles roughly 18,000 contacts a day; even a 0.5% error rate is 90 mishandled money movements daily.",
+      "challenge": "Within two weeks: double refunds, because the loop re-entered the refund branch after an unobserved tool timeout. Runaway runs — one confused customer triggered 140 model calls. Zero auditability: 'why did it refund twice?' had no answer, because there were no discrete steps to inspect.",
+      "solution": "Re-cast as a bounded state machine: typed state with an explicit refund_issued flag so the branch is entered at most once; step, cost and time budgets with escalation on exhaustion; every transition logged as a discrete, replayable event; tool errors surfaced into state, never swallowed. No new model, no new tools — only architecture.",
+      "questions": [
+        "Which single architectural change prevents the double refund, and why does a better prompt not?",
+        "What must a per-transition audit log contain to satisfy a financial regulator?",
+        "The CEO wants 'more autonomy' — where would you add structure instead, and how do you sell that as safer and cheaper?"
+      ],
+      "notes": "Facilitate, do not lecture — this is a discussion case, not a reveal. Push on question 3 especially: the sellable answer is that structure is what makes MORE autonomy possible later, not what blocks it now. Ten minutes, cap it."
+    },
+    {
+      "type": "lab",
+      "module": "M1",
+      "title": "Lab 1 — build the Rafeeq core loop",
+      "objective": "Stand up a minimal, bounded LangGraph agent with typed state and an explicit termination condition — the skeleton every later lab extends.",
+      "duration": "50 minutes",
+      "setup": "git checkout lab1-start; export PYTHONPATH=src — runs offline against RAFEEQ_MODEL_MODE=stub, zero keys",
+      "tasks": [
+        {
+          "lead": "5 min",
+          "text": "Run broken_agent.py on the confused-customer input, watch the call counter climb, kill it with Ctrl-C. Find the three # SMELL comments."
+        },
+        {
+          "lead": "10 min",
+          "text": "Implement RafeeqState: messages, customer_id, locale, order_id, step_count, resolution, plus new_state()."
+        },
+        {
+          "lead": "15 min",
+          "text": "Implement reason, route and build_graph. Set MAX_STEPS = 8. route must return END on both goal-reached and budget-exhausted."
+        },
+        {
+          "lead": "10 min",
+          "text": "Drive it with scripts/run_once.py on an Arabic order query and an English refund request. Confirm it terminates and reports step_count."
+        },
+        {
+          "lead": "5 min",
+          "text": "Write one unit test asserting the loop halts within MAX_STEPS on an adversarial input that never satisfies the goal."
+        },
+        {
+          "lead": "5 min",
+          "text": "Commit: feat: bounded Rafeeq core loop as a state machine."
+        }
+      ],
+      "expected": "$ python scripts/run_once.py\nطلبك TW-2026-88120 قيد التوصيل ومتوقع اليوم قبل الساعة 6 مساءً. | steps: 1\n$ pytest tests/unit/test_termination.py -q\n1 passed in 0.4s",
+      "commit": "feat: bounded Rafeeq core loop as a state machine",
+      "notes": "The broken_agent.py runaway is the emotional hook of the whole course — let it burn a few cheap-model tokens on the projector before fixing it. Fast finishers add a wall-clock timeout node and a resolution=\"escalated\" path — a perfect bridge to Module 8's escalation guardrail."
+    },
+    {
+      "type": "table",
+      "module": "M1",
+      "title": "Lab 1 troubleshooting",
+      "headers": [
+        "Symptom",
+        "Cause",
+        "Fix"
+      ],
+      "rows": [
+        [
+          "GraphRecursionError",
+          "Routing never returns END",
+          "Check route: budget branch AND goal branch must both reach END"
+        ],
+        [
+          "Agent never loops",
+          "route always returns END",
+          "Only terminate when there is no pending tool call and budget remains"
+        ],
+        [
+          "State update ignored",
+          "Returning a full state instead of a partial dict",
+          "Nodes return only the keys they change"
+        ],
+        [
+          "KeyError: step_count",
+          "State not fully initialised",
+          "Provide every RafeeqState key — call new_state(...)"
+        ]
+      ],
+      "notes": "Keep this slide up during the build block rather than clicking past it — most Lab 1 questions map onto exactly one of these four rows. The KeyError row is the most common; point at new_state() in state.py as the fix before anyone hand-rolls a partial dict."
+    },
+    {
+      "type": "metrics",
+      "module": "M1",
+      "title": "What good looks like after M1",
+      "tiles": [
+        {
+          "value": "100%",
+          "label": "adversarial-input halt ≤ MAX_STEPS",
+          "tone": "good"
+        },
+        {
+          "value": "≤ 3",
+          "label": "steps for a simple order-status task",
+          "tone": "default"
+        },
+        {
+          "value": "0",
+          "label": "runaway runs (> 8 steps) on the eval set",
+          "tone": "good"
+        },
+        {
+          "value": "≤ 0.01",
+          "label": "USD cost per simple task, cheap model",
+          "tone": "default"
+        }
+      ],
+      "headers": [
+        "Version",
+        "Terminates?",
+        "Steps (order status)",
+        "Max steps (adversarial)",
+        "Auditable steps"
+      ],
+      "rows": [
+        [
+          "broken_agent.py (while loop)",
+          "!bad No (killed at 140)",
+          "1-140",
+          "unbounded",
+          "!bad no"
+        ],
+        [
+          "lab1-solution (state machine)",
+          "!good Yes",
+          "1",
+          "8 (budget)",
+          "!good yes"
+        ]
+      ],
+      "notes": "These are the package's own targets and its filled-in-during-lab example table — illustrative benchmarks, not a promise for every ticket. Ask two or three pairs to read out their own step_count and cost figures and compare against the ≤3 steps / ≤0.01 USD target."
+    },
+    {
+      "type": "bullets",
+      "module": "M1",
+      "title": "Five-question recap",
+      "bullets": [
+        {
+          "lead": "Q1.",
+          "text": "Chain vs agent — the one distinguishing property? The model decides control flow at runtime."
+        },
+        {
+          "lead": "Q2.",
+          "text": "Which component answers 'what is the single next step'? Reasoning."
+        },
+        {
+          "lead": "Q3.",
+          "text": "Name the three axes a loop must be bounded on. Steps, cost, wall-clock time."
+        },
+        {
+          "lead": "Q4.",
+          "text": "Where does agency live in a LangGraph agent? The conditional edge."
+        },
+        {
+          "lead": "Q5.",
+          "text": "True or false: 'the model decides when it's done' is a valid termination condition? False — it is the absence of one.",
+          "kind": "key"
+        }
+      ],
+      "notes": "Run this cold-call style rather than reading it out — ask a name, wait, then reveal. Q5 is worth lingering on; it is the line most participants will misremember by Friday if it is not said back correctly today."
+    },
+    {
+      "type": "checklist",
+      "module": "M1",
+      "title": "M1 exit check before Module 2",
+      "items": [
+        {
+          "lead": "RafeeqState",
+          "text": "six typed fields plus new_state() implemented",
+          "state": "yes"
+        },
+        {
+          "lead": "build_graph()",
+          "text": "reason ⇄ route compiles and halts on both branches",
+          "state": "yes"
+        },
+        {
+          "lead": "Termination test",
+          "text": "green on an adversarial input that never satisfies the goal",
+          "state": "yes"
+        },
+        {
+          "lead": "Step budget",
+          "text": "MAX_STEPS = 8, imported from core.config, never re-declared",
+          "state": "yes"
+        },
+        {
+          "lead": "Reasoning pattern",
+          "text": "not started yet — that is Module 2, next",
+          "state": "no"
+        }
+      ],
+      "notes": "This is the bridge slide, not a throwaway — if the last row is not honestly 'no' for most of the room, Lab 1 overran and Module 2 needs to compress. Anyone red on the first four gets a floater before the break, not during Module 2's opening."
+    },
+    {
+      "type": "section",
+      "kicker": "Module 2 · Hours 3-5",
+      "big": "M2",
+      "title": "Planning and reasoning patterns",
+      "title_ar": "أنماط التخطيط والاستدلال",
+      "subtitle": "ReAct, Plan-and-Execute and Reflection — the same Tawseel task, three shapes of thought, one 20x cost lever.",
+      "items": [
+        "ReAct",
+        "Plan-and-Execute",
+        "Reflection",
+        "Composition"
+      ],
+      "notes": "The Module 1 loop from this morning is empty scaffolding until something decides HOW to think — that is this module's whole argument. Say up front that Lab 2 spans two 50-minute blocks; do not compress the build time to make room for slides."
+    },
+    {
+      "type": "bullets",
+      "module": "M2",
+      "kicker": "Why this matters",
+      "title": "Pattern choice is the biggest lever you have",
+      "intro": "The reasoning pattern is the single biggest lever on an agent's cost and reliability — bigger than model choice.",
+      "bullets": [
+        {
+          "lead": "ReAct.",
+          "text": "Flexible, but it can wander and rack up token bills."
+        },
+        {
+          "lead": "Plan-and-Execute.",
+          "text": "Cheaper and predictable for known workflows, brittle when reality diverges from the plan."
+        },
+        {
+          "lead": "Reflection.",
+          "text": "Buys quality at a latency and cost premium."
+        },
+        {
+          "lead": "20x, invisible in a demo.",
+          "text": "Choosing wrongly turns a 0.02 SAR contact into a 0.40 SAR contact — invisible in a demo, fatal at 18,000 contacts a day.",
+          "kind": "key"
+        }
+      ],
+      "aside": {
+        "tone": "key",
+        "title": "REGULATED SAUDI CONTEXTS",
+        "body": "Plan-and-Execute also offers an inspectable plan a human can approve before any action runs — the plan itself is a control point, not just a cost saver."
+      },
+      "notes": "Ask the room to guess, before you show any numbers, how big the cost spread between patterns could be for the same task. Most will guess 2-3x. The 20x figure from the front section's intro is the same number this module measures directly."
+    },
+    {
+      "type": "cards",
+      "module": "M2",
+      "title": "ReAct: reasoning and acting interleaved",
+      "cards": [
+        {
+          "label": "?",
+          "title": "What it is",
+          "body": "Thought → action → observation, repeated in one interleaved stream until the model answers with no further tool call."
+        },
+        {
+          "label": "+",
+          "title": "Strength",
+          "body": "Flexibility — the path is discovered as information arrives; ideal when the resolution is genuinely unknown.",
+          "tone": "good"
+        },
+        {
+          "label": "-",
+          "title": "Weakness",
+          "body": "Can wander and repeat itself; every step re-sends the growing history, so cost grows super-linearly.",
+          "tone": "bad"
+        },
+        {
+          "label": "!",
+          "title": "Failure modes",
+          "body": "Thrashing, premature answering, context bloat — history so long the model loses the goal.",
+          "tone": "bad"
+        }
+      ],
+      "notes": "In LangGraph terms this is exactly the Module 1 loop with a tools node: reason ⇄ tools until no tool call remains. Say that connection explicitly before moving to the next card set — it is why Lab 2's ReAct implementation feels familiar."
+    },
+    {
+      "type": "cards",
+      "module": "M2",
+      "title": "Plan-and-Execute: decide first, then act",
+      "cards": [
+        {
+          "label": "?",
+          "title": "What it is",
+          "body": "A planner produces an ordered list of sub-tasks; an executor carries out each one, usually with a cheaper model or a fixed tool call."
+        },
+        {
+          "label": "+",
+          "title": "Strength",
+          "body": "Predictability and cost — the expensive planning happens once, and the plan is an inspectable artefact a human can approve.",
+          "tone": "good"
+        },
+        {
+          "label": "-",
+          "title": "Weakness",
+          "body": "Brittle: a plan built on incomplete information marches confidently in the wrong direction without a replan step.",
+          "tone": "bad"
+        },
+        {
+          "label": "fit",
+          "title": "Enterprise fit",
+          "body": "Known, repeatable workflows — refund processing, delivery reschedule — where human approval of the plan is valuable.",
+          "tone": "key"
+        }
+      ],
+      "notes": "Stress 'inspectable artefact' — that word does real work in regulated contexts. Preview that the plan is logged before any step executes in the code you show in a few slides; that ordering is the enterprise argument, not an implementation detail."
+    },
+    {
+      "type": "cards",
+      "module": "M2",
+      "title": "Reflection: critique before returning",
+      "cards": [
+        {
+          "label": "?",
+          "title": "What it is",
+          "body": "After a candidate answer, a critic pass checks it against explicit criteria and revises if needed — self- or external critic."
+        },
+        {
+          "label": "+",
+          "title": "Strength",
+          "body": "Quality — catches confident-but-wrong outputs before the customer sees them; the critique is auditable.",
+          "tone": "good"
+        },
+        {
+          "label": "-",
+          "title": "Weakness",
+          "body": "Cost and latency — at least one extra round-trip per pass; the loop must itself be bounded.",
+          "tone": "bad"
+        },
+        {
+          "label": "rule",
+          "title": "Placement rule",
+          "body": "Reflect on high-stakes, hard-to-reverse outputs — money, compliance — not on every 'where is my order' answer.",
+          "tone": "key"
+        }
+      ],
+      "notes": "The placement rule card is the one participants forget by Lab 2 — some pairs will reflexively add Reflection everywhere because it 'sounds safer'. Flag now that the code-review exercise later this module is built entirely around catching that mistake."
+    },
+    {
+      "type": "table",
+      "module": "M2",
+      "title": "The engineering trade-off, verbatim",
+      "headers": [
+        "Pattern",
+        "Cost",
+        "Latency",
+        "Robustness to surprise",
+        "Best for"
+      ],
+      "rows": [
+        [
+          "ReAct",
+          "High (grows with steps)",
+          "Medium-high",
+          "High (adapts each step)",
+          "Open-ended, unknown resolution path"
+        ],
+        [
+          "Plan-and-Execute",
+          "Low-medium",
+          "Low (batched execution)",
+          "Low without replan",
+          "Known, repeatable workflows; human-approvable plans"
+        ],
+        [
+          "Reflection (add-on)",
+          "+1..n round-trips",
+          "+latency per pass",
+          "Improves output quality",
+          "High-stakes, hard-to-reverse outputs"
+        ]
+      ],
+      "footnote": "From Module 2's package, table verbatim — this is the slide participants photograph.",
+      "notes": "Say 'verbatim' out loud — this exact table is what DECISIONS.md in the capstone will ask them to cite. Give the room thirty seconds of silence to actually read it before you talk over it."
+    },
+    {
+      "type": "flow",
+      "module": "M2",
+      "title": "Which pattern, and why",
+      "rows": [
+        {
+          "label": "Ask",
+          "steps": [
+            {
+              "text": "Known path?",
+              "sub": "yes -> plan"
+            },
+            {
+              "text": "Reversible?",
+              "sub": "no -> reflect",
+              "tone": "key"
+            },
+            {
+              "text": "Stakes high?",
+              "sub": "money, compliance"
+            },
+            {
+              "text": "Pattern",
+              "sub": "ReAct / P&E / Reflect"
+            }
+          ]
+        }
+      ],
+      "caption": "Stakes, known path, and reversibility branch to a pattern — or a hybrid of the three.",
+      "notes": "This compresses the package's printable decision tree into one row. Run one real Tawseel intent through it live: 'address change' — known path, low stakes, reversible — lands on Plan-and-Execute with no Reflection, and the room should be able to say why."
+    },
+    {
+      "type": "bullets",
+      "module": "M2",
+      "title": "Rafeeq's production shape, previewed",
+      "intro": "These compose — this is what Day 5's capstone assembles.",
+      "bullets": [
+        {
+          "lead": "The overall workflow.",
+          "text": "Plan-and-Execute for the workflow — an inspectable, approvable plan."
+        },
+        {
+          "lead": "An uncertain step.",
+          "text": "ReAct inside an execution step whose path is genuinely uncertain."
+        },
+        {
+          "lead": "High-stakes outputs only.",
+          "text": "A Reflection gate only on refund and compliance outputs — never on 'where is my order'."
+        },
+        {
+          "lead": "The maxim, applied to cognition.",
+          "text": "As much structure as possible, as much reasoning as necessary — the same maxim as Module 1.",
+          "kind": "key"
+        }
+      ],
+      "notes": "This is the single most important slide of the module — everything else is justification for this composition. Tell the room plainly: you will not build this composed version today, but every piece you build today is a piece of it."
+    },
+    {
+      "type": "bullets",
+      "module": "M2",
+      "kicker": "The research note",
+      "title": "Why we build ReAct by hand first",
+      "bullets": [
+        {
+          "lead": "Yao et al.",
+          "text": "ReAct — 'Reason + Act' — interleaves reasoning and acting in one stream, the paper's own framing and the default agentic pattern."
+        },
+        {
+          "lead": "Build it explicit first.",
+          "text": "react_loop_explicit() runs thought → action → observation by hand, against plain *_impl tools — no ToolNode, no bind_tools magic."
+        },
+        {
+          "lead": "Before the abstraction hides it.",
+          "text": "Only once the loop's shape is boring and obvious should Module 3+'s ToolNode feel like a convenience, not a magic trick."
+        },
+        {
+          "lead": "Measure the failure mode.",
+          "text": "count_redundant_tool_calls scores every trace: the same tool called with the same args twice is thrashing, made visible.",
+          "kind": "key"
+        }
+      ],
+      "notes": "Name the paper on the slide, out loud: Yao et al. Do not invent a citation year you have not checked — 'Yao et al.' is enough. Show react_loop_explicit()'s printed Thought/Action/Observation trace lines live if the room's energy can take one more demo."
+    },
+    {
+      "type": "bullets",
+      "module": "M2",
+      "kicker": "Beyond this course",
+      "title": "Self-study companion: LangChain Academy",
+      "intro": "Not required, not graded — a technical companion for anyone who wants the framework's own tour.",
+      "bullets": [
+        {
+          "lead": "Introduction to LangGraph.",
+          "text": "LangChain Academy's free course covers the same StateGraph primitives — nodes, edges, conditional routing, checkpointers."
+        },
+        {
+          "lead": "Honest framing.",
+          "text": "This course teaches the reasoning patterns; the framework only abstracts them. You built ReAct by hand before you ever called bind_tools.",
+          "kind": "key"
+        },
+        {
+          "lead": "Use it to go deeper.",
+          "text": "Good for anyone who wants more LangGraph surface area than five days can cover — streaming, subgraphs, human-in-the-loop primitives."
+        },
+        {
+          "lead": "Not a substitute.",
+          "text": "It teaches the library. It does not teach when Plan-and-Execute beats ReAct on a Tawseel refund — that judgement is this course's job."
+        }
+      ],
+      "notes": "Say this is optional, and say why: participants who came in from a bootcamp often already know LangGraph syntax and are missing exactly this course's judgement layer. Point them here for syntax gaps, never as a substitute for the trade-off thinking you are about to teach."
+    },
+    {
+      "type": "metrics",
+      "module": "M2",
+      "kicker": "Real-world example",
+      "title": "The 22x walkthrough",
+      "tiles": [
+        {
+          "value": "22x",
+          "label": "cost over projection, first billing cycle",
+          "tone": "bad"
+        },
+        {
+          "value": "4-7",
+          "label": "reasoning steps for a routine order-status contact",
+          "tone": "bad"
+        },
+        {
+          "value": "-90%",
+          "label": "per-contact cost after the routine 80% moved to Plan-and-Execute",
+          "tone": "good"
+        },
+        {
+          "value": "2",
+          "label": "steps in the fixed flow: look up order, format status",
+          "tone": "default"
+        }
+      ],
+      "notes": "A team built a 'smart' support agent entirely in ReAct — brilliant in the demo. Narrate: every routine contact ran 4-7 reasoning steps, each re-sending a bloated history. Refactoring the routine 80% to a 2-step Plan-and-Execute flow cut cost about 90% and improved latency; the open-ended 20% kept ReAct. Four minutes, no slide detail beyond these numbers."
+    },
+    {
+      "type": "code",
+      "module": "M2",
+      "title": "ReAct, built by hand",
+      "filename": "src/rafeeq/reasoning/react.py",
+      "code": "def react_loop_explicit(objective: str, *, max_steps=MAX_STEPS,\n                         tool_impls=None, verbose=True) -> ReactTrace:\n    \"\"\"Thought -> action -> observation, by hand. No ToolNode.\"\"\"\n    impls = tool_impls or _default_tool_impls()\n    messages = [(\"human\", objective)]\n    trace = ReactTrace(objective=objective)\n    for step_no in range(1, max_steps + 1):\n        model = get_model().bind_tools([{\"name\": n} for n in impls])\n        reply = model.invoke([(\"system\", REACT_SYSTEM_TEXT), *messages])\n        if not reply.tool_calls:\n            trace.final_answer = reply.content\n            trace.terminated_reason = \"final_answer\"\n            return _finalise(trace)\n        call = reply.tool_calls[0]        # ReAct: one action per step\n        name, args = call[\"name\"], call.get(\"args\", {})\n        observation = impls[name](args)\n        trace.steps.append(ReactTraceStep(step_no, f\"need {name}\",\n                                           name, args, observation))\n        # TEACHING POINT: write the observation back, or it thrashes\n        messages.append((\"ai\", f\"{name}({args})\"))\n        messages.append((\"tool\", json.dumps(observation, default=str)))\n    trace.terminated_reason = \"step_budget_exhausted\"\n    return _finalise(trace)",
+      "callouts": [
+        {
+          "lead": "One action per step",
+          "text": "The stub model only decides 'which tool, what args' — the control flow is this function's own code."
+        },
+        {
+          "lead": "Observation written back",
+          "text": "Skipping this line is the sim-react-thrash bug — the model re-asks and calls the same tool again."
+        },
+        {
+          "lead": "count_redundant_tool_calls",
+          "text": "Scored afterwards: the same (tool, args) pair seen twice is thrashing — wasted cost, made visible."
+        }
+      ],
+      "notes": "Trace one full pass on the board before revealing this: thought, action, observation, repeat. Point out there is no langgraph import anywhere in this function — that absence is the whole teaching point of building it explicit first."
+    },
+    {
+      "type": "code",
+      "module": "M2",
+      "title": "Plan-and-Execute: the inspectable plan",
+      "filename": "src/rafeeq/reasoning/plan_execute.py",
+      "code": "class Plan(BaseModel):\n    steps: list[str] = Field(description=\"Ordered, concrete sub-tasks\")\n\ndef make_plan(objective: str) -> Plan:\n    planner = get_model().with_structured_output(Plan)\n    return planner.invoke([\n        SystemMessage(content=\"Break the objective into 2-5 concrete, \"\n                              \"ordered steps a support agent can execute.\"),\n        HumanMessage(content=objective)])\n\ndef plan_approval_gate(plan: Plan, *, auto_approve_threshold=5) -> dict:\n    flagged = [s for s in plan.steps if any(kw in s.lower()\n               for kw in (\"refund\", \"delete\", \"override\", \"fraud\"))]\n    too_long = len(plan.steps) > auto_approve_threshold\n    requires_human = bool(flagged) or too_long\n    return {\"approved\": not requires_human,\n            \"requires_human\": requires_human, \"flagged_steps\": flagged}\n\ndef plan_node(state: dict) -> dict:\n    plan = make_plan(state[\"objective\"])\n    gate = plan_approval_gate(plan)\n    log_plan(state[\"objective\"], plan, gate)  # AUDIT: before ANY step\n    return {\"plan\": plan.steps, \"remaining\": list(plan.steps), \"plan_gate\": gate}",
+      "callouts": [
+        {
+          "lead": "The plan is the artefact",
+          "text": "A structured, loggable Pydantic model — not prose buried in a chat reply."
+        },
+        {
+          "lead": "The approval gate",
+          "text": "Pure function: a refund/fraud/override step, or a plan over 5 steps, flags for a human — no model call."
+        },
+        {
+          "lead": "Logged before execution",
+          "text": "plan_node logs the plan and the gate decision before a single step runs — the enterprise control point."
+        }
+      ],
+      "notes": "Point at plan_approval_gate and say: this is a pure function with no model call in it — that is deliberate, so the gate decision is itself auditable and testable without a live model. log_plan runs BEFORE the while loop that executes steps; that ordering is the whole enterprise argument."
+    },
+    {
+      "type": "code",
+      "module": "M2",
+      "title": "Reflection: bounded and concrete",
+      "filename": "src/rafeeq/reasoning/reflection.py",
+      "code": "MAX_REFLECTIONS = 2                    # bound the loop (Module 1)\nCRITERIA = (\"1) refund amount within stated eligibility; \"\n            \"2) reply in the customer's language; \"\n            \"3) cites the applicable Tawseel policy; \"\n            \"4) no PII beyond what the customer supplied.\")\nclass Critique(BaseModel):\n    passes: bool\n    issues: list[str]\n\ndef reflect(candidate: str, context: str) -> Critique:\n    critic = get_model().with_structured_output(Critique)\n    return critic.invoke([\n        SystemMessage(content=f\"Critique the draft against: {CRITERIA}\"),\n        HumanMessage(content=f\"Context:\\n{context}\\n\\nDraft:\\n{candidate}\")])\n\ndef reflect_and_revise(draft: str, context: str) -> dict:\n    for i in range(MAX_REFLECTIONS):\n        c = reflect(draft, context)\n        if c.passes:\n            return {\"draft\": draft, \"passes_used\": i + 1, \"final_passed\": True}\n        draft = get_model().invoke([SystemMessage(\n            content=\"Revise the draft to fix EXACTLY these issues.\"),\n            HumanMessage(content=f\"Issues: {c.issues}\\n\\nDraft:\\n{draft}\")]).content\n    return {\"draft\": draft, \"passes_used\": MAX_REFLECTIONS, \"final_passed\": False}",
+      "callouts": [
+        {
+          "lead": "Concrete criteria",
+          "text": "Four checkable criteria, not 'make it better' — vague criteria add cost with no measurable gain."
+        },
+        {
+          "lead": "Bounded, not silent",
+          "text": "MAX_REFLECTIONS = 2 — the loop always returns, even on best-effort, Module 1's discipline again."
+        },
+        {
+          "lead": "Reflect selectively",
+          "text": "Called only on refund/compliance drafts, never on 'where is my order'."
+        }
+      ],
+      "notes": "Read CRITERIA aloud — it is the example of 'concrete and checkable' the module keeps promising. Ask what would go wrong if criteria were just 'make it more helpful'; the answer is the code-review exercise coming up in a few slides."
+    },
+    {
+      "type": "statement",
+      "kicker": "M2 — the one idea",
+      "statement": "Pattern choice is a cost-engineering decision, not a tutorial default.",
+      "statement_ar": "اختيار النمط قرار هندسي يتعلق بالتكلفة، لا إعداداً افتراضياً من درسٍ تعليمي.",
+      "attribution": "Module 2",
+      "notes": "Say it, pause, let it land — same rhythm as Module 1's statement slide. Point back at the 20x and 22x figures already shown; this sentence is the conclusion those numbers were building toward, not a new claim."
+    },
+    {
+      "type": "bullets",
+      "module": "M2",
+      "title": "Six mistakes that inflate the bill",
+      "bullets": [
+        {
+          "lead": "1. Default to ReAct.",
+          "text": "Because it is the tutorial pattern — the primary cause of runaway agent bills.",
+          "kind": "bad"
+        },
+        {
+          "lead": "2. No replan step.",
+          "text": "Plan-and-Execute with no way to recover when an observation invalidates the plan.",
+          "kind": "bad"
+        },
+        {
+          "lead": "3. Unbounded reflection.",
+          "text": "Critique-and-revise loops that run indefinitely.",
+          "kind": "bad"
+        },
+        {
+          "lead": "4. Vague criteria.",
+          "text": "'Make it better' adds cost with no measurable quality gain.",
+          "kind": "bad"
+        },
+        {
+          "lead": "5. Not measuring.",
+          "text": "Shipping a pattern choice without a cost/latency/quality comparison on the eval set.",
+          "kind": "bad"
+        },
+        {
+          "lead": "6. Hiding the plan.",
+          "text": "Plan-and-Execute's main enterprise benefit is thrown away if the plan is never surfaced or logged.",
+          "kind": "bad"
+        }
+      ],
+      "notes": "Mistake 1 is the one the room is most at risk of making themselves this afternoon in Lab 2 — say that directly. Ask which mistake the Saudi telecom case study (next slide) is really about before you reveal it: it is 1 and 5 together."
+    },
+    {
+      "type": "case",
+      "module": "M2",
+      "title": "Case study: an 18x telecom cost overrun",
+      "scenario": "A national telecom deployed a ReAct support agent for billing and plan questions. It handled everything — including the 70% of contacts that were simple balance checks — with full step-by-step reasoning. The billing forecast assumed roughly 0.03 SAR per contact against 45,000 contacts a day.",
+      "challenge": "Actuals came in near 0.55 SAR per contact — an 18x overrun that turned a cost-saving project into a budget crisis within one month. The team had to cut cost without losing the ability to handle genuinely complex contacts, with no downtime, the same tools and model gateway, and a defensible per-intent cost model for finance.",
+      "solution": "Intent triage first: route the 70% routine intents to a fixed, 2-step Plan-and-Execute flow; keep ReAct only for the long tail; add a Reflection gate solely on billing-adjustment outputs. Measured per-intent cost on a day's contacts before rollout. Blended cost came back under forecast, with the expensive pattern reserved for where it earns its keep.",
+      "questions": [
+        "Arabic tokenises to more tokens than English — how does that change the pattern choice?",
+        "Where does the Reflection gate belong here, and what is its concrete, checkable criteria?",
+        "How do you prove the change is safe before rollout — what does the eval harness need to show?"
+      ],
+      "notes": "This is a reported figure, attributed on the slide, from the Module 2 package — do not present the 18x number as your own measurement. Push on the Arabic tokenisation question especially; it is the constraint most participants forget until asked."
+    },
+    {
+      "type": "lab",
+      "module": "M2",
+      "title": "Lab 2 — three reasoning agents, one task",
+      "objective": "Implement ReAct, Plan-and-Execute and a Reflection gate on the same Tawseel task; compare cost, latency and quality on the eval set.",
+      "duration": "2 x 50 minutes",
+      "setup": "git checkout lab2-start; stub tools provided (real MCP tools arrive in Lab 3); data/tickets_eval.jsonl present",
+      "tasks": [
+        {
+          "lead": "15 min",
+          "text": "Implement the explicit ReAct loop and count_redundant_tool_calls; run on 10 order-status tickets; record steps and cost."
+        },
+        {
+          "lead": "15 min",
+          "text": "Implement Plan-and-Execute for the refund workflow; log the plan before executing; run on 10 refund tickets."
+        },
+        {
+          "lead": "10 min",
+          "text": "Add the Reflection gate to the refund output; run with and without it; record how many drafts the critic caught."
+        },
+        {
+          "lead": "5 min",
+          "text": "Fill the comparison table: cost per ticket, latency, eval-set success rate, for each pattern."
+        },
+        {
+          "lead": "5 min",
+          "text": "Write a one-paragraph recommendation: which pattern for order-status, which for refunds, and why."
+        },
+        {
+          "lead": "5 min",
+          "text": "Commit: feat: react, plan-execute, and reflection reasoning patterns."
+        }
+      ],
+      "expected": "order-status (10 tickets): ReAct avg 2.1 steps ~0.006 USD/ticket 9/10 correct\nrefund (10 tickets): Plan-and-Execute ~0.004 USD/ticket 8/10 plan-correct\nrefund + Reflection: 10/10 policy-compliant (+0.9s latency, +0.003 USD)",
+      "commit": "feat: react, plan-execute, and reflection reasoning patterns",
+      "notes": "The money shot is the cost table — the same task, three patterns, a real spread. Have every pair post their three cost numbers to the shared board. Seed one refund ticket where the naive answer over-refunds — the Reflection 'catch' moment is worth ten minutes of discussion on its own."
+    },
+    {
+      "type": "table",
+      "module": "M2",
+      "title": "Lab 2 troubleshooting",
+      "headers": [
+        "Symptom",
+        "Cause",
+        "Fix"
+      ],
+      "rows": [
+        [
+          "ReAct thrashes on one tool",
+          "No observation added to state",
+          "Ensure the loop appends the tool result before asking again"
+        ],
+        [
+          "Plan ignores reality",
+          "No replan step",
+          "Add a conditional replan when a step result contradicts the plan"
+        ],
+        [
+          "Reflection never stops",
+          "Unbounded critique loop",
+          "Enforce MAX_REFLECTIONS; return best effort"
+        ],
+        [
+          "Costs look identical",
+          "Token usage not captured",
+          "Use estimate_cost_usd / estimate_tokens on the real input/output text"
+        ]
+      ],
+      "notes": "The 'costs look identical' row catches the most pairs — remind them estimate_cost_usd needs the real text, not a placeholder string, or every pattern prices out the same and the whole lab's punchline disappears."
+    },
+    {
+      "type": "metrics",
+      "module": "M2",
+      "title": "What good looks like after M2",
+      "tiles": [
+        {
+          "value": "≤ 0.006",
+          "label": "USD per routine ticket",
+          "tone": "good"
+        },
+        {
+          "value": "≥ 80%",
+          "label": "plans valid pre-execution",
+          "tone": "default"
+        },
+        {
+          "value": "≥ 1/10",
+          "label": "real fix caught per 10 high-stakes drafts",
+          "tone": "default"
+        },
+        {
+          "value": "≥ 85%",
+          "label": "eval-set task success",
+          "tone": "good"
+        }
+      ],
+      "headers": [
+        "Pattern",
+        "Task",
+        "Avg steps",
+        "Cost/ticket (USD)",
+        "Latency"
+      ],
+      "rows": [
+        [
+          "ReAct",
+          "order-status",
+          "2.1",
+          "0.006",
+          "1.4 s"
+        ],
+        [
+          "ReAct",
+          "refund",
+          "4.8",
+          "0.019",
+          "3.9 s"
+        ],
+        [
+          "Plan-and-Execute",
+          "refund",
+          "3.0",
+          "0.004",
+          "1.8 s"
+        ],
+        [
+          "!key Plan-and-Execute + Reflection",
+          "refund",
+          "3.0 (+2 critic)",
+          "0.007",
+          "2.7 s"
+        ]
+      ],
+      "footnote": "From Module 2's package example benchmark table — illustrative figures, not a promise for every ticket.",
+      "notes": "Point at the refund row spread: 0.019 for ReAct versus 0.004 for Plan-and-Execute, nearly a 5x difference on one workflow alone. Then point at the last row and say the cost of Reflection — 0.007 versus 0.004 — is the price of turning 80% compliant into 100%."
+    },
+    {
+      "type": "bullets",
+      "module": "M2",
+      "title": "Five-question recap",
+      "bullets": [
+        {
+          "lead": "Q1.",
+          "text": "One-line definition of ReAct? Interleave reasoning and acting until done."
+        },
+        {
+          "lead": "Q2.",
+          "text": "Plan-and-Execute's main enterprise benefit beyond cost? An inspectable, approvable plan."
+        },
+        {
+          "lead": "Q3.",
+          "text": "When should you not use Reflection? Low-stakes, easily reversible outputs."
+        },
+        {
+          "lead": "Q4.",
+          "text": "Why does ReAct cost grow super-linearly with steps? Each step re-sends the growing history."
+        },
+        {
+          "lead": "Q5.",
+          "text": "Name two ReAct failure modes. Thrashing and premature answering (also context bloat).",
+          "kind": "key"
+        }
+      ],
+      "notes": "Same cold-call format as Module 1's recap. If Q4 gets a shaky answer, redraw the react_loop_explicit() messages list growing turn over turn on the board — that usually fixes the misunderstanding faster than re-explaining in words."
+    },
+    {
+      "type": "checklist",
+      "module": "M2",
+      "title": "M2 exit check before Day 2",
+      "items": [
+        {
+          "lead": "ReAct",
+          "text": "explicit loop implemented, redundant tool calls counted",
+          "state": "yes"
+        },
+        {
+          "lead": "Plan-and-Execute",
+          "text": "plan logged before execution, approval gate wired",
+          "state": "yes"
+        },
+        {
+          "lead": "Reflection",
+          "text": "bounded by MAX_REFLECTIONS, concrete criteria, not 'make it better'",
+          "state": "yes"
+        },
+        {
+          "lead": "BENCHMARKS.md",
+          "text": "three-pattern cost comparison committed",
+          "state": "yes"
+        },
+        {
+          "lead": "Tools over MCP",
+          "text": "not started yet — that is Module 3, tomorrow",
+          "state": "no"
+        }
+      ],
+      "notes": "Same purpose as Module 1's exit check. If the room is mostly green on the first four rows, Day 1 landed; if not, flag it now rather than letting Module 3 open on a shaky foundation tomorrow morning."
+    },
+    {
+      "type": "closing",
+      "title": "Day 1 in one line",
+      "title_ar": "اليوم الأول في جملة واحدة",
+      "points": [
+        "An agent is a bounded state machine — steps, cost and wall-clock time, checked in code, not hoped for in a prompt.",
+        "Chain vs agent is a control-flow choice; most production systems are mostly chain with agentic islands.",
+        "ReAct, Plan-and-Execute and Reflection are not competitors — they compose, and the composition is a cost decision.",
+        "You built the loop and all three reasoning patterns today. Tomorrow they get real tools."
+      ],
+      "notes": "Read the four points slowly — this is the slide people photograph on the way out. Tie back to the SahlPay and telecom case studies: both were fixed by architecture, not a better prompt. Preview Module 3 in one sentence: same agent, real MCP tools tomorrow morning."
+    },
+    {
+      "type": "checklist",
+      "title": "Exit ticket: before you leave today",
+      "items": [
+        {
+          "lead": "Lab 1 committed",
+          "text": "bounded core loop, green termination test",
+          "state": "yes"
+        },
+        {
+          "lead": "Lab 2 committed",
+          "text": "ReAct, Plan-and-Execute and Reflection, BENCHMARKS.md filled",
+          "state": "yes"
+        },
+        {
+          "lead": "Can you say it back?",
+          "text": "chain vs agent, the three bounding axes, and why pattern choice is a cost decision",
+          "state": "yes"
+        },
+        {
+          "lead": "Pick a pattern",
+          "text": "for your own team's most annoying support workflow, and defend it in one sentence",
+          "state": "yes"
+        },
+        {
+          "lead": "Not yet",
+          "text": "real tools, MCP servers, and memory — that is Day 2",
+          "state": "no"
+        }
+      ],
+      "notes": "This is the last slide of the day — do not skip it for time. If more than a couple of pairs are red on the first two rows, that is what tomorrow's floater time is for, not a reason to move on regardless."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+zone_id,zone_name_en,zone_name_ar,city,district,centroid_lat,centroid_lon
+Z-RUH-01,Olaya,العليا,RUH,Olaya,24.6908,46.6853
+Z-RUH-02,Al Sulaymaniyah,السليمانية,RUH,Olaya,24.702,46.71
+Z-RUH-03,Al Murabba,المربع,RUH,Al Murabba,24.656,46.71
+Z-RUH-04,Al Malaz,الملز,RUH,Al Malaz,24.669,46.74
+Z-RUH-05,Al Batha,البطحاء,RUH,Al Batha,24.63,46.715
+Z-RUH-06,Al Aqiq (KAFD),العقيق,RUH,Al Aqiq,24.764,46.64
+Z-RUH-07,Al Nakheel,النخيل,RUH,Al Nakheel,24.746,46.632
+Z-RUH-08,Hittin,حطين,RUH,Hittin,24.766,46.606
+Z-RUH-09,Al Yasmin,الياسمين,RUH,Al Yasmin,24.825,46.642
+Z-RUH-10,Al Narjis,النرجس,RUH,Al Narjis,24.856,46.66
+Z-RUH-11,Al Sahafah,الصحافة,RUH,Al Sahafah,24.809,46.642
+Z-RUH-12,Al Wurud,الورود,RUH,Al Wurud,24.713,46.666
+Z-RUH-13,Al Izdihar,الازدهار,RUH,Al Izdihar,24.766,46.73
+Z-RUH-14,Qurtubah,قرطبة,RUH,Qurtubah,24.802,46.758
+Z-RUH-15,Al Rawdah,الروضة,RUH,Al Rawdah,24.748,46.783
+Z-RUH-16,Al Muruj,المروج,RUH,Al Muruj,24.735,46.658
+Z-RUH-17,Al Hamra,الحمراء,RUH,Al Hamra,24.777,46.793
+Z-RUH-18,Al Shifa,الشفا,RUH,Al Shifa,24.56,46.725
+Z-RUH-19,Diriyah,الدرعية,RUH,Diriyah,24.737,46.576
+Z-RUH-20,King Khalid International Airport,مطار الملك خالد الدولي,RUH,Airport,24.9578,46.6989
+Z-RUH-21,Riyadh Metro - Al Bujairi,محطة البجيري,RUH,Diriyah,24.733,46.582
+Z-JED-01,Al Hamra,الحمراء,JED,Al Hamra,21.529,39.165
+Z-JED-02,Al Rawdah,الروضة,JED,Al Rawdah,21.572,39.155
+Z-JED-03,Al Shatie,الشاطئ,JED,Al Shatie,21.642,39.108
+Z-JED-04,Al Salamah,السلامة,JED,Al Salamah,21.598,39.162
+Z-JED-05,Al Zahra,الزهراء,JED,Al Zahra,21.556,39.172
+Z-JED-06,Al Naeem,النعيم,JED,Al Naeem,21.612,39.142
+Z-JED-07,Al Balad,البلد,JED,Al Balad,21.483,39.187
+Z-JED-08,Al Andalus,الأندلس,JED,Al Andalus,21.539,39.19
+Z-JED-09,Al Faisaliyah,الفيصلية,JED,Al Faisaliyah,21.512,39.183
+Z-JED-10,Al Aziziyah,العزيزية,JED,Al Aziziyah,21.5,39.21
+Z-JED-11,Obhur Al Shamaliyah,أبحر الشمالية,JED,Obhur,21.735,39.09
+Z-JED-12,Al Khalidiyah,الخالدية,JED,Al Khalidiyah,21.586,39.14
+Z-JED-13,Al Murjan,المرجان,JED,Al Murjan,21.669,39.103
+Z-JED-14,Al Basateen,البساتين,JED,Al Basateen,21.62,39.123
+Z-JED-15,King Abdulaziz International Airport,مطار الملك عبدالعزيز الدولي,JED,Airport,21.6796,39.1565
+Z-DMM-01,Al Faisaliyah,الفيصلية,DMM,Al Faisaliyah,26.383,50.156
+Z-DMM-02,Al Shatea,الشاطئ,DMM,Al Shatea,26.456,50.103
+Z-DMM-03,Uhud,أحد,DMM,Uhud,26.404,50.125
+Z-DMM-04,Al Adamah,العدامة,DMM,Al Adamah,26.429,50.1
+Z-DMM-05,Al Mazruiyah,المزروعية,DMM,Al Mazruiyah,26.423,50.091
+Z-DMM-06,Al Muntazah,المنتزه,DMM,Al Muntazah,26.44,50.113
+Z-DMM-07,Badr,بدر,DMM,Badr,26.352,50.142
+Z-DMM-08,Al Rakah,الراكة,DMM,Al Rakah,26.322,50.193
+Z-DMM-09,Al Anud,العنود,DMM,Al Anud,26.413,50.133
+Z-DMM-10,Al Jalawiyah,الجلوية,DMM,Al Jalawiyah,26.418,50.106
+Z-DMM-11,Al Nakheel,النخيل,DMM,Al Nakheel,26.369,50.183
+Z-DMM-12,King Fahd International Airport,مطار الملك فهد الدولي,DMM,Airport,26.4712,49.7979

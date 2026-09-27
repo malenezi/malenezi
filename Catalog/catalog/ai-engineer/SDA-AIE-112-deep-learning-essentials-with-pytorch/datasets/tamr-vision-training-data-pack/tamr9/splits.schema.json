@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tamr-9 frozen split file",
+  "type": "object",
+  "required": [
+    "train",
+    "val",
+    "test"
+  ],
+  "properties": {
+    "train": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ajwa",
+              "barhi",
+              "khalas",
+              "khudri",
+              "mabroom",
+              "sagai",
+              "saqi",
+              "sufri",
+              "sukkari"
+            ]
+          }
+        ],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "val": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ajwa",
+              "barhi",
+              "khalas",
+              "khudri",
+              "mabroom",
+              "sagai",
+              "saqi",
+              "sufri",
+              "sukkari"
+            ]
+          }
+        ],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "test": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "enum": [
+              "ajwa",
+              "barhi",
+              "khalas",
+              "khudri",
+              "mabroom",
+              "sagai",
+              "saqi",
+              "sufri",
+              "sukkari"
+            ]
+          }
+        ],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    }
+  }
+}

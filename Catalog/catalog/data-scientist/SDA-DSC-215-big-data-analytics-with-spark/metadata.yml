@@ -1,0 +1,71 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-215
+course_title: Big Data Analytics with Spark
+course_title_ar: تحليلات البيانات الضخمة باستخدام Spark
+aliases:
+- Big Data Analytics
+domain: data-engineering
+learning_path: data-scientist
+level: Specialist
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Data scientists and engineers working with large-scale data
+prerequisites: SDA-DSC-214 or equivalent Spark exposure
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-08
+next_review: 2026-12-27
+tools:
+- PySpark
+- Spark SQL
+- MLlib
+- Delta Lake
+technologies: []
+keywords:
+- Data Engineering
+- Big Data
+- SQL
+description: A specialist module on analysing datasets too large for a single machine. Participants master
+  distributed computing concepts, write performant Spark transformations and SQL, and tune jobs through
+  partitioning and caching. The module scales every prior analytics skill to enterprise data volumes.
+description_ar: وحدة تخصصية لتحليل مجموعات البيانات التي تتجاوز قدرة جهاز واحد. يتقن المشاركون مفاهيم
+  الحوسبة الموزعة وكتابة تحويلات Spark وSQL عالية الأداء وضبط المهام عبر التقسيم والتخزين المؤقت، بما
+  يوسّع كل مهارات التحليل السابقة إلى أحجام البيانات المؤسسية.
+learning_outcomes:
+- 'Explain distributed execution: partitions, shuffles, and lazy evaluation'
+- Develop analytical workloads with Spark DataFrames and Spark SQL
+- Optimize job performance through partitioning, caching, and join strategies
+- Implement scalable feature-engineering and ML pipelines with Spark MLlib
+- Analyze query plans to diagnose and resolve performance bottlenecks
+- Design batch analytics workflows on Lakehouse storage
+topics:
+- Distributed computing fundamentals
+- Spark DataFrames and Spark SQL
+- Shuffles, partitioning, and caching
+- Performance tuning and query plans
+- Spark MLlib pipelines at scale
+- Big-data analytics project
+assessment: Labs; large-scale analytics project
+next_modules: SDA-DSC-313
+stackability: Big-data badge; part of the Data Engineering for AI specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Big Data Analytics with Spark
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-215 - Big Data Analytics.xlsx
+known_issues:
+- '[Naming] AthkaX workbook title: ''Big Data Analytics'''
+- '[Naming] Learning Paths Catalog AR title: ''تحليلات البيانات الضخمة'''
+- '[Naming] Learning Paths Catalog EN title: ''Big Data Analytics'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

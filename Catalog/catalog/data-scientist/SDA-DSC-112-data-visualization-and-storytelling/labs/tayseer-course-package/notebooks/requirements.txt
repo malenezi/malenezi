@@ -1,0 +1,39 @@
+# SDA-DSC-112 — Data Visualization and Storytelling
+# Hands-on lab notebooks. Python 3.11+ (tested on 3.11.15).
+#
+#   pip install -r requirements.txt
+#
+# Versions are lower bounds: these are the versions the notebooks were executed
+# against, and nothing here depends on a newer API.
+
+# --- core -------------------------------------------------------------------
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+
+# --- interactive (Lab 2 task 5, Lab 4) --------------------------------------
+plotly>=6.0
+dash>=3.0            # notebooks/app/dashboard.py only; not needed to run the notebooks
+
+# --- Arabic / RTL rendering (Lab 3 task 6) ----------------------------------
+arabic-reshaper>=3.0
+python-bidi>=0.4
+
+# --- notebook execution ------------------------------------------------------
+jupyter>=1.0
+nbconvert>=7.0
+nbformat>=5.9
+
+# --- OPTIONAL: static PNG export of Plotly figures ---------------------------
+# kaleido>=1.0 additionally needs a Chrome/Chromium binary
+# (`python -c "import kaleido; kaleido.get_chrome_sync()"`).
+# Without it the Plotly figures still export to interactive HTML, and every lab
+# also ships a matplotlib mirror as PNG — nothing in out/ is lost.
+# kaleido>=1.0
+
+# --- SYSTEM PACKAGE, not pip -------------------------------------------------
+# An Arabic-capable font is required for Lab 3. On Debian/Ubuntu:
+#     apt-get install -y fonts-hosny-amiri
+# Alternatives that also work: fonts-sil-scheherazade, fonts-kacst,
+# fonts-noto-naskh-arabic. Check with:  fc-list :lang=ar

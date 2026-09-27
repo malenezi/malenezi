@@ -1,0 +1,49 @@
+{
+  "id": "TB-016",
+  "title": "Invoice request",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "billing"
+  ],
+  "intent": "invoice",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "ممكن ترسل لي فاتورة الطلب TW-2026-10033؟",
+    "locale": "ar",
+    "customer_id": "CUST-4935",
+    "order_id": "TW-2026-10033"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_invoice",
+    "get_payment"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_invoice"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_invoice"
+    ],
+    "must_mention": [
+      "TW-2026-10033"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Plain invoice request, single read tool, no policy judgement required."
+}

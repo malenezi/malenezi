@@ -1,0 +1,7 @@
+﻿criterion,weight,distinction_evidence
+Training pipeline correctness,15,Self-test green; checkpoint and resume demonstrated; device-clean code
+Transfer decision and model quality,20,Staged fine-tune beats scratch baseline; preprocessing contract honoured
+Stabilisation and tuning evidence,20,Ablation/sweep evidence supports every non-default setting
+Tracking and reproducibility,20,"Config-complete runs; data hash, revision, commit, and artifact lineage"
+Evaluation discipline and analysis,15,One sealed-test evaluation; per-class recall and confusion analysis
+Shipping and demo,10,"Complete model card, runnable artifact, evidence-led demo"

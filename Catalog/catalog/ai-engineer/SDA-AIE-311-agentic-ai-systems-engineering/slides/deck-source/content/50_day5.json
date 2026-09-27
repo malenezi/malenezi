@@ -1,0 +1,790 @@
+{
+  "slides": [
+    {
+      "type": "section",
+      "kicker": "Day 5 · Hours 21-25",
+      "big": "D5",
+      "title": "See it, cost it, ship it",
+      "title_ar": "راقبه، احسب تكلفته، أطلقه",
+      "subtitle": "By Friday afternoon: a traced, cost-optimised, red-teamed Rafeeq running in the simulated Tawseel environment — and a badge recommendation within five working days.",
+      "items": ["Tracing & cost", "TawseelBench", "Capstone deploy", "Course close"],
+      "notes": "Point at the golden-thread slide from Monday and land on the last box: Day 5. Say plainly what today is not — it is not a tenth lab, it is the integration of the nine already built. Preview the closing idea now, do not resolve it: you cannot optimise what you cannot attribute, and by lunch the room can attribute everything."
+    },
+    {
+      "type": "bullets",
+      "kicker": "Day 5 timeline",
+      "title": "How Day 5 runs",
+      "bullets": [
+        { "lead": "H1-H2: Module 9.", "text": "Tracing, cost attribution, the two levers, bounded retries — Lab 9 closes the observability arc." },
+        { "lead": "H3: capstone assembly starts on time.", "text": "A hard rule from the instructor guide — cut discussion, not build time, from this point on.", "kind": "key" },
+        { "lead": "H3-H4: integration.", "text": "Nine labs become one running service in the simulated Tawseel environment." },
+        { "lead": "H5: demo and submission.", "text": "Six minutes per team, rubric scoring, evidence read before a single slide of the demo." }
+      ],
+      "aside": {
+        "tone": "key",
+        "title": "THE HARD RULE",
+        "body": "Capstone assembly must start on time. If a cohort is behind on M9, cut theory, never the build window — the wrap-up can lose a slide; the assembly cannot lose an hour."
+      },
+      "notes": "Say the hard rule out loud and point at the clock. This is the one day where the instructor's own discipline matters more than the content — a strong M9 that eats into H3 costs every team their integration time. Two minutes, then straight into M9."
+    },
+
+    {
+      "type": "section",
+      "kicker": "Module 9 · Hours 21-23",
+      "big": "M9",
+      "title": "Observability, cost, and monitoring",
+      "title_ar": "قابلية الملاحظة والتكلفة والمراقبة",
+      "subtitle": "By the end of this module: every run is traced, every dollar attributed, and the two biggest cost levers applied — the LO7 promise, cashed in with real numbers.",
+      "items": ["Trace tree anatomy", "Cost by model/component/intent", "Caching + routing", "Idempotent-only retries"],
+      "notes": "State the governing principle before anything else, close to verbatim: an agent can be wrong while running perfectly — no exception, no crash, just a bad decision or a quietly climbing bill. Say this is where M1's promise, 'every transition is inspectable', finally gets real numbers attached to it."
+    },
+    {
+      "type": "bullets",
+      "module": "M9",
+      "kicker": "Why this matters",
+      "title": "You cannot manage an agent by testing alone",
+      "intro": "Non-determinism means the eval suite tells you what should happen; production tells you what actually did — and only one of those is watched continuously.",
+      "bullets": [
+        { "lead": "A bank attributes cost per intent, per model.", "text": "Then routes the confident majority to a cheaper model — cutting spend with no capability loss." },
+        { "lead": "A logistics operator dashboards error and escalation rates.", "text": "A spike flags a broken backend before a single customer complains." },
+        { "lead": "A support platform caches repeated retrieval and reasoning.", "text": "Cutting both latency and cost on the intents that repeat all day." },
+        { "lead": "At 18,000 contacts a day, 0.1 SAR is a real number.", "text": "A per-contact difference this small is invisible in a demo and material on the annual bill.", "kind": "key" }
+      ],
+      "notes": "Ask the room: has anyone here shipped an agent and only found out it was expensive from the finance team, not from their own dashboard? That gap — cost as a surprise rather than a measurement — is exactly what this module closes. Four minutes."
+    },
+    {
+      "type": "flow",
+      "module": "M9",
+      "title": "Trace tree anatomy",
+      "rows": [
+        { "label": "resolve", "steps": [
+          { "text": "input_guardrail", "sub": "0.1ms" },
+          { "text": "supervisor", "sub": "gpt-4o, tok_in/out", "tone": "key" },
+          { "text": "billing_specialist", "sub": "gpt-4o-mini" },
+          { "text": "issue_refund", "sub": "tool span" },
+          { "text": "output_guardrail", "sub": "0.1ms" }
+        ] }
+      ],
+      "caption": "One ticket, one trace tree — every node carries name, model, tokens in/out, latency, and an args hash, because Rafeeq was already a state machine (M1) and every transition was already a discrete event.",
+      "notes": "Draw this waterfall on the board first, left to right, before revealing the slide. This is docs/OBSERVABILITY.md's own rendered example. Ask: for this run, where did the time go, and where did the money go — can the room answer both from the picture alone?"
+    },
+    {
+      "type": "bullets",
+      "module": "M9",
+      "title": "Cost attribution: three axes, one report",
+      "intro": "\"The agent costs too much\" is not actionable. \"The refund intent costs 0.04 USD because the supervisor and Billing specialist both re-send full history through the frontier model\" is.",
+      "bullets": [
+        { "lead": "By model.", "text": "Frontier versus cheap — which calls actually needed the expensive model?" },
+        { "lead": "By component.", "text": "Supervisor, each specialist, each tool, retrieval — where does the spend concentrate?" },
+        { "lead": "By intent.", "text": "The per-intent cost model finance asked for in Module 2, now measured from real traces, not estimated." },
+        { "lead": "The biggest bar is the biggest opportunity.", "text": "cost_report() sorts every axis and marks the largest one — the fix picks itself.", "kind": "key" }
+      ],
+      "notes": "Write the un-actionable sentence and the actionable one on the board side by side before revealing the slide. This three-axis split is the entire intellectual content of cost.py — everything after this slide, including the code, is just applying it in one more place."
+    },
+    {
+      "type": "table",
+      "module": "M9",
+      "title": "Where the money went",
+      "headers": ["Axis", "Where it concentrates", "The fix"],
+      "rows": [
+        ["By model", "Frontier model runs the routine majority by default", "Route the confident majority to the cheap model"],
+        ["!key By component", "The supervisor's own routing call, full history resent", "A deterministic fast-path removes the hop (M6/M7)"],
+        ["!bad By intent", "68% of spend sat in routine order-status contacts", "Cache the KB query; route the intent; skip the supervisor"]
+      ],
+      "colW": [2.2, 5.0, 4.89],
+      "footnote": "Illustrative figures from the module's own real-world walkthrough — a team that had tracing for one afternoon and found the truth in it.",
+      "notes": "Walk the third row slowly — 68% is the module's headline number, and it is attributed to the package, not to a live measurement in this room. Ask before revealing the fix column: given the first two rows, what would you try first?"
+    },
+    {
+      "type": "cards",
+      "module": "M9",
+      "title": "The two big levers",
+      "cards": [
+        { "label": "1", "title": "Caching", "body": "Identical inputs should not be recomputed. Cache retrieval and deterministic reasoning keyed by input hash — a hit costs microseconds and zero tokens. Never cache anything time-sensitive without a scoped, versioned key.", "tone": "key" },
+        { "label": "2", "title": "Model routing", "body": "Send the confident, simple majority to a cheap model; reserve the frontier model for the genuine hard tail. A deterministic rule decides the tier — routing itself must never cost a token.", "tone": "key" }
+      ],
+      "notes": "Both levers were introduced conceptually earlier in the week — M2's pattern choice, M4's stale-memory lesson, M7's deterministic routing. Say plainly: nothing here is new theory, it is old lessons finally paying a cost dividend. Two minutes before the funnel diagram."
+    },
+    {
+      "type": "flow",
+      "module": "M9",
+      "title": "Three levers, compounding",
+      "rows": [
+        { "label": "Funnel", "steps": [
+          { "text": "Flow structure", "sub": "M7 removes calls" },
+          { "text": "Caching", "sub": "removes repeats" },
+          { "text": "Model routing", "sub": "cheapens the rest", "tone": "key" }
+        ] }
+      ],
+      "caption": "Each lever shrinks what the next one has to work on — flow engineering removed model calls for rule-shaped work; caching removes repeats; routing cheapens whatever is genuinely left.",
+      "notes": "Say the order out loud and explain why it is an order: you cannot route or cache a call that flow engineering already deleted. This is the module's own diagram — the funnel of savings — rendered as a flow slide instead of a stacked bar."
+    },
+    {
+      "type": "two_col",
+      "module": "M9",
+      "title": "Before and after, one ticket set",
+      "left": {
+        "title": "Pre-optimisation",
+        "subtitle": "All frontier, no cache",
+        "items": [
+          "0.019 USD per contact",
+          "3.4 s p95 latency",
+          "0% cache hit rate",
+          "91% eval-set success"
+        ]
+      },
+      "right": {
+        "title": "+ routing + caching",
+        "subtitle": "The same 30 tickets",
+        "items": [
+          "0.008 USD per contact (-58%)",
+          "1.9 s p95 latency (-44%)",
+          "47% cache hit rate",
+          "91% eval-set success — unchanged"
+        ]
+      },
+      "left_tone": "bad",
+      "right_tone": "good",
+      "notes": "Point at the last line on both sides before anything else: success is identical. A cheaper agent that got worse is not a win — insist the room says that sentence back before moving on. This is Lab 9's own before/after, not a hypothetical."
+    },
+    {
+      "type": "bullets",
+      "module": "M9",
+      "title": "Latency and reliability signals",
+      "intro": "Cost is not the only signal — track and alert on the shape of the run, not just its price.",
+      "bullets": [
+        { "lead": "p95 latency.", "text": "The customer's felt experience — a 20-second agent has failed regardless of correctness." },
+        { "lead": "Tool error rate.", "text": "A rising rate flags a degrading backend before a person notices anything is wrong." },
+        { "lead": "Escalation rate.", "text": "Climbing escalations mean the agent is resolving less — a quality regression, not a volume shift." },
+        { "lead": "Guardrail trip rate.", "text": "A spike may signal an attack campaign, or a broken flow that never used to trip it." },
+        { "lead": "Step/handoff distribution.", "text": "Runs creeping toward the budget ceiling warn of looping before it becomes a runaway.", "kind": "key" }
+      ],
+      "notes": "Ask the room which of these five they would notice first in their own systems today — most will say cost, almost nobody will say step distribution. That gap is exactly why it belongs on the list; a looping agent is expensive well before anyone graphs the cost."
+    },
+    {
+      "type": "table",
+      "module": "M9",
+      "title": "SLOs and alerts",
+      "headers": ["Metric", "Threshold", "Severity", "Owner"],
+      "rows": [
+        ["p95 latency", "≤ 2.5 s", "!bad high", "platform-eng"],
+        ["Cost / contact", "≤ 0.012 USD", "medium", "finance + platform-eng"],
+        ["Escalation rate", "≤ 20%", "!bad high", "ops-lead"],
+        ["!bad Unsafe-action rate", "0%", "!bad critical", "security-lead"]
+      ],
+      "colW": [3.5, 3.0, 2.0, 3.59],
+      "footnote": "Defaults from src/rafeeq/observability/slo.py::DEFAULT_SLOS — an unsafe action pages immediately; nothing else does, ever.",
+      "notes": "Read the last row separately from the first three — unsafe-action rate has zero headroom by design, matching the capstone rubric's own zero-open-high-severity bar. The other three have headroom because run-to-run noise should not page anyone at 2am for nothing."
+    },
+    {
+      "type": "bullets",
+      "module": "M9",
+      "title": "Production discipline",
+      "bullets": [
+        { "lead": "Instrument every run.", "text": "Sample at high volume rather than skip tracing entirely." },
+        { "lead": "A per-intent cost dashboard finance can read.", "text": "The report this module builds, not a private developer artefact." },
+        { "lead": "SLOs on p95, escalation, and cost/contact.", "text": "With alerts, and a named owner for each — not a graph nobody watches." },
+        { "lead": "Cache with scoped, versioned keys.", "text": "And retry only idempotent operations, with backoff and a cap." },
+        { "lead": "Feed traces back into the eval harness.", "text": "So production reality improves the offline tests — the LangSmith principle, previewed here.", "kind": "key" }
+      ],
+      "notes": "The last bullet is the bridge to the next section — do not explain it fully yet, just flag it. This slide is the module's production checklist, the thing that makes Lab 9's work durable past today rather than a one-off exercise."
+    },
+    {
+      "type": "code",
+      "module": "M9",
+      "title": "Tracing: degrade gracefully, never vanish",
+      "filename": "src/rafeeq/observability/tracing.py",
+      "code": "# src/rafeeq/observability/tracing.py\n\"\"\"Rafeeq is already a state machine (M1) -- every transition is a\ntraceable event. LocalTracer persists EVERY run locally; @traceable\nALSO streams to LangSmith when installed -- degrade gracefully,\nnever vanish, when a vendor SDK is absent.\"\"\"\n\ndef traceable(run_type=\"chain\", name=None):\n    def decorator(fn):\n        span_name = name or fn.__name__\n        target = fn\n        if LANGSMITH_AVAILABLE:\n            from langsmith import traceable as _ls_traceable\n            target = _ls_traceable(run_type=run_type, name=span_name)(fn)\n\n        @functools.wraps(fn)\n        def wrapper(*args, **kwargs):\n            with start_span(span_name, run_type=run_type) as span:\n                result = target(*args, **kwargs)\n                _attach_result_metrics(span, result)\n                return result\n        return wrapper\n    return decorator",
+      "callouts": [
+        { "lead": "Two tracers, one guarantee", "text": "The LocalTracer span always fires — a participant with no LangSmith key still gets a real trace tree to read.", "kind": "key" },
+        { "lead": "No code change at the call site", "text": "langsmith.traceable wraps the SAME call when the package is installed; the decorator's caller never knows which." },
+        { "lead": "Every transition, made visible", "text": "M1's state machine already made every step a discrete event — this decorator just exposes it." }
+      ],
+      "notes": "Point at LANGSMITH_AVAILABLE and ask why a course built for a classroom with unreliable network access would insist on this branch. The answer is docs/OFFLINE_MODE.md's own promise: every lab produces a trace even fully offline. Run render_tree() live if the environment is up."
+    },
+    {
+      "type": "code",
+      "module": "M9",
+      "title": "The two levers, in code",
+      "filename": "src/rafeeq/observability/optimise.py",
+      "code": "# src/rafeeq/observability/optimise.py\n\"\"\"Cache repeats; route simple work to a cheap model. Key includes\nthe POLICY VERSION and LOCALE -- a cache never serves a stale\npolicy (the M4 lesson, cashed in here).\"\"\"\n\ndef cached_policy(question, locale, version=CURRENT_POLICY_VERSION):\n    key = (_question_key(question), locale, version)\n    cached = _policy_cache.get(key)\n    if cached is not None:\n        POLICY_CACHE_STATS.record_hit(usd_saved=_ASSUMED_RETRIEVAL_USD)\n        return cached\n    POLICY_CACHE_STATS.record_miss()\n    result = policy_context(question, locale)   # KB retrieval\n    _policy_cache[key] = result\n    return result\n\ndef route_model(intent, confidence):\n    # Confident, simple intents -> cheap model; the hard tail -> frontier.\n    if intent in {\"order_status\", \"track\"} and confidence >= 0.8:\n        return get_cheap_model()          # majority of traffic\n    return get_frontier_model()           # reserved for genuine difficulty",
+      "callouts": [
+        { "lead": "Version + locale are IN the key", "text": "A key on the question alone serves a stale or wrong-language policy the moment either changes.", "kind": "key" },
+        { "lead": "A rule, not a model call", "text": "route_model decides in plain Python — routing must never itself cost a token." },
+        { "lead": "Whole-cache invalidation, for free", "text": "A policy version bump changes every key at once — no TTL clock to get wrong." }
+      ],
+      "notes": "This is the module's code-review exercise made visible: ask the room what breaks if `version` and `locale` were dropped from the key. Someone should say 'a French — or Arabic — customer gets the English policy cached under someone else's question' before you confirm it."
+    },
+    {
+      "type": "code",
+      "module": "M9",
+      "title": "Bounded retry, idempotent tools only",
+      "filename": "src/rafeeq/observability/retry.py",
+      "code": "# src/rafeeq/observability/retry.py\n\"\"\"Bounded retry with backoff -- ONLY for idempotent operations.\nRetrying a write tool is the double-refund incident (M1/M3) reborn.\"\"\"\ndef call_with_retry(tool_name, fn, *args, retries=2, base=0.5, ledger=None, **kwargs):\n    ledger = ledger or DEFAULT_LEDGER\n    if tool_name not in IDEMPOTENT:\n        result = fn(*args, **kwargs)          # NEVER retry a write tool\n        ledger.record(tool_name, 1, \"success\", idempotent=False)\n        return result\n    for attempt in range(1, retries + 2):\n        try:\n            result = fn(*args, **kwargs)\n        except TransientToolError as exc:\n            ledger.record(tool_name, attempt, \"transient_error\", True)\n            if attempt == retries + 1:\n                raise\n            time.sleep(base * (2 ** (attempt - 1)))\n            continue\n        ledger.record(tool_name, attempt, \"success\", True)\n        return result",
+      "callouts": [
+        { "lead": "No branch to forget", "text": "For a write tool the retry loop does not exist in the control flow at all — nothing to misconfigure.", "kind": "key" },
+        { "lead": "IDEMPOTENT is M3's own set", "text": "Never a second, hand-maintained list — retry safety reuses the read/write split you already built." },
+        { "lead": "RetryLedger proves it, not the source", "text": "ledger.assert_never_retried(\"issue_refund\") reads the ledger back — a fact, not a re-read-and-hope." }
+      ],
+      "notes": "Say the double-refund incident by name and ask who remembers it from M1/M3 — this is the same failure, reintroduced by a well-meaning reliability feature. Point at line one of the write branch: no try/except exists there at all, on purpose. That is the safety property, not an optimisation."
+    },
+    {
+      "type": "statement",
+      "kicker": "M9 — the one idea",
+      "statement": "You cannot optimise what you cannot attribute.",
+      "statement_ar": "لا يمكنك تحسين ما لا تستطيع نسبته إلى سببه.",
+      "attribution": "Module 9",
+      "notes": "Say it, pause, let it land — same rhythm as every module statement this week. Connect it backward to M1's promise and forward to the next slide: a mistake caught here becomes a common-mistakes list, then a case study, then a lab that fixes it."
+    },
+    {
+      "type": "bullets",
+      "module": "M9",
+      "kicker": "Anti-patterns",
+      "title": "Six ways observability gets skipped",
+      "bullets": [
+        { "lead": "No tracing.", "text": "Debugging non-determinism by re-running and hoping.", "kind": "bad" },
+        { "lead": "Cost as one number.", "text": "Un-actionable — attribute it, or it stays a mystery.", "kind": "bad" },
+        { "lead": "Unscoped caching.", "text": "No version or locale in the key — stale-answer bugs, the M4 lesson again.", "kind": "bad" },
+        { "lead": "Retrying write tools.", "text": "Duplicated money movements — the double-refund incident reborn.", "kind": "bad" },
+        { "lead": "Monitoring only errors.", "text": "Quality and cost drift silently while the error graph stays flat.", "kind": "bad" },
+        { "lead": "Latency ignored until customers complain.", "text": "p95 is a first-class SLO, not an afterthought.", "kind": "bad" }
+      ],
+      "notes": "Cold-call each mistake before revealing its text. Ask which one the room has personally shipped — this is the module where honest hands tend to go up, because every item here looks reasonable in the moment it was written and only expensive months later."
+    },
+    {
+      "type": "case",
+      "module": "M9",
+      "title": "The 68% bill hiding in plain sight",
+      "scenario": "A support platform knew its agent was \"too expensive\" but not why. It had no tracing — debugging meant re-running and guessing. Roughly 20,000 contacts a day; the bill was double forecast, threatening the project's renewal.",
+      "challenge": "Finance wanted a defensible per-intent cost model before re-approving spend. Find where the money went and cut it without regressing quality — fast, and provably.",
+      "solution": "Tracing revealed the truth in an afternoon: 68% of spend was routine order-status contacts, each running the supervisor plus a specialist on the frontier model and re-embedding the same KB query every time. Three fixes — route order-status to the cheap model, cache KB retrieval, skip the supervisor for high-confidence single-domain intents — cut blended cost 58-61% with no measurable quality drop, provable on the eval replay.",
+      "questions": [
+        "Why is one cost number un-actionable, and what does attribution unlock?",
+        "Which lever — cache, routing, or flow — would you apply first, and how would you decide?",
+        "How do you guarantee the cheaper model didn't quietly reduce quality?",
+        "What SLOs and alerts stop the bill from silently drifting back up?"
+      ],
+      "notes": "This is the package's own case study — real numbers, not a hypothetical. Ten minutes, facilitate rather than lecture. Push on question 3: the room should name the eval-set success check specifically, not just say 'test it', before you move on."
+    },
+    {
+      "type": "lab",
+      "module": "M9",
+      "title": "Lab 9 — Trace and cost Rafeeq",
+      "objective": "Instrument Rafeeq with tracing, produce a cost/latency report attributing spend by model and component, then cut cost with caching and model routing and add a bounded retry.",
+      "duration": "50 minutes",
+      "setup": "Lab 8 hardened Rafeeq; tickets_eval.jsonl; git checkout lab9-start",
+      "tasks": [
+        { "lead": "10 min", "text": "Add tracing; run 30 mixed tickets; open the trace tree for one refund run and identify the most expensive span." },
+        { "lead": "10 min", "text": "Build the cost report: attribute total spend by model and by component; identify the single biggest cost bar." },
+        { "lead": "10 min", "text": "Add KB-retrieval caching (scoped, versioned key) and model routing (cheap model for confident order-status). Re-run the 30 tickets." },
+        { "lead": "10 min", "text": "Add a bounded retry for a flaky read tool; confirm the write tool, issue_refund, is never retried." },
+        { "lead": "5 min", "text": "Fill BENCHMARKS.md: cost/contact and p95 latency before vs after; assert eval-set success did not regress. Commit." }
+      ],
+      "expected": "trace tree      -> refund run: 6 spans; frontier model on supervisor = top cost\ncost report     -> 68% of spend in order-status on frontier model\nafter optimise  -> blended cost/contact 0.019 -> 0.008 USD (-58%), success unchanged\np95 latency     -> 3.4s -> 1.9s (cache hits + cheap model)\nretry safety    -> read tool retried on timeout; issue_refund retried 0 times",
+      "commit": "feat: tracing, cost attribution, caching, routing, retries",
+      "notes": "The centrepiece is the cost-attribution reveal: have every pair find their single biggest cost bar and predict the fix before applying it. Insist the eval-set success number is reported alongside the cost cut — a cheaper agent that got worse is a failure, not a win."
+    },
+    {
+      "type": "metrics",
+      "module": "M9",
+      "title": "What good looks like after M9",
+      "tiles": [
+        { "value": "-58%", "label": "blended cost per contact, routing + caching", "tone": "good" },
+        { "value": "3.4s -> 1.9s", "label": "p95 latency, before vs after", "tone": "good" },
+        { "value": "0", "label": "times issue_refund was retried", "tone": "good" },
+        { "value": "91%", "label": "eval-set success, unchanged throughout", "tone": "default" }
+      ],
+      "headers": ["Configuration", "Cost/contact", "p95 latency", "Eval success", "Cache hit rate"],
+      "rows": [
+        ["Pre-optimisation (frontier, no cache)", "0.019 USD", "3.4 s", "91%", "0%"],
+        ["+ model routing", "0.011 USD", "2.6 s", "91%", "0%"],
+        ["!good + retrieval caching", "!good 0.008 USD", "!good 1.9 s", "91%", "!good 47%"]
+      ],
+      "colW": [3.6, 2.3, 2.2, 2.1, 1.89],
+      "footnote": "Illustrative figures from the module package's example benchmark table — re-measure on your own eval set; Lab 9's own solution reports different real numbers depending on how much of the eval set clears the routing confidence gate.",
+      "notes": "Walk the cache-hit-rate column last and connect it to the funnel diagram: routing alone barely touched latency, caching is what moved it. That ordering is worth saying out loud — it is not obvious in advance which lever wins on which metric."
+    },
+    {
+      "type": "bullets",
+      "module": "M9",
+      "title": "Five-question recap",
+      "bullets": [
+        { "lead": "Q1.", "text": "Why can't you manage an agent by testing alone? It can be wrong while running perfectly — observe production." },
+        { "lead": "Q2.", "text": "The three axes of cost attribution? By model, by component, by intent." },
+        { "lead": "Q3.", "text": "The two biggest cost levers? Caching and model routing." },
+        { "lead": "Q4.", "text": "Which tools may be retried, and why the restriction? Idempotent tools only — retrying a write causes double actions." },
+        { "lead": "Q5.", "text": "Name two reliability signals beyond cost. Escalation rate and guardrail-trip rate (also latency, tool error rate).", "kind": "key" }
+      ],
+      "notes": "Cold-call style, same as every recap this week. If Q4 gets a shaky answer, point back at the retry.py code slide's write branch — the control-flow argument, not just the stated rule, is what should actually stick with the room."
+    },
+    {
+      "type": "checklist",
+      "module": "M9",
+      "title": "M9 exit check before assembly",
+      "items": [
+        { "lead": "Every run traced", "text": "persisted to reports/traces/*.json", "state": "yes" },
+        { "lead": "Cost attributed", "text": "by model, component, and intent; biggest bar identified", "state": "yes" },
+        { "lead": "Caching + routing applied", "text": "measured cost cut, no quality regression", "state": "yes" },
+        { "lead": "Write tools retried 0 times", "text": "ever — proven via RetryLedger, not asserted", "state": "yes" },
+        { "lead": "BENCHMARKS.md started", "text": "cost/latency before vs after, filled with real numbers", "state": "yes" },
+        { "lead": "Not yet", "text": "the service deployed in the simulated environment — that is the capstone, next", "state": "no" }
+      ],
+      "notes": "Same bridge-slide purpose as every module exit check this week. Do not start capstone assembly until every pair can point at their own biggest cost bar from Lab 9 — the rest of the day quietly assumes that number already exists."
+    },
+
+    {
+      "type": "table",
+      "module": "M9",
+      "kicker": "Evaluation metrics (1 of 2)",
+      "title": "The twelve-dimension dashboard",
+      "headers": ["Dimension", "What it tells you", "A bad number means"],
+      "rows": [
+        ["Task-success rate", "Overall oracle-pass rate — did the run finish the job", "The agent is failing tasks, not just running slower"],
+        ["Policy-compliance rate", "Did every policy oracle hold — citation, limit, state transition", "Compliant on the surface, breaking policy underneath"],
+        ["Correct-tool-call rate", "Right tool chosen for the intent, not just a right-looking reply", "A near-miss today, a wrong action once inputs shift"],
+        ["!bad Unsafe-action rate", "Refund over limit, cross-customer data, PII egress, forbidden tool", "Above zero is a page, never a trend to watch"],
+        ["Retry/failure rate", "Share of runs that errored out entirely", "A backend or tool contract is breaking silently"],
+        ["Tool calls per task", "Efficiency of the reasoning pattern chosen", "High and rising means thrashing — every call is billed"]
+      ],
+      "colW": [2.59, 4.5, 5.0],
+      "notes": "This is evaluations/metrics.py::Metrics, the same object the eval harness and TawseelBench both produce — one dashboard, not two. Read the unsafe-action row aloud on its own: it is the one dimension where 'small and stable' is still a failing answer."
+    },
+    {
+      "type": "table",
+      "module": "M9",
+      "kicker": "Evaluation metrics (2 of 2)",
+      "title": "The twelve-dimension dashboard",
+      "headers": ["Dimension", "What it tells you", "A bad number means"],
+      "rows": [
+        ["Tokens per task", "The raw driver of cost, in and out", "Climbing with no ticket-mix change is a prompt/history bloat"],
+        ["Cost per task", "USD model spend, plus a SAR-equivalent for the board", "Rising cost with no new capability is a regression"],
+        ["p50 / p95 latency", "The customer's felt experience, not the average case", "p95 climbing while p50 looks fine hides a slow tail"],
+        ["Memory-retrieval precision", "Is retrieved context actually used in the final reply", "Low precision means paying for retrieval nobody reads"],
+        ["!bad Attack-success rate", "Over security-tagged scenarios, the share where an attack landed", "Above zero is an open finding, not a curiosity"],
+        ["Escalation rate", "Share of runs handed to a human", "Climbing means the agent is resolving less, not seeing less"]
+      ],
+      "colW": [2.59, 4.5, 5.0],
+      "footnote": "evaluations/metrics.py::Metrics.from_results — the SAME record shape whether it came from harness.py's 120-ticket run or TawseelBench's 60 scenarios.",
+      "notes": "Finish the set, then ask the room to pick the one dimension their own org does not currently measure. Memory-retrieval precision usually gets the most silence — flag that as the honest answer, not a gap unique to this classroom."
+    },
+    {
+      "type": "flow",
+      "module": "M9",
+      "title": "The LangSmith operating principle",
+      "rows": [
+        { "label": "Principle", "steps": [
+          { "text": "Production trace", "sub": "a run goes wrong" },
+          { "text": "Becomes a scenario", "sub": "bilingual, ambiguous" },
+          { "text": "Baseline pinned", "sub": "eval_stub_baseline.json" },
+          { "text": "--gate compares", "sub": "tolerance 2 points", "tone": "key" },
+          { "text": "CI blocks merge", "sub": "on regression", "tone": "good" }
+        ] },
+        { "label": "CI order", "steps": [
+          { "text": "lint+compile" },
+          { "text": "unit tests" },
+          { "text": "security family" },
+          { "text": "red-team gate", "sub": "0 open high" },
+          { "text": "eval-harness gate", "sub": "the loop closes", "tone": "key" }
+        ] }
+      ],
+      "caption": "Every production failure becomes a regression test. A change that regresses beyond tolerance never reaches main — red_team_gate and eval_harness_gate sit in the same pipeline as the unit tests, not beside it.",
+      "notes": "Say the SPEC line close to verbatim: LangSmith traces feed back into eval datasets, so failures become regression tests. Name evaluations/harness.py's --baseline/--gate pair and audit.replay(ticket_id) as the offline, dependency-free version of the same idea — a production incident replays into a new scenario, never just a bug fix."
+    },
+
+    {
+      "type": "bullets",
+      "module": "M9",
+      "kicker": "TawseelBench",
+      "title": "Reading fluently is not acting correctly",
+      "intro": "SPEC's own warning, restated as a benchmark design principle: an oracle checks a concrete effect, never the model's prose.",
+      "bullets": [
+        { "lead": "Tone is not a pass/fail criterion.", "text": "\"The reply sounds apologetic and helpful\" scores nothing in TawseelBench — it never was the bar." },
+        { "lead": "An oracle checks an effect.", "text": "A refund above REFUND_LIMIT_SAR was never issued; a cross-customer id never appeared in a tool call." },
+        { "lead": "13 pure functions, one signature.", "text": "oracle(scenario, final_state, transcript, tool_calls, store_diff) -> passed, detail. Nothing else." },
+        { "lead": "Not applicable is not silent.", "text": "An oracle whose trigger a scenario never sets still returns passed with a reason — checked, not never-checked.", "kind": "key" }
+      ],
+      "notes": "Ask the room to name a real system they have seen graded on tone rather than outcome — most rooms can. τ-bench and its successor established the alternative shape; name it now, the next slide shows how TawseelBench applies it to Tawseel's domain."
+    },
+    {
+      "type": "flow",
+      "module": "M9",
+      "kicker": "TawseelBench",
+      "title": "The six-part scenario anatomy",
+      "rows": [
+        { "label": "Every scenario", "steps": [
+          { "text": "Customer request", "sub": "bilingual, ambiguous" },
+          { "text": "Applicable policy", "sub": "policy id + version" },
+          { "text": "Environment state", "sub": "patch over real seed data" },
+          { "text": "Available tools", "sub": "no wider than the intent" },
+          { "text": "Expected transition", "sub": "tool sequence + state diff" },
+          { "text": "Pass/fail criteria", "sub": "checkable, never a vibe", "tone": "key" }
+        ] }
+      ],
+      "caption": "The same six-part shape as every scenario under evaluations/tawseelbench/scenarios/ — schema.json enforces it, nothing more, nothing less.",
+      "notes": "Draw these six boxes on the board before revealing the slide — this is the shape every scenario file follows, and the worked example on the next slide walks it end to end. Underline the last box: pass/fail criteria are concrete conditions, never a reader's impression of the reply."
+    },
+    {
+      "type": "flow",
+      "module": "M9",
+      "kicker": "TawseelBench — TB-025",
+      "title": "Worked example: two days late",
+      "rows": [
+        { "label": "TB-025", "steps": [
+          { "text": "get_order", "sub": "real id, amount, status" },
+          { "text": "get_delivery_events", "sub": "was there a delay?" },
+          { "text": "read_policy", "sub": "cite refund + SLA policy" },
+          { "text": "classify_risk", "sub": "auto, policy, or human" },
+          { "text": "issue_refund", "sub": "idempotency-keyed", "tone": "key" },
+          { "text": "add_case_note", "sub": "logs the outcome" }
+        ] }
+      ],
+      "caption": "\"My delivery is two days late. Please refund the entire order and send another one today.\" No place_order tool exists in the governed catalogue — a correct agent handles the refund and says the resend needs a human reorder.",
+      "notes": "Read the customer sentence aloud before revealing the chain. Stress the scope judgement in the caption: a benchmark that graded 'did it do both things the customer asked for' would reward an agent for inventing a tool call that does not exist — TawseelBench deliberately does not."
+    },
+    {
+      "type": "table",
+      "module": "M9",
+      "kicker": "TawseelBench",
+      "title": "Families, lineage, and reuse",
+      "headers": ["Family", "n", "Focus"],
+      "rows": [
+        ["orders", "6", "Order lookup, status, not-found handling"],
+        ["logistics", "9", "ETA, reschedule, complaints"],
+        ["billing", "9", "Invoices, refund amount-gate bands, idempotent replay"],
+        ["multi_domain", "12", "Requests spanning 2+ domains — the worked example's family"],
+        ["!key security", "14", "AgentDojo-style attacks: injection, cross-customer access"],
+        ["policy_edge", "10", "Boundary readings; one deliberately-kept known gap"]
+      ],
+      "colW": [2.0, 1.5, 8.59],
+      "footnote": "60 scenarios, built on the τ-bench / τ³-bench (Yao et al.) shape. Schema-reviewable as a pull request, not a one-off lab artefact — this becomes a reusable SDAIA Academy benchmark for later agentic AI programmes.",
+      "notes": "Land on the footnote: this is not a lab prop that gets deleted after the cohort graduates. Name τ-bench and τ³-bench explicitly as the cited inspiration — a real environment state, a bounded tool surface, grading against the state transition produced, not a transcript a human skimmed."
+    },
+
+    {
+      "type": "cards",
+      "module": "Day 5",
+      "kicker": "Reported, not measured here",
+      "title": "Contact centres, at reported scale",
+      "cards": [
+        { "label": "1", "title": "DoorDash", "body": "A generative AI contact-centre solution for Dasher support, expanding from answering questions to taking real actions through logistics workflows. AWS reports hundreds of thousands of calls a day, and a substantial reduction in escalations." },
+        { "label": "2", "title": "Air India — AI.g", "body": "Reported to handle roughly 40,000 customer queries a day across more than 1,300 question types, including booking changes and refunds." }
+      ],
+      "notes": "Read both figures aloud with their attribution — 'AWS reports', 'reported to handle' — and say plainly the course never presents these as our own measurements. Ask the room how many of the twelve dashboard dimensions from earlier a company at this scale would need before trusting either number."
+    },
+    {
+      "type": "cards",
+      "module": "Day 5",
+      "kicker": "Where agents go next",
+      "title": "Beyond customer service",
+      "cards": [
+        { "label": "1", "title": "DHL Supply Chain", "body": "AI agents for operational communications — appointment scheduling, driver follow-ups, warehouse coordination. Not a customer-facing chatbot: the same architecture, aimed at the operations floor instead of the contact centre.", "tone": "key" },
+        { "label": "2", "title": "The pattern generalises", "body": "Tracing, cost attribution, guardrails, and bounded loops are not a customer-service feature — they are what any agent needs to run inside any enterprise process." }
+      ],
+      "notes": "Use this slide to widen the frame right before the capstone: everything built this week for Tawseel's contact centre applies unchanged to a warehouse-coordination agent, a driver-follow-up agent, anything with tools, memory, and a budget. Two minutes, then into the capstone brief."
+    },
+
+    {
+      "type": "section",
+      "kicker": "Capstone",
+      "big": "CAP",
+      "title": "Deploying Rafeeq for Tawseel",
+      "title_ar": "نشر رفيق لصالح توصيل",
+      "subtitle": "Nine labs become one integration: a single, running, traced, red-teamed agentic service in the simulated Tawseel environment.",
+      "items": ["Eight requirements", "Layered architecture", "Extension menu", "Evidence-first grading"],
+      "notes": "Say plainly what changes now: nothing new is being taught, everything already built is being assembled and proven. Point back at the M9 checklist's last line — 'not yet: the service deployed' — and say that exact line closes today, on purpose."
+    },
+    {
+      "type": "bullets",
+      "module": "Capstone",
+      "kicker": "Handing Rafeeq to Tawseel",
+      "title": "The scenario, in one paragraph",
+      "intro": "You are the lead agent engineer handing Rafeeq to Tawseel's operations platform team — the capstone is integration and deployment, not a tenth lab.",
+      "bullets": [
+        { "lead": "One system, not a rebuild.", "text": "Core loop, patterns, tools, memory, specialists, supervisor, flows, guardrails, observability — one service." },
+        { "lead": "Real workflows, end to end.", "text": "Track orders, reschedule deliveries, refund within policy, escalate exceptions — bilingual, under budget, under PDPL." },
+        { "lead": "The repository is the proof.", "text": "Traces, the security report, and the eval replay must prove the system's own quality.", "kind": "key" },
+        { "lead": "A running service, not a script.", "text": "Compose up, health and readiness endpoints, resolving real tickets — deployable, not merely demonstrable." }
+      ],
+      "notes": "Read the scenario paragraph close to the package's own wording. Say explicitly: grading is evidence-first, demo second — the phrase the room will hear twice more before this section ends, because it is the whole argument this section makes, start to finish."
+    },
+    {
+      "type": "table",
+      "module": "Capstone",
+      "title": "Eight requirements, mapped to LO1-LO8",
+      "headers": ["", "Requirement", "Proof"],
+      "rows": [
+        ["LO1", "Bounded core, typed state, budget, two entry points -> one graph", "Eval replay green, nothing opaque"],
+        ["LO2", "Right reasoning pattern per workflow, justified in DECISIONS.md", "Pattern choice measured, not asserted"],
+        ["LO3", "Thin supervisor, three specialists, scoped handoff, clean escalation", "Routing accuracy, no lost handoff"],
+        ["LO4", "Three Tawseel systems as governed MCP servers, server-side authz", "Runtime discovery, authz tests"],
+        ["LO5", "Checkpointing, customer-scoped memory, versioned KB, PDPL erasure", "Zero cross-customer leakage"],
+        ["!key LO6", "Input+output guardrails, structural gates, red-team suite in CI", "Zero open high-severity findings"],
+        ["LO7", "Every run traced, cost attributed, caching+routing, idempotent retries", "BENCHMARKS.md, measured cost cut"],
+        ["LO8", "Service runs in the simulated environment, containerised, health/ready", "Eval harness over tickets_eval.jsonl"]
+      ],
+      "colW": [1.0, 6.5, 4.59],
+      "notes": "Do not read this table out — point at LO6 and say it is the one hard gate with zero tolerance, then point at LO7 and note it is the module the room just left. Every row here is traceable to a real lab; this table is the whole week, compressed."
+    },
+    {
+      "type": "flow",
+      "module": "Capstone",
+      "title": "Target-state architecture",
+      "rows": [
+        { "label": "Entry", "steps": [
+          { "text": "AR/EN ticket" },
+          { "text": "/v1/resolve" },
+          { "text": "Input guardrail", "tone": "key" }
+        ] },
+        { "label": "Route", "steps": [
+          { "text": "Supervisor", "sub": "scoped handoff, logged" },
+          { "text": "Orders spec." },
+          { "text": "Logistics spec." },
+          { "text": "Billing spec.", "sub": "refund flow + gates" }
+        ] },
+        { "label": "Systems", "steps": [
+          { "text": "MCP servers", "sub": "authz + audit" },
+          { "text": "Mock backends" },
+          { "text": "Memory", "sub": "checkpointer + Qdrant" }
+        ] },
+        { "label": "Exit", "steps": [
+          { "text": "Output guardrail", "tone": "key" },
+          { "text": "Aggregate/escalate" },
+          { "text": "Response" }
+        ] }
+      ],
+      "caption": "Cross-cutting on every box above: LangSmith tracing, cost attribution, the step/cost budget, and the audit log — this diagram, as code, in src/rafeeq/service/api.py::resolve_ticket.",
+      "notes": "Trace this top to bottom with your finger, naming the real file at each layer. Point out that resolve_ticket is ONE function called by both the HTTP API and the offline eval replay — LO1's 'two entry points, one compiled graph' requirement made structurally visible."
+    },
+    {
+      "type": "cards",
+      "module": "Capstone",
+      "kicker": "Choose at least one",
+      "title": "Extension menu",
+      "cards": [
+        { "label": "1", "title": "Deterministic fast-path", "body": "Bypass the supervisor for high-confidence single-domain intents, with a measured cost saving." },
+        { "label": "2", "title": "Human-in-the-loop approval", "body": "A checkpoint pause for refunds above the limit, resumable across sessions." },
+        { "label": "3", "title": "Hierarchical orchestration", "body": "A second supervisor tier for a new domain — Accounts." },
+        { "label": "4", "title": "Memory expiry and decay", "body": "Re-run the stale-policy scenario and prove freshness after expiry." },
+        { "label": "5", "title": "Monitoring dashboard", "body": "SLOs and alerts for cost, latency, and escalation, plus a simulated-incident runbook.", "tone": "key" }
+      ],
+      "notes": "Say plainly: pick one, not all five — a shallow attempt at three extensions scores worse than one done well and measured. The monitoring-dashboard option connects directly to slo.py from this morning; flag it for any team that finished M9 early."
+    },
+    {
+      "type": "table",
+      "module": "Capstone",
+      "title": "Five milestones, five gates",
+      "headers": ["Milestone", "Due", "Gate"],
+      "rows": [
+        ["M-A: core + reasoning + MCP tools", "End Day 2 H1", "Eval replay green locally"],
+        ["M-B: memory + specialists + supervisor", "End Day 3", "!key Routing accuracy >= 90%, leakage = 0"],
+        ["M-C: flows + guardrails + red-team", "End Day 4", "!bad 0 open high-severity findings"],
+        ["M-D: tracing + cost cut + deployment", "Day 5 H3", "!good >= 40% cost cut, running in sim env"],
+        ["M-E: demo + submission", "Day 5 H5", "Rubric scoring"]
+      ],
+      "colW": [4.5, 2.5, 5.09],
+      "notes": "Point out that four of these five gates are already behind the room — only M-D and M-E remain. Say the capstone was never one Friday sprint; it was five checkpoints the week already walked through, and today just closes the last two."
+    },
+    {
+      "type": "checklist",
+      "module": "Capstone",
+      "title": "Capstone deliverables",
+      "items": [
+        { "lead": "Repository", "text": "full history, checkpoint commits lab1...lab9 plus capstone integration", "state": "yes" },
+        { "lead": "Running service", "text": "compose up -> healthy, demonstrable live", "state": "yes" },
+        { "lead": "BENCHMARKS.md", "text": "course benchmark tables filled from your own runs", "state": "yes" },
+        { "lead": "SECURITY_REPORT.md", "text": "every finding, severities, mitigations, zero open high-severity", "state": "yes" },
+        { "lead": "DECISIONS.md", "text": "five one-paragraph engineering decisions with rationale", "state": "yes" },
+        { "lead": "6-minute demo", "text": "bilingual ticket, one attack blocked live, trace walkthrough, PDPL erasure", "state": "yes" }
+      ],
+      "notes": "Six artefacts, six checkboxes — this is the literal submission list. Note that four of the six are documents, not code: the course is deliberately grading the ability to explain the system as much as the ability to build it."
+    },
+    {
+      "type": "table",
+      "module": "Capstone",
+      "title": "The 100-point rubric",
+      "headers": ["Criterion", "Weight", "90-100% looks like"],
+      "rows": [
+        ["Agentic architecture & state", "15", "Bounded state machine, global budget, one graph, two entry points"],
+        ["Reasoning patterns", "10", "Right pattern per workflow, justified with measured cost/quality"],
+        ["Multi-agent orchestration", "15", "Thin supervisor, scoped handoffs, write-back, clean escalation"],
+        ["MCP tools & authorisation", "10", "Governed servers, server-side authz, runtime discovery"],
+        ["Memory & PDPL", "15", "Checkpointing + scoped long-term + versioned KB, leakage = 0"],
+        ["!key Guardrails & security", "15", "Layered structural controls, red-team in CI, 0 open high"],
+        ["Observability & cost", "10", ">= 40% cost cut, no quality regression, idempotent-only retries"],
+        ["Deployment, demo & decisions", "10", "Runs in sim env, crisp demo, DECISIONS.md shows trade-off literacy"]
+      ],
+      "colW": [4.0, 1.2, 6.89],
+      "footnote": "Pass >= 70. Distinction >= 90. Extensions add up to +5 bonus, capped at 100, only if mandatory scope already scores >= 80.",
+      "notes": "This is the full grading rubric compressed to its top band — print it, participants will ask for it. Walk the two 15-point rows on security and memory slowly: those are the two criteria with a hard floor, not just a weight."
+    },
+    {
+      "type": "bullets",
+      "module": "Capstone",
+      "title": "The six-minute demo, four beats",
+      "bullets": [
+        { "lead": "1. A bilingual ticket, end to end.", "text": "Resolved live, in the simulated environment — not a recording." },
+        { "lead": "2. One attack, blocked live.", "text": "The instructor hands you a fresh injection payload — not from the corpus." },
+        { "lead": "3. One trace, one cost walkthrough.", "text": "Open a real run, attribute its spend, name the biggest bar." },
+        { "lead": "4. One PDPL erasure.", "text": "forget_customer run live — zero vectors and checkpoints remain, proven on the spot.", "kind": "key" }
+      ],
+      "notes": "Four beats, six minutes — say the timing constraint out loud, teams that overrun on beat one lose beat four. Rehearse this order with any team that asks; it is the order the instructor guide's own demo script follows, beat for beat."
+    },
+    {
+      "type": "bullets",
+      "module": "Capstone",
+      "title": "Grading is evidence-first, demo second",
+      "intro": "The system testifies to its own quality — traces, the security report, and CI's red-team history are read before a single slide of the demo.",
+      "bullets": [
+        { "lead": "Evidence beats performance.", "text": "A crisp demo cannot rescue a red CI history — the repository's own record is read first." },
+        { "lead": "One security claim, verified live.", "text": "A fresh injection payload, not from the corpus — the instructor confirms the over-limit refund is structurally blocked." },
+        { "lead": "One PDPL claim, verified live.", "text": "forget_customer run on a real seeded customer — zero vectors and checkpoints, confirmed on the spot." },
+        { "lead": "Identical payloads or numbers, flagged.", "text": "The academic-integrity check: matching red-team payloads or benchmark figures across repositories.", "kind": "key" }
+      ],
+      "notes": "Name both live spot-checks explicitly before the demo block starts — teams should expect them, not be surprised. This is not a gotcha; announcing it in advance is what makes the check about the system, not about catching someone unprepared."
+    },
+
+    {
+      "type": "table",
+      "module": "Assessment",
+      "title": "Grade weighting",
+      "headers": ["Component", "Weight", "Evidence"],
+      "rows": [
+        ["Lab completion (9 labs)", "30%", "Checkpoint commits + expected outputs"],
+        ["PA-1 + PA-2 (security report)", "20%", "Artefacts + reproductions"],
+        ["Quiz", "10%", "10-question selection, closed book"],
+        ["!key Capstone", "40%", "Rubric, evidence-first"]
+      ],
+      "colW": [4.5, 1.5, 6.09],
+      "footnote": "From the assessment package's own weighting table — unchanged all week, cashed in fully on Friday.",
+      "notes": "This table was shown once on Monday; show it again now so the room sees the whole week converge on one number. Point at the 40% and say plainly: nothing said today changes that weight, it only changes whether the room is ready to earn it."
+    },
+    {
+      "type": "bullets",
+      "module": "Assessment",
+      "title": "PA-1 and PA-2, the two dry runs",
+      "intro": "The capstone's two graded artefacts were rehearsed earlier in the week — Friday is not the first time either skill is tested.",
+      "bullets": [
+        { "lead": "PA-1, Day 2.", "text": "A broken agent — unbounded loop, a raising tool, no metadata filter — fixed and verified. 40/40/20 split." },
+        { "lead": "PA-2, Day 4.", "text": "The graded security artefact: red-team your own Rafeeq, produce SECURITY_REPORT.md, fix every high-severity finding." },
+        { "lead": "Scored against a model report.", "text": "Triage correctness 50%, mitigation quality 30%, governance reasoning 20% — not just 'did you find bugs'." },
+        { "lead": "PA-3 is the capstone itself.", "text": "The deployed, traced, red-teamed Rafeeq — 40% of the course grade, evidence-first.", "kind": "key" }
+      ],
+      "notes": "This is a recap, not new material — say so plainly, thirty seconds per bullet. The point of restating it here is that PA-1 and PA-2 are not separate from the capstone; they are its dress rehearsals, graded on the exact same skills."
+    },
+    {
+      "type": "checklist",
+      "module": "Assessment",
+      "title": "Flagship Expert badge criteria",
+      "items": [
+        { "lead": "≥70% overall", "text": "labs + PA-1/PA-2 + quiz + capstone, combined", "state": "yes" },
+        { "lead": "Capstone ≥70%", "text": "the rubric score on its own, not averaged away by other components", "state": "yes" },
+        { "lead": "Zero open high-severity", "text": "every high-severity red-team finding closed and retested held", "state": "yes" },
+        { "lead": "Green leakage test", "text": "cross-customer memory leakage = 0, checked live", "state": "yes" }
+      ],
+      "notes": "All four must hold at once — a strong overall score cannot buy back one open high-severity finding, and a clean security report cannot buy back a red leakage test. Say this is a conjunction, not an average, before anyone asks."
+    },
+    {
+      "type": "bullets",
+      "module": "Assessment",
+      "kicker": "Anti-patterns",
+      "title": "Four flags that cap a criterion at 70%",
+      "bullets": [
+        { "lead": "A rule or authorisation living only in a prompt.", "text": "No branch, no server check — just a sentence a crafted message can argue with.", "kind": "bad" },
+        { "lead": "A leakage test absent or red.", "text": "The cross-customer test either was never run, or was run and failed.", "kind": "bad" },
+        { "lead": "A cost cut that regressed eval success.", "text": "Cheaper and worse is not a win — the exact failure this course spent a module warning against.", "kind": "bad" },
+        { "lead": "A write tool with a retry wrapper.", "text": "The double-refund incident, reintroduced on purpose or by accident — either way, a hard cap.", "kind": "bad" }
+      ],
+      "notes": "These four are the assessment package's own instructor notes, verbatim in spirit. Say plainly: hitting any one of these caps that criterion regardless of everything else on the page — a beautiful architecture slide does not buy back a prompt-only refund rule."
+    },
+
+    {
+      "type": "section",
+      "kicker": "Course close",
+      "big": "D5",
+      "title": "One system, five days, done",
+      "title_ar": "نظام واحد، خمسة أيام، اكتمل",
+      "subtitle": "Nine components, nine labs, one Rafeeq — assembled, traced, red-teamed, and running in the simulated Tawseel environment.",
+      "items": ["Nine components", "One through-line", "Two next courses", "Five-day badge turnaround"],
+      "notes": "Fifteen minutes, per the instructor guide's own wrap-up allocation. Slow down here — this is the section participants remember. Do not rush the through-line slide to save time elsewhere; if something has to be cut today, it was not this."
+    },
+    {
+      "type": "table",
+      "module": "Wrap-up",
+      "title": "Rafeeq, assembled from nine parts",
+      "headers": ["Module", "Lab", "Component"],
+      "rows": [
+        ["M1", "Lab 1", "Bounded core loop, typed state, global budget"],
+        ["M2", "Lab 2", "ReAct, Plan-and-Execute, Reflection"],
+        ["M3", "Lab 3", "Governed tools over MCP, server-side authorisation"],
+        ["M4", "Lab 4", "Thread memory, scoped long-term recall, PDPL erasure"],
+        ["M5", "Lab 5", "Three specialist agents, scoped context"],
+        ["M6", "Lab 6", "Supervisor: route, aggregate, escalate"],
+        ["M7", "Lab 7", "Business rules as deterministic flow gates"],
+        ["M8", "Lab 8", "Layered guardrails, red-team suite in CI"],
+        ["!key M9", "Lab 9", "Tracing, cost attribution, caching, routing, retries"]
+      ],
+      "colW": [1.2, 1.2, 9.69],
+      "notes": "Read this top to bottom slowly — it is the whole course on one slide. Ask the room to point at the row they are proudest of, and the row that gave them the most trouble; both answers are worth hearing out loud before moving on."
+    },
+    {
+      "type": "bullets",
+      "module": "Wrap-up",
+      "kicker": "One disease, one cure",
+      "title": "The through-line, named once",
+      "intro": "Every recurring enemy this week — a swallowed error, a stale memory, a lost handoff, a rule living in a prompt, a loop with no ceiling — was the same disease.",
+      "bullets": [
+        { "lead": "The disease: silent wrongness.", "text": "An agent can run perfectly and still be wrong — no exception, no crash, no red dashboard.", "kind": "key" },
+        { "lead": "The cure: explicit structure.", "text": "A typed state, a branch instead of a sentence, a server-side check instead of an instruction." },
+        { "lead": "The cure: bounded loops.", "text": "A step budget, a handoff budget, a cost cap — termination as a property you can prove." },
+        { "lead": "The cure: observation.", "text": "A trace tree, a cost report, an SLO alert — the sense organs this week finally gave the system." }
+      ],
+      "notes": "This is the single most important slide of the course — say the disease/cure framing slowly, and let the silence after 'silent wrongness' sit for a beat. Ask the room to name, from memory, which module gave them each cure; most will get structure and loops instantly and pause on observation, which is the point of doing M9 last."
+    },
+    {
+      "type": "bullets",
+      "module": "Wrap-up",
+      "kicker": "Forward pointer",
+      "title": "What comes after Friday",
+      "bullets": [
+        { "lead": "SDA-AIE-313.", "text": "Secures this exact system further — the same Rafeeq, a deeper adversary." },
+        { "lead": "SDA-AIE-390.", "text": "Productionises it — the same Rafeeq, a real deployment target." },
+        { "lead": "TawseelBench outlives this cohort.", "text": "A reusable SDAIA Academy benchmark for later agentic AI programmes, not a one-off lab artefact.", "kind": "key" },
+        { "lead": "The maxim travels with you.", "text": "As much structure as possible, as much agency as necessary — it does not expire with the course." }
+      ],
+      "notes": "Name both follow-on course codes clearly and say what each one assumes: a working Rafeeq, not a fresh start. This is the moment to tell anyone who is proud of a capstone extension that it is not wasted work — the next course builds on exactly that repository."
+    },
+    {
+      "type": "checklist",
+      "module": "Wrap-up",
+      "title": "What the instructor collects",
+      "items": [
+        { "lead": "Repository URL", "text": "full history, every checkpoint commit", "state": "yes" },
+        { "lead": "Trace project links", "text": "LangSmith project or reports/traces/", "state": "yes" },
+        { "lead": "SECURITY_REPORT.md", "text": "signed off, zero open high-severity", "state": "yes" },
+        { "lead": "BENCHMARKS.md", "text": "real measured numbers, not the package's illustrative ones", "state": "yes" },
+        { "lead": "Badge recommendation", "text": "issued within five working days of submission", "state": "yes" }
+      ],
+      "notes": "Read this out as the literal collection list at the end of H5 — do not let anyone leave the room before the instructor has all five links. State the five-working-day figure explicitly so participants know when to expect their result."
+    },
+    {
+      "type": "statement",
+      "kicker": "The one idea, all week",
+      "statement": "An agent that cannot show its work is not ready to act on your behalf.",
+      "statement_ar": "الوكيل الذي لا يستطيع أن يُظهر عمله ليس جاهزًا للتصرف نيابةً عنك.",
+      "attribution": "Course close",
+      "notes": "Say it, pause, let it land — the last statement of the course, same rhythm as every one before it. This sentence is deliberately the M1 premise and the M9 promise fused into one line: acting requires structure, and structure is only real if it can be shown."
+    },
+    {
+      "type": "closing",
+      "title": "Day 5 in one line",
+      "title_ar": "اليوم الخامس في جملة واحدة",
+      "points": [
+        "You cannot optimise what you cannot attribute — and now you can attribute everything.",
+        "Rafeeq is not a demo; it is nine components that testify to their own quality.",
+        "The maxim held from Monday to Friday: as much structure as possible, as much agency as necessary.",
+        "Go build the next one — with the sense organs already switched on."
+      ],
+      "notes": "Close the course on this slide, no further content after it. Thank the room, confirm the badge-collection checklist is complete for every team, and point once more at the two forward-pointer course codes before dismissing the cohort for good, on time."
+    }
+  ]
+}

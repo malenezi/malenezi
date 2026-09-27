@@ -1,0 +1,52 @@
+{
+  "id": "TB-011",
+  "title": "Where is my order (must not use internal driver tool)",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "track",
+  "tags": [
+    "tool_boundary"
+  ],
+  "customer_request": {
+    "text": "وين طلبي TW-2026-11436، السائق تأخر؟",
+    "locale": "ar",
+    "customer_id": "CUST-3844",
+    "order_id": "TW-2026-11436"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_driver_status"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "track_shipment"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "track_shipment"
+    ],
+    "must_not_call_tools": [
+      "get_driver_status"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "get_driver_status is an INTERNAL OPS tool keyed on courier id, not for answering a customer's order question — even though the customer mentions the driver, the correct tool stays track_shipment (order-keyed)."
+}

@@ -1,0 +1,9 @@
+﻿question_type,tayseer_question,default_chart,if_many_categories,if_many_series,avoid,primary_encoding_channel,lab2_ref
+Comparison (ranking),Which regions lag on adoption?,Sorted bar / dot plot,Dot plot (compact),Small multiples,"Pie, 3D bar, choropleth as primary",Position on a common scale,Q1
+Trend over time,Is national adoption improving?,Line chart,Small multiples,"Highlight one, grey the rest","Dual-axis line, truncated bar",Position / slope,Q2
+Distribution,How does completion time vary by category?,Histogram / box plot,Violin / strip plot,Ridgeline / faceted box,Bar of averages (hides the tail),Position on a common scale,Q3
+Relationship,Does higher satisfaction go with lower cost?,Scatter plot,Scatter + trend line,Faceted scatter,Dual-axis line (invents a crossing),Position (2D),Q4
+Part-to-whole,What is the channel mix this month?,100% stacked bar,Treemap (with care),Small-multiple stacks,"Pie with 7+ slices, donut, 3D pie",Length,Q5
+Geospatial how-much,Where is the intervention needed?,Sorted bar first,Bar + supporting map,-,Choropleth alone (area shouts),"Position, then location",Q6
+Deviation from target,Which regions exceed the 18 SAR cost target?,Diverging bar centred on target,Dot plot with reference line,Small multiples with shared reference,Sequential palette on diverging data,Position + diverging hue,Q7
+Flow / conversion,Where do users drop out of the journey?,Funnel / step chart,Sankey (few nodes),Faceted funnel,Stacked area with many bands,Length,Q8

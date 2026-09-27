@@ -1,0 +1,40 @@
+{
+  "by_class": {
+    "ambiguous": {
+      "n": 12,
+      "recall@10": 1.0,
+      "ndcg@6": 0.7738,
+      "mrr@10": 0.6944
+    },
+    "factoid": {
+      "n": 22,
+      "recall@10": 0.2955,
+      "ndcg@6": 0.1919,
+      "mrr@10": 0.3054
+    },
+    "identifier": {
+      "n": 60,
+      "recall@10": 1.0,
+      "ndcg@6": 0.9815,
+      "mrr@10": 0.975
+    },
+    "procedural": {
+      "n": 20,
+      "recall@10": 0.1,
+      "ndcg@6": 0.025,
+      "mrr@10": 0.0217
+    },
+    "tabular": {
+      "n": 24,
+      "recall@10": 1.0,
+      "ndcg@6": 0.4724,
+      "mrr@10": 0.337
+    }
+  },
+  "aggregate": {
+    "n": 138,
+    "recall@10": 0.7572,
+    "ndcg@6": 0.6104
+  },
+  "weakest_class": "procedural"
+}

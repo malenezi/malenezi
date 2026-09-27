@@ -1,0 +1,61 @@
+﻿Respondent ID,Department,Years of Service,Uses AI Tools,Confidence (1-5),Most Useful Task,Main Barrier,Wants More Training
+RESP-201,Legal Affairs,>10 yrs,Monthly,3,Writing emails,Not sure it is allowed,Yes
+RESP-202,Human Resources,<2 yrs,Weekly,2,Writing emails,Time to learn,Yes
+RESP-203,Digital Transformation,2-5 yrs,Weekly,1,Summarising documents,No barrier,Yes
+RESP-204,Customer Experience,>10 yrs,Never,1,Summarising documents,No barrier,Yes
+RESP-205,Procurement,<2 yrs,Weekly,5,Analysing data,No barrier,Yes
+RESP-206,Legal Affairs,>10 yrs,Daily,5,Preparing reports,Not sure it is allowed,Not sure
+RESP-207,Digital Transformation,2-5 yrs,Daily,5,Meeting minutes,Time to learn,Yes
+RESP-208,Legal Affairs,<2 yrs,Never,5,Writing emails,Not sure it is allowed,Yes
+RESP-209,Strategy & Planning,6-10 yrs,Never,3,Brainstorming ideas,Not sure it is allowed,Yes
+RESP-210,Strategy & Planning,>10 yrs,Monthly,1,Preparing reports,Privacy concerns,Yes
+RESP-211,Strategy & Planning,>10 yrs,Weekly,5,Preparing reports,Time to learn,Not sure
+RESP-212,Strategy & Planning,2-5 yrs,Never,5,Preparing reports,Quality concerns,Yes
+RESP-213,Legal Affairs,>10 yrs,Monthly,2,Translating content,Not sure it is allowed,Yes
+RESP-214,Human Resources,2-5 yrs,Monthly,3,Translating content,Don't know how to start,Yes
+RESP-215,Legal Affairs,6-10 yrs,Weekly,3,Analysing data,No barrier,No
+RESP-216,Human Resources,>10 yrs,Rarely,2,Summarising documents,Not sure it is allowed,Not sure
+RESP-217,Digital Transformation,>10 yrs,Never,4,Analysing data,Time to learn,Not sure
+RESP-218,Human Resources,2-5 yrs,Daily,3,Translating content,Don't know how to start,Yes
+RESP-219,Procurement,>10 yrs,Monthly,5,Preparing reports,No barrier,No
+RESP-220,Procurement,6-10 yrs,Weekly,4,Preparing reports,Quality concerns,Yes
+RESP-221,Finance,2-5 yrs,Never,2,Writing emails,Quality concerns,Yes
+RESP-222,Digital Transformation,6-10 yrs,Never,4,Analysing data,Quality concerns,Yes
+RESP-223,Digital Transformation,6-10 yrs,Weekly,2,Summarising documents,Quality concerns,Yes
+RESP-224,Corporate Communications,6-10 yrs,Weekly,1,Brainstorming ideas,Not sure it is allowed,Yes
+RESP-225,Customer Experience,>10 yrs,Daily,1,Preparing reports,No barrier,Not sure
+RESP-226,Customer Experience,>10 yrs,Weekly,2,Preparing reports,Not sure it is allowed,Yes
+RESP-227,Finance,<2 yrs,Monthly,4,Brainstorming ideas,Not sure it is allowed,Yes
+RESP-228,Corporate Communications,<2 yrs,Rarely,3,Summarising documents,Not sure it is allowed,No
+RESP-229,Strategy & Planning,2-5 yrs,Rarely,5,Brainstorming ideas,Not sure it is allowed,No
+RESP-230,Strategy & Planning,>10 yrs,Monthly,4,Meeting minutes,Quality concerns,Yes
+RESP-231,Human Resources,2-5 yrs,Rarely,1,Summarising documents,Not sure it is allowed,Yes
+RESP-232,Finance,<2 yrs,Weekly,2,Brainstorming ideas,Don't know how to start,Yes
+RESP-233,Human Resources,>10 yrs,Monthly,4,Brainstorming ideas,Time to learn,Yes
+RESP-234,Human Resources,>10 yrs,Weekly,3,Preparing reports,Time to learn,Yes
+RESP-235,Digital Transformation,2-5 yrs,Weekly,5,Meeting minutes,Time to learn,Not sure
+RESP-236,Finance,6-10 yrs,Rarely,2,Summarising documents,Time to learn,Yes
+RESP-237,Finance,6-10 yrs,Daily,2,Preparing reports,Not sure it is allowed,Not sure
+RESP-238,Finance,6-10 yrs,Monthly,3,Translating content,Time to learn,No
+RESP-239,Customer Experience,>10 yrs,Monthly,1,Writing emails,No barrier,Yes
+RESP-240,Legal Affairs,<2 yrs,Daily,1,Analysing data,Don't know how to start,Yes
+RESP-241,Human Resources,>10 yrs,Weekly,4,Analysing data,No barrier,Yes
+RESP-242,Corporate Communications,>10 yrs,Rarely,4,Meeting minutes,Time to learn,Yes
+RESP-243,Customer Experience,<2 yrs,Weekly,4,Preparing reports,Quality concerns,Yes
+RESP-244,Procurement,>10 yrs,Monthly,4,Analysing data,Quality concerns,No
+RESP-245,Human Resources,6-10 yrs,Monthly,1,Preparing reports,Quality concerns,Yes
+RESP-246,Strategy & Planning,>10 yrs,Rarely,1,Meeting minutes,Time to learn,Not sure
+RESP-247,Human Resources,>10 yrs,Weekly,5,Brainstorming ideas,Quality concerns,Not sure
+RESP-248,Human Resources,6-10 yrs,Weekly,3,Summarising documents,No barrier,Not sure
+RESP-249,Customer Experience,2-5 yrs,Daily,1,Brainstorming ideas,Time to learn,Yes
+RESP-250,Legal Affairs,<2 yrs,Rarely,1,Translating content,No barrier,Yes
+RESP-251,Finance,2-5 yrs,Monthly,1,Meeting minutes,Time to learn,Not sure
+RESP-252,Legal Affairs,>10 yrs,Rarely,3,Meeting minutes,Privacy concerns,Not sure
+RESP-253,Digital Transformation,2-5 yrs,Monthly,5,Translating content,Don't know how to start,No
+RESP-254,Corporate Communications,>10 yrs,Daily,3,Meeting minutes,Not sure it is allowed,Yes
+RESP-255,Legal Affairs,>10 yrs,Daily,3,Preparing reports,Time to learn,Yes
+RESP-256,Customer Experience,>10 yrs,Rarely,4,Preparing reports,Quality concerns,Not sure
+RESP-257,Procurement,2-5 yrs,Weekly,2,Translating content,No barrier,Not sure
+RESP-258,Human Resources,>10 yrs,Weekly,4,Meeting minutes,Time to learn,Not sure
+RESP-259,Corporate Communications,6-10 yrs,Monthly,1,Brainstorming ideas,Don't know how to start,Yes
+RESP-260,Customer Experience,2-5 yrs,Daily,5,Writing emails,Privacy concerns,Not sure

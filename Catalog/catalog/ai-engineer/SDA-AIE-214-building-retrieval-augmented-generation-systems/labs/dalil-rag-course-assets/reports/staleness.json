@@ -1,0 +1,456 @@
+{
+  "filtering_on": {
+    "lifecycle_filtering": "on",
+    "n": 12,
+    "counts": {
+      "answered_neither": 12
+    },
+    "answered_stale": 0.0,
+    "answered_current": 0.0,
+    "refused": 0.0,
+    "cited_superseded_rate": 0.0,
+    "rows": [
+      {
+        "id": "st-01",
+        "question": "What is the currently applicable figure under Circular 10/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-10-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-13-2025-v2",
+          "ndsa-circ-14-2024-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-02",
+        "question": "What is the currently applicable figure under Circular 11/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-11-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-14-2024-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-03",
+        "question": "What is the currently applicable figure under Circular 12/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-12-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-14-2024-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-20-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-04",
+        "question": "What is the currently applicable figure under Circular 13/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-13-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-13-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-05",
+        "question": "What is the currently applicable figure under Circular 14/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-14-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-14-2024-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-06",
+        "question": "What is the currently applicable figure under Circular 15/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-15-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-15-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-21-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-07",
+        "question": "What is the currently applicable figure under Circular 16/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-16-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-16-2024-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-08",
+        "question": "What is the currently applicable figure under Circular 17/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-17-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-13-2025-v2",
+          "ndsa-circ-17-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-09",
+        "question": "What is the currently applicable figure under Circular 18/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-18-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v2",
+          "ndsa-circ-20-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-10",
+        "question": "What is the currently applicable figure under Circular 19/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-19-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-13-2025-v2",
+          "ndsa-circ-17-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-11",
+        "question": "What is the currently applicable figure under Circular 20/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-20-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-20-2024-v2",
+          "ndsa-circ-21-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-12",
+        "question": "What is the currently applicable figure under Circular 21/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-21-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-20-2024-v2",
+          "ndsa-circ-21-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      }
+    ]
+  },
+  "filtering_off": {
+    "lifecycle_filtering": "off",
+    "n": 12,
+    "counts": {
+      "answered_neither": 12
+    },
+    "answered_stale": 0.0,
+    "answered_current": 0.0,
+    "refused": 0.0,
+    "cited_superseded_rate": 0.5,
+    "rows": [
+      {
+        "id": "st-01",
+        "question": "What is the currently applicable figure under Circular 10/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-10-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v1",
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-13-2025-v2",
+          "ndsa-circ-14-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-02",
+        "question": "What is the currently applicable figure under Circular 11/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-11-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v1",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-03",
+        "question": "What is the currently applicable figure under Circular 12/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-12-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v1",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-14-2024-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-04",
+        "question": "What is the currently applicable figure under Circular 13/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-13-2025-v1"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-13-2025-v1",
+          "ndsa-circ-13-2025-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": true,
+        "stub": true
+      },
+      {
+        "id": "st-05",
+        "question": "What is the currently applicable figure under Circular 14/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-14-2024-v1"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-14-2024-v1",
+          "ndsa-circ-14-2024-v2",
+          "ndsa-circ-18-2024-v2"
+        ],
+        "cited_superseded": true,
+        "stub": true
+      },
+      {
+        "id": "st-06",
+        "question": "What is the currently applicable figure under Circular 15/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-15-2025-v1"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-15-2025-v1",
+          "ndsa-circ-15-2025-v2"
+        ],
+        "cited_superseded": true,
+        "stub": true
+      },
+      {
+        "id": "st-07",
+        "question": "What is the currently applicable figure under Circular 16/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-16-2024-v1"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-16-2024-v1",
+          "ndsa-circ-16-2024-v2"
+        ],
+        "cited_superseded": true,
+        "stub": true
+      },
+      {
+        "id": "st-08",
+        "question": "What is the currently applicable figure under Circular 17/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-17-2025-v1"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-17-2025-v1",
+          "ndsa-circ-17-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v2"
+        ],
+        "cited_superseded": true,
+        "stub": true
+      },
+      {
+        "id": "st-09",
+        "question": "What is the currently applicable figure under Circular 18/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-18-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-18-2024-v1",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v2"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-10",
+        "question": "What is the currently applicable figure under Circular 19/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-19-2025-v1"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-17-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-19-2025-v1",
+          "ndsa-circ-19-2025-v2"
+        ],
+        "cited_superseded": true,
+        "stub": true
+      },
+      {
+        "id": "st-11",
+        "question": "What is the currently applicable figure under Circular 20/2024?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-20-2024-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-12-2024-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-20-2024-v2",
+          "ndsa-circ-25-2025"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      },
+      {
+        "id": "st-12",
+        "question": "What is the currently applicable figure under Circular 21/2025?",
+        "verdict": "answered_neither",
+        "cited_doc_ids": [
+          "ndsa-circ-21-2025-v2"
+        ],
+        "retrieved_doc_ids": [
+          "ndsa-circ-10-2024-v2",
+          "ndsa-circ-11-2025-v2",
+          "ndsa-circ-18-2024-v2",
+          "ndsa-circ-20-2024-v2",
+          "ndsa-circ-21-2025-v2",
+          "ndsa-circ-25-2025"
+        ],
+        "cited_superseded": false,
+        "stub": true
+      }
+    ]
+  },
+  "delta_answered_stale": 0.0,
+  "answered_neither_rate": 1.0,
+  "stub_run": true,
+  "verdict": "INCONCLUSIVE",
+  "why": "answers came from the offline stub model — the drill measured the plumbing, not the behaviour. Re-run with a gateway key.",
+  "suite": "staleness"
+}

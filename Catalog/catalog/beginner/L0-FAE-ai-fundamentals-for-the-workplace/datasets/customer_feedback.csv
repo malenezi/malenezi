@@ -1,0 +1,81 @@
+﻿Feedback_ID,Date,Channel,Topic,Sentiment,Comment_AR
+FB-001,2026-07-01,Portal,Access,Negative,الخدمة سهلة لكن وقت الانتظار طويل
+FB-002,2026-07-02,Mobile app,Documents,Positive,لم تصلني رسالة التأكيد
+FB-003,2026-07-03,Call center,Payment,Neutral,الموظف متعاون وواضح
+FB-004,2026-07-04,Branch,Status,Negative,واجهت صعوبة في تسجيل الدخول
+FB-005,2026-07-05,Portal,Appointment,Positive,التطبيق سريع والتجربة ممتازة
+FB-006,2026-07-06,Mobile app,Access,Neutral,أحتاج شرحاً أوضح للمتطلبات
+FB-007,2026-07-07,Call center,Documents,Negative,تم حل الطلب من أول تواصل
+FB-008,2026-07-08,Branch,Payment,Negative,حالة الطلب لا تتحدث
+FB-009,2026-07-09,Portal,Status,Positive,الموعد المتاح بعيد
+FB-010,2026-07-10,Mobile app,Appointment,Neutral,شكراً على سرعة الاستجابة
+FB-011,2026-07-11,Call center,Access,Negative,ظهرت رسالة خطأ عند رفع الملف
+FB-012,2026-07-12,Branch,Documents,Positive,الأسئلة المتكررة مفيدة
+FB-013,2026-07-13,Portal,Payment,Neutral,أرغب بقناة تواصل نصية
+FB-014,2026-07-14,Mobile app,Status,Negative,الإجراء واضح وسلس
+FB-015,2026-07-15,Call center,Appointment,Negative,الخدمة سهلة لكن وقت الانتظار طويل
+FB-016,2026-07-16,Branch,Access,Positive,لم تصلني رسالة التأكيد
+FB-017,2026-07-17,Portal,Documents,Neutral,الموظف متعاون وواضح
+FB-018,2026-07-18,Mobile app,Payment,Negative,واجهت صعوبة في تسجيل الدخول
+FB-019,2026-07-19,Call center,Status,Positive,التطبيق سريع والتجربة ممتازة
+FB-020,2026-07-20,Branch,Appointment,Neutral,أحتاج شرحاً أوضح للمتطلبات
+FB-021,2026-07-21,Portal,Access,Negative,تم حل الطلب من أول تواصل
+FB-022,2026-07-22,Mobile app,Documents,Negative,حالة الطلب لا تتحدث
+FB-023,2026-07-23,Call center,Payment,Positive,الموعد المتاح بعيد
+FB-024,2026-07-24,Branch,Status,Neutral,شكراً على سرعة الاستجابة
+FB-025,2026-07-25,Portal,Appointment,Negative,ظهرت رسالة خطأ عند رفع الملف
+FB-026,2026-07-26,Mobile app,Access,Positive,الأسئلة المتكررة مفيدة
+FB-027,2026-07-27,Call center,Documents,Neutral,أرغب بقناة تواصل نصية
+FB-028,2026-07-28,Branch,Payment,Negative,الإجراء واضح وسلس
+FB-029,2026-08-01,Portal,Status,Negative,الخدمة سهلة لكن وقت الانتظار طويل
+FB-030,2026-08-02,Mobile app,Appointment,Positive,لم تصلني رسالة التأكيد
+FB-031,2026-08-03,Call center,Access,Neutral,الموظف متعاون وواضح
+FB-032,2026-08-04,Branch,Documents,Negative,واجهت صعوبة في تسجيل الدخول
+FB-033,2026-08-05,Portal,Payment,Positive,التطبيق سريع والتجربة ممتازة
+FB-034,2026-08-06,Mobile app,Status,Neutral,أحتاج شرحاً أوضح للمتطلبات
+FB-035,2026-08-07,Call center,Appointment,Negative,تم حل الطلب من أول تواصل
+FB-036,2026-08-08,Branch,Access,Negative,حالة الطلب لا تتحدث
+FB-037,2026-08-09,Portal,Documents,Positive,الموعد المتاح بعيد
+FB-038,2026-08-10,Mobile app,Payment,Neutral,شكراً على سرعة الاستجابة
+FB-039,2026-08-11,Call center,Status,Negative,ظهرت رسالة خطأ عند رفع الملف
+FB-040,2026-08-12,Branch,Appointment,Positive,الأسئلة المتكررة مفيدة
+FB-041,2026-08-13,Portal,Access,Neutral,أرغب بقناة تواصل نصية
+FB-042,2026-08-14,Mobile app,Documents,Negative,الإجراء واضح وسلس
+FB-043,2026-08-15,Call center,Payment,Negative,الخدمة سهلة لكن وقت الانتظار طويل
+FB-044,2026-08-16,Branch,Status,Positive,لم تصلني رسالة التأكيد
+FB-045,2026-08-17,Portal,Appointment,Neutral,الموظف متعاون وواضح
+FB-046,2026-08-18,Mobile app,Access,Negative,واجهت صعوبة في تسجيل الدخول
+FB-047,2026-08-19,Call center,Documents,Positive,التطبيق سريع والتجربة ممتازة
+FB-048,2026-08-20,Branch,Payment,Neutral,أحتاج شرحاً أوضح للمتطلبات
+FB-049,2026-08-21,Portal,Status,Negative,تم حل الطلب من أول تواصل
+FB-050,2026-08-22,Mobile app,Appointment,Negative,حالة الطلب لا تتحدث
+FB-051,2026-08-23,Call center,Access,Positive,الموعد المتاح بعيد
+FB-052,2026-08-24,Branch,Documents,Neutral,شكراً على سرعة الاستجابة
+FB-053,2026-08-25,Portal,Payment,Negative,ظهرت رسالة خطأ عند رفع الملف
+FB-054,2026-08-26,Mobile app,Status,Positive,الأسئلة المتكررة مفيدة
+FB-055,2026-08-27,Call center,Appointment,Neutral,أرغب بقناة تواصل نصية
+FB-056,2026-08-28,Branch,Access,Negative,الإجراء واضح وسلس
+FB-057,2026-09-01,Portal,Documents,Negative,الخدمة سهلة لكن وقت الانتظار طويل
+FB-058,2026-09-02,Mobile app,Payment,Positive,لم تصلني رسالة التأكيد
+FB-059,2026-09-03,Call center,Status,Neutral,الموظف متعاون وواضح
+FB-060,2026-09-04,Branch,Appointment,Negative,واجهت صعوبة في تسجيل الدخول
+FB-061,2026-09-05,Portal,Access,Positive,التطبيق سريع والتجربة ممتازة
+FB-062,2026-09-06,Mobile app,Documents,Neutral,أحتاج شرحاً أوضح للمتطلبات
+FB-063,2026-09-07,Call center,Payment,Negative,تم حل الطلب من أول تواصل
+FB-064,2026-09-08,Branch,Status,Negative,حالة الطلب لا تتحدث
+FB-065,2026-09-09,Portal,Appointment,Positive,الموعد المتاح بعيد
+FB-066,2026-09-10,Mobile app,Access,Neutral,شكراً على سرعة الاستجابة
+FB-067,2026-09-11,Call center,Documents,Negative,ظهرت رسالة خطأ عند رفع الملف
+FB-068,2026-09-12,Branch,Payment,Positive,الأسئلة المتكررة مفيدة
+FB-069,2026-09-13,Portal,Status,Neutral,أرغب بقناة تواصل نصية
+FB-070,2026-09-14,Mobile app,Appointment,Negative,الإجراء واضح وسلس
+FB-071,2026-09-15,Call center,Access,Negative,الخدمة سهلة لكن وقت الانتظار طويل
+FB-072,2026-09-16,Branch,Documents,Positive,لم تصلني رسالة التأكيد
+FB-073,2026-09-17,Portal,Payment,Neutral,الموظف متعاون وواضح
+FB-074,2026-09-18,Mobile app,Status,Negative,واجهت صعوبة في تسجيل الدخول
+FB-075,2026-09-19,Call center,Appointment,Positive,التطبيق سريع والتجربة ممتازة
+FB-076,2026-09-20,Branch,Access,Neutral,أحتاج شرحاً أوضح للمتطلبات
+FB-077,2026-09-21,Portal,Documents,Negative,تم حل الطلب من أول تواصل
+FB-078,2026-09-22,Mobile app,Payment,Negative,حالة الطلب لا تتحدث
+FB-079,2026-09-23,Call center,Status,Positive,الموعد المتاح بعيد
+FB-080,2026-09-24,Branch,Appointment,Neutral,شكراً على سرعة الاستجابة

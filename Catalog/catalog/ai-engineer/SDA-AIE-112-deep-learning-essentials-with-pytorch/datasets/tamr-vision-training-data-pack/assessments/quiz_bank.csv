@@ -1,0 +1,21 @@
+﻿question_id,question,answer_key,learning_outcome
+1,Why does stacking linear layers without nonlinearities add no capacity?,Composition of linear maps is linear.,LO1
+2,A 9-class classifier's loss starts at 2.20. Diagnose.,Healthy untrained baseline: ln(9) ≈ 2.197.,LO1
+3,Which backward-pass term kills a dead ReLU?,The ReLU derivative mask; negative pre-activations receive zero gradient.,LO1
+4,What input does nn.CrossEntropyLoss expect?,"Raw logits, not softmax probabilities.",LO3
+5,Why call optimizer.zero_grad()?,PyTorch accumulates into .grad by design.,LO3
+6,model.eval() versus torch.no_grad()?,eval changes layer behaviour; no_grad disables graph recording.,LO3
+7,What makes a checkpoint resumable?,"Model, optimizer, epoch, best metric, scheduler/scaler when used, and RNG state.",LO3/LO6
+8,What does overfit-one-batch prove?,The pipeline can learn; it does not prove generalisation.,LO3
+9,"How many parameters in Conv2d(64,128,3) with bias?","73,856.",LO2
+10,Why stack three 3×3 convolutions instead of one 7×7?,Fewer parameters and two extra nonlinearities at the same receptive field.,LO2
+11,What does a residual connection guarantee for gradients?,An identity gradient path.,LO2/LO4
+12,Name an augmentation valid for dates but wrong for Arabic documents.,Horizontal flip: dates lack canonical orientation; mirrored text changes meaning.,LO4
+13,Train loss falls while validation loss rises. Diagnose and act.,Overfitting; strengthen regularisation/augmentation and checkpoint before divergence.,LO4
+14,Why can BatchNorm fail at batch size 2?,Batch statistics are noisy; use GroupNorm or LayerNorm.,LO4
+15,Classic OneCycle wiring bug?,Stepping per epoch rather than per batch.,LO4
+16,Pick a transfer recipe for 400 similar-domain images.,Feature extraction first; keep frozen BatchNorm in eval mode.,LO5
+17,What is the preprocessing contract?,Use the resize/crop/scaling/normalization expected by the pretrained weights.,LO5
+18,Why pin a Hub revision and prefer safetensors?,Reproducibility and safer serialization.,LO5/LO6
+19,GPU utilisation sawtooths. First diagnostic and fix?,Time the DataLoader alone; tune workers and pinned memory.,LO6
+20,"Under AMP, why clip after unscale?","The clipping threshold must apply to true, not scaled, gradients.",LO6

@@ -1,0 +1,49 @@
+{
+  "id": "TB-024",
+  "title": "Payment / refund-history lookup",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "billing"
+  ],
+  "intent": "invoice",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "أبغى إيصال ومعرفة تفاصيل عملية الدفع PAY-110326.",
+    "locale": "ar",
+    "customer_id": "CUST-2817",
+    "order_id": "TW-2026-10326"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_invoice",
+    "get_payment"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_payment"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_payment"
+    ],
+    "must_not_call_tools": [
+      "get_invoice"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Refund-history question keyed on the PAYMENT id (not the order id) — get_payment, not get_invoice; tests the two billing read tools are not interchangeable."
+}

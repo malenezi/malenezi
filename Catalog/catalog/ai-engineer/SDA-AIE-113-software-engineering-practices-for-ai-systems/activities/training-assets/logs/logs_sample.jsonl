@@ -1,0 +1,12 @@
+{"timestamp":"2026-08-28T08:00:00.120Z","level":"INFO","event":"model_loaded","trace_id":null,"model_version":"v3.2.0","git_sha":"abc1234","load_seconds":0.41}
+{"timestamp":"2026-08-28T08:00:02.010Z","level":"INFO","event":"prediction_served","trace_id":"tr-001","model_version":"v3.2.0","git_sha":"abc1234","decision":"allow","probability_bucket":"0.0-0.2","latency_ms":8.8}
+{"timestamp":"2026-08-28T08:00:02.030Z","level":"INFO","event":"request_complete","trace_id":"tr-001","model_version":"v3.2.0","git_sha":"abc1234","status_code":200,"latency_ms":9.4}
+{"timestamp":"2026-08-28T08:00:02.110Z","level":"INFO","event":"prediction_served","trace_id":"tr-002","model_version":"v3.2.0","git_sha":"abc1234","decision":"review","probability_bucket":"0.6-0.85","latency_ms":11.2}
+{"timestamp":"2026-08-28T08:00:02.130Z","level":"INFO","event":"request_complete","trace_id":"tr-002","model_version":"v3.2.0","git_sha":"abc1234","status_code":200,"latency_ms":11.9}
+{"timestamp":"2026-08-28T08:00:02.210Z","level":"INFO","event":"prediction_served","trace_id":"tr-003","model_version":"v3.2.0","git_sha":"abc1234","decision":"block","probability_bucket":"0.85-1.0","latency_ms":13.7}
+{"timestamp":"2026-08-28T08:00:02.230Z","level":"INFO","event":"request_complete","trace_id":"tr-003","model_version":"v3.2.0","git_sha":"abc1234","status_code":200,"latency_ms":14.5}
+{"timestamp":"2026-08-28T08:00:02.310Z","level":"WARNING","event":"feature_cache_fallback","trace_id":"tr-004","model_version":"v3.2.0","git_sha":"abc1234","dependency":"feature-cache","fallback":"local-defaults"}
+{"timestamp":"2026-08-28T08:00:02.340Z","level":"INFO","event":"prediction_served","trace_id":"tr-004","model_version":"v3.2.0","git_sha":"abc1234","decision":"review","probability_bucket":"0.6-0.85","latency_ms":19.1}
+{"timestamp":"2026-08-28T08:00:02.360Z","level":"INFO","event":"request_complete","trace_id":"tr-004","model_version":"v3.2.0","git_sha":"abc1234","status_code":200,"latency_ms":20.0}
+{"timestamp":"2026-08-28T08:00:02.410Z","level":"INFO","event":"validation_rejected","trace_id":"tr-005","model_version":"v3.2.0","git_sha":"abc1234","fields":["amount_sar"],"status_code":422}
+{"timestamp":"2026-08-28T08:00:02.430Z","level":"INFO","event":"request_complete","trace_id":"tr-005","model_version":"v3.2.0","git_sha":"abc1234","status_code":422,"latency_ms":2.1}

@@ -1,0 +1,401 @@
+﻿test_id,test_type,lang,template,term,expected_relation
+BEH-001,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-002,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-003,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-004,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-005,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-006,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-007,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-008,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-009,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-010,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-011,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-012,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-013,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-014,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-015,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-016,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-017,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-018,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-019,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-020,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-021,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-022,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-023,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-024,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-025,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-026,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-027,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-028,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-029,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-030,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-031,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-032,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-033,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-034,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-035,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-036,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-037,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-038,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-039,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-040,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-041,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-042,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-043,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-044,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-045,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-046,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-047,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-048,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-049,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-050,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-051,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-052,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-053,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-054,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-055,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-056,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-057,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-058,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-059,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-060,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-061,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-062,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-063,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-064,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-065,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-066,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-067,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-068,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-069,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-070,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-071,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-072,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-073,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-074,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-075,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-076,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-077,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-078,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-079,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-080,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-081,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-082,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-083,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-084,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-085,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-086,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-087,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-088,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-089,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-090,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-091,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-092,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-093,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-094,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-095,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-096,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-097,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-098,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-099,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-100,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-101,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-102,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-103,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-104,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-105,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-106,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-107,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-108,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-109,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-110,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-111,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-112,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-113,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-114,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-115,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-116,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-117,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-118,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-119,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-120,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-121,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-122,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-123,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-124,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-125,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-126,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-127,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-128,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-129,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-130,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-131,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-132,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-133,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-134,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-135,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-136,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-137,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-138,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-139,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-140,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-141,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-142,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-143,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-144,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-145,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-146,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-147,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-148,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-149,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-150,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-151,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-152,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-153,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-154,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-155,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-156,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-157,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-158,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-159,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-160,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-161,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-162,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-163,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-164,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-165,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-166,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-167,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-168,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-169,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-170,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-171,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-172,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-173,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-174,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-175,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-176,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-177,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-178,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-179,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-180,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-181,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-182,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-183,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-184,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-185,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-186,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-187,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-188,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-189,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-190,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-191,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-192,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-193,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-194,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-195,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-196,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-197,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-198,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-199,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-200,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-201,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-202,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-203,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-204,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-205,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-206,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-207,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-208,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-209,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-210,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-211,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-212,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-213,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-214,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-215,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-216,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-217,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-218,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-219,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-220,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-221,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-222,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-223,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-224,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-225,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-226,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-227,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-228,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-229,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-230,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-231,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-232,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-233,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-234,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-235,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-236,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-237,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-238,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-239,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-240,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-241,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-242,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-243,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-244,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-245,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-246,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-247,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-248,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-249,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-250,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-251,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-252,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-253,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-254,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-255,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-256,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-257,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-258,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-259,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-260,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-261,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-262,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-263,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-264,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-265,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-266,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-267,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-268,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-269,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-270,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-271,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-272,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-273,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-274,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-275,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-276,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-277,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-278,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-279,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-280,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-281,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-282,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-283,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-284,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-285,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-286,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-287,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-288,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-289,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-290,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-291,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-292,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-293,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-294,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-295,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-296,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-297,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-298,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-299,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-300,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-301,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-302,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-303,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-304,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-305,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-306,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-307,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-308,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-309,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-310,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-311,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-312,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-313,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-314,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-315,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-316,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-317,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-318,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-319,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-320,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-321,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-322,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-323,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-324,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-325,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-326,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-327,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-328,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-329,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-330,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-331,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-332,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-333,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-334,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-335,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-336,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-337,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-338,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-339,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-340,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-341,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-342,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-343,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-344,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-345,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-346,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-347,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-348,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-349,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-350,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-351,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-352,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-353,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-354,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-355,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-356,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-357,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-358,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-359,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-360,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-361,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-362,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-363,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-364,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-365,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-366,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-367,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-368,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-369,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-370,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-371,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-372,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-373,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-374,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-375,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-376,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-377,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-378,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-379,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-380,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation
+BEH-381,invariance,ar,الخدمة في {term} لا تعمل,Riyadh,topic unchanged
+BEH-382,directional,ar,الخدمة في {term} لا تعمل,Jeddah,sentiment must not improve after negation
+BEH-383,invariance,en,The service in {term} is not working,Dammam,topic unchanged
+BEH-384,directional,en,The service in {term} is not working,الرياض,sentiment must not improve after negation
+BEH-385,invariance,ar,الخدمة في {term} لا تعمل,جدة,topic unchanged
+BEH-386,directional,ar,الخدمة في {term} لا تعمل,الدمام,sentiment must not improve after negation
+BEH-387,invariance,en,The service in {term} is not working,today,topic unchanged
+BEH-388,directional,en,The service in {term} is not working,tomorrow,sentiment must not improve after negation
+BEH-389,invariance,ar,الخدمة في {term} لا تعمل,اليوم,topic unchanged
+BEH-390,directional,ar,الخدمة في {term} لا تعمل,غداً,sentiment must not improve after negation
+BEH-391,invariance,en,The service in {term} is not working,Riyadh,topic unchanged
+BEH-392,directional,en,The service in {term} is not working,Jeddah,sentiment must not improve after negation
+BEH-393,invariance,ar,الخدمة في {term} لا تعمل,Dammam,topic unchanged
+BEH-394,directional,ar,الخدمة في {term} لا تعمل,الرياض,sentiment must not improve after negation
+BEH-395,invariance,en,The service in {term} is not working,جدة,topic unchanged
+BEH-396,directional,en,The service in {term} is not working,الدمام,sentiment must not improve after negation
+BEH-397,invariance,ar,الخدمة في {term} لا تعمل,today,topic unchanged
+BEH-398,directional,ar,الخدمة في {term} لا تعمل,tomorrow,sentiment must not improve after negation
+BEH-399,invariance,en,The service in {term} is not working,اليوم,topic unchanged
+BEH-400,directional,en,The service in {term} is not working,غداً,sentiment must not improve after negation

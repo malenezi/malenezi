@@ -1,0 +1,17 @@
+# SDA-DSC-213 — Experimentation, A/B Testing and Causal Inference
+# Core (required for every lab)
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+statsmodels>=0.14
+matplotlib>=3.8
+scikit-learn>=1.3
+pyarrow>=14.0
+jupyterlab>=4.0
+
+# Day 3 / Day 4 causal stack (Labs 5-7 + capstone extensions)
+# Install these ahead of the course - heaviest dependency chain.
+dowhy>=0.11
+econml>=0.15
+linearmodels>=6.0
+networkx>=3.1

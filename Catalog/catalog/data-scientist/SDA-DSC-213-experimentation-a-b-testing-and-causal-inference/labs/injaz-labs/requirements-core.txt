@@ -1,0 +1,9 @@
+# Minimal fallback set. Every lab has a no-DoWhy path that runs on this alone.
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+statsmodels>=0.14
+matplotlib>=3.8
+scikit-learn>=1.3
+pyarrow>=14.0
+jupyterlab>=4.0

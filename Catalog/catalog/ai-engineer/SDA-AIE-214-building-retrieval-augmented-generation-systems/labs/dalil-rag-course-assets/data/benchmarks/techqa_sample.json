@@ -1,0 +1,95 @@
+{
+  "_note": "COURSE-AUTHORED FIXTURE, NOT BENCHMARK DATA. Shaped like the real dataset so the loader, the metric code and the report plumbing can be exercised offline. Numbers produced from this file are stamped mode='sample' and must never be compared with published results.",
+  "corpus": {
+    "0-0": "Error MQ2035 is returned when a client attempts to connect to a queue manager with credentials that are not authorised for the channel. Verify the channel authentication record and the client user identifier.",
+    "1-0": "The connection pool exhausts when the maximum pool size is reached and all connections are in use. Increase maxPoolSize or reduce connection hold time; the default is 50.",
+    "2-0": "To collect a first-failure data capture, run the fdc tool with the -a flag. The archive is written to the diagnostics directory.",
+    "3-0": "Certificate expiry causes handshake failure with error SSL0208E. Renew the personal certificate in the key database and restart the listener.",
+    "4-0": "Log files rotate at 100 MB by default and ten generations are retained. Both values are configurable in the logging stanza.",
+    "5-0": "A queue depth alert fires when current depth exceeds the high-depth threshold for longer than the alert interval."
+  },
+  "queries": [
+    {
+      "qid": "0",
+      "text": "Why do I get MQ2035 on connect?",
+      "relevant": {
+        "0-0": 1.0
+      },
+      "answerable": true,
+      "reference": "Error MQ2035 is returned when a client attempts to connect to a queue manager with credentials that are not authorised f"
+    },
+    {
+      "qid": "1",
+      "text": "What is the default maximum connection pool size?",
+      "relevant": {
+        "1-0": 1.0
+      },
+      "answerable": true,
+      "reference": "The connection pool exhausts when the maximum pool size is reached and all connections are in use. Increase maxPoolSize "
+    },
+    {
+      "qid": "2",
+      "text": "How do I collect an FFDC archive?",
+      "relevant": {
+        "2-0": 1.0
+      },
+      "answerable": true,
+      "reference": "To collect a first-failure data capture, run the fdc tool with the -a flag. The archive is written to the diagnostics di"
+    },
+    {
+      "qid": "3",
+      "text": "What causes SSL0208E?",
+      "relevant": {
+        "3-0": 1.0
+      },
+      "answerable": true,
+      "reference": "Certificate expiry causes handshake failure with error SSL0208E. Renew the personal certificate in the key database and "
+    },
+    {
+      "qid": "4",
+      "text": "How many log generations are retained?",
+      "relevant": {
+        "4-0": 1.0
+      },
+      "answerable": true,
+      "reference": "Log files rotate at 100 MB by default and ten generations are retained. Both values are configurable in the logging stan"
+    },
+    {
+      "qid": "5",
+      "text": "When does a queue depth alert fire?",
+      "relevant": {
+        "5-0": 1.0
+      },
+      "answerable": true,
+      "reference": "A queue depth alert fires when current depth exceeds the high-depth threshold for longer than the alert interval."
+    },
+    {
+      "qid": "6",
+      "text": "What is the licence cost per core for this product?",
+      "relevant": {},
+      "answerable": false,
+      "reference": ""
+    },
+    {
+      "qid": "7",
+      "text": "Which customers are running version 9.4 in production?",
+      "relevant": {},
+      "answerable": false,
+      "reference": ""
+    },
+    {
+      "qid": "8",
+      "text": "When is the next release scheduled?",
+      "relevant": {},
+      "answerable": false,
+      "reference": ""
+    },
+    {
+      "qid": "9",
+      "text": "Can you increase my support entitlement?",
+      "relevant": {},
+      "answerable": false,
+      "reference": ""
+    }
+  ]
+}

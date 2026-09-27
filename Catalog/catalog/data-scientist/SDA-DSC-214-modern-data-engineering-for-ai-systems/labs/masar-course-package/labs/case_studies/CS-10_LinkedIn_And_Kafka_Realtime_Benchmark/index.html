@@ -1,0 +1,4539 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Private trainer portal for SDAIA Academy training content">
+      
+      
+        <meta name="author" content="SDAIA Academy">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CS-10 — LinkedIn and Kafka: Designing a Central Messaging Backbone - SDAIA Academy Trainer Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <!-- Internal training material: keep out of search engines on any host -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cs-10-linkedin-and-kafka-designing-a-central-messaging-backbone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-header__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SDAIA Academy Trainer Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CS-10 — LinkedIn and Kafka: Designing a Central Messaging Backbone
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../../portal/catalog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../beginner/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../../shared/trainer-resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Trainer resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../../portal/feedback/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Help & governance
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../../.." title="SDAIA Academy Trainer Knowledge Hub" class="md-nav__button md-logo" aria-label="SDAIA Academy Trainer Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9zm6.82 6L12 12.72 5.18 9 12 5.28zM17 16l-5 2.72L7 16v-3.73L12 15l5-2.73z"/></svg>
+
+    </a>
+    SDAIA Academy Trainer Knowledge Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SDAIA-Academy/sdaia-academy-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SDAIA-Academy/sdaia-academy-training
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../TRAINER_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/domains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse by domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/recently-updated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recently updated
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Courses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Courses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../beginner/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner Level (Level 0)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Beginner Level (Level 0)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FAA-ai-powered-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAA · AI-Powered Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FAE-ai-fundamentals-for-the-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FAE · AI Fundamentals for the Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FDL-data-literacy-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDL · Data Literacy Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FDS-practical-data-skills-with-spreadsheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDS · Practical Data Skills with Spreadsheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FDV-data-storytelling-and-data-driven-decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FDV · Data Storytelling & Data-Driven Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../beginner/L0-FGP-generative-ai-for-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L0-FGP · Generative AI for Productivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../foundation-core/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation Core
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-101-ai-and-data-literacy-for-professionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-101 · AI and Data Literacy for Professionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-102-generative-ai-and-prompt-engineering-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-102 · Generative AI and Prompt Engineering Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-103-python-programming-for-data-and-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-103 · Python Programming for Data and AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-104-data-wrangling-sql-and-exploratory-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-104 · Data Wrangling, SQL and Exploratory Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../foundation-core/SDA-FND-105-responsible-ai-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-FND-105 · Responsible AI and Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../ai-engineer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineer Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Engineer Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-111-applied-machine-learning-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-111 · Applied Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-112-deep-learning-essentials-with-pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-112 · Deep Learning Essentials with PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-113-software-engineering-practices-for-ai-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-113 · Software Engineering Practices for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-211-natural-language-processing-with-transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-211 · Natural Language Processing with Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-212-computer-vision-systems-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-212 · Computer Vision Systems Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-213-large-language-model-application-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-213 · Large Language Model Application Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-214-building-retrieval-augmented-generation-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-214 · Building Retrieval-Augmented Generation Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-215-fine-tuning-and-adapting-foundation-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-215 · Fine-Tuning and Adapting Foundation Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-216-mlops-model-deployment-and-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-216 · MLOps: Model Deployment and Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-311-agentic-ai-systems-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-311 · Agentic AI Systems Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-312-llmops-and-production-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-312 · LLMOps and Production AI Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-313-ai-security-guardrails-and-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-313 · AI Security, Guardrails and Red Teaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-314-ai-performance-scalability-and-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-314 · AI Performance, Scalability and Cost Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-315-enterprise-ai-solution-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-315 · Enterprise AI Solution Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai-engineer/SDA-AIE-390-ai-engineering-capstone-production-genai-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-AIE-390 · AI Engineering Capstone: Production GenAI System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Scientist Track
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Scientist Track
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-111-statistical-foundations-for-data-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-111 · Statistical Foundations for Data Science
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-112-data-visualization-and-storytelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-112 · Data Visualization and Storytelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-211-advanced-machine-learning-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-211 · Advanced Machine Learning Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-212-time-series-analysis-and-forecasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-212 · Time Series Analysis and Forecasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-213-experimentation-a-b-testing-and-causal-inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-213 · Experimentation, A/B Testing and Causal Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-214 · Modern Data Engineering for AI Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-215-big-data-analytics-with-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-215 · Big Data Analytics with Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-311-decision-science-and-optimization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-311 · Decision Science and Optimization Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-312-genai-augmented-data-science-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-312 · GenAI-Augmented Data Science Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-313-real-time-and-streaming-data-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-313 · Real-Time and Streaming Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../SDA-DSC-390-data-science-capstone-from-data-to-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDA-DSC-390 · Data Science Capstone: From Data to Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../../../shared/trainer-resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trainer resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trainer resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/assessment-guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assessment guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/classroom-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classroom preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/delivery-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Faq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/technical-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/trainer-resources/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academy templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/branding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../shared/catalog-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog source documents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help & governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Help & governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report a problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../portal/content-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../hub-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../CONTENT_GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/ADMIN_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/HOSTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/LARGE_FILES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../docs/admin/PERMISSIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../migration/MIGRATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../migration/MISSING_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../migration/DUPLICATE_CONTENT_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Scenario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-where-the-pattern-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Where the pattern comes from
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-what-masar-must-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 What Masar must build
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-business-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Business context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-technical-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Technical challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-evidence-pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Evidence pack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Evidence pack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p1-the-target-architecture-give-this-at-minute-5-teams-fill-in-the-decisions-not-the-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — The target architecture (give this at minute 5; teams fill in the decisions, not the boxes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-the-twelve-decisions-the-design-sheet-85-is-the-printable-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2 — The twelve decisions (the design sheet; §8.5 is the printable version)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-what-one-event-looks-like-on-the-wire-and-what-bronze-must-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P3 — What one event looks like on the wire, and what Bronze must record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p4-escalation-round-1-sealed-envelope-open-at-minute-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P4 — ESCALATION ROUND 1 (sealed envelope; open at minute 25)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p5-escalation-round-2-sealed-envelope-open-at-minute-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P5 — ESCALATION ROUND 2 (sealed envelope; open at minute 40)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p6-escalation-round-3-sealed-envelope-open-at-minute-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P6 — ESCALATION ROUND 3 (sealed envelope; open at minute 55)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-facilitation-script-minute-by-minute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Facilitation script (minute-by-minute)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-discussion-questions-with-model-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Discussion questions with model answers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-solution-approach-reference-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Solution approach — reference architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Solution approach — reference architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-the-twelve-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 The twelve decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-round-1-late-events-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Round 1 — late events, resolved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-round-2-duplicates-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Round 2 — duplicates, resolved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-round-3-out-of-order-and-the-lying-clock-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Round 3 — out-of-order and the lying clock, resolved
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-design-sheet-print-one-per-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Design sheet (print one per team)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-scoring-sheet-cross-team-review-5-points-each-40-total" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Scoring sheet (cross-team review; 5 points each, 40 total)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-what-good-looks-like-vs-common-wrong-turns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. What good looks like vs common wrong turns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-debrief-7-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Debrief (7 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-one-sentence-participants-should-leave-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. The one sentence participants should leave with
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cs-10-linkedin-and-kafka-designing-a-central-messaging-backbone">CS-10 — LinkedIn and Kafka: Designing a Central Messaging Backbone<a class="headerlink" href="#cs-10-linkedin-and-kafka-designing-a-central-messaging-backbone" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Case ID</strong></td>
+<td>CS-10</td>
+</tr>
+<tr>
+<td><strong>Module</strong></td>
+<td>M5 — Streaming Data and Event-Driven Architectures</td>
+</tr>
+<tr>
+<td><strong>Day / Hour</strong></td>
+<td>Day 4 · Hour 3 (after CS-05 and LAB-05; this is the design exercise that generalises both)</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>75 minutes (three escalating rounds of 15 min + reviews)</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td>Design exercise, scored</td>
+</tr>
+<tr>
+<td><strong>Group size</strong></td>
+<td>4 per team; 3–6 teams</td>
+</tr>
+<tr>
+<td><strong>Deliverable</strong></td>
+<td>A completed <strong>design sheet</strong> (§8.5) with a value and a justification for all twelve decisions, plus the team's answer to "what breaks first at 15M events/day and how do you know before it does"</td>
+</tr>
+<tr>
+<td><strong>Materials</strong></td>
+<td>Design sheet §8.5 printed per team; the escalation cards §5 P4–P6 in three sealed envelopes per team, opened on the facilitator's signal; the scoring sheet §8.6 for cross-team review; A1 paper for the architecture drawing</td>
+</tr>
+<tr>
+<td><strong>Facilitator prep</strong></td>
+<td>25 min. This is the longest and most demanding case in the course. Rehearse the round transitions — the escalations must arrive <em>after</em> teams have committed to a design, never before</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>This is a design exercise, not a Kafka tutorial.</strong> No team should spend a minute on broker installation, CLI syntax or configuration files. Every deliverable is a decision with a justification. If a team asks "which flag sets that", the answer is: "name the behaviour you want and why; the flag is a footnote."</p>
+</blockquote>
+<hr />
+<h2 id="1-scenario">1. Scenario<a class="headerlink" href="#1-scenario" title="Permanent link">&para;</a></h2>
+<h3 id="11-where-the-pattern-comes-from">1.1 Where the pattern comes from<a class="headerlink" href="#11-where-the-pattern-comes-from" title="Permanent link">&para;</a></h3>
+<p>Kafka originated at LinkedIn around 2010, to solve an organisational problem rather than a technical one. LinkedIn had many systems that each needed data from many other systems: profile updates, connection graphs, activity feeds, search indexing, monitoring, offline analytics, and a growing set of recommendation models. The result was a dense mesh of point-to-point integrations — each producer knowing each consumer, each new consumer requiring a change to every producer, each pipeline built and operated independently.</p>
+<p>The reframing was to stop treating data movement as <strong>integration</strong> and start treating it as <strong>publication</strong>. Producers publish facts to a durable, ordered, replayable log. Consumers subscribe independently, at their own pace, and read from their own position. Adding a consumer becomes a decision the consumer makes alone; the producer neither knows nor cares.</p>
+<p>Two properties made this more than a message queue and they are the two properties that matter for this case:</p>
+<ul>
+<li><strong>The log is durable and replayable.</strong> A message is not consumed and destroyed; it is <em>read at an offset</em>. A new consumer can start from the beginning. A broken consumer can rewind and reprocess. <strong>Reprocessing becomes a routine operation instead of a data-recovery project.</strong></li>
+<li><strong>Consumers are decoupled in time and in failure.</strong> A slow, crashed or newly-deployed consumer does not slow the producer and does not affect other consumers, because each group holds its own offsets.</li>
+</ul>
+<p>LinkedIn ran this at a scale measured in trillions of messages per day. Masar's 15 million events per day is four to five orders of magnitude smaller — which is exactly why the <em>architecture</em>, not the scale, is what transfers.</p>
+<h3 id="12-what-masar-must-build">1.2 What Masar must build<a class="headerlink" href="#12-what-masar-must-build" title="Permanent link">&para;</a></h3>
+<p>Masar's 14,000 vehicles emit, every 5 seconds:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>vehicle_id, latitude, longitude, speed, heading, timestamp, trip_id
+</code></pre></div>
+<p>Two consumers exist today and both are business-critical, with genuinely different requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Consumer</th>
+<th>Needs</th>
+<th>Tolerance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ETA features</strong> (AI)</td>
+<td>Complete, correct, unit-normalised positions feeding <code>gold.eta_features</code></td>
+<td>Minutes of latency acceptable; <strong>incompleteness is not</strong></td>
+</tr>
+<tr>
+<td><strong>Operations alerts</strong> (Ops)</td>
+<td>Speeding, harsh braking, vehicle-stopped-in-traffic, geofence breach</td>
+<td>Seconds of latency required; <strong>a missed late event is acceptable</strong></td>
+</tr>
+</tbody>
+</table>
+<p>More consumers are coming: a fraud investigation team, a regulator reporting feed, and a driver-safety scoring model. <strong>The design must make adding the fourth consumer a decision the fourth consumer makes alone.</strong></p>
+<h2 id="2-business-context">2. Business context<a class="headerlink" href="#2-business-context" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Figure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vehicles</td>
+<td>14,000</td>
+</tr>
+<tr>
+<td>Emission interval</td>
+<td>5 s</td>
+</tr>
+<tr>
+<td><strong>Events per day</strong></td>
+<td><strong>15,000,000</strong></td>
+</tr>
+<tr>
+<td>Mean events/second</td>
+<td>174</td>
+</tr>
+<tr>
+<td>Peak events/second (17:00–19:00 +03)</td>
+<td>620</td>
+</tr>
+<tr>
+<td>Mean event size</td>
+<td>268 bytes</td>
+</tr>
+<tr>
+<td>Daily volume (raw / compressed)</td>
+<td>~4.0 GB / ~0.9 GB</td>
+</tr>
+<tr>
+<td>Duplicate <code>event_id</code> rate at source</td>
+<td>0.4% (~60,000/day)</td>
+</tr>
+<tr>
+<td>Out-of-order <code>ts</code> rate</td>
+<td>~1%</td>
+</tr>
+<tr>
+<td>Ops alerting latency requirement</td>
+<td><strong>&lt; 5 s end to end</strong></td>
+</tr>
+<tr>
+<td>ETA feature freshness requirement</td>
+<td><strong>&lt; 5 min</strong></td>
+</tr>
+<tr>
+<td>Streaming platform budget</td>
+<td><strong>SAR 65,000 / month</strong></td>
+</tr>
+<tr>
+<td>Planned new consumers in 12 months</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-technical-challenge">3. Technical challenge<a class="headerlink" href="#3-technical-challenge" title="Permanent link">&para;</a></h2>
+<p>Design the pipeline from vehicle to both consumers, then defend it against three escalating realities that arrive <strong>after</strong> the design is committed.</p>
+<h2 id="4-constraints">4. Constraints<a class="headerlink" href="#4-constraints" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Device firmware cannot change this year: the 5-second interval, the field names and the transport are fixed.</li>
+<li>The platform is redeployed <strong>twice a week</strong>; correctness must survive restarts without human intervention.</li>
+<li>Bronze must be append-only and immutable (CS-09's ADR is binding).</li>
+<li>PDPL: precise lat/lon is sensitive-personal; retention on raw GPS is 30 days.</li>
+<li><strong>SAR 65,000/month</strong> ceiling.</li>
+<li>No design may require a producer change to add a consumer.</li>
+</ul>
+<hr />
+<h2 id="5-evidence-pack">5. Evidence pack<a class="headerlink" href="#5-evidence-pack" title="Permanent link">&para;</a></h2>
+<h3 id="p1-the-target-architecture-give-this-at-minute-5-teams-fill-in-the-decisions-not-the-boxes">P1 — The target architecture (give this at minute 5; teams fill in the decisions, not the boxes)<a class="headerlink" href="#p1-the-target-architecture-give-this-at-minute-5-teams-fill-in-the-decisions-not-the-boxes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> ┌──────────┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> │ 14,000   │  vehicle_id, latitude, longitude, speed,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a> │ vehicles │  heading, timestamp, trip_id     every 5 s
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a> └────┬─────┘
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>      │  174 ev/s mean · 620 ev/s peak · 268 B/event
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      ▼
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a> ┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a> │  KAFKA   topic: masar.gps.pings                                 │
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a> │          partitions: ?      key: ?      retention: ?            │
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a> │          replication: ?     compression: ?                      │
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a> │  ┌────────┬────────┬────────┬────────┐                          │
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a> │  │ part 0 │ part 1 │ part 2 │  ...   │  append-only, ordered    │
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a> │  │ 0 1 2..│ 0 1 2..│ 0 1 2..│        │  per partition, offsets  │
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a> │  └────────┴────────┴────────┴────────┘                          │
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a> └───────────────┬─────────────────────────────────┬───────────────┘
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                 │ consumer group: ?               │ consumer group: ?
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                 ▼                                 ▼
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a> ┌───────────────────────────────┐   ┌─────────────────────────────┐
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a> │ SPARK STRUCTURED STREAMING    │   │ SPARK STRUCTURED STREAMING  │
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a> │ query: gps_bronze_land        │   │ query: ops_alerts           │
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a> │ trigger: ?   checkpoint: ?    │   │ trigger: ?  checkpoint: ?   │
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a> │ watermark: ?                  │   │ watermark: ?                │
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a> └───────────────┬───────────────┘   └──────────────┬──────────────┘
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                 ▼                                  │
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a> ┌────────────────────────────────┐                 │
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a> │ bronze.gps_events              │                 │
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a> │ append-only · immutable        │                 │
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a> │ _ingested_at _source_file      │                 │
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a> │ _batch_id · producer_version   │                 │
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a> │ duplicates RETAINED            │                 │
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a> └───────────────┬────────────────┘                 │
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>                 ▼                                  │
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a> ┌────────────────────────────────┐                 │
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a> │ silver.vehicle_positions       │                 │
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a> │ dedup on event_id · UTC        │                 │
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a> │ unit-normalised per            │                 │
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a> │ producer_version · geohash     │                 │
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a> │ conform-joined to zones        │                 │
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a> └───────┬────────────────────────┘                 │
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>         │                                          │
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>         ▼                                          ▼
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a> ┌──────────────────────┐                ┌──────────────────────────┐
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a> │ gold.eta_features    │                │ Operations alerts        │
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a> │ (AI)  &lt; 5 min        │                │ (Ops)  &lt; 5 s             │
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a> │ rolling_avg_speed_10m│                │ speeding · harsh braking │
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a> │ rolling_zone_demand  │                │ geofence · stopped       │
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a> └──────────────────────┘                └──────────────────────────┘
+</code></pre></div>
+<h3 id="p2-the-twelve-decisions-the-design-sheet-85-is-the-printable-version">P2 — The twelve decisions (the design sheet; §8.5 is the printable version)<a class="headerlink" href="#p2-the-twelve-decisions-the-design-sheet-85-is-the-printable-version" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Topic partitioning <strong>key</strong> · 2. Partition <strong>count</strong> · 3. Topic <strong>retention</strong> · 4. Replication factor · 5. Consumer-group topology · 6. Delivery semantics and the mechanism that achieves them · 7. Watermark length, <strong>per consumer</strong> · 8. Deduplication key and window, and the layer it happens in · 9. Checkpoint placement · 10. Replay strategy · 11. Backpressure response · 12. The health metric and its alert condition.</li>
+</ol>
+<h3 id="p3-what-one-event-looks-like-on-the-wire-and-what-bronze-must-record">P3 — What one event looks like on the wire, and what Bronze must record<a class="headerlink" href="#p3-what-one-event-looks-like-on-the-wire-and-what-bronze-must-record" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// produced</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span><span class="nt">&quot;vehicle_id&quot;</span><span class="p">:</span><span class="s2">&quot;VEH-00884&quot;</span><span class="p">,</span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="mf">26.41803</span><span class="p">,</span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="mf">50.10770</span><span class="p">,</span><span class="nt">&quot;speed&quot;</span><span class="p">:</span><span class="mf">15.3</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="nt">&quot;heading&quot;</span><span class="p">:</span><span class="mi">211</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2026-06-01T19:38:56Z&quot;</span><span class="p">,</span><span class="nt">&quot;trip_id&quot;</span><span class="p">:</span><span class="s2">&quot;TRP-20260601-0000000&quot;</span><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// landed in bronze.gps_events (canonical schema, CONVENTIONS.md)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">{</span><span class="nt">&quot;event_id&quot;</span><span class="p">:</span><span class="s2">&quot;ev_00009f025f480001&quot;</span><span class="p">,</span><span class="nt">&quot;vehicle_id&quot;</span><span class="p">:</span><span class="s2">&quot;VEH-00884&quot;</span><span class="p">,</span><span class="nt">&quot;driver_id&quot;</span><span class="p">:</span><span class="s2">&quot;DRV-02492&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="nt">&quot;trip_id&quot;</span><span class="p">:</span><span class="s2">&quot;TRP-20260601-0000000&quot;</span><span class="p">,</span><span class="nt">&quot;ts&quot;</span><span class="p">:</span><span class="s2">&quot;2026-06-01T19:38:56Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w"> </span><span class="nt">&quot;payload&quot;</span><span class="p">:{</span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="mf">26.41803</span><span class="p">,</span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="mf">50.10770</span><span class="p">,</span><span class="nt">&quot;speed_kmh&quot;</span><span class="p">:</span><span class="mf">15.3</span><span class="p">,</span><span class="nt">&quot;heading_deg&quot;</span><span class="p">:</span><span class="mi">211</span><span class="p">,</span><span class="nt">&quot;accuracy_m&quot;</span><span class="p">:</span><span class="mf">17.3</span><span class="p">},</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w"> </span><span class="nt">&quot;producer_version&quot;</span><span class="p">:</span><span class="s2">&quot;2.4.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w"> </span><span class="nt">&quot;_ingested_at&quot;</span><span class="p">:</span><span class="s2">&quot;2026-06-01T19:39:02Z&quot;</span><span class="p">,</span><span class="nt">&quot;_source_file&quot;</span><span class="p">:</span><span class="s2">&quot;masar.gps.pings:7:441829&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w"> </span><span class="nt">&quot;_batch_id&quot;</span><span class="p">:</span><span class="s2">&quot;b_20260601_193900&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>Note <code>_source_file</code> for a stream is <strong>topic:partition:offset</strong>. That triple is the streaming equivalent of a filename, and it is what makes an individual event traceable back to its exact position in the log — the single most useful thing you can record about a streamed row.</p>
+<h3 id="p4-escalation-round-1-sealed-envelope-open-at-minute-25">P4 — ESCALATION ROUND 1 (sealed envelope; open at minute 25)<a class="headerlink" href="#p4-escalation-round-1-sealed-envelope-open-at-minute-25" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Late-arriving events.</strong></p>
+<p>Riyadh has tunnels, multi-storey car parks and underground malls. A device that loses connectivity buffers locally and flushes when it reconnects. Measured over 7 days:</p>
+<table>
+<thead>
+<tr>
+<th>Lag (event time → arrival at broker)</th>
+<th>Share</th>
+<th>Cumulative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 5 s</td>
+<td>96.20%</td>
+<td>96.20%</td>
+</tr>
+<tr>
+<td>5–30 s</td>
+<td>2.10%</td>
+<td>98.30%</td>
+</tr>
+<tr>
+<td>30 s – 2 min</td>
+<td>0.90%</td>
+<td>99.20%</td>
+</tr>
+<tr>
+<td>2–5 min</td>
+<td>0.55%</td>
+<td>99.75%</td>
+</tr>
+<tr>
+<td>5–10 min</td>
+<td>0.18%</td>
+<td>99.93%</td>
+</tr>
+<tr>
+<td>10–30 min</td>
+<td>0.06%</td>
+<td>99.99%</td>
+</tr>
+<tr>
+<td>&gt; 30 min (device offline for a shift)</td>
+<td>0.01%</td>
+<td>100.00%</td>
+</tr>
+</tbody>
+</table>
+<p>A single device, after 40 minutes underground, flushes <strong>480 buffered pings in under two seconds.</strong></p>
+<p><strong>Answer:</strong> (a) What watermark do you choose for the Ops path and for the AI path, and what residual do you accept for each? (b) What happens to the 480-ping burst in your design — is it one micro-batch or 480? (c) Does the burst reorder anything within its partition? (d) Is any of this data lost?</p>
+</blockquote>
+<h3 id="p5-escalation-round-2-sealed-envelope-open-at-minute-40">P5 — ESCALATION ROUND 2 (sealed envelope; open at minute 40)<a class="headerlink" href="#p5-escalation-round-2-sealed-envelope-open-at-minute-40" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Duplicates.</strong></p>
+<p>Three independent sources of duplicates, and your design must handle all three:</p>
+<ol>
+<li><strong>Producer-side.</strong> The device SDK retries on an unacknowledged send. Measured duplicate <code>event_id</code> rate at the broker: <strong>0.4% (~60,000/day)</strong>, and it is <em>not</em> uniform — it spikes to 3% for devices with poor connectivity, i.e. exactly the devices that also produce the late bursts in Round 1.</li>
+<li><strong>Broker-side.</strong> A producer retry after a partial failure can write the same event to the same partition twice at different offsets.</li>
+<li><strong>Consumer-side.</strong> A consumer restarted after processing a micro-batch but before its offsets were committed will reprocess that batch. Your platform is redeployed twice a week.</li>
+</ol>
+<p>On 4 June a deploy caused source (3): <strong>7,300 pings reprocessed</strong>. <code>gold.zone_hourly_demand</code> read 1.41× actual for zone Z-RUH-01. Surge rose to 2.3× on demand that did not exist.</p>
+<p><strong>Answer:</strong> (a) Which of the three does your delivery semantic solve, and which does it not? (b) What is your dedup key, in which layer does dedup happen, and over what window? (c) Bronze retains duplicates — how do you then guarantee <code>silver.vehicle_positions</code> has exactly one row per event? (d) Your dedup window is finite. What happens to a duplicate that arrives <em>after</em> it closes, and how would you know?</p>
+</blockquote>
+<h3 id="p6-escalation-round-3-sealed-envelope-open-at-minute-55">P6 — ESCALATION ROUND 3 (sealed envelope; open at minute 55)<a class="headerlink" href="#p6-escalation-round-3-sealed-envelope-open-at-minute-55" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Out-of-order timestamps, and one clock that lies.</strong></p>
+<p>~1% of events arrive with <code>ts</code> out of order relative to the preceding event from the same vehicle. Three distinct causes, and they are <strong>not</strong> the same problem:</p>
+<ol>
+<li><strong>Network reordering</strong> — two pings sent 5 s apart arrive in the reverse order. Small offsets, seconds.</li>
+<li><strong>Buffered flush</strong> (Round 1) — a device emits 480 events whose <code>ts</code> values are all in the past, interleaved with live events from other vehicles.</li>
+<li><strong>A wrong device clock.</strong> 61 vehicles are running a firmware build whose NTP sync failed. Their <code>ts</code> is <strong>ahead by between 4 and 11 hours.</strong> These events arrive with timestamps in the future.</li>
+</ol>
+<p>Cause 3 is the dangerous one. In an event-time pipeline, <strong>a single event with a timestamp 11 hours in the future advances the watermark by 11 hours</strong>, and every subsequent legitimate event is then classified as late and dropped. One misconfigured device can silence the pipeline for the entire fleet.</p>
+<p><strong>Answer:</strong> (a) Does your design survive cause 3? Trace it through. (b) Where do you defend — producer, broker, stream, or Silver? (c) What do you do with a future-dated event: drop it, clamp it, quarantine it, or let it through? (d) What alerts, and on what signal? (e) Now that you have seen all three rounds: <strong>what breaks first at 15M events/day, and how do you know before it does?</strong></p>
+</blockquote>
+<hr />
+<h2 id="6-facilitation-script-minute-by-minute">6. Facilitation script (minute-by-minute)<a class="headerlink" href="#6-facilitation-script-minute-by-minute" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Min</th>
+<th>Activity</th>
+<th>Facilitator does</th>
+<th>Watch for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–6</td>
+<td><strong>Frame the origin.</strong> Tell the LinkedIn story in §1.1 in four minutes: point-to-point mesh → publication to a durable log. Land the two properties (replayable; consumers decoupled in time and failure).</td>
+<td>State the rule aloud: <strong>"This is a design exercise. Nobody types a broker config today."</strong></td>
+<td>Teams that want to discuss Kafka internals. Redirect to the twelve decisions.</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td><strong>Distribute</strong> P1, P2, P3 and the design sheet. Assign the three sealed envelopes to each table, face down, marked ROUND 1/2/3.</td>
+<td>"Do not open these. You will be told when." The physical envelopes materially raise engagement.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10–25</td>
+<td><strong>ROUND 0 — the baseline design.</strong> Fill in decisions 1–6 and 9. Draw the architecture on A1.</td>
+<td>Circulate with exactly one question per table, from: "What must not be reordered?" · "Which consumer is harmed most by a duplicate?" · "Draw me the arrow where a duplicate can be created."</td>
+<td>Teams keying by <code>city</code> (3-way hot skew) or by <code>trip_id</code> (fragments a vehicle's idle pings). Teams sharing one consumer group between AI and Ops.</td>
+</tr>
+<tr>
+<td>25–26</td>
+<td><strong>"Open envelope 1."</strong></td>
+<td>Say nothing else.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>26–40</td>
+<td><strong>ROUND 1 — late events.</strong> Teams revise; answer P4 (a)–(d) on the sheet.</td>
+<td>Push: "Your watermark drops 0.8%. Where did those events go? Are they lost?" The realisation that Bronze retains everything is the round's payload.</td>
+<td>Teams that widen the watermark to 30 minutes to be safe. Show them INC-2025-0517 from CS-05 (41 GB state, OOM, 4.5 h outage).</td>
+</tr>
+<tr>
+<td>40–41</td>
+<td><strong>"Open envelope 2."</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>41–55</td>
+<td><strong>ROUND 2 — duplicates.</strong> Answer P5 (a)–(d).</td>
+<td>Push on (a): most teams claim exactly-once and cannot say which of the three sources it addresses. Answer: only (3). Sources (1) and (2) are producer-side and require dedup on <code>event_id</code> regardless.</td>
+<td>Teams whose answer to (c) is "dedup in Bronze" — that violates CS-09's ADR and destroys the duplicate-rate health metric.</td>
+</tr>
+<tr>
+<td>55–56</td>
+<td><strong>"Open envelope 3."</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>56–70</td>
+<td><strong>ROUND 3 — out-of-order and the lying clock.</strong> Answer P6 (a)–(e). This is the hardest round; expect visible discomfort.</td>
+<td>Walk one team through cause 3 out loud until they see the watermark jump 11 hours and the fleet go silent. Then let them tell the room.</td>
+<td>Almost every team's Round-0 design fails cause 3. That is intended. The failure is the lesson.</td>
+</tr>
+<tr>
+<td>70–78</td>
+<td><strong>Cross-team scoring.</strong> Each team scores the design of the team to its right using §8.6. Scores are read aloud with one sentence of justification per category.</td>
+<td>Enforce: a score must cite a specific decision on the sheet, never a general impression.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>78–85</td>
+<td><strong>Reference architecture.</strong> Walk §8.1–8.4 with the trade-offs made explicit. Answer P6(e). Close on §11.</td>
+<td>Emphasise every place the reference makes a <em>trade</em>, not an optimum. Teams must leave knowing there is no free choice.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Total 85 min if all reviews are run. To fit 75: cut cross-team scoring to 5 minutes and score only two categories.)</em></p>
+<hr />
+<h2 id="7-discussion-questions-with-model-answers">7. Discussion questions with model answers<a class="headerlink" href="#7-discussion-questions-with-model-answers" title="Permanent link">&para;</a></h2>
+<p><strong>Q1. What must not be reordered? (decision 1 — the partition key)</strong></p>
+<p><em>Model answer.</em> Kafka guarantees ordering <strong>within a partition, not across partitions</strong>. So the partition key is chosen by asking: <em>for which entity would out-of-order delivery produce a wrong answer?</em></p>
+<p>For Masar the answer is <strong><code>vehicle_id</code></strong>. A vehicle's position sequence must remain ordered: distance travelled, heading change, harsh-braking detection and speed differencing all read consecutive pings from one vehicle. Two pings from <em>different</em> vehicles arriving in either order changes nothing.</p>
+<table>
+<thead>
+<tr>
+<th>Candidate key</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>vehicle_id</code></strong></td>
+<td><strong>Correct.</strong> 14,000 distinct keys spread evenly; ordering preserved exactly where it is required</td>
+</tr>
+<tr>
+<td><code>trip_id</code></td>
+<td>Orders per trip, but a vehicle's idle-time pings (no <code>trip_id</code>) scatter across partitions, and per-vehicle continuity across trips is lost</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>3 distinct values on 24 partitions: 21 idle partitions and a hot one carrying a third of 15M events. Total lag looks fine while one partition grows unbounded</td>
+</tr>
+<tr>
+<td>none (round-robin)</td>
+<td>Maximum throughput, no ordering anywhere. Requires every consumer to reorder in state</td>
+</tr>
+<tr>
+<td><code>event_id</code></td>
+<td>Perfect distribution, zero useful ordering — the pathological case</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Partition count:</strong> at 620 events/s peak, a single partition is comfortable; the count is driven by <strong>consumer parallelism</strong>, not by throughput. <strong>24</strong> gives room to scale a consumer group to 24 instances, divides evenly by 2, 3, 4, 6, 8 and 12, and keeps ~583 vehicles per partition. Note the asymmetry teams must internalise: <strong>partitions can be increased later but never decreased, and increasing them re-hashes keys, breaking per-key ordering across the change.</strong> Over-provision modestly; do not under-provision.</p>
+<p><strong>Q2. How long do you keep the log? (decision 3 — retention)</strong></p>
+<p><em>Model answer.</em> <strong>7 days</strong>, and the reasoning is what matters.</p>
+<p>Topic retention is not a storage decision — it is the answer to <em>"how far back can I replay?"</em> Replay is needed when: a consumer had a bug and its output must be rebuilt; a new consumer starts and needs recent history; a deploy corrupted a downstream table; or a schema/logic change requires reprocessing.</p>
+<p>7 days at 0.9 GB/day compressed with replication factor 3 is ~19 GB — trivially cheap. It covers a bug discovered on Friday and fixed on Monday, which is the realistic operational window.</p>
+<p>The important framing: <strong>the topic is not the system of record — <code>bronze.gps_events</code> is.</strong> Anything older than 7 days is reprocessed from Bronze, in batch, far more cheaply than a stream replay. Retention therefore only needs to cover the window in which <em>streaming</em> replay is the right tool. A team proposing 90-day retention has confused the log with the lake.</p>
+<p><strong>Replication factor 3, <code>min.insync.replicas=2</code>.</strong> Standard durability; tolerates one broker loss without data loss and one more without unavailability.</p>
+<p><strong>Q3. How many consumer groups, and why not one? (decision 5)</strong></p>
+<p><em>Model answer.</em> <strong>Two groups now, one per consumer, and this is the property that makes the whole architecture worth building.</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>masar.gps.pings ──┬── group: gps-bronze-land   (AI path: bronze → silver → gold.eta_features)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                  └── group: ops-alerts        (Ops path: low-latency alerting)
+</code></pre></div>
+<p>A consumer group holds its own offsets. Therefore:
+- The Ops path can run a <strong>2-second trigger</strong>; the AI path a <strong>30-second trigger</strong>. Neither constrains the other.
+- If the Ops alerting sink is down for an hour, ingestion into Bronze is entirely unaffected. With a shared group, a stuck sink stalls both.
+- Replaying the Ops consumer from an earlier offset — because the alerting rules changed — does <strong>not</strong> replay ingestion, which would duplicate Bronze rows.
+- The <strong>fourth consumer</strong> (fraud, regulator, safety scoring) is added by creating a group and choosing a starting offset. No producer change, no coordination, no ticket. <strong>This is the LinkedIn insight, cashed out.</strong></p>
+<p>Teams that propose one consumer writing to Bronze and then fanning out <em>from Bronze</em> to Ops are not wrong architecturally — but they must then explain how they meet a 5-second Ops SLA through a Delta table write, a commit and a downstream read. They cannot. <strong>The fan-out belongs at the log, because the log is the only place where two consumers can read the same data at two different speeds.</strong></p>
+<p><strong>Q4. What watermark, and what exactly does it cost? (decision 7)</strong></p>
+<p><em>Model answer.</em> <strong>Different watermarks per consumer</strong>, derived from P4's distribution, each with a stated residual:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Watermark</th>
+<th>Admits</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ops alerts</strong></td>
+<td><strong>30 seconds</strong></td>
+<td>98.3%</td>
+<td>An alert about a harsh-braking event 4 minutes ago is worthless. Latency dominates completeness. Missing 1.7% of late events is explicitly acceptable — it was stated as a tolerance in §1.2</td>
+</tr>
+<tr>
+<td><strong>AI / silver → gold</strong></td>
+<td><strong>10 minutes</strong></td>
+<td>99.93%</td>
+<td>Feature correctness dominates; 5 minutes of latency is within the &lt; 5 min freshness budget at a 30 s trigger. Drops 0.07%</td>
+</tr>
+<tr>
+<td><strong>Training / historical</strong></td>
+<td><strong>none</strong> — batch rebuild from <code>bronze.gps_events</code></td>
+<td>100%</td>
+<td>Bronze is append-only and complete</td>
+</tr>
+</tbody>
+</table>
+<p>The insight most teams miss, and the one to make explicit: <strong>a watermark decides what the streaming aggregate sees; it never decides what you keep.</strong> Every event, however late, is in Bronze. The 0.07% dropped from the AI streaming path is absorbed by the next batch rebuild of <code>gold.eta_features</code>. This is why the medallion architecture and streaming compose so well — <strong>you can be aggressive about latency in a derived view precisely because the raw layer forgives you.</strong></p>
+<p>The cost of getting it wrong in the other direction is concrete: state ≈ (events/s) × (watermark) × (per-key state). Going from 10 minutes to 60 costs 6× the state, and at 620 ev/s peak that is the path to the 41 GB OOM in CS-05's INC-2025-0517.</p>
+<p><strong>Q5. Dedup key, window, and layer? (decision 8, from P5)</strong></p>
+<p><em>Model answer.</em> <strong>Key <code>event_id</code>. Window: the watermark's duration. Layer: Silver, never Bronze.</strong></p>
+<p>Which of P5's three duplicate sources does each mechanism address?</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Addressed by</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(1) Producer SDK retry</td>
+<td><strong>Dedup on <code>event_id</code> in Silver</strong></td>
+<td>Exactly-once delivery does <strong>not</strong> help — the producer genuinely sent two distinct messages</td>
+</tr>
+<tr>
+<td>(2) Broker-side producer retry</td>
+<td>Idempotent producer + dedup on <code>event_id</code></td>
+<td>Belt and braces</td>
+</tr>
+<tr>
+<td>(3) Consumer reprocess on restart</td>
+<td><strong>Exactly-once effect</strong>: checkpointed offsets committed atomically with the Delta write</td>
+<td>This is the only one delivery semantics solves</td>
+</tr>
+</tbody>
+</table>
+<p>Teams that answer "exactly-once handles duplicates" have answered one third of the question. <strong>Exactly-once transport does not give you exactly-once data</strong> — the 0.4% producer duplicates arrive as legitimately distinct messages.</p>
+<p><strong>Bronze retains duplicates</strong> (CS-09's ADR): the duplicate rate is a producer health metric, spiking to 3% on poorly-connected devices, and destroying it saves nothing. Silver deduplicates:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">readStream</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;bronze.gps_events&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">.</span><span class="n">withWatermark</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="s2">&quot;10 minutes&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>   <span class="o">.</span><span class="n">dropDuplicates</span><span class="p">([</span><span class="s2">&quot;event_id&quot;</span><span class="p">,</span> <span class="s2">&quot;ts&quot;</span><span class="p">])</span>       <span class="c1"># bounded by the watermark</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   <span class="o">.</span><span class="n">writeStream</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;checkpointLocation&quot;</span><span class="p">,</span> <span class="n">SILVER_CKPT</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>   <span class="o">.</span><span class="n">toTable</span><span class="p">(</span><span class="s2">&quot;silver.vehicle_positions&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>P5(d) is the question that separates a good answer from an excellent one: <strong>a duplicate arriving after the dedup window closes will pass through.</strong> With a 10-minute window and P4's distribution, that is ~0.07% of duplicates — roughly 40 events/day. Detect it, do not pretend it cannot happen:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- daily audit: duplicates that escaped the streaming dedup window</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">event_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">silver</span><span class="p">.</span><span class="n">vehicle_positions</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="nb">DATE</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">current_date</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">event_id</span><span class="w"> </span><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<p>and repair with a batch MERGE. <strong>Every streaming dedup is bounded; the mature design pairs it with an unbounded batch audit.</strong></p>
+<p><strong>Q6. The lying clock. Does your design survive it? (P6)</strong></p>
+<p><em>Model answer.</em> Almost no Round-0 design does, and this is the most valuable failure in the case.</p>
+<p>Trace it: 61 vehicles emit <code>ts</code> 4–11 hours in the future. Spark's watermark is <code>max(event_time_seen) − watermark_delay</code>. One event at T+11h drives the watermark to T+11h−10min. <strong>Every subsequent legitimate event, at real time T, is now more than 10 minutes behind the watermark and is dropped as late.</strong> The pipeline goes silent for the entire fleet. Nothing errors. Throughput is normal. Consumer lag is zero — the consumer is happily reading and discarding everything.</p>
+<p>Where to defend, in order of preference:</p>
+<ol>
+<li><strong>At the stream, before the watermark is computed — the essential defence.</strong> Route future-dated events out before they can influence event time:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;_clock_skew_s&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>            <span class="n">unix_timestamp</span><span class="p">(</span><span class="s2">&quot;_ingested_at&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">unix_timestamp</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">))</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># a negative skew means the device claims the future</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;_ts_trusted&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;_clock_skew_s&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">60</span><span class="p">)</span>   <span class="c1"># 60 s of tolerable skew</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># only trusted rows drive the watermark; untrusted rows are branched to quarantine</span>
+</code></pre></div>
+   This is a <strong>plausibility check on event time itself</strong>, and it is the streaming analogue of CS-06's reconciliation tier: it compares the device's claim against an independent clock (the broker's / ingest's).</li>
+<li><strong>In Silver, as quarantine.</strong> Future-dated events land in Bronze (they are what the device said — CS-09 forbids dropping them) and are routed to quarantine in Silver with the measured skew recorded.</li>
+<li><strong>At the producer.</strong> Correct, but the firmware cannot change this year — and, more generally, <strong>you cannot rely on a defence that lives in the system that is broken.</strong></li>
+</ol>
+<p><strong>Do not clamp.</strong> Rewriting <code>ts</code> to <code>now()</code> produces a plausible, wrong, unmarked value — a silent repair, which CS-09 classifies as NEVER-before-Bronze and CS-11 will show you the cost of.</p>
+<p><strong>Alert on the skew distribution per <code>producer_version</code>:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">producer_version</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">n</span><span class="p">,</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">unix_timestamp</span><span class="p">(</span><span class="n">_ingested_at</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">unix_timestamp</span><span class="p">(</span><span class="n">ts</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mean_skew_s</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">FROM</span><span class="w">   </span><span class="n">bronze</span><span class="p">.</span><span class="n">gps_events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="nb">DATE</span><span class="p">(</span><span class="n">_ingested_at</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">current_date</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">GROUP</span><span class="w">  </span><span class="k">BY</span><span class="w"> </span><span class="n">producer_version</span><span class="p">;</span>
+</code></pre></div>
+The 61 bad devices appear immediately as a distinct <code>producer_version</code> cohort with a negative mean skew. <strong>Segment by producer version</strong> — the same instruction as CS-06, and the exact query CS-11 will require tomorrow.</p>
+<p><strong>Q7. What breaks first at 15M events/day, and how do you know before it does? (P6(e))</strong></p>
+<p><em>Model answer.</em> Ranked by how soon it bites, with the leading indicator for each:</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>What breaks</th>
+<th>Why</th>
+<th>Leading indicator</th>
+<th>Alert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Small files in the Delta sinks</strong></td>
+<td>A 30 s trigger writes 2,880 commits/day per sink. Within weeks <code>numFiles</code> reaches six figures and read latency climbs</td>
+<td><code>DESCRIBE DETAIL</code> <code>numFiles</code>, and mean file size</td>
+<td><code>numFiles &gt; 5000</code> or mean file size &lt; 32 MB → scheduled <code>OPTIMIZE</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Streaming state growth</strong></td>
+<td>Watermark × event rate × per-key state. Grows silently until an executor OOMs, usually at peak</td>
+<td>State-store rows and bytes per micro-batch</td>
+<td>Any monotonic growth over 30 min at steady input rate</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Per-partition consumer lag on a skewed key</strong></td>
+<td>If the key is ever changed to something skewed, one partition grows while the total looks flat</td>
+<td><strong>Per-partition</strong> lag, never the sum</td>
+<td>Lag increasing for 5 consecutive minutes on any single partition</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Watermark stall</strong></td>
+<td>A silent partition (all its vehicles offline) stops advancing event time; windows never close and output silently stops</td>
+<td>Watermark timestamp per query</td>
+<td>Watermark not advancing for 3× the trigger interval</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Checkpoint contention / accidental sharing</strong></td>
+<td>Two queries sharing a checkpoint path corrupt each other's offsets on restart</td>
+<td>Checkpoint path uniqueness assertion at deploy</td>
+<td>Deploy-time check, not a runtime alert</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Cost</strong></td>
+<td>Autoscaling upward under sustained load, quietly, against the SAR 65,000 ceiling</td>
+<td>SAR per million events (unit cost)</td>
+<td>Unit cost rising while volume is flat</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>primary</strong> metric on the wall is per-partition consumer lag, alerting on the derivative. The <strong>secondary</strong> is watermark progression — because a stalled watermark is the failure mode where <em>lag is zero and nothing is being produced</em>, which is invisible to every throughput-based monitor.</p>
+<p>Say the general lesson: <strong>in streaming, the dangerous failures are the quiet ones.</strong> A crashed consumer pages someone. A consumer that reads everything and drops it because a device from the future poisoned the watermark does not.</p>
+<hr />
+<h2 id="8-solution-approach-reference-architecture">8. Solution approach — reference architecture<a class="headerlink" href="#8-solution-approach-reference-architecture" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Present this as <strong>one defensible set of trade-offs</strong>, not as the answer. Every line below gives something up.</p>
+</blockquote>
+<h3 id="81-the-twelve-decisions">8.1 The twelve decisions<a class="headerlink" href="#81-the-twelve-decisions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Decision</th>
+<th>Value</th>
+<th>Trade-off explicitly accepted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Partition key</td>
+<td><code>vehicle_id</code></td>
+<td>Per-<em>trip</em> ordering is not guaranteed across a vehicle's trips; acceptable because no consumer needs it</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Partitions</td>
+<td>24</td>
+<td>Over-provisioned for today's 620 ev/s. Chosen because partitions cannot be reduced and increasing them breaks per-key ordering across the change</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Retention</td>
+<td>7 days</td>
+<td>Cannot stream-replay beyond a week; anything older is batch-reprocessed from <code>bronze.gps_events</code>, which is cheaper anyway</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Replication</td>
+<td>RF 3, <code>min.insync.replicas=2</code></td>
+<td>3× storage (~19 GB — negligible) for single-broker-loss durability</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Consumer groups</td>
+<td>Two: <code>gps-bronze-land</code>, <code>ops-alerts</code></td>
+<td>Two pipelines to operate instead of one, in exchange for independent latency, independent failure and free consumer addition</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Delivery semantics</td>
+<td>Exactly-once <strong>effect</strong>: at-least-once delivery + idempotent Delta sink + offsets committed atomically with the write</td>
+<td>Slightly higher latency than fire-and-forget; solves only consumer-side duplicates, so producer dedup is still required</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Watermark</td>
+<td>Ops 30 s · AI 10 min · training none (batch from Bronze)</td>
+<td>Ops drops 1.7% of late events (accepted, stated); AI drops 0.07% from the <em>streaming view only</em> — all retained in Bronze</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Dedup</td>
+<td>Key <code>event_id</code>; window = watermark; <strong>in Silver</strong></td>
+<td>Bronze carries ~60,000 duplicate rows/day (retained deliberately as a health metric); ~40 late duplicates/day escape the window and are caught by a daily batch audit</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Checkpoint</td>
+<td>One per query, on durable object storage, <strong>outside</strong> the table path</td>
+<td>Operational discipline required at deploy; a shared checkpoint is a top-two cause of streaming outages</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Replay</td>
+<td>Ops: new consumer group from a chosen offset. AI: <strong>never replay the stream</strong> — rebuild <code>silver</code>/<code>gold</code> in batch from Bronze</td>
+<td>Batch rebuild is slower than a replay but cannot duplicate Bronze rows, which a stream replay into an append-only sink would</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Backpressure</td>
+<td>Bounded <code>maxOffsetsPerTrigger</code>; autoscale 2–6 workers; lag alert on the derivative</td>
+<td>Under a sustained burst the AI path falls behind rather than failing — a deliberate choice of <em>late</em> over <em>lost</em>. Ops path is never throttled</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Health metric</td>
+<td>Per-partition consumer lag (alert: increasing 5 min) + watermark progression (alert: stalled 3× trigger)</td>
+<td>Two metrics rather than one, because lag alone cannot see a poisoned watermark</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-round-1-late-events-resolved">8.2 Round 1 — late events, resolved<a class="headerlink" href="#82-round-1-late-events-resolved" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>480-ping burst</strong> arrives as <strong>one or two micro-batches</strong>, not 480 — micro-batch boundaries are time-based, not event-based. Throughput impact is negligible (480 events against 620/s peak).</li>
+<li><strong>Within its partition</strong> the burst is ordered by <em>arrival</em>, so its event times are all in the past relative to neighbouring live events: it is out-of-order by construction.</li>
+<li><strong>Ops path (30 s watermark):</strong> the whole burst is late and dropped. Correct — a 40-minute-old harsh-braking alert is worthless.</li>
+<li><strong>AI path (10 min watermark):</strong> the burst is late and dropped from the <em>streaming</em> aggregate.</li>
+<li><strong>Nothing is lost.</strong> All 480 events are in <code>bronze.gps_events</code>. The next batch rebuild of <code>gold.eta_features</code> includes them. <strong>The watermark bounded latency and state; it did not bound retention.</strong></li>
+</ul>
+<h3 id="83-round-2-duplicates-resolved">8.3 Round 2 — duplicates, resolved<a class="headerlink" href="#83-round-2-duplicates-resolved" title="Permanent link">&para;</a></h3>
+<p>Bronze: retain. Silver: <code>dropDuplicates(["event_id","ts"])</code> under the 10-minute watermark. Daily batch audit for escapees, repaired by MERGE. Producer-side idempotence enabled where the SDK supports it. Monitor <code>duplicate_rate</code> per <code>producer_version</code> per day as a <strong>producer health metric</strong> — a rate that triples after a firmware rollout is a device-fleet defect worth knowing about, and it is only visible because Bronze kept the duplicates.</p>
+<h3 id="84-round-3-out-of-order-and-the-lying-clock-resolved">8.4 Round 3 — out-of-order and the lying clock, resolved<a class="headerlink" href="#84-round-3-out-of-order-and-the-lying-clock-resolved" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">gps</span> <span class="o">=</span> <span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">readStream</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;kafka&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;subscribe&quot;</span><span class="p">,</span><span class="s2">&quot;masar.gps.pings&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">from_json</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">),</span> <span class="n">GPS_SCHEMA</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">),</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>          <span class="n">col</span><span class="p">(</span><span class="s2">&quot;topic&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;partition&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;offset&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;_broker_ts&quot;</span><span class="p">))</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;e.*&quot;</span><span class="p">,</span> <span class="s2">&quot;topic&quot;</span><span class="p">,</span> <span class="s2">&quot;partition&quot;</span><span class="p">,</span> <span class="s2">&quot;offset&quot;</span><span class="p">,</span> <span class="s2">&quot;_broker_ts&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;_ingested_at&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;_source_file&quot;</span><span class="p">,</span> <span class="n">concat_ws</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;topic&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;partition&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;offset&quot;</span><span class="p">)))</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;_clock_skew_s&quot;</span><span class="p">,</span> <span class="n">unix_timestamp</span><span class="p">(</span><span class="s2">&quot;_ingested_at&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">unix_timestamp</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)))</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># 1. BRONZE lands EVERYTHING, including future-dated events. Nothing is dropped.</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">(</span><span class="n">gps</span><span class="o">.</span><span class="n">writeStream</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;checkpointLocation&quot;</span><span class="p">,</span> <span class="n">BRONZE_CKPT</span><span class="p">)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="o">.</span><span class="n">outputMode</span><span class="p">(</span><span class="s2">&quot;append&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">toTable</span><span class="p">(</span><span class="s2">&quot;bronze.gps_events&quot;</span><span class="p">))</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># 2. SILVER: only clock-plausible rows drive the watermark; the rest are quarantined.</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">trusted</span>   <span class="o">=</span> <span class="n">gps</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;_clock_skew_s&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="n">untrusted</span> <span class="o">=</span> <span class="n">gps</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;_clock_skew_s&quot;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mi">60</span><span class="p">)</span>      <span class="c1"># device claims the future</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">(</span><span class="n">trusted</span><span class="o">.</span><span class="n">withWatermark</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="s2">&quot;10 minutes&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>        <span class="o">.</span><span class="n">dropDuplicates</span><span class="p">([</span><span class="s2">&quot;event_id&quot;</span><span class="p">,</span> <span class="s2">&quot;ts&quot;</span><span class="p">])</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">normalise_speed_by_producer_version</span><span class="p">)</span>   <span class="c1"># &lt;-- CS-11&#39;s missing step</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        <span class="o">.</span><span class="n">writeStream</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;checkpointLocation&quot;</span><span class="p">,</span> <span class="n">SILVER_CKPT</span><span class="p">)</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>        <span class="o">.</span><span class="n">toTable</span><span class="p">(</span><span class="s2">&quot;silver.vehicle_positions&quot;</span><span class="p">))</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="p">(</span><span class="n">untrusted</span><span class="o">.</span><span class="n">writeStream</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;checkpointLocation&quot;</span><span class="p">,</span> <span class="n">QUAR_CKPT</span><span class="p">)</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>          <span class="o">.</span><span class="n">toTable</span><span class="p">(</span><span class="s2">&quot;silver.vehicle_positions_quarantine&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>Three properties: Bronze is complete, the watermark cannot be poisoned by one device, and the 61 bad devices are <em>counted</em> in quarantine rather than silently discarded — so the alert on <code>_clock_skew_s</code> per <code>producer_version</code> fires within a day.</p>
+<h3 id="85-design-sheet-print-one-per-team">8.5 Design sheet (print one per team)<a class="headerlink" href="#85-design-sheet-print-one-per-team" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>TEAM: ____________________          CS-10 DESIGN SHEET
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a> 1. Partition KEY ................ ______________  because ______________________
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a> 2. Partition COUNT .............. ______________  because ______________________
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a> 3. Topic RETENTION .............. ______________  because ______________________
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a> 4. Replication factor ........... ______________  because ______________________
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a> 5. Consumer GROUPS (list) ....... ______________________________________________
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a> 6. Delivery semantics ........... ______________  achieved by __________________
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a> 9. Checkpoint placement ......... ______________________________________________
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a> --- after ROUND 1 (late events) ---
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a> 7. Watermark: Ops ____  AI ____  training ____   residual accepted: ____________
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    (b) the 480-ping burst becomes ____ micro-batch(es)
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    (c) does it reorder within its partition?  YES / NO — why: __________________
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    (d) is any of it LOST?  YES / NO — where does it live: _____________________
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a> --- after ROUND 2 (duplicates) ---
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a> 8. Dedup key ______________ window ______________ LAYER: bronze / silver / gold
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    (a) which of the 3 duplicate sources does your delivery semantic solve? ____
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    (d) a duplicate arriving after the window closes: __________________________
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        how you would KNOW: ____________________________________________________
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a> --- after ROUND 3 (out-of-order + lying clock) ---
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    (a) does your design survive an event 11 h in the future?  YES / NO
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    (b) you defend at: producer / broker / stream / silver — why: ______________
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    (c) future-dated event: drop / clamp / quarantine / pass — why: ____________
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    (d) alert signal: _________________________________________________________
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>11. Backpressure response ........ ______________________________________________
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>10. Replay strategy: Ops _________________  AI _________________________________
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>12. Health metric + alert condition ____________________________________________
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a> (e) WHAT BREAKS FIRST at 15M/day: ______________________________________________
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>     HOW YOU KNOW BEFORE IT DOES: ______________________________________________
+</code></pre></div>
+<h3 id="86-scoring-sheet-cross-team-review-5-points-each-40-total">8.6 Scoring sheet (cross-team review; 5 points each, 40 total)<a class="headerlink" href="#86-scoring-sheet-cross-team-review-5-points-each-40-total" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Category</th>
+<th>0–1</th>
+<th>2–3</th>
+<th>4–5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Partition key</strong></td>
+<td>Chosen for throughput or arbitrarily</td>
+<td>Reasonable key, weak justification</td>
+<td><code>vehicle_id</code> (or equivalent), justified by "what must not be reordered"</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Consumer topology</strong></td>
+<td>One group for both consumers</td>
+<td>Two groups, no reasoning</td>
+<td>Two groups, justified by independent latency + failure + free consumer addition</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Delivery semantics</strong></td>
+<td>"Exactly-once" asserted as a setting</td>
+<td>Correct mechanism stated</td>
+<td>Mechanism stated <strong>and</strong> correctly scoped to consumer-side duplicates only</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Watermark</strong></td>
+<td>One watermark for everything, or a round number with no source</td>
+<td>Derived from the distribution</td>
+<td>Per-consumer watermarks, residual stated per path, and "nothing is lost, Bronze retains it"</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Dedup</strong></td>
+<td>In Bronze, or absent</td>
+<td>On <code>event_id</code> in Silver</td>
+<td>In Silver, windowed, <strong>plus</strong> the batch audit for escapees and the duplicate rate as a producer health metric</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Clock skew (Round 3)</strong></td>
+<td>Design fails; watermark poisoned</td>
+<td>Detected, but clamped or dropped pre-Bronze</td>
+<td>Bronze lands it, quarantined in Silver, watermark protected, alert per <code>producer_version</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Failure prediction</strong></td>
+<td>No answer, or "it will scale"</td>
+<td>One failure mode named</td>
+<td>Ranked failure modes, each with a leading indicator and an alert condition</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Trade-off honesty</strong></td>
+<td>Design presented as optimal</td>
+<td>Some costs acknowledged</td>
+<td>Every major decision names what it gives up, including an accepted failure mode</td>
+</tr>
+</tbody>
+</table>
+<p><strong>32–40</strong> production-ready · <strong>24–31</strong> sound, gaps in observability · <strong>16–23</strong> works until it does not · <strong>&lt; 16</strong> re-run Round 0.</p>
+<hr />
+<h2 id="9-what-good-looks-like-vs-common-wrong-turns">9. What good looks like vs common wrong turns<a class="headerlink" href="#9-what-good-looks-like-vs-common-wrong-turns" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>What good looks like</th>
+<th>Common wrong turn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Picks the key by asking "what must not be reordered?"</td>
+<td>Picks <code>city</code> (3 keys, hot partition) or round-robin (no ordering anywhere)</td>
+</tr>
+<tr>
+<td>Two consumer groups; can state what each buys</td>
+<td>One consumer writing Bronze then fanning out from Bronze, missing the 5 s Ops SLA by design</td>
+</tr>
+<tr>
+<td>Retention 7 days, because the log is not the system of record</td>
+<td>90-day retention, confusing the log with the lake</td>
+</tr>
+<tr>
+<td>Scopes exactly-once to consumer-side duplicates only</td>
+<td>Claims exactly-once solves all three duplicate sources</td>
+</tr>
+<tr>
+<td>Dedups in Silver, keeps duplicates in Bronze as a health metric</td>
+<td>Dedups at ingest, violating CS-09's ADR and destroying the signal</td>
+</tr>
+<tr>
+<td>Pairs the bounded streaming dedup with an unbounded batch audit</td>
+<td>Treats the dedup window as absolute</td>
+</tr>
+<tr>
+<td>Per-consumer watermarks with stated residuals</td>
+<td>One watermark; or 30 minutes "to be safe", reproducing the 41 GB OOM</td>
+</tr>
+<tr>
+<td>Knows the watermark bounds latency and state, never retention</td>
+<td>Believes a watermark drop is permanent data loss</td>
+</tr>
+<tr>
+<td>Survives the lying clock by protecting the watermark before it is computed</td>
+<td>Design silently drops the entire fleet's data and reports zero lag</td>
+</tr>
+<tr>
+<td>Quarantines future-dated events with the skew recorded</td>
+<td>Clamps <code>ts</code> to <code>now()</code> — a silent repair</td>
+</tr>
+<tr>
+<td>Names per-partition lag <strong>and</strong> watermark progression</td>
+<td>Monitors throughput and CPU, both healthy while output has stopped</td>
+</tr>
+<tr>
+<td>Schedules OPTIMIZE on streaming sinks from day one</td>
+<td>Discovers small files in month three and concludes "Delta is slow"</td>
+</tr>
+<tr>
+<td>Every decision names what it gives up</td>
+<td>Presents the design as optimal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-debrief-7-minutes">10. Debrief (7 minutes)<a class="headerlink" href="#10-debrief-7-minutes" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>The origin insight, restated as a test.</strong> LinkedIn's move was from integration to publication: producers publish, consumers subscribe at their own offsets. The test of whether you have built that, rather than a message queue with extra steps: <strong>can a new consumer be added without any producer knowing?</strong> If yes, you have a backbone. If no, you have point-to-point integration with a broker in the middle.</li>
+<li><strong>Replayability changes what is possible operationally.</strong> Because the log is durable and positional, reprocessing is a routine operation, not a recovery project. That single property is why a bad deploy on Friday is fixed on Monday by resetting an offset, instead of by a data-restoration ticket.</li>
+<li><strong>The three escalations were one lesson.</strong> Late events, duplicates and out-of-order timestamps are all the same problem: <strong>event time and processing time are different things, and every streaming decision is a trade about how long you are willing to wait for the world to finish telling you what happened.</strong> The watermark is that trade, made explicit and given a number.</li>
+<li><strong>Round 3 broke almost every design in the room, and it broke them silently.</strong> One device with a wrong clock, and the pipeline reads everything and produces nothing, with zero lag and normal throughput. <strong>In streaming, the dangerous failures are the quiet ones</strong>, which is why watermark progression must be monitored alongside lag.</li>
+<li><strong>What survives contact with 15M events/day</strong> is not throughput — 620 events/s is unremarkable. It is <strong>file hygiene, bounded state, per-partition observability, and a design that fails late rather than lost.</strong> Scale did not break anything in this case; unbounded things did.</li>
+<li><strong>The course question.</strong> <em>"What happens to Masar's AI system if the streaming backbone is designed for one consumer?"</em> The second consumer is bolted on, they share offsets, and the first outage of one becomes an outage of both — and the third consumer, the one that has not been imagined yet, requires a producer change and therefore never gets built. <strong>Architecture is mostly about what you make cheap for the person who comes after you.</strong></li>
+<li><strong>Hand forward to CS-11, deliberately.</strong> "Every design in this room now handles late events, duplicates, out-of-order timestamps and a lying clock. Tomorrow you will investigate an incident in which all of that worked perfectly. Every event arrived exactly once, in order, with a correct timestamp and a valid schema — and the AI model degraded by 18% anyway."</li>
+</ol>
+<hr />
+<h2 id="11-the-one-sentence-participants-should-leave-with">11. The one sentence participants should leave with<a class="headerlink" href="#11-the-one-sentence-participants-should-leave-with" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Kafka's contribution was not speed but decoupling: a durable, ordered, replayable log lets every consumer read at its own position and its own pace, so the real design work is not the broker but the twelve decisions around it — partition key, watermark, dedup key and layer, checkpoint, replay and the health metric — and every one of them is a trade you must name, including the failure you agree to accept.</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SDAIA Academy — internal use only. Do not distribute.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../../assets/vendor/mermaid-11.17.2.min.js"></script>
+      
+        <script src="../../../../../../../../assets/hub.js"></script>
+      
+    
+  </body>
+</html>

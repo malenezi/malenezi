@@ -1,0 +1,71 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-DSC-211
+course_title: Advanced Machine Learning Methods
+course_title_ar: أساليب تعلم الآلة المتقدمة
+aliases: []
+domain: data-science
+learning_path: data-scientist
+level: Specialist
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: Data scientists progressing to specialist modelling roles
+prerequisites: SDA-AIE-111 (cross-listed); SDA-DSC-111
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-11
+next_review: 2026-12-27
+tools:
+- XGBoost
+- LightGBM
+- SHAP
+- scikit-learn
+- Optuna
+technologies: []
+keywords:
+- Machine Learning
+description: A specialist module that deepens modelling skill beyond the foundations. Participants master
+  gradient-boosting frameworks, imbalanced and cost-sensitive learning, model interpretability with SHAP,
+  and rigorous validation design. The emphasis is on winning reliable performance on messy, real-world
+  tabular problems.
+description_ar: وحدة تخصصية تعمّق مهارة النمذجة إلى ما بعد الأساسيات. يتقن المشاركون أطر التعزيز المتدرج
+  والتعلم مع البيانات غير المتوازنة والحساسة للتكلفة وتفسير النماذج باستخدام SHAP وتصميم تحقق صارم، مع
+  تركيز على تحقيق أداء موثوق في مشكلات جدولية واقعية معقدة.
+learning_outcomes:
+- Develop high-performance models with XGBoost and LightGBM
+- Design validation schemes that respect leakage, grouping, and time order
+- Apply techniques for imbalanced, noisy, and cost-sensitive problems
+- Analyze model behaviour using SHAP and permutation importance
+- Optimize feature pipelines and model ensembles for tabular data
+- Evaluate models for stability, calibration, and business impact
+topics:
+- Gradient boosting deep dive
+- Validation design and leakage prevention
+- Imbalanced and cost-sensitive learning
+- 'Model interpretability: SHAP and beyond'
+- Calibration and uncertainty estimates
+- Ensembling and stacking strategies
+- Applied modelling challenge
+assessment: Modelling challenge; interpretability report
+next_modules: SDA-DSC-212 / SDA-DSC-213
+stackability: Advanced ML badge; core of the Data Scientist Specialist certificate.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: Data Scientist Track/Advanced Machine Learning Methods
+  platform_workbook: Program Files (AthkaX)/Data Scientist Track/SDA-DSC-211 - Advanced Machine Learning
+    Methods.xlsx
+known_issues:
+- '[Needs Review] Applied ML for Intelligent Systems_2026_v2.pptx: Deck title ''Applied ML for Intelligent
+  Systems'' ≠ course title — confirm it is the DSC-211 deck'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

@@ -1,0 +1,104 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: L0-FAE
+course_title: AI Fundamentals for the Workplace
+course_title_ar: أساسيات الذكاء الاصطناعي في بيئة العمل
+aliases:
+- FAE
+- SDA-FAE-100
+domain: foundations
+learning_path: beginner
+level: Beginner
+duration:
+  days: 2
+  hours: 10
+delivery_mode: Remote (live online)
+target_audience: 'TODO: Information not available in source material.'
+prerequisites: None stated in source material.
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-11
+next_review: 2026-12-27
+tools: []
+technologies: []
+keywords: []
+description: This training program enables participants to understand the fundamentals of artificial intelligence
+  and its growing role in the modern workplace, presenting core concepts in simple language that requires
+  no technical background. The program focuses on recognising common AI applications in everyday work
+  tools, exploring practical opportunities to apply them to job tasks, and providing hands-on practice
+  with ready-made AI assistants without any programming. It also covers the limitations and common errors
+  of these tools, methods for verifying their outputs, and safe and responsible practices for using AI
+  at work, so that participants leave with the practical ability to identify suitable use cases for their
+  daily tasks and apply them with confidence.
+description_ar: يهدف هذا البرنامج التدريبي إلى تمكين المشاركين من فهم أساسيات الذكاء الاصطناعي ودوره المتنامي
+  في بيئة العمل الحديثة، من خلال تقديم المفاهيم الأساسية بلغة مبسطة لا تتطلب أي خلفية تقنية. يركز البرنامج
+  على التعرف على تطبيقات الذكاء الاصطناعي الشائعة في أدوات العمل اليومية، واستكشاف الفرص العملية لتوظيفها
+  في المهام الوظيفية، مع تدريب عملي على استخدام المساعدات الذكية الجاهزة دون الحاجة إلى البرمجة. كما يتناول
+  البرنامج حدود هذه الأدوات وأخطاءها الشائعة وأساليب التحقق من مخرجاتها، إضافة إلى الممارسات الآمنة والمسؤولة
+  لاستخدام الذكاء الاصطناعي في مكان العمل، ويخرج المشاركون بقدرة عملية على تحديد حالات استخدام مناسبة
+  لمهامهم اليومية وتطبيقها بثقة.
+learning_outcomes:
+- Understand the concept of artificial intelligence, explain it in simple language, and relate it to everyday
+  workplace examples.
+- Differentiate between the common types of AI applications employees encounter in the workplace.
+- Identify practical opportunities to apply AI tools to daily job tasks.
+- Use ready-made AI assistants to complete simple work tasks without any programming.
+- Recognise the limitations and common errors of AI tools and verify the accuracy of their outputs.
+- Apply safe and responsible practices when using AI in the work environment.
+topics:
+- Introduction to AI and the Workplace
+- AI Applications in Everyday Work Tools
+- Hands-On Practice with AI Assistants
+- AI Limitations and Output Verification
+- Safe and Responsible Use of AI
+- Applying AI to Daily Tasks
+topic_details:
+  Introduction to AI and the Workplace:
+  - Understand the concept of artificial intelligence, its evolution, and its growing role in the modern
+    workplace.
+  - Review everyday examples of AI technologies that employees interact with in their lives and work.
+  - Explain the difference between artificial intelligence and traditional automation in simple, non-technical
+    language.
+  AI Applications in Everyday Work Tools:
+  - Explore AI capabilities built into office software, email, and communication tools.
+  - Learn about AI assistants, their types, and their common uses in office tasks.
+  - Discuss realistic use cases for improving work efficiency using ready-made, no-code tools.
+  Hands-On Practice with AI Assistants:
+  - Practise writing clear requests to AI assistants to obtain useful results.
+  - Use AI assistants for writing, summarising, and finding information.
+  - Experiment with improving results by rephrasing requests and adding appropriate context.
+  AI Limitations and Output Verification:
+  - Recognise the common errors of AI tools, such as inaccurate information.
+  - Apply practical steps to verify the accuracy of tool outputs before relying on them.
+  - Understand when relying on AI is appropriate and when human expertise is required.
+  Safe and Responsible Use of AI:
+  - Recognise the risks of sharing sensitive information or work data with AI tools.
+  - Learn the principles of responsible AI use in the work environment.
+  - Apply practical rules to protect privacy and information confidentiality when using AI tools.
+  Applying AI to Daily Tasks:
+  - Identify daily job tasks that can be improved using AI tools.
+  - Practise realistic work scenarios to apply what was learned during the program.
+  - Create a simple personal plan to introduce AI tools into daily work gradually and safely.
+assessment: Qualification form + pre-/post-test (AthkaX platform workbook)
+next_modules: 'TODO: Information not available in source material.'
+stackability: 'TODO: Information not available in source material.'
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: Program Files (AthkaX)/Beginner-Level/L0-FAE - AI Fundamentals for the Workplace.xlsx
+  drive_folder: Level-0-Beginners/AI/AI Fundamentals for the Workplace
+  platform_workbook: Program Files (AthkaX)/Beginner-Level/L0-FAE - AI Fundamentals for the Workplace.xlsx
+known_issues:
+- '[Needs Review] L0-FAE - AI Fundamentals for the Workplace.xlsx: Qualification form + pre/post-test
+  (7 MCQs each). Questions were generated from the workbook description because no instructor package
+  exists — review first (FLAG_REPORT)'
+- '[Needs Review] SDA-FAE-100 - أساسيات الذكاء الاصطناعي في بيئة العمل.pptx: Arabic-titled deck variant
+  (dated after the package deck) — confirm which deck is current'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

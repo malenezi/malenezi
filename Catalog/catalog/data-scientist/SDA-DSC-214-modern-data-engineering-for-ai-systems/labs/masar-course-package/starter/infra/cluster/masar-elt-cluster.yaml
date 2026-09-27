@@ -1,0 +1,36 @@
+# Ephemeral job cluster for the nightly Masar ELT.
+#
+# It exists only for the run, then it dies. That is the cheapest cost control
+# there is, and it is CONFIGURATION, not code — which is why it belongs in the
+# repository next to the pipeline it runs, reviewed the same way.
+#
+# The single most expensive line in any cluster config is the one that is
+# missing: `autotermination_minutes`. A forgotten interactive cluster running
+# a weekend costs more than the job it was created for.
+cluster:
+  name: masar-elt
+  spark_version: "3.5"
+
+  autoscale:
+    min_workers: 2
+    max_workers: 8            # BOUNDED elasticity: no runaway bill
+
+  autotermination_minutes: 10 # MANDATORY. Idle compute is pure loss.
+
+  node_type: general-4core
+
+  spot:
+    enabled: true             # restartable ELT tolerates preemption…
+    on_demand_driver: true    # …but the driver must be stable
+
+  spark_conf:
+    spark.sql.shuffle.partitions: "auto"
+    spark.databricks.delta.optimizeWrite.enabled: "true"   # fewer small files
+    spark.databricks.delta.autoCompact.enabled: "true"
+    spark.databricks.delta.retentionDurationCheck.enabled: "true"
+
+  tags:
+    cost_center: masar-data-platform
+    workload: elt-nightly
+    owner: masar-data-platform
+    environment: production

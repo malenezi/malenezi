@@ -1,0 +1,75 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-313
+course_title: AI Security, Guardrails and Red Teaming
+course_title_ar: أمن الذكاء الاصطناعي والحواجز الوقائية والفريق الأحمر
+aliases: []
+domain: ai-governance
+learning_path: ai-engineer
+level: Expert
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Senior engineers, security specialists, AI platform owners
+prerequisites: SDA-AIE-213; SDA-AIE-311 recommended
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-08
+next_review: 2026-12-27
+tools:
+- Garak/PyRIT
+- guardrails frameworks
+- NeMo Guardrails
+- threat-modelling templates
+technologies:
+- Garak
+- PyRIT
+keywords:
+- Agentic AI
+- LLM
+- AI Security
+- Architecture
+description: An expert module on securing AI systems against adversarial threats. Participants analyse
+  attack surfaces including prompt injection, jailbreaks, data poisoning, and model extraction, then design
+  layered defences with guardrails, filtering, and access controls. Structured red-team exercises teach
+  systematic security validation of LLM and agentic applications.
+description_ar: وحدة خبراء في تأمين أنظمة الذكاء الاصطناعي ضد التهديدات العدائية. يحلل المشاركون أسطح
+  الهجوم بما فيها حقن الأوامر وكسر القيود وتسميم البيانات واستخراج النماذج، ثم يصممون دفاعات متعددة الطبقات
+  بالحواجز الوقائية والتصفية وضوابط الوصول، مع تمارين فريق أحمر منظمة للتحقق الأمني المنهجي من تطبيقات
+  النماذج اللغوية والوكيلية.
+learning_outcomes:
+- Analyze AI attack surfaces using OWASP LLM Top-10 and threat modelling
+- Evaluate systems against prompt injection, jailbreak, and data-exfiltration attacks
+- Design layered guardrail architectures for inputs, outputs, and tools
+- Implement content filtering, PII protection, and policy enforcement
+- Conduct structured red-team exercises against LLM and agentic applications
+- Develop security test suites and reporting aligned with governance requirements
+topics:
+- AI threat landscape and OWASP LLM Top-10
+- Prompt injection and jailbreak techniques
+- Data poisoning and supply-chain risks
+- Guardrail architecture and policy enforcement
+- Red-teaming methodology and tooling
+- Security evaluation and reporting
+- Compliance alignment with national frameworks
+assessment: Red-team exercise; security assessment report
+next_modules: SDA-AIE-390
+stackability: Security badge; required for AI Engineer Expert certificate.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/AI Security, Guardrails and Red Teaming
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-313 - AI Security, Guardrails and
+    Red Teaming.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''أمن الذكاء الاصطناعي والضوابط الوقائية'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

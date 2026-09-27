@@ -1,0 +1,77 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-112
+course_title: Deep Learning Essentials with PyTorch
+course_title_ar: أساسيات التعلم العميق باستخدام PyTorch
+aliases:
+- Deep Learning Foundations
+domain: ai-engineering
+learning_path: ai-engineer
+level: Practitioner
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: Engineers who completed Applied ML; developers moving into deep learning
+prerequisites: SDA-AIE-111
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-08-26
+next_review: 2026-12-27
+tools:
+- PyTorch
+- torchvision
+- Weights & Biases
+- CUDA
+- Hugging Face Hub
+technologies: []
+keywords:
+- NLP
+- Computer Vision
+- Deep Learning
+- Responsible AI
+- Experimentation
+- Optimization
+description: A practical introduction to neural networks that takes engineers from backpropagation mechanics
+  to training real models on GPUs. Participants build, train, and debug networks in PyTorch, apply transfer
+  learning, and manage experiments professionally. It is the gateway to NLP, computer vision, and generative-AI
+  specialisations.
+description_ar: مدخل عملي للشبكات العصبية ينقل المهندسين من آليات الانتشار الخلفي إلى تدريب نماذج حقيقية
+  على وحدات معالجة الرسومات. يبني المشاركون الشبكات ويدربونها ويصححونها في PyTorch مع تطبيق التعلم بالنقل
+  وإدارة التجارب باحترافية، وهي بوابة تخصصات معالجة اللغة والرؤية الحاسوبية والذكاء التوليدي.
+learning_outcomes:
+- Explain neural-network architectures, activation functions, and backpropagation
+- Implement feed-forward, convolutional, and recurrent networks in PyTorch
+- Develop robust training loops with proper loss functions and optimisers
+- Apply regularisation, normalisation, and learning-rate scheduling to stabilise training
+- Implement transfer learning with pretrained models for new tasks
+- Track, compare, and reproduce experiments using experiment-management tools
+topics:
+- Neural networks, activations, and backpropagation
+- PyTorch tensors, autograd, and training loops
+- CNNs for images; RNNs and sequence basics
+- Regularisation, normalisation, and optimisation
+- Transfer learning and pretrained models
+- GPU training and experiment tracking
+- 'Lab: build and tune an image classifier'
+assessment: Labs; model-training project
+next_modules: SDA-AIE-113 / SDA-AIE-211
+stackability: Deep-learning badge; gateway to all Specialist AI Engineer modules.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Deep Learning Essentials with PyTorch
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-112 - Deep Learning Foundations.xlsx
+known_issues:
+- '[Naming] AthkaX workbook title: ''Deep Learning Foundations'''
+- '[Naming] Learning Paths Catalog AR title: ''أسس التعلم العميق'''
+- '[Naming] Learning Paths Catalog EN title: ''Deep Learning Foundations'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

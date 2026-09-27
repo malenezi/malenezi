@@ -1,0 +1,61 @@
+﻿case_id,text,expected_masked,pii_type
+PII-001,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-002,My number is +966551234567,My number is <PHONE>,phone
+PII-003,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-004,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-005,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-006,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-007,My number is +966551234567,My number is <PHONE>,phone
+PII-008,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-009,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-010,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-011,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-012,My number is +966551234567,My number is <PHONE>,phone
+PII-013,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-014,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-015,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-016,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-017,My number is +966551234567,My number is <PHONE>,phone
+PII-018,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-019,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-020,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-021,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-022,My number is +966551234567,My number is <PHONE>,phone
+PII-023,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-024,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-025,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-026,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-027,My number is +966551234567,My number is <PHONE>,phone
+PII-028,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-029,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-030,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-031,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-032,My number is +966551234567,My number is <PHONE>,phone
+PII-033,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-034,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-035,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-036,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-037,My number is +966551234567,My number is <PHONE>,phone
+PII-038,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-039,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-040,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-041,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-042,My number is +966551234567,My number is <PHONE>,phone
+PII-043,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-044,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-045,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-046,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-047,My number is +966551234567,My number is <PHONE>,phone
+PII-048,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-049,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-050,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-051,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-052,My number is +966551234567,My number is <PHONE>,phone
+PII-053,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-054,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-055,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none
+PII-056,اتصلوا بي على 0551234567 بخصوص البلاغ,اتصلوا بي على <PHONE> بخصوص البلاغ,phone
+PII-057,My number is +966551234567,My number is <PHONE>,phone
+PII-058,رقم الهوية 1023456789,رقم الهوية <NATIONAL_ID>,national_id
+PII-059,ID 2123456789 is linked to the request,ID <NATIONAL_ID> is linked to the request,national_id
+PII-060,لا توجد بيانات شخصية هنا,لا توجد بيانات شخصية هنا,none

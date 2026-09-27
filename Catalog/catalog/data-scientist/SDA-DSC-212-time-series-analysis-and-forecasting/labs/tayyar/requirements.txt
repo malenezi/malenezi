@@ -1,0 +1,14 @@
+# SDA-DSC-212 — pinned to versions verified for this course
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+scipy>=1.11
+statsmodels>=0.14
+scikit-learn>=1.4
+lightgbm>=4.3
+openpyxl>=3.1
+jupyter>=1.0
+nbclient>=0.9
+# optional, fragile on Windows/macOS — the core labs do not require them
+# pmdarima>=2.0
+# prophet>=1.1

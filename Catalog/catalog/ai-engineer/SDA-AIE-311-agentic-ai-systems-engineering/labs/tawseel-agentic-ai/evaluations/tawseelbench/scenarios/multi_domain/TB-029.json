@@ -1,0 +1,69 @@
+{
+  "id": "TB-029",
+  "title": "Charged but never received (exception status)",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "orders",
+    "logistics",
+    "billing"
+  ],
+  "intent": "multi_domain",
+  "tags": [
+    "multi_domain"
+  ],
+  "customer_request": {
+    "text": "التطبيق يقول طلبي TW-2026-13825 عالق ولم يصل لي، بس المبلغ اتخصم من حسابي.",
+    "locale": "ar",
+    "customer_id": "CUST-7966",
+    "order_id": "TW-2026-13825"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "refund_eligibility",
+      "lost_or_damaged"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": true
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "get_order",
+    "get_delivery_events",
+    "find_delivery_exception",
+    "get_customer",
+    "read_policy",
+    "issue_refund",
+    "get_customer_tickets",
+    "add_case_note"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "get_order",
+      "get_delivery_events",
+      "find_delivery_exception",
+      "get_customer",
+      "read_policy",
+      "issue_refund",
+      "get_customer_tickets"
+    ],
+    "state_diff": {
+      "orders.TW-2026-13825.refunded": true,
+      "orders.TW-2026-13825.refund_amount_sar": 35.0
+    }
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "get_order",
+      "find_delivery_exception",
+      "issue_refund"
+    ],
+    "refund_amount_max_sar": 50.0,
+    "policy_citation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Charged-but-stuck framing spans billing (the charge) and logistics (the stuck delivery) in one customer sentence — resolving it correctly needs both find_delivery_exception and issue_refund. 35.0 SAR is within the autonomous band."
+}

@@ -1,0 +1,6 @@
+# Dev/CI-only dependencies (.github/workflows/ci.yml). NOT installed in
+# the deployment image (Dockerfile only installs requirements.txt).
+-r requirements.txt
+
+pytest>=8.0,<9
+ruff>=0.4,<1

@@ -1,0 +1,1 @@
+﻿run_id,change_from_previous,lr,weight_decay,dropout,augmentation,normalization,scheduler,best_val_accuracy,delta_pp,evidence_note

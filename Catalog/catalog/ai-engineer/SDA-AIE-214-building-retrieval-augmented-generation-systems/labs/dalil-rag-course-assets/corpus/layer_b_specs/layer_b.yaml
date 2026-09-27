@@ -1,0 +1,108 @@
+# ============================================================================
+# Dalil Corpus -- Layer B: the synthetic internal overlay
+# ----------------------------------------------------------------------------
+# Layer A (real SDAIA regulation) is authoritative but cannot teach four things,
+# because public regulators do not publish them:
+#
+#   1. ACCESS CONTROL   -- every public document is public. Without documents
+#                          that some roles must not see, Module 5's access
+#                          filter has nothing to filter and the capstone's
+#                          "0 cross-department leaks" gate is vacuous.
+#   2. SUPERSESSION     -- Layer A ships only current editions. The corpus_v2
+#                          staleness drill (F8) needs matched pairs where a
+#                          v1 document is provably wrong and a v2 supersedes it.
+#   3. SCANNED ARABIC   -- SDAIA PDFs carry clean text layers. F1 (parsing loss)
+#                          and the OCR/CER lab need genuinely image-only Arabic.
+#   4. TABULAR FACTS    -- allowance/entitlement figures in XLSX and in-PDF
+#                          tables that a naive loader flattens into noise.
+#
+# Layer B is a fictional adopter of the Layer A rules: the "National Digital
+# Services Authority" (NDSA / الهيئة الوطنية للخدمات الرقمية). Every Layer B
+# document CITES a Layer A document. That is the design that makes the corpus
+# one corpus rather than two: the best multi-hop questions in the golden set
+# cross the layer boundary ("what does our internal procedure require, and
+# which SDAIA article does it implement?").
+#
+# Every generated file carries an X-Dalil-Synthetic marker in its metadata and
+# a visible footer. Nothing in Layer B may be mistaken for a real government
+# document -- see corpus/LICENSING.md.
+# ============================================================================
+
+spec_version: "1.0"
+organisation:
+  name_en: National Digital Services Authority
+  name_ar: الهيئة الوطنية للخدمات الرقمية
+  short: NDSA
+  disclaimer_en: "FICTIONAL TRAINING DOCUMENT — SDAIA Academy SDA-AIE-214. Not a real instrument."
+  disclaimer_ar: "وثيقة تدريبية افتراضية — أكاديمية سدايا SDA-AIE-214. ليست وثيقة رسمية."
+
+seed: 20260909            # deterministic: every cohort gets identical bytes
+
+departments:
+  - {id: hr,             name_ar: الموارد البشرية,     access_tier: restricted}
+  - {id: finance,        name_ar: الشؤون المالية,       access_tier: restricted}
+  - {id: legal,          name_ar: الشؤون القانونية,     access_tier: restricted}
+  - {id: it,             name_ar: تقنية المعلومات,      access_tier: internal}
+  - {id: data_governance,name_ar: حوكمة البيانات,       access_tier: internal}
+  - {id: general,        name_ar: عام,                  access_tier: public}
+
+families:
+
+  - id: hr_policy_scanned_ar
+    count: 22
+    format: pdf_scanned          # image-only pages -> forces the OCR path
+    language: ar
+    department: hr
+    access_tier: restricted
+    teaches: [F1-parsing-loss, ocr-cer, arabic-normalisation]
+    ocr_gold: true               # hand-quality transcripts emitted for CER
+
+  - id: hr_policy_digital_en
+    count: 18
+    format: pdf_digital
+    language: en
+    department: hr
+    access_tier: restricted
+    teaches: [baseline-retrieval, bilingual-pairing]
+
+  - id: allowance_tables
+    count: 8
+    format: xlsx
+    language: bilingual
+    department: finance
+    access_tier: restricted
+    teaches: [F1-tables, numeric-fact-retrieval, table-atomic-chunking]
+
+  - id: it_procedures
+    count: 20
+    format: docx
+    language: en
+    department: it
+    access_tier: internal
+    teaches: [procedure-extraction, near-duplicate-versions]
+
+  - id: intranet_pages
+    count: 24
+    format: html
+    language: bilingual
+    department: general
+    access_tier: public
+    teaches: [boilerplate-stripping, low-information-chunks]
+
+  - id: circulars
+    count: 30
+    format: pdf_digital
+    language: bilingual
+    department: legal
+    access_tier: internal
+    teaches: [F4-identifier-queries, F8-staleness, supersession-chains]
+    supersession:
+      pairs: 12                  # 12 of the 30 exist as v1 (superseded) + v2
+      v2_only_in_corpus_v2: true # v1 ships in corpus_v1; v2 lands on Day 4
+
+targets:
+  total_documents: 122
+  scanned_share_min: 0.15
+  table_documents_min: 8
+  superseded_pairs: 12
+  restricted_documents_min: 40

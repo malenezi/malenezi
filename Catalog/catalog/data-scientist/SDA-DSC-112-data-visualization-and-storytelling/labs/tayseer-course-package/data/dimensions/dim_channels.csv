@@ -1,0 +1,5 @@
+﻿channel,channel_ar,channel_type,is_digital,unit_cost_2026_sar,unit_cost_2021_sar,relative_handling_time,baseline_csat,avg_transactions_per_user,availability_hours,launch_year,accessibility_support
+Mobile App,تطبيق الجوال,Digital,Yes,5.1,7.4,0.22,4.42,2.6,24/7,2019,Full (WCAG 2.1 AA)
+Web Portal,البوابة الإلكترونية,Digital,Yes,8.3,11.2,0.33,4.18,1.95,24/7,2016,Full (WCAG 2.1 AA)
+Call Center,مركز الاتصال,Assisted,No,27.5,33.0,0.62,3.78,1.55,07:00-23:00,2014,Partial
+Branch,الفرع,Physical,No,63.0,71.0,1.0,3.52,1.22,08:00-15:00,2005,In-person assistance

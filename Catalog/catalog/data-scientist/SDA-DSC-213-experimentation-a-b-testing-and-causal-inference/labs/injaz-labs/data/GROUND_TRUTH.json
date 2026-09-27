@@ -1,0 +1,71 @@
+{
+  "module1_potential_outcomes": {
+    "true_ATE": 0.0504,
+    "naive_self_selected": 0.193,
+    "naive_randomised": 0.0504,
+    "selection_bias_term": 0.1432,
+    "beta_literacy_calibrated": 1.2705,
+    "randomisation_seed": 490,
+    "treated_share_self_selected": 0.5132
+  },
+  "module2_user_pool": {
+    "rows": 200000,
+    "eligible": 182113
+  },
+  "module5_user_cohort": {
+    "rows": 20000,
+    "true_ATT_training": 0.06,
+    "naive_diff_training": 0.1154479876802027,
+    "true_LATE_online_filing": 0.08,
+    "ols_online_filing_biased": 0.10886041000729017,
+    "first_stage_F_log_distance": 2123.254566359696,
+    "iv_2sls_recovered": 0.07974895396029347,
+    "enrolment_rate": 0.46315,
+    "online_filing_rate": 0.4375,
+    "completion_rate": 0.46215
+  },
+  "module4_uploader_experiment": {
+    "rows": 80000,
+    "true_lift_on_exposed": 0.022,
+    "observed_lift_triggered": 0.021630765790693673,
+    "trigger_rate": 0.6206625,
+    "allocation_treatment": 0.5007,
+    "srm_broken_allocation": 0.4927552795662057
+  },
+  "capstone_autofill": {
+    "rows": 70000,
+    "true_lift_on_exposed": 0.014,
+    "observed_lift_triggered": 0.013661201008736024,
+    "ship_threshold_pp": 1.0,
+    "note": "CI is expected to straddle the 1.0pp threshold -> teach 'hold/extend'"
+  },
+  "module3_pre_period": {
+    "rows": 50000,
+    "corr_pre_vs_outcome": 0.36705060981215165,
+    "expected_cuped_variance_reduction_pct": 13.5
+  },
+  "module3_traffic": {
+    "rows": 90,
+    "mean_daily_eligible": 13410,
+    "mean_daily_triggered": 8315
+  },
+  "module2_sessions": {
+    "rows": 339017,
+    "users": 80000,
+    "mean_sessions_per_user": 4.24
+  },
+  "module5_regions_panel": {
+    "rows": 312,
+    "regions": 13,
+    "months": 24,
+    "never_treated_regions": 4,
+    "true_ATT": 0.03,
+    "twfe_estimate_clean": 0.026101630081300762,
+    "pretrend_file": "injaz_regions_panel_pretrend.csv (parallel trends violated)"
+  },
+  "module6_collider": {
+    "rows": 50000,
+    "corr_unconditional": -0.0005,
+    "corr_conditional_on_collider": -0.2042
+  }
+}

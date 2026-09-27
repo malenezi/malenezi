@@ -1,0 +1,61 @@
+{
+  "_note": "COURSE-AUTHORED FIXTURE, NOT BENCHMARK DATA. Shaped like the real dataset so the loader, the metric code and the report plumbing can be exercised offline. Numbers produced from this file are stamped mode='sample' and must never be compared with published results.",
+  "corpus": {
+    "d1": "Retrieval augmentation reduces factual error rates\nGrounding a language model in retrieved documents lowers unsupported-claim rates relative to closed-book generation on knowledge-intensive tasks.",
+    "d2": "Cross-encoders outperform bi-encoders for reranking\nJointly encoding query and passage yields higher ranking accuracy than independent encoding, at a cost that scales with the candidate set.",
+    "d3": "Lexical and dense retrieval are complementary\nSparse methods excel on exact term matching while dense methods capture paraphrase; fusing their rankings outperforms either alone.",
+    "d4": "Position bias in long contexts\nModels attend more reliably to information at the beginning and end of a long input than to information in the middle.",
+    "d5": "Chunk size affects retrieval precision\nSmaller passages improve precision and reduce recall of multi-sentence facts; the optimum is corpus dependent.",
+    "d6": "Multilingual encoders reduce cross-lingual retrieval gaps\nModels trained on many languages substantially narrow the recall gap for non-English queries against English corpora.",
+    "d7": "Reciprocal rank fusion is scale invariant\nFusing rankings rather than scores avoids the incomparable-score-scale problem and requires no per-corpus tuning.",
+    "d8": "Optical character recognition error propagates downstream\nTranscription error in scanned documents reduces retrieval recall roughly monotonically with character error rate.",
+    "d9": "Quantized vectors trade recall for memory\nScalar and binary quantization reduce index memory by large factors with small measured recall loss when rescoring is applied.",
+    "d10": "Judge models introduce evaluation variance\nUnpinned evaluator models and non-zero temperature produce metric variation comparable to real quality differences."
+  },
+  "queries": {
+    "q1": "Does retrieval reduce hallucination compared to closed-book generation?",
+    "q2": "Are cross-encoders more accurate than bi-encoders for ranking?",
+    "q3": "Do sparse and dense retrieval complement each other?",
+    "q4": "Where in a long context is evidence most reliably used?",
+    "q5": "Do multilingual embedding models help non-English queries?",
+    "q6": "Why fuse ranks rather than scores?",
+    "q7": "How does OCR error affect retrieval?",
+    "q8": "What does vector quantization cost in recall?",
+    "q9": "Why must an evaluation judge be pinned?",
+    "q10": "How does chunk size affect precision?"
+  },
+  "qrels": {
+    "q1": {
+      "d1": 2.0
+    },
+    "q2": {
+      "d2": 2.0
+    },
+    "q3": {
+      "d3": 2.0,
+      "d7": 1.0
+    },
+    "q4": {
+      "d4": 2.0
+    },
+    "q5": {
+      "d6": 2.0
+    },
+    "q6": {
+      "d7": 2.0,
+      "d3": 1.0
+    },
+    "q7": {
+      "d8": 2.0
+    },
+    "q8": {
+      "d9": 2.0
+    },
+    "q9": {
+      "d10": 2.0
+    },
+    "q10": {
+      "d5": 2.0
+    }
+  }
+}

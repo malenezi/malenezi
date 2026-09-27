@@ -1,0 +1,51 @@
+{
+  "id": "TB-014",
+  "title": "Simple ETA question (Arabic)",
+  "locale": "ar",
+  "difficulty": "easy",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "track",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "متى يصل طلبي TW-2026-10359؟",
+    "locale": "ar",
+    "customer_id": "CUST-5523",
+    "order_id": "TW-2026-10359"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "delivery_sla"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "estimate_eta"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "estimate_eta"
+    ],
+    "must_mention": [
+      "TW-2026-10359"
+    ],
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "Mirrors TB-007 in Arabic — same tool-selection lesson (estimate_eta over track_shipment) must hold regardless of language."
+}

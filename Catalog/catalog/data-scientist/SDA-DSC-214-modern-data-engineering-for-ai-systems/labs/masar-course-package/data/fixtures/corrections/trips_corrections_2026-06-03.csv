@@ -1,0 +1,6 @@
+trip_id,rider_id,driver_id,vehicle_id,city,pickup_zone_id,dropoff_zone_id,pickup_ts,dropoff_ts,distance_km,duration_min,fare_sar,surge_multiplier,payment_type,status,dropoff_geohash
+TRP-20260603-0002298,RDR-015960,DRV-00605,VEH-01745,JED,Z-JED-02,Z-JED-15,2026-06-03 13:36:12,2026-06-03 14:06:24,15.17,30.2,46.05,1.0,cash,completed,sggg6gq
+TRP-20260603-0005907,RDR-015228,DRV-00949,VEH-03708,DMM,Z-DMM-07,Z-DMM-09,2026-06-03 18:20:27,2026-06-03 18:33:03,6.33,10.5,19.17,1.0,credit_card,completed,thewkbx
+TRP-20260603-0003717,RDR-014308,DRV-01080,VEH-02266,DMM,Z-DMM-12,Z-DMM-07,03/06/2026 18:55,,,,8.00,1.1,stc_pay,no_show,
+TRP-20260603-0002801,RDR-007011,DRV-01385,VEH-01080,DMM,Z-DMM-02,Z-DMM-04,2026-06-03 04:39:26,2026-06-03 04:52:26,4.70,13.0,18.34,1.0,credit_card,completed,thew7vw
+TRP-20260603-9000001,RDR-001336,DRV-03422,VEH-00134,JED,Z-JED-10,Z-JED-12,2026-06-03 20:29:46,2026-06-03 20:55:28,16.99,25.7,51.78,1.1,cash,completed,sggff35

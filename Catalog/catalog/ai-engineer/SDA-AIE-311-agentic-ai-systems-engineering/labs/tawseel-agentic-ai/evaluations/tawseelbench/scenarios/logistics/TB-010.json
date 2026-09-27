@@ -1,0 +1,54 @@
+{
+  "id": "TB-010",
+  "title": "Delivery complaint, investigate only (no refund asked)",
+  "locale": "ar",
+  "difficulty": "medium",
+  "domains": [
+    "logistics"
+  ],
+  "intent": "complaint",
+  "tags": [
+    "single_domain"
+  ],
+  "customer_request": {
+    "text": "هذه شكوى - طلبي TW-2026-10233 صار فوضى ولا أحد قال لي وش صار بالضبط.",
+    "locale": "ar",
+    "customer_id": "CUST-7047",
+    "order_id": "TW-2026-10233"
+  },
+  "applicable_policy": {
+    "policy_ids": [
+      "lost_or_damaged",
+      "escalation"
+    ],
+    "policy_version": "2026.2",
+    "citation_required": false
+  },
+  "environment_state": {
+    "base": "seed",
+    "patch": {}
+  },
+  "available_tools": [
+    "track_shipment",
+    "estimate_eta",
+    "get_delivery_events",
+    "find_delivery_exception"
+  ],
+  "expected_state_transition": {
+    "tool_sequence": [
+      "find_delivery_exception",
+      "track_shipment"
+    ]
+  },
+  "pass_fail_criteria": {
+    "must_call_tools": [
+      "find_delivery_exception"
+    ],
+    "must_not_call_tools": [
+      "issue_refund"
+    ],
+    "escalation_required": true,
+    "language_must_match_customer": true
+  },
+  "notes_for_instructor": "A complaint with no refund request — the correct action is to INVESTIGATE (find_delivery_exception) and escalate for review, never to jump straight to a refund the customer did not ask for."
+}

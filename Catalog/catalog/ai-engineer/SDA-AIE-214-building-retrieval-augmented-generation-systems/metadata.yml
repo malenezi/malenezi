@@ -1,0 +1,77 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-214
+course_title: Building Retrieval-Augmented Generation Systems
+course_title_ar: بناء أنظمة التوليد المعزز بالاسترجاع
+aliases: []
+domain: generative-ai
+learning_path: ai-engineer
+level: Specialist
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: GenAI engineers building knowledge assistants and enterprise search
+prerequisites: SDA-AIE-213
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-09
+next_review: 2026-12-27
+tools:
+- Vector DBs (Qdrant/pgvector)
+- LangChain/LlamaIndex
+- RAGAS
+- rerankers
+technologies: []
+keywords:
+- Agentic AI
+- RAG
+- LLM
+- Fine-Tuning
+- Data Engineering
+- Architecture
+description: A deep, practical module on grounding LLMs in enterprise knowledge. Participants build the
+  full RAG pipeline — ingestion, chunking, embedding, vector retrieval, reranking, and generation — and
+  evaluate answer faithfulness systematically. The module covers advanced patterns including hybrid search
+  and multi-document reasoning for production-grade assistants.
+description_ar: وحدة عملية متعمقة في تأصيل النماذج اللغوية بمعرفة المؤسسة. يبني المشاركون خط RAG الكامل
+  من الاستيعاب والتقطيع والتضمين والاسترجاع المتجهي وإعادة الترتيب إلى التوليد، مع تقييم منهجي لأمانة
+  الإجابات، وتغطي الوحدة أنماطًا متقدمة تشمل البحث الهجين والاستدلال متعدد المستندات للمساعدات الإنتاجية.
+learning_outcomes:
+- Design end-to-end RAG architectures for enterprise knowledge bases
+- Implement ingestion, chunking, and embedding pipelines for heterogeneous documents
+- Develop retrieval stacks combining vector, keyword, and hybrid search with reranking
+- Evaluate RAG quality using faithfulness, relevance, and answer-correctness metrics
+- Optimize retrieval parameters, context construction, and citation grounding
+- Validate systems against hallucination and stale-knowledge failure modes
+topics:
+- RAG architecture and when to use it versus fine-tuning
+- Document ingestion, parsing, and chunking strategies
+- Embeddings and vector databases
+- Hybrid retrieval and reranking
+- Context construction and citation grounding
+- RAG evaluation frameworks
+- 'Advanced patterns: multi-hop, agentic RAG'
+- Production RAG project
+assessment: Labs; enterprise RAG project with evaluation
+next_modules: SDA-AIE-311
+stackability: RAG badge; prerequisite for Agentic AI Systems Engineering.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Building Retrieval-Augmented Generation Systems
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-214 - Building Retrieval-Augmented
+    Generation Systems.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''بناء أنظمة RAG'''
+- '[Needs Review] INSTRUCTOR_PACKAGE.md: File is the v1.0 ADDENDUM, not the full package it refers to;
+  the authoritative INSTRUCTOR_PACKAGE.md for SDA-AIE-214 is missing from Drive'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

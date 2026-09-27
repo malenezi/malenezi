@@ -1,0 +1,58 @@
+{
+  "corpus": [
+    "data/corpus/corpus_v1"
+  ],
+  "corpus_version": "v1",
+  "mode": "naive",
+  "documents_seen": 122,
+  "by_format": {
+    "pdf": 70,
+    "xlsx": 8,
+    "html": 24,
+    "docx": 20
+  },
+  "parsed": 122,
+  "needs_ocr": 22,
+  "ocr_done": 0,
+  "ocr_skipped_reason": null,
+  "quarantined": [
+    "ndsa-hr-annual-leave-ar-1",
+    "ndsa-hr-annual-leave-ar-2",
+    "ndsa-hr-disciplinary-ar-1",
+    "ndsa-hr-disciplinary-ar-2",
+    "ndsa-hr-employee-records-ar-1",
+    "ndsa-hr-employee-records-ar-2",
+    "ndsa-hr-grievance-ar-1",
+    "ndsa-hr-grievance-ar-2",
+    "ndsa-hr-housing-allowance-ar-1",
+    "ndsa-hr-housing-allowance-ar-2",
+    "ndsa-hr-performance-review-ar-1",
+    "ndsa-hr-performance-review-ar-2",
+    "ndsa-hr-recruitment-data-ar-1",
+    "ndsa-hr-recruitment-data-ar-2",
+    "ndsa-hr-remote-work-ar-1",
+    "ndsa-hr-remote-work-ar-2",
+    "ndsa-hr-secondment-ar-1",
+    "ndsa-hr-secondment-ar-2",
+    "ndsa-hr-training-sponsorship-ar-1",
+    "ndsa-hr-training-sponsorship-ar-2",
+    "ndsa-hr-travel-allowance-ar-1",
+    "ndsa-hr-travel-allowance-ar-2"
+  ],
+  "errors": [],
+  "unsupported": [],
+  "warnings": {
+    "no usable text layer": 22,
+    "trafilatura not installed": 24
+  },
+  "chunk_stats": {
+    "chunks": 287,
+    "documents": 100,
+    "chunks_per_doc": 2.87,
+    "table_chunks": 0,
+    "mid_sentence_pct": 41.5,
+    "median_chars": 500,
+    "p95_chars": 500,
+    "empty_chunks": 0
+  }
+}

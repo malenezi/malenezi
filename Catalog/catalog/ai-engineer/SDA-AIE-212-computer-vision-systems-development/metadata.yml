@@ -1,0 +1,75 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-212
+course_title: Computer Vision Systems Development
+course_title_ar: تطوير أنظمة الرؤية الحاسوبية
+aliases: []
+domain: ai-engineering
+learning_path: ai-engineer
+level: Specialist
+duration:
+  days: 4
+  hours: 20
+delivery_mode: Remote (live online)
+target_audience: AI engineers specialising in vision applications
+prerequisites: SDA-AIE-112
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-09-10
+next_review: 2026-12-27
+tools:
+- PyTorch
+- torchvision
+- YOLO/Ultralytics
+- OpenCV
+- ONNX
+technologies: []
+keywords:
+- NLP
+- Computer Vision
+- Deep Learning
+- Optimization
+- Architecture
+description: A specialist module for building production computer-vision capabilities. Participants develop
+  image classification, object detection, and segmentation solutions using modern architectures and transfer
+  learning. The module emphasises dataset curation, augmentation, and deployment of vision models to real
+  applications.
+description_ar: وحدة تخصصية لبناء قدرات الرؤية الحاسوبية الإنتاجية. يطور المشاركون حلول تصنيف الصور واكتشاف
+  الكائنات والتجزئة باستخدام المعماريات الحديثة والتعلم بالنقل، مع تركيز على تنسيق مجموعات البيانات والتعزيز
+  ونشر نماذج الرؤية في تطبيقات حقيقية.
+learning_outcomes:
+- Implement image classification pipelines using CNNs and vision transformers
+- Develop object-detection and segmentation solutions with modern frameworks
+- Design dataset curation, labelling, and augmentation strategies
+- Apply transfer learning and fine-tuning to domain-specific vision tasks
+- Evaluate vision models using appropriate metrics such as mAP and IoU
+- Deploy optimised vision models to cloud and edge targets
+topics:
+- Image data, preprocessing, and augmentation
+- CNN architectures and vision transformers
+- Object detection with YOLO-family models
+- Semantic and instance segmentation
+- Dataset curation and annotation workflows
+- Model evaluation for vision tasks
+- Deployment and edge optimisation
+- Vision application project
+assessment: Labs; vision-system project
+next_modules: SDA-AIE-216
+stackability: Vision specialisation badge; elective within AI Engineer Specialist certificate.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/Computer Vision Systems Development
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-212 - Computer Vision Systems Development.xlsx
+known_issues:
+- '[Needs Review] instructor-guide.html: HTML rendering of the instructor guide — confirm it matches the
+  Markdown package'
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

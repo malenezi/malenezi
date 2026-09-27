@@ -1,0 +1,76 @@
+# Course metadata — see schemas/course-metadata.schema.json and CONTENT_GOVERNANCE.md
+schema_version: 1
+course_code: SDA-AIE-314
+course_title: AI Performance, Scalability and Cost Optimization
+course_title_ar: أداء الذكاء الاصطناعي وقابلية التوسع وتحسين التكلفة
+aliases: []
+domain: ai-engineering
+learning_path: ai-engineer
+level: Expert
+duration:
+  days: 3
+  hours: 15
+delivery_mode: Remote (live online)
+target_audience: Senior engineers and platform architects
+prerequisites: SDA-AIE-216
+status: Under Review
+version: '1.0'
+content_owner: TODO
+reviewer: TODO
+last_updated: 2026-07-08
+next_review: 2026-12-27
+tools:
+- vLLM
+- TensorRT/ONNX Runtime
+- Kubernetes autoscaling
+- cost dashboards
+technologies:
+- TensorRT / ONNX Runtime
+keywords:
+- LLM
+- MLOps
+- Statistics
+- Data Visualization
+- Streaming
+- Optimization
+- Architecture
+description: An expert module on engineering AI systems that are fast, scalable, and economical. Participants
+  profile inference workloads, apply batching, caching, quantisation, and routing strategies, and design
+  autoscaling serving infrastructure. The module builds the FinOps discipline to run national-scale AI
+  services within budget.
+description_ar: وحدة خبراء في هندسة أنظمة ذكاء اصطناعي سريعة وقابلة للتوسع واقتصادية. يحلل المشاركون أحمال
+  الاستدلال ويطبقون استراتيجيات التجميع والتخزين المؤقت والتكميم والتوجيه ويصممون بنية خدمة ذاتية التوسع،
+  مع بناء انضباط FinOps لتشغيل خدمات ذكاء اصطناعي وطنية ضمن الميزانية.
+learning_outcomes:
+- Analyze latency, throughput, and cost profiles of AI inference workloads
+- Implement batching, caching, and streaming optimisations for model serving
+- Apply quantisation, distillation, and model-routing to cut serving costs
+- Design autoscaling GPU infrastructure for variable demand
+- Evaluate build-versus-buy and model-tier trade-offs with TCO analysis
+- Develop cost-monitoring dashboards and optimisation playbooks
+topics:
+- Performance profiling of inference workloads
+- 'Serving optimisation: batching, caching, streaming'
+- 'Model compression: quantisation and distillation'
+- Model routing and cascade architectures
+- GPU infrastructure and autoscaling
+- 'AI FinOps: cost monitoring and TCO'
+- Optimisation project on a live workload
+assessment: Optimisation project with before/after benchmark
+next_modules: SDA-AIE-390
+stackability: Optimisation badge; part of the MLOps & Reliability specialisation.
+trainer_only_paths:
+- solutions/
+sources:
+  catalog: SDAIA_Academy_Module_Catalog_v2 (module_catalog.json)
+  drive_folder: AI Engineer Track/AI Performance, Scalability and Cost Optimization
+  platform_workbook: Program Files (AthkaX)/AI Engineer Track/SDA-AIE-314 - AI Performance, Scalability
+    and Cost Optimization.xlsx
+known_issues:
+- '[Naming] Learning Paths Catalog AR title: ''تحسين الأداء والقابلية للتوسع والتكلفة'''
+change_history:
+- version: '1.0'
+  date: 2026-09-27
+  summary: 'Migration baseline: content moved from Google Drive into the Hub unchanged; metadata generated
+    from Module Catalog v2 / AthkaX workbook.'
+  approver: TODO

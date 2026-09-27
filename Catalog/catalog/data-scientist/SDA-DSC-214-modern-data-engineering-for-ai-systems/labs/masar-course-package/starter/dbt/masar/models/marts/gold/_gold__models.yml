@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: >
+      THE conformed date dimension. GRAIN: one row per calendar date.
+      Exactly one of these exists in the platform. is_weekend encodes the KSA
+      working week (Sun-Thu), so the weekend is Friday and Saturday.
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+      - name: full_date
+        tests: [unique, not_null]
+
+  - name: dim_driver
+    description: >
+      GRAIN: one row per driver_id, type-1 (current attributes only).
+      PDPL: national_id_hash and phone_hash are excluded by classification.
+    columns:
+      - name: driver_key
+        tests: [unique, not_null]
+      - name: tenure_band
+        tests:
+          - accepted_values:
+              values: ['new', 'established', 'veteran']
+
+  - name: dim_vehicle
+    description: "GRAIN: one row per vehicle_id."
+    columns:
+      - name: vehicle_key
+        tests: [unique, not_null]
+      - name: vehicle_class
+        tests:
+          - accepted_values:
+              values: ['saloon', 'suv', 'van']
+
+  - name: dim_zone
+    description: >
+      GRAIN: one row per zone_id. Bilingual labels; centroid at zone
+      resolution, never per-trip coordinates.
+    columns:
+      - name: zone_key
+        tests: [unique, not_null]
+      - name: city
+        tests:
+          - accepted_values:
+              values: ['Riyadh', 'Jeddah', 'Dammam', 'Mecca', 'Medina']
+
+  - name: fact_trip
+    description: >
+      GRAIN: exactly one row per trip_id. FKs to conformed dimensions,
+      measures at trip grain. PDPL: no rider_id — a pseudonym only.
+    columns:
+      - name: trip_id
+        tests: [unique, not_null]
+      - name: date_key
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_date'), field: date_key}
+      - name: driver_key
+        tests:
+          - relationships: {to: ref('dim_driver'), field: driver_key}
+      - name: pickup_zone_key
+        tests:
+          - relationships: {to: ref('dim_zone'), field: zone_key}
+      - name: fare_sar
+        tests: [not_null]
+      - name: rider_pseudonym
+        description: "SHA-256 of rider_id. Pseudonymised, still in scope for erasure."
+        tests: [not_null]
+
+  - name: gold_zone_hourly_demand
+    description: >
+      BI demand mart AND an input to surge pricing.
+      GRAIN: one row per (city, pickup_zone_id, demand_date, demand_hour).
+      A double-counted row here becomes a price, not a reporting error.
+    columns:
+      - name: trips
+        tests: [not_null]
+      - name: demand_hour
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 23}
+      - name: city
+        tests:
+          - accepted_values:
+              values: ['Riyadh', 'Jeddah', 'Dammam', 'Mecca', 'Medina']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, pickup_zone_id, demand_date, demand_hour]
+
+  - name: gold_driver_daily
+    description: "BI driver mart. GRAIN: one row per (driver_id, activity_date)."
+    columns:
+      - name: completion_rate
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 1}
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [driver_id, activity_date]

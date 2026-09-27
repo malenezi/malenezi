@@ -1,0 +1,1545 @@
+{
+  "slides": [
+    {
+      "type": "section",
+      "kicker": "Day 3 · Hours 11-15",
+      "big": "D3",
+      "title": "From one agent to a team",
+      "title_ar": "من وكيل واحد إلى فريق",
+      "subtitle": "By this evening: three specialists, a thin supervisor that routes and aggregates, and the judgement to know when a team is not the answer.",
+      "items": [
+        "Three specialists",
+        "Supervisor + handoffs",
+        "When NOT to",
+        "Architecture A vs B"
+      ],
+      "notes": "Point back at the golden-thread slide from the front section and land on the Day 3 row. Say the deliverable out loud: a team, not just more agents. Preview M5.3 by name now — tell the room that halfway through today they will be asked whether what they just built was even the right call, and that the question is not rhetorical."
+    },
+    {
+      "type": "section",
+      "kicker": "Module 5 · Hours 11-13",
+      "big": "M5",
+      "title": "Single agent versus multi-agent",
+      "title_ar": "وكيل واحد مقابل فريق وكلاء",
+      "subtitle": "One agent that knows five teams' policies eventually collapses under its own prompt — this module teaches when to split, and what splitting costs.",
+      "items": [
+        "Scaling signals",
+        "Scoped specialists",
+        "Three topologies",
+        "New failure modes"
+      ],
+      "notes": "Say plainly this module is a decision, not a default: multi-agent is not an upgrade you apply once you can, it is a trade you make once one agent has actually stopped scaling. Two hours, one lab, then M5.3 pressure-tests the whole thing before Module 6 teaches you to run the team well."
+    },
+    {
+      "type": "bullets",
+      "module": "M5",
+      "kicker": "Why this matters",
+      "title": "One prompt cannot serve five teams",
+      "intro": "The single-vs-multi decision has a direct cost and reliability signature — and in a Saudi enterprise it is also a governance decision.",
+      "bullets": [
+        {
+          "lead": "A bank splits Cards, Loans, Disputes.",
+          "text": "Each specialist is authorised only for its own systems — the split IS the access-control model, not a convenience."
+        },
+        {
+          "lead": "A logistics operator keeps refund tooling out of reach.",
+          "text": "A Logistics specialist only ever touches tracking APIs — money-moving tools never enter its toolbelt at all."
+        },
+        {
+          "lead": "A government platform routes by department.",
+          "text": "Citizen requests go to department specialists, each owned and audited by that department, not one omni-agent no team can sign off on."
+        },
+        {
+          "lead": "Orders, Logistics and Billing are already separate teams.",
+          "text": "Specialist agents align the software boundary with the organisational and PDPL data-governance boundary that already exists at Tawseel.",
+          "kind": "key"
+        }
+      ],
+      "aside": {
+        "tone": "key",
+        "title": "THE STAKES",
+        "body": "A monolith with 25 tools misroutes far more than three agents with 6 tools each — but three agents mean three model calls, handoff latency, and a new failure surface. Both facts are true at once."
+      },
+      "notes": "Ask the room: in your own org, do Orders, Logistics and Billing already report to different people with different sign-off authority? That organisational fact is why this module's answer is not purely a modelling question. Four minutes, then straight into the four scaling signals."
+    },
+    {
+      "type": "cards",
+      "module": "M5",
+      "title": "When one agent stops scaling",
+      "cards": [
+        {
+          "label": "1",
+          "title": "Tool overload",
+          "body": "Past roughly a dozen tools with overlapping surfaces, selection accuracy falls — the model picks a plausible-but-wrong tool. You measured this exact effect in Module 3's mega-tool benchmark."
+        },
+        {
+          "label": "2",
+          "title": "Prompt overload",
+          "body": "The system prompt accretes rules for every domain until they contradict — 'always be brief' vs 'always cite the full refund policy' — and no model serves all masters."
+        },
+        {
+          "label": "3",
+          "title": "Context cost",
+          "body": "Every request pays for the whole tool schema and instruction set even when it needs a fraction — an Arabic order-status query billed for the entire billing ruleset."
+        },
+        {
+          "label": "4",
+          "title": "Ownership friction",
+          "tone": "key",
+          "body": "No single team can own a prompt that encodes five teams' policies — a Billing rule change risks silently breaking Order handling."
+        }
+      ],
+      "notes": "Write the four words on the board — tools, prompt, context, ownership — before revealing the cards; ask the room to name a fifth symptom first, then show them these are the ones the package tracks. State the rule explicitly: if none of these four bite, do NOT go multi-agent, you would be adding orchestration cost for no gain."
+    },
+    {
+      "type": "two_col",
+      "module": "M5",
+      "title": "Specialisation: a narrowing, three ways",
+      "left": {
+        "title": "Monolith",
+        "subtitle": "18 tools, one prompt",
+        "items": [
+          "One prompt encodes five teams' policies at once.",
+          "Tool-selection accuracy falls as the belt grows.",
+          "A Billing rule change can silently break Orders."
+        ]
+      },
+      "right": {
+        "title": "Three specialists",
+        "subtitle": "6 tools each, one domain",
+        "items": [
+          {
+            "lead": "Scoped toolset.",
+            "text": "Fewer choices, and the model routes to the right one far more reliably."
+          },
+          {
+            "lead": "Focused prompt.",
+            "text": "One domain's policy and voice — shorter, non-contradictory, independently ownable."
+          },
+          {
+            "lead": "Isolated context.",
+            "text": "A specialist sees only what its task needs — structural, not a prompt's promise."
+          }
+        ]
+      },
+      "left_tone": "bad",
+      "right_tone": "good",
+      "notes": "This is the module's core claim made visual before the code slides prove it. Say the phrase 'scoped tools, focused prompt, isolated context' slowly — it is the exact definition of a specialist this module uses everywhere downstream, including Lab 5's grading criteria."
+    },
+    {
+      "type": "flow",
+      "module": "M5",
+      "title": "Three multi-agent topologies",
+      "rows": [
+        {
+          "label": "Network",
+          "steps": [
+            {
+              "text": "Any ↔ any",
+              "sub": "peer handoff"
+            },
+            {
+              "text": "Max flexibility"
+            },
+            {
+              "text": "Max chaos",
+              "sub": "no one owns it",
+              "tone": "bad"
+            }
+          ]
+        },
+        {
+          "label": "Supervisor",
+          "steps": [
+            {
+              "text": "Hub routes",
+              "sub": "one orchestrator"
+            },
+            {
+              "text": "Specialists reply"
+            },
+            {
+              "text": "Hub aggregates",
+              "sub": "M6 workhorse",
+              "tone": "key"
+            }
+          ]
+        },
+        {
+          "label": "Hierarchical",
+          "steps": [
+            {
+              "text": "Supervisors of",
+              "sub": "supervisors"
+            },
+            {
+              "text": "Large domains only"
+            },
+            {
+              "text": "Grow into, not start"
+            }
+          ]
+        }
+      ],
+      "caption": "Rafeeq's Day-3 target is the supervisor topology — small enough to reason about, structured enough to scale. Module 6 builds it.",
+      "notes": "Draw the network topology first on the board with arrows crossing everywhere and let the room feel the chaos before you reveal the slide. Say plainly that network is rarely the right enterprise default — it is the shape the apology-loop case study later this day was built on, deliberately, as a warning."
+    },
+    {
+      "type": "table",
+      "module": "M5",
+      "title": "What multi-agent costs you",
+      "headers": [
+        "Dimension",
+        "Single agent",
+        "Multi-agent (supervisor)"
+      ],
+      "rows": [
+        [
+          "Tool-selection accuracy",
+          "!bad Falls as tools grow",
+          "!good High — scoped per specialist"
+        ],
+        [
+          "Prompt maintainability",
+          "!bad One giant, degrading prompt",
+          "!good One prompt per domain"
+        ],
+        [
+          "Latency",
+          "One reasoning chain",
+          "+routing hop(s), +handoffs"
+        ],
+        [
+          "Cost",
+          "One context, billed whole",
+          "Router + specialist calls — can be MORE on simple tasks"
+        ],
+        [
+          "Failure surface",
+          "Familiar (M1–M4)",
+          "!key New: lost handoff, duplicated work, chatter"
+        ],
+        [
+          "Ownership / governance",
+          "One team, blurred",
+          "!good Aligns to team + data boundaries"
+        ]
+      ],
+      "footnote": "The honest headline: a supervisor over specialists usually costs MORE on a trivial task and LESS on a complex, mixed one — you prove which regime you're in with the eval set, not intuition.",
+      "notes": "Read the footnote aloud before you let the room study the table — it is the sentence that stops this becoming a one-sided sales pitch for multi-agent. Ask: which row would your own leadership push back on first? Cost is usually the answer, and it is the row this module refuses to hide."
+    },
+    {
+      "type": "bullets",
+      "module": "M5",
+      "title": "New failure modes multi-agent introduces",
+      "bullets": [
+        {
+          "lead": "1. Lost handoff.",
+          "text": "The supervisor delegates but the specialist's result never makes it back into shared state — the customer is told nothing happened.",
+          "kind": "bad"
+        },
+        {
+          "lead": "2. Duplicated work.",
+          "text": "Two agents both 'helpfully' look up the order; you pay twice and may act twice — the double-refund ghost, now inter-agent.",
+          "kind": "bad"
+        },
+        {
+          "lead": "3. Chatter loops.",
+          "text": "Agent A hands to B, B hands back to A, forever — the M1 termination lesson, now across agents.",
+          "kind": "bad"
+        },
+        {
+          "lead": "4. Context starvation.",
+          "text": "A specialist is handed too little context to succeed, or too much — leaking another domain's PII.",
+          "kind": "bad"
+        },
+        {
+          "lead": "5. Blurred accountability.",
+          "text": "Three agents touched a wrong refund — which one is at fault? Every handoff must be a logged, attributable event.",
+          "kind": "bad"
+        }
+      ],
+      "notes": "A single agent cannot have any of these five failures — say that explicitly, it is the reason this slide exists before Module 6 instead of after. Ask the room which one worries a compliance team most; blurred accountability usually wins, and it previews Module 9's tracing argument directly."
+    },
+    {
+      "type": "code",
+      "module": "M5",
+      "title": "One factory, three specialists",
+      "filename": "src/rafeeq/agents/specialist.py",
+      "code": "# src/rafeeq/agents/specialist.py\nSPECIALIST_TOOLS: dict[str, list[Any]] = {\n    \"orders\": list(orders.TOOLS),\n    \"logistics\": list(logistics.TOOLS),\n    \"billing\": list(billing.TOOLS),\n}\n\nSPECIALIST_PROMPTS: dict[str, str] = {\n    \"orders\": \"You are Rafeeq's Orders specialist. Order lookup, status, \"\n              \"details ONLY. Money or routing? Say out of scope.\",\n    \"logistics\": \"You are Rafeeq's Logistics specialist. Tracking, ETAs, \"\n                 \"rescheduling ONLY. Never issue refunds.\",\n    \"billing\": \"You are Rafeeq's Billing specialist. Invoices and refunds \"\n               \"within policy ONLY. Never sees shipment PII.\",\n}\n\ndef make_specialist(name: str, system: str, tools: list[Any]) -> Any:\n    \"\"\"Narrow toolset + single-domain prompt. name = routing target (M6).\"\"\"\n    return create_react_agent(\n        model=get_model_for_specialist().bind_tools(tools),\n        tools=tools,\n        prompt=SystemMessage(content=system),\n        name=name,\n    )",
+      "callouts": [
+        {
+          "lead": "Data, not objects",
+          "text": "SPECIALIST_TOOLS and SPECIALIST_PROMPTS are plain dicts — inspectable and testable with no model built yet."
+        },
+        {
+          "lead": "One factory",
+          "text": "make_specialist is called three times — a fourth specialist is a four-line addition, not a new pattern.",
+          "kind": "key"
+        },
+        {
+          "lead": "name = routing target",
+          "text": "The name passed here is exactly the string Module 6's supervisor routes to — the same identifier, everywhere."
+        }
+      ],
+      "notes": "This is the real file, trimmed only for the slide. Point out the Billing prompt says 'never sees shipment PII' — ask the room whether that sentence alone is enough to guarantee it. The answer is no, and the next code slide is exactly why."
+    },
+    {
+      "type": "code",
+      "module": "M5",
+      "title": "SCOPE: isolation as structure, not prose",
+      "filename": "src/rafeeq/agents/scoping.py",
+      "code": "# src/rafeeq/agents/scoping.py\nSCOPE: dict[str, frozenset[str]] = {\n    \"orders\":    {\"customer_id\", \"locale\", \"order_id\", \"messages\"},\n    \"logistics\": {\"customer_id\", \"locale\", \"order_id\", \"messages\"},\n    \"billing\":   {\"customer_id\", \"locale\", \"order_id\", \"messages\"},  # no address/geo\n}\n\nFORBIDDEN_FIELDS = {\n    \"billing\": {\"address\", \"shipment_address\", \"delivery_address\", \"geo\", \"lat\", \"lng\"},\n}\n\ndef scoped_input(state: Mapping[str, Any], specialist: str) -> dict[str, Any]:\n    \"\"\"Project shared state down to the fields `specialist` may read.\n    Structural isolation, not a prompt instruction.\"\"\"\n    allowed = SCOPE[specialist]\n    payload = {k: v for k, v in state.items() if k in allowed}\n    assert_no_forbidden_leak(payload, specialist)   # raises, never silently passes\n    return payload",
+      "callouts": [
+        {
+          "lead": "SCOPE is the argument",
+          "text": "billing's allow-list names no address/geo field — the isolation is a data structure, not a sentence.",
+          "kind": "key"
+        },
+        {
+          "lead": "Project, don't trust",
+          "text": "scoped_input builds a NEW dict from the allow-list — the specialist never even receives the wider state."
+        },
+        {
+          "lead": "Fails loud",
+          "text": "assert_no_forbidden_leak raises on a forbidden field reaching the payload — defence in depth against SCOPE itself being widened by mistake."
+        }
+      ],
+      "notes": "This is a PDPL control, say so explicitly — the exact phrase from the module package. Ask: what happens if next quarter someone adds 'address' to SCOPE['billing'] by accident? Point at assert_no_forbidden_leak — it raises immediately, a build-time bug caught before it ships, not a runtime leak found by a customer."
+    },
+    {
+      "type": "code",
+      "module": "M5",
+      "title": "The monolith, kept alive on purpose",
+      "filename": "src/rafeeq/agents/baseline.py",
+      "code": "# src/rafeeq/agents/baseline.py\n\"\"\"The monolith. Kept ALIVE in the eval harness so we can always\nanswer: is the multi-agent version actually better on THIS ticket class?\"\"\"\nALL_TOOLS: list[Any] = list(orders.TOOLS) + list(logistics.TOOLS) + list(billing.TOOLS)\n\nMONOLITH_PROMPT = (\n    \"You are Rafeeq. You handle orders, logistics, AND billing. \"\n    \"Choose the right tool carefully.\"\n)\n\ndef get_monolith(reset: bool = False) -> Any:\n    \"\"\"Benchmark note: expect HIGHER accuracy from specialists on mixed\n    tickets, but the monolith may be CHEAPER on trivial single-domain ones.\"\"\"\n    global _monolith_cache\n    if _monolith_cache is None or reset:\n        _monolith_cache = create_react_agent(\n            model=get_model().bind_tools(ALL_TOOLS),\n            tools=ALL_TOOLS,\n            prompt=SystemMessage(content=MONOLITH_PROMPT),\n        )\n    return _monolith_cache",
+      "callouts": [
+        {
+          "lead": "Never delete this file",
+          "text": "The docstring says so — the whole point of the benchmark table is an ongoing comparison, not a one-time before/after screenshot.",
+          "kind": "key"
+        },
+        {
+          "lead": "Same 18 tools, one prompt",
+          "text": "ALL_TOOLS is deliberately the opposite of specialist.py's decomposition — the control condition."
+        },
+        {
+          "lead": "Honest both ways",
+          "text": "The comment says the monolith may be CHEAPER on trivial tickets — report both regimes, never just the one that favours your design."
+        }
+      ],
+      "notes": "Ask the room why you would deliberately keep a worse-performing agent in the codebase. The answer is the module's whole method: without this baseline, 'multi-agent is better' is an assertion; with it, it is a measurement you can re-run on every new ticket class."
+    },
+    {
+      "type": "statement",
+      "kicker": "M5 — the one idea",
+      "statement": "A specialist is a narrowing, not a new brain.",
+      "statement_ar": "المتخصّص تضييق للنطاق، لا عقل جديد.",
+      "attribution": "Module 5",
+      "notes": "Say it, pause, let it land — same rhythm as every module statement this week. Tie it back to the two_col slide: scoped tools, focused prompt, isolated context are three ways of doing the SAME narrowing, not three separate features. This is the line M5.3 will pressure-test in twenty minutes."
+    },
+    {
+      "type": "bullets",
+      "module": "M5",
+      "kicker": "Activity, 15 minutes",
+      "title": "Split-or-keep clinic",
+      "intro": "No lecture — teams get five Tawseel workflows and decide single-agent or multi-agent, defending each against the four scaling symptoms.",
+      "bullets": [
+        {
+          "lead": "Order-status lookup.",
+          "text": "Single domain, low autonomy — almost never earns a second agent."
+        },
+        {
+          "lead": "Refund plus reschedule.",
+          "text": "'Charged for a parcel that never arrived' spans Billing and Logistics — the mixed-ticket case this module's numbers are built on."
+        },
+        {
+          "lead": "A VIP concierge, one customer.",
+          "text": "Wide scope, but shared context and low autonomy — a trap that LOOKS multi-agent and is not.",
+          "kind": "key"
+        },
+        {
+          "lead": "The excluded fifth.",
+          "text": "Defend, out loud, which workflow did NOT earn a specialist, and which of the four symptoms it failed to trip."
+        }
+      ],
+      "notes": "Run this in pairs against a projected list of five workflows; the VIP-concierge card is the trap — someone always wants to split it because it 'feels important', and the room has to argue them back to single-agent using the four symptoms, not a feeling. Ten minutes, two groups report their hardest call."
+    },
+    {
+      "type": "case",
+      "module": "M5",
+      "title": "Case study: the 28-tool monolith",
+      "scenario": "SoukNow, a regional e-commerce marketplace, ran one support agent with 28 tools across orders, shipping, billing and accounts. Demo-perfect; production tool-selection accuracy hovered near 70%, at roughly 30,000 contacts a day — refund tools fired on tracking requests and vice versa, with real money moving on mislabeled intents.",
+      "challenge": "Raise routing reliability and untangle ownership without a ground-up rebuild, while proving the change does not simply inflate cost. No downtime; Orders, Shipping and Billing are separate teams; PDPL requires the Billing path never touch shipping-location PII; Arabic and English contacts in equal measure.",
+      "solution": "Decompose into three scoped specialists behind a thin router (Module 6); align each agent to its owning team and data scope; keep the monolith as an eval baseline; route only mixed or complex tickets through the supervisor, trivial ones straight to a specialist. Result: high-90s selection accuracy on mixed tickets, structural PDPL isolation for Billing, a defensible per-intent cost model.",
+      "questions": [
+        "Which symptom — tools, prompt, context or ownership — was most acute, and how would you measure it?",
+        "Why is aligning agents to teams also a governance win, not just an engineering one?",
+        "How do you decide, per ticket class, single agent versus supervisor?",
+        "What new failure modes did the split introduce, and how do you guard them?"
+      ],
+      "notes": "Facilitate, do not lecture — this is the module's own real architecture, not a hypothetical. Push on question 4 especially: the room just built specialists in Lab 5 and has not yet met the failure modes multi-agent introduces — let that tension sit, M6 is where it gets answered. Ten minutes, cap it."
+    },
+    {
+      "type": "lab",
+      "module": "M5",
+      "title": "Lab 5 — specialist sub-agents",
+      "objective": "Split Rafeeq's tools into Orders, Logistics and Billing specialists with scoped toolsets and isolated context; benchmark against the single-agent monolith.",
+      "duration": "50 minutes",
+      "setup": "git checkout lab5-start; MCP tools from Lab 3 grouped into orders/logistics/billing; tickets_eval.jsonl",
+      "tasks": [
+        {
+          "lead": "10 min",
+          "text": "Group MCP tools into three scoped lists; assert Billing has no tracking/geo tool and Logistics has no refund tool."
+        },
+        {
+          "lead": "15 min",
+          "text": "Build the three specialists from make_specialist, each with a focused single-domain prompt."
+        },
+        {
+          "lead": "10 min",
+          "text": "Run each specialist on its own slice of tickets_eval.jsonl; record per-specialist tool-selection accuracy."
+        },
+        {
+          "lead": "10 min",
+          "text": "Run the monolith baseline on the same tickets; fill the comparison table for single vs specialists."
+        },
+        {
+          "lead": "5 min",
+          "text": "Write the context-isolation test: assert Billing's input never contains a shipment-address field. Commit: feat: orders, logistics, billing specialist agents."
+        }
+      ],
+      "expected": "orders specialist    → 98% correct tool selection (40 tickets)\nlogistics specialist → 97% correct tool selection (40 tickets)\nbilling specialist   → 96% correct tool selection (30 tickets)\nmonolith baseline     → 71% correct (mixed), 0.5% cheaper on pure order-status\ncontext-isolation test → PASS (no address/geo field reaches billing)",
+      "commit": "feat: orders, logistics, billing specialist agents",
+      "notes": "The lesson lands only if the monolith visibly misroutes — seed a few tickets whose wording overlaps two domains ('I was charged for a parcel that never arrived' straddles Billing and Logistics). Make every pair record where the monolith was cheaper too; the honest, two-sided result is the point, not a clean win."
+    },
+    {
+      "type": "metrics",
+      "module": "M5",
+      "title": "What good looks like after M5",
+      "tiles": [
+        {
+          "value": "≥ 95%",
+          "label": "specialist selection accuracy, per domain",
+          "tone": "good"
+        },
+        {
+          "value": "< 80%",
+          "label": "monolith accuracy on mixed tickets (expected)",
+          "tone": "bad"
+        },
+        {
+          "value": "100%",
+          "label": "context isolation — no shipment PII reaches Billing",
+          "tone": "good"
+        },
+        {
+          "value": "≤ single-agent",
+          "label": "cost on mixed tickets — report trivial honestly too",
+          "tone": "default"
+        }
+      ],
+      "headers": [
+        "Design",
+        "Selection accuracy (mixed)",
+        "Cost/ticket trivial",
+        "Cost/ticket mixed",
+        "Billing sees PII?"
+      ],
+      "rows": [
+        [
+          "Monolith (18 tools)",
+          "!bad 71%",
+          "0.0055 USD",
+          "!bad 0.021 USD",
+          "possible"
+        ],
+        [
+          "!good Three specialists",
+          "!good 97%",
+          "0.0060 USD",
+          "!good 0.012 USD",
+          "!good never (structural)"
+        ]
+      ],
+      "colW": [
+        3.2,
+        2.7,
+        2.1,
+        2.1,
+        2.19
+      ],
+      "footnote": "From Module 5's package example benchmark table — illustrative figures, not a promise for every ticket.",
+      "notes": "Walk the last column first — 'possible' versus 'never (structural)' is the module's whole PDPL argument in two words. Then point at the trivial-ticket column: specialists cost slightly MORE there, and saying that out loud before anyone asks is what makes the 97% number trustworthy."
+    },
+    {
+      "type": "bullets",
+      "module": "M5",
+      "title": "Five-question recap",
+      "bullets": [
+        {
+          "lead": "Q1.",
+          "text": "Name two signals a single agent has stopped scaling? Tool overload, prompt overload — also context cost, ownership friction."
+        },
+        {
+          "lead": "Q2.",
+          "text": "Why does specialisation raise tool-selection accuracy? A smaller choice space per agent."
+        },
+        {
+          "lead": "Q3.",
+          "text": "When is multi-agent the wrong call? Simple single-domain workflows — routing cost, no gain."
+        },
+        {
+          "lead": "Q4.",
+          "text": "Name two failure modes unique to multi-agent? Lost handoff, chatter loop — also duplicated work."
+        },
+        {
+          "lead": "Q5.",
+          "text": "Why keep a single-agent baseline? To prove the multi-agent version is actually better, per ticket class.",
+          "kind": "key"
+        }
+      ],
+      "notes": "Cold-call style, same as every recap this week. If Q5 gets a shaky answer, point back at baseline.py's docstring on the code slide and re-read it aloud — that one sentence carries most of the module's argument."
+    },
+    {
+      "type": "checklist",
+      "module": "M5",
+      "title": "M5 exit check before M5.3",
+      "items": [
+        {
+          "lead": "Three specialists",
+          "text": "Orders, Logistics, Billing — scoped tools, focused prompt",
+          "state": "yes"
+        },
+        {
+          "lead": "Context isolation",
+          "text": "scoped_input projects state; Billing carries no address/geo field",
+          "state": "yes"
+        },
+        {
+          "lead": "Monolith kept alive",
+          "text": "in the eval harness, never deleted — the ongoing comparison",
+          "state": "yes"
+        },
+        {
+          "lead": "Benchmark table",
+          "text": "specialists vs monolith, selection accuracy and cost, both regimes reported",
+          "state": "yes"
+        },
+        {
+          "lead": "When NOT to",
+          "text": "not covered yet — that is M5.3, right now",
+          "state": "no"
+        }
+      ],
+      "notes": "Same bridge-slide purpose as every module exit check this week. If the room is shaky on context isolation, do not let M5.3 start until someone can say out loud why scoped_input is a structural control and not a prompt promise — M5.3 assumes that lesson is already solid."
+    },
+    {
+      "type": "section",
+      "kicker": "Module 5.3 · 25 minutes",
+      "big": "5.3",
+      "title": "When NOT to use multi-agent systems",
+      "title_ar": "متى لا نستخدم أنظمة متعددة الوكلاء",
+      "subtitle": "Ten criteria, not a reflex — Ryanair reportedly went from twelve agents to one; OPLOG scaled a team. Both can be right, on different questions.",
+      "items": [
+        "Ten criteria",
+        "Single vs workflow vs multi",
+        "Ryanair, Feb 2026",
+        "OPLOG counter-case"
+      ],
+      "notes": "This session runs while the room still feels the cost of having just built three specialists — do not let it slip to after lunch. Say the hook before anything else: 'you just spent fifty minutes building three specialists; a major airline reportedly just went the other way. Were you wrong?' Let the tension sit."
+    },
+    {
+      "type": "bullets",
+      "module": "M5.3",
+      "kicker": "The hook",
+      "title": "Three shapes, one decision",
+      "intro": "The same task can honestly fit a single agent, a scripted workflow, or a multi-agent team — the shape is decided, not defaulted.",
+      "bullets": [
+        {
+          "lead": "Single agent.",
+          "text": "Few domains, shared context, low autonomy per domain — the cheapest, simplest shape when it fits."
+        },
+        {
+          "lead": "Scripted workflow.",
+          "text": "The steps are fixed and deterministic — that is Module 7's territory, not an agent decision at all."
+        },
+        {
+          "lead": "Multi-agent team.",
+          "text": "Genuinely distinct domains, hard context isolation, independent state, real parallelism — M5/M6's territory."
+        },
+        {
+          "lead": "Ten criteria decide it, not intuition.",
+          "text": "Domain count, autonomy, context separation, permission boundaries, independent state, parallelism, failure isolation, cost, latency, auditability.",
+          "kind": "key"
+        }
+      ],
+      "aside": {
+        "tone": "warn",
+        "title": "WERE YOU WRONG?",
+        "body": "Not necessarily — Rafeeq's three domains genuinely need separate authorisation and separate PDPL scopes. But that answer has to come from the criteria you are about to see, not from having just built the specialists."
+      },
+      "notes": "Present the Ryanair tension first, verbally, before this slide: 'you just spent fifty minutes building three specialists — a major airline reportedly just went the other way.' Do not resolve it yet. This slide introduces the third option — workflow — that the room has not been offered before; name it explicitly as Module 7's territory."
+    },
+    {
+      "type": "table",
+      "module": "M5.3",
+      "kicker": "The decision matrix (1 of 2)",
+      "title": "Ten criteria — domains through parallelism",
+      "headers": [
+        "Criterion",
+        "Favours single agent",
+        "Favours multi-agent"
+      ],
+      "rows": [
+        [
+          "Number of domains",
+          "Few, overlapping",
+          "Many, genuinely distinct"
+        ],
+        [
+          "Degree of autonomy",
+          "Low-to-medium per domain",
+          "High, domain-specific autonomy needed"
+        ],
+        [
+          "Context separation",
+          "Domains share most context",
+          "Domains need hard context isolation"
+        ],
+        [
+          "Permission boundaries",
+          "One permission set suffices",
+          "Different teams need different scopes"
+        ],
+        [
+          "Independent state",
+          "Domains share state naturally",
+          "Each domain owns genuinely separate state"
+        ]
+      ],
+      "colW": [
+        3.0,
+        4.545,
+        4.545
+      ],
+      "notes": "Walk this as a discussion, not a read-out — for each row, ask the room to score Rafeeq's own Orders/Logistics/Billing split before you move to row two. Domain count alone is the weakest signal; flag that explicitly, since it is the one people reach for first and it is rarely the deciding one."
+    },
+    {
+      "type": "table",
+      "module": "M5.3",
+      "kicker": "The decision matrix (2 of 2)",
+      "title": "Ten criteria — failure through auditability",
+      "headers": [
+        "Criterion",
+        "Favours single agent",
+        "Favours multi-agent"
+      ],
+      "rows": [
+        [
+          "Parallelism",
+          "Requests are mostly sequential",
+          "Genuine benefit from parallel specialist work"
+        ],
+        [
+          "Failure isolation",
+          "A shared failure mode is acceptable",
+          "One domain's failure must not touch another"
+        ],
+        [
+          "Cost",
+          "Routing overhead dominates at this volume",
+          "Specialisation saves more than routing costs"
+        ],
+        [
+          "Latency",
+          "Extra hops meaningfully hurt the SLO",
+          "Hops are within budget"
+        ],
+        [
+          "!key Auditability",
+          "!key One log is enough for review",
+          "!key Regulator/audit wants per-domain accountability"
+        ]
+      ],
+      "colW": [
+        3.0,
+        4.545,
+        4.545
+      ],
+      "footnote": "Illustratively applied to Ryanair below — the room does not have Ryanair's internal data, so treat every inference as plausible, not confirmed.",
+      "notes": "Auditability is highlighted deliberately — for a regulated Saudi enterprise it is often the row that overrides the other nine. Ask: which single criterion, on its own, would make YOUR org split an agent regardless of the other nine scoring single-agent? Permission boundaries is the usual answer."
+    },
+    {
+      "type": "flow",
+      "module": "M5.3",
+      "title": "The decision flow",
+      "rows": [
+        {
+          "label": "Single agent",
+          "steps": [
+            {
+              "text": "Few domains",
+              "sub": "shared context"
+            },
+            {
+              "text": "Low autonomy"
+            },
+            {
+              "text": "→ one agent",
+              "tone": "good"
+            }
+          ]
+        },
+        {
+          "label": "Workflow",
+          "steps": [
+            {
+              "text": "Fixed sequence",
+              "sub": "deterministic"
+            },
+            {
+              "text": "Checkable rules"
+            },
+            {
+              "text": "→ scripted flow (M7)"
+            }
+          ]
+        },
+        {
+          "label": "Multi-agent",
+          "steps": [
+            {
+              "text": "Distinct domains",
+              "sub": "hard isolation"
+            },
+            {
+              "text": "Independent state"
+            },
+            {
+              "text": "→ supervisor team",
+              "tone": "key"
+            }
+          ]
+        }
+      ],
+      "caption": "Score against the ten criteria before committing. Ryanair and OPLOG below land on opposite ends of this same flow — on different logistics questions.",
+      "notes": "Draw this as a branching decision on the board first — few domains vs fixed steps vs genuine isolation — then reveal the slide as the tidy version. Stress that 'workflow' is a legitimate third exit, not a lesser one; a system that scores single-agent on eight of ten criteria should not become a team because agents are the fashionable answer."
+    },
+    {
+      "type": "cards",
+      "module": "M5.3",
+      "title": "Two real fulfilment decisions",
+      "cards": [
+        {
+          "label": "12→1",
+          "title": "Ryanair",
+          "tone": "key",
+          "body": "Ryanair reported moving from twelve domain-specific customer-service agents to one consolidated architecture in February 2026, simplifying orchestration and reducing latency (Computer Weekly, PRNewswire)."
+        },
+        {
+          "label": "AWS",
+          "title": "OPLOG",
+          "tone": "good",
+          "body": "AWS reports an agent-orchestration architecture for OPLOG's fulfilment operations, with large reported improvements in decision time, resource utilisation and cost."
+        },
+        {
+          "label": "?",
+          "title": "The real question",
+          "tone": "bad",
+          "body": "OPLOG orchestrates warehouse operations, not customer chat. When does logistics genuinely need an agent team rather than one assistant — and when does more agents just mean more orchestration to pay for?"
+        }
+      ],
+      "notes": "Say 'Ryanair reported' and 'AWS reports' out loud before either number — never present these as our own measurements. The teaching point is explicit: more agents are not automatically better, and fewer agents are not automatically better either — steer the room toward the ten-criteria worksheet, not a reflex answer either way."
+    },
+    {
+      "type": "bullets",
+      "module": "M5.3",
+      "kicker": "Activity, 10 minutes",
+      "title": "Decision worksheet: the Accounts domain",
+      "intro": "Individually, then pair-share: product wants an Accounts domain — billing disputes that also touch loyalty points and corporate invoicing.",
+      "bullets": [
+        {
+          "lead": "Score it.",
+          "text": "Against all ten criteria, alone, before comparing with your partner — commit to single-agent or multi-agent first."
+        },
+        {
+          "lead": "The deciding factor is rarely domain count.",
+          "text": "Permission boundaries and independent state usually decide it — loyalty points and corporate invoicing have different scopes than consumer refunds.",
+          "kind": "key"
+        },
+        {
+          "lead": "Disagreement is the point.",
+          "text": "If every pair reaches the same answer instantly, the scenario was too easy — a harder second case is a single 'VIP concierge' workflow that clearly stays single-agent."
+        }
+      ],
+      "notes": "Circulate; do not give the answer during scoring. Model answer for synthesis: Accounts likely favours multi-agent — permission boundaries plus independent state, not domain count alone. Make the point explicitly: a workflow scoring single-agent on eight of ten criteria should not become a fourth specialist just because the team likes agents."
+    },
+    {
+      "type": "checklist",
+      "module": "M5.3",
+      "title": "Apply this to your own systems",
+      "items": [
+        {
+          "lead": "Count the domains",
+          "text": "how many genuinely distinct domains does this workflow touch — not how many it TOUCHES",
+          "state": "yes"
+        },
+        {
+          "lead": "Name the deciding criterion",
+          "text": "one of the ten, not a feeling — permission boundaries and independent state usually decide it",
+          "state": "yes"
+        },
+        {
+          "lead": "Try workflow first",
+          "text": "if the steps are fixed and deterministic, that is M7's territory, not an agent decision",
+          "state": "yes"
+        },
+        {
+          "lead": "Keep the single-agent baseline",
+          "text": "if you do go multi-agent, prove the split earned its cost — never assert it",
+          "state": "yes"
+        },
+        {
+          "lead": "Defend it either way",
+          "text": "be ready to say, with a criterion, why your split is not Ryanair's — or why it should be",
+          "state": "yes"
+        }
+      ],
+      "notes": "This is the exit ticket for M5.3, not a status report — every item should be something the room can now DO, not something already finished. Transition line into Module 6: 'now that you know when not to multiply agents, this module teaches you how to run the ones you decided to keep, well.'"
+    },
+    {
+      "type": "section",
+      "kicker": "Module 6 · Hours 13-15",
+      "big": "M6",
+      "title": "Hierarchical delegation and orchestration",
+      "title_ar": "التفويض الهرمي وتنسيق الوكلاء",
+      "subtitle": "Three capable specialists, no one in charge — this module builds the thin supervisor that routes, hands off, aggregates and escalates.",
+      "items": [
+        "Route + aggregate",
+        "Scoped handoffs",
+        "Global budget",
+        "Clean escalation"
+      ],
+      "notes": "Say plainly this is where the four Module-1 disciplines — typed state, bounded loops, explicit termination, logged transitions — return at the level of a multi-agent system. Two hours, one lab, then the Day-3 architecture challenge closes the day by comparing this against agents-as-tools."
+    },
+    {
+      "type": "bullets",
+      "module": "M6",
+      "kicker": "Why this matters",
+      "title": "Three agents in a repo is not a system",
+      "intro": "Orchestration is the difference between three agents in a repo and a support system a business can operate.",
+      "bullets": [
+        {
+          "lead": "First hop matters.",
+          "text": "Routing accuracy determines whether a customer reaches the right specialist immediately, not after a wrong turn."
+        },
+        {
+          "lead": "Handoff discipline is trust.",
+          "text": "A specialist's work has to actually reach the customer — a lost handoff is worse than not delegating at all."
+        },
+        {
+          "lead": "Escalation is the safety valve.",
+          "text": "When no specialist can resolve it, a human takes over cleanly, with full context, before the customer is harmed."
+        },
+        {
+          "lead": "One auditable control point.",
+          "text": "Every routing and escalation decision logs through the supervisor — one place for risk and compliance to review automated decisions.",
+          "kind": "key"
+        }
+      ],
+      "aside": {
+        "tone": "warn",
+        "title": "WHERE THIS BITES",
+        "body": "Skip the hub and let specialists talk directly — that is the network topology's chaos, and it is exactly what produces the apology loop in this module's case study."
+      },
+      "notes": "Ask the room: in your own org's incident review, could someone point at the exact decision that routed a request wrong? Most cannot, because there is no single hub to point at. That gap is this module's whole argument. Four minutes, then the supervisor's two jobs."
+    },
+    {
+      "type": "cards",
+      "module": "M6",
+      "title": "One hub, every routing decision logged",
+      "cards": [
+        {
+          "label": "1",
+          "title": "A bank's support supervisor",
+          "body": "Routes a 'wrong charge on a delivered order' ticket first to Billing, then Disputes, aggregating both into one answer — the customer sees one conversation, not three."
+        },
+        {
+          "label": "2",
+          "title": "A telecom orchestrator",
+          "body": "Escalates anything unresolved within budget to a human queue WITH the full trace attached, so the human starts informed, not blind."
+        },
+        {
+          "label": "3",
+          "title": "A government platform's router",
+          "body": "Directs a multi-department request through the right sequence of specialists, logging each handoff for audit."
+        }
+      ],
+      "notes": "Ask which of these three feels closest to a workflow already running in the room's own organisation — most tables will pick the bank example, since a 'wrong charge on a delivered order' genuinely spans two systems. That is the same shape as Tawseel's mixed billing-plus-logistics ticket, coming up in the lab."
+    },
+    {
+      "type": "cards",
+      "module": "M6",
+      "title": "The supervisor's two jobs",
+      "cards": [
+        {
+          "label": "R",
+          "title": "Route",
+          "body": "Read shared state, decide the next specialist — or finish, or escalate. A classification decision, not domain work."
+        },
+        {
+          "label": "A",
+          "title": "Aggregate",
+          "body": "Compose possibly-several specialist results into ONE coherent reply — the customer sees one conversation, never a stitched transcript."
+        },
+        {
+          "label": "!",
+          "title": "Never domain work",
+          "tone": "key",
+          "body": "A supervisor that calls a tool itself has stopped being thin — undebuggable, and it defeats the whole point of specialisation."
+        }
+      ],
+      "notes": "This is the module's most quoted line, said out loud here for the first time: route and aggregate, never domain work. Ask: what would it look like for a supervisor to secretly do domain work? Answer, coming in the mistakes slide: it calls issue_refund itself 'to save a hop' — and now nothing about the decision is auditable."
+    },
+    {
+      "type": "flow",
+      "module": "M6",
+      "title": "The supervisor topology",
+      "rows": [
+        {
+          "label": "Route",
+          "steps": [
+            {
+              "text": "Ticket in"
+            },
+            {
+              "text": "Supervisor",
+              "sub": "decide",
+              "tone": "key"
+            },
+            {
+              "text": "Orders"
+            },
+            {
+              "text": "Logistics"
+            },
+            {
+              "text": "Billing"
+            }
+          ]
+        },
+        {
+          "label": "Return",
+          "steps": [
+            {
+              "text": "Specialist result"
+            },
+            {
+              "text": "Write-back",
+              "sub": "mandatory",
+              "tone": "key"
+            },
+            {
+              "text": "Supervisor decides again"
+            },
+            {
+              "text": "Aggregate",
+              "tone": "good"
+            },
+            {
+              "text": "Escalate",
+              "tone": "bad"
+            }
+          ]
+        }
+      ],
+      "caption": "Specialists never talk to each other directly — every edge in this graph either enters or leaves the supervisor hub.",
+      "notes": "Route a cross-domain ticket live through a hand-drawn version of this on the whiteboard first, before revealing the slide. Point at the second row's two exits — aggregate and escalate — and say these are the ONLY two ways out of this graph; there is no third path where a specialist just quietly finishes."
+    },
+    {
+      "type": "bullets",
+      "module": "M6",
+      "title": "Routing: getting the first hop right",
+      "intro": "Routing is a classification problem with a cost — a wrong route wastes a specialist call and delays resolution.",
+      "bullets": [
+        {
+          "lead": "LLM router.",
+          "text": "The supervisor model, given the ticket and specialist names and descriptions, emits the next specialist as a structured decision. Flexible, costs a model call."
+        },
+        {
+          "lead": "Deterministic router.",
+          "text": "For high-confidence intents — a valid order id with 'where is it' → Logistics — a cheap classifier routes with zero model calls."
+        },
+        {
+          "lead": "The production answer is hybrid.",
+          "text": "Deterministic routing for the confident majority, LLM routing for the ambiguous tail.",
+          "kind": "key"
+        },
+        {
+          "lead": "Measured, not assumed.",
+          "text": "routing_eval.jsonl maps tickets to their correct first specialist — route quality is a number, not a feeling."
+        }
+      ],
+      "notes": "Name orchestration/routing.py's classify_intent as the real deterministic router in this repo — pure stdlib regex, zero model calls, zero cost. Ask: why does Module 7's thesis ('a decision a rule can make should never be re-billed to a model') apply here first, before Module 7 even starts?"
+    },
+    {
+      "type": "flow",
+      "module": "M6",
+      "title": "Handoff anatomy: the lost-handoff bug",
+      "rows": [
+        {
+          "label": "Handoff",
+          "steps": [
+            {
+              "text": "Scoped context",
+              "sub": "scoped_input"
+            },
+            {
+              "text": "Explicit sub-goal"
+            },
+            {
+              "text": "Correlation id",
+              "sub": "ticket_id"
+            },
+            {
+              "text": "Specialist runs"
+            },
+            {
+              "text": "Write-back",
+              "sub": "mandatory",
+              "tone": "key"
+            }
+          ]
+        }
+      ],
+      "caption": "Skip the last box and the handoff is 'lost': the specialist ran, produced a result, and the customer is told nothing happened.",
+      "notes": "Show sim-lost-handoff's failure live if you can — a delegate that returns without writing the specialist's result to state, and the customer gets an empty answer. Ask: whose bug is this, the specialist's or the supervisor's? Always the supervisor's — the specialist did its job correctly."
+    },
+    {
+      "type": "bullets",
+      "module": "M6",
+      "title": "Aggregation, budget, escalation",
+      "intro": "When a ticket needs two specialists, the supervisor sequences them and aggregates — and the whole system is bounded as ONE.",
+      "bullets": [
+        {
+          "lead": "Aggregate, don't stitch.",
+          "text": "Billing AND Logistics for 'charged for a parcel that never arrived' — one coherent reply, not two disconnected ones."
+        },
+        {
+          "lead": "A global budget, not a per-agent one.",
+          "text": "handoff_count caps total delegations across ALL agents — the Module-1 termination lesson, now guarding inter-agent chatter loops.",
+          "kind": "key"
+        },
+        {
+          "lead": "Escalation is a first-class outcome.",
+          "text": "Not an error. Budget hit, no specialist resolves it, or a high-stakes action needs sign-off — escalate, deliberately."
+        },
+        {
+          "lead": "Full context, always.",
+          "text": "A human who inherits a half-finished ticket with no context is a worse experience than no agent at all."
+        }
+      ],
+      "notes": "Say 'the whole system is bounded as one, not each agent separately' slowly — it is the exact fix for the apology loop coming up in the case study. Ask: MAX_HANDOFFS is 4 in this repo — who decides that number for a real deployment, and against what evidence?"
+    },
+    {
+      "type": "code",
+      "module": "M6",
+      "title": "The thin supervisor and its budget",
+      "filename": "src/rafeeq/orchestration/supervisor.py",
+      "code": "# src/rafeeq/orchestration/supervisor.py\nMAX_HANDOFFS = 4   # GLOBAL budget across ALL agents, imported from core.config\n\nclass Route(BaseModel):\n    target: Literal[\"orders\", \"logistics\", \"billing\", \"finish\", \"escalate\"]\n    subgoal: str                                  # explicit sub-goal for the handoff\n\ndef supervise(state: RafeeqState) -> dict:\n    \"\"\"Decide the next specialist, or finish, or escalate. NO domain work.\"\"\"\n    if state[\"handoff_count\"] >= MAX_HANDOFFS:    # budget -> escalate, never loop\n        return {\"route\": \"escalate\"}\n    router = get_model().with_structured_output(Route)\n    decision = router.invoke([SystemMessage(content=ROUTER_SYSTEM_TEXT),\n                               *state[\"messages\"]])\n    return {\"route\": decision.target, \"subgoal\": decision.subgoal}\n\ndef route(state: RafeeqState) -> str:\n    return state[\"route\"]      # 'orders'|'logistics'|'billing'|'finish'|'escalate'",
+      "callouts": [
+        {
+          "lead": "Budget checked first",
+          "text": "The MAX_HANDOFFS check runs BEFORE the router is even asked — a chatter loop cannot outrun the budget by winning the race to route.",
+          "kind": "key"
+        },
+        {
+          "lead": "No domain work here",
+          "text": "supervise only ever returns a route decision — never calls a tool, never touches an order."
+        },
+        {
+          "lead": "route() is trivial on purpose",
+          "text": "It just reads state['route'] — kept as its own function so a test can call it with no langgraph installed."
+        }
+      ],
+      "notes": "Point at MAX_HANDOFFS = 4 and say it is imported from core.config elsewhere in the real repo, never re-declared — the same constant Module 1's step budget pattern established. Ask: what happens on handoff 5 if this check were AFTER the router call instead of before? One more wasted model call before the same escalation — small, but it is the difference between disciplined and merely lucky."
+    },
+    {
+      "type": "code",
+      "module": "M6",
+      "title": "Delegation: scoped, logged, written back",
+      "filename": "src/rafeeq/orchestration/delegate.py",
+      "code": "# src/rafeeq/orchestration/delegate.py\ndef make_delegate(name: str) -> Callable[[dict], dict]:\n    \"\"\"Returns the graph NODE for specialist `name`.\"\"\"\n    build_agent = SPECIALIST_BUILDERS[name]\n\n    def delegate(state: dict) -> dict:\n        payload = scoped_input(state, name)          # PDPL-scoped context only\n        _log_handoff(state.get(\"ticket_id\", \"\"), to=name, subgoal=state.get(\"subgoal\", \"\"))\n        agent = build_agent()                          # built once, cached\n        result = agent.invoke(payload)                  # the specialist runs\n        answer = result[\"messages\"][-1]\n        # MANDATORY write-back -- without this the handoff is 'lost'\n        return {\n            \"messages\": [answer],\n            \"last_result\": {**state.get(\"last_result\", {}), name: answer.content},\n            \"handoff_count\": state.get(\"handoff_count\", 0) + 1,\n        }\n    return delegate",
+      "callouts": [
+        {
+          "lead": "Scope reused, not reinvented",
+          "text": "scoped_input is Module 5's PDPL control — Architecture A does not roll its own context filter."
+        },
+        {
+          "lead": "Write-back is not optional",
+          "text": "The comment says it plainly — skip this return shape and the specialist's answer never reaches the customer.",
+          "kind": "key"
+        },
+        {
+          "lead": "handoff_count increments here",
+          "text": "Every delegate call feeds the SAME global budget supervise() checks — one counter, every specialist."
+        }
+      ],
+      "notes": "Trace handoff_count with your finger from this file into supervisor.py's MAX_HANDOFFS check — one shared counter, incremented in exactly one place. Ask: if a pair forgot the last_result line entirely, what would break? Nothing crashes — the customer just gets told nothing happened. That is the lost-handoff bug, reproduced by omission."
+    },
+    {
+      "type": "code",
+      "module": "M6",
+      "title": "The two exits: aggregate, escalate",
+      "filename": "src/rafeeq/orchestration/finish.py",
+      "code": "# src/rafeeq/orchestration/finish.py\ndef aggregate(state: dict) -> dict:\n    \"\"\"ONE coherent reply from possibly several specialists' results.\"\"\"\n    summary = get_model().invoke([\n        SystemMessage(content=\"Compose ONE clear reply to the customer in \"\n                              \"their language from these specialist results.\"),\n        *state[\"messages\"]])\n    return {\"messages\": [summary], \"resolution\": \"resolved\"}\n\ndef escalate(state: dict) -> dict:\n    \"\"\"Hand to a human WITH the full trace and state -- never a dead end.\"\"\"\n    _log_escalation(state[\"ticket_id\"], state)        # full context to the human queue\n    msg = (ESCALATE_MESSAGE_EN if state[\"locale\"] == \"en\" else ESCALATE_MESSAGE_AR)\n    return {\"messages\": [AIMessage(content=msg)], \"resolution\": \"escalated\"}",
+      "callouts": [
+        {
+          "lead": "One reply, not a transcript",
+          "text": "aggregate composes ONE customer-facing message from however many specialists answered."
+        },
+        {
+          "lead": "The full state, not a summary",
+          "text": "escalate logs state itself — the human queue gets everything the system knew, not a curated excerpt.",
+          "kind": "key"
+        },
+        {
+          "lead": "Bilingual by default",
+          "text": "ESCALATE_MESSAGE_EN / _AR — the customer is told plainly a person is taking over, in their own language."
+        }
+      ],
+      "notes": "Read the escalate docstring aloud: 'never a dead end.' Ask the room to contrast this with a chatbot that just times out silently — the difference is one function call that logs full context before the human ever sees the ticket. That is what 'escalation is a first-class outcome' means in code."
+    },
+    {
+      "type": "statement",
+      "kicker": "M6 — the one idea",
+      "statement": "The supervisor routes and aggregates and does nothing else.",
+      "statement_ar": "المشرف يوجّه ويجمع النتائج، ولا يقوم بأي عمل آخر.",
+      "attribution": "Module 6",
+      "notes": "Say it, pause, let it land — same rhythm as every module statement this week. Tie it to M5's statement explicitly: a specialist is a narrowing; a supervisor is a hub that never does the narrowed work itself. Two roles, two separate disciplines, never merged."
+    },
+    {
+      "type": "bullets",
+      "module": "M6",
+      "kicker": "Activity, 10 minutes",
+      "title": "Route-the-ticket race",
+      "intro": "No lecture — pairs manually route 12 tickets to specialists, then compare against the deterministic router's decisions.",
+      "bullets": [
+        {
+          "lead": "Route first, alone.",
+          "text": "12 tickets, no discussion — write down orders, logistics, billing or escalate for each."
+        },
+        {
+          "lead": "Compare against classify_intent.",
+          "text": "The router's actual decision, side by side with your own, ticket by ticket."
+        },
+        {
+          "lead": "Diagnose every disagreement.",
+          "text": "Was the human wrong, was the router wrong, or was the ticket genuinely ambiguous?",
+          "kind": "key"
+        }
+      ],
+      "notes": "Project the 12 tickets one at a time rather than handing out a sheet — it keeps pairs from skipping ahead. The teachable moment is almost always a ticket that straddles two domains; when a pair disagrees with the router there, ask which of routing.py's keyword lists is doing the (wrong) deciding."
+    },
+    {
+      "type": "bullets",
+      "module": "M6",
+      "title": "Six mistakes that break orchestration",
+      "bullets": [
+        {
+          "lead": "1. Fat supervisor.",
+          "text": "Does domain work itself — undebuggable, and defeats specialisation.",
+          "kind": "bad"
+        },
+        {
+          "lead": "2. Lost handoff.",
+          "text": "Specialist result never written back to shared state.",
+          "kind": "bad"
+        },
+        {
+          "lead": "3. No global budget.",
+          "text": "Each agent is bounded, but the system loops via handoffs.",
+          "kind": "bad"
+        },
+        {
+          "lead": "4. Escalation as a dead end.",
+          "text": "The human inherits no context.",
+          "kind": "bad"
+        },
+        {
+          "lead": "5. Dumping the whole conversation.",
+          "text": "Into every handoff — cost, and PII leakage.",
+          "kind": "bad"
+        },
+        {
+          "lead": "6. Routing with no eval.",
+          "text": "Nobody actually knows the first-hop accuracy.",
+          "kind": "bad"
+        }
+      ],
+      "notes": "Each of these is deliberately reproducible in this repo's sim branches — say so. Have the room match mistake 2 to sim-lost-handoff and mistake 3 to the chatter-loop probe before the case study; those two are the module's two 'money moments' and both are seeded in the eval set on purpose."
+    },
+    {
+      "type": "case",
+      "module": "M6",
+      "title": "Case study: the apology loop",
+      "scenario": "A telecom wired Billing, Technical and Accounts specialists as a peer network with no supervisor. A 'charged during an outage' ticket bounced Billing → Technical → Billing → Technical in an apology loop, running 30+ model calls before a timeout — with 40,000 contacts a day at stake, and no single log showing why.",
+      "challenge": "Make coordination reliable, bounded and auditable without losing the specialists' quality. No downtime; specialists owned by different teams; every automated decision must be reviewable; Arabic and English parity.",
+      "solution": "Introduce one thin supervisor as the sole coordinator — specialists no longer hand off to each other. Add a global handoff_count budget, mandatory result write-back, aggregation, and a clean escalation path carrying the full trace. The same ticket now resolves in three logged hops, or escalates with context, in one auditable place.",
+      "questions": [
+        "Why does a supervisor topology prevent the apology loop that a peer network allows?",
+        "What belongs in the handoff payload, and what must be excluded?",
+        "How do you set the global budget and escalation threshold defensibly?",
+        "What does the supervisor's log need to satisfy a compliance review of automated decisions?"
+      ],
+      "notes": "This is the network topology's chaos from earlier in the module, made concrete with a real number: 30+ model calls, zero answer. Push on question 3 especially — MAX_HANDOFFS = 4 in this repo is a design choice, not a law of nature; ask what evidence would justify 3 instead, or 6."
+    },
+    {
+      "type": "lab",
+      "module": "M6",
+      "title": "Lab 6 — the supervisor orchestrator",
+      "objective": "Build a thin supervisor that routes tickets to the Lab-5 specialists, passes scoped context, aggregates results, bounds the whole system, and escalates cleanly.",
+      "duration": "50 minutes",
+      "setup": "Lab 5 solution; RafeeqState extended with handoff_count, route, subgoal, last_result, ticket_id; routing_eval.jsonl; git checkout lab6-start",
+      "tasks": [
+        {
+          "lead": "10 min",
+          "text": "Implement supervise + route; wire START → supervisor → (orders|logistics|billing|finish|escalate); specialists loop back."
+        },
+        {
+          "lead": "10 min",
+          "text": "Implement make_delegate with scoped input and MANDATORY write-back; log each handoff."
+        },
+        {
+          "lead": "10 min",
+          "text": "Set MAX_HANDOFFS = 4; force a chatter-loop ticket and confirm it escalates instead of looping."
+        },
+        {
+          "lead": "10 min",
+          "text": "Run on routing_eval.jsonl; record first-hop accuracy and end-to-end resolution; compare with the Lab-5 monolith baseline."
+        },
+        {
+          "lead": "5 min",
+          "text": "Implement escalate carrying full context; test resolution=escalated on an unresolved ticket. Commit: feat: supervisor orchestration with scoped handoffs and escalation."
+        }
+      ],
+      "expected": "routing accuracy (first hop)   -> 94% correct specialist (routing_eval.jsonl)\nmixed ticket (charged+late)    -> billing -> logistics -> aggregate -> 1 answer (3 hops)\nchatter-loop ticket            -> escalated at handoff 4 (never loops)\nvs single-agent baseline       -> +19pt routing accuracy on mixed tickets",
+      "commit": "feat: supervisor orchestration with scoped handoffs and escalation",
+      "notes": "The two money moments: the chatter-loop ticket escalating at handoff 4 instead of running 30 calls, and the mixed 'charged for a late parcel' ticket producing ONE answer from two specialists. Seed both in the eval set. Make every pair diff routing accuracy against their Lab-5 monolith baseline — the jump on mixed tickets is today's payoff."
+    },
+    {
+      "type": "metrics",
+      "module": "M6",
+      "title": "What good looks like after M6",
+      "tiles": [
+        {
+          "value": "≥ 90%",
+          "label": "first-hop routing accuracy, target",
+          "tone": "default"
+        },
+        {
+          "value": "0",
+          "label": "lost-handoff incidents — write-back test",
+          "tone": "good"
+        },
+        {
+          "value": "100%",
+          "label": "escalations carry full context",
+          "tone": "good"
+        },
+        {
+          "value": "94%",
+          "label": "routing accuracy, mixed tickets (package reference)",
+          "tone": "key"
+        }
+      ],
+      "headers": [
+        "System",
+        "Routing accuracy (mixed)",
+        "Avg hops",
+        "Loops",
+        "Resolved"
+      ],
+      "rows": [
+        [
+          "Peer network (no supervisor)",
+          "n/a",
+          "up to 30 (timeout)",
+          "!bad frequent",
+          "62%"
+        ],
+        [
+          "Single-agent baseline",
+          "75%",
+          "1",
+          "none",
+          "78%"
+        ],
+        [
+          "!good Supervisor + specialists",
+          "!good 94%",
+          "2.4",
+          "!good 0",
+          "!good 91%"
+        ]
+      ],
+      "colW": [
+        3.6,
+        3.0,
+        1.8,
+        1.6,
+        2.09
+      ],
+      "footnote": "+19pt routing accuracy vs the single-agent baseline (94% vs 75%), 9% escalated cleanly with context — from Module 6's package example benchmark table, illustrative figures, not a promise for every ticket.",
+      "notes": "Point at the 'loops' column first — 'frequent' versus 0 is a pass/fail, not a spectrum, and it is the row the apology-loop case study exists to fix. Then walk the +19pt delta: that is the exact number the module's instructor guide calls the payoff, and every pair should be posting their own version of it to the shared board."
+    },
+    {
+      "type": "bullets",
+      "module": "M6",
+      "title": "Five-question recap",
+      "bullets": [
+        {
+          "lead": "Q1.",
+          "text": "What are the supervisor's two jobs? Route and aggregate — never domain work."
+        },
+        {
+          "lead": "Q2.",
+          "text": "What must a handoff carry? Scoped context, an explicit sub-goal, a correlation id."
+        },
+        {
+          "lead": "Q3.",
+          "text": "What is a lost handoff, and its fix? Specialist result not written back; enforce mandatory write-back."
+        },
+        {
+          "lead": "Q4.",
+          "text": "Why bound the SYSTEM, not just each agent? To stop inter-agent chatter loops."
+        },
+        {
+          "lead": "Q5.",
+          "text": "What must escalation carry? Full trace and state to the human — never a dead end.",
+          "kind": "key"
+        }
+      ],
+      "notes": "Same cold-call format as every recap this week. If Q4 gets a partial answer that only mentions one agent's own step budget, redirect to the apology-loop case study number — 30+ model calls happened precisely because no ONE budget covered the whole system."
+    },
+    {
+      "type": "checklist",
+      "module": "M6",
+      "title": "M6 exit check before the architecture challenge",
+      "items": [
+        {
+          "lead": "Thin supervisor",
+          "text": "routes and aggregates only; MAX_HANDOFFS imported, never re-declared",
+          "state": "yes"
+        },
+        {
+          "lead": "Mandatory write-back",
+          "text": "every specialist result merged into shared state before routing again",
+          "state": "yes"
+        },
+        {
+          "lead": "Clean escalation",
+          "text": "carries the full trace, sets resolution=escalated",
+          "state": "yes"
+        },
+        {
+          "lead": "Benchmark table",
+          "text": "routing accuracy and hops measured against the Lab-5 baseline",
+          "state": "yes"
+        },
+        {
+          "lead": "Architecture B",
+          "text": "agents-as-tools — not built yet, that is the challenge next",
+          "state": "no"
+        }
+      ],
+      "notes": "Same bridge-slide purpose as every exit check this week. If more than a couple of pairs are red on write-back, do not open the architecture challenge until someone can trace handoff_count with a finger from delegate.py into supervisor.py's MAX_HANDOFFS check."
+    },
+    {
+      "type": "bullets",
+      "kicker": "The Day 3 architecture challenge",
+      "module": "M5/M6",
+      "title": "Two ways to build the same team",
+      "intro": "Same three specialists, same context-isolation control — two different ways to coordinate them. This turns M5 and M6 into systems engineering, not a multi-agent chat demo.",
+      "bullets": [
+        {
+          "lead": "Architecture A — supervisor.",
+          "text": "orchestration/supervisor.py + delegate.py + finish.py. Control flow is literally drawable as graph structure."
+        },
+        {
+          "lead": "Architecture B — agents-as-tools.",
+          "text": "orchestration/agents_as_tools.py. ONE Rafeeq agent whose tool belt includes orders_agent(), logistics_agent(), billing_agent()."
+        },
+        {
+          "lead": "LangGraph's own material makes the case.",
+          "text": "Wrapping a sub-agent as a tool forces its interface through a typed, schema-validated function signature — GREATER CONTROL and STRONGER TYPING than a generic supervisor's free-form target/subgoal strings.",
+          "kind": "key"
+        },
+        {
+          "lead": "Both reuse the same scoped_input.",
+          "text": "The comparison is a routing-topology difference, not a difference in what each specialist may see or do."
+        }
+      ],
+      "notes": "Say plainly: this is not a rematch of the M5.3 single-vs-multi debate — both architectures here ARE multi-agent, the question is only how they coordinate. Preview that Lab 5 already previewed Architecture B's plumbing offline; scripts/compare_arch.py needs langgraph for the real numbers, which land in the capstone."
+    },
+    {
+      "type": "flow",
+      "module": "M6",
+      "title": "Architecture A: supervisor graph",
+      "rows": [
+        {
+          "label": "Graph",
+          "steps": [
+            {
+              "text": "START"
+            },
+            {
+              "text": "supervise",
+              "sub": "routing hub",
+              "tone": "key"
+            },
+            {
+              "text": "specialist node"
+            },
+            {
+              "text": "supervise again"
+            },
+            {
+              "text": "finish / escalate"
+            }
+          ]
+        }
+      ],
+      "caption": "Every decision is a conditional edge — a compliance reviewer can point at the exact edge a decision took.",
+      "notes": "This is the same hub-and-spoke shape from the M6 topology slide, redrawn here explicitly as Architecture A for the comparison — say so, it is deliberate repetition, not a new diagram. The selling point is inspectability: draw the routing decision tree on the board and point at one edge as one decision."
+    },
+    {
+      "type": "flow",
+      "module": "M6",
+      "title": "Architecture B: agents-as-tools",
+      "rows": [
+        {
+          "label": "Graph",
+          "steps": [
+            {
+              "text": "Rafeeq agent",
+              "sub": "one ReAct loop"
+            },
+            {
+              "text": "orders_agent()",
+              "sub": "typed tool"
+            },
+            {
+              "text": "logistics_agent()",
+              "sub": "typed tool"
+            },
+            {
+              "text": "billing_agent()",
+              "sub": "typed tool"
+            },
+            {
+              "text": "Compose reply"
+            }
+          ]
+        }
+      ],
+      "caption": "Routing IS tool selection — schema-checked in, schema-checked out, the same mechanism every other tool call in this repo already uses.",
+      "notes": "Contrast with the previous slide directly: no route/handoff_count graph machinery at all — one agent's own step-bounded reasoning trace does the coordinating. Name the honest trade-off: harder to bound with a supervisor-style global budget, because how many sub-agent calls one ReAct loop makes is the model's call, not a dedicated counter."
+    },
+    {
+      "type": "table",
+      "module": "M6",
+      "title": "Fill this in: Architecture A vs B",
+      "headers": [
+        "Metric",
+        "Architecture A — supervisor",
+        "Architecture B — agents-as-tools"
+      ],
+      "rows": [
+        [
+          "Task success (tickets_eval.jsonl)",
+          "",
+          ""
+        ],
+        [
+          "Avg tool / sub-agent calls per ticket",
+          "",
+          ""
+        ],
+        [
+          "Avg tokens per ticket",
+          "",
+          ""
+        ],
+        [
+          "p95 latency per ticket",
+          "",
+          ""
+        ],
+        [
+          "Handoff / delegation failures",
+          "",
+          ""
+        ],
+        [
+          "Unauthorised-action risk",
+          "",
+          ""
+        ]
+      ],
+      "colW": [
+        4.5,
+        3.795,
+        3.795
+      ],
+      "footnote": "Fill this from a real run of scripts/compare_arch.py — never hand-wave these numbers (SPEC §6). --dry-run exercises the plumbing offline; the real comparison needs langgraph.",
+      "notes": "Do not fill this in for the room — hand it to teams blank, exactly as it appears in docs/ARCHITECTURE.md. If langgraph is not installed, run compare_arch.py --dry-run together and read the module's trade-off argument aloud instead of guessing numbers; the capstone is where the real run happens."
+    },
+    {
+      "type": "closing",
+      "title": "Day 3 in one line",
+      "title_ar": "اليوم الثالث في جملة واحدة",
+      "points": [
+        "A specialist is a narrowing, not a new brain — scoped tools, a focused prompt, isolated context.",
+        "Multi-agent is a trade, not a free upgrade — prove it on the eval set, keep the monolith baseline alive.",
+        "More agents are not automatically better — Ryanair reportedly went to one, OPLOG scaled a team; ten criteria decide, not the reflex.",
+        "A supervisor routes and aggregates and does nothing else — mandatory write-back, a global budget, escalation with full context.",
+        "The same team, two architectures — supervisor or agents-as-tools — and the honest comparison is a number, not a preference."
+      ],
+      "notes": "Read the five points slowly — this is the slide people photograph on the way out. Tie back to today's two case studies: SoukNow was fixed by decomposition, the telecom apology loop was fixed by a hub. Preview Module 7 in one sentence: tomorrow, the rules inside every prompt become testable branches."
+    },
+    {
+      "type": "checklist",
+      "title": "Exit ticket: before you leave today",
+      "items": [
+        {
+          "lead": "Lab 5 committed",
+          "text": "three specialists, scoped context, monolith kept alive in the harness",
+          "state": "yes"
+        },
+        {
+          "lead": "Lab 6 committed",
+          "text": "thin supervisor, mandatory write-back, global budget, clean escalation",
+          "state": "yes"
+        },
+        {
+          "lead": "M5.3 answer",
+          "text": "score your own riskiest workflow against the ten criteria — single, workflow, or multi-agent",
+          "state": "yes"
+        },
+        {
+          "lead": "Architecture A vs B",
+          "text": "started, not finished — real numbers from compare_arch.py land in the capstone",
+          "state": "no"
+        },
+        {
+          "lead": "Not yet",
+          "text": "flow engineering and guardrails — that is Day 4",
+          "state": "no"
+        }
+      ],
+      "notes": "This is the last slide of the day — do not skip it for time. If more than a couple of pairs are red on the write-back or global-budget rows, that is exactly what tomorrow's floater time is for, not a reason to move on regardless."
+    }
+  ]
+}

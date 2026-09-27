@@ -1,0 +1,136 @@
+# Stackable certificates and micro-specialisations.
+# Source: shared/catalog-sources/SDAIA_Academy_Module_Catalog_v2.xlsx, sheet 'Certification Pathways' (extracted verbatim).
+# `modules` lists the course codes named in `requirements` (range expressions such as FND-101 → FND-105 are expanded below by hand where noted).
+certificates:
+- name: AI & Data Foundations Certificate
+  name_ar: شهادة أساسيات الذكاء الاصطناعي والبيانات
+  type: Level certificate
+  requirements: SDA-FND-101 → SDA-FND-105 (all five)
+  modules:
+  - SDA-FND-101
+  - SDA-FND-102
+  - SDA-FND-103
+  - SDA-FND-104
+  - SDA-FND-105
+  total_days: 17
+  exit_level: Practitioner
+- name: AI Engineer Practitioner Certificate
+  name_ar: شهادة ممارس هندسة الذكاء الاصطناعي
+  type: Level certificate
+  requirements: Foundations Certificate + AIE-111, AIE-112, AIE-113
+  modules:
+  - SDA-AIE-111
+  - SDA-AIE-112
+  - SDA-AIE-113
+  total_days: 29
+  exit_level: Practitioner
+- name: AI Engineer Specialist Certificate
+  name_ar: شهادة متخصص هندسة الذكاء الاصطناعي
+  type: Level certificate
+  requirements: Practitioner Certificate + AIE-216 + any 3 of AIE-211/212/213/214/215
+  modules:
+  - SDA-AIE-211
+  - SDA-AIE-212
+  - SDA-AIE-213
+  - SDA-AIE-214
+  - SDA-AIE-215
+  - SDA-AIE-216
+  total_days: 45
+  exit_level: Specialist
+- name: AI Engineer Expert Professional Certificate
+  name_ar: الشهادة الاحترافية لخبير هندسة الذكاء الاصطناعي
+  type: Professional certificate
+  requirements: Specialist Certificate + AIE-311, AIE-312, AIE-313 + one elective (AIE-314/315) + Capstone AIE-390
+  modules:
+  - SDA-AIE-311
+  - SDA-AIE-312
+  - SDA-AIE-313
+  - SDA-AIE-314
+  - SDA-AIE-315
+  - SDA-AIE-390
+  total_days: 65
+  exit_level: Expert
+- name: Data Scientist Practitioner Certificate
+  name_ar: شهادة ممارس علم البيانات
+  type: Level certificate
+  requirements: Foundations Certificate + DSC-111, DSC-112 + AIE-111 (cross-listed)
+  modules:
+  - SDA-AIE-111
+  - SDA-DSC-111
+  - SDA-DSC-112
+  total_days: 29
+  exit_level: Practitioner
+- name: Data Scientist Specialist Certificate
+  name_ar: شهادة متخصص علم البيانات
+  type: Level certificate
+  requirements: Practitioner Certificate + DSC-211, DSC-213 + any 2 of DSC-212/214/215
+  modules:
+  - SDA-DSC-211
+  - SDA-DSC-212
+  - SDA-DSC-213
+  - SDA-DSC-214
+  - SDA-DSC-215
+  total_days: 45
+  exit_level: Specialist
+- name: Data Scientist Expert Professional Certificate
+  name_ar: الشهادة الاحترافية لخبير علم البيانات
+  type: Professional certificate
+  requirements: Specialist Certificate + any 3 of DSC-311/312/313 + Capstone DSC-390
+  modules:
+  - SDA-DSC-311
+  - SDA-DSC-312
+  - SDA-DSC-313
+  - SDA-DSC-390
+  total_days: 59
+  exit_level: Expert
+- name: GenAI Engineering Specialization
+  name_ar: تخصص هندسة الذكاء التوليدي
+  type: Micro-specialization
+  requirements: AIE-213 + AIE-214 + AIE-215 + AIE-311
+  modules:
+  - SDA-AIE-213
+  - SDA-AIE-214
+  - SDA-AIE-215
+  - SDA-AIE-311
+  total_days: 16
+  exit_level: Specialist→Expert
+- name: MLOps & AI Reliability Specialization
+  name_ar: تخصص عمليات وموثوقية الذكاء الاصطناعي
+  type: Micro-specialization
+  requirements: AIE-216 + AIE-312 + AIE-314
+  modules:
+  - SDA-AIE-216
+  - SDA-AIE-312
+  - SDA-AIE-314
+  total_days: 12
+  exit_level: Specialist→Expert
+- name: AI Security Specialization
+  name_ar: تخصص أمن الذكاء الاصطناعي
+  type: Micro-specialization
+  requirements: SDA-FND-105 + AIE-313 + AIE-311
+  modules:
+  - SDA-AIE-311
+  - SDA-AIE-313
+  - SDA-FND-105
+  total_days: 11
+  exit_level: Expert
+- name: Analytics & Experimentation Specialization
+  name_ar: تخصص التحليلات والتجريب
+  type: Micro-specialization
+  requirements: DSC-212 + DSC-213 + DSC-311
+  modules:
+  - SDA-DSC-212
+  - SDA-DSC-213
+  - SDA-DSC-311
+  total_days: 10
+  exit_level: Specialist→Expert
+- name: Data Engineering for AI Specialization
+  name_ar: تخصص هندسة البيانات للذكاء الاصطناعي
+  type: Micro-specialization
+  requirements: DSC-214 + DSC-215 + DSC-313
+  modules:
+  - SDA-DSC-214
+  - SDA-DSC-215
+  - SDA-DSC-313
+  total_days: 11
+  exit_level: Specialist→Expert
