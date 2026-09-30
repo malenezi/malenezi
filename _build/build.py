@@ -317,6 +317,10 @@ SELECTED_PUBS = [
 # The 2026 single-author working-paper series on AI-native and agentic software
 # engineering — the current research programme, published as arXiv preprints.
 RESEARCH_PROGRAMME = [
+    ("How AI Changes DevOps Performance: A Mechanism-Based Simulation", "arXiv:2609.32414",
+     "Separates AI-generated code from agentic AI and simulates their effect on all five DORA metrics — "
+     "showing that delivery performance responds to AI through queueing, batching and oversight, not only "
+     "code quality, with guardrails for agentic remediation and a field-validation protocol."),
     ("The Rise of AI-Native Software Engineering", "arXiv:2606.12986",
      "A systematic review of 48 peer-reviewed studies (2016–2026) on what generative and agentic AI change "
      "for practice, competencies, professional roles and the outcomes universities must deliver."),
@@ -351,9 +355,11 @@ RESEARCH_PROGRAMME = [
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
              7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
-CITATIONS = "8,000+"
+# Google Scholar, read by hand on 30 Sep 2026: 8,191 citations (7,503 since 2021),
+# h-index 37 (34 since 2021), i10-index 100 (82 since 2021).
+CITATIONS = "8,100+"
 H_INDEX = "37"
-I10_INDEX = "98"
+I10_INDEX = "100"
 
 
 def peer_reviewed(pubs):
@@ -368,9 +374,9 @@ def peer_reviewed(pubs):
 def metrics(pubs):
     c = peer_reviewed(pubs)
     return [
-        (CITATIONS, "Citations", "Google Scholar"),
-        (H_INDEX, "h-index", "Career total"),
-        (I10_INDEX, "i10-index", "Career total"),
+        (CITATIONS, "Citations", "Google Scholar · 7,500+ since 2021"),
+        (H_INDEX, "h-index", "Career total · 34 since 2021"),
+        (I10_INDEX, "i10-index", "Career total · 82 since 2021"),
         (str(c["reviewed"]), "Publications", "Peer-reviewed"),
         ("2015", "Executive roles since", "CIO · dean · director · GM"),
     ]
@@ -460,6 +466,22 @@ JOURNAL_REVIEWING = [
     "Journal of Experimental &amp; Theoretical Artificial Intelligence",
 ]
 
+# Keynotes, panels and invited sessions — newest first.
+# (title, event, date · place, description, [(link label, url), ...])
+PANELS = [
+    ("Building Institutional Capacity for AI in Public Administrations",
+     "UNESCO GFEAI 2026",
+     "16 Sep 2026",
+     "4th UNESCO Global Forum on the Ethics of AI · Main Plenary · Riyadh. Panellist, representing the SDAIA Academy and the Kingdom of Saudi Arabia, in a Day&nbsp;2 plenary on "
+     "how public administrations build the institutional capacity AI adoption depends on. Fellow panellists "
+     "came from Türkiye (CAIDP), Kazakhstan and the UAE (Mohammed Bin Rashid School of Government), Benin "
+     "(African Training and Research Centre in Administration for Development), Poland (UNESCO Ethical "
+     "Impact Assessment), Belgium (Digitaal Vlaanderen) and Jamaica. Hosted in Riyadh with UNESCO, SDAIA "
+     "and ICAIRE.",
+     [("Session announcement", "https://www.linkedin.com/posts/icaire-ai_saudiaiyear-gfeai-activity-7504642062747590658-u5EH"),
+      ("Panel recap", "https://www.linkedin.com/posts/icaire-ai_gfeai-saudiaiyear-activity-7505935686781440000-8vSK")]),
+]
+
 TALKS = [
     ("CCIS Low Enrollment: Trends, Challenges and Solutions",
      "A data-led look at declining computing enrolment and what institutions can do about it.",
@@ -473,6 +495,7 @@ TALKS = [
 ]
 
 SPEAKING_TOPICS = [
+    "Building institutional capacity for AI in public administrations",
     "Building national AI and data capability: from strategy to accredited learning pathways",
     "AI-native software engineering: what agentic systems change for teams, architecture and the engineering role",
     "Educating the agentic engineer: curricula and certification for an AI-first profession",
@@ -1134,6 +1157,11 @@ def build_speaking(insights):
     regional = "".join(
         '<li><b>{t}</b><span>{m}</span><p>{d}</p></li>'.format(t=t, m=m, d=d)
         for t, m, d in REGIONAL_SERVICE)
+    panels = "".join(
+        '<li><b>{t}</b><span>{e} · {w}</span><p>{d}</p><p>{l}</p></li>'.format(
+            t=t, e=e, w=w, d=d, l=" · ".join(
+                '<a href="%s" rel="noopener" target="_blank">%s</a>' % (html.escape(u), lb) for lb, u in links))
+        for t, e, w, d, links in PANELS)
     posts = "".join(
         '<li><b dir="auto"><a href="{u}" rel="noopener" target="_blank">{t}</a></b><span>{d} · {s}</span></li>'.format(
             u=html.escape(p["url"]), t=html.escape(p["title"]), d=html.escape(p["date"]),
@@ -1141,7 +1169,8 @@ def build_speaking(insights):
 
     body = page_head(
         "Speaking, chairing and writing.",
-        "Two regional AI committee leadership roles, three international conferences chaired, programme "
+        "A plenary panel at the UNESCO Global Forum on the Ethics of AI, two regional AI committee leadership "
+        "roles, three international conferences chaired, programme "
         "committees for a dozen more, peer review for eleven indexed journals, and a steady stream of "
         "essays on AI and engineering leadership.",
         "Speaking &amp; media") + """
@@ -1159,6 +1188,17 @@ def build_speaking(insights):
 <section class="sec sec--tint">
   <div class="wrap">
     <div class="sec-head reveal">
+      <span class="eyebrow">Recent panels &amp; keynotes</span>
+      <h2>On the global stage.</h2>
+      <p>Invited plenaries and panels on AI capability, governance and ethics.</p>
+    </div>
+    <ul class="rows reveal">{panels}</ul>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
       <span class="eyebrow">Regional committee leadership</span>
       <h2>Arab Standing Committee on AI.</h2>
       <p>Leadership of two of the six technical teams under the Arab Ministerial Council for Communications
@@ -1168,7 +1208,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--tint">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Conference leadership</span>
@@ -1179,7 +1219,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec sec--tint">
+<section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Workshops &amp; presentations</span>
@@ -1189,7 +1229,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--tint">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Peer review &amp; committees</span>
@@ -1210,7 +1250,7 @@ def build_speaking(insights):
   </div>
 </section>
 
-<section class="sec sec--tint">
+<section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Writing</span>
@@ -1222,10 +1262,10 @@ def build_speaking(insights):
   </div>
 </section>
 """.format(topics=topics, chairs=chairs, talks=talks, pcs=pcs, revs=revs, posts=posts,
-           regional=regional, count=len(insights), arrow=ICONS["arrow"])
+           regional=regional, panels=panels, count=len(insights), arrow=ICONS["arrow"])
 
     return shell("speaking.html", "Speaking & Media — Prof. Mamdouh Alenezi",
-                 "Regional AI committee leadership, conference chairing, programme committees, journal peer "
+                 "UNESCO GFEAI 2026 plenary panel, regional AI committee leadership, conference chairing, programme committees, journal peer "
                  "review, workshops and public writing by Prof. Mamdouh Alenezi on AI capability, governance "
                  "and software engineering.",
                  body)
