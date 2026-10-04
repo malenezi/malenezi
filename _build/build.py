@@ -694,6 +694,14 @@ def build_index(insights, pubs):
 
 # ----------------------------------------------------------------- about ---
 
+# Top1000 Scholar 2026 (Scholarly Index) — verified on the public profile, 4 Oct 2026.
+TOP1000_NOTE = (
+    ' <br><small>Ranked <strong>#10 worldwide</strong> and <strong>#1 in Saudi Arabia</strong> in Engineering '
+    'Education and Technology in the '
+    '<a href="https://scholarlyindex.com/scholars/SI-c8eb24eb21d4e7d51885c135198e449e" rel="noopener" '
+    'target="_blank">Top1000 Scholar 2026</a> ranking &mdash; top 0.54%, impact score 96.41.</small>')
+
+
 def page_head(title, lede, eyebrow):
     return """
 <section class="page-head">
@@ -928,7 +936,8 @@ def build_publications(pubs):
         "%d peer-reviewed works published between %s — software security and vulnerability prediction, "
         "AI for software engineering, mining software repositories, empirical software quality, and "
         "software engineering education — plus %d working papers from the 2026 programme on AI-native "
-        "software engineering." % (counts["reviewed"], span, counts.get("preprint", 0)),
+        "software engineering." % (counts["reviewed"], span, counts.get("preprint", 0))
+        + TOP1000_NOTE,
         "Research") + """
 <section class="sec" id="programme">
   <div class="wrap">
