@@ -1,8 +1,159 @@
 # قاعدة بيانات خريجي أكاديمية سدايا — Graduates Database
 
-**الإصدار:** 3 أكتوبر 2026 — جولة مسح منشورات LinkedIn وفحص القصص (3,189 → 3,223 · القصص 118 → 125 · جهات العمل 73 → 75). قبله: 2 أكتوبر 2026 (ب) — جولة إكمال الفجوات ومسح منشورات LinkedIn (3,180 → 3,189). قبله: 2 أكتوبر 2026 — قصة عبدالله العويد (117 → 118 · جهات العمل 72 → 73). قبله: 30 سبتمبر 2026 (ب) — **فحص قصص النجاح**: 5 قصص جديدة (112 → 117 · جهات العمل 69 → 72). ثم **جولة الإثراء السريع لدفعات 2024–2026**: 95 سجلًا جديدًا (3,085 → 3,180) و19 إثراءً، لا قصص جديدة. الإصدار السابق: 28 سبتمبر 2026 — **جولة مراجعة دفعتَي 2025–2026 والتدقيق**: لا قصص نجاح جديدة (7 صفحات خبرة مقروءة، كلها مرفوضة)، 7 تصحيحات سجلات، ودمج تكرارين داخليين (3,087 → 3,085). الإصدار السابق: 26 سبتمبر 2026 — **جولة تحقق أربعة خريجين من قائمة الأكاديمية**: سجل جديد (3,086 → 3,087)، وثلاثة إثراءات بتواريخ من صفحات الخبرة على لينكدإن، وقصة نجاح جديدة (111 → 112 · جهات العمل 68 → 69).
+**الإصدار:** 6 أكتوبر 2026 — جولة المسح العميق والتنظيف النهائي (3,223 → 3,309 · القصص 125 → 168 · جهات العمل 75 → 89). قبله: 3 أكتوبر 2026 — جولة مسح منشورات LinkedIn وفحص القصص (3,189 → 3,223 · القصص 118 → 125 · جهات العمل 73 → 75). قبله: 2 أكتوبر 2026 (ب) — جولة إكمال الفجوات ومسح منشورات LinkedIn (3,180 → 3,189). قبله: 2 أكتوبر 2026 — قصة عبدالله العويد (117 → 118 · جهات العمل 72 → 73). قبله: 30 سبتمبر 2026 (ب) — **فحص قصص النجاح**: 5 قصص جديدة (112 → 117 · جهات العمل 69 → 72). ثم **جولة الإثراء السريع لدفعات 2024–2026**: 95 سجلًا جديدًا (3,085 → 3,180) و19 إثراءً، لا قصص جديدة. الإصدار السابق: 28 سبتمبر 2026 — **جولة مراجعة دفعتَي 2025–2026 والتدقيق**: لا قصص نجاح جديدة (7 صفحات خبرة مقروءة، كلها مرفوضة)، 7 تصحيحات سجلات، ودمج تكرارين داخليين (3,087 → 3,085). الإصدار السابق: 26 سبتمبر 2026 — **جولة تحقق أربعة خريجين من قائمة الأكاديمية**: سجل جديد (3,086 → 3,087)، وثلاثة إثراءات بتواريخ من صفحات الخبرة على لينكدإن، وقصة نجاح جديدة (111 → 112 · جهات العمل 68 → 69).
 
 > ملف موحّد يدمج جميع المصادر الداخلية والعلنية للمشروع. **لم تُنقل عناوين البريد الإلكتروني ولا أرقام الهوية** إلى هذا المخرج (قيد خصوصية حاكم). الحقول الفارغة تعني «غير موثّق علنًا» — لا تُخمَّن.
+
+---
+
+## جولة المسح العميق والتنظيف النهائي — 6 أكتوبر 2026
+
+**الخريجون 3,223 → 3,309 · القصص 125 → 168 · جهات العمل 75 → 89.**
+
+**1) سجلات جديدة (86)** — بحث الأشخاص على LinkedIn (18 استعلامًا) ثم صفحة الخبرة: قيد تدريب مؤرخ يسمّي برنامج الأكاديمية تحت جهة SDAIA. استُبعد من لا يظهر اسمه إلا بالأحرف الأولى، ومن قيده تدريب عام في سدايا (تعاوني/متدرب) دون برنامج للأكاديمية.
+
+| # | الاسم | الاسم الإنجليزي | البرنامج | الدفعة | الرابط |
+|---|---|---|---|---|---|
+| 3224 | جمانة السهلي | Jomanah Alsahali | معسكر تعلم الآلة والذكاء الاصطناعي — أكاديمية سدايا (Machine Learning & AI Trainee) | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/jomanah-alsahali-974759283/ |
+| 3225 | عواطف السلمي | Awatef Alsulami | معسكر T5 لتقنيات إدارة الزحام (Zeham / Crowd Management Technologies Bootcamp) — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/aw-alsulami/ |
+| 3226 | حنين الحربي | Hanin Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/hanin-alharbi-2047a3314/ |
+| 3227 | هيفاء الحسيني | Haifa Alhusayni | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | فبراير–يونيو 2024 | https://www.linkedin.com/in/haifa-alhusayni-233658286/ |
+| 3228 | عبدالعزيز العنزي | Abdulaziz Alenazi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (مارس–يونيو 2024) + التدريب الاحترافي في النماذج اللغوية الكبيرة (علّام، يوليو–سبتمبر 2024) — أكاديمية سدايا | مارس–يونيو 2024 (T5) · يوليو–سبتمبر 2024 (علّام) | https://www.linkedin.com/in/abdulaziz-alenazi/ |
+| 3229 | غادة الشويعر | Ghada A. Alshuwaier | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/ghada-a-alshuwaier-3458ba225/ |
+| 3230 | منى الجهرش | Mona Al jahrash | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/mona-al-jahrash-3a0a19225/ |
+| 3231 | معالي التليهي | Maali Altulayhi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/maali-altulayhi-bb765a169/ |
+| 3232 | لمى الزكري | Lama Al-Zakri | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/lama-al-zakri-%D9%84%D9%80%D9%85%D9%89-%D8%A7%D9%84%D8%B2%D9%83%D8%B1%D9%8A-502087200/ |
+| 3233 | أمل المتعب | Amal Al-Muteb | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2021 | https://www.linkedin.com/in/amalalmuteb/ |
+| 3234 | رفال الحربي | Refal Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/refal-alharbi/ |
+| 3235 | رشا الغامدي | Rasha Alghamdi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/rashacs/ |
+| 3236 | ضحى العبدالوهاب | Dhuha Alabdulwahab | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/dhuha-alabdulwahab-63a52121b/ |
+| 3237 | مها الهنتوم | Maha Alhantoom | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/maha-alhantoom/ |
+| 3238 | عبدالرحمن الجبيلان | Abdulrahman Aljubaylan | معسكر T5 لعلوم البيانات — أكاديمية سدايا | نوفمبر–ديسمبر 2021 | https://www.linkedin.com/in/abdulrahman-aljubaylan-msc-03a9b2182/ |
+| 3239 | لجين المباركي | Lujain Al Mubarki | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/lujain-al-mubarki/ |
+| 3240 | أسماء الغامدي | Asma Alghamdi | معسكر T5 لعلوم البيانات — أكاديمية سدايا | سبتمبر–أكتوبر 2021 | https://www.linkedin.com/in/asmamgh/ |
+| 3241 | جنى سعداوي | Jana Sadawi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/jana-sadawi-29455a1ab/ |
+| 3242 | عبدالله المنصور | Abdullah Almansour | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | أكتوبر–ديسمبر 2023 | https://www.linkedin.com/in/abdullah-almansour-1aa829235/ |
+| 3243 | عبدالله نعيم | Abdullah Naeem | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/abdullah-naeem-178245225/ |
+| 3244 | فاتن الدوسري | Faten Aldossary | معسكر T5 لعلوم البيانات — أكاديمية سدايا | نوفمبر–ديسمبر 2021 | https://www.linkedin.com/in/faten-aldossary-mba-60050b1b6/ |
+| 3245 | حليمة الرشيدي | Halima Alrashidi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/halima-alrashidi-a03930216/ |
+| 3246 | فاطمة العيسى | Fatima Aleisa | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/fatima-aleisa/ |
+| 3247 | سعاد الصومالي | Suad Alsomali | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/suad-alsomali/ |
+| 3248 | ليان العريض | Layan Alorayyidh | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/layan-alorayyidh-829b74216/ |
+| 3249 | مهند الدوسري | Muhannad Aldossary | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/muhannadaldossary/ |
+| 3250 | فيصل الحربي | Faisal Alharbi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/faisal-alharbi-689b67283/ |
+| 3251 | تهاني الدوسري | Tahani Aldawsari | معسكر T5 لعلوم البيانات — أكاديمية سدايا | سبتمبر–ديسمبر 2021 | https://www.linkedin.com/in/tahani-aldawsari/ |
+| 3252 | سمر الجهني | Samar Aljohani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/samar-aljohani-61671621a/ |
+| 3253 | عبدالعزيز عبدالله | Abdulaziz Abdullah | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يوليو 2024 | https://www.linkedin.com/in/abdulaziz-abdullah-b413a2164/ |
+| 3254 | علي الغامدي | Ali Alghamdi | معسكر هندسة تطبيقات الذكاء الاصطناعي — أكاديمية سدايا × جامعة أكسفورد | سبتمبر–أكتوبر 2025 | https://www.linkedin.com/in/ali-gmidi/ |
+| 3255 | مازن طوهري | Mazen Tawhari | معسكر سدايا لحديثي التخرج في البيانات والذكاء الاصطناعي (SDAIA Fresh Graduate Bootcamp) | أغسطس–سبتمبر 2023 | https://www.linkedin.com/in/mazen-tawhari-300a2a216/ |
+| 3256 | نورة الصقر | Noura Alsaqer | معسكر سدايا لحديثي التخرج في البيانات والذكاء الاصطناعي (أغسطس–سبتمبر 2023) + أبطال صيف الذكاء الاصطناعي (2022) | أغسطس–سبتمبر 2023 | https://www.linkedin.com/in/noura-alsaqer-5b449b191/ |
+| 3257 | جنى العميري | Jana Alomayri | معسكر مطوري أنظمة ServiceNow — أكاديمية سدايا | سبتمبر–نوفمبر 2025 | https://www.linkedin.com/in/jana-alomayri/ |
+| 3258 | سلطان المقابلة | Sultan Almgablh | معسكر إدارة البيانات — أكاديمية سدايا | أكتوبر–نوفمبر 2023 | https://www.linkedin.com/in/sultanalmgablh/ |
+| 3259 | فهد الغانم | Fahad Alghanem | معسكر هندسة تطبيقات الذكاء الاصطناعي — أكاديمية سدايا × جامعة أكسفورد | أغسطس–أكتوبر 2025 | https://www.linkedin.com/in/fahad-alghanem-956511357/ |
+| 3260 | مجد الثبيتي | Mjd Al-Thobiti | أبطال صيف الذكاء الاصطناعي (AI Summer Champions) — سدايا | يوليو–أكتوبر 2022 | https://www.linkedin.com/in/majd050/ |
+| 3261 | علي البيات | Ali Albayat | معسكر T5 لعلوم البيانات — أكاديمية سدايا | سبتمبر–ديسمبر 2021 | https://www.linkedin.com/in/alialbayat/ |
+| 3262 | رغد السبيل | Raghad Alsebayyil | معسكر مطوري أنظمة ServiceNow — أكاديمية سدايا | سبتمبر–نوفمبر 2025 | https://www.linkedin.com/in/raghad-alsebayyil/ |
+| 3263 | أنوار الشراري | Anwar Alsharari | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/anwar-alsharari/ |
+| 3264 | فواز عريبي | Fawaz Oraybi | أبطال صيف الذكاء الاصطناعي (AI Summer Champions) — سدايا | يوليو–سبتمبر 2022 | https://www.linkedin.com/in/fawaz-oraybi/ |
+| 3265 | ندى أحمد | Nada Ahmed | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/nada-ahmed-a73a2b241/ |
+| 3266 | عائشة الجهني | Aesha Aljohani | معسكر T5 لعلوم البيانات — أكاديمية سدايا | أكتوبر 2021 – يناير 2022 | https://www.linkedin.com/in/aesha-aljohani/ |
+| 3267 | ريان الزامل | Rayan Alzamil | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/rayan-alzamil-049421225/ |
+| 3268 | صالح العنزي | Saleh Alanazi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/salehalanazi1/ |
+| 3269 | رغد سلطان | Raghad Sultan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/raghad-s-alotaibi/ |
+| 3270 | عبير الغامدي | Abeer Al-Ghamdi | معسكر T5 لعلوم البيانات — أكاديمية سدايا | أكتوبر–نوفمبر 2021 | https://www.linkedin.com/in/abeeralghamdi1/ |
+| 3271 | فهد العسكر | Fahad Alaskar | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/fahad-alaskar-986b57256/ |
+| 3272 | نواف الجلعود | Nawaf Aljalaud | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/nawaf-aljalaud-7abb63242/ |
+| 3273 | فارس العنزي | Faris Alanazi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/faris-alanazi-it/ |
+| 3274 | مها الروقي | Maha Alrooqi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/maha-alrooqi/ |
+| 3275 | جمانة العيسى | Jumana Alessa | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/jumana-alessa-44a40a257/ |
+| 3276 | ابتسام عسيري | Ebtsam Asiri | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/ebtsamja/ |
+| 3277 | عفاف الربيعي | Afaf Alrabie | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/afafsalem/ |
+| 3278 | رناد حسنين | Renad Hasanain | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/renad-hasanain-1b607a217/ |
+| 3279 | عبدالرحمن الغامدي | Abdulrhman AlGhamdi | معسكر النماذج اللغوية الكبيرة (LLM) — أكاديمية سدايا | يوليو–سبتمبر 2024 | https://www.linkedin.com/in/abdulrhmangh/ |
+| 3280 | فاطمة الغامدي | Fatimah Alghamdi | معسكر مهندس الذكاء الاصطناعي (AI Engineer Bootcamp) — أكاديمية سدايا | مارس–مايو 2026 | https://www.linkedin.com/in/fatimah-alghamdi-1b4636331/ |
+| 3281 | شيخة الدوسري | Sheikha Aldossary | برنامج بناء تطبيقات الذكاء الاصطناعي (بايثون) | يناير 2025 | https://www.linkedin.com/in/sheikha-aldossary-77ab00230/ |
+| 3282 | حنان الخابور | Hanan Alkhabour | معسكر T5 لتقنيات إدارة الزحام (Zeham / Crowd Management Technologies Bootcamp) — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/hanan-alkhabour/ |
+| 3283 | رغد الحربي | Raghad Alharbi | معسكر T5 لتقنيات إدارة الزحام (Zeham / Crowd Management Technologies Bootcamp) — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/raghad-alharbi-994025144/ |
+| 3284 | سارة الجوير | Sarah Aljuwayr | معسكر T5 لتقنيات إدارة الزحام (Zeham / Crowd Management Technologies Bootcamp) — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/sarah-aljuwayr-66b198274/ |
+| 3285 | الجوهرة المطيري | Aljawharah Almutairi | معسكر T5 لتقنيات إدارة الزحام (Zeham / Crowd Management Technologies Bootcamp) — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/aljawharah-awad/ |
+| 3286 | محمد الدعيجي | Mohammed Aldeaiji | معسكر T5 لتقنيات إدارة الزحام (Zeham / Crowd Management Technologies Bootcamp) — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/mohammed-aldeaiji/ |
+| 3287 | شوق المطيري | Shouq Almutairi | معسكر إدارة البيانات — أكاديمية سدايا | أكتوبر–نوفمبر 2023 | https://www.linkedin.com/in/shouq-almutairi-9424b6200/ |
+| 3288 | مرعي الشملاني | Marei Alshmlani | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي (الذكاء الاصطناعي التطبيقي AAI) | ديسمبر 2025 – فبراير 2026 | https://www.linkedin.com/in/marei-alshmlani-5b869a2b7/ |
+| 3289 | عبدالله الربدي | Abdullah Alrebdi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/abdullah-alrebdi-a8b6a8270/ |
+| 3290 | فاطمة الصقر | Fatimah Alsoger | معسكر تعلم الآلة (ML) — أكاديمية سدايا (ديسمبر 2023 – يناير 2024) + أبطال صيف الذكاء الاصطناعي (2022) | ديسمبر 2023 – يناير 2024 | https://www.linkedin.com/in/fatimah-alsoger-12497a216/ |
+| 3291 | أمل السلمي | Amal Alsulami | معسكر T5 لعلوم البيانات — أكاديمية سدايا | سبتمبر–أكتوبر 2021 | https://www.linkedin.com/in/amal-alsulamy/ |
+| 3292 | رغد المنقور | Raghad Almangour | برنامج المسارات المتقدمة في الذكاء الاصطناعي — التعلم العميق — أكاديمية سدايا | نوفمبر 2024 | https://www.linkedin.com/in/raghad-almanqour/ |
+| 3293 | صبا سعود | Seba Saud | معسكر الذكاء الاصطناعي التطبيقي (Applied AI Bootcamp) — أكاديمية سدايا | مارس–مايو 2026 | https://www.linkedin.com/in/seba-saud-4335a7297/ |
+| 3294 | لين الزيدي | Leen Alzeyedi | معسكر مطوري أنظمة ServiceNow — أكاديمية سدايا | أغسطس–نوفمبر 2025 | https://www.linkedin.com/in/leen-alzeyedi-3842ba21b/ |
+| 3295 | عبدالله الصالحي | Abdullah Alsalhi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/abdullah-alsalhi/ |
+| 3296 | سديم المسند | Sadeem AlMesned | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/sadeem-almesned/ |
+| 3297 | مسفر القوسي | Mesfer Algosa | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/mesfer-algosa-itil%C2%AE-4-152a7a112/ |
+| 3298 | في الراضي | Fai Alradhi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/fai-alradhi-080b66228/ |
+| 3299 | أنس الوهيب | Anas Alwohaib | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/anas-alwohaib-ba04a9208/ |
+| 3300 | محمد المصعبي | Mohammed Almasabi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/mohammed-almasabi-/ |
+| 3301 | رخاء إسماعيل | Rakhaa Ismail | معسكر T5 لعلوم البيانات — أكاديمية سدايا | سبتمبر–أكتوبر 2021 | https://www.linkedin.com/in/rakhaa-ismail/ |
+| 3302 | ماريا الغامدي | Maria A. Alghamdi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/maria-alghamdi/ |
+| 3303 | منار البقمي | Manar Albogami | معسكر T5 لعلوم البيانات — أكاديمية سدايا | ديسمبر 2021 – يناير 2022 | https://www.linkedin.com/in/manaralboqmi/ |
+| 3304 | تركي العنزي | Turki Alanzi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/turki-alanzi-951a23276/ |
+| 3305 | أمجاد العماني | Amjad Alomani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | مارس–يونيو 2024 | https://www.linkedin.com/in/amjad-khalid-/ |
+| 3306 | سعيد الزهراني | Saeed Alzahrani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | يوليو–أكتوبر 2024 | https://www.linkedin.com/in/saeedhalzahrani/ |
+| 3307 | ديمه البقمي | Deemh Albaqami | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | سبتمبر–ديسمبر 2023 | https://www.linkedin.com/in/deemh-albaqami/ |
+| 3308 | هشام السعدان | Hesham Alsadan | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | غير مؤرخ في صفحة الخبرة | https://www.linkedin.com/in/hesham-alsadan/ |
+| 3309 | ربى الهديان | Ruba Alhudyani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (سبتمبر–ديسمبر 2023) + التدريب الاحترافي في النماذج اللغوية الكبيرة (علّام، أغسطس–سبتمبر 2024) — أكاديمية سدايا | ديسمبر 2023 (T5) · سبتمبر 2024 (علّام) | https://www.linkedin.com/in/ruba-alhudyani-capm/ |
+
+**2) إثراءات (19):** #2230 · #892 · #2138 · #2354 · #1146 · #2332 · #2096 · #2145 · #909 · #2108 · #1673 · #1237 · #878 · #983 · #2112 · #2132 · #2093 · #803 · #54.
+
+**3) قصص نجاح جديدة (43):**
+
+| القصة | # | النتيجة |
+|---|---|---|
+| awatef-alsulami | 3225 | أخصائية البيانات الرئيسية (Master Data Specialist) — الربيع السعودية للأغذية (Al Rabie) |
+| abdulaziz-alenazi | 3228 | مهندس ذكاء اصطناعي (AI Engineer) — لوسيديا (Lucidya) |
+| ghada-a-alshuwaier | 3229 | مهندسة عمليات إدارة البيانات (Data Management Operations Engineer) — المركز الوطني لنظم الموارد الحكومية (NCGR) |
+| maali-altulayhi | 3231 | علوم البيانات (Data Science) — سدايا |
+| dhuha-alabdulwahab | 3236 | محللة بيانات (Data Analyst) — نايس ون (NICE ONE) |
+| abdulrahman-aljubaylan | 3238 | أخصائي البيانات والتقارير (Data & Reports Specialist) — الهيئة العامة للغذاء والدواء (SFDA) |
+| jana-sadawi | 3241 | مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer) — SDM |
+| faten-aldossary | 3244 | عالمة بيانات (Data Scientist) — سابك |
+| suad-alsomali | 3247 | مستشارة مشاركة في إدارة البيانات وحوكمتها (Associate Data Management & Governance Consultant) — مجموعة ريناد المجد لتقنية المعلومات RMG |
+| layan-alorayyidh | 3248 | مطوّرة حلول ذكاء اصطناعي (AI Solution Developer) — مصرف الإنماء |
+| khuzama-alkhowaiter | 892 | عالمة بيانات (Data Scientist) — نايس ون (NICE ONE) |
+| faisal-alharbi | 3250 | محلل بيانات التوظيف (Recruitment Data Analyst) — البنك العربي الوطني (ANB) |
+| mazen-tawhari | 3255 | مهندس ذكاء اصطناعي (AI Engineer) — المركز الوطني للذكاء الاصطناعي (NCAI) |
+| noura-alsaqer | 3256 | مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer) — سدايا |
+| jana-alomayri | 3257 | مطوّرة ServiceNow (ServiceNow Developer) — سدايا |
+| sultan-almgablh | 3258 | أخصائي إدارة البيانات (Data Management Specialist) — المركز الوطني للنخيل والتمور (NCPD) |
+| raghad-alsebayyil | 3262 | مطوّرة ServiceNow (ServiceNow Developer) — سدايا |
+| anwar-alsharari | 3263 | أخصائية إدارة البيانات (Data Management Specialist) — عزم السعودية (Saudi Azm) |
+| nada-ahmed | 3265 | محللة بيانات (Data Analyst) — الهيئة العامة للإحصاء GASTAT |
+| saleh-alanazi | 3268 | أخصائي بيانات وذكاء اصطناعي (Data & AI Specialist) — بيانات وأعمال (DataPlus) |
+| raghad-sultan | 3269 | أخصائية تحليل بيانات (Data Analyst Specialist) — شركة الإلكترونيات المتقدمة (SAMI Advanced Electronics) |
+| abeer-alghamdi | 3270 | محللة بيانات — قطاع التحول الرقمي (Data Analyst) — وزارة البلديات والإسكان |
+| fahad-alaskar | 3271 | محلل بيانات (Data Analyst) — SadaaCX |
+| nawaf-aljalaud | 3272 | مهندس ذكاء اصطناعي (AI Engineer) — هدهد (HudHud Maps) |
+| mona-alkhaldi | 2145 | أخصائية ذكاء اصطناعي (Artificial Intelligence Specialist) — رفقة (Rfqh) |
+| renad-hasanain | 3278 | أخصائية ذكاء أعمال (Business Intelligence Specialist) — هيئة الزكاة والضريبة والجمارك (ZATCA) |
+| abdulrhman-alghamdi | 3279 | أخصائي ذكاء اصطناعي (AI Specialist) — جهة حكومية (غير معلنة) |
+| mohammed-aldeaiji | 3286 | مهندس ذكاء اصطناعي (Artificial Intelligence Engineer) — هدهد (HudHud Maps) |
+| shouq-almutairi | 3287 | مستشارة حوكمة البيانات (Data Governance Consultant) — Devoteam |
+| fatimah-alsoger | 3290 | محللة بيانات (Data Analyst) — Lean Business Services |
+| amal-alsulami | 3291 | مطوّرة ذكاء اصطناعي (AI Developer) — تحكّم TAHAKOM |
+| leen-alzeyedi | 3294 | مشاركة عمليات منصات الحوسبة السحابية (Cloud Computing Platform Operations Associate) — سدايا |
+| radhyah-alzubaidi | 803 | مهندسة ذكاء اصطناعي أولى (Senior AI Engineer) — ماستر ووركس (Master Works) |
+| anas-alwohaib | 3299 | عالم بيانات (Data Scientist) — المركز الوطني لنظم الموارد الحكومية (NCGR) |
+| maria-a-alghamdi | 3302 | محللة استشارات بيانات وذكاء اصطناعي (Data & AI Consulting Analyst) — أكسنتشر |
+| ruba-alhudyani | 3309 | استخبارات الاحتيال وعلوم البيانات (Fraud Intelligence & Data Science) — البنك العربي الوطني (ANB) |
+| wid-alzainy | 2959 | مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer) — سدايا |
+| osama-alsahafi | 2960 | مهندس ذكاء اصطناعي (Artificial Intelligence Engineer) — سدايا |
+| abdullah-almazrua | 2762 | مسؤول أول حوكمة البيانات (Senior Data Governance Officer) — مصرف الراجحي |
+| rafaa-abuazza | 2964 | أخصائية منتجات الذكاء الاصطناعي (AI Product Specialist) — نيوم |
+| joud-alrumayh | 3116 | مطوّرة برمجيات مساعدة (Assistant Software Developer) — سدايا |
+| alyaa-bajaber | 3123 | أخصائية حوكمة البيانات (Data Governance Specialist) — PSC |
+| lama-almegbil | 3129 | محللة بيانات (Data Analyst) — الشركة السعودية للصناعات العسكرية (SAMI) |
+
+**قيد التحقق من قائمة الفحص السابقة (4):** #2748 · #3118 · #2835 · #3121.
+
+**4) التنظيف النهائي:** dead_link: 8 · slug_updated: 1 · url_norm: 164 · emp_placeholder: 19 · emp_variant: 1 · xnote: 35. الروابط الميتة: #686 · #2119 · #2268 · #2832 · #2963 · #3109 · #3122 · #3124.
 
 ---
 
@@ -650,7 +801,7 @@
 | 2959 | مثايل العتيبي | Mathayil Alotaibi | معسكر تحليل السلاسل الزمنية والتنبؤ — مشروع «المسافرون الدوليون» — أكاديمية سدايا | أغسطس–سبتمبر 2026 | عالم بيانات | 75 | [GitHub](https://github.com/Eng-MTY) · [مستودع المشروع](https://github.com/Eng-MTY/international-airpassengers-project) |
 | 2960 | عماد سليمان العلوان | Emad Sulaiman Alwan | معسكر تحليل السلاسل الزمنية والتنبؤ — مشروع «المسافرون الدوليون» — أكاديمية سدايا | أغسطس–سبتمبر 2026 | عالم بيانات | 75 | [GitHub](https://github.com/up2u2b11) · [مستودع المشروع](https://github.com/up2u2b11/international-airpassengers-project) |
 | 2961 | ود الزيني | Wid Alzainy | معسكر سدايا لعلوم البيانات والذكاء الاصطناعي — مشروع «سالك» لتصنيف الازدحام المروري | سبتمبر 2023 | عالم بيانات | 75 | [GitHub](https://github.com/wid21) · [مستودع المشروع](https://github.com/wid21/SDAIA_Project) · [LinkedIn](https://www.linkedin.com/in/wid-alzainy-093245185) |
-| 2962 | أسامة السحافي | Osama Alsahafi | معسكر أكاديمية سدايا — مشروع تطبيقي (SDAIA_Project_2) | سبتمبر 2023 | مهندس ذكاء اصطناعي | 75 | [GitHub](https://github.com/osamaalsahafi) · [LinkedIn](https://www.linkedin.com/in/osama-alsahafi) |
+| 2962 | أسامة الصحفي | Osama Alsahafi | معسكر أكاديمية سدايا — مشروع تطبيقي (SDAIA_Project_2) | سبتمبر 2023 | مهندس ذكاء اصطناعي | 75 | [GitHub](https://github.com/osamaalsahafi) · [LinkedIn](https://www.linkedin.com/in/osama-alsahafi) |
 | 2963 | سعد المغيره | Saad Almoghirh | معسكر أكاديمية سدايا (SDAIA Bootcamp) | أكتوبر 2023 | مهندس ذكاء اصطناعي | 75 | [GitHub](https://github.com/Saad-Almoghirh) · [LinkedIn](https://www.linkedin.com/in/saad-almoghirh) |
 | 2964 | دانة المعيقل | Danah Almoaiqel | ورشة سدايا للذكاء الاصطناعي وذكاء الأعمال (AI & BI) | نوفمبر 2023 | إدارة وحوكمة البيانات | 75 | [GitHub](https://github.com/danaifm) · [LinkedIn](https://www.linkedin.com/in/danahalmoaiqel) |
 | 2965 | ناصر فهد الداود | Nasser Fahad Aldawood | برنامج إدارة البيانات — أكاديمية سدايا | نوفمبر 2023 | إدارة وحوكمة البيانات | 78 | [GitHub](https://github.com/Naser-Fahad-Aldawood) · [LinkedIn](https://www.linkedin.com/in/naser-al-dawood-02874a271) |
