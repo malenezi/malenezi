@@ -1,0 +1,169 @@
+﻿score_rank,publication_rank,wave,id,name_ar,name_en,employer,role,cohort,categories,impact_30,evidence_25,completeness_20,narrative_25,total_100,months_to_outcome,review_flag,quote_kind
+1,2,1,aqeelah-makki,عقيلة مكي,Aqeelah Jaffar Makki,هيوماين (HUMAIN),مهندسة ذكاء اصطناعي,2023,employment;research,24,16,20,21,81,1,,draft
+2,6,2,shahad-altamimi,شهد التميمي,Shahad Altamimi,أكاديمية الملك سلمان العالمية للغة العربية,أخصائية ذكاء اصطناعي,2026,opensource;research,20,20,20,15,75,2,,draft
+3,5,1,khaled-almutairy,خالد المطيري,Khaled Almutairy,شركة علم,عالم أبحاث ذكاء اصطناعي (AI Research Scientist),2025,employment,19,16,19,21,75,1,,draft
+4,13,3,nujud-senan,نجود سنان,Nujud Senan,قمة الابتكار الكمّي — دبي (Quantum Innovation Summit),قائدة فريق مشروع ذكاء اصطناعي هجين كمّي,2024,awards,30,16,16,13,75,5,,draft
+5,4,1,badr-alshamrani,بدر علي الشمراني,Badr Ali Alshamrani,مستشفى الملك فيصل التخصصي ومركز الأبحاث,مهندس ذكاء اصطناعي تطبيقي وابتكار (Applied AI & Innovation Engineer),2025,employment,19,16,20,19,74,3,,verified
+6,7,2,abdulrahman-alqannas,عبدالرحمن القناص,Abdulrahman Alqannas,شركة علم,قائد الذكاء الاصطناعي (Artificial Intelligence Lead),2023,employment,18,17,20,18,73,11,,verified
+7,1,1,hassn-alqaeri,حسن القاعري,Hassn Alqaeri,مهمة OSACT7 المشتركة — LREC 2026,مهندس نماذج لغوية كبيرة — صاحب النظام الفائز بالمركز الأول,2026,awards;opensource;research,30,19,13,11,73,,,draft
+8,14,3,hoor-alshihi,حور الشيحي,Hoor Al-Shihi,SITE سايت,المركز الأول — مسابقة المبرمجين 2024,2023,awards;employment,22,17,18,16,73,,,draft
+9,9,2,raghad-alqobali,رغد القبالي,Raghad Alqobali,سدايا,باحثة ومهندسة ذكاء اصطناعي,2023,employment;research,23,21,16,11,71,,,draft
+10,,,faris-almuteri,فارس المطيري,Faris Al Muteri,مركز الملك عبدالله العالمي للأبحاث الطبية KAIMRC,مسؤول قواعد بيانات (Database Administrator) — بعد محلل مبرمج أول,2024,employment,21,17,19,14,71,7,,draft
+11,17,3,farah-alsuwayeh,فرح السويح,Farah Alsuwayeh,السعودية للطاقة,محللة ذكاء اصطناعي — إدارة تطوير حلول الذكاء الاصطناعي,2023,employment,19,16,19,17,71,1,,draft
+12,3,1,abdulaziz-althumairy,عبدالعزيز الثميري,Abdulaziz Al-Thumairy,صندوق الاستثمارات العامة (PIF),محلل أداء الاستثمارات — الشرق الأوسط وشمال أفريقيا,2024,employment,14,16,20,20,70,2,,draft
+13,11,2,ahmed-almuaybid,أحمد المعيبد,Ahmed Almuaybid,سابك,قائد تحليلات وحدة الأعمال (أغسطس 2025),2021,employment,21,14,17,18,70,4,,draft
+14,10,2,asma-alzubaidi,اسماء احمد الزبيدي,Asma Ahmed Alzubaidi,جامعة أم القرى,محاضرة — جامعة أم القرى (أغسطس 2026),2025,employment,14,18,20,18,70,11,,verified
+15,18,3,lena-alenazi,لينا العنزي,Lena Alenazi,مركز «ذكاء» — منشآت,محللة ومهندسة بيانات وذكاء اصطناعي,2024,awards;opensource,23,19,16,10,68,,,draft
+16,,,rana-alshehri,رنا الشهري,Rana Alshehri,مدينة الملك عبدالعزيز للعلوم والتقنية (KACST),مطوّرة ذكاء اصطناعي — كاكست (2025)، ثم برنامج الذكاء الاصطناعي الوكيلي بالأكاديمية السعودية الرقمية (2026),2026,employment,19,16,20,13,68,,,draft
+17,,,hind-aljuaid,هند الجعيد,Hind Aljuaid,سدايا,مهندسة ذكاء اصطناعي وتعلم آلة — LLMOps / MLOps,2026,awards;employment,23,16,20,9,68,,,draft
+18,16,3,rafaa-abuazza,رفاء أبو عزة,Rafaa Abuazzah,نيوم,أخصائية منتجات الذكاء الاصطناعي (AI Product Specialist),2024,employment,19,16,15,18,68,2,,draft
+19,8,2,yasmin-alsuliman,ياسمين آل سليمان,Yasmin Al Suliman,شركة المياه الوطنية (NWC),قائدة فريق الذكاء الاصطناعي (يوليو 2025),2024,employment,14,14,20,19,67,5,,draft
+20,12,2,maha-altalak,مها الطلق,Maha Altalak,نيوم,مديرة الابتكار ورئيسة قطاع نمذجة الذكاء الاصطناعي (نوفمبر 2025),2022,employment,18,14,16,18,66,5,,draft
+21,,,noura-aldawsari,Noura Aldawsari,Noura Aldawsari,التعاونية للتأمين (Tawuniya),أخصائية أولى — علم البيانات,2024,employment,19,16,19,12,66,12,,draft
+22,reserve,,wadha-almattar,د. وضحة المطر,Dr. Wadha Almattar,جامعة الإمام عبدالرحمن بن فيصل,أستاذة مساعدة ورئيسة قسم هندسة الحاسب,2025,leadership;research,19,16,17,13,65,6,,draft
+23,reserve,,anas-almana,أنس المانع,Anas Almana,Quality Support Solutions,مهندس ذكاء اصطناعي أول (مايو 2026),2023,employment,15,14,17,19,65,1,,verified
+24,reserve,,abdullah-mushafi,عبدالله مشافي,Abdullah Mushafi,معادن,مهندس تحليل (يونيو 2026),2025,employment,14,14,17,20,65,6,,verified
+25,,,khalid-alduwaysan,خالد الدويسان,Khalid Alduwaysan,أكاديمية الملك سلمان العالمية للغة العربية,مطوّر ذكاء اصطناعي ثم مهندس بيانات في جهة حكومية,2024,employment;opensource,15,16,20,13,64,3,,draft
+26,,,hamad-alrashid,حمد الرشيد,Hamad Alrashid,جاهز (Jahez),عالم بيانات ← مهندس ذكاء اصطناعي,2025,employment,15,17,19,13,64,,,draft
+27,15,3,noura-alfouzan,نورة الفوزان,Noura Alfouzan,المؤسسة العامة للمياه (Saudi Water Authority),محللة بيانات أولى,2024,employment;leadership,13,16,19,15,63,,,draft
+28,,,majid-almadani,ماجد المدني,Majid Almadani,البنك السعودي للاستثمار (SAIB),أخصائي أول تحليلات متقدمة وذكاء اصطناعي,2024,employment,19,16,16,12,63,12,,draft
+29,,,wejdan-mangl,وجدان منقل,Wejdan Mangl,شركة علم,محللة بيانات (Data Analyst),2022,employment,21,16,15,11,63,13,,draft
+30,,,dimah-albunayyih,ديمة البنية,Dimah Albunayyih,شركة علم,مهندسة أولى — مركز عمليات التقنية (فبراير 2025),2021,employment,18,14,17,13,62,4,,draft
+31,,,mohammed-albrayh,محمد البريح,Mohammed Albrayh,سدايا,مهندس ذكاء اصطناعي,2024,employment,15,16,19,12,62,3,,draft
+32,,,alanoud-alosaimi,العنود العصيمي,Alanoud Alosaimi,بنك فيجن (Vision Bank),مهندسة بيانات (أبريل 2025),2021,employment,13,14,17,17,61,3,,draft
+33,,,rayan-alsuwat,ريان السواط,Rayan Alsuwat,سدايا,مختص تشغيل أنظمة الحوسبة السحابية (فبراير 2026),2025,employment,13,14,17,17,61,,,verified
+34,,,saleh-altuwaijri,صالح التويجري,Saleh Altuwaijri,المركز الوطني لنظم الموارد الحكومية (NCGR),مهندس بيانات وذكاء اصطناعي,2024,employment,15,16,19,11,61,10,,draft
+35,,,hamad-almuhaythif,حمد المحيذف,Hamad Almuhaythif,الشركة السعودية لشراكات المياه SWPC,عالم بيانات (Data Scientist),2025,employment,15,13,18,14,60,,,verified
+36,,,ranya-alkahtani,رانيا القحطاني,Ranya A. Alkahtani,هيوماين (HUMAIN),مهندسة ذكاء اصطناعي أولى (أبريل 2025),2021,employment,23,11,16,10,60,0,,draft
+37,,,rana-alturki,رنا التركي,Rana Alturki,جامعة الأميرة نورة بنت عبدالرحمن,أخصائية أولى في هندسة الحلول العامة (سبتمبر 2024),2021,employment,14,14,17,15,60,1,,draft
+38,,,amal-altamran,أمل التمران,Amal Altamran,وزارة التعليم,أخصائية تحليل بيانات (ديسمبر 2022),2021,employment,17,14,16,13,60,5,,draft
+39,20,3,osamah-alqarawi,أسامة القرعاوي,Osamah Alqarawi,سدايا,مهندس سحابة (فبراير 2026),2025,employment,13,14,19,14,60,2,,draft
+40,,,dhiyaa-alsalem,Dhiyaa Alsalem,Dhiyaa Alsalem,واكب للبيانات (Wakeb Data),عالِم بيانات ومهندس ذكاء اصطناعي (Junior),2024,employment,15,16,18,11,60,7,,draft
+41,19,3,safiyah-alshammari,صفية الشمري,Safiyah Alshammari,أرامكو السعودية,محللة بيانات,2023,employment,17,16,18,9,60,7,,draft
+42,,,rayan-dahlawi,ريان دحلوي,Rayan Dahlawi,عبداللطيف جميل المتحدة للتمويل,أخصائي علوم بيانات (ذكاء اصطناعي وذكاء الأعمال),2024,employment,15,16,19,10,60,5,,draft
+43,,,abdullah-almazrua,عبدالله المزروع,Abdullah Almazrua,مصرف الراجحي,مسؤول أول حوكمة البيانات (Senior Data Governance Officer),2024,employment,21,16,15,8,60,8,,draft
+44,,,abdulrahman-alghofaily,عبدالرحمن الغفيلي,Abdulrahman Alghofaily,GeoTech,عالم بيانات (Data Scientist),2023,employment,11,16,15,17,59,1,,draft
+45,,,faten-aldossary,فاتن الدوسري,Faten Aldossary,سابك,عالمة بيانات (Data Scientist),2021,employment,19,16,14,10,59,1,,draft
+46,,,mazen-tawhari,مازن طوهري,Mazen Tawhari,المركز الوطني للذكاء الاصطناعي (NCAI),مهندس ذكاء اصطناعي (AI Engineer),2023,employment,19,16,14,10,59,3,,draft
+47,,,jawaher-albaqami,جواهر البقمي,Jawaher Albaqami,المركز الوطني للذكاء الاصطناعي (NCAI),مهندسة بيانات (Data Engineer),2023,employment,17,16,15,10,58,3,,draft
+48,,,meead-alshaibani,ميعاد الشيباني,Meead Alshaibani,صندوق التنمية العقارية (REDF),مهندسة ذكاء اصطناعي,2026,employment,15,16,19,8,58,4,,draft
+49,,,maha-aladwani,مها العدواني,Maha Aladwani,صندوق الاستثمارات العامة (PIF),محللة بيانات (Data Analyst — عقد),2022,employment,17,16,15,10,58,2,,draft
+50,,,abeer-alghamdi,عبير الغامدي,Abeer Al-Ghamdi,وزارة البلديات والإسكان,محللة بيانات — قطاع التحول الرقمي (Data Analyst),2021,employment,17,16,15,10,58,3,,draft
+51,,,wid-alzainy,ود الزيني,Wid Alzainy,سدايا,مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer),2023,employment,15,16,17,10,58,3,,draft
+52,,,hussain-alhadab,حسين الحدب,Hussain Alhadab,Devoteam,مستشار بيانات (مارس 2022),2021,employment,13,14,16,14,57,3,,verified
+53,,,mukhtar-albinhamad,مختار آل بن حمد,Mukhtar Al Bin Hamad,شركة أنظمة الاتصالات والإلكترونيات المتقدمة (ACES),مبرمج حاسب (ديسمبر 2023),2021,employment,10,14,16,17,57,5,,verified
+54,,,talal-alharthi,طلال الحارثي,Talal Alharthi,شمال (SHAMAL),مسؤول نظام — البنية التحتية والأتمتة (مايو 2026),2025,employment,10,17,20,10,57,5,,draft
+55,,,bayan-albaqami,Bayan Albaqami,Bayan Albaqami,بنك التنمية الاجتماعية,مهندسة بيانات,2025,employment,13,16,20,8,57,4,,draft
+56,,,mazen-alkhodairi,مازن الخضيري,Mazen Alkhodairi,شركة الإلكترونيات المتقدمة (SAMI Advanced Electronics),مهندس برمجيات مشارك,2025,employment,10,16,20,11,57,9,,draft
+57,,,ruba-alnashwan,ربى النشوان,Ruba Alnashwan,المركز الوطني للذكاء الاصطناعي (NCAI),مهندسة جودة بيانات — المركز الوطني للمعلومات (سبتمبر 2023),2021,employment,17,11,17,11,56,0,,draft
+58,,,haya-albaqami,هيا البقمي,Haya Albaqami,هيئة الزكاة والضريبة والجمارك (ZATCA),مهندسة بيانات — تحليلات المخاطر والبيانات التنظيمية,2023,employment,17,16,19,4,56,11,,draft
+59,,,hassan-abid,حسن عبدالباسط عابد,Hassan Abdulbasit Abid,Devoteam,استشاري بيانات (Data Consultant),2024,employment,13,16,17,10,56,1,,draft
+60,,,abdulaziz-alenazi,عبدالعزيز العنزي,Abdulaziz Alenazi,لوسيديا (Lucidya),مهندس ذكاء اصطناعي (AI Engineer),2024,employment,15,16,15,10,56,3,,draft
+61,,,maali-altulayhi,معالي التليهي,Maali Altulayhi,سدايا,علوم البيانات (Data Science),2023,employment,15,16,15,10,56,3,,draft
+62,,,abdulrahman-aljubaylan,عبدالرحمن الجبيلان,Abdulrahman Aljubaylan,الهيئة العامة للغذاء والدواء (SFDA),أخصائي البيانات والتقارير (Data & Reports Specialist),2021,employment,17,16,15,8,56,6,,draft
+63,,,noura-alsaqer,نورة الصقر,Noura Alsaqer,سدايا,مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer),2023,employment,15,16,15,10,56,3,,draft
+64,,,osama-alsahafi,أسامة الصحفي,Osama Alsahafi,سدايا,مهندس ذكاء اصطناعي (Artificial Intelligence Engineer),2023,employment,15,16,17,8,56,5,,draft
+65,,,majd-alotaibi,مجد العتيبي,Majd Alotaibi,جاهز (Jahez),عالم بيانات (Data Scientist),2024,employment,15,17,17,6,55,8,,draft
+66,,,wajn-alqahtani,وجن القحطاني,Wajn Alqahtani,مصرف الإنماء,برنامج تطوير الخريجين (GDP) — إدارة البيانات والذكاء الاصطناعي,2025,awards;employment,18,9,20,8,55,,,draft
+67,,,abdulrahman-alrifae,عبدالرحمن الرفاعي,Abdulrahman Alrifae,سدايا,مدير حسابات تقني (مارس 2022),2021,employment,14,14,16,11,55,4,,draft
+68,,,najd-alqahtani,نجد القحطاني,Najd AlQahtani,تمكين للتقنيات,محللة بيانات ثم محللة بيانات أولى (يناير 2022 · أبريل 2024),2021,employment,17,14,9,15,55,1,,draft
+69,,,basma-alduaiji,بسمة الدعيجي,Basma Alduaiji,أكسنتشر,محللة قيادية للبحث والتطوير التقني وتمكين الابتكار (أكتوبر 2025),2021,employment,10,14,13,18,55,1,,draft
+70,,,omar-alhadi,عمر الهادي,Omar Alhadi,مطارات الرياض,مهندس صناعي (أبريل 2022) ثم أخصائي مشتريات (أغسطس 2022),2021,employment,10,14,16,15,55,3,,draft
+71,,,etab-alotaibi,عتاب محمد العتيبي,Etab Mohammed Alotaibi,مركز الملك عبدالله العالمي للأبحاث الطبية KAIMRC,أخصائية ذكاء اصطناعي (AI Specialist),2024,employment,19,2,20,14,55,,gap,verified
+72,,,maram-alshehri-zeham,Maram Alshehri,Maram Alshehri,Lean Business Services,مهندسة تعلم آلة (برنامج تطوير الخريجين),2024,employment,11,16,18,10,55,3,,draft
+73,,,munirah-alhazzani,Munirah Saad Alhazzani,Munirah Saad Alhazzani,المركز الوطني لنظم الموارد الحكومية (NCGR),مهندسة عمليات إدارة البيانات (المستوى الثاني),2024,employment,13,16,18,8,55,5,,draft
+74,,,abdullah-alowayyid,عبدالله العويد,Abdullah Alowayyid,البنك العربي الوطني (ANB),أخصائي تجزئة / محلل بيانات,2023,employment,13,16,20,6,55,8,,draft
+75,,,mohammed-aldeaiji,محمد الدعيجي,Mohammed Aldeaiji,هدهد (HudHud Maps),مهندس ذكاء اصطناعي (Artificial Intelligence Engineer),2024,employment,15,16,14,10,55,2,,draft
+76,,,osama-alfawzan,أسامة عبدالرحمن الفوزان,Osama Alfawzan,سدايا,مسؤول قواعد بيانات,2024,employment,17,16,17,4,54,11,,draft
+77,,,maram-alfaifi,مرام الفيفي,Maram Alfaifi,شركة TAM للتطوير,مهندسة برمجيات — Engineer II ثم مواقع أعلى,2022,employment,10,16,14,14,54,2,,draft
+78,,,rahaf-almutairi,رهف المطيري,Rahaf Almutairi,وزارة المالية,أخصائية علوم بيانات (Data Science Specialist),2024,employment,19,16,15,4,54,11,,draft
+79,,,hussein-mohsen,حسين محسن,Hussain Mohsen,أكاديمية كاوست,مساعد تدريس ذكاء اصطناعي,2025,employment;research,20,8,18,8,54,,,draft
+80,,,ohoud-albabtain,عهود البابطين,Ohoud I. Albabtain,المركز الوطني للمعلومات,مديرة مشاريع (فبراير 2022),2021,employment,14,14,16,10,54,2,,draft
+81,reserve,,abdullah-almutairi-cyber,عبدالله المطيري,Abdullah Almutairi,سدايا,أخصائي أمن سيبراني (أغسطس 2022),2021,employment,13,14,13,14,54,3,,draft
+82,,,tasneem-alrajih,تسنيم الراجح,Tasneem Alrajih,سدايا,مطوّرة برمجيات مساعدة (أكتوبر 2024),2024,employment,10,14,13,17,54,3,,draft
+83,,,dina-bokhamseen,دينا بوخمسين,Dina Bokhamseen,أكسنتشر,محللة بيانات وذكاء اصطناعي (Data & AI Analyst),2023,employment,15,16,15,8,54,4,,draft
+84,,,ghada-a-alshuwaier,غادة الشويعر,Ghada A. Alshuwaier,المركز الوطني لنظم الموارد الحكومية (NCGR),مهندسة عمليات إدارة البيانات (Data Management Operations Engineer),2024,employment,13,16,15,10,54,1,,draft
+85,,,radhyah-alzubaidi,رضيه الزبيدي,Radhyah Alzubaidi,ماستر ووركس (Master Works),مهندسة ذكاء اصطناعي أولى (Senior AI Engineer),2024,employment,19,16,11,8,54,7,,draft
+86,,,sukainah-alramadhan,سكينه الرمضان,Sukainah Alramadhan,أكاديمية كاوست,مدرّبة ذكاء اصطناعي,2026,employment,15,8,20,10,53,,,draft
+87,,,jehad-alhazmi,جهاد الحازمي,Jehad Alhazmi,بنك التنمية الاجتماعية,محلل هندسة بيانات (Data Engineer Analyst),2026,employment,13,9,20,11,53,,,verified
+88,reserve,,ghyoudh-alotaibi,غيوض العتيبي,Ghyoudh Alotaibi,هيوماين (HUMAIN),مهندس برمجيات (مايو 2026),2026,employment,14,8,17,14,53,,,verified
+89,,,jana-alomayri,جنى العميري,Jana Alomayri,سدايا,مطوّرة ServiceNow (ServiceNow Developer),2025,employment,13,16,14,10,53,3,,draft
+90,,,raghad-alsebayyil,رغد السبيل,Raghad Alsebayyil,سدايا,مطوّرة ServiceNow (ServiceNow Developer),2025,employment,13,16,14,10,53,3,,draft
+91,,,nawaf-aljalaud,نواف الجلعود,Nawaf Aljalaud,هدهد (HudHud Maps),مهندس ذكاء اصطناعي (AI Engineer),2024,employment,15,16,14,8,53,5,,draft
+92,,,nisreen-alsayegh,نسرين الصايغ,Nisreen Alsayegh,سدايا,عالمة بيانات — التحقت بسدايا في سنة الشهادة نفسها (2021),2021,employment,15,9,18,10,52,,,draft
+93,,,soaad-aljafr,سعاد الجعفر,Soaad Aljafr,وزارة الصحة,عالمة بيانات (Data Scientist),2022,employment;opensource,19,9,14,10,52,,,draft
+94,,,miad-altowairqi,ميعاد الطويرقي,Miad Altowairqi,بارنز (Barns),محللة بيانات,2023,employment,9,16,17,10,52,2,,draft
+95,,,meshal-aldalbahi,مشعل الدلبحي,Meshal Aldalbahi,هيئة تنمية البحث والتطوير والابتكار (RDI),محلل بيانات,2024,employment,13,17,16,6,52,8,,draft
+96,,,noura-alghonaim,نورة غنيم الغنيم,Noura Ghonaim AlGhonaim,Netways,مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer),2023,employment,11,16,15,10,52,1,,draft
+97,,,renad-hasanain,رناد حسنين,Renad Hasanain,هيئة الزكاة والضريبة والجمارك (ZATCA),أخصائية ذكاء أعمال (Business Intelligence Specialist),2024,employment,17,16,15,4,52,11,,draft
+98,,,sara-alabdulsalam,سارة العبدالسلام,Sara Al Abdulsalam,سدايا,مهندسة أبحاث بدوام كامل — ثم مطوّرة تطبيقات في channels by stc,2021,employment,15,16,15,5,51,,,draft
+99,,,hamad-alyemni,حمد اليمني,Hamad Alyemni,جامعة الإمام عبدالرحمن بن فيصل,مهندس تطبيقات — أول توظيف في سنة المعسكر نفسها، ثم مهندس ذكاء اصطناعي,2023,employment;opensource,19,7,20,5,51,,,draft
+100,,,bushra-dajam,بشرى عبدالخالق دعجم,Bushra Abdulkhaliq Dajam,Arabot أرابوت,مهندسة ذكاء اصطناعي (AI Engineer),2026,employment;opensource,15,3,16,17,51,,gap,verified
+101,,,aljoharah-alaqeel,الجوهرة العقيل,Aljoharah Alaqeel,تمكين للتقنيات,مهندسة أنظمة بنية تحتية (نوفمبر 2024),2021,employment,10,14,16,11,51,9,,draft
+102,,,shroaq-allwiahaq,شروق اللويحق,Shroaq Allwiahaq,وزارة البلديات والإسكان,أخصائية حوكمة الأمن السيبراني (فبراير 2023),2021,employment,17,14,16,4,51,14,,draft
+103,,,rawan-althubyani,روان الذبياني,Rawan Althubyani,إمارة منطقة مكة المكرمة,مصمّمة تجربة وواجهة المستخدم (أبريل 2025),2024,employment,10,14,17,10,51,10,,verified
+104,,,elaf-talal,إيلاف طلال,Elaf Talal,Devoteam,مستشارة ذكاء اصطناعي (AI Consultant),2022,employment,15,16,14,6,51,7,,draft
+105,,,sultan-almgablh,سلطان المقابلة,Sultan Almgablh,المركز الوطني للنخيل والتمور (NCPD),أخصائي إدارة البيانات (Data Management Specialist),2023,employment,13,16,14,8,51,6,,draft
+106,,,leen-alzeyedi,لين الزيدي,Leen Alzeyedi,سدايا,مشاركة عمليات منصات الحوسبة السحابية (Cloud Computing Platform Operations Associate),2025,employment,13,16,14,8,51,4,,draft
+107,,,anas-alwohaib,أنس الوهيب,Anas Alwohaib,المركز الوطني لنظم الموارد الحكومية (NCGR),عالم بيانات (Data Scientist),2024,employment,15,16,14,6,51,7,,draft
+108,,,nasser-alkuhili,ناصر فايز الكحيلي,Nasser Fayez Alkuhili,مصرف الراجحي,مهندس ذكاء اصطناعي — ابتكار الذكاء الاصطناعي (AI Innovation),2024,employment,19,2,20,9,50,,gap,verified
+109,,,layan-alorayyidh,ليان العريض,Layan Alorayyidh,مصرف الإنماء,مطوّرة حلول ذكاء اصطناعي (AI Solution Developer),2023,employment,15,16,15,4,50,14,,draft
+110,,,nada-ahmed,ندى أحمد,Nada Ahmed,الهيئة العامة للإحصاء GASTAT,محللة بيانات (Data Analyst),2024,employment,17,16,7,10,50,3,,draft
+111,,,joud-alrumayh,جود الرميح,Joud Alrumayh,سدايا,مطوّرة برمجيات مساعدة (Assistant Software Developer),2024,employment,10,16,14,10,50,3,,draft
+112,,,rana-alharsan,رنا الحرصان,Rana al-Harsan,فضاء أجا لتقنية المعلومات,مشروع «رَكَّن» — ضمن أفضل المشاريع من بين 50,2024,awards;employment,11,17,16,5,49,,,draft
+113,,,may-aljuaid,مي الجعيد,May Aljuaid,Saudi Brothers Commercial Company (SBCC),أخصائية تحليل بيانات (Data Analyst Specialist),2024,employment,9,16,16,8,49,4,,draft
+114,,,jennan-sowayan,جنان سويان,Jennan Sowayan,شركة أنظمة الاتصالات والإلكترونيات المتقدمة (ACES),أخصائية تقديم ودعم الخدمات الإلكترونية (مايو 2024),2021,employment,10,14,10,15,49,1,,draft
+115,,,dania-emad,دانيا عماد,Dania Emad,بصيرة (Basserah),مهندسة مبيعات البيانات والذكاء الاصطناعي,2023,employment,13,16,16,4,49,11,,draft
+116,,,marwah-ali,مروة علي,Marwah Ali,نبّه (Nabeh),مهندسة ذكاء اصطناعي,2024,employment,11,16,14,8,49,6,,draft
+117,,,jana-sadawi,جنى سعداوي,Jana Sadawi,SDM,مهندسة ذكاء اصطناعي (Artificial Intelligence Engineer),2024,employment,11,16,14,8,49,4,,draft
+118,,,anwar-alsharari,أنوار الشراري,Anwar Alsharari,عزم السعودية (Saudi Azm),أخصائية إدارة البيانات (Data Management Specialist),2024,employment,9,16,14,10,49,3,,draft
+119,,,mona-alkhaldi,منى الخالدي,Mona Alkhaldi,رفقة (Rfqh),أخصائية ذكاء اصطناعي (Artificial Intelligence Specialist),2026,employment,11,16,14,8,49,4,,draft
+120,,,shouq-almutairi,شوق المطيري,Shouq Almutairi,Devoteam,مستشارة حوكمة البيانات (Data Governance Consultant),2023,employment,13,16,14,6,49,7,,draft
+121,,,taghreed-albaiz,تغريد البعيز,Taghreed Albaiz,تمكين للتقنيات,محللة أمن شبكات — ثم مهندسة أمن سحابي أولى (Senior Cloud Security Engineer),2022,employment;opensource,17,4,14,13,48,,,draft
+122,,,nada-alqabbani,ندى القباني,Nada K. AlQabbani,رقمية (Raqamyah),مديرة تقنية المعلومات (فبراير 2025),2021,employment,10,14,13,11,48,7,,draft
+123,,,suad-alsomali,سعاد الصومالي,Suad Alsomali,مجموعة ريناد المجد لتقنية المعلومات RMG,مستشارة مشاركة في إدارة البيانات وحوكمتها (Associate Data Management & Governance Consultant),2023,employment,9,16,15,8,48,4,,draft
+124,,,saleh-alanazi,صالح العنزي,Saleh Alanazi,بيانات وأعمال (DataPlus),أخصائي بيانات وذكاء اصطناعي (Data & AI Specialist),2024,employment,11,16,11,10,48,1,,draft
+125,,,fatimah-alsoger,فاطمة الصقر,Fatimah Alsoger,Lean Business Services,محللة بيانات (Data Analyst),2024,employment,9,16,15,8,48,6,,draft
+126,,,hessa-alrasheed,حصة الرشيد,Hessa AlRasheed,مجموعة ريناد المجد لتقنية المعلومات RMG,محللة بيانات (Data Analyst),2023,employment,9,12,16,10,47,2,,draft
+127,,,arwa-albassam,أروى البسام,Arwa AlBassam,Magnetar,مديرة مشاريع (أغسطس 2024),2021,employment,10,14,12,11,47,9,,draft
+128,,,awatef-alsulami,عواطف السلمي,Awatef Alsulami,الربيع السعودية للأغذية (Al Rabie),أخصائية البيانات الرئيسية (Master Data Specialist),2024,employment,13,16,12,6,47,7,,draft
+129,,,faisal-alharbi,فيصل الحربي,Faisal Alharbi,البنك العربي الوطني (ANB),محلل بيانات التوظيف (Recruitment Data Analyst),2024,employment,13,16,14,4,47,12,,draft
+130,,,maha-alhazzani,مها الحزاني,Maha AlHazzani,سدايا,عالمة بيانات ومحللة (Data Scientist & Analyst),2022,employment,15,9,17,5,46,,,draft
+131,,,reem-albalawi,ريم البلوي,Reem Albalawi,ATS Travel,محللة بيانات أعمال (Business Data Analyst),2024,employment,9,17,12,8,46,6,,draft
+132,,,majd-alziyadi,مجد الزيادي,Majd Alziyady,IBM,مطوّرة تطبيقات,2025,awards;employment,19,8,12,7,46,,,draft
+133,,,hind-alhijailan,هند الحجيلان,Hind Alhujailan,سدايا,مسؤولة تميز خدمات الحوسبة السحابية,2025,employment,13,8,16,9,46,,,verified
+134,,,randa-almohammadi,رندا المحمدي,Randa Almohammadi,United Feed Manufacturing Company (UFMC),محللة بيانات,2021,employment,9,17,16,4,46,14,,draft
+135,,,dhuha-alabdulwahab,ضحى العبدالوهاب,Dhuha Alabdulwahab,نايس ون (NICE ONE),محللة بيانات (Data Analyst),2023,employment,9,16,15,6,46,9,,draft
+136,,,fahad-alaskar,فهد العسكر,Fahad Alaskar,SadaaCX,محلل بيانات (Data Analyst),2024,employment,9,16,11,10,46,3,,draft
+137,,,amal-alsulami,أمل السلمي,Amal Alsulami,تحكّم TAHAKOM,مطوّرة ذكاء اصطناعي (AI Developer),2021,employment,11,16,15,4,46,12,,draft
+138,,,maria-a-alghamdi,ماريا الغامدي,Maria A. Alghamdi,أكسنتشر,محللة استشارات بيانات وذكاء اصطناعي (Data & AI Consulting Analyst),2023,employment,15,16,7,8,46,5,,draft
+139,,,hanan-aljaid,حنان مشعل الجعيد,Hanan Mishal Aljaid,قو للاتصالات GO Telecom,"أخصائية عمليات تقنية المعلومات (Specialist, IT Operation)",2024,employment,10,8,18,9,45,,,verified
+140,,,khuzama-alkhowaiter,خزامى الخويطر,Khuzama Alkhowaiter,نايس ون (NICE ONE),عالمة بيانات (Data Scientist),2024,employment,11,16,14,4,45,11,,draft
+141,,,ruba-alhudyani,ربى الهديان,Ruba Alhudyani,البنك العربي الوطني (ANB),استخبارات الاحتيال وعلوم البيانات (Fraud Intelligence & Data Science),2024,employment,15,16,8,6,45,8,,draft
+142,,,hajar-alshehri,هاجر الشهري,Hajar Alshehri,سدايا,مهندسة ذكاء اصطناعي,2024,employment,15,8,16,5,44,,,draft
+143,,,fares-altoukhi,فارس الطوخي,Fares Altoukhi,غير معلنة,مطوّر نماذج لغوية عربية مفتوحة المصدر,2024,opensource,6,12,17,9,44,,,draft
+144,,,lama-alzahrani,لمى حسن الزهراني,Lama Hassan Alzahrani,stc,محللة تسويق (Marketing Analyst),2024,employment,14,2,19,9,44,,gap,verified
+145,,,joud-alghamdi,جود الغامدي,Joud Musharraf Alghamdi,Private Data Department,مهندسة ذكاء اصطناعي,2023,employment,11,16,7,10,44,1,,draft
+146,,,raghad-sultan,رغد سلطان,Raghad Sultan,شركة الإلكترونيات المتقدمة (SAMI Advanced Electronics),أخصائية تحليل بيانات (Data Analyst Specialist),2024,employment,13,16,7,8,44,4,,draft
+147,,,meshal-alamr,مشعل العمر,Meshal Alamr,جهة حكومية,مهندس ذكاء اصطناعي رئيسي (Lead AI Engineer),2021,opensource,10,7,17,9,43,,,draft
+148,,,asma-alzahrani,أسماء الزهراني,Asma Alzahrani,سدايا,من التدريب التعاوني إلى وظيفة في سدايا,2023,employment;research,18,8,12,5,43,,,draft
+149,,,nasser-alsaqer,ناصر الصقر,Nasser Alsaqer,الهيئة العامة للإحصاء GASTAT,إحصائي (Statistician),2024,employment;opensource,14,8,13,8,43,,,draft
+150,,,amal-almuarik,أمل عبدالرحمن المعارك,Amal Abdulrahman Almuarik,المؤسسة العامة للتأمينات الاجتماعية GOSI,أخصائية ذكاء اصطناعي (Artificial Intelligence Specialist),2026,employment,15,3,16,9,43,,gap,verified
+151,,,rayah-aldawsari,راية الدواسري,Rayah Aldawsari,غير معلنة,خريجة أكاديمية الذكاء الاصطناعي التوليدي — المركز الثالث بين 120+ مشروعًا,2026,awards,6,11,17,9,43,,,draft
+152,,,afrah-alsharari,أفراح الشراري,Afrah Alsharari,سدايا,أخصائية إحصاء — عُيّنت في سدايا فور انتهاء البرنامج (مارس 2022),2021,employment,13,11,13,6,43,0,,draft
+153,,,rawabi-allihyani,روابي عبود اللحياني,Rawabi Aboud Allihyani,أمانة العاصمة المقدسة,محللة بيانات (Data Analyst),2024,employment,13,2,19,9,43,,gap,verified
+154,,,alyaa-bajaber,علياء باجابر,Alyaa Bajaber,PSC,أخصائية حوكمة البيانات (Data Governance Specialist),2024,employment,9,16,12,6,43,7,,draft
+155,,,areej-alshammari,أريج الشمري,Areej Alshammari,سدايا,مهندسة ذكاء اصطناعي,2023,employment,15,6,16,5,42,,,draft
+156,,,lama-almegbil,لمى المقبل,Lama Almegbil,الشركة السعودية للصناعات العسكرية (SAMI),محللة بيانات (Data Analyst),2024,employment,13,16,7,6,42,8,,draft
+157,,,yazeed-alshurify,يزيد الشريف,Yazeed Alshurify,شركة فتيل,محلل أنظمة أعمال — أول توظيف في سنة المعسكر نفسها، ثم مدير مشاريع في هواوي,2024,employment,10,4,17,10,41,,,draft
+158,,,mohammed-almalki,محمد المالكي,Mohammed Al Malki,غير معلنة,صاحب مشروع ADEL — الأعلى تقييمًا في الدفعة,2024,opensource,1,15,15,9,40,,,draft
+159,,,sultan-alsubaie,سلطان السبيعي,Sultan Alsubaie,resilience,محلل حوكمة ومخاطر والتزام — برنامج GDP (نوفمبر 2025),2025,employment,6,14,10,10,40,3,,draft
+160,,,abdulrhman-alghamdi,عبدالرحمن الغامدي,Abdulrhman AlGhamdi,جهة حكومية (غير معلنة),أخصائي ذكاء اصطناعي (AI Specialist),2024,employment,6,13,11,10,40,2,,draft
+161,,,maha-alshehri,مها الشهري,Maha Alshehri,سدايا,مطوّرة برمجيات,2024,employment,10,6,16,5,37,,,draft
+162,,,jehad-aljazi,جهاد الجازي,Jehad Aljazi,المؤسسة العامة للتأمينات الاجتماعية GOSI,مهندس بيانات,2025,employment,13,4,9,10,36,,,draft
+163,,,aljohara-alhogail,الجوهرة خالد الحقيل,Aljohara Khalid Alhogail,مصرف الإنماء,مطوّرة أتمتة العمليات الروبوتية (RPA Developer),2025,employment,10,2,15,9,36,,gap,verified
+164,,,amal-almubarak,أمل المبارك,Amal Almubarak,المؤسسة العامة للتأمينات الاجتماعية GOSI,أخصائية ذكاء اصطناعي,2025,employment,15,4,9,5,33,,,draft
+165,,,rand-alsaleh,رند عبداللطيف الصالح,Rand Abdullatif Alsaleh,شركة صدارة للكيميائيات,محللة التحول الرقمي (Digital Transformation Analyst),2024,employment,10,0,13,9,32,,gap,verified
+166,,,yasser-alshehri,ياسر محمد الشهري,Yasser Mohammed Alshehri,جهة حكومية (غير معلنة),مسار الذكاء الاصطناعي التوليدي — جهة حكومية,2025,employment,1,0,17,14,32,,gap,verified
+167,,,alanoud-alotaibi,العنود العتيبي,Alanoud Alotaibi,غير معلنة,مهندسة بيانات ووكلاء ذكاء اصطناعي — طالبة بجامعة الملك سعود,2026,opensource,6,7,13,5,31,,,draft
+168,,,maysam-almalah,ميسم الملاح,Maysam Almalah,غير معلنة,مطوّرة — فريق مشروع «ريفيو» المتأهل ضمن أفضل ثلاثة,2026,awards,6,5,11,5,27,,,draft
