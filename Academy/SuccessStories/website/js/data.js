@@ -153,12 +153,12 @@
 /* 2 أكتوبر 2026 (ج): صورة ميعاد الشيباني (شعارها الشخصي على LinkedIn) وشعار صندوق التنمية العقارية (الرمز العلوي من الشعار المكدّس؛ الشعار الكامل محفوظ في redf-full.png). */
 /* 3 أكتوبر 2026: مسح منشورات LinkedIn وفحص القصص — 3,189 ← 3,223 خريجًا (34 سجلًا جديدًا · 13 إثراءً)؛ 7 قصص جديدة من صفحات الخبرة (118 ← 125)، وجهات العمل 73 ← 75 (Netways · GeoTech). */
 /* 6 أكتوبر 2026: جولة المسح العميق والتنظيف النهائي — 3,223 ← 3,309 خريجًا (86 سجلًا جديدًا · 19 إثراءً)؛ 43 قصة جديدة (125 ← 168)، وجهات العمل 75 ← 89. */
-/* 7 أكتوبر 2026: جولة سد الفجوات — 3,327 خريجًا (7 سجلات جديدة)؛ القصص 168 ← 167 (دمج قصة مكررة amal-almubarak)؛ 8 وسم مراجعة أُزيل بتأريخ شهري؛ 64 حقل مصدر أُكمل. */
-/* 10 أكتوبر 2026: جولة سد الفجوات والخريجين الجدد — 3,327 خريجًا (16 سجلًا جديدًا من GitHub؛ ثم دمج 5 أزواج مكررة)؛ القصص 167 دون تغيير (فحص قصة واحدة: FAIL_RELATEDNESS). */
+/* 7 أكتوبر 2026: جولة سد الفجوات — 3,328 خريجًا (7 سجلات جديدة)؛ القصص 168 ← 167 (دمج قصة مكررة amal-almubarak)؛ 8 وسم مراجعة أُزيل بتأريخ شهري؛ 64 حقل مصدر أُكمل. */
+/* 10 أكتوبر 2026: جولة سد الفجوات والخريجين الجدد — 3,328 خريجًا (16 سجلًا جديدًا من GitHub؛ ثم دمج 5 أزواج مكررة)؛ القصص 167 دون تغيير (فحص قصة واحدة: FAIL_RELATEDNESS). */
 'use strict';
 
 const SITE_STATS = [
-  { value: 3327, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
+  { value: 3328, label: 'خريجًا موثّقًا',  note: 'قاعدة بيانات الخريجين 2021 – 2026',          labelEn: 'Documented graduates',   noteEn: 'Graduates database 2021 – 2026',            icon: 'users-round',  tint: 'tint-blue' },
   { value: 167,  label: 'قصة نجاح موثّقة', note: 'مستوفية معيار الأربعة عشر شهرًا — مرتبة حسب سنة التخرج',                     labelEn: 'Verified success stories', noteEn: 'Meeting the 14-month criterion — by graduation year',             icon: 'badge-check',  tint: 'tint-green' },
   { value: 6,    label: 'دفعات خريجين',    note: '2021 – 2026',                                labelEn: 'Graduating cohorts',     noteEn: '2021 – 2026',                                icon: 'calendar-days', tint: 'tint-orange' },
   { value: 89,   label: 'جهة عمل',          note: 'جهات مسمّاة — حكومية وخاصة وعالمية',          labelEn: 'Employers',              noteEn: 'Named entities — government, private & global', icon: 'building-2', tint: 'tint-sky' },
@@ -178,7 +178,7 @@ const SITE_STATS = [
    28 سبتمبر 2026: جولة مراجعة دفعتَي 2025–2026 والتدقيق — لا قصص جديدة (7 صفحات خبرة، كلها مرفوضة)؛ دمج سجلين مكررين: #2711 في #72 «هيا البقمي» و#2383 في #2330 «يزيد الشريف» (3,087 ← 3,085؛ مهندس ذكاء اصطناعي 1,508 ← 1,507 · عالم بيانات 844 ← 843). القصص 112 وجهات العمل 69 دون تغيير.
 */
 const TRACKS = [
-  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1579 },
+  { key: 'ai',    label: 'مهندس ذكاء اصطناعي',              en: 'AI Engineer',                   value: 1580 },
   { key: 'ds',    label: 'عالم بيانات',                     en: 'Data Scientist',                value: 963 },
   { key: 'genai', label: 'أكاديمية الذكاء الاصطناعي التوليدي', en: 'Gen AI Academy',                value: 249  },
   { key: 'dmg',   label: 'إدارة وحوكمة البيانات',            en: 'Data Management & Governance',  value: 330  },
