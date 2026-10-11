@@ -1,0 +1,228 @@
+{
+ "shared_li": [],
+ "shared_gh": [
+  [
+   "k-alh",
+   [
+    3057,
+    3335
+   ]
+  ]
+ ],
+ "win_values": [
+  [
+   "ضمن النطاق",
+   2795
+  ],
+  [
+   "حدّي",
+   367
+  ],
+  [
+   "غير محدد",
+   186
+  ],
+  [
+   "قبل النطاق",
+   11
+  ],
+  [
+   "خارج النطاق",
+   1
+  ]
+ ],
+ "samename_new": [
+  [
+   3352,
+   "محمد القحطاني",
+   [
+    1686,
+    2615,
+    2836
+   ]
+  ]
+ ],
+ "stories": 167,
+ "dup_story_ids": [],
+ "prov_no_ref": [
+  "abdulaziz-althumairy",
+  "noura-alfouzan",
+  "osama-alfawzan",
+  "sara-alabdulsalam",
+  "abdulrahman-alqannas",
+  "jawaher-albaqami",
+  "rahaf-almutairi",
+  "reem-albalawi",
+  "faris-almuteri",
+  "may-aljuaid",
+  "amal-almuarik",
+  "bushra-dajam",
+  "talal-alharthi",
+  "nasser-alkuhili",
+  "rawabi-allihyani",
+  "lama-alzahrani",
+  "hanan-aljaid",
+  "aljohara-alhogail",
+  "badr-alshamrani",
+  "etab-alotaibi",
+  "rand-alsaleh",
+  "yasser-alshehri",
+  "asma-alzubaidi",
+  "bayan-albaqami",
+  "dhiyaa-alsalem",
+  "noura-aldawsari",
+  "maram-alshehri-zeham",
+  "munirah-alhazzani",
+  "mazen-alkhodairi",
+  "dania-emad",
+  "aqeelah-makki",
+  "joud-alghamdi",
+  "safiyah-alshammari",
+  "hoor-alshihi",
+  "khaled-almutairy",
+  "mohammed-albrayh",
+  "rayan-dahlawi",
+  "farah-alsuwayeh",
+  "miad-altowairqi",
+  "meshal-aldalbahi"
+ ],
+ "no_logo": [
+  "meshal-alamr",
+  "fares-altoukhi",
+  "mohammed-almalki",
+  "may-aljuaid",
+  "maysam-almalah",
+  "alanoud-alotaibi",
+  "rayah-aldawsari",
+  "hassn-alqaeri",
+  "yasser-alshehri",
+  "joud-alghamdi",
+  "meshal-aldalbahi",
+  "marwah-ali",
+  "randa-almohammadi",
+  "majid-almadani",
+  "nujud-senan",
+  "awatef-alsulami",
+  "saleh-alanazi",
+  "fahad-alaskar",
+  "abdulrhman-alghamdi",
+  "alyaa-bajaber",
+  "lama-almegbil"
+ ],
+ "no_photo": [
+  "reem-albalawi",
+  "jehad-aljazi",
+  "najd-alqahtani",
+  "jennan-sowayan",
+  "sultan-alsubaie",
+  "rand-alsaleh",
+  "joud-alghamdi",
+  "nada-ahmed",
+  "raghad-sultan",
+  "maria-a-alghamdi",
+  "ruba-alhudyani"
+ ],
+ "prov_name_mismatch": [
+  [
+   "haya-albaqami",
+   "هيا البقمي",
+   2706,
+   "Khaled Almelhem"
+  ],
+  [
+   "nujud-senan",
+   "نجود سنان",
+   2710,
+   "Nujud Senan"
+  ],
+  [
+   "hassan-abid",
+   "حسن عبدالباسط عابد",
+   528,
+   "Hassan Abdulbasit Abid"
+  ],
+  [
+   "noura-alghonaim",
+   "نورة غنيم الغنيم",
+   623,
+   "Noura Ghonaim AlGhonaim"
+  ],
+  [
+   "dina-bokhamseen",
+   "دينا بوخمسين",
+   2394,
+   "Dina Bokhamseen"
+  ]
+ ],
+ "story_keys": [
+  "achievements",
+  "categories",
+  "category",
+  "id",
+  "impact",
+  "links",
+  "name",
+  "nameEn",
+  "org",
+  "orgLogo",
+  "period",
+  "photo",
+  "program",
+  "provenance",
+  "quote",
+  "reviewFlag",
+  "role",
+  "story",
+  "year"
+ ],
+ "story_org_count": 96,
+ "story_years": [
+  [
+   2021,
+   29
+  ],
+  [
+   2022,
+   8
+  ],
+  [
+   2023,
+   31
+  ],
+  [
+   2024,
+   58
+  ],
+  [
+   2025,
+   29
+  ],
+  [
+   2026,
+   12
+  ]
+ ],
+ "quote_kinds": [
+  [
+   "draft",
+   144
+  ],
+  [
+   "verified",
+   23
+  ]
+ ],
+ "counts": {
+  "N": 3360,
+  "T": {
+   "ds": 973,
+   "ai": 1593,
+   "other": 201,
+   "genai": 251,
+   "dmg": 331,
+   "coop": 11
+  },
+  "wl": 1433,
+  "uu": 2346
+ }
+}
