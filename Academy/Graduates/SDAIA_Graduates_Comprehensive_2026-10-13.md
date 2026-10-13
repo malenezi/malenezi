@@ -1,7 +1,7 @@
 # قاعدة بيانات خريجي أكاديمية سدايا — الإصدار الشامل
 # SDAIA Academy Graduates Database — Comprehensive Edition
 
-**الإصدار:** 11 أكتوبر 2026 · **المصدر:** `Graduates/index.html` (DATA.grads) مطابق صفًا بصف لـ `Graduates_Database.xlsx` · **الترقيم:** «#N» = السجل رقم N في هذا الإصدار (بعد دمج واستبعاد 11 أكتوبر 2026).
+**الإصدار:** 13 أكتوبر 2026 · **المصدر:** `Graduates/index.html` (DATA.grads) مطابق صفًا بصف لـ `Graduates_Database.xlsx` · **الترقيم:** «#N» = السجل رقم N في هذا الإصدار (بعد دمج واستبعاد 11 أكتوبر 2026؛ جولة 13 أكتوبر أضافت #3353–#3362 دون إعادة ترقيم).
 
 > هذا الملف لقطة موحّدة ونظيفة للقاعدة كما هي اليوم. سجلّ الجولات التاريخي (بترقيمه المحلي) باقٍ في `Graduates_Database.md`.
 
@@ -9,27 +9,27 @@
 
 | المؤشر | القيمة |
 |---|---|
-| إجمالي الخريجين الموثّقين (سجلات فردية) | **3,352** |
-| قصص نجاح مرتبطة بسجلات القاعدة | **167** |
+| إجمالي الخريجين الموثّقين (سجلات فردية) | **3,362** |
+| قصص نجاح مرتبطة بسجلات القاعدة | **169** |
 | المسارات المعيارية | 6 |
 | الدفعات | 2021 – 2026 |
-| سجلات بجهة عمل موثّقة | 500 (14.9%) |
-| سجلات برابط تحقق علني | 1,425 (42.5%) — 2,338 رابطًا فريدًا |
-| منها بحساب LinkedIn / GitHub | 830 / 812 |
-| سجلات بالاسم الإنجليزي | 2,041 (60.9%) |
-| ثقة مرتفعة (≥75) · متوسطة (45–74) · منخفضة (<45) | 2,984 · 349 · 19 |
+| سجلات بجهة عمل موثّقة | 501 (14.9%) |
+| سجلات برابط تحقق علني | 1,437 (42.7%) — 2,358 رابطًا فريدًا |
+| منها بحساب LinkedIn / GitHub | 843 / 816 |
+| سجلات بالاسم الإنجليزي | 2,051 (61.0%) |
+| ثقة مرتفعة (≥75) · متوسطة (45–74) · منخفضة (<45) | 2,992 · 351 · 19 |
 
 ## 2. التوزيع حسب المسار — By standard track
 
 | المسار | Track | السجلات | النسبة |
 |---|---|---:|---:|
-| مهندس ذكاء اصطناعي | AI Engineer | 1,589 | 47.4% |
-| عالم بيانات | Data Scientist | 971 | 29.0% |
-| أكاديمية الذكاء الاصطناعي التوليدي | Gen AI Academy | 250 | 7.5% |
-| إدارة وحوكمة البيانات | Data Management & Governance | 331 | 9.9% |
+| مهندس ذكاء اصطناعي | AI Engineer | 1,598 | 47.5% |
+| عالم بيانات | Data Scientist | 972 | 28.9% |
+| أكاديمية الذكاء الاصطناعي التوليدي | Gen AI Academy | 250 | 7.4% |
+| إدارة وحوكمة البيانات | Data Management & Governance | 331 | 9.8% |
 | التدريب التعاوني | Cooperative Training (COOP) | 11 | 0.3% |
-| برامج متخصصة أخرى | Other / Specialized | 200 | 6.0% |
-| **الإجمالي** | **Total** | **3,352** | 100% |
+| برامج متخصصة أخرى | Other / Specialized | 200 | 5.9% |
+| **الإجمالي** | **Total** | **3,362** | 100% |
 
 ## 3. التوزيع حسب سنة الدفعة — By cohort year
 
@@ -40,16 +40,16 @@
 | 2021 | 1 | 155 | 0 | 0 | 0 | 3 | **159** | 159 |
 | 2022 | 15 | 22 | 0 | 0 | 1 | 1 | **39** | 109 |
 | 2023 | 353 | 57 | 7 | 12 | 5 | 1 | **435** | 437 |
-| 2024 | 479 | 318 | 6 | 114 | 2 | 63 | **982** | 990 |
+| 2024 | 480 | 318 | 6 | 114 | 2 | 63 | **983** | 991 |
 | 2025 | 80 | 4 | 17 | 1 | 3 | 12 | **117** | 127 |
-| 2026 | 554 | 342 | 48 | 196 | 0 | 109 | **1,249** | 1,320 |
+| 2026 | 562 | 343 | 48 | 196 | 0 | 109 | **1,258** | 1,329 |
 | غير محددة | 107 | 73 | 172 | 8 | 0 | 11 | **371** | — |
 
 ## 4. تركيز 2024 – 2026 — Focus on recent cohorts
 
-سجلات سنتها الأولى 2024: **982** · 2025: **117** · 2026: **1,249** — أي **2,348** سجلًا (70.0% من القاعدة).
+سجلات سنتها الأولى 2024: **983** · 2025: **117** · 2026: **1,258** — أي **2,358** سجلًا (70.1% من القاعدة).
 
-**جولة 11 أكتوبر 2026:** 32 سجلًا جديدًا (كلها دفعات سبتمبر–أكتوبر 2026) من مصدرين: جداول «الفريق» في ملفات README لمشاريع «تيسير» الختامية لمقرر SDA-DSC-112 ومستودعات مقررات الأكاديمية على GitHub، ومنشورات الإتمام على LinkedIn (حساب مسجَّل). لم يُعثر على سجلات 2024–2025 جديدة قابلة للتحقق: بحث GitHub يرصد المستودعات الجديدة فقط، ومرشّح التاريخ في بحث منشورات LinkedIn لا يتجاوز شهرًا. **الطريق لدفعات 2024–2025:** قوائم الأكاديمية الداخلية، أو بحث الأشخاص في LinkedIn لكل برنامج باسم القيد الحرفي.
+**جولة 13 أكتوبر 2026:** 10 سجلات جديدة (#3353–#3362): 3 من GitHub (مشروع نهائي لمقرر الرؤية الحاسوبية SDA-AIE-212 وتسليمان لمشروع «وكيل البحث العميق») و7 من منشورات LinkedIn وشهاداتها (دفعات أكتوبر 2026، إضافة إلى خريج معسكر LLM يناير 2024)؛ و8 إثراءات ضبطت الدفعات من شهادات بتواريخ يومية؛ وقصتان جديدتان لخريجي دفعة 2024 (ويدو سوليوشنز · وتد الطبية). جولة 11 أكتوبر سبقتها بـ32 سجلًا من دفعات سبتمبر–أكتوبر 2026.
 
 ## 5. البرامج الأكثر تمثيلًا — Top programmes (normalized names)
 
@@ -60,10 +60,10 @@
 | 3 | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | 199 |
 | 4 | معسكر النماذج اللغوية الكبيرة | 197 |
 | 5 | معسكر T5 | 195 |
-| 6 | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي | 126 |
+| 6 | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي | 127 |
 | 7 | محترف إدارة البيانات المعتمد | 122 |
 | 8 | البرمجة التوليدية | 98 |
-| 9 | تطوير حلول الذكاء الاصطناعي التوليدي | 85 |
+| 9 | تطوير حلول الذكاء الاصطناعي التوليدي | 87 |
 | 10 | نمذجة وتصميم البيانات ومستودعات البيانات وذكاء الأعمال | 82 |
 | 11 | معسكر T5 لعلوم البيانات | 76 |
 | 12 | معسكر أكاديمية سدايا لمحترفي الذكاء الاصطناعي — الدفعة الخامسة B5 | 65 |
@@ -76,14 +76,14 @@
 | 19 | برنامج بناء تطبيقات الذكاء الاصطناعي | 37 |
 | 20 | رفع الإنتاجية وتحسين العمليات | 33 |
 | 21 | هندسة أنظمة الذكاء الاصطناعي التوكيلية المتقدمة | 33 |
-| 22 | تصوّر البيانات وسرد القصص | 30 |
+| 22 | تصوّر البيانات وسرد القصص | 31 |
 | 23 | الذكاء الاصطناعي التوليدي لإنتاجية العمل | 30 |
 | 24 | LLM Practitioner — LLM BC 2 2023 | 27 |
-| 25 | التدريب الاحترافي في النماذج اللغوية الكبيرة | 25 |
-| 26 | LLM Practitioner — LLM BC 1 2023 | 25 |
-| 27 | معسكر النماذج اللغوية الكبيرة، معسكر تعلم الآلة | 25 |
-| 28 | LLMs Practitioner, Dec 2023 | 24 |
-| 29 | هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة | 24 |
+| 25 | هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة | 27 |
+| 26 | التدريب الاحترافي في النماذج اللغوية الكبيرة | 25 |
+| 27 | LLM Practitioner — LLM BC 1 2023 | 25 |
+| 28 | معسكر النماذج اللغوية الكبيرة، معسكر تعلم الآلة | 25 |
+| 29 | LLMs Practitioner, Dec 2023 | 24 |
 | 30 | ML Practitioner — ML BC 5 2023 | 23 |
 | 31 | شهادة NVIDIA NCA-GENL | 22 |
 | 32 | LLM Practitioner — LLM 5 2023 | 22 |
@@ -102,7 +102,7 @@
 
 | النطاق الزمني (معيار الأربعة عشر شهرًا) | السجلات |
 |---|---:|
-| ضمن النطاق | 2,793 |
+| ضمن النطاق | 2,803 |
 | حدّي | 367 |
 | غير محدد | 180 |
 | قبل النطاق | 11 |
@@ -110,7 +110,7 @@
 
 سجلات بلا سنة دفعة محددة: **371** (أغلبها قائمة NVIDIA الرسمية بلا تواريخ). سجلات بلا اسم إنجليزي: **1,311** (قوائم رسمية بلا روابط).
 
-**تدقيق 11 أكتوبر 2026 (بلا ملاحظات مفتوحة):** لا معرّف LinkedIn ولا حساب GitHub مشترك بين سجلين · لا روابط مكررة داخل السجل · المسارات والدرجات ضمن القيم المسموحة · صفوف xlsx مطابقة لقاعدة البيانات صفًا بصف · العدادات متسقة في البوابة وصفحة الخريجين وموقع القصص والـxlsx · كل مراجع الصور والملفات المحلية تعمل · لا نص `**` في الحقول المعروضة.
+**تدقيق 13 أكتوبر 2026 (بلا ملاحظات مفتوحة):** لا معرّف LinkedIn ولا حساب GitHub مشترك بين سجلين · لا روابط مكررة داخل السجل · المسارات والدرجات ضمن القيم المسموحة · صفوف xlsx مطابقة لقاعدة البيانات صفًا بصف · العدادات متسقة في البوابة وصفحة الخريجين وموقع القصص والـxlsx · كل مراجع الصور والملفات المحلية تعمل · لا نص `**` في الحقول المعروضة.
 
 ## 7. المنهجية والمصادر — Methodology
 
@@ -129,7 +129,7 @@
 
 ## 9. السجل الكامل — Full registry
 
-3,352 سجلًا مرتبة بالرقم. «الرابط» هو الرابط الأساسي (LinkedIn أولًا ثم GitHub)؛ الروابط كلها في `Graduates_Database.xlsx`. ⭐ = للخريج قصة نجاح منشورة.
+3,362 سجلًا مرتبة بالرقم. «الرابط» هو الرابط الأساسي (LinkedIn أولًا ثم GitHub)؛ الروابط كلها في `Graduates_Database.xlsx`. ⭐ = للخريج قصة نجاح منشورة.
 
 | # | الاسم | Name | البرنامج | المسار | الدفعة | جهة العمل | الثقة | الرابط |
 |---:|---|---|---|---|---|---|---:|---|
@@ -2409,7 +2409,7 @@
 | 2274 | رعد الصباغ | Raad Sabbagh | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | 2023 | flynas | 90 |  |
 | 2275 | صفا المهداوي | Safa Almahdawi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي + برنامج Elevate | عالم بيانات | 2023 | Tamayouz Business Services | 90 |  |
 | 2276 | عبدالرحمن المقاطي | Abdulrahman Almuqati | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | 2023 | stc | 90 |  |
-| 2277 | باسل العقيل | Basil Alaqeel | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | 2024 | Wedo Solutions | 90 |  |
+| 2277 | باسل العقيل ⭐ | Basil Alaqeel | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | يوليو–أكتوبر 2024 | ويدو سوليوشنز (Wedo Solutions) | 90 | https://www.linkedin.com/in/basil-alaqeel/ |
 | 2278 | يوسف اللحياني | Yousef al-Lahyani | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | 2024 | Drahim ¦ دراهم | 90 |  |
 | 2279 | العنود القبيسي | Alanoud Alqubaysi | معسكر T5 (T5 Bootcamp) | عالم بيانات | 2021 | Quant | 90 |  |
 | 2280 | عبداللطيف الصبر | Abdullatif Alsabr | معسكر T5 (T5 Bootcamp) | عالم بيانات | 2021 | Saudi Constructioneers Ltd. (SAUDICO) | 90 |  |
@@ -2454,7 +2454,7 @@
 | 2319 | يزيد سليمان الشريف ⭐ | Yazeed Suliman Alshurify | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | يونيو 2024 | Huawei | 85 | https://www.linkedin.com/in/yazeed-alshurify/ |
 | 2320 | فارس الشعيبي | Faris Alshuaibi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي | عالم بيانات | 2024 | Uptime Institute | 60 |  |
 | 2321 | مجد العتيبي ⭐ | Majd Alotaibi | معسكر الذكاء الاصطناعي وعلوم البيانات — سدايا | عالم بيانات | 2024 | جاهز (Jahez) | 80 | https://www.linkedin.com/in/majd-abdullah-/ |
-| 2322 | عبدالكريم محبوب | Abdulkarim Mahboob | معسكر T5 لتقنيات إدارة الزحام المروري (T5 & Traffic Management Technologies Bootcamp) | عالم بيانات | 2024 | WTDcare ¦ وتد الطبية | 85 |  |
+| 2322 | عبدالكريم محبوب ⭐ | Abdulkarim Mahboob | معسكر T5 لتقنيات إدارة الزحام المروري (T5 & Traffic Management Technologies Bootcamp) | عالم بيانات | يوليو–أكتوبر 2024 | وتد الطبية (WTDcare) | 85 | https://www.linkedin.com/in/abdulkarim-mahboob/ |
 | 2323 | عالية العتيبي | Aliah Alotaibi | معسكر T5 لتقنيات إدارة الزحام (T5 Zeham Management Technologies Bootcamp by SDAIA) | عالم بيانات | 2024 | SDAIA (وقت المعسكر)؛ سابقًا ELM | 85 |  |
 | 2324 | غدير الغامدي | Ghadeer Alghamdi | معسكر T5 لعلوم البيانات (SDAIA T5 Data Science Bootcamp) — المشروع الأول | عالم بيانات | 2021 |  | 90 | https://medium.com/@ighadeer93_58983/phishing-websites-eda-exploratory-data-analysis-df80c9182d56 |
 | 2325 | غسان الرحيلي | Ghassan Alrehaili | معسكر T5 لعلوم البيانات والذكاء الاصطناعي (أكاديمية سدايا) | عالم بيانات | نوفمبر 2021 – يناير 2022 | بنك stc (stc bank) | 85 | https://www.linkedin.com/in/ghassanalrehaili/ |
@@ -2696,7 +2696,7 @@
 | 2561 | عبدالإله الحربي | Abdulelah Alharbi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) | عالم بيانات | أغسطس 2026 |  | 85 | https://github.com/c3bod |
 | 2562 | سند الخمالي | Sanad Alkhamali | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) + هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة (Advanced Agentic AI Systems Engineering) — أكاديمية سدايا | عالم بيانات | أغسطس 2026 |  | 80 | https://github.com/SanadAlkhamali |
 | 2563 | هذال السبيعي | Hathal Alsubaie | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) | عالم بيانات | أغسطس 2026 |  | 70 | https://github.com/c3bod/sdaia-capstone-modern-data-engineering |
-| 2564 | نواف السياري | Nawaf Alsayari | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) + التنبؤ بالسلاسل الزمنية لأنظمة الذكاء الاصطناعي (Time Series Forecasting for AI Systems) — أكاديمية سدايا | عالم بيانات | أغسطس 2026 |  | 80 | https://github.com/NawafAlsayari |
+| 2564 | نواف السياري | Nawaf Alsayari | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) + التنبؤ بالسلاسل الزمنية لأنظمة الذكاء الاصطناعي (Time Series Forecasting for AI Systems) — أكاديمية سدايا + تصوّر البيانات وسرد القصص (SDA-DSC-112) — أكاديمية سدايا (Data Visualization & Storytelling) | عالم بيانات | أغسطس 2026 |  | 80 | https://www.linkedin.com/in/nawaf-alsayari-1a9bb9366/ |
 | 2565 | عبدالله النجاشي | Abdullah Alnajashi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) | عالم بيانات | أغسطس 2026 |  | 70 | https://github.com/c3bod/sdaia-capstone-modern-data-engineering |
 | 2566 | سيف أبوخميس | Saif Abukhamis | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) | عالم بيانات | 2–6 أغسطس 2026 |  | 75 | https://github.com/saifabokhamees1-cmyk |
 | 2567 | ريان الشريفي | Rayan Shareefi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي — أكاديمية سدايا (Modern Data Engineering for AI Systems) | عالم بيانات | 2–6 أغسطس 2026 |  | 85 | https://www.linkedin.com/in/rayan-shareefi/ |
@@ -2965,7 +2965,7 @@
 | 2830 | هديل المطيري | Hadeel Almutairi | حوكمة الوكلاء الأذكياء — أكاديمية سدايا (البرنامج غير محدد) | مهندس ذكاء اصطناعي | أغسطس 2026 |  | 62 | https://www.linkedin.com/in/hadeel-almutairi-335678245/ |
 | 2831 | غيداء الزهراني | Ghaida Al-Zahrani | التدريب التعاوني — أكاديمية سدايا (SDAIA Academy Cooperative Training) | التدريب التعاوني | 2025 |  | 84 | https://www.linkedin.com/in/ghaidaalzahrani/ |
 | 2832 | مضاوي الدايل | Madawi Aldayel | الرؤية الحاسوبية للمطوّرين مع Ultralytics — أكاديمية سدايا (Computer Vision for Developers with Ultralytics) | مهندس ذكاء اصطناعي | أغسطس 2026 (المشروع: 12 أغسطس 2026) |  | 80 | https://github.com/madawi5/SDAIA-Retail-Analytics-Capstone |
-| 2833 | عبدالله فيصل السهلي | Abdullah Faisal Alsehli | الرؤية الحاسوبية للمطوّرين مع Ultralytics — أكاديمية سدايا (Computer Vision for Developers with Ultralytics) | مهندس ذكاء اصطناعي | أغسطس 2026 (المشروع: 12–13 أغسطس 2026) |  | 88 | https://www.linkedin.com/in/abdullah-f-alsehli/ |
+| 2833 | عبدالله فيصل السهلي | Abdullah Faisal Alsehli | الرؤية الحاسوبية للمطوّرين مع Ultralytics — أكاديمية سدايا (Computer Vision for Developers with Ultralytics) + هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة (Advanced Agentic AI Systems Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أغسطس 2026 (المشروع: 12–13 أغسطس 2026) |  | 88 | https://www.linkedin.com/in/abdullah-f-alsehli/ |
 | 2834 | حصة أحمد الزهراني | Hessa Ahmed Alzahrani | تحليل السلاسل الزمنية — أكاديمية سدايا (SDAIA Academy Time Series Course) | عالم بيانات | أغسطس 2026 (الدفعة: 27 أغسطس 2026) |  | 76 | https://github.com/4hessa/international-airpassengers-project |
 | 2835 | لمار عبدالعزيز البكري | Lamar Abdulaziz Albakri | تحليل السلاسل الزمنية — أكاديمية سدايا (SDAIA Academy Time Series Course) | عالم بيانات | أغسطس 2026 (28 أغسطس 2026) |  | 86 | https://www.linkedin.com/in/lamar-abdulaziz-albakri-79a512343/ |
 | 2836 | فهد النفيعي | Fahad Alnfeai | تحليل السلاسل الزمنية — أكاديمية سدايا (SDAIA Academy Time Series Course) | عالم بيانات | أغسطس 2026 (الدفعة: 27 أغسطس 2026) |  | 76 | https://github.com/liFahad/international-airpassengers-project |
@@ -3160,14 +3160,14 @@
 | 3025 | حنين عبدالله القحطاني | Haneen Abdullah Alqahtani | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 14 سبتمبر 2026) |  | 78 | https://github.com/Haneenalq1 |
 | 3026 | عمر يوسف الحربي | Omar Yousef Alharbi | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 14 سبتمبر 2026) |  | 70 | https://github.com/oykh2005-coder |
 | 3027 | خديجة الدوسري | Khadija Aldosari | أساسيات الذكاء الاصطناعي لبيئة العمل (L0-FAE — AI Fundamentals for the Workplace) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 14 سبتمبر 2026) |  | 75 | https://www.linkedin.com/in/khadija-al-dosari-4447b5221/ |
-| 3028 | لجين عبدالعزيز العمري | Lujain Abdulaziz Alamri | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 14 سبتمبر 2026) |  | 78 | https://github.com/lojainAbdulaziz |
+| 3028 | لجين عبدالعزيز العمري | Lujain Abdulaziz Alamri | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 14 سبتمبر 2026) |  | 78 | https://www.linkedin.com/in/lujainabdulaziz1/ |
 | 3029 | لبى علي اليحيى | Loba Ali Alyahya | هندسة تطبيقات النماذج اللغوية الكبيرة (SDA-AIE-213 — LLM Application Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | سبتمبر 2026 (إنشاء مستودع التسليم: 14 سبتمبر 2026) |  | 78 | https://www.linkedin.com/in/loba-alyahya/ |
 | 3030 | حامد الرشيدي | Hamed Alrashidi | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 75 | https://www.linkedin.com/in/hamedalrashidi/ |
 | 3031 | سعود إبراهيم الدعيب | Saud Ibrahim Aldueb | التنبؤ بالسلاسل الزمنية لأنظمة الذكاء الاصطناعي (Time Series Forecasting for AI Systems) — أكاديمية سدايا | عالم بيانات | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 78 | https://github.com/saud1427446 |
 | 3032 | هند الغريبي | Hind Al-Ghuraybi | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (Modern Data Engineering for AI Systems) — أكاديمية سدايا | عالم بيانات | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 75 | https://www.linkedin.com/in/hind-abed-al-ghuraybi-3716b4133/ |
 | 3033 | نواف البقمي | Nawaf Albogami | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 78 | https://github.com/NawafAlbogami |
 | 3034 | عبدالعزيز سعيد تركي الشهراني | Abdulaziz Saeed Turki Alshahrani | البرمجة التوليدية (Vibe Coding) — أكاديمية سدايا | مهندس ذكاء اصطناعي | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 75 | https://github.com/azshahrany |
-| 3035 | شروق الزهراني | Shrouq Alzahrani | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 85 | https://www.linkedin.com/in/shrouq-alzah/ |
+| 3035 | شروق سعيد الزهراني | Shrouq Alzahrani | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | 13–15 سبتمبر 2026 |  | 85 | https://www.linkedin.com/in/shrouq-alzah/ |
 | 3036 | نورة المحسن | Noura AlMohsen | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 78 | https://github.com/20noura01-hash |
 | 3037 | أحمد سعيد | Ahmed Saeed | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (Modern Data Engineering for AI Systems) — أكاديمية سدايا | عالم بيانات | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 75 | https://github.com/AhmedAI777 |
 | 3038 | دنى شليه القحطاني | Dona Shalih AlQahtani | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر 2026 (إنشاء مستودع التسليم: 15 سبتمبر 2026) |  | 78 | https://github.com/dunash12 |
@@ -3437,12 +3437,12 @@
 | 3302 | مصعب البرقي | Mussab Albargi | معسكر T5 لعلوم البيانات والذكاء الاصطناعي — أكاديمية سدايا | عالم بيانات | يناير 2024 (تاريخ مستودع المعسكر) |  | 72 | https://github.com/Mussab-albargi |
 | 3303 | الأقصى أكبر | Alaqsa Akbar | معسكر الذكاء الاصطناعي سدايا–كاوست (SDAIA-KAUST AI Bootcamp) | مهندس ذكاء اصطناعي | فبراير 2024 (تاريخ مستودع المعسكر) | هيوماين (HUMAIN) | 78 | https://www.linkedin.com/in/alaqsa-akbar/ |
 | 3304 | نوف الحارثي | Nouf Alharthi | برنامج أكاديمية سدايا — مشروع ختامي (SDAIA-Capstone؛ البرنامج غير مسمّى) | برامج متخصصة أخرى | أكتوبر 2026 (تاريخ مستودع المشروع الختامي) |  | 62 | https://github.com/NoufHar |
-| 3305 | محمد الحجي | Mohammed Alhijji | تطوير حلول الذكاء الاصطناعي التوليدي (Developing Generative AI Solutions) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (تاريخ مستودعات البرنامج) |  | 72 | https://github.com/vecxtor0-prog |
+| 3305 | محمد أحمد الحجي | Mohammed Alhijji | تطوير حلول الذكاء الاصطناعي التوليدي (Developing Generative AI Solutions) — أكاديمية سدايا | مهندس ذكاء اصطناعي | 4–7 أكتوبر 2026 |  | 72 | https://www.linkedin.com/in/mohammed-alhijji-a9692a353/ |
 | 3306 | أثير الشهراني | Atheer Alshahrani | تعلم الآلة التطبيقي للأنظمة الذكية (Applied Machine Learning) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (تاريخ مستودع مشروع البرنامج) |  | 72 | https://github.com/AtheerJB |
 | 3307 | شذى السبيعي | Shatha Alsubaie | أساليب تعلم الآلة المتقدمة (Advanced Machine Learning Methods) — أكاديمية سدايا | عالم بيانات | أكتوبر 2026 (تاريخ مستودع مشروع البرنامج) |  | 68 | https://github.com/shatha-alsubaie |
 | 3308 | فرح الربح | Farah Alrebh | دورة الذكاء الاصطناعي — أكاديمية سدايا (مختبرات المقرر) | مهندس ذكاء اصطناعي | أكتوبر 2026 (تاريخ مستودع مختبرات المقرر) |  | 62 | https://github.com/farahalrebh |
 | 3309 | أسماء مهدي نابه | Asma Mahdi Nabeh | برنامج أكاديمية سدايا — مشروع تحليل الموارد البشرية (البرنامج غير مسمّى) | برامج متخصصة أخرى | أكتوبر 2026 (تاريخ مستودع المشروع) |  | 60 | https://github.com/asmaMahdiNABEH |
-| 3310 | فارس الشعشاع | Faris Alshashaa | برنامج النماذج اللغوية الكبيرة — أكاديمية سدايا (مشروع LLM) | مهندس ذكاء اصطناعي | أكتوبر 2026 (تاريخ مستودع المشروع) |  | 66 | https://github.com/farisalshashaa |
+| 3310 | فارس نضال الشعشاع | Faris Alshashaa | هندسة تطبيقات النماذج اللغوية الكبيرة (SDA-AIE-213 — LLM Application Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | 4–7 أكتوبر 2026 |  | 66 | https://www.linkedin.com/in/faris-alshashaa-043a8929b/ |
 | 3311 | عزام الزهراني | Azam Alzahrani | تطوير حلول الذكاء الاصطناعي التوليدي (Developing Generative AI Solutions) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (تاريخ مستودع واجبات المقرر) |  | 62 | https://github.com/AzamAlzahrani |
 | 3312 | ريم شايع | Reem Shaya | أساليب تعلم الآلة المتقدمة (Advanced Machine Learning Methods) — أكاديمية سدايا | عالم بيانات | أكتوبر 2026 (تاريخ مستودع مشروع المقرر) |  | 70 | https://github.com/ReemShaya |
 | 3313 | اللولو البصري | Allolo Albasri | أساليب تعلم الآلة المتقدمة (Advanced Machine Learning Methods) — أكاديمية سدايا | عالم بيانات | أكتوبر 2026 (تاريخ مستودع مشروع المقرر) |  | 68 | https://github.com/Lulu634381 |
@@ -3485,5 +3485,15 @@
 | 3350 | شيخة التميمي | Shaykhah Altamimi | الذكاء الاصطناعي التوليدي لإنتاجية العمل (L0-FGP — Generative AI for Workplace Productivity) — أكاديمية سدايا | برامج متخصصة أخرى | سبتمبر–أكتوبر 2026 (منشور الإتمام 4 أكتوبر 2026) |  | 78 | https://www.linkedin.com/in/shaykhah-altamimi/ |
 | 3351 | لمى العنزي | Lama Alanazi | هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة (Advanced Agentic AI Systems Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | سبتمبر–أكتوبر 2026 (منشور الإتمام 3 أكتوبر 2026) |  | 78 | https://www.linkedin.com/in/lama-alanazi28/ |
 | 3352 | محمد النغموش | Mohammad Alnaghmoush | التدريب الاحترافي في النماذج اللغوية الكبيرة (سدايا×NVIDIA) + شهادة NVIDIA NCA-GENL | أكاديمية الذكاء الاصطناعي التوليدي | سبتمبر–أكتوبر 2026 (منشور الشهادة 3 أكتوبر 2026) |  | 82 | https://www.linkedin.com/in/mohammad-alnaghmoush-398202420/ |
+| 3353 | أماني عيد العنزي | Amani Eid Alanazi | تطوير أنظمة الرؤية الحاسوبية (SDA-AIE-212 — Computer Vision Systems Development) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (إنشاء مستودع المشروع النهائي: 12 أكتوبر 2026) |  | 80 | https://github.com/amanialanazi |
+| 3354 | أثير العنزي | Atheer Alenezi | مشروع «وكيل البحث العميق» (Deep Research Agent — LangGraph) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (تسليم المشروع: 8 أكتوبر 2026) |  | 70 | https://github.com/atheeraziz03-cmd |
+| 3355 | أحمد الحربي | Ahmad Alharbi | مشروع «وكيل البحث العميق» (Deep Research Agent — LangGraph) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (تسليم المشروع: 8 أكتوبر 2026) |  | 68 | https://github.com/EngAhmadAlharbi |
+| 3356 | حسن مهدي الحسين | Hasan Mahdi Alhussain | هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة (Advanced Agentic AI Systems Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (الأسبوع الأول؛ منشور الإتمام مع شهادة الاجتياز 13 أكتوبر 2026) |  | 88 | https://www.linkedin.com/in/hasan-alhussain/ |
+| 3357 | حسن علي المكينه | Hassan Ali Almakinah | هندسة تطبيقات النماذج اللغوية الكبيرة (SDA-AIE-213 — LLM Application Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | 4–7 أكتوبر 2026 |  | 88 | https://www.linkedin.com/in/hassan-almakinah-33b00b332/ |
+| 3358 | شموخ خالد المليفي | Shmookh Kahlid Almoliafai | هندسة أنظمة الذكاء الاصطناعي الوكيلي المتقدمة (Advanced Agentic AI Systems Engineering) — أكاديمية سدايا | مهندس ذكاء اصطناعي | 4–8 أكتوبر 2026 |  | 88 | https://www.linkedin.com/in/sii6-h/ |
+| 3359 | يارا القرني | Yara Algarni | تطوير حلول الذكاء الاصطناعي التوليدي (Developing Generative AI Solutions) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (منشور الإتمام 13 أكتوبر 2026) |  | 75 | https://www.linkedin.com/in/yara-algarni-829233276/ |
+| 3360 | لطيفة اليوسف | Latifah Alyousef | هندسة البيانات الحديثة لأنظمة الذكاء الاصطناعي (Modern Data Engineering for AI Systems) — أكاديمية سدايا | عالم بيانات | سبتمبر–أكتوبر 2026 (منشور الإتمام 12 أكتوبر 2026) |  | 78 | https://www.linkedin.com/in/latifah-alyousef-015821208/ |
+| 3361 | الدانة السهلي | Aldana Alsahli | تطوير حلول الذكاء الاصطناعي التوليدي (Developing Generative AI Solutions) — أكاديمية سدايا | مهندس ذكاء اصطناعي | أكتوبر 2026 (منشور الإتمام 12 أكتوبر 2026) |  | 75 | https://www.linkedin.com/in/aldana-alsahli-90a6a1245/ |
+| 3362 | محمد الدوسري | Mohammed Aldawsari | معسكر النماذج اللغوية الكبيرة (Large Language Models Bootcamp) — سدايا | مهندس ذكاء اصطناعي | يناير 2024 (تاريخ إصدار الشهادة) | Wakeb_Data | 82 | https://www.linkedin.com/in/mohammed-aldawsari-8ab71624b/ |
 
-— نهاية الملف · 3,352 سجلًا · أُنتج آليًا من البيانات الحية في 11 أكتوبر 2026 —
+— نهاية الملف · 3,362 سجلًا · أُنتج آليًا من البيانات الحية في 13 أكتوبر 2026 —
