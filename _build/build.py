@@ -293,6 +293,9 @@ COMPETENCIES = [
 ]
 
 SELECTED_PUBS = [
+    ("Agentic Artificial Intelligence in Software Engineering: Integration Points, Architectural Frameworks, Empirical Evaluation, and Governance",
+     "International Journal of Technology", "2026", "https://doi.org/10.14716/ijtech.v17i4.8380",
+     "Where agents plug into the delivery lifecycle, how to architect and govern them, and what an enterprise evaluation shows."),
     ("A Unified Meta Model for Converting Architecture Decisions Into DevOps Pipelines",
      "Software: Practice and Experience (Wiley)", "2026",
      "https://onlinelibrary.wiley.com/doi/10.1002/spe.70077",
@@ -355,11 +358,11 @@ RESEARCH_PROGRAMME = [
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
              7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
-# Google Scholar, read by hand on 30 Sep 2026: 8,191 citations (7,503 since 2021),
-# h-index 37 (34 since 2021), i10-index 100 (82 since 2021).
-CITATIONS = "8,100+"
-H_INDEX = "37"
-I10_INDEX = "100"
+# Google Scholar, read on 15 Oct 2026: 8,320 citations (7,631 since 2021),
+# h-index 38 (34 since 2021), i10-index 101 (84 since 2021).
+CITATIONS = "8,300+"
+H_INDEX = "38"
+I10_INDEX = "101"
 
 
 def peer_reviewed(pubs):
@@ -374,9 +377,9 @@ def peer_reviewed(pubs):
 def metrics(pubs):
     c = peer_reviewed(pubs)
     return [
-        (CITATIONS, "Citations", "Google Scholar · 7,500+ since 2021"),
+        (CITATIONS, "Citations", "Google Scholar · 7,600+ since 2021"),
         (H_INDEX, "h-index", "Career total · 34 since 2021"),
-        (I10_INDEX, "i10-index", "Career total · 82 since 2021"),
+        (I10_INDEX, "i10-index", "Career total · 84 since 2021"),
         (str(c["reviewed"]), "Publications", "Peer-reviewed"),
         ("2015", "Executive roles since", "CIO · dean · director · GM"),
     ]

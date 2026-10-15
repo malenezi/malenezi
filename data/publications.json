@@ -121,6 +121,18 @@
  },
  {
   "kind": "journal",
+  "num": 116,
+  "ref": "",
+  "authors": "Mohammed Akour, Mamdouh Alenezi, Omaia Alomari",
+  "title": "Agentic Artificial Intelligence in Software Engineering: Integration Points, Architectural Frameworks, Empirical Evaluation, and Governance",
+  "venue": "International Journal of Technology, 17(4), 1245–1262",
+  "year": 2026,
+  "doi": "https://doi.org/10.14716/ijtech.v17i4.8380",
+  "url": "https://ijtech.eng.ui.ac.id/article/view/8380",
+  "pdf": null
+ },
+ {
+  "kind": "journal",
   "num": 114,
   "ref": "",
   "authors": "Mohammed Akour, Mamdouh Alenezi",
