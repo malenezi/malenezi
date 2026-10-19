@@ -87,7 +87,7 @@ function filteredStories() {
     const inYear = state.year === 'all' || s.year === +state.year;
     if (!inYear) return false;
     if (!q) return true;
-    return [s.name, s.nameEn, s.org, s.role, s.program, s.impact, (s.quote && s.quote.text) || ''].join(' ').toLowerCase().includes(q);
+    return [s.name, s.nameEn, s.org, s.role, s.program, s.impact, (s.quote && s.quote.text) || '', (s.quote && s.quote.textEn) || ''].join(' ').toLowerCase().includes(q);
   });
 }
 
@@ -101,7 +101,8 @@ function nameBlock(s, tag) {
 }
 
 /* ---------- Quotation block ----------
-   Every story carries s.quote = { text, kind: 'verified' | 'draft', source? }.
+   Every story carries s.quote = { text, textEn, kind: 'verified' | 'draft', source?, original? }.
+   text/textEn ≤ 100 characters each (19 Oct 2026); 'original' keeps the full approved wording of a condensed verified quote.
    'verified' quotes are supplied and cleared for publication by the Academy;
    'draft' quotes are inferred from the graduate's documented achievements and
    are labelled as such on the card and in the modal until they are approved. */
@@ -109,6 +110,7 @@ function quoteBlock(s, variant) {
   const q = s.quote;
   if (!q || !q.text) return '';
   const draft = q.kind === 'draft';
+  const qen = SDAIA.lang === 'en' && !!q.textEn;
   const tag = draft
     ? `<span class="q-tag q-tag--draft">${I('pencil', 'i-sm')}${T('مسودة اقتباس — بانتظار الاعتماد', 'Draft quote — pending approval')}</span>`
     : `<span class="q-tag q-tag--verified">${I('badge-check', 'i-sm')}${T('اقتباس معتمد للنشر', 'Approved for publication')}</span>`;
@@ -117,7 +119,7 @@ function quoteBlock(s, variant) {
   return `
     <figure class="story-quote story-quote--${variant}${draft ? ' is-draft' : ''}">
       ${I('quote', 'q-mark')}
-      <blockquote class="q-text ar">${esc(q.text)}</blockquote>
+      <blockquote class="q-text ${qen ? 'en' : 'ar'}"${qen ? ' dir="ltr"' : ''}>${esc(qen ? q.textEn : q.text)}</blockquote>
       <div class="q-foot">${tag}</div>
       ${cite}
     </figure>`;
@@ -175,7 +177,7 @@ function renderStories() {
   // a cohort emptied by the current search is unreachable — mark its sub-nav link disabled
   const q = state.query.toLowerCase();
   const hasAny = y => STORIES.some(s => s.year === y &&
-    (!q || [s.name, s.nameEn, s.org, s.role, s.program, s.impact, (s.quote && s.quote.text) || ''].join(' ').toLowerCase().includes(q)));
+    (!q || [s.name, s.nameEn, s.org, s.role, s.program, s.impact, (s.quote && s.quote.text) || '', (s.quote && s.quote.textEn) || ''].join(' ').toLowerCase().includes(q)));
   $$('#yearNav a[data-year]').forEach(a => {
     const ok = hasAny(+a.dataset.year);
     a.classList.toggle('is-off', !ok);
