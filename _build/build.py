@@ -5,13 +5,14 @@ Assembles the site's pages from one shared shell (head, header, footer) plus
 per-page content, so every page stays visually and structurally consistent.
 Run from the repository root:  python3 _build/build.py
 """
-import json, os, re, html
+import json, os, re, html, subprocess
 from datetime import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://malenezi.github.io/malenezi/"
 NAME = "Prof. Mamdouh Alenezi"
 EMAIL = "enezi.mamdouh@gmail.com"
+ARABIC = "index_arabic.html"   # hand-maintained Arabic summary page (not generated)
 
 PROFILES = [
     ("Google Scholar", "https://scholar.google.com/citations?user=zH5wDBIAAAAJ", "scholar"),
@@ -92,8 +93,14 @@ def shell(slug, title, description, body, base="", extra_head="", extra_ld=None,
     ld_tags = "\n".join(
         '<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False)
         for x in ld)
+    alternates = ""
+    if slug == "index.html":
+        alternates = ('\n<link rel="alternate" hreflang="en" href="{s}">'
+                      '\n<link rel="alternate" hreflang="ar" href="{s}{ar}">'
+                      '\n<link rel="alternate" hreflang="x-default" href="{s}">').format(s=SITE, ar=ARABIC)
     foot_nav = "".join('<li><a href="{b}{h}">{t}</a></li>'.format(b=base, h=h, t=t)
-                       for h, t in NAV + [("myblog/", "Insights"), ("contact.html", "Contact")])
+                       for h, t in NAV + [("myblog/", "Insights"), ("contact.html", "Contact"),
+                                         (ARABIC, "العربية")])
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +111,7 @@ def shell(slug, title, description, body, base="", extra_head="", extra_ld=None,
 <meta name="author" content="Mamdouh Alenezi">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0f5646">
-<link rel="canonical" href="{canonical}">
+<link rel="canonical" href="{canonical}">{alternates}
 <link rel="icon" href="{base}images/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="{base}images/newprofile.png">
 
@@ -142,6 +149,7 @@ def shell(slug, title, description, body, base="", extra_head="", extra_ld=None,
     </button>
     <ul class="nav" id="primary-nav">
       {nav}
+      <li><a class="nav-lang" href="{base}{arabic}" hreflang="ar" lang="ar">العربية</a></li>
       <li><a class="nav-cta" href="{base}contact.html">Contact</a></li>
     </ul>
   </div>
@@ -166,7 +174,7 @@ def shell(slug, title, description, body, base="", extra_head="", extra_ld=None,
 </html>
 """.format(title=html.escape(title), desc=html.escape(description), canonical=canonical,
            site=SITE, ogimg=og_image, base=base, ld=ld_tags, extra_head=extra_head, body=body,
-           nav=nav, foot_nav=foot_nav, profiles=profile_links(),
+           nav=nav, foot_nav=foot_nav, profiles=profile_links(), alternates=alternates, arabic=ARABIC,
            year=datetime.now().year, email=EMAIL)
 
 
@@ -1434,6 +1442,85 @@ def build_404():
                         '<meta name="robots" content="noindex, follow">')
 
 
+# --------------------------------------------------------------------------
+# Search-engine files
+# --------------------------------------------------------------------------
+# (path, changefreq, priority). Only the public pages: the course portals and
+# other sub-projects in this repo are deliberately left out.
+SITEMAP = [
+    ("", "weekly", "1.0"),
+    (ARABIC, "monthly", "0.9"),
+    ("about.html", "monthly", "0.8"),
+    ("leadership.html", "monthly", "0.8"),
+    ("publications.html", "weekly", "0.9"),
+    ("projects.html", "monthly", "0.7"),
+    ("speaking.html", "monthly", "0.7"),
+    ("contact.html", "yearly", "0.6"),
+    ("myblog/", "weekly", "0.8"),
+    ("myCV.pdf", "monthly", "0.5"),
+    ("myCV-Arabic.pdf", "monthly", "0.5"),
+]
+# Pages that are translations of each other (hreflang cluster).
+LANG_PAIRS = {"": "en", ARABIC: "ar"}
+
+
+def source_file(path):
+    return os.path.join(ROOT, path + "index.html" if path in ("",) or path.endswith("/") else path)
+
+
+def lastmod(path):
+    """Date the page's content last changed: today if it has uncommitted edits,
+    otherwise its last commit date. Falls back to today outside a git checkout."""
+    rel = os.path.relpath(source_file(path), ROOT).replace(os.sep, "/")
+    today = datetime.now().strftime("%Y-%m-%d")
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=ROOT,
+                               capture_output=True, text=True, timeout=20).stdout.strip()
+        if dirty:
+            return today
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel], cwd=ROOT,
+                             capture_output=True, text=True, timeout=20).stdout.strip()
+        return out or today
+    except (OSError, subprocess.SubprocessError):
+        return today
+
+
+def build_sitemap():
+    alt = "".join('    <xhtml:link rel="alternate" hreflang="{l}" href="{s}{p}"/>\n'.format(l=l, s=SITE, p=p)
+                  for p, l in LANG_PAIRS.items())
+    alt += '    <xhtml:link rel="alternate" hreflang="x-default" href="%s"/>\n' % SITE
+    image = ("    <image:image>\n      <image:loc>{s}images/newprofile.png</image:loc>\n"
+             "    </image:image>\n").format(s=SITE)
+    rows = []
+    for p, freq, prio in SITEMAP:
+        if not os.path.exists(source_file(p)):
+            continue
+        rows.append("  <url>\n    <loc>{s}{p}</loc>\n    <lastmod>{d}</lastmod>\n"
+                    "    <changefreq>{f}</changefreq>\n    <priority>{r}</priority>\n{a}{i}  </url>\n".format(
+                        s=SITE, p=p, d=lastmod(p), f=freq, r=prio,
+                        a=alt if p in LANG_PAIRS else "", i=image if p in LANG_PAIRS else ""))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+            '        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n'
+            '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+            + "".join(rows) + "</urlset>\n")
+
+
+def build_robots():
+    # Crawlers only read robots.txt at the host root (https://malenezi.github.io/robots.txt).
+    # This copy documents the intended rules and is the file to place at the root if a
+    # malenezi.github.io user-site repository is ever created; paths are written from the root.
+    return """# robots.txt — Prof. Mamdouh Alenezi
+# Site: {s}
+User-agent: *
+Allow: /
+Disallow: /malenezi/BackUp/
+Disallow: /malenezi/temp/
+
+Sitemap: {s}sitemap.xml
+""".format(s=SITE)
+
+
 def main():
     pubs = load("publications.json")
     insights = load("insights.json")
@@ -1451,20 +1538,8 @@ def main():
     write("Services.html", redirect("speaking.html", "Service and speaking"))
     write("Links.html", redirect("index.html", "Links"))
 
-    pages = ["", "about.html", "leadership.html", "publications.html", "projects.html",
-             "speaking.html", "contact.html", "myblog/"]
-    today = datetime.now().strftime("%Y-%m-%d")
-    urls = "".join(
-        "  <url>\n    <loc>{s}{p}</loc>\n    <lastmod>{d}</lastmod>\n"
-        "    <changefreq>{f}</changefreq>\n    <priority>{r}</priority>\n  </url>\n".format(
-            s=SITE, p=p, d=today, f="weekly" if p in ("", "myblog/") else "monthly",
-            r="1.0" if p == "" else "0.8")
-        for p in pages)
-    write("sitemap.xml",
-          '<?xml version="1.0" encoding="UTF-8"?>\n'
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
-    write("robots.txt", "User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n" % SITE)
-
+    write("sitemap.xml", build_sitemap())
+    write("robots.txt", build_robots())
 
 if __name__ == "__main__":
     main()

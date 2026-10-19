@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data &amp; AI Workforce Capability | SDAIA Capacity Building Planning</title>
+<title>تخطيط القدرات وتقييم الاحتياج | Data &amp; AI Capacity Planning</title>
 <meta name="theme-color" content="#0d6b5d">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Data &amp; AI Workforce Capability | SDAIA Capacity Building Planning">
-<meta property="og:description" content="Saudi Arabia's data and AI workforce: needs, gaps, emerging roles, critical skills, the TSKA framework and national priorities, with government and private sector compared.">
-<meta name="twitter:card" content="summary">
+<meta name="description" content="The executive reference for planning Saudi Arabia's Data & AI capacity: national targets and KPIs, global benchmarking, the competency matrix, needs assessment method and the 2026–2030 roadmap.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d6b5d'/%3E%3Crect x='7' y='10' width='12' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='18' width='18' height='3' rx='1.5' fill='%23fff'/%3E%3C/svg%3E">
-<meta name="description" content="The executive reference for Saudi Arabia's data and AI workforce: needs assessment, capability gaps, emerging roles, critical skills, TSKA framework and national priorities, with government and private sector compared.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light;
@@ -21,13 +17,11 @@
   --ink:#13282c; --ink-2:#465a5d; --ink-3:#5a6b6e; --line:#d5dedc; --line-2:#bccac7;
   --accent:#0d6b5d; --accent-ink:#0a5a4e; --accent-wash:#dbede8;
   --gap:#985808; --gap-fill:#d98b26; --gap-wash:#fbecd6;
-  --gov:#2a78d6; --priv:#eb6834; --gov-wash:#e3eefb; --priv-wash:#fde9e0;
-  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b; --success-text:#006300; --crit-text:#c0302f;
-  --ramp-1:#86b6ef; --ramp-2:#2a78d6; --ramp-3:#104281;
-  --hatch:rgba(168,98,15,.22);
+  --muted-mark:#b9c4c2;
   --cond:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
   --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --rail:248px; --max:1120px;
+  --arab:"IBM Plex Sans Arabic","Segoe UI","Tahoma",sans-serif;
+  --rail:252px; --max:1120px;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -35,10 +29,7 @@
     --paper:#0f1d20; --surface:#152629; --surface-2:#1c3135; --surface-3:#243b40;
     --ink:#e6eeed; --ink-2:#b0c0bf; --ink-3:#9aabaa; --line:#29403f; --line-2:#36504f;
     --accent:#4fb8a4; --accent-ink:#6fcab8; --accent-wash:#183a36;
-    --gap:#e5a54f; --gap-fill:#c98500; --gap-wash:#3a2d18;
-    --gov:#3987e5; --priv:#d95926; --gov-wash:#1b2f47; --priv-wash:#3b2419;
-    --ramp-1:#184f95; --ramp-2:#3987e5; --ramp-3:#9ec5f4;
-    --hatch:rgba(229,165,79,.22); --success-text:#5fd35f; --crit-text:#f08080;
+    --gap:#e5a54f; --gap-fill:#c98500; --gap-wash:#3a2d18; --muted-mark:#4a6262;
   }
 }
 :root[data-theme="dark"]{
@@ -46,1352 +37,813 @@
   --paper:#0f1d20; --surface:#152629; --surface-2:#1c3135; --surface-3:#243b40;
   --ink:#e6eeed; --ink-2:#b0c0bf; --ink-3:#9aabaa; --line:#29403f; --line-2:#36504f;
   --accent:#4fb8a4; --accent-ink:#6fcab8; --accent-wash:#183a36;
-  --gap:#e5a54f; --gap-fill:#c98500; --gap-wash:#3a2d18;
-  --gov:#3987e5; --priv:#d95926; --gov-wash:#1b2f47; --priv-wash:#3b2419;
-  --ramp-1:#184f95; --ramp-2:#3987e5; --ramp-3:#9ec5f4;
-  --hatch:rgba(229,165,79,.22); --success-text:#5fd35f; --crit-text:#f08080;
+  --gap:#e5a54f; --gap-fill:#c98500; --gap-wash:#3a2d18; --muted-mark:#4a6262;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:24px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+html[lang="ar"] body{font-family:var(--arab);font-size:16.5px;line-height:1.8}
 a{color:var(--accent-ink)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--surface);padding:8px 12px;z-index:50}
-.skip:focus{left:8px}
-h1,h2,h3{font-family:var(--cond);font-weight:600;letter-spacing:-.01em;line-height:1.15;margin:0}
+.skip{position:absolute;inset-inline-start:-999px;top:8px;background:var(--surface);padding:8px 12px;z-index:50}
+.skip:focus{inset-inline-start:8px}
+h1,h2,h3,h4{font-family:var(--cond);font-weight:600;letter-spacing:-.01em;line-height:1.2;margin:0}
+html[lang="ar"] :is(h1,h2,h3,h4,.num,.v,.cond){font-family:var(--arab);letter-spacing:0}
 p{margin:0 0 12px}
 .num{font-family:var(--cond);font-weight:600;font-variant-numeric:tabular-nums}
 .muted{color:var(--ink-3)}
-.src{font-size:12.5px;color:var(--ink-3);line-height:1.45}
+.src{font-size:12.5px;color:var(--ink-3);line-height:1.5;margin-top:10px}
+.src a{color:var(--ink-3)}
 
-/* ---------- shell ---------- */
-.rail{position:fixed;inset:0 auto 0 0;width:var(--rail);background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:22px 18px;z-index:20}
+/* shell */
+.rail{position:fixed;inset-block:0;inset-inline-start:0;width:var(--rail);background:var(--surface);border-inline-end:1px solid var(--line);display:flex;flex-direction:column;padding:22px 18px;z-index:20;overflow-y:auto}
 .brand{display:flex;gap:10px;align-items:flex-start;margin-bottom:26px}
 .brand-mark{width:30px;height:30px;flex:none;border-radius:7px;background:var(--accent);position:relative;overflow:hidden}
-.brand-mark::before,.brand-mark::after{content:"";position:absolute;left:6px;right:6px;height:3px;background:var(--surface);border-radius:2px}
-.brand-mark::before{top:9px;right:12px}.brand-mark::after{top:17px}
-.brand b{display:block;font:600 14.5px/1.25 var(--cond)}
-.brand span{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.35}
+.brand-mark::before,.brand-mark::after{content:"";position:absolute;inset-inline:6px;height:3px;background:var(--surface);border-radius:2px}
+.brand-mark::before{top:9px;inset-inline-end:12px}.brand-mark::after{top:17px}
+.brand b{display:block;font:600 14.5px/1.3 var(--cond)}
+html[lang="ar"] .brand b{font-family:var(--arab)}
+.brand span{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.4}
 .nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
-.nav a{display:block;padding:7px 10px;border-radius:6px;color:var(--ink-2);text-decoration:none;font-size:14.5px;border-left:2px solid transparent}
+.nav a{display:flex;gap:8px;padding:7px 10px;border-radius:6px;color:var(--ink-2);text-decoration:none;font-size:14.5px;border-inline-start:2px solid transparent}
+.nav a .n{color:var(--ink-3);font-variant-numeric:tabular-nums;min-width:1.1em}
 .nav a:hover{background:var(--surface-2);color:var(--ink)}
-.nav a[aria-current="true"]{color:var(--ink);background:var(--accent-wash);border-left-color:var(--accent);font-weight:500}
-.rail-foot{margin-top:auto;font-size:12.5px;color:var(--ink-3);line-height:1.5}
-.rail-foot a{display:block;margin-top:6px}
-.theme{margin-top:12px;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:5px 12px;font:500 13px var(--sans);cursor:pointer}
-.theme:hover{color:var(--ink);border-color:var(--ink-3)}
+.nav a[aria-current="true"]{color:var(--ink);background:var(--accent-wash);border-inline-start-color:var(--accent);font-weight:500}
+.rail-foot{margin-top:auto;padding-top:20px;font-size:12.5px;color:var(--ink-3);line-height:1.55}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:5px 12px;font:500 13px var(--sans);cursor:pointer}
+html[lang="ar"] .pill{font-family:var(--arab)}
+.pill:hover{color:var(--ink);border-color:var(--ink-3)}
+.pill[aria-pressed="true"]{background:var(--accent-wash);border-color:var(--accent);color:var(--ink)}
 .topbar{display:none}
-main{margin-left:var(--rail)}
+main{margin-inline-start:var(--rail)}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
 section.band{padding:72px 0 64px;border-top:1px solid var(--line)}
-section.band:first-of-type{border-top:0}
-.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:end;margin-bottom:36px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:end;margin-bottom:36px}
 .sec-head h2{font-size:clamp(28px,3.2vw,38px)}
-.sec-head .lede{color:var(--ink-2);font-size:17px;max-width:62ch;margin:0}
+.sec-head .lede{color:var(--ink-2);font-size:17px;max-width:64ch;margin:0}
 .kicker{font-size:14px;color:var(--accent-ink);font-weight:500;margin-bottom:8px;display:block}
-h3{font-size:20px;margin-bottom:6px}
+.question{display:inline-block;font-size:13.5px;color:var(--ink-3);border:1px solid var(--line);border-radius:999px;padding:3px 12px;margin-bottom:14px;background:var(--surface)}
+h3{font-size:21px;margin-bottom:6px}
+.block{margin-top:44px}
 .sub-h{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap;margin-bottom:14px}
-.sub-h p{margin:0;color:var(--ink-2);max-width:70ch}
+.sub-h p{margin:0;color:var(--ink-2);max-width:72ch}
 
-/* ---------- hero ---------- */
-.hero{padding:56px 0 48px;background:var(--surface);border-bottom:1px solid var(--line)}
-.edition{font-size:13.5px;color:var(--ink-3);margin-bottom:22px}
-.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:700;letter-spacing:-.02em;max-width:15ch;line-height:1.02}
-.hero .lede{font-size:18.5px;color:var(--ink-2);max-width:60ch;margin:20px 0 0}
-.gauge{margin:44px 0 6px;position:relative}
-.gauge-title{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);margin-bottom:12px}
-.gauge-title b{color:var(--ink);font-weight:600}
-.g-plot{position:relative;height:178px}
-.g-track{position:absolute;left:0;right:0;top:78px;height:26px;background:var(--surface-2);border-radius:4px}
-.g-fill{position:absolute;left:0;top:78px;height:26px;background:var(--accent);border-radius:4px 0 0 4px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
-.g-band{position:absolute;top:70px;height:42px;border:1.5px solid var(--gap);border-radius:4px;background:repeating-linear-gradient(135deg,var(--hatch) 0 2px,transparent 2px 7px)}
-.g-tick{position:absolute;top:62px;height:58px;width:0;border-left:2px solid var(--ink)}
-.g-tick.central{border-left-color:var(--gap);border-left-width:2px;top:66px;height:50px}
-.g-lab{position:absolute;font-size:13px;line-height:1.3;color:var(--ink-2);white-space:nowrap}
-.g-lab b{display:block;font:600 22px/1.05 var(--cond);color:var(--ink);font-variant-numeric:tabular-nums}
-.g-lab.up{bottom:calc(178px - 58px)}
-.g-lab.down{top:124px}
-.g-lab.r{transform:translateX(-100%);text-align:right}
-.g-lab.c{transform:translateX(-50%);text-align:center}
-.g-axis{position:absolute;left:0;right:0;top:108px;height:12px}
-.g-axis span{position:absolute;font-size:11.5px;color:var(--ink-3);transform:translateX(-50%);top:0}
-.g-axis span:last-child{transform:translateX(-100%)}
-.gauge-note{font-size:13px;color:var(--ink-3);margin-top:4px}
+/* hero */
+.hero{padding:56px 0 52px;background:var(--surface);border-bottom:1px solid var(--line)}
+.edition{font-size:13.5px;color:var(--ink-3);margin-bottom:22px;display:flex;gap:14px;flex-wrap:wrap}
+.hero h1{font-size:clamp(38px,5vw,62px);font-weight:700;letter-spacing:-.02em;max-width:17ch;line-height:1.08}
+html[lang="ar"] .hero h1{line-height:1.3;max-width:20ch}
+.hero .lede{font-size:18.5px;color:var(--ink-2);max-width:64ch;margin:20px 0 0}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden;margin-top:40px}
+.tile{padding:20px 22px;border-inline-end:1px solid var(--line)}
+.tile:last-child{border-inline-end:0}
+.tile .k{font-size:14px;color:var(--ink-2);font-weight:500}
+.tile .v{font:600 38px/1.15 var(--cond);margin:6px 0;font-variant-numeric:tabular-nums}
+.tile .s{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.tile[data-tone="gap"] .v{color:var(--gap)}
+.tile[data-tone="good"] .v{color:var(--accent-ink)}
+.story{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.story li{padding:16px 16px 0 0;border-inline-end:1px solid var(--line);padding-inline:16px}
+.story li:first-child{padding-inline-start:0}
+.story li:last-child{border-inline-end:0}
+.story b{display:block;font-size:13px;color:var(--accent-ink);font-weight:600;margin-bottom:4px}
+.story span{font-size:14.5px;color:var(--ink-2);line-height:1.55}
 
-/* ---------- KPI strip ---------- */
-.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
-.kpi{padding:20px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
-.kpi:nth-child(3n){border-right:0}
-.kpi:nth-last-child(-n+3){border-bottom:0}
-.kpi .k{font-size:14px;color:var(--ink-2);font-weight:500}
-.kpi .v{font:600 38px/1.1 var(--cond);margin:6px 0 6px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.kpi .s{font-size:14px;color:var(--ink-2);line-height:1.45;margin-bottom:8px}
-.kpi[data-tone="gap"] .v{color:var(--gap)}
-.kpi[data-tone="good"] .v{color:var(--accent-ink)}
+/* cards / grids */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid2>*,.grid3>*,.wrap>*{min-width:0}
+.tbl-wrap{max-width:100%}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.card h4{font-size:17px;margin-bottom:6px}
+.card p{color:var(--ink-2);font-size:15px;margin:0}
+.vm .card h4{color:var(--accent-ink);font-size:14px;font-weight:600}
+.vm .card p{font-size:17.5px;color:var(--ink);line-height:1.6}
 
-.two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;margin-top:48px}
-.insights{list-style:none;margin:0;padding:0;counter-reset:none}
-.insights li{padding:16px 0;border-top:1px solid var(--line)}
-.insights li:first-child{border-top:0;padding-top:4px}
-.insights b{display:block;font:600 18px/1.3 var(--cond);margin-bottom:4px}
-.insights span{color:var(--ink-2);font-size:15.5px}
-.decisions{background:var(--ink);color:var(--paper);border-radius:12px;padding:26px 26px 18px}
-:root[data-theme="dark"] .decisions{background:var(--surface-2);color:var(--ink)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .decisions{background:var(--surface-2);color:var(--ink)}}
-.decisions h3{font-size:22px;margin-bottom:4px}
-.decisions > p{opacity:.78;font-size:14.5px}
-.dec{padding:14px 0;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent)}
-.dec b{font:600 16.5px/1.3 var(--cond);display:block}
-.dec p{font-size:14.5px;opacity:.82;margin:4px 0 6px}
-.dec small{font-size:12.5px;opacity:.7}
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:start;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface-2);color:var(--ink-2);font-weight:600;font-size:13px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+td .cite{font-size:12.5px}
+.chip{display:inline-block;font-size:12px;font-weight:500;padding:2px 9px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.chip.set{background:var(--accent-wash);border-color:transparent;color:var(--accent-ink)}
+.chip.wait{background:var(--gap-wash);border-color:transparent;color:var(--gap)}
+.chip.layer{background:var(--surface-2);border-color:transparent}
 
-/* ---------- panels ---------- */
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
-.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.stack{display:flex;flex-direction:column;gap:24px}
-.mt{margin-top:24px}.mt2{margin-top:44px}
-.chart{width:100%;display:block}
-.chart text{font-family:var(--sans);fill:var(--ink-3);font-size:12px}
-.chart .lbl{fill:var(--ink);font-size:12.5px;font-weight:500}
-.chart .lbl2{fill:var(--ink-2);font-size:12px}
-.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2);margin:0 0 12px}
-.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
-.legend i.line{height:3px;border-radius:2px;vertical-align:3px;width:16px}
-.legend i.dot{border-radius:50%}
-details.tbl{margin-top:12px;font-size:13.5px}
-details.tbl summary{cursor:pointer;color:var(--accent-ink);font-weight:500}
-table{border-collapse:collapse;width:100%;font-size:14px}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:600;color:var(--ink-2);font-size:13px;background:var(--surface-2)}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
-.scroll-x{overflow-x:auto}
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 
-/* callouts */
-.callout{border-left:3px solid var(--gap);background:var(--gap-wash);padding:14px 18px;border-radius:0 8px 8px 0;font-size:15px}
-.callout b{font-weight:600}
-.callout.calm{border-left-color:var(--accent);background:var(--accent-wash)}
+/* pyramid */
+.pyr{display:flex;flex-direction:column;align-items:center;gap:6px}
+.pyr .tier{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 18px;border-radius:8px;background:var(--surface);border:1px solid var(--line);width:var(--w)}
+.pyr .tier.hot{background:var(--accent-wash);border-color:var(--accent)}
+.pyr .tier b{font-size:15.5px}
+.pyr .tier span{font-size:13px;color:var(--ink-2)}
+.pyr .tier .t{font:600 18px var(--cond);text-align:end;font-variant-numeric:tabular-nums}
+html[lang="ar"] .pyr .tier .t{font-family:var(--arab)}
+.pyr-note{font-size:13.5px;color:var(--ink-3);text-align:center;margin-top:10px}
 
-/* tiers */
-.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-bottom:12px}
-.tier-h{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
-.tier-h b{font:600 17px var(--cond)}
-.tier .ar{font-size:14px;color:var(--ink-3)}
-.tier-v{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:8px 0 10px}
-.tier-v .num{font-size:32px;line-height:1}
-.tier-v .muted{font-size:13.5px}
-.tier-v .muted b{color:var(--ink);font-weight:600}
-.tier-track{position:relative;height:12px;background:var(--surface-2);border-radius:3px}
-.tier-fill{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:3px}
-.tier-track i{position:absolute;top:-4px;height:20px;border-left:2px solid var(--ink)}
-.tier-ticks{position:relative;height:18px;font-size:11.5px;color:var(--ink-3);margin-top:4px}
-.tier-ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
-.tier-ticks span.end{transform:translateX(-100%)}
-.tier p{font-size:14px;color:var(--ink-2);margin:8px 0 0}
+/* index cards */
+.idx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.idx .card{display:flex;flex-direction:column;gap:8px}
+.idx .pub{font-size:12.5px;color:var(--ink-3)}
+.idx .pos{font:600 20px/1.3 var(--cond)}
+html[lang="ar"] .idx .pos{font-family:var(--arab);font-size:18px}
+.idx .sig{font-size:14px;color:var(--ink-2)}
+.idx .ed{margin-top:auto;display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:10px}
+.idx .flag{color:var(--gap)}
 
-/* depth unit chart */
-.waffle{display:grid;grid-template-columns:repeat(50,1fr);gap:2px;margin:10px 0 12px}
-.waffle i{aspect-ratio:1;border-radius:1.5px;background:var(--surface-3)}
-.waffle i.on{background:var(--gap-fill)}
-.pipe{list-style:none;margin:0;padding:0}
-.pipe li{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;padding:9px 0;border-top:1px solid var(--line);align-items:center}
-.pipe li:first-child{border-top:0}
-.pipe .bar{height:6px;background:var(--surface-2);border-radius:3px;margin-top:6px;overflow:hidden}
-.pipe .bar span{display:block;height:100%;background:var(--ramp-2);border-radius:0 3px 3px 0}
-.pipe .tier{font-size:12px;color:var(--ink-3)}
-.pipe .num{text-align:right;font-size:18px}
+/* chart */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 16px 10px}
+.chart svg{display:block;width:100%;height:auto}
+.chart text{fill:var(--ink-2);font-family:inherit}
 
-/* scenario table */
-.need{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
-.need > div{padding:18px 20px;border-right:1px solid var(--line)}
-.need > div:last-child{border-right:0}
-.need .sc{font:600 16px var(--cond);display:flex;align-items:center;gap:8px}
-.need .sc i{width:16px;height:3px;border-radius:2px;display:inline-block}
-.need .big{font:600 30px/1.1 var(--cond);margin:8px 0 2px;font-variant-numeric:tabular-nums}
-.need .row{display:flex;justify-content:space-between;font-size:14px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:7px;margin-top:7px}
-.need .row b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+/* scale */
+.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.lvl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;position:relative}
+.lvl .no{font:700 28px/1 var(--cond);color:var(--accent-ink)}
+.lvl b{display:block;margin:8px 0 4px;font-size:16px}
+.lvl p{font-size:13.5px;color:var(--ink-2);margin:0 0 8px}
+.lvl .tier{font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:8px}
+.lvl.hot{border-color:var(--accent);background:var(--accent-wash)}
 
-/* bullets */
-.bullet{margin:14px 0 4px}
-.bullet .bt{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;margin-bottom:6px}
-.bullet .track{position:relative;height:14px;background:var(--surface-2);border-radius:3px}
-.bullet .fill{position:absolute;left:0;top:3px;height:8px;background:var(--gap-fill);border-radius:0 3px 3px 0}
-.bullet .mk{position:absolute;top:-4px;height:22px;border-left:2px solid var(--ink)}
-.bullet .mk.t30{border-left:2px solid var(--ink-3)}
-.bullet .keys{font-size:12.5px;color:var(--ink-3);margin-top:6px}
+/* competency library */
+.lib .card ul{margin:8px 0 0;padding-inline-start:0;list-style:none}
+.lib .card li{padding:7px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-2)}
+.lib .card li code{font:600 12.5px var(--sans);color:var(--accent-ink);margin-inline-end:6px}
+.lib .fam{font-size:13px;color:var(--ink-3);margin-bottom:6px}
 
-/* ---------- sector compare ---------- */
-.versus{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
-.vs-col{padding:26px 26px 22px}
-.vs-col + .vs-col{border-left:1px solid var(--line)}
-.vs-col header{display:flex;align-items:center;gap:10px;margin-bottom:4px}
-.swatch{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
-.vs-col header h3{margin:0;font-size:24px}
-.vs-col .stance{font:500 15px var(--sans);color:var(--ink-2);margin-bottom:12px}
-.vs-col[data-s="gov"]{box-shadow:inset 0 4px 0 var(--gov)}
-.vs-col[data-s="priv"]{box-shadow:inset 0 4px 0 var(--priv)}
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;margin:18px 0}
-.facts b{display:block;font:600 26px/1.1 var(--cond);font-variant-numeric:tabular-nums}
-.facts span{font-size:13.5px;color:var(--ink-2);line-height:1.35;display:block}
-.vs-col h4{font:600 14px var(--sans);margin:16px 0 6px;color:var(--ink)}
-.vs-col ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-2)}
-.vs-col ul li{margin:3px 0}
-.vs-col .note{font-size:14.5px;color:var(--ink-2);margin:0}
-.contrast{display:grid;grid-template-columns:180px minmax(0,1fr) minmax(0,1fr);border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);font-size:14.5px}
-.contrast > div{padding:12px 16px;border-top:1px solid var(--line)}
-.contrast > div:nth-child(-n+3){border-top:0;background:var(--surface-2);font-weight:600;font-size:13.5px;color:var(--ink-2)}
-.contrast .dim{font-weight:600;color:var(--ink)}
+/* heat */
+.heat td,.heat th{padding:8px 6px;text-align:center;font-size:13.5px}
+.heat th:first-child,.heat td:first-child{text-align:start;padding-inline:14px;white-space:nowrap}
+.heat td.c{font-variant-numeric:tabular-nums;font-weight:600;min-width:34px}
+.heat .grp{font-size:11.5px;color:var(--ink-3);font-weight:500}
+.legend{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:10px}
+.legend i{display:inline-block;width:22px;height:14px;border-radius:3px}
 
-/* dumbbell + heat */
-.dumb-wrap{position:relative}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s}
+.steps li{position:relative;padding:18px 18px 18px;border:1px solid var(--line);background:var(--surface);margin-inline-end:-1px}
+.steps li:first-child{border-start-start-radius:10px;border-end-start-radius:10px}
+.steps li:last-child{border-start-end-radius:10px;border-end-end-radius:10px}
+.steps li::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--surface);font:600 14px var(--sans);margin-bottom:10px}
+.steps b{display:block;font-size:15.5px;margin-bottom:4px}
+.steps span{font-size:13.5px;color:var(--ink-2);line-height:1.55;display:block}
+.loop{font-size:13px;color:var(--ink-3);margin-top:10px}
 
-/* gap matrix */
-.matrix{display:grid;grid-template-columns:110px repeat(3,minmax(0,1fr));gap:6px}
-.matrix .ax{font-size:13px;color:var(--ink-2);font-weight:600;display:flex;align-items:center}
-.matrix .axh{font-size:13px;color:var(--ink-2);font-weight:600;padding:4px 8px}
-.cell{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;min-height:92px;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start}
-.cell.hot{background:var(--gap-wash);border-color:var(--gap)}
-.chip{font-size:12.5px;line-height:1.3;padding:4px 8px 4px 7px;border-radius:5px;background:var(--surface-2);border-left:3px solid var(--ink-3);color:var(--ink)}
-.chip[data-s="gov"]{border-left-color:var(--gov)}
-.chip[data-s="priv"]{border-left-color:var(--priv)}
-.cell.hot .chip{background:var(--surface)}
-.cell .none{font-size:12.5px;color:var(--ink-3);align-self:center;width:100%;text-align:center}
+.formula{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+.formula .eq{direction:ltr;text-align:center;font:500 22px/1.6 "Cambria Math","STIX Two Math","Times New Roman",serif;margin:6px 0 14px;color:var(--ink)}
+.formula dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:14.5px}
+.formula dt{font-family:"Cambria Math","Times New Roman",serif;font-weight:600;direction:ltr}
+.formula dd{margin:0;color:var(--ink-2)}
 
-/* ---------- roles ---------- */
-.filters{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:16px}
-.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:8px;overflow:hidden;background:var(--surface)}
-.seg button{border:0;background:transparent;font:500 13.5px var(--sans);color:var(--ink-2);padding:7px 12px;cursor:pointer;border-right:1px solid var(--line)}
-.seg button:last-child{border-right:0}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.filters label{font-size:13px;color:var(--ink-3)}
-select,input[type=search]{font:400 14px var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:7px 10px}
-input[type=search]{min-width:200px}
-.register{border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
-.reg-head,.reg-row{display:grid;grid-template-columns:minmax(0,2.3fr) 110px 96px 96px 104px minmax(0,1.1fr);gap:12px;align-items:center;padding:12px 18px}
-.reg-head{background:var(--surface-2);font-size:12.5px;font-weight:600;color:var(--ink-2)}
-.reg-row{border-top:1px solid var(--line);cursor:pointer;text-align:left;width:100%;background:transparent;border-left:0;border-right:0;border-bottom:0;font:inherit;color:inherit}
-.reg-row:hover{background:var(--surface-2)}
-.reg-row[aria-current="true"]{background:var(--accent-wash)}
-.reg-row .rn{font-weight:600;font-size:15px;line-height:1.3}
-.reg-row .rf{font-size:12.5px;color:var(--ink-3);display:block;font-weight:400}
-.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
-.pill[data-v="Emerging"]{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-wash)}
-.pill[data-v="Reshaping"]{border-color:var(--gap);color:var(--gap);background:var(--gap-wash)}
-.dots{display:inline-flex;gap:3px;align-items:center}
-.dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line-2)}
-.dots[data-s="gov"] i.on{background:var(--gov);border-color:var(--gov)}
-.dots[data-s="priv"] i.on{background:var(--priv);border-color:var(--priv)}
-.dots .na{font-size:12px;color:var(--ink-3)}
-.sup{font-size:13.5px;color:var(--ink-2)}
-.sup[data-w="Weak"]{color:var(--gap);font-weight:600}
-.reg-empty{padding:28px;text-align:center;color:var(--ink-2)}
-.reg-count{font-size:13px;color:var(--ink-3)}
+/* 2x2 */
+.mx{display:grid;grid-template-columns:28px 1fr 1fr;grid-template-rows:1fr 1fr 28px;gap:8px;min-height:340px}
+.mx .q{border-radius:10px;padding:16px 18px;background:var(--surface);border:1px solid var(--line)}
+.mx .q.hot{background:var(--accent-wash);border:2px solid var(--accent)}
+.mx .q b{display:block;font-size:16px;margin-bottom:4px}
+.mx .q span{font-size:13.5px;color:var(--ink-2)}
+.mx .ax{font-size:12.5px;color:var(--ink-3);display:flex;align-items:center;justify-content:center}
+.mx .ay{writing-mode:vertical-rl;transform:rotate(180deg)}
+html[dir="rtl"] .mx .ay{transform:none}
 
-/* ---------- skills ---------- */
-.traj{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;align-items:start}
-.traj .rise{columns:2;column-gap:28px}
-.traj .rise .sk{break-inside:avoid}
-.traj .side{display:flex;flex-direction:column;gap:24px}
-.traj h3{display:flex;align-items:center;gap:8px;font-size:18px;margin-bottom:12px}
-.arrow{width:22px;height:22px;flex:none}
-.sk{border-top:1px solid var(--line);padding:12px 0}
-.sk:first-of-type{border-top:0;padding-top:0}
-.traj .rise .sk{border-top:0;border-bottom:1px solid var(--line);padding:0 0 12px;margin-bottom:12px}
-.sk b{font-weight:600;font-size:15px;display:block;line-height:1.3}
-.sk .meta{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin:4px 0}
-.sk .meta span b{display:inline;font-size:12.5px;color:var(--ink-2)}
-.sk p{font-size:14px;color:var(--ink-2);margin:0}
-.sk details summary{font-size:13px;color:var(--accent-ink);cursor:pointer;margin-top:4px}
-.sk details p{margin-top:6px}
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.ph{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px 20px}
+.ph.now{border:2px solid var(--accent);background:var(--accent-wash)}
+.ph .tag{font-size:12.5px;color:var(--ink-3)}
+.ph h4{font-size:18px;margin:2px 0 2px}
+.ph .when{font-size:13.5px;color:var(--accent-ink);font-weight:500;margin-bottom:10px}
+.ph ul{margin:0;padding-inline-start:18px;font-size:14px;color:var(--ink-2)}
+.ph .here{display:inline-block;font-size:11.5px;font-weight:600;color:var(--surface);background:var(--accent);border-radius:999px;padding:1px 9px;margin-bottom:6px}
+.gates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:14px;position:relative}
+.gates::before{content:"";position:absolute;inset-inline:0;top:11px;height:1px;background:var(--line-2)}
+.gate{position:relative;text-align:center;grid-column:span 1}
+.gate .d{width:22px;height:22px;transform:rotate(45deg);background:var(--surface-2);border:1.5px solid var(--ink-3);margin:0 auto 10px}
+.gate b{display:block;font-size:14px}
+.gate span{font-size:12.5px;color:var(--ink-3)}
+.gate-slot{display:flex;justify-content:flex-end}
+.gate-slot .gate{transform:translateX(50%);margin-inline-end:-8px}
+html[dir="rtl"] .gate-slot .gate{transform:translateX(-50%)}
 
-/* ---------- TSKA ---------- */
-.tska-intro{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);margin-bottom:28px}
-.tska-intro > div{padding:16px 18px;border-right:1px solid var(--line)}
-.tska-intro > div:last-child{border-right:0}
-.tska-intro .L{font:700 34px/1 var(--cond);color:var(--accent-ink)}
-.tska-intro b{display:block;font:600 16px var(--cond);margin:6px 0 2px}
-.tska-intro p{font-size:13.5px;color:var(--ink-2);margin:0}
-.tska-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
-.tska-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.tc-head{padding:22px 24px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px}
-.tc-head h3{font-size:26px;margin-bottom:6px}
-.tc-head .why{color:var(--ink-2);font-size:15px;margin:8px 0 0}
-.tc-meta{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px;align-content:start}
-.tc-meta dt{color:var(--ink-3)}
-.tc-meta dd{margin:0;color:var(--ink)}
-.tc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.tc-grid > div{padding:18px 20px;border-right:1px solid var(--line)}
-.tc-grid > div:last-child{border-right:0}
-.tc-grid h4{font:600 15px var(--cond);margin:0 0 10px;display:flex;gap:8px;align-items:baseline}
-.tc-grid h4 span{font:700 22px/1 var(--cond);color:var(--accent-ink)}
-.tc-grid ul{margin:0;padding-left:16px;font-size:14px;color:var(--ink-2)}
-.tc-grid li{margin:5px 0;line-height:1.4}
-.tc-foot{padding:16px 24px;border-top:1px solid var(--line);background:var(--surface-2);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;font-size:14px}
-.tc-foot b{display:block;font-size:13px;color:var(--ink-2);margin-bottom:4px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12.5px;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:2px 8px;color:var(--ink-2)}
-.ladder{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:8px;align-items:end}
-.ladder > div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
-.ladder > div:nth-child(1){min-height:120px}.ladder > div:nth-child(2){min-height:138px}.ladder > div:nth-child(3){min-height:156px;border-color:var(--accent);background:var(--accent-wash)}.ladder > div:nth-child(4){min-height:174px}.ladder > div:nth-child(5){min-height:192px}
-.ladder b{font:600 16px var(--cond);display:block}
-.ladder p{font-size:13px;color:var(--ink-2);margin:4px 0 6px}
-.ladder small{font-size:12px;color:var(--ink-3);display:block}
-.ladder em{font-style:normal;font:600 12px var(--sans);color:var(--ink-3)}
+.list-clean{margin:0;padding-inline-start:20px;color:var(--ink-2)}
+.list-clean li{margin-bottom:6px}
+.callout{border-inline-start:3px solid var(--accent);background:var(--surface);padding:16px 20px;border-radius:0 8px 8px 0;margin-top:20px;font-size:15.5px;color:var(--ink-2)}
+html[dir="rtl"] .callout{border-radius:8px 0 0 8px}
+.callout b{color:var(--ink)}
 
-/* ---------- gaps & priorities ---------- */
-.tracker{border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
-.tr-row{display:grid;grid-template-columns:minmax(0,1.6fr) 120px 130px 136px minmax(0,1.5fr);gap:12px;padding:12px 18px;border-top:1px solid var(--line);align-items:center;font-size:14.5px}
-.tr-row.h{border-top:0;background:var(--surface-2);font-size:12.5px;font-weight:600;color:var(--ink-2)}
-.tr-row .num{font-size:18px}
-.status{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
-.status svg{width:16px;height:16px;flex:none}
-.status[data-s="met"]{color:var(--success-text)}
-.status[data-s="track"]{color:var(--ink-2)}
-.status[data-s="missed"],.status[data-s="behind"]{color:var(--crit-text)}
-.status[data-s="ahead"]{color:var(--success-text)}
-.status[data-s="unmeasured"],.status[data-s="unclear"]{color:var(--gap)}
-.horizons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;position:relative}
-.hz{padding:0 22px 0 0}
-.hz + .hz{padding-left:22px;border-left:1px solid var(--line)}
-.hz-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.hz-h .step{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);font:600 14px var(--cond);display:grid;place-items:center;flex:none}
-.hz-h b{font:600 19px var(--cond);display:block;line-height:1.1}
-.hz-h small{font-size:13px;color:var(--ink-3)}
-.pr{padding:12px 0;border-top:1px solid var(--line)}
-.pr:first-of-type{border-top:0}
-.pr b{font-weight:600;font-size:15px;line-height:1.3;display:block}
-.pr p{font-size:14px;color:var(--ink-2);margin:3px 0 0}
-.pr small{font-size:12px;color:var(--ink-3)}
-.blind{list-style:none;padding:0;margin:0}
-.blind li{padding:10px 0 10px 28px;border-top:1px solid var(--line);position:relative;font-size:14.5px}
-.blind li:first-child{border-top:0}
-.blind li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:12px;border:2px dashed var(--gap);border-radius:50%}
+.sources ol{columns:2;column-gap:40px;margin:0;padding-inline-start:22px;font-size:14px}
+.sources li{break-inside:avoid;margin-bottom:8px;color:var(--ink-2)}
+.sources li span{display:block;font-size:12.5px;color:var(--ink-3)}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
 
-/* ---------- evidence ---------- */
-.ev{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
-.ev > div{padding:18px 20px;border-right:1px solid var(--line)}
-.ev > div:last-child{border-right:0}
-.ev b{font:600 32px/1.1 var(--cond);display:block}
-.ev span{font-size:13.5px;color:var(--ink-2)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;font:500 15px var(--sans);padding:10px 18px;border-radius:8px}
-.btn:hover{background:var(--accent-ink)}
-:root[data-theme="dark"] .btn{color:#0f1d20}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0f1d20}}
-footer{padding:36px 0 56px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
-
-/* tooltip */
-.tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--paper);font-size:13px;line-height:1.4;padding:8px 10px;border-radius:6px;max-width:280px;opacity:0;transition:opacity .12s}
-.tip.on{opacity:1}
-.tip b{font-weight:600}
-:root[data-theme="dark"] .tip{background:#e6eeed;color:#0f1d20}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tip{background:#e6eeed;color:#0f1d20}}
-
-/* ---------- responsive ---------- */
+/* responsive */
 @media (max-width:1080px){
-  .reg-head{display:none}
-  .reg-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n s" "g p" "pr su"}
-  .reg-row > :nth-child(1){grid-area:n}.reg-row > :nth-child(2){grid-area:s;justify-self:end}
-  .reg-row > :nth-child(3){grid-area:g}.reg-row > :nth-child(4){grid-area:p;justify-self:end}
-  .reg-row > :nth-child(5){grid-area:pr}.reg-row > :nth-child(6){grid-area:su;justify-self:end;text-align:right}
-  .reg-row .sup{max-width:170px}
-  .reg-row .dots::before{content:attr(data-l);font-size:12px;color:var(--ink-3);margin-right:6px}
-  .tr-row{grid-template-columns:minmax(0,1fr) auto;row-gap:4px}
-  .tr-row.h{display:none}
-  .tr-row > :nth-child(5){grid-column:1 / -1;font-size:13.5px;color:var(--ink-2)}
-  .tr-row > :nth-child(3){color:var(--ink-3);font-size:13px}
+  .idx{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .story{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}
+  .story li{border-inline-end:0;padding-inline:0}
+  .steps{grid-template-columns:1fr}
+  .steps li{margin-inline-end:0;margin-bottom:-1px;border-radius:0!important}
+  .steps li:first-child{border-radius:10px 10px 0 0!important}
+  .steps li:last-child{border-radius:0 0 10px 10px!important}
+  .scale{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (max-width:960px){
+@media (max-width:900px){
   .rail{display:none}
-  main{margin-left:0}
-  .topbar{display:flex;position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:1px solid var(--line);align-items:center;gap:10px;padding:8px 16px;overflow-x:auto;scrollbar-width:none}
-  .topbar::-webkit-scrollbar{display:none}
-  .topbar a{white-space:nowrap;font-size:13.5px;color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:6px}
-  .topbar a[aria-current="true"]{background:var(--accent-wash);color:var(--ink);font-weight:500}
-  .topbar .theme{margin:0;flex:none}
-  html{scroll-padding-top:60px}
-  .wrap{padding:0 24px}
-  .sec-head,.two,.grid-2,.tc-head,.tc-foot{grid-template-columns:minmax(0,1fr)}
-  .sec-head{gap:12px}
-  .versus{grid-template-columns:minmax(0,1fr)}
-  .vs-col + .vs-col{border-left:0;border-top:1px solid var(--line)}
-  .traj,.grid-3,.tiers{grid-template-columns:minmax(0,1fr)}
-  .traj .rise{columns:1}
-  .tc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tc-grid > div:nth-child(2){border-right:0}
-  .tc-grid > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .tska-intro,.ev{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tska-intro > div:nth-child(2),.ev > div:nth-child(2){border-right:0}
-  .tska-intro > div:nth-child(-n+2),.ev > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .horizons{grid-template-columns:minmax(0,1fr);gap:28px}
-  .hz,.hz + .hz{padding:0;border-left:0}
-  .ladder{grid-template-columns:minmax(0,1fr)}
-  .ladder > div{min-height:0!important}
-}
-@media (max-width:640px){
+  main{margin-inline-start:0}
+  .topbar{display:flex;position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:1px solid var(--line);gap:4px;overflow-x:auto;padding:8px 12px;white-space:nowrap}
+  .topbar a{padding:6px 10px;border-radius:6px;color:var(--ink-2);text-decoration:none;font-size:14px}
+  .topbar a[aria-current="true"]{background:var(--accent-wash);color:var(--ink)}
+  .topbar .pill{flex:none}
   .wrap{padding:0 16px}
+  .sec-head{grid-template-columns:1fr;gap:12px}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile:nth-child(2){border-inline-end:0}
+  .tile:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .grid2,.grid3,.idx,.road{grid-template-columns:1fr}
+  .gates{display:none}
+  .sources ol{columns:1}
   section.band{padding:52px 0 44px}
-  .kpis{grid-template-columns:minmax(0,1fr)}
-  .kpi{border-right:0!important;border-bottom:1px solid var(--line)!important}
-  .kpi:last-child{border-bottom:0!important}
-  .need{grid-template-columns:minmax(0,1fr)}
-  .need > div{border-right:0;border-bottom:1px solid var(--line)}
-  .need > div:last-child{border-bottom:0}
-  .contrast{grid-template-columns:minmax(0,1fr)}
-  .contrast > div:nth-child(-n+3){display:none}
-  .contrast .dim{background:var(--surface-2);font-size:13px}
-  .contrast > div[data-s]::before{content:attr(data-s);display:block;font-size:12px;color:var(--ink-3);font-weight:600}
-  .matrix{grid-template-columns:minmax(0,1fr)}
-  .matrix .axh,.matrix .corner{display:none}
-  .cell::before{content:attr(data-l);width:100%;font-size:12px;font-weight:600;color:var(--ink-2)}
-  .tc-grid,.tska-intro,.ev{grid-template-columns:minmax(0,1fr)}
-  .tc-grid > div,.tska-intro > div,.ev > div{border-right:0!important;border-bottom:1px solid var(--line)}
-  .facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .g-lab b{font-size:18px}
-  .g-lab{font-size:12px}
-  input[type=search]{min-width:0;width:100%}
+  .mx{grid-template-columns:22px 1fr 1fr;min-height:300px}
+  .pyr .tier{width:100%!important}
+  .tbl-wrap table{min-width:680px}
+  .tbl-wrap table.heat{min-width:720px}
 }
-@media print{.rail,.topbar,.theme,.filters{display:none}main{margin:0}section.band{break-inside:avoid-page}}
+@media (max-width:520px){
+  .tiles{grid-template-columns:1fr}
+  .tile{border-inline-end:0!important;border-bottom:1px solid var(--line)}
+  .tile:last-child{border-bottom:0}
+  .story{grid-template-columns:1fr}
+  .scale{grid-template-columns:1fr}
+  .mx{grid-template-columns:1fr;grid-template-rows:auto}
+  .mx .ax{display:none}
+  .mx .q.hot{order:-1}
+}
+@media print{.rail,.topbar,.controls{display:none}main{margin:0}section.band{break-inside:avoid-page}}
 </style>
 </head>
 <body>
-<a class="skip" href="#overview">Skip to content</a>
-<noscript><div style="padding:12px 16px;background:#fbecd6;color:#13282c;font:500 14px system-ui,sans-serif;text-align:center">Charts, filters and role profiles on this page need JavaScript. The <a href="report.html">full evidence report</a> carries the underlying figures.</div></noscript>
-
-<aside class="rail" aria-label="Sections">
-  <div class="brand"><div class="brand-mark" aria-hidden="true"></div><div><b>Data &amp; AI Workforce Capability</b><span>SDAIA Capacity Building Planning</span></div></div>
+<a class="skip" href="#main" data-t="skip"></a>
+<aside class="rail" aria-label="Site">
+  <div class="brand"><div class="brand-mark" aria-hidden="true"></div><div><b data-t="brand"></b><span data-t="brandSub"></span></div></div>
   <ul class="nav" id="nav"></ul>
   <div class="rail-foot">
-    <div id="railEdition"></div>
-    <a href="report.html">Full evidence report</a>
-    <button class="theme" type="button" data-theme-toggle>Theme</button>
+    <div data-t="asof"></div>
+    <div class="controls">
+      <button class="pill" type="button" data-lang-toggle></button>
+      <button class="pill" type="button" data-theme-toggle></button>
+    </div>
   </div>
 </aside>
 <nav class="topbar" id="topbar" aria-label="Sections"></nav>
+<main id="main"></main>
 
-<main>
-  <header class="hero" id="overview">
-    <div class="wrap">
-      <div class="edition" id="edition"></div>
-      <h1>Saudi demand for AI has outrun the depth of its workforce</h1>
-      <p class="lede">The authoritative view, for executive planning, of what data and AI capability the Kingdom needs, what it has, where the gaps are, and how government and private sector needs differ.</p>
-      <div class="gauge" id="gauge" role="img"></div>
-    </div>
-  </header>
-
-  <section class="band" aria-labelledby="h-summary">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Executive overview</span><h2 id="h-summary">Where the Kingdom stands</h2></div>
-        <p class="lede">Six measures that frame every capability decision this year. Amber marks a gap against need or target.</p>
-      </div>
-      <div class="kpis" id="kpis"></div>
-      <div class="panel mt">
-        <div class="sub-h"><h3>Progress on SDAIA's three capability tiers</h3><p>Achieved against the 2030 target, with the 2026 and 2028 milestones marked.</p></div>
-        <div class="tiers" id="tiers"></div>
-        <p class="src">SDAIA KPI dashboard, October 2026. Foundation-tier target is 40% of the 4,211,344-strong workforce (Q4 2025).</p>
-      </div>
-      <div class="two">
-        <div><h3 style="margin-bottom:14px">What leadership should know</h3><ul class="insights" id="insights"></ul></div>
-        <aside class="decisions" aria-labelledby="h-dec"><h3 id="h-dec">Decisions required</h3><p>Five choices that unlock the rest of the plan.</p><div id="decisions"></div></aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="needs" aria-labelledby="h-needs">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Workforce needs assessment</span><h2 id="h-needs">How many specialists the economy will need</h2></div>
-        <p class="lede">Demand modelled from the professional and technical workforce, converging on peer AI-intensity benchmarks by 2035. SDAIA's own trajectory to 20,000 falls below every scenario by 2028.</p>
-      </div>
-      <div class="panel">
-        <div class="sub-h"><h3>Specialist demand scenarios, 2025–2035</h3></div>
-        <div class="legend" id="fcLegend"></div>
-        <div id="fcChart"></div>
-        <details class="tbl"><summary>View as table</summary><div class="scroll-x" id="fcTable"></div></details>
-        <p class="src mt">Model base: GASTAT register-based professional &amp; technical employment, Q3 2025 (2.97m), growing 3.5% a year. End-state AI intensity is an assumption anchored to peer job-posting shares. The model starts from 14,495 specialists (SPA, Jun 2026); the October 2026 dashboard shows 17,562, in line with the central case for 2026 (17,519). The undefined "specialist" remains the model's weakest input.</p>
-      </div>
-      <div class="need mt" id="needCards"></div>
-      <div class="grid-2 mt2" style="align-items:start">
-        <div class="panel">
-          <h3>Breadth without depth</h3>
-          <p class="muted" style="font-size:14.5px">Each square is about 1,582 of the 1,581,605 people in SDAIA's three tiers. Amber squares are specialists.</p>
-          <div class="waffle" id="waffle" role="img"></div>
-          <p style="font-size:14.5px;margin:0"><b class="num" style="font-size:18px">1.1%</b> of SDAIA learners are at specialist level, and 278 at leader level. The marginal return on another foundation seat is now close to zero.</p>
-        </div>
-        <div class="panel">
-          <h3>Supply pipeline</h3>
-          <p class="muted" style="font-size:14.5px">Cumulative or annual output by route. Counts come from different bases and cannot be summed.</p>
-          <ul class="pipe" id="pipe"></ul>
-        </div>
-      </div>
-      <div class="panel mt">
-        <div class="sub-h"><h3>Is supply landing in jobs?</h3><p>Employment within six months of graduation, 2025, against the Vision 2030 annual target.</p></div>
-        <div id="bullets"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="sectors" aria-labelledby="h-sectors">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Public and private sector</span><h2 id="h-sectors">Two different workforce problems</h2></div>
-        <p class="lede">Government needs people who govern, protect and adopt. Firms need people who build, integrate and scale. Planning one portfolio for both under-serves each.</p>
-      </div>
-      <div class="versus" id="versus"></div>
-      <div class="mt2">
-        <div class="sub-h"><h3>How the needs differ</h3></div>
-        <div class="contrast" id="contrast"></div>
-      </div>
-      <div class="grid-2 mt2">
-        <div class="panel">
-          <h3>Demand intensity by capability area</h3>
-          <p class="muted" style="font-size:14.5px">Priority each sector's evidence assigns to the area. A hollow mark means the area was not identified as a need.</p>
-          <div class="legend"><span><i class="dot" style="background:var(--gov)"></i>Government</span><span><i class="dot" style="background:var(--priv)"></i>Private sector</span></div>
-          <div id="dumbbell"></div>
-        </div>
-        <div class="stack">
-          <div class="panel">
-            <h3>AI adoption by industry</h3>
-            <p class="muted" style="font-size:14.5px">Share of establishments using AI, 2024 to 2025.</p>
-            <div class="legend"><span><i class="dot" style="background:var(--ramp-1)"></i>2024</span><span><i class="dot" style="background:var(--ramp-3)"></i>2025</span></div>
-            <div id="adoption"></div>
-            <p class="src">GASTAT, Establishments ICT Access and Usage Statistics, 2024 and 2025.</p>
-          </div>
-          <div class="panel">
-            <h3>What Gulf AI vacancies ask people to do</h3>
-            <div id="vacancy"></div>
-            <p class="src">GulfTalent, H1 2026; 420 AI-connected vacancies classified across UAE, KSA and Qatar.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="roles" aria-labelledby="h-roles">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Emerging data and AI job roles</span><h2 id="h-roles">The national role register</h2></div>
-        <p class="lede">Eighteen priority roles across five families, rated for government and private demand and for domestic supply. Select a role to open its TSKA profile.</p>
-      </div>
-      <div class="filters">
-        <div class="seg" role="group" aria-label="Sector lens" id="lens"></div>
-        <label>Family <select id="family"></select></label>
-        <label>Status <select id="status"></select></label>
-        <input type="search" id="q" placeholder="Search roles" aria-label="Search roles">
-        <span class="reg-count" id="regCount" aria-live="polite"></span>
-      </div>
-      <div class="register" id="register"></div>
-      <p class="src mt">Demand intensity: three marks critical, two high, one medium, from sector skills evidence. Supply strength is the evidence rating of domestic provision. Planning framework, version 1.0.</p>
-    </div>
-  </section>
-
-  <section class="band" id="skills" aria-labelledby="h-skills">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Critical competencies and skills</span><h2 id="h-skills">Where skill value is moving</h2></div>
-        <p class="lede">Saudi demand set against global demand, with the horizon over which each skill is most needed. Value is migrating from using AI to building, operating and governing it.</p>
-      </div>
-      <div class="traj" id="traj"></div>
-      <div class="mt2">
-        <div class="sub-h"><h3>Capability gap matrix</h3><p>Sector skill priorities placed by how much they are needed and how well domestic supply covers them. The shaded cells are the planning gap.</p></div>
-        <div class="legend"><span><i style="background:var(--gov)"></i>Government</span><span><i style="background:var(--priv)"></i>Private sector</span></div>
-        <div class="matrix" id="matrix"></div>
-        <p class="callout calm mt"><b>Reading the matrix.</b> Sector evidence rates no critical or high need as weakly supplied, because demand surveys capture established skills. The weakest supply sits in capabilities too new to appear in them: MLOps and LLMOps, agentic engineering, AI product management and Arabic NLP, flagged as weak in the role register above.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="tska" aria-labelledby="h-tska">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">TSKA framework</span><h2 id="h-tska">Tasks, skills, knowledge and abilities by role</h2></div>
-        <p class="lede">One definition of each role that curriculum, accreditation, hiring and procurement can all use, mapped to the national standards issued in September 2026.</p>
-      </div>
-      <div class="tska-intro">
-        <div><span class="L">T</span><b>Tasks</b><p>The work the role performs; what an employer would observe.</p></div>
-        <div><span class="L">S</span><b>Skills</b><p>Learned, demonstrable proficiencies needed to do the tasks.</p></div>
-        <div><span class="L">K</span><b>Knowledge</b><p>Bodies of fact, regulation and method the role draws on.</p></div>
-        <div><span class="L">A</span><b>Abilities</b><p>Enduring capacities that separate strong performers.</p></div>
-      </div>
-      <div class="tska-bar"><label for="roleSel" style="font-weight:500">Role</label><select id="roleSel"></select></div>
-      <div class="tska-card" id="tskaCard" aria-live="polite"></div>
-      <div class="mt2">
-        <div class="sub-h"><h3>Proficiency levels</h3><p>A common five-level scale. The national specialist count should only include people at Professional level or above.</p></div>
-        <div class="ladder" id="ladder"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="gaps" aria-labelledby="h-gaps">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Capability gaps and national priorities</span><h2 id="h-gaps">What to fix, and in what order</h2></div>
-        <p class="lede">Progress against national targets, the measurement blind spots that weaken planning, and the priorities sequenced by horizon.</p>
-      </div>
-      <div class="tracker" id="tracker"></div>
-      <div class="grid-2 mt2">
-        <div>
-          <h3>Measurement blind spots</h3>
-          <p class="muted" style="font-size:14.5px">Planning is currently done without these instruments.</p>
-          <ul class="blind" id="blind"></ul>
-        </div>
-        <div class="callout" style="align-self:start">
-          <b>The planning implication.</b> Targets are being met on the measures that are easy to count: seats, literacy, enrolment. The measures that show capability in work, such as placement, vacancies filled and senior roles held by nationals, are either missed or not measured, and the leader tier is at 2% of its 2030 target. Priorities below start by fixing the instruments, then shift investment to depth.
-        </div>
-      </div>
-      <div class="mt2">
-        <div class="sub-h"><h3>National priorities by horizon</h3><p>Drawn from the twelve recommendations in the full evidence report; reference numbers shown.</p></div>
-        <div class="horizons" id="horizons"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="evidence" aria-labelledby="h-ev">
-    <div class="wrap">
-      <div class="sec-head">
-        <div><span class="kicker">Evidence and method</span><h2 id="h-ev">Every figure is traceable</h2></div>
-        <p class="lede">This platform summarises a verified evidence base. Each statistic was checked against a second source and scored for confidence; where no reliable public data exists, the gap is declared rather than estimated.</p>
-      </div>
-      <div class="ev" id="ev"></div>
-      <p class="mt" style="max-width:72ch;color:var(--ink-2)">The full evidence report holds the method, provider and benchmark analysis, the SWOT, all twelve recommendations, the data gap register and the complete evidence appendix with sources.</p>
-      <a class="btn" href="report.html">Open the full evidence report</a>
-    </div>
-  </section>
-
-  <footer><div class="wrap" id="foot"></div></footer>
-</main>
-<div class="tip" id="tip" aria-hidden="true"></div>
 <script>
-const X = {};
+/* ============================================================
+   Content model: every user-facing string is a {ar, en} pair.
+   Every figure carries a source key into SRC.
+   ============================================================ */
+const T = (ar, en) => ({ ar, en });
+let lang = 'ar';
+try { const l = localStorage.getItem('plan-lang'); if (l === 'en' || l === 'ar') lang = l; } catch (e) {}
+const tx = v => (v && typeof v === 'object' && 'ar' in v) ? v[lang] : (v ?? '');
 
-X.edition = { label: 'October 2026 edition', asof: '27 September 2026', tiersAsof: 'October 2026', findings: 597, confirmed: 482, corrected: 73, disputed: 12, unverifiable: 30, gaps: 191, gapsFilled: 28, primary: 272 };
+const SRC = {
+  nsdai:   { u:'https://saudipedia.com/en/national-strategy-for-data-and-ai-nsdai', p:'Saudipedia', t:'National Strategy for Data and AI (NSDAI)' },
+  access:  { u:'https://accesspartnership.com/introducing-saudi-arabias-national-strategy-for-data-and-ai', p:'Access Partnership', t:'Introducing Saudi Arabia’s National Strategy for Data and AI' },
+  meed:    { u:'https://www.meed.com/saudi-arabia-signs-agreements-focusing-on-artificial-intelligence', p:'MEED', t:'Saudi Arabia signs agreements focusing on artificial intelligence' },
+  moe:     { u:'https://moe.gov.sa/en/mediacenter/moenews/Pages/news1_09112025.aspx', p:'Ministry of Education', t:'Over one million citizens empowered in AI through SAMAI' },
+  rdSamai: { u:'https://alriyadhdaily.com/article/6b31d6a52fc645d3878f7a5508eef6da', p:'Riyadh Daily', t:'Saudi Arabia reaches one million citizens trained in AI through SAMAI' },
+  forum:   { u:'https://www.arabnews.pk/saudi-arabia/unescos-ethics-of-ai-forum-opens-in-riyadh-3001248', p:'Arab News', t:'UNESCO’s Ethics of AI forum opens in Riyadh' },
+  argaam:  { u:'https://www.argaam.com/en/article/articledetail/id/1755857', p:'Argaam', t:'Saudi Arabia ranks 14th in Global AI Index, 1st in Arab world' },
+  gulf:    { u:'https://gulfnews.com/business/markets/saudi-arabia-ranks-14th-globally-in-ai-index-1.1726826247515', p:'Gulf News', t:'Saudi Arabia ranks 14th globally in AI index' },
+  eam:     { u:'https://enterpriseam.com/ksa/2026/04/16/saudi-arabia-tops-global-ai-rankings/', p:'Enterprise AM', t:'Saudi Arabia tops global AI rankings (Stanford AI Index 2026)' },
+  anStan:  { u:'https://www.arabnews.pk/node/2639943', p:'Arab News', t:'Report ranks Saudi Arabia No. 1 for security, privacy and cryptography in AI' },
+  ajel:    { u:'https://english.ajel.sa/business/saudi-arabia-leads-world-in-ai-security-privacy-cryptography-and-womens-empowerment-stanford-hai-2026-report', p:'Ajel', t:'Saudi Arabia leads world in AI security and women’s empowerment: Stanford HAI 2026' },
+  meai:    { u:'https://www.middleeastainews.com/p/uae-saudi-arabia-leadership-highlighted', p:'Middle East AI News', t:'UAE, Saudi Arabia leadership highlighted in Stanford AI Index' },
+  oxford:  { u:'https://fastcompanyme.com/?p=47161', p:'Fast Company Middle East', t:'Saudi Arabia tops MENA in Government AI Readiness Index 2025' },
+  imf:     { u:'https://imf.org/external/datamapper/datasets/AIPI', p:'IMF', t:'AI Preparedness Index (AIPI)' },
+  dig:     { u:'https://www.digitalinformationworld.com/2024/11/which-nations-excel-and-struggle-in.html', p:'Digital Information World', t:'IMF AI Preparedness Index country table (secondary)' },
+  wef:     { u:'https://www.weforum.org/reports/the-future-of-jobs-report-2025/digest', p:'World Economic Forum', t:'The Future of Jobs Report 2025' },
+  sand:    { u:'https://www.sandtech.com/?p=9341', p:'Sand Technologies', t:'Insights from the WEF Future of Jobs Report 2025' },
+  cft:     { u:'https://gcedclearinghouse.org/en/node/146447?level=2', p:'UNESCO (GCED Clearinghouse)', t:'AI Competency Framework for Teachers' },
+  ichei:   { u:'https://en.ichei.org/es/news/xw/3269.html', p:'ICHEI', t:'UNESCO AI competency frameworks for teachers and students' },
+  ram:     { u:'https://www.ai4europe.eu/education/education-catalog/readiness-assessment-methodology-tool-recommendation-ethics-artificial', p:'AI4Europe', t:'UNESCO Readiness Assessment Methodology' },
+  ramKsa:  { u:'https://alriyadhdaily.com/article/315b6c785bdf4a3cb990cbb5fd29d37f', p:'Riyadh Daily', t:'UNESCO releases report highlighting Saudi AI accomplishments' },
+  ram2:    { u:'https://af.net/es/realtime/unesco-introduces-new-tools-to-strengthen-ethical-ai-governance-at-global-forum-in-riyadh/', p:'AF.net', t:'UNESCO introduces RAM 2.0 at Global Forum in Riyadh' },
+  itu:     { u:'https://www.itu.int/hub/?p=60700', p:'ITU', t:'AI Skills Coalition: growth exceeding high expectations' },
+  undesa:  { u:'https://social.desa.un.org/world-summit-2025/blog/responding-to-emerging-technologies-the-uns-launch-of-an-ai-training', p:'UN DESA', t:'The UN’s launch of an AI training programme' },
+  cisco:   { u:'https://esgmena.com/?p=15822', p:'ESG Mena', t:'Cisco AI Readiness Index in Saudi Arabia' },
+  sg:      { u:'https://www.mddi.gov.sg/newsroom/041223/', p:'MDDI Singapore', t:'Launch of Singapore’s National AI Strategy 2.0' },
+  sg2:     { u:'https://www.malaymail.com/news/singapore/2023/12/04/singapore-says-aiming-to-become-where-worlds-best-ai-talents-gather-under-renewed-adoption-strategy/105799', p:'Malay Mail', t:'Singapore’s renewed AI strategy' },
+  uae:     { u:'https://andp.unescwa.org/plans/1493', p:'UN ESCWA', t:'UAE National Strategy for Artificial Intelligence 2031' },
+  uae2:    { u:'https://gulfnews.com/opinion/op-eds/uae-ai-ambitions-building-the-foundations-of-the-next-economic-growth-era-1.500235377', p:'Gulf News', t:'UAE AI ambitions: talent programmes' },
+  uk:      { u:'https://www.techuk.org/resource/techuk-proud-to-be-joining-government-and-industry-led-ai-skills-partnership.html', p:'techUK', t:'Government and industry-led AI Skills Partnership' },
+  uk2:     { u:'https://www.gov.uk/government/news/help-for-uk-businesses-to-fill-400bn-ai-skills-gap', p:'GOV.UK', t:'Help for UK businesses to fill £400bn AI skills gap' },
+  kr:      { u:'https://www.koreaherald.com/article/10612847', p:'Korea Herald', t:'W1.4tr blueprint to teach AI from elementary school to the workplace' },
+  fi:      { u:'https://www.helsinki.fi/en/news/teaching/finland-challenging-entire-world-understand-ai-offering-completely-free-online-course-initiative-got-1-finnish-population-study-basics', p:'University of Helsinki', t:'Elements of AI: 1% of the Finnish population' }
+};
+const SRC_ORDER = Object.keys(SRC);
+const cite = (...keys) => keys.map(k => `<a class="cite" href="${SRC[k].u}" target="_blank" rel="noopener">${SRC[k].p}</a>`).join(lang === 'ar' ? '، ' : '; ');
+const srcLine = (...keys) => `<p class="src">${tx(T('المصدر: ','Source: '))}${cite(...keys)}</p>`;
 
-/* SDAIA capability tiers: SDAIA KPI dashboard, Oct 2026 */
-X.tiers = [
-  { k: 'Leader & executive', ar: 'قائد وتنفيذي', v: 278, t: 14000, m26: 3200, path: [278, 3200, 6000, 10000, 12000, 14000], wk: 'No change this week', st: 'behind', note: 'New strategic indicator. 9% of the 2026 milestone and 2% of the 2030 target.' },
-  { k: 'Specialist', ar: 'مختص', v: 17562, t: 20000, m26: 13000, path: [12000, 13000, 15000, 17000, 19000, 20000], wk: '+104 this week', st: 'ahead', note: 'Already past the 2028 milestone of 17,000.' },
-  { k: 'Foundation', ar: 'مبتدئ', v: 1563765, t: 1684537, m26: 842268, path: [631701, 842268, 1052836, 1263403, 1473970, 1684537], wk: '+90 this week', st: 'ahead', note: '120,772 to go. The 2030 target is 40% of a 4,211,344 workforce (Q4 2025).' }
-];
-X.tierYears = [2025, 2026, 2027, 2028, 2029, 2030];
-
-/* ---------- headline metrics ---------- */
-X.kpis = [
-  { k: 'Data & AI specialists', v: '17,562', sub: '88% of the 20,000 target for 2030 and already past the 2028 milestone. "Specialist" has no published definition.', src: 'SDAIA KPI dashboard, Oct 2026', tone: 'neutral' },
-  { k: 'Modelled specialist need, 2030', v: '29k–45k', sub: 'Central case 37,378. Even the constrained case is 46% above the standing target.', src: 'Demand model on GASTAT Q3 2025 base', tone: 'gap' },
-  { k: 'Leaders & executives', v: '278', sub: '2% of the 14,000 target for 2030, against a 2026 milestone of 3,200. The most off-track tier.', src: 'SDAIA KPI dashboard, Oct 2026', tone: 'gap' },
-  { k: 'Foundation-tier learners', v: '1.56m', sub: '93% of the 2030 target of 1,684,537 (40% of the workforce). 120,772 to go.', src: 'SDAIA KPI dashboard, Oct 2026', tone: 'good' },
-  { k: 'Share of trainees at specialist depth', v: '1.1%', sub: '17,562 of 1,581,605 people across the three SDAIA tiers.', src: 'SDAIA KPI dashboard, Oct 2026', tone: 'gap' },
-  { k: 'Graduates employed within 6 months', v: '43.3%', sub: 'Against a 54.1% annual target, and down from 44.4% in 2024. 2030 target: 75%.', src: 'Vision 2030 Annual Report 2025', tone: 'gap' }
-];
-
-X.insights = [
-  { t: 'Demand has outrun depth', b: 'Over 80% of Saudi employees use AI regularly at work and a third of establishments have adopted it, yet relative AI skill penetration is 0.78× the global average. Appetite is world-class; the workforce to satisfy it is not yet built.' },
-  { t: 'The 2030 specialist target is set for a smaller economy', b: 'Modelled need reaches 29,200–45,400 specialists by 2030 and 58,700–142,500 by 2035 against a standing target of 20,000. The specialist tier is already past its 2028 milestone; meeting the target early should not be read as sufficiency.' },
-  { t: 'Leadership is the most off-track tier', b: 'SDAIA has trained 278 leaders and executives against a 2026 milestone of 3,200 and a 2030 target of 14,000. Adoption at national scale needs leaders who can sponsor, govern and fund it, and this tier is moving slowest.' },
-  { t: 'Breadth is solved; the build-and-operate layer is thin', b: 'The foundation tier reached 1.56 million learners, 93% of its 2030 target. Specialists are at 88% of a target that is too small. Fewer than 10% of Gulf AI vacancies involve building or training models, and MLOps, evaluation and data-platform engineering had no dedicated national pathway until August 2026.' },
-  { t: 'Government and private demand diverge', b: 'Government need is anchored in regulation: data offices, privacy, AI governance and workforce-wide adoption. Private need is engineering-led: GenAI and ML development, data science, integration and industrial AI. Supply is stronger on the government side.' },
-  { t: 'Planning is running without a demand instrument', b: 'Saudi Arabia is absent from the international AI job-posting series, and no Saudi body publishes AI vacancies by role, occupational coding for AI roles, or provider placement outcomes.' }
-];
-
-X.decisions = [
-  { t: 'Re-baseline the specialist target', b: 'Adopt a 2030 planning figure inside the modelled 29k–45k range and set a 2035 target, tied to a published definition of "specialist".', h: '6–12 months' },
-  { t: 'Stand up a national AI Skills Observatory', b: 'Vacancies by role family, occupational coding for AI roles, and provider outcomes, with GASTAT, HRSD and MCIT.', h: '0–12 months' },
-  { t: 'Accelerate the leader and executive tier', b: 'Close the gap from 278 to the 3,200 milestone through entity-level quotas, executive programmes and AI-office playbooks, with sector bodies as co-owners.', h: '0–12 months' },
-  { t: 'Rebalance the portfolio from awareness to depth', b: 'Move marginal funding from literacy seats to build-and-operate pathways and senior conversion programmes.', h: '6–18 months' },
-  { t: 'Adopt the role and TSKA taxonomy as the planning standard', b: 'Use one role register and one TSKA definition across SDAIA Academy, partners and procurement, mapped to the new national professional standards.', h: '0–6 months' }
-];
-
-/* ---------- needs assessment ---------- */
-X.forecast = {
-  years: [2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035],
-  scenarios: {
-    Constrained: [14495, 16670, 19172, 22048, 25357, 29162, 33538, 38571, 44358, 51015, 58670],
-    Central: [14495, 17519, 21173, 25589, 30927, 37378, 45175, 54598, 65987, 79751, 96386],
-    Accelerated: [14495, 18217, 22894, 28773, 36161, 45446, 57115, 71780, 90211, 113374, 142484]
-  },
-  intensity: { Constrained: '1.4%', Central: '2.3%', Accelerated: '3.4%' },
-  bench: { Constrained: 'below the UAE’s 2.87% AI posting share', Central: 'converges on the UAE today', Accelerated: 'converges on Singapore, the global frontier' },
-  target: 20000,
-  stockNow: 17562,
-  trajectory: [12000, 13000, 15000, 17000, 19000, 20000]
+const UI = {
+  skip: T('انتقل إلى المحتوى','Skip to content'),
+  brand: T('تخطيط بناء القدرات','Capacity Building Planning'),
+  brandSub: T('البيانات والذكاء الاصطناعي · سدايا','Data & AI · SDAIA'),
+  asof: T('محدَّث في 19 أكتوبر 2026','As of 19 October 2026'),
+  langBtn: T('English','العربية'),
+  themeDark: T('الوضع الداكن','Dark theme'),
+  themeLight: T('الوضع الفاتح','Light theme'),
+  question: T('سؤال القرار','Decision question')
 };
 
-X.depth = { total: 1581605, foundation: 1563765, specialists: 17562, leaders: 278 };
-
-X.pipeline = [
-  { stage: 'SDAIA foundation tier (cumulative)', n: 1563765, tier: 'Foundation', src: 'SDAIA KPI dashboard, Oct 2026' },
-  { stage: 'Basic AI literacy (SAMAI)', n: 1200000, tier: 'Literacy', src: 'SPA, Sep 2026' },
-  { stage: 'Tuwaiq Academy graduates', n: 55000, tier: 'Bootcamp', src: 'SPA, Sep 2026' },
-  { stage: 'AI-related degree graduates 2019–23', n: 38000, tier: 'Degree', src: 'SDAIA, Sep 2024 (computing family, ~6,500 abroad)' },
-  { stage: 'Students in advanced technology & AI, 2025', n: 20000, tier: 'Degree', src: 'Vision 2030 HCDP 2025' },
-  { stage: 'SDAIA specialist tier (cumulative)', n: 17562, tier: 'Specialist', src: 'SDAIA KPI dashboard, Oct 2026' },
-  { stage: 'Educators trained in AI applications, 2025', n: 13000, tier: 'Educator', src: 'Vision 2030 HCDP 2025' },
-  { stage: 'Students in generative & agentic AI initiatives', n: 3500, tier: 'Specialist', src: 'Vision 2030 HCDP 2025' },
-  { stage: 'Advanced data-engineering specialists', n: 500, tier: 'Specialist', src: 'SPA / SDAIA Academy, Aug 2026' },
-  { stage: 'SDAIA leader & executive tier (cumulative)', n: 278, tier: 'Leadership', src: 'SDAIA KPI dashboard, Oct 2026' }
+const SECTIONS = [
+  ['overview', T('نظرة عامة','Overview')],
+  ['strategy', T('الأساس الاستراتيجي والمؤشرات','Strategy & KPIs')],
+  ['benchmark', T('المقارنة المعيارية الدولية','Global benchmarking')],
+  ['skills', T('مصفوفة المهارات والجدارات','Skills & competency matrix')],
+  ['needs', T('تقييم الاحتياج وتحليل الفجوات','Needs assessment & gaps')],
+  ['roadmap', T('خارطة الطريق والبرامج','Roadmap & programs')],
+  ['sources', T('المصادر والمنهجية','Sources & method')]
 ];
 
-X.employability = [
-  { k: 'University graduates employed within 6 months', v: 43.34, t: 54.1, t2030: 75, prev: 44.43 },
-  { k: 'TVET graduates employed within 6 months', v: 47.41, t: 56.2, t2030: null, prev: null }
+/* ---------------- data ---------------- */
+const TILES = [
+  { k:T('مختصون وخبراء بحلول 2030','Specialists & experts by 2030'), v:'20,000', s:T('مستهدف الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي','NSDAI national target'), src:['nsdai'] },
+  { k:T('من القوى العاملة بمهارات أساسية','Workforce with basic skills'), v:'40%', s:T('مستهدف محو الأمية في البيانات والذكاء الاصطناعي بحلول 2030','Data & AI literacy target for 2030'), src:['nsdai'] },
+  { k:T('مواطن تدرّبوا عبر «سماي»','Citizens trained via SAMAI'), v:'1M+', s:T('تحقق في 2025 · 52% نساء · 70% موظفون','Achieved 2025 · 52% women · 70% employees'), tone:'good', src:['moe','rdSamai'] },
+  { k:T('ترتيب محور المواهب','Talent sub-pillar rank'), v:'60/83', s:T('مقابل المرتبة الأولى في الاستراتيجية الحكومية (Tortoise 2024)','vs 1st on government strategy (Tortoise 2024)'), tone:'gap', src:['argaam'] }
 ];
 
-/* ---------- public vs private ---------- */
-X.sector = {
-  gov: {
-    name: 'Government',
-    stance: 'Govern, protect and adopt',
-    summary: 'Demand is created by regulation and national programmes. Roles are mandated (data offices, data protection officers, AI units), skills must be held by Saudi professionals, and the scale challenge is bringing a ~1.2 million public workforce to productive use of AI.',
-    facts: [
-      { v: '235', k: 'government entities measured by DGA' },
-      { v: '278', k: 'leaders and executives trained, against 14,000 targeted by 2030' },
-      { v: '23', k: 'entities with an established AI unit at last count' },
-      { v: '300+', k: 'data management offices; 214 entities in the third Nudhee cycle' }
-    ],
-    drivers: ['NDMO data management standards (CDO and data office in every entity)', 'PDPL and mandatory Data Protection Officers', 'AI Adoption Framework and generative-AI guidelines for government', 'National AI Risk Management Framework (Jul 2026)', 'National AI Index axes: strategy, human capability, governance, applications', 'NCA ECC-2:2024 Saudization of cyber posts', 'SAMAI 2 across 11 ministries'],
-    critical: ['Data governance & data-office operations', 'Personal data protection & privacy', 'Applied generative AI for the whole workforce', 'AI governance, risk management & ethics'],
-    supply: 'Supply rated strong for most critical needs, because national programmes and certifications already target them.',
-    gap: 'Thin AI leadership and AI-unit capacity; moderate depth in AI/agentic development and analytics; weak in real-time computer vision for operations.'
-  },
-  priv: {
-    name: 'Private sector',
-    stance: 'Build, integrate and scale',
-    summary: 'Demand is created by competition and adoption. The largest volume is staff who use AI, but the scarcest are engineers who build, integrate and run AI in production — and the market asks for years of experience the domestic pipeline has not yet produced.',
-    facts: [
-      { v: '33.1%', k: 'of establishments used AI in 2025' },
-      { v: '58% / 19%', k: 'professionals using AI vs fully trained by their employer' },
-      { v: '9%', k: 'of Gulf AI-connected vacancies build or train models' },
-      { v: '1%', k: 'of GCC organisations feel equipped to scale AI' }
-    ],
-    drivers: ['Productivity and cost pressure across services', 'Industrial AI in energy, utilities and manufacturing (Aramco: 442 use cases)', 'Hyperscaler regions opening in the Kingdom (late 2026)', 'Engineering Saudization at 30% from Jun 2026', 'Startup formation: 19,000+ AI commercial registrations in 2025'],
-    critical: ['Applied AI literacy & GenAI productivity', 'AI/ML engineering & GenAI application development', 'Data science & advanced analytics'],
-    supply: 'Supply rated moderate for most critical needs; strong only in cloud engineering and workforce AI literacy.',
-    gap: 'Senior engineering experience, integration and solution architecture, industrial AI, AI governance in firms, Arabic NLP and data-centre engineering.'
-  }
+const STORY = [
+  [T('الطموح','Ambition'), T('20,000 مختص وخبير و40% من القوى العاملة بمهارات أساسية بحلول 2030.','20,000 specialists and experts; 40% of the workforce with basic skills by 2030.')],
+  [T('الزخم','Momentum'), T('تجاوز «سماي» مليون متدرب في 2025؛ 52% منهم نساء.','SAMAI passed one million trained in 2025; 52% women.')],
+  [T('الموقع','Position'), T('ريادة عالمية في الاستراتيجية والتبنّي، وعمق المواهب هو الحلقة الأضعف.','World-leading on strategy and adoption; talent depth is the weakest link.')],
+  [T('الفجوة','Gap'), T('محو الأمية في طريقه للحل؛ القيد الحاكم هو طبقة المختصين والخبراء والقيادات.','Literacy is largely solved; the binding constraint is the specialist, expert and leadership tier.')],
+  [T('الاستجابة','Response'), T('خارطة مرحلية تنقل الاستثمار من التوعية الشاملة إلى مسارات مختصين حسب الدور.','A phased roadmap that shifts investment from mass literacy to role-based specialist pipelines.')]
+];
+
+const MANDATE = [
+  [T('الوصول إلى قائمة أفضل 15 دولة في الذكاء الاصطناعي','Rank among the top 15 nations in AI'), '2030', ['access']],
+  [T('بناء قاعدة من 20,000 مختص وخبير في البيانات والذكاء الاصطناعي','Pool of 20,000 data & AI specialists and experts'), '2030', ['nsdai']],
+  [T('تدريب 40% من القوى العاملة على المهارات الأساسية','40% of the workforce trained in basic data & AI skills'), '2030', ['nsdai']],
+  [T('ضمن أفضل 20 دولة في الأبحاث المحكّمة في البيانات والذكاء الاصطناعي','Top 20 globally in peer-reviewed data & AI publications'), '2030', ['meed']],
+  [T('استثمارات بقيمة 75 مليار ريال وأكثر من 300 شركة ناشئة نشطة','SAR 75bn in investment; 300+ active startups'), '2030', ['nsdai']],
+  [T('تدريب مليون سعودي في الذكاء الاصطناعي («سماي»)','One million Saudis trained in AI (SAMAI)'), T('تحقق 2025','Achieved 2025'), ['moe']]
+];
+
+const PYRAMID = [
+  { n:T('القيادات','Leaders'), d:T('القيادات حتى مستوى وكيل وزارة تُكمل معيار القيادة التنفيذية','Leaders to deputy-minister level complete the executive standard'), t:'100%', w:'64%' },
+  { n:T('الخبراء والمختصون','Experts & specialists'), d:T('المستويان 4 و5 المعتمدان على المصفوفة الوطنية','Certified at Levels 4–5 on the national matrix'), t:'20,000', w:'73%', hot:true },
+  { n:T('المهنيون','Professionals'), d:T('المستوى 3: ينجزون مهام الدور باستقلالية','Level 3: deliver role tasks independently'), t:T('خط إمداد','Pipeline'), w:'82%' },
+  { n:T('الممارسون','Practitioners'), d:T('المستوى 2: يطبّقون الأدوات في أعمالهم','Level 2: apply tools in their own work'), t:T('≥ 10% تحويل','≥ 10% conversion'), w:'91%' },
+  { n:T('الوعي والثقافة','Literacy'), d:T('المستوى 1: فهم آمن ومسؤول للبيانات والذكاء الاصطناعي','Level 1: safe, responsible understanding of data & AI'), t:T('40% من القوى العاملة','40% of workforce'), w:'100%' }
+];
+
+const L = { o:T('مخرجات','Outcome'), p:T('خط الإمداد','Pipeline'), q:T('الجودة','Quality'), e:T('الكفاءة','Efficiency') };
+const W1 = T('الموجة الأولى','Wave 1');
+const KPIS = [
+  [1,'o',T('المختصون والخبراء المعتمدون','Certified specialists & experts'),T('سعوديون معتمدون في المستوى 4 فأعلى على المصفوفة الوطنية','Saudis certified at Level 4+ on the national matrix'),W1,'20,000',T('ربع سنوي','Quarterly'),null],
+  [2,'o',T('ثقافة البيانات والذكاء الاصطناعي في القوى العاملة','Workforce data & AI literacy'),T('نسبة القوى العاملة المجتازة لمعيار الثقافة','Share of workforce passing the literacy standard'),T('+1 مليون متدرب («سماي»)','1M+ trained (SAMAI)'),T('40% من القوى العاملة','40% of workforce'),T('نصف سنوي','Semi-annual'),'moe'],
+  [3,'o',T('موقع المواهب عالميًا','Global AI talent position'),T('ترتيب محور المواهب في مؤشر Tortoise العالمي','Talent sub-pillar rank, Tortoise Global AI Index'),T('60 (2024)','60th (2024)'),T('ضمن أفضل 30','Top 30'),T('سنوي','Annual'),'argaam'],
+  [4,'o',T('معدل شغل الأدوار الحرجة','Critical-role fill rate'),T('نسبة الوظائف الحكومية الممولة في البيانات والذكاء الاصطناعي المشغولة بسعوديين خلال 90 يومًا','Funded government Data & AI posts filled by Saudis within 90 days'),W1,'≥ 85%',T('نصف سنوي','Semi-annual'),null],
+  [5,'p',T('مؤشر إغلاق الفجوات','Gap-closure index'),T('الانخفاض المرجّح في فجوة الإتقان المقيسة عبر الأدوار ذات الأولوية','Weighted reduction in assessed proficiency gap across priority roles'),W1,T('−50% عن خط الأساس','−50% vs baseline'),T('سنوي','Annual'),null],
+  [6,'p',T('معدل التحويل في خط الإمداد','Pipeline conversion'),T('خريجو مسار الثقافة الملتحقون بمسار ممارس خلال 12 شهرًا','Literacy graduates enrolling in a practitioner path within 12 months'),W1,'≥ 10%',T('ربع سنوي','Quarterly'),null],
+  [7,'p',T('تغطية الجهات','Entity coverage'),T('الجهات الحكومية التي أكملت تقييم القدرات وخطتها','Government entities with a completed capability assessment and plan'),W1,T('100% من الجهات ذات الأولوية','100% of priority entities'),T('ربع سنوي','Quarterly'),null],
+  [8,'p',T('المرأة في طبقة المختصين','Women in specialist tier'),T('نسبة النساء من المعتمدين في المستوى 4 فأعلى','Female share of Level 4+ certified'),T('32.3% من مبتكري ومؤلفي الذكاء الاصطناعي (ستانفورد 2026)','32.3% of AI inventors/authors (Stanford 2026)'),'≥ 35%',T('سنوي','Annual'),'eam'],
+  [9,'q',T('معدل التطبيق الفعلي','Applied-capability rate'),T('خريجون نفّذوا مشروعًا أو حالة استخدام خلال 6 أشهر','Graduates deploying a project or use case within 6 months'),W1,'≥ 60%',T('نصف سنوي','Semi-annual'),null],
+  [10,'q',T('جاهزية القيادات','Leadership readiness'),T('قيادات عليا أكملت معيار القيادة التنفيذية للذكاء الاصطناعي','Senior leaders completing the AI executive standard'),W1,T('100% من مستوى وكيل وزارة','100% of deputy-minister level'),T('سنوي','Annual'),null],
+  [11,'q',T('رضا جهات التوظيف','Employer satisfaction'),T('تقييم جهات التوظيف لجاهزية الخريجين (1–5)','Employer rating of graduate job-readiness (1–5)'),W1,'≥ 4.2',T('سنوي','Annual'),null],
+  [12,'e',T('تكلفة المختص المعتمد','Cost per certified specialist'),T('إنفاق البرامج ÷ اعتمادات المستوى 4 فأعلى','Program spend ÷ Level 4+ certifications'),W1,T('انخفاض سنوي','Falling year on year'),T('سنوي','Annual'),null]
+];
+
+const INDEXES = [
+  { n:'AI Index', pub:'Stanford HAI', pos:T('الأولى عالميًا في نسبة النساء بين مبتكري ومؤلفي الذكاء الاصطناعي (32.3%)','1st in women’s share of AI inventors/authors (32.3%)'), sig:T('الأسرع نموًا في حصة مواهب الذكاء الاصطناعي: أكثر من 100% بين 2019 و2025؛ الأولى في تخصص الأمن والخصوصية والتشفير (15%).','Fastest growth in AI talent share: 100%+ 2019–2025; 1st in security, privacy & cryptography specialization (15%).'), ed:'2026', src:['eam','anStan'] },
+  { n:T('AI Index — المواهب والتبنّي','AI Index — talent & adoption'), pub:'Stanford HAI', pos:T('الرابعة في صافي هجرة المواهب','4th in net AI talent migration'), sig:T('أكثر من 80% من الموظفين يستخدمون الذكاء الاصطناعي في العمل مقابل 58% عالميًا؛ العاشرة في الاستثمار الخاص (2.03 مليار دولار).','80%+ of employees use AI at work vs 58% globally; 10th in private AI investment ($2.03bn).'), ed:'2026', src:['ajel','meai'] },
+  { n:'Global AI Index', pub:'Tortoise Media', pos:T('14 عالميًا · الأولى في الاستراتيجية الحكومية · 60 في المواهب','14th overall · 1st strategy · 60th talent'), sig:T('83 دولة و122 مؤشرًا. محور المواهب هو خط أساس المؤشر 3.','83 countries, 122 indicators. The talent sub-pillar is the KPI 3 baseline.'), ed:'2024', flag:true, src:['argaam','gulf'] },
+  { n:'Government AI Readiness Index', pub:'Oxford Insights', pos:T('الأولى إقليميًا · السابعة في الحوكمة · التاسعة في تبنّي القطاع العام','1st in MENA · 7th governance · 9th public-sector adoption'), sig:T('195 حكومة. يقيس قدرة القطاع العام على توظيف الذكاء الاصطناعي.','195 governments. Measures public-sector capability to deploy AI.'), ed:'2025', src:['oxford'] },
+  { n:'AI Preparedness Index', pub:'IMF', pos:T('0.58 · المرتبة 45','0.58 · 45th'), sig:T('174 دولة؛ بُعد رأس المال البشري وسياسات سوق العمل. الرقم من مصدر ثانوي ويتطلب التحقق.','174 countries; human capital & labour-policy dimension. Figure is secondary-sourced and needs verification.'), ed:'2023', flag:true, src:['imf','dig'] },
+  { n:'Readiness Assessment Methodology', pub:'UNESCO', pos:T('اكتمل التقرير الوطني للمملكة','Saudi country report completed'), sig:T('خمسة أبعاد منها البعد العلمي والتعليمي. أُطلق الإصدار RAM 2.0 في الرياض، سبتمبر 2026.','Five dimensions incl. scientific/educational. RAM 2.0 launched in Riyadh, September 2026.'), ed:'2026', src:['ramKsa','ram2'] }
+];
+
+const PILLARS = [
+  ['strategy',T('الاستراتيجية الحكومية','Government strategy'),1],
+  ['commercial',T('المنظومة التجارية','Commercial ecosystem'),7],
+  ['development',T('التطوير','Development'),26],
+  ['infra',T('البنية التحتية','Infrastructure'),29],
+  ['operating',T('بيئة التشغيل','Operating environment'),41],
+  ['research',T('البحث','Research'),42],
+  ['talent',T('المواهب','Talent'),60]
+];
+
+const PEERS = [
+  [T('سنغافورة','Singapore'), T('ثلاث طبقات: نخبة المبتكرين، الممارسون، المستخدمون الواثقون','Three tiers: top creators, practitioners, confident users'), T('مضاعفة ممارسي الذكاء الاصطناعي ثلاث مرات إلى 15,000','Triple AI practitioners to 15,000'), T('عدّ طبقة الممارسين وتخطيطها صراحةً؛ إعادة تصميم التلمذة المهنية والإلحاق بالشركات','Plan the practitioner tier explicitly; redesign apprenticeships and company attachments'), ['sg','sg2']],
+  [T('الإمارات','UAE'), T('دورات عامة مجانية، ومسارات متقدمة لموظفي الحكومة، وتحويل المهنيين الرقميين إلى مختصين','Free public courses, advanced tracks for government staff, reskilling digital professionals'), T('استراتيجية 2031؛ «مليون مُلقِّن»','Strategy 2031; One Million Prompters'), T('مسار متقدم مخصص لموظفي الحكومة','A dedicated advanced track for government employees'), ['uae','uae2']],
+  [T('المملكة المتحدة','United Kingdom'), T('شراكة بين الحكومة والقطاع الخاص ومنصة دورات مجانية','Government–industry partnership; free courses on an AI Skills Hub'), T('10 ملايين عامل (ثلث القوى العاملة) بحلول 2030','10 million workers (a third of the workforce) by 2030'), T('التنفيذ المشترك مع جهات التوظيف؛ قياس الثقة كخط أساس (21% فقط واثقون)','Employer co-delivery; a confidence baseline (only 21% confident)'), ['uk','uk2']],
+  [T('كوريا الجنوبية','South Korea'), T('مسار عبر مراحل الحياة من المدرسة إلى الدراسات العليا؛ كليات دراسات عليا داخل الشركات','Life-course pipeline; in-house corporate graduate schools'), T('1.4 تريليون وون (~960 مليون دولار)؛ 50% من الأقسام المهنية بمقررات ذكاء اصطناعي','KRW 1.4tn (~$960m); AI in 50% of vocational departments'), T('كليات دراسات عليا تديرها جهات التوظيف للأدوار النادرة','Employer-run graduate schools for scarce specialist roles'), ['kr']],
+  [T('فنلندا','Finland'), T('مقرر وطني مجاني واحد بساعات معتمدة جامعيًا','One free national MOOC with university credit'), T('1% من السكان (~55,000)','1% of population (~55,000)'), T('ثقافة معتمدة أكاديميًا قابلة للتراكم نحو الدرجات','Credit-bearing literacy that stacks into degrees'), ['fi']]
+];
+
+const SCALE = [
+  [1,T('واعٍ','Aware'),T('يشرح المفاهيم والمخاطر والأخلاقيات ويستخدم الأدوات المعتمدة بأمان','Explains concepts, risks and ethics; uses approved tools safely'),T('الثقافة (مستهدف 40%) · يونسكو: اكتساب/فهم','Literacy (40% target) · UNESCO Acquire/Understand')],
+  [2,T('ممارس','Practitioner'),T('يطبّق الأدوات في عمله بتوجيه، ويقرأ مخرجات النماذج ويسائلها','Applies tools with guidance; reads and questions model outputs'),T('من الثقافة إلى الممارسة · يونسكو: تعميق/تطبيق','Literacy → practice · UNESCO Deepen/Apply')],
+  [3,T('مهني','Professional'),T('ينجز مهام الدور من البداية إلى النهاية باستقلالية','Delivers end-to-end role tasks independently'),T('خط إمداد المختصين','Specialist pipeline')],
+  [4,T('مختص','Specialist'),T('يصمم الحلول ويقود العمل الفني ويوجّه الآخرين','Designs solutions, leads technical work, mentors'),T('يُحتسب ضمن 20,000 · يونسكو: إبداع','Counts to 20,000 · UNESCO Create'),true],
+  [5,T('خبير','Expert'),T('يرسم التوجه ويطوّر المجال ويعتمد الآخرين','Sets direction, advances the field, certifies others'),T('يُحتسب ضمن 20,000','Counts to 20,000'),true]
+];
+
+const COMP = {
+  T: { name:T('الجدارات التقنية','Technical'), note:T('الطلب مرتبط بأسرع المهارات نموًا لدى المنتدى الاقتصادي العالمي','Demand anchored in WEF’s fastest-growing skills'), src:['wef'], items:[
+    ['T1',T('هندسة البيانات والمنصات','Data engineering & platforms')],
+    ['T2',T('تحليل البيانات وتصويرها','Data analysis & visualization')],
+    ['T3',T('تعلّم الآلة والنمذجة','Machine learning & modelling')],
+    ['T4',T('هندسة الذكاء الاصطناعي التوليدي والوكيلي','Generative & agentic AI engineering')],
+    ['T5',T('تشغيل النماذج (MLOps)','MLOps & AI operations')],
+    ['T6',T('أمن الذكاء الاصطناعي والخصوصية','AI security & privacy')],
+    ['T7',T('إدارة البيانات وحوكمتها','Data management & governance')]]},
+  D: { name:T('جدارات المجال','Domain'), note:T('تحويل احتياجات القطاعات إلى حالات استخدام مسؤولة','Turning sector needs into responsible use cases'), src:[], items:[
+    ['D1',T('التطبيق القطاعي','Sector application')],
+    ['D2',T('الذكاء الاصطناعي المسؤول والأخلاقيات','Responsible AI & ethics')],
+    ['D3',T('التنظيم والامتثال','Regulation & compliance')],
+    ['D4',T('اتخاذ القرار المبني على البيانات','Data-driven decision making')]]},
+  L: { name:T('الجدارات القيادية','Leadership'), note:T('القيادة والتأثير وإدارة المواهب من المهارات الصاعدة','Leadership, influence and talent management are rising skills'), src:['sand'], items:[
+    ['L1',T('استراتيجية الذكاء الاصطناعي وتحقيق القيمة','AI strategy & value realization')],
+    ['L2',T('حوكمة الذكاء الاصطناعي ومخاطره','AI governance & risk')],
+    ['L3',T('قيادة التغيير والتبنّي','Change & adoption leadership')],
+    ['L4',T('بناء المواهب والقدرات','Talent & capability building')]]}
 };
+const CODES = ['T1','T2','T3','T4','T5','T6','T7','D1','D2','D3','D4','L1','L2','L3','L4'];
+const ROLES = [
+  ['tech',T('محلل بيانات','Data analyst'),            [2,4,2,0,0,0,3,3,2,2,4,0,0,0,0]],
+  ['tech',T('مهندس بيانات','Data engineer'),          [4,2,2,2,3,3,3,2,2,2,2,0,0,0,0]],
+  ['tech',T('عالم بيانات','Data scientist'),           [3,4,4,3,2,2,2,3,3,2,3,0,0,0,0]],
+  ['tech',T('مهندس تعلّم آلة / ذكاء اصطناعي','ML / AI engineer'), [3,2,4,4,4,3,2,2,3,2,2,0,0,0,0]],
+  ['bridge',T('مدير منتجات ذكاء اصطناعي','AI product manager'), [2,3,2,3,2,2,2,4,3,3,4,3,2,3,0]],
+  ['bridge',T('مسؤول حوكمة البيانات','Data governance officer'), [2,2,0,0,0,3,4,3,3,4,3,2,3,2,0]],
+  ['bridge',T('مختص أخلاقيات ومخاطر الذكاء الاصطناعي','AI ethics & risk specialist'), [1,2,2,2,0,3,3,3,4,4,3,2,4,2,0]],
+  ['lead',T('الرئيس التنفيذي للبيانات / الذكاء الاصطناعي','Chief Data / AI Officer'), [2,2,2,2,2,2,3,4,4,3,4,5,4,4,4]],
+  ['lead',T('قيادي حكومي','Senior public leader'),   [1,1,1,1,0,1,1,3,3,2,3,3,3,4,3]]
+];
+const ROLE_FAMS = [['all',T('الكل','All')],['tech',T('تقنية','Technical')],['bridge',T('ربط المجال بالتقنية','Bridge roles')],['lead',T('قيادية','Leadership')]];
 
-/* demand intensity by capability area: 3 critical, 2 high, 1 medium, null not identified */
-X.heat = [
-  { r: 'Applied GenAI & AI literacy', g: 3, p: 3 },
-  { r: 'Data governance & management', g: 3, p: 2 },
-  { r: 'Privacy & data protection', g: 3, p: null },
-  { r: 'AI governance, risk & ethics', g: 3, p: 1 },
-  { r: 'AI strategy & leadership', g: 2, p: 2 },
-  { r: 'Integration & solution architecture', g: 2, p: 2 },
-  { r: 'Cybersecurity incl. AI security', g: 2, p: 2 },
-  { r: 'Data science, analytics & BI', g: 2, p: 3 },
-  { r: 'AI/ML, GenAI & agentic engineering', g: 2, p: 3 },
-  { r: 'Cloud & data platforms', g: 1, p: 2 },
-  { r: 'Computer vision & ops analytics', g: 1, p: null },
-  { r: 'Open data & data value', g: 1, p: null },
-  { r: 'Industrial AI & OT data', g: null, p: 2 },
-  { r: 'Arabic NLP & LLM engineering', g: null, p: 1 },
-  { r: 'Data-centre & AI infrastructure', g: null, p: 1 }
+const CYCLE = [
+  [T('تحديد الطلب','Scope demand'),T('اشتقاق الأدوار والأعداد من محفظة حالات الاستخدام واستراتيجية البيانات في كل جهة، والتحقق مع القيادات.','Derive roles and headcount from each entity’s use-case portfolio and data strategy; validate with leaders.')],
+  [T('قراءة السوق','Read the market'),T('تحليلات إعلانات الوظائف ومسوح جهات التوظيف ومؤشرات الطلب العالمية — نهج «استشراف المهارات».','Job-posting analytics, employer surveys and global demand signals — the “skills anticipation” approach.')],
+  [T('قياس القدرة الحالية','Measure capability'),T('ثلاث عدسات: تقييم ذاتي، وتقييم المدير، واختبار أداء لمن يدّعي المستوى 3 فأعلى.','Three lenses: self-assessment, manager rating, and a performance test for Level 3+ claims.')],
+  [T('رسم العرض','Map supply'),T('خريجو الجامعات، وسجل الاعتمادات، ومخرجات البرامج، والتسرب المتوقع.','University graduates, certification registry, program pipelines and expected attrition.')],
+  [T('الحساب والترتيب والتنفيذ','Compute, rank, act'),T('حساب الفجوة المرجّحة لكل دور، وترتيب الأولويات، وتحويلها إلى طلب على البرامج.','Weighted gap per role, prioritised, converted into program demand.')]
 ];
 
-X.adoption = {
-  cats: ['ICT', 'Finance', 'Education', 'Transport', 'Prof. services', 'Mining', 'Arts', 'Health', 'Construction', 'All sectors'],
-  y2024: [52.8, 44.7, 42.1, 38.3, 39.2, 32.4, 29.9, 31.8, 29, 27.6],
-  y2025: [61.1, 52.9, 51, 44.4, 43.9, 41.8, 36.3, 35.6, 33.8, 33.1]
-};
-
-X.vacancyRole = [
-  { k: 'Use AI in the role', v: 33 },
-  { k: 'Implement or roll out AI', v: 33 },
-  { k: 'Sell AI products & services', v: 25 },
-  { k: 'Build or train AI models', v: 9 }
+const INSTR = [
+  [T('مسح قدرات الجهة','Entity capability survey'),T('النضج في البيانات والذكاء الاصطناعي، وحالات الاستخدام، والأدوار المخططة','Data & AI maturity, use-case pipeline, planned roles'),T('الرئيس التنفيذي للبيانات / وحدة الاستراتيجية','CDO / strategy unit'),T('سنوي','Annual')],
+  [T('نموذج الطلب على الأدوار','Role demand template'),T('الأدوار والأعداد والمستويات المستهدفة','Required roles, headcount, target levels'),T('الموارد البشرية وملاك الأعمال','HR + business owners'),T('سنوي','Annual')],
+  [T('التقييم الذاتي للجدارات','Competency self-assessment'),T('المستوى الحالي لكل جدارة','Current level per competency'),T('الموظفون ضمن النطاق','Employees in scope'),T('سنوي','Annual')],
+  [T('تحقق المدير المباشر','Manager validation'),T('تأكيد التقييم الذاتي أو تعديله','Confirms or adjusts self-ratings'),T('المديرون المباشرون','Line managers'),T('سنوي','Annual')],
+  [T('تقييم قائم على الأداء','Performance-based assessment'),T('إتقان موثّق للمستوى 3 فأعلى','Verified proficiency for Level 3+'),T('عينة من الموظفين','Sampled employees'),T('مستمر','Rolling')],
+  [T('ذكاء سوق العمل','Labour-market intelligence'),T('أحجام الإعلانات والمهارات المطلوبة ومؤشرات الأجور','Posting volumes, skills in demand, salary signals'),T('إدارة التخطيط','Planning department'),T('ربع سنوي','Quarterly')],
+  [T('سجل العرض','Supply register'),T('الخريجون والمعتمدون ومخرجات البرامج','Graduates, certified professionals, completions'),T('الجامعات ومقدمو التدريب','Universities, providers'),T('نصف سنوي','Semi-annual')],
+  [T('الأطر الوطنية للجاهزية','National readiness frameworks'),T('جاهزية المنظومة بما فيها التعليم والمهارات','System readiness incl. education and skills'),'UNESCO RAM · IMF AIPI',T('حسب الإصدار','Per edition')]
 ];
 
-X.salary = [
-  { role: 'Data Analyst', lo: 8, hi: 16, mid: 11 },
-  { role: 'Data Scientist', lo: 14, hi: 27, mid: 17 },
-  { role: 'Graduate entry (SDAIA T5)', lo: 12, hi: 18, mid: 15 },
-  { role: 'Graduate entry (NEOM GrOW)', lo: 15, hi: 25, mid: 20 },
-  { role: 'Lead, Enterprise AI', lo: 38, hi: 55, mid: 46 }
+const QUADS = [
+  { k:'now', n:T('تحرّك الآن','Act now'), d:T('أهمية عالية · فجوة كبيرة — برامج مختصين ممولة، توظيف، شراكات دولية','High criticality · large gap — funded specialist programs, hiring, partnerships'), hot:true },
+  { k:'protect', n:T('احمِ','Protect'), d:T('أهمية عالية · فجوة صغيرة — استبقاء، اعتماد، مسارات متقدمة','High criticality · small gap — retention, certification, advanced tracks') },
+  { k:'build', n:T('ابنِ بثبات','Build steadily'), d:T('أهمية منخفضة · فجوة كبيرة — برامج ذاتية ومدمجة قابلة للتوسع','Low criticality · large gap — scalable self-paced and blended programs') },
+  { k:'monitor', n:T('راقب','Monitor'), d:T('أهمية منخفضة · فجوة صغيرة — تغطية الثقافة فقط','Low criticality · small gap — literacy coverage only') }
 ];
 
-/* sector skill priorities — demand priority x supply strength (gap matrix) */
-X.sectorSkills = [
-  { s: 'Data governance & data-office operations', sec: 'gov', pri: 'Critical', str: 'Strong' },
-  { s: 'Personal data protection & privacy', sec: 'gov', pri: 'Critical', str: 'Strong' },
-  { s: 'Applied GenAI for the whole workforce', sec: 'gov', pri: 'Critical', str: 'Strong' },
-  { s: 'AI governance, risk & ethics', sec: 'gov', pri: 'Critical', str: 'Strong' },
-  { s: 'AI strategy & AI-office leadership', sec: 'gov', pri: 'High', str: 'Strong' },
-  { s: 'Data classification, quality & metadata', sec: 'gov', pri: 'High', str: 'Moderate' },
-  { s: 'Data sharing & interoperability', sec: 'gov', pri: 'High', str: 'Strong' },
-  { s: 'Cybersecurity incl. AI for security', sec: 'gov', pri: 'High', str: 'Strong' },
-  { s: 'Analytics, BI & decision support', sec: 'gov', pri: 'High', str: 'Moderate' },
-  { s: 'AI/ML & agentic solution development', sec: 'gov', pri: 'High', str: 'Moderate' },
-  { s: 'Open data & data value realisation', sec: 'gov', pri: 'Medium', str: 'Moderate' },
-  { s: 'Cloud & data-platform engineering', sec: 'gov', pri: 'Medium', str: 'Moderate' },
-  { s: 'Computer vision & real-time ops analytics', sec: 'gov', pri: 'Medium', str: 'Weak' },
-  { s: 'Applied AI literacy & GenAI productivity', sec: 'priv', pri: 'Critical', str: 'Strong' },
-  { s: 'AI/ML engineering & GenAI development', sec: 'priv', pri: 'Critical', str: 'Moderate' },
-  { s: 'Data science & advanced analytics', sec: 'priv', pri: 'Critical', str: 'Moderate' },
-  { s: 'AI implementation & solution architecture', sec: 'priv', pri: 'High', str: 'Moderate' },
-  { s: 'Data engineering & data management', sec: 'priv', pri: 'High', str: 'Moderate' },
-  { s: 'Cybersecurity incl. AI security', sec: 'priv', pri: 'High', str: 'Moderate' },
-  { s: 'Cloud engineering & architecture', sec: 'priv', pri: 'High', str: 'Strong' },
-  { s: 'AI strategy & business–AI translation', sec: 'priv', pri: 'High', str: 'Moderate' },
-  { s: 'Industrial AI & OT data', sec: 'priv', pri: 'High', str: 'Moderate' },
-  { s: 'AI governance & responsible AI', sec: 'priv', pri: 'Medium', str: 'Weak' },
-  { s: 'Data-centre & AI-infrastructure engineering', sec: 'priv', pri: 'Medium', str: 'Weak' },
-  { s: 'AI solution sales & pre-sales', sec: 'priv', pri: 'Medium', str: 'Moderate' },
-  { s: 'Arabic NLP & LLM engineering', sec: 'priv', pri: 'Medium', str: 'Weak' }
+const PHASES = [
+  { n:1, name:T('التشخيص','Diagnose'), when:T('الربع الرابع 2026 – الربع الثاني 2027','Q4 2026 – Q2 2027'), now:true, items:[T('اعتماد مصفوفة الجدارات','Adopt the competency matrix'),T('الموجة الأولى من التقييم','Wave 1 assessment'),T('تثبيت خطوط أساس المؤشرات','Set KPI baselines'),T('إطلاق المنصة','Launch the portal')] },
+  { n:2, name:T('بناء خطوط الإمداد','Build pipelines'), when:T('الربع الثالث 2027 – الربع الرابع 2028','Q3 2027 – Q4 2028'), items:[T('أكاديميات حسب الدور','Role-based academies'),T('التنفيذ المشترك مع جهات التوظيف','Employer co-delivery'),T('برنامج القيادات على نطاق واسع','Leaders program at scale'),T('تشغيل سجل الاعتمادات','Certification registry live')] },
+  { n:3, name:T('التوسع والتعميق','Scale & deepen'), when:'2029', items:[T('زمالات الخبراء','Expert fellowships'),T('أكاديميات قطاعية','Sector academies'),T('شراكات دولية','Global partnerships'),T('الموجة الثالثة من إعادة التقييم','Wave 3 reassessment')] },
+  { n:4, name:T('التسليم والاستدامة','Deliver & sustain'), when:'2030', items:[T('تحقيق مستهدفات الاستراتيجية','Hit NSDAI targets'),T('المأسسة','Institutionalize'),T('استراتيجية ما بعد 2030','Post-2030 strategy')] }
+];
+const GATES = [
+  [T('البوابة 1','Gate 1'),T('اعتماد خطوط الأساس','Baselines approved')],
+  [T('البوابة 2','Gate 2'),T('مراجعة منتصف المدة','Mid-term review')],
+  [T('البوابة 3','Gate 3'),T('على مسار 2030','On 2030 trajectory')]
 ];
 
-/* ---------- skills trajectory ---------- */
-X.skills = [
-  { s: 'Generative AI & LLM engineering', dir: 'rising', sd: 'Critical', gd: 'Very high', hz: '2026–28', ev: 'AI & big data is WEF’s fastest-growing skill globally (+87% net employer demand).', sa: 'ALLaM and HUMAIN Chat; bank and ministry copilots; SDAIA Academy LLM programme.' },
-  { s: 'Agentic AI systems engineering', dir: 'rising', sd: 'Critical', gd: 'Very high', hz: '2026–29', ev: 'Agentic-skill mentions in US postings rose from 0.06% to 0.23% in a year; Gartner expects >40% of agentic projects cancelled by end-2027.', sa: 'Dedicated SDAIA Academy agent bootcamps from Jul 2026; seat counts unpublished.' },
-  { s: 'MLOps / LLMOps & production engineering', dir: 'rising', sd: 'Critical', gd: 'High', hz: '2026–30', ev: 'Scalability and workflow management rank 3rd and 4th among specialised skills in US AI postings.', sa: 'The bottleneck between pilot-heavy adoption and value capture.' },
-  { s: 'Data engineering & platform', dir: 'rising', sd: 'Critical', gd: 'High', hz: '2026–32', ev: 'Python and SQL remain the highest-volume specialised skills in AI postings.', sa: 'National Data Lake integrates 430+ government systems; 51.3% of establishments use cloud.' },
-  { s: 'AI governance, assurance & responsible AI', dir: 'rising', sd: 'Critical', gd: 'High', hz: '2026–30', ev: 'ISO/IEC 42001 cited by 36% of organisations; AI incidents logged rose 55% in 2025.', sa: 'A single unified data-and-AI regulator makes this the Kingdom’s most exportable capability.' },
-  { s: 'AI product management & value engineering', dir: 'rising', sd: 'Critical', gd: 'High', hz: '2026–31', ev: 'BCG: 70% of GCC AI-adoption barriers are people, organisation and process.', sa: 'The thinnest layer relative to its importance.' },
-  { s: 'Arabic & sovereign language AI', dir: 'rising', sd: 'Critical', gd: 'Low', hz: '2026–32', ev: 'ALLaM trained on 540bn Arabic tokens, open-weight; competition from Falcon-H1 Arabic, Jais, Fanar.', sa: 'Structurally defensible and structurally under-supplied: no international provider will train it.' },
-  { s: 'AI & data security, red-teaming', dir: 'rising', sd: 'High', gd: 'High', hz: '2026–30', ev: 'Networks and cybersecurity is WEF’s 2nd fastest-growing skill (+70%).', sa: 'Saudi leads the world on the share of AI inventors in security, privacy and cryptography (15%).' },
-  { s: 'Industrial AI, digital twins & edge', dir: 'rising', sd: 'High', gd: 'Medium', hz: '2027–33', ev: 'Aramco: 200+ AI use cases deployed, $1.8bn realised value in 2024.', sa: 'Largest absolute job volume; hardest to source abroad because it needs domain depth.' },
-  { s: 'Computer vision & multimodal AI', dir: 'rising', sd: 'Medium', gd: 'High', hz: '2026–30', ev: 'Dedicated computer-vision tracks now in SDAIA Academy bootcamps.', sa: 'Hajj and Umrah crowd operations, virtual-hospital imaging, industrial inspection.' },
-  { s: 'Applied data science & analytics', dir: 'stable', sd: 'High', gd: 'High', hz: '2026–30', ev: 'Still top-10 specialised skills, but being re-specified toward AI-augmented analysis.', sa: 'Junior tier exposed; senior causal and experimental tier is not.' },
-  { s: 'Workforce-wide AI literacy', dir: 'stable', sd: 'Met at breadth', gd: 'High', hz: 'Now', ev: '80%+ of Saudi employees use AI regularly at work.', sa: 'Solved as a breadth problem; marginal return on more seats is low.' },
-  { s: 'Standalone prompt engineering', dir: 'declining', sd: 'Low', gd: 'Falling', hz: '—', ev: 'Value is migrating to judgement and critical thinking; direct evidence of decline is thin.', sa: 'Treat as a fading hiring signal, not a curriculum line.' },
-  { s: 'Junior dashboarding & routine reporting', dir: 'declining', sd: 'Low', gd: 'Falling', hz: '—', ev: '16% relative employment decline for 22–25 year-olds in AI-exposed occupations (Stanford).', sa: 'The entry-level analytics pipeline is aimed at the most exposed tier.' }
+const INITS = [
+  [T('التقييم الوطني للقدرات (موجات سنوية)','National capability assessment (annual waves)'),T('الكل','All'),'—','5, 7',T('إدارة التخطيط والجهات','Planning dept. + entities'),T('1 فما بعد','1 onward')],
+  [T('«سماي 2.0»: تحديث الثقافة بالذكاء الاصطناعي التوليدي','SAMAI 2.0: literacy refresh with generative AI'),T('واعٍ ← ممارس','Aware → Practitioner'),T('ابنِ بثبات','Build steadily'),'2, 6',T('ذاتي التعلم عبر منصة وطنية','Self-paced, national platform'),'1–2'],
+  [T('أكاديميات المختصين حسب الدور (بيانات، تعلّم آلة، توليدي ووكيلي، MLOps، حوكمة)','Role-based specialist academies (data, ML/AI, generative & agentic, MLOps, governance)'),T('مهني ← مختص','Professional → Specialist'),T('تحرّك الآن','Act now'),'1, 4, 9',T('معسكرات بدفعات ومشاريع تخرج','Cohort bootcamps + capstones'),'2–3'],
+  [T('برنامج قيادات الذكاء الاصطناعي الحكومية','Government AI leaders program'),T('القيادات','Leadership'),T('تحرّك الآن','Act now'),'10',T('جلسات تنفيذية لكل وزارة','Executive sessions by ministry'),'1–2'],
+  [T('التنفيذ المشترك مع جهات التوظيف والتلمذة المهنية','Employer co-delivery and apprenticeships'),T('مهني','Professional'),T('تحرّك الآن / ابنِ','Act now / Build'),'1, 4, 11',T('شركاء القطاع الخاص بدعم «هدف»','Industry partners, HRDF-supported'),'2–3'],
+  [T('السجل الوطني للاعتماد والترخيص','National certification and accreditation registry'),T('مختص، خبير','Specialist, Expert'),T('احمِ','Protect'),'1, 8',T('أكاديمية سدايا ومقدمو تدريب معتمدون','SDAIA Academy + accredited providers'),'2'],
+  [T('مواءمة المناهج الجامعية','University curriculum alignment'),T('خط إمداد المهنيين','Pipeline into Professional'),T('ابنِ بثبات','Build steadily'),'6',T('ربط المصفوفة بالجامعات','Matrix crosswalk with universities'),'2–3'],
+  [T('زمالات الخبراء والبحث التطبيقي','Expert fellowships and applied research'),T('خبير','Expert'),T('احمِ','Protect'),'1, 3',T('مراكز بحثية ومختبرات دولية','Research centres, international labs'),'3'],
+  [T('مسار المرأة نحو التخصص في الذكاء الاصطناعي','Women in AI specialist pathway'),T('مختص','Specialist'),T('تحرّك الآن','Act now'),'8',T('دفعات مستهدفة وإرشاد','Targeted cohorts and mentoring'),'2–4'],
+  [T('الشراكات الدولية','International partnerships'),T('مختص، خبير','Specialist, Expert'),T('احمِ','Protect'),'3',T('تحالف ITU لمهارات الذكاء الاصطناعي، اليونسكو، جهات نظيرة','ITU AI Skills Coalition, UNESCO, peer agencies'),'3']
 ];
 
-/* ---------- targets tracker ---------- */
-X.targets = [
-  { t: 'Leaders & executives trained', d: '278', tg: '14,000 by 2030', st: 'behind', note: '2026 milestone is 3,200. New strategic indicator.' },
-  { t: 'Data & AI specialists', d: '17,562', tg: '20,000 by 2030', st: 'ahead', note: 'Past the 2028 milestone, but the target sits below modelled need.' },
-  { t: 'Workforce with basic data & AI skills', d: '1,563,765', tg: '1,684,537 (40%)', st: 'ahead', note: '93% of the 2030 target; 120,772 to go. Base: 4,211,344 workforce, Q4 2025.' },
-  { t: 'Citizens with basic AI training (SAMAI)', d: '1.2m+', tg: '1m', st: 'met', note: 'Met ~14 months after launch.' },
-  { t: 'STEM share of higher-education enrolment', d: '33.0%', tg: '29.7% (2025)', st: 'met', note: 'Up from 22% in 2019.' },
-  { t: 'Saudization of high-skill occupations', d: '39.9%', tg: '40% (2025)', st: 'track', note: 'Essentially on target.' },
-  { t: 'Graduates employed within six months', d: '43.3%', tg: '54.1% (2025)', st: 'missed', note: 'Moving the wrong way; 2030 target 75%.' },
-  { t: 'Global AI ranking', d: '14th / 15th', tg: 'Top 15 (or 17)', st: 'unclear', note: 'Two official sources state different targets.' }
+const RISKS = [
+  [T('الخلط بين حجم التدريب والقدرة الفعلية','Training volume mistaken for capability'),T('لا يُحتسب ضمن الـ20,000 إلا المستوى 4 فأعلى الموثّق؛ ومؤشر التطبيق الفعلي (9)','Count only verified Level 4+ toward 20,000; applied-capability KPI 9')],
+  [T('امتناع الجهات عن مشاركة بيانات التقييم','Entities do not share assessment data'),T('نشر مجمّع فقط؛ وتحصل كل جهة على مقارنتها المعيارية الخاصة','Aggregate-only publication; each entity gets its own benchmark')],
+  [T('تدريب المختصين دون استبقائهم','Specialists trained but not retained'),T('مؤشر شغل الأدوار الحرجة (4)؛ استثمار مشترك بشروط استبقاء','Critical-role fill rate KPI 4; co-investment with retention terms')],
+  [T('تحرّك الترتيب لأسباب لا تتعلق بالمواهب','Index rankings move for non-talent reasons'),T('تتبّع محور المواهب لا الترتيب العام وحده','Track the talent sub-pillar, not only the overall rank')]
 ];
 
-/* ---------- national priorities (from the 12 recommendations) ---------- */
-X.priorities = [
-  { h: 'Immediate', w: '0–12 months', items: [
-    { t: 'Scale the leader and executive tier', b: 'Reach the 3,200 milestone; tie quotas to entities and AI offices.', r: 'New, from the tier KPIs' },
-    { t: 'Define "specialist" and publish the framework mapping', b: 'Map the Saudi Academic Framework for AI Qualifications and the new NDMO certifications to the specialist count.', r: 'R1' },
-    { t: 'National AI Skills Observatory', b: 'AI vacancies by role family, occupational coding, provider outcomes.', r: 'R2' },
-    { t: 'Resolve the top-15 / top-17 KPI conflict', b: 'One live national ranking target and named index.', r: 'R4' }
-  ]},
-  { h: 'Near term', w: '6–18 months', items: [
-    { t: 'Re-baseline to 2030 and set a 2035 target', b: 'Anchor to the modelled need range rather than the 2020 figure.', r: 'R3' },
-    { t: 'Fund build-and-operate, not awareness', b: 'MLOps, evaluation, data-platform and agent engineering at depth.', r: 'R5' },
-    { t: 'Senior conversion pathways', b: 'Move experienced software, data and domain professionals into AI roles.', r: 'R6' },
-    { t: 'One learner registry; publish outcomes', b: 'De-duplicate national counts and report placement, not enrolment.', r: 'R10, R12' }
-  ]},
-  { h: 'Medium term', w: '12–36 months', items: [
-    { t: 'AI assurance as a national professional franchise', b: 'Licensed credential mapped to ISO/IEC 42001 and national frameworks.', r: 'R7' },
-    { t: 'Arabic AI as strategic infrastructure', b: 'Protected funding for researchers and engineers no market will produce.', r: 'R8' },
-    { t: 'Procurement as a capability instrument', b: 'Quantified, reported skilling conditions in major AI contracts.', r: 'R9' },
-    { t: 'Women into senior technical roles', b: 'Convert world-leading female AI participation into employment.', r: 'R11' }
-  ]}
-];
+/* ---------------- render helpers ---------------- */
+const esc = s => String(s);
+const head = (id, kicker, h, lede, q) => `
+  <div class="sec-head">
+    <div><span class="kicker">${tx(kicker)}</span><h2 id="h-${id}">${tx(h)}</h2></div>
+    <div><span class="question">${tx(UI.question)}: ${tx(q)}</span><p class="lede">${tx(lede)}</p></div>
+  </div>`;
+const table = (cols, rows) => `<div class="tbl-wrap"><table><thead><tr>${cols.map(c => `<th scope="col">${tx(c)}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+const tr = cells => `<tr>${cells.map(c => `<td>${c}</td>`).join('')}</tr>`;
 
-X.blindspots = [
-  'No count of AI vacancies by role family, and no occupational coding for AI roles',
-  'No published definition of a data & AI "specialist"',
-  'No annual count of AI or computing graduates for any year 2019–2026',
-  'No provider-level placement outcomes from most national programmes',
-  'No de-duplication across national and vendor training claims'
-];
+let kpiFilter = 'all', roleFilter = 'all';
 
-/* ---------- role register + TSKA (planning framework) ---------- */
-X.families = ['Data foundations', 'AI engineering', 'Governance, risk & trust', 'Leadership & value', 'Sovereign & domain AI'];
-
-X.roles = [
-  { id: 'cdo', n: 'Chief Data Officer / Data Office Lead', f: 'Data foundations', st: 'Expanding', g: 3, p: 1, pri: 'Critical', sup: 'Strong', hz: 'Now', lens: 'gov',
-    why: 'NDMO standards require a CDO and a data management office in every government entity; 300+ offices exist.',
-    fw: ['NDMO Data Management & Personal Data Protection Standards', 'Nudhee assessment cycle', 'NDMO professional certifications'],
-    path: 'Senior data or IT managers through NDMO certification plus leadership development.',
-    t: ['Set and run the entity data strategy and data management office', 'Lead NDMO compliance and Nudhee self-assessment', 'Govern data sharing agreements and data value initiatives', 'Report data maturity to executive leadership'],
-    s: ['Data strategy and operating-model design', 'Policy and standards implementation', 'Stakeholder and change leadership', 'Data maturity measurement', 'Budgeting and portfolio prioritisation'],
-    k: ['NDMO standards across the data management domains', 'PDPL and its implementing regulations', 'Data classification and sharing policy', 'Data value and open-data frameworks'],
-    a: ['Exercises authority across organisational boundaries', 'Balances compliance with value creation', 'Communicates data risk to non-technical executives'] },
-
-  { id: 'steward', n: 'Data Steward / Data Quality Specialist', f: 'Data foundations', st: 'Expanding', g: 3, p: 2, pri: 'High', sup: 'Moderate', hz: 'Now', lens: 'both',
-    why: 'Classification, quality and metadata are open NDMO priorities; three of four new NDMO certifications target them.',
-    fw: ['NDMO certifications (classification, quality, metadata)', 'NDMO Data Management Standards'],
-    path: 'Analysts and records staff upskilled through NDMO certification.',
-    t: ['Classify data assets and maintain the data catalogue', 'Define and monitor data quality rules', 'Manage metadata, lineage and business glossaries', 'Resolve data issues with owners and engineers'],
-    s: ['Data profiling and quality measurement', 'Metadata and catalogue tooling', 'SQL for investigation', 'Root-cause analysis', 'Documentation and controlled vocabularies'],
-    k: ['Data classification levels and handling rules', 'Master and reference data concepts', 'Data lineage and stewardship models', 'Sector data standards relevant to the entity'],
-    a: ['Attention to detail at scale', 'Persistence in cross-team issue resolution', 'Judgement on sensitivity and risk'] },
-
-  { id: 'dpo', n: 'Data Protection Officer', f: 'Governance, risk & trust', st: 'Expanding', g: 3, p: 2, pri: 'Critical', sup: 'Strong', hz: 'Now', lens: 'gov',
-    why: 'SDAIA rules make a DPO mandatory for public entities processing personal data at scale.',
-    fw: ['PDPL and implementing regulations', 'NDMO personal data protection domain', 'NCA privacy work role'],
-    path: 'Legal, compliance and data governance professionals with PDPL specialisation.',
-    t: ['Maintain records of processing and run privacy impact assessments', 'Advise on lawful basis, consent and cross-border transfer', 'Handle data subject requests and breach notification', 'Review AI systems for personal-data risk'],
-    s: ['Privacy impact assessment', 'Regulatory interpretation', 'Incident and breach handling', 'Privacy-by-design review', 'Training and awareness delivery'],
-    k: ['PDPL obligations and SDPC guidance', 'Privacy-enhancing technologies', 'Data retention and anonymisation techniques', 'How AI models memorise and expose personal data'],
-    a: ['Independence and integrity under pressure', 'Translates law into operational controls', 'Decisive in incident response'] },
-
-  { id: 'aigov', n: 'AI Governance & Assurance Specialist', f: 'Governance, risk & trust', st: 'Emerging', g: 3, p: 1, pri: 'Critical', sup: 'Strong in government, weak in firms', hz: '2026–30', lens: 'both',
-    why: 'Required by the AI Adoption Framework, the National AI Risk Management Framework (Jul 2026) and the National AI Index governance axis. The Kingdom’s most exportable capability.',
-    fw: ['SDAIA AI Ethics Principles', 'National AI Risk Management Framework', 'ISO/IEC 42001', 'NIST AI RMF'],
-    path: 'Risk, audit, legal and data governance professionals plus technical AI literacy; candidate for a licensed national credential (R7).',
-    t: ['Maintain the AI system inventory and risk classification', 'Run AI impact and risk assessments before deployment', 'Define model documentation, testing and monitoring requirements', 'Audit deployed systems for bias, robustness and compliance'],
-    s: ['AI risk assessment and control design', 'Bias and fairness testing interpretation', 'Model documentation (model cards, datasheets)', 'Audit methodology', 'Policy drafting'],
-    k: ['National AI regulation and ethics principles', 'AI management system standards (ISO/IEC 42001)', 'How ML and LLM systems fail', 'Sector risk tolerances'],
-    a: ['Challenges technical teams credibly', 'Reasons under uncertainty and incomplete evidence', 'Explains risk trade-offs to decision-makers'] },
-
-  { id: 'aisec', n: 'AI Security Engineer / Red-teamer', f: 'Governance, risk & trust', st: 'Emerging', g: 2, p: 2, pri: 'High', sup: 'Moderate', hz: '2026–30', lens: 'both',
-    why: 'NCA requires cyber posts held by Saudi professionals and defines cyber AI roles; Saudi leads the world on the share of AI inventors in security (15%).',
-    fw: ['NCA ECC-2:2024', 'National cybersecurity workforce framework', 'OWASP guidance for LLM applications'],
-    path: 'Cybersecurity professionals extending into ML and LLM attack surfaces.',
-    t: ['Threat-model AI systems, data pipelines and agents', 'Red-team models for prompt injection, jailbreaks and data leakage', 'Design identity and permission controls for AI agents', 'Monitor and respond to AI-specific incidents'],
-    s: ['Adversarial testing of LLMs and ML models', 'Secure architecture for RAG and agents', 'Security tooling and automation', 'Incident response', 'OT/ICS security for industrial AI'],
-    k: ['AI threat taxonomies (poisoning, evasion, model theft)', 'Cloud and identity security', 'National cyber controls', 'Supply-chain risk for models and datasets'],
-    a: ['Adversarial mindset', 'Precision in reporting findings', 'Keeps pace with a fast-moving threat landscape'] },
-
-  { id: 'de', n: 'Data Engineer / Data Platform Engineer', f: 'Data foundations', st: 'Expanding', g: 2, p: 2, pri: 'High', sup: 'Moderate', hz: '2026–32', lens: 'both',
-    why: 'National Data Bank integrates 440+ systems; 96% of Saudi enterprises plan data-quality and consolidation investment. Foundation for every AI use case.',
-    fw: ['NDMO data sharing and interoperability standards', 'DEEM government cloud standards'],
-    path: 'Software and database engineers; SDAIA Academy advanced data-engineering programme (500+ completers, Aug 2026).',
-    t: ['Build batch and streaming pipelines into lakehouse platforms', 'Model data for analytics and AI consumption', 'Operate vector stores and retrieval pipelines for GenAI', 'Enforce data contracts, quality checks and access controls'],
-    s: ['Python and SQL at production standard', 'Orchestration and transformation tooling', 'Lakehouse table formats and streaming', 'Data modelling', 'Infrastructure as code'],
-    k: ['Distributed data processing', 'Sovereign-cloud and data-residency requirements', 'Data classification handling rules', 'Embedding and retrieval fundamentals'],
-    a: ['Systems thinking', 'Reliability discipline', 'Pragmatic trade-offs between cost and performance'] },
-
-  { id: 'mlops', n: 'MLOps / LLMOps Engineer', f: 'AI engineering', st: 'Emerging', g: 1, p: 2, pri: 'Critical', sup: 'Weak', hz: '2026–30', lens: 'priv',
-    why: 'The recognised bottleneck between pilot-heavy adoption and value capture; no dedicated national pathway until Aug 2026.',
-    fw: ['National AI Risk Management Framework (monitoring requirements)'],
-    path: 'DevOps, platform and data engineers converted through intensive build-and-operate programmes (R5, R6).',
-    t: ['Deploy and scale models and LLM services in production', 'Build evaluation harnesses and drift monitoring', 'Manage prompts, model versions and rollback', 'Optimise GPU utilisation and inference cost'],
-    s: ['Model serving and containers', 'CI/CD for ML and LLM systems', 'Observability and evaluation pipelines', 'GPU and inference optimisation', 'Cost engineering'],
-    k: ['ML lifecycle and failure modes', 'LLM inference architecture', 'Evaluation metrics and benchmarks', 'Platform security'],
-    a: ['Operational ownership', 'Debugs across the full stack', 'Measures before optimising'] },
-
-  { id: 'genai', n: 'GenAI / LLM Application Engineer', f: 'AI engineering', st: 'Emerging', g: 2, p: 3, pri: 'Critical', sup: 'Moderate', hz: '2026–28', lens: 'priv',
-    why: 'AI/ML engineers are a top-five Saudi tech role in demand; bank and ministry copilots; Aramco training 6,000+ AI developers.',
-    fw: ['Generative AI guidelines for government', 'SDAIA AI Ethics Principles'],
-    path: 'Software engineers through LLM application programmes; SDAIA Academy LLM track.',
-    t: ['Design and build RAG and copilot applications', 'Fine-tune and adapt models to domain data', 'Implement guardrails and evaluation for outputs', 'Integrate LLM services with enterprise systems'],
-    s: ['Retrieval-augmented generation', 'Fine-tuning (LoRA/QLoRA)', 'Context engineering', 'Output evaluation and guardrails', 'API and application engineering'],
-    k: ['Transformer and LLM fundamentals', 'Embedding and retrieval methods', 'Arabic language handling in LLMs', 'Responsible-AI requirements'],
-    a: ['Rapid prototyping with rigour', 'Judges model output quality critically', 'Works with domain experts'] },
-
-  { id: 'agent', n: 'Agentic AI Systems Engineer', f: 'AI engineering', st: 'Emerging', g: 2, p: 3, pri: 'Critical', sup: 'Weak', hz: '2026–29', lens: 'both',
-    why: 'Fastest-rising skill cluster globally; DGA reports agentic AI in agencies; SDAIA Academy agent bootcamps from Jul 2026. Gartner expects >40% of agentic projects cancelled by end-2027, so depth matters.',
-    fw: ['National AI Risk Management Framework', 'Agent identity and permission controls (NCA alignment)'],
-    path: 'Experienced GenAI and software engineers; not an entry-level role.',
-    t: ['Design multi-step agents with tool use and planning', 'Orchestrate multi-agent workflows', 'Instrument trajectories for observability and evaluation', 'Constrain agent permissions and failure modes'],
-    s: ['Function calling and tool design', 'Orchestration frameworks', 'Memory and state management', 'Trajectory evaluation', 'Agent security'],
-    k: ['Planning and reasoning patterns', 'Workflow and process design', 'Human-in-the-loop control patterns', 'Failure and cost behaviour of agents'],
-    a: ['Designs for failure', 'Decomposes business processes', 'Knows when not to use an agent'] },
-
-  { id: 'ds', n: 'Data Scientist (Decision Science)', f: 'AI engineering', st: 'Reshaping', g: 2, p: 3, pri: 'Critical', sup: 'Moderate', hz: '2026–30', lens: 'priv',
-    why: '"AI and advanced data science" is a 2026 private-sector priority; Saudi data-science proficiency sits at the 52nd percentile. The junior tier is exposed, the senior causal tier is not.',
-    fw: ['Saudi Academic Framework for AI Qualifications'],
-    path: 'Graduates plus experienced analysts moving up into causal and experimental work.',
-    t: ['Frame business and policy questions as testable analyses', 'Design experiments and causal studies', 'Build forecasting and predictive models', 'Translate findings into decisions'],
-    s: ['Statistical modelling and causal inference', 'Experimentation design', 'Time-series forecasting', 'LLM-augmented analysis', 'Data storytelling'],
-    k: ['Probability and statistics', 'Domain economics of the sector', 'Model validation and bias', 'Data ethics'],
-    a: ['Scepticism toward data', 'Business translation', 'Structured problem framing'] },
-
-  { id: 'arch', n: 'AI Solution Architect', f: 'AI engineering', st: 'Expanding', g: 2, p: 2, pri: 'High', sup: 'Moderate', hz: '2026–30', lens: 'both',
-    why: 'About a third of Gulf AI vacancies roll AI out; integration is the top scaling barrier in the GCC (61%).',
-    fw: ['DEEM government cloud', 'National Data Bank integration services'],
-    path: 'Enterprise and integration architects adding AI platform depth.',
-    t: ['Design end-to-end AI solution architectures', 'Make build, buy and partner decisions', 'Integrate AI into legacy and shared government systems', 'Set non-functional requirements: cost, latency, security'],
-    s: ['Solution and integration architecture', 'Cloud platform design', 'Vendor and model evaluation', 'Cost and capacity modelling', 'Technical leadership'],
-    k: ['AI platform landscape', 'Interoperability standards', 'Data residency and sovereignty', 'Total cost of ownership'],
-    a: ['Holds the whole system in view', 'Negotiates trade-offs', 'Communicates across business and engineering'] },
-
-  { id: 'pm', n: 'AI Product Manager / Value Engineer', f: 'Leadership & value', st: 'Emerging', g: 2, p: 2, pri: 'Critical', sup: 'Weak', hz: '2026–31', lens: 'both',
-    why: '70% of GCC adoption barriers are people, organisation and process; OECD finds management skills most demanded in AI-exposed occupations.',
-    fw: ['AI Adoption Framework', 'National AI Index (applications axis)'],
-    path: 'Product, operations and domain managers through AI product programmes.',
-    t: ['Select and prioritise AI use cases by value', 'Redesign workflows around AI', 'Run evaluation-driven product loops', 'Track realised value and adoption'],
-    s: ['Use-case discovery and prioritisation', 'AI economics and TCO', 'Workflow redesign', 'Evaluation design with engineers', 'Change management'],
-    k: ['What current AI can and cannot do', 'Procurement and partnering models', 'Responsible-AI obligations', 'Sector operations'],
-    a: ['Outcome orientation', 'Comfort with ambiguity', 'Builds trust with users and engineers'] },
-
-  { id: 'head', n: 'Head of AI / AI Office Lead', f: 'Leadership & value', st: 'Expanding', g: 2, p: 2, pri: 'High', sup: 'Strong in government, moderate in firms', hz: 'Now', lens: 'both',
-    why: 'Entities are asked to set up AI units but only 23 had at last count; 278 leaders and executives trained against a 14,000 target for 2030. Senior vacancies are ~2.5× more AI-linked than individual roles.',
-    fw: ['AI Adoption Framework', 'National AI Index (strategy and human capability axes)'],
-    path: 'Senior leaders through executive AI programmes and AI-office playbooks.',
-    t: ['Set the AI strategy and portfolio for the entity', 'Establish the AI office, governance and talent plan', 'Secure investment and partnerships', 'Report AI performance and risk to leadership'],
-    s: ['Strategy and portfolio management', 'Organisation design', 'Investment cases', 'Partnership and vendor management', 'Executive communication'],
-    k: ['National AI strategy and policy landscape', 'AI governance requirements', 'Capability building models', 'Sector AI use cases'],
-    a: ['Leads change across the organisation', 'Balances ambition with risk', 'Builds and retains talent'] },
-
-  { id: 'arabic', n: 'Arabic NLP / LLM Engineer', f: 'Sovereign & domain AI', st: 'Emerging', g: null, p: 1, pri: 'Critical (national)', sup: 'Weak', hz: '2026–32', lens: 'priv',
-    why: 'National models (ALLaM) exist and the lead is contested; global demand is low, so no international provider will train this workforce.',
-    fw: ['ArabicMMLU and national Arabic evaluation benchmarks'],
-    path: 'NLP researchers and ML engineers with Arabic linguistics; protected funding (R8).',
-    t: ['Train, adapt and evaluate Arabic and dialect models', 'Build Arabic datasets, tokenisers and benchmarks', 'Develop Arabic speech, OCR and document AI', 'Align models to cultural and policy context'],
-    s: ['Pre-training and fine-tuning at scale', 'Arabic morphology and diacritisation', 'Dialect identification', 'Benchmark design', 'Speech and OCR pipelines'],
-    k: ['Arabic linguistics', 'LLM training methods', 'Evaluation methodology', 'Cultural alignment practice'],
-    a: ['Research rigour', 'Bridges linguistics and engineering', 'Long-horizon persistence'] },
-
-  { id: 'industrial', n: 'Industrial AI Engineer', f: 'Sovereign & domain AI', st: 'Expanding', g: null, p: 2, pri: 'High', sup: 'Moderate', hz: '2027–33', lens: 'priv',
-    why: 'Aramco runs 442 identified use cases; only 25.4% of establishments use IoT for maintenance; Future Factories targets 4,000 plants. Largest absolute job volume.',
-    fw: ['NCA OT cybersecurity controls'],
-    path: 'Process, mechanical and electrical engineers adding ML; domain depth is the scarce part.',
-    t: ['Build predictive-maintenance and optimisation models', 'Develop and run digital twins', 'Deploy models at the edge in plants and fields', 'Integrate with OT and control systems safely'],
-    s: ['Time-series and sensor analytics', 'Physics-informed modelling', 'Edge deployment', 'OT data integration', 'Optimisation methods'],
-    k: ['Process and asset engineering', 'Industrial control systems', 'Reliability engineering', 'Safety and OT security'],
-    a: ['Domain judgement', 'Safety-first decision-making', 'Works on site with operators'] },
-
-  { id: 'cv', n: 'Computer Vision Engineer', f: 'Sovereign & domain AI', st: 'Expanding', g: 1, p: null, pri: 'Medium', sup: 'Weak', hz: '2026–30', lens: 'gov',
-    why: 'Hajj operations use smart cameras and AI analytics; virtual-hospital imaging; construction safety on giga-projects.',
-    fw: ['PDPL (video and biometric data)', 'SDAIA AI Ethics Principles'],
-    path: 'ML engineers through computer-vision tracks (now in SDAIA Academy bootcamps).',
-    t: ['Build detection, tracking and segmentation models', 'Run real-time video analytics for operations', 'Develop Arabic OCR and document AI', 'Deploy vision models at the edge'],
-    s: ['Deep learning for vision', 'Video and streaming pipelines', 'Edge optimisation', 'Synthetic data', 'Annotation management'],
-    k: ['Imaging and camera systems', 'Privacy rules for video and biometrics', 'Model robustness', 'Operational context (crowds, health, sites)'],
-    a: ['Real-time reliability', 'Privacy awareness', 'Field validation discipline'] },
-
-  { id: 'infra', n: 'AI Infrastructure & Data-Centre Engineer', f: 'Sovereign & domain AI', st: 'Emerging', g: null, p: 1, pri: 'Medium', sup: 'Weak', hz: '2026–32', lens: 'priv',
-    why: 'Recruiters report Gulf shortages of electrical, MEP and commissioning specialists as hyperscaler regions open; 30% engineering Saudization from Jun 2026.',
-    fw: ['Engineering Saudization requirements', 'Data-centre and cloud regulatory requirements'],
-    path: 'Electrical and mechanical engineers and technicians, including TVTC routes.',
-    t: ['Design and commission power and cooling for AI compute', 'Operate GPU clusters and high-density racks', 'Manage building and energy management systems', 'Plan capacity and energy efficiency'],
-    s: ['Electrical and MEP engineering', 'Liquid and high-density cooling', 'BMS operations', 'Commissioning', 'Capacity planning'],
-    k: ['Data-centre standards', 'GPU cluster architecture', 'Energy efficiency metrics', 'Safety regulation'],
-    a: ['Operational vigilance', 'Hands-on technical skill', 'Works to strict uptime targets'] },
-
-  { id: 'bi', n: 'BI & Reporting Analyst (to Analytics Engineer)', f: 'Data foundations', st: 'Reshaping', g: 2, p: 2, pri: 'High (as reshaped)', sup: 'Strong at entry, weak above', hz: 'Now', lens: 'both',
-    why: 'Routine dashboarding is the most exposed tier (16% relative employment decline for 22–25 year-olds in AI-exposed work). Reskill toward analytics engineering and decision support.',
-    fw: ['NDMO BI & analytics domain', 'Estishraf platform (85+ entities)'],
-    path: 'Existing analysts reskilled; do not expand entry pipelines for routine reporting.',
-    t: ['Build governed semantic models and metrics layers', 'Automate reporting with AI assistance', 'Support decision forums with analysis', 'Assure the quality of AI-generated insight'],
-    s: ['Analytics engineering', 'Metric and semantic-layer design', 'AI-assisted analysis', 'Data quality testing', 'Communicating insight'],
-    k: ['Business processes and KPIs', 'Data modelling basics', 'Limitations of AI-generated analysis', 'Data governance rules'],
-    a: ['Adapts as tasks automate', 'Critical review of outputs', 'Clear communication'] }
-];
-
-X.levels = [
-  { l: 'Foundation', d: 'Understands concepts and uses tools safely under guidance.', e: 'SDAIA foundation tier: 1.56m learners' },
-  { l: 'Practitioner', d: 'Applies methods to defined problems with review.', e: 'Bootcamp and diploma graduates' },
-  { l: 'Professional', d: 'Delivers independently in production and owns outcomes.', e: 'Counts toward the specialist tier: 17,562' },
-  { l: 'Expert', d: 'Designs systems, sets standards and mentors others.', e: 'Senior conversion and advanced programmes' },
-  { l: 'Strategic', d: 'Sets direction for an entity, sector or the nation.', e: 'Leader & executive tier: 278 of 14,000' }
-];
-
-</script>
-<script>
-(function () {
-  'use strict';
-  const $ = s => document.querySelector(s);
-  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const fmt = n => n.toLocaleString('en-US');
-  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-  const SVG = 'http://www.w3.org/2000/svg';
-
-  /* ---------- theme ---------- */
-  const root = document.documentElement;
-  try { const t = localStorage.getItem('cap-theme'); if (t) root.setAttribute('data-theme', t); } catch (e) {}
-  function isDark() { const t = root.getAttribute('data-theme'); return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
-  function label() { document.querySelectorAll('[data-theme-toggle]').forEach(b => { b.textContent = isDark() ? 'Light theme' : 'Dark theme'; }); }
-  document.addEventListener('click', e => {
-    const b = e.target.closest('[data-theme-toggle]'); if (!b) return;
-    const next = isDark() ? 'light' : 'dark'; root.setAttribute('data-theme', next);
-    try { localStorage.setItem('cap-theme', next); } catch (err) {}
-    label(); drawCharts();
+function pillarChart() {
+  const W = 760, N = 83, rtl = lang === 'ar', y0 = 54, step = 36;
+  const left = rtl ? 40 : 210, right = rtl ? 540 : 720;
+  const X = r => rtl ? right - (r - 1) / (N - 1) * (right - left) : left + (r - 1) / (N - 1) * (right - left);
+  const H = y0 + step * PILLARS.length + 30;
+  const yEnd = y0 + step * (PILLARS.length - 1) + 16;
+  const labX = rtl ? W - 24 : left - 16;
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="direction:ltr" role="img" aria-label="${tx(T('ترتيب المملكة حسب المحاور الفرعية','Saudi rank by sub-pillar'))}">`;
+  [1, 20, 40, 60, 83].forEach(t => { s += `<line x1="${X(t)}" x2="${X(t)}" y1="32" y2="${yEnd}" stroke="var(--line)"/><text x="${X(t)}" y="22" text-anchor="middle" font-size="12" style="fill:var(--ink-3)">${t}</text>`; });
+  s += `<line x1="${X(14)}" x2="${X(14)}" y1="32" y2="${yEnd}" stroke="var(--ink-3)" stroke-dasharray="4 4"/>`;
+  s += `<text x="${X(14)}" y="${yEnd + 20}" text-anchor="middle" font-size="12" style="fill:var(--ink-3)">${tx(T('الترتيب العام: 14','Overall rank: 14'))}</text>`;
+  PILLARS.forEach(([k, name, r], i) => {
+    const y = y0 + i * step, hot = k === 'talent', c = hot ? 'var(--gap-fill)' : 'var(--muted-mark)';
+    s += `<text x="${labX}" y="${y + 5}" text-anchor="end" font-size="14.5" style="fill:${hot ? 'var(--ink)' : 'var(--ink-2)'};font-weight:${hot ? 600 : 400}">${tx(name)}</text>`;
+    s += `<line x1="${X(1)}" x2="${X(r)}" y1="${y}" y2="${y}" stroke="${c}" stroke-width="2.5"/>`;
+    s += `<circle cx="${X(r)}" cy="${y}" r="7" fill="${c}"><title>${tx(name)}: ${r} / ${N}</title></circle>`;
+    s += `<text x="${X(r) + (rtl ? -14 : 14)}" y="${y + 5}" text-anchor="${rtl ? 'end' : 'start'}" font-size="14.5" style="fill:${hot ? 'var(--gap)' : 'var(--ink-2)'};font-weight:${hot ? 700 : 500}">${r}</text>`;
   });
+  return s + '</svg>';
+}
 
-  /* ---------- navigation ---------- */
-  const SECTIONS = [['overview', 'Overview'], ['needs', 'Workforce needs'], ['sectors', 'Public vs private'], ['roles', 'Emerging roles'], ['skills', 'Critical skills'], ['tska', 'TSKA framework'], ['gaps', 'Gaps & priorities'], ['evidence', 'Evidence']];
-  $('#nav').innerHTML = SECTIONS.map(([id, t]) => `<li><a href="#${id}" data-id="${id}">${t}</a></li>`).join('');
-  $('#topbar').innerHTML = SECTIONS.map(([id, t]) => `<a href="#${id}" data-id="${id}">${t}</a>`).join('') + '<button class="theme" type="button" data-theme-toggle></button>';
-  label();
-  const links = document.querySelectorAll('[data-id]');
-  const io = new IntersectionObserver(entries => {
+function heatCell(v) {
+  if (!v) return `<td class="c" style="color:var(--ink-3)">·</td>`;
+  const pct = [0, 14, 30, 50, 72, 92][v];
+  const ink = v >= 4 ? 'var(--surface)' : 'var(--ink)';
+  return `<td class="c" style="background:color-mix(in srgb, var(--accent) ${pct}%, var(--surface));color:${ink}">${v}</td>`;
+}
+
+function render() {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = lang === 'ar' ? 'تخطيط القدرات وتقييم الاحتياج | البيانات والذكاء الاصطناعي' : 'Capacity Planning & Needs Assessment | Data & AI';
+  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = tx(UI[el.dataset.t]); });
+
+  const navHtml = SECTIONS.map(([id, t], i) => `<li><a href="#${id}" data-id="${id}"><span class="n">${i ? i : '·'}</span>${tx(t)}</a></li>`).join('');
+  document.getElementById('nav').innerHTML = navHtml;
+  document.getElementById('topbar').innerHTML = SECTIONS.map(([id, t]) => `<a href="#${id}" data-id="${id}">${tx(t)}</a>`).join('') + `<button class="pill" type="button" data-lang-toggle>${tx(UI.langBtn)}</button>`;
+
+  const m = [];
+
+  /* ---------- overview ---------- */
+  m.push(`<header class="hero" id="overview"><div class="wrap">
+    <div class="edition"><span>${tx(T('قطاع بناء القدرات · إدارة التخطيط','Capacity Building Sector · Planning Department'))}</span><span>${tx(UI.asof)}</span></div>
+    <h1>${tx(T('من ثقافة شاملة إلى عمق في المواهب: خطة القدرات الوطنية في البيانات والذكاء الاصطناعي','From mass literacy to talent depth: the national Data & AI capability plan'))}</h1>
+    <p class="lede">${tx(T('المرجع التنفيذي لتخطيط بناء القدرات: أين يجب أن تكون القوى العاملة السعودية بحلول 2030، وأين هي اليوم، وما الذي يسد الفجوة. كل رقم في هذه الصفحة مقرون بمصدره وسنة إصداره.','The executive reference for capacity planning: where the Saudi workforce must be by 2030, where it is today, and what closes the gap. Every figure on this page carries its source and edition year.'))}</p>
+    <div class="tiles">${TILES.map(t => `<div class="tile"${t.tone ? ` data-tone="${t.tone}"` : ''}><div class="k">${tx(t.k)}</div><div class="v num" dir="ltr">${t.v}</div><div class="s">${tx(t.s)}</div><div class="src">${cite(...t.src)}</div></div>`).join('')}</div>
+    <ol class="story">${STORY.map(([a, b]) => `<li><b>${tx(a)}</b><span>${tx(b)}</span></li>`).join('')}</ol>
+  </div></header>`);
+
+  /* ---------- 1. strategy ---------- */
+  const kpiRows = KPIS.filter(k => kpiFilter === 'all' || k[1] === kpiFilter).map(([n, l, name, def, base, tgt, cad, s]) => {
+    const measured = base !== W1;
+    return tr([`<span class="num">${n}</span>`, `<b>${tx(name)}</b><div class="muted" style="font-size:13.5px">${tx(def)}</div>`, `<span class="chip layer">${tx(L[l])}</span>`,
+      `${tx(base)}${s ? `<div>${cite(s)}</div>` : ''}`, `<b>${tx(tgt)}</b>`, tx(cad),
+      measured ? `<span class="chip set">${tx(T('خط أساس قائم','Baseline set'))}</span>` : `<span class="chip wait">${tx(T('بانتظار الموجة الأولى','Awaiting Wave 1'))}</span>`]);
+  });
+  m.push(`<section class="band" id="strategy" aria-labelledby="h-strategy"><div class="wrap">
+    ${head('strategy', T('1 · الأساس الاستراتيجي','1 · Strategic foundation'), T('الالتزام الوطني ومؤشرات القياس','The national commitment and how we measure it'),
+      T('ترتبط 66 هدفًا من أهداف رؤية 2030 بالبيانات والذكاء الاصطناعي بشكل مباشر أو غير مباشر، وتُنفَّذ الاستراتيجية الوطنية عبر 15 مسارًا، ثلاثة منها لبناء القدرات: الثقافة، والمختصون، والخبراء.','NSDAI ties 66 Vision 2030 objectives to data and AI and runs through 15 implementation streams — three of them for capacity: literacy, specialists and experts.'),
+      T('ما الذي التزمت به المملكة، وهل نحن على المسار؟','What has the Kingdom committed to, and are we on track?'))}
+    <div class="grid2 vm">
+      <div class="card"><h4>${tx(T('الرؤية','Vision'))}</h4><p>${tx(T('قوى عاملة سعودية تبني بالبيانات والذكاء الاصطناعي وتحوكمهما وتقود بهما، في كل مستوى من مستويات الحكومة والقطاع الخاص.','A Saudi workforce that builds, governs and leads with Data & AI — at every level of government and industry.'))}</p></div>
+      <div class="card"><h4>${tx(T('الرسالة','Mission'))}</h4><p>${tx(T('تخطيط القدرات الوطنية بالأدلة: قياس الطلب، وتحديد المعيار، وتقييم الفجوة، وتوجيه الاستثمار إلى البرامج الأسرع في سدها.','Plan national capability on evidence: measure demand, define the standard, assess the gap, and direct investment to the programs that close it fastest.'))}</p></div>
+    </div>
+    <p class="src">${tx(T('صيغة مقترحة للرؤية والرسالة لاعتماد القيادة.','Proposed vision and mission, for leadership validation.'))} ${srcLine('nsdai').replace('<p class="src">','').replace('</p>','')}</p>
+
+    <div class="block grid2" style="align-items:start">
+      <div>
+        <div class="sub-h"><h3>${tx(T('المستهدفات الوطنية','National mandate'))}</h3></div>
+        ${table([T('الالتزام','Commitment'), T('السنة','Year'), T('المصدر','Source')], MANDATE.map(([c, y, s]) => tr([tx(c), `<span class="num">${tx(y)}</span>`, cite(...s)])))}
+        <p class="src">${tx(T('2026 هو «عام الذكاء الاصطناعي» في المملكة.','2026 is the Kingdom’s designated Year of AI.'))} ${cite('forum')}</p>
+      </div>
+      <div>
+        <div class="sub-h"><h3>${tx(T('هرم القدرات','Capability pyramid'))}</h3></div>
+        <div class="pyr">${PYRAMID.map(p => `<div class="tier${p.hot ? ' hot' : ''}" style="--w:${p.w}"><div><b>${tx(p.n)}</b><br><span>${tx(p.d)}</span></div><div class="t">${tx(p.t)}</div></div>`).join('')}</div>
+        <p class="pyr-note">${tx(T('الطبقة المظللة هي القيد الحاكم: مستهدف 20,000 يُحتسب من المستويين 4 و5 فقط.','The shaded tier is the binding constraint: the 20,000 target counts Levels 4–5 only.'))}</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('منظومة مؤشرات بناء القدرات','Capacity-building KPI framework'))}</h3><p>${tx(T('ثلاث طبقات: مؤشرات المخرجات ترتبط بالاستراتيجية الوطنية، ومؤشرات خط الإمداد تقيس كفاءة محرك العرض، ومؤشرات الجودة تقيس أثر التدريب على القدرة. تُثبَّت خطوط الأساس في الموجة الأولى من التقييم الوطني.','Three layers: outcome KPIs tie to NSDAI; pipeline KPIs show whether the supply engine works; quality KPIs show whether training changes capability. Baselines are set by the first national assessment wave.'))}</p></div>
+      <div class="filters" role="group" aria-label="${tx(T('تصفية حسب الطبقة','Filter by layer'))}">
+        ${[['all', T('الكل','All')], ['o', L.o], ['p', L.p], ['q', L.q], ['e', L.e]].map(([k, n]) => `<button class="pill" type="button" data-kpi="${k}" aria-pressed="${kpiFilter === k}">${tx(n)}</button>`).join('')}
+      </div>
+      ${table(['#', T('المؤشر','KPI'), T('الطبقة','Layer'), T('خط الأساس','Baseline'), T('مستهدف 2030','2030 target'), T('الدورية','Cadence'), T('الحالة','Status')], kpiRows)}
+    </div>
+  </div></section>`);
+
+  /* ---------- 2. benchmark ---------- */
+  m.push(`<section class="band" id="benchmark" aria-labelledby="h-benchmark"><div class="wrap">
+    ${head('benchmark', T('2 · المقارنة المعيارية','2 · Benchmarking'), T('ريادة في الاستراتيجية، وعمق المواهب هو الحلقة الأضعف','Leading on strategy; talent depth is the weakest pillar'),
+      T('في كل مؤشر مركّب تتصدر المملكة في الاستراتيجية والتبنّي، بينما يتأخر محور المواهب. لذلك يأتي التحسن القادم في الترتيب من عمق المواهب.','In every composite index the Kingdom leads on strategy and adoption while talent lags. The next ranking gains therefore have to come from talent depth.'),
+      T('أين تقف المملكة، وأي التجارب الدولية نستفيد منها؟','Where does the Kingdom stand, and whose playbooks should we borrow?'))}
+    <div class="sub-h"><h3>${tx(T('متتبع المؤشرات الدولية','International index tracker'))}</h3><p>${tx(T('يُعرض على كل بطاقة سنة الإصدار؛ وتُميَّز البطاقات التي قد يكون لها إصدار أحدث أو تحتاج إلى تحقق.','Each card shows its edition year; amber marks an edition that may be superseded or a figure needing verification.'))}</p></div>
+    <div class="idx">${INDEXES.map(i => `<article class="card"><div class="pub">${tx(i.pub)}</div><h4>${tx(i.n)}</h4><div class="pos">${tx(i.pos)}</div><div class="sig">${tx(i.sig)}</div>
+      <div class="ed"><span${i.flag ? ' class="flag"' : ''}>${tx(T('الإصدار','Edition'))} ${i.ed}${i.flag ? ' · ' + tx(T('يحتاج تحديثًا','check for update')) : ''}</span><span>${cite(...i.src)}</span></div></article>`).join('')}</div>
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('المواهب: المرتبة 60 من 83، مقابل الأولى في الاستراتيجية','Talent is 60th of 83, against 1st on strategy'))}</h3><p>${tx(T('ترتيب المملكة حسب المحاور الفرعية، مؤشر Tortoise العالمي للذكاء الاصطناعي 2024 (1 = الأفضل).','Saudi rank by sub-pillar, Tortoise Global AI Index 2024 (1 = best).'))}</p></div>
+      <div class="chart">${pillarChart()}</div>
+      ${srcLine('argaam')}
+    </div>
+    <div class="block grid2" style="align-items:start">
+      <div class="card"><h4>${tx(T('الطلب العالمي على المهارات','Global skills demand'))}</h4><p style="font-size:16px;color:var(--ink)">${tx(T('يتوقع أصحاب العمل تغيّر 39% من المهارات الأساسية للعاملين بحلول 2030، وتتصدر مهارات الذكاء الاصطناعي والبيانات الضخمة قائمة المهارات الأسرع نموًا، تليها الشبكات والأمن السيبراني ثم الثقافة التقنية.','Employers expect 39% of workers’ core skills to change by 2030. AI & big data top the fastest-growing skills, followed by networks & cybersecurity and technological literacy.'))}</p>${srcLine('wef')}</div>
+      <div class="callout" style="margin-top:0"><b>${tx(T('دلالة للتخطيط: ','Planning implication: '))}</b>${tx(T('في مؤشر Cisco لجاهزية الذكاء الاصطناعي، لدى 93% من المنشآت السعودية استراتيجية قائمة أو قيد الإعداد، بينما تعتبر 8% فقط نفسها جاهزة تمامًا، و31% تعدّ إتقان أدوات الذكاء الاصطناعي فجوتها الأولى.','In Cisco’s AI Readiness Index, 93% of Saudi organisations have an AI strategy in place or in development, yet only 8% consider themselves fully prepared, and 31% name AI-tool proficiency as their primary skill gap.'))} ${cite('cisco')}</div>
+    </div>
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('النماذج الوطنية الرائدة','Leading national models'))}</h3><p>${tx(T('حققت المملكة ما يوازي نماذج الثقافة أو يتجاوزها؛ والسؤال المفتوح هو طبقة المختصين، حيث تخطط سنغافورة وكوريا الجنوبية صراحةً حسب الدور ومرحلة الإمداد.','The Kingdom has matched or exceeded the literacy models; the open question is the specialist tier, where Singapore and South Korea plan explicitly by role and pipeline stage.'))}</p></div>
+      ${table([T('الدولة','Country'), T('نموذج المواهب','Talent model'), T('المستهدف الرئيس','Headline target'), T('ما نستفيده للمملكة','Transferable practice'), T('المصدر','Source')], PEERS.map(([c, mo, t, p, s]) => tr([`<b>${tx(c)}</b>`, tx(mo), tx(t), tx(p), cite(...s)])))}
+    </div>
+  </div></section>`);
+
+  /* ---------- 3. skills ---------- */
+  const roles = ROLES.filter(r => roleFilter === 'all' || r[0] === roleFilter);
+  const grpHead = `<tr><th></th><th colspan="7" class="grp">${tx(COMP.T.name)}</th><th colspan="4" class="grp">${tx(COMP.D.name)}</th><th colspan="4" class="grp">${tx(COMP.L.name)}</th></tr>`;
+  const codeHead = `<tr><th scope="col">${tx(T('الدور','Role'))}</th>${CODES.map(c => `<th scope="col" title="${c}">${c}</th>`).join('')}</tr>`;
+  const heatRows = roles.map(([f, n, v]) => `<tr><td>${tx(n)}</td>${v.map(heatCell).join('')}</tr>`).join('');
+  m.push(`<section class="band" id="skills" aria-labelledby="h-skills"><div class="wrap">
+    ${head('skills', T('3 · المعيار الوطني','3 · The national standard'), T('مصفوفة المهارات والجدارات','Skills & competency matrix'),
+      T('لغة واحدة لسدايا وجهات التوظيف والجامعات: خمسة مستويات إتقان، و15 جدارة في ثلاث عائلات، وملفات أدوار بصيغة TSKA (المهام، المهارات، المعارف، القدرات). كل تقييم وبرنامج واعتماد في المنصة يُربط بها.','One language for SDAIA, employers and universities: five proficiency levels, 15 competencies in three families, and role profiles in TSKA form (Tasks, Skills, Knowledge, Abilities). Every assessment, program and certificate maps to it.'),
+      T('ماذا يعني «قادر»، دورًا بدور؟','What does “capable” mean, role by role?'))}
+    <div class="sub-h"><h3>${tx(T('مقياس الإتقان','Proficiency scale'))}</h3><p>${tx(T('مواءم مع أطر اليونسكو: إطار المعلمين (اكتساب، تعميق، إبداع) وإطار الطلاب (فهم، تطبيق، إبداع).','Aligned with UNESCO: the teacher framework (Acquire, Deepen, Create) and student framework (Understand, Apply, Create).'))}</p></div>
+    <div class="scale">${SCALE.map(([n, name, d, tier, hot]) => `<div class="lvl${hot ? ' hot' : ''}"><div class="no">${n}</div><b>${tx(name)}</b><p>${tx(d)}</p><div class="tier">${tx(tier)}</div></div>`).join('')}</div>
+    ${srcLine('cft', 'ichei')}
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('مكتبة الجدارات','Competency library'))}</h3></div>
+      <div class="grid3 lib">${Object.values(COMP).map(f => `<div class="card"><h4>${tx(f.name)}</h4><div class="fam">${tx(f.note)}${f.src.length ? ' · ' + cite(...f.src) : ''}</div><ul>${f.items.map(([c, n]) => `<li><code>${c}</code>${tx(n)}</li>`).join('')}</ul></div>`).join('')}</div>
+    </div>
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('المستوى المستهدف لكل دور ذي أولوية','Target level by priority role'))}</h3><p>${tx(T('المستوى المطلوب (1–5) لشاغل الدور المكتمل الكفاءة. القيم نقطة انطلاق مقترحة تُعتمد مع لجان جهات التوظيف في الموجة الأولى، وليست معيارًا معتمدًا بعد.','Target proficiency (1–5) for a fully competent incumbent. Values are a proposed starting point for validation with employer panels in Wave 1, not an adopted standard.'))}</p></div>
+      <div class="filters" role="group" aria-label="${tx(T('تصفية الأدوار','Filter roles'))}">${ROLE_FAMS.map(([k, n]) => `<button class="pill" type="button" data-role="${k}" aria-pressed="${roleFilter === k}">${tx(n)}</button>`).join('')}</div>
+      <div class="tbl-wrap"><table class="heat"><thead>${grpHead}${codeHead}</thead><tbody>${heatRows}</tbody></table></div>
+      <div class="legend"><span>${tx(T('المستوى','Level'))}</span>${[1, 2, 3, 4, 5].map(v => `<i style="background:color-mix(in srgb, var(--accent) ${[0, 14, 30, 50, 72, 92][v]}%, var(--surface))"></i>${v}`).join(' ')}<span style="margin-inline-start:10px">· ${tx(T('غير مطلوب فوق المستوى 1','not required beyond Level 1'))}</span></div>
+    </div>
+
+    <div class="block grid2">
+      <div class="card"><h4>${tx(T('قالب ملف الدور (TSKA)','Role profile template (TSKA)'))}</h4>
+        <ul class="list-clean">
+          <li><b>${tx(T('الغرض','Purpose'))}</b> — ${tx(T('جملة واحدة','one sentence'))}</li>
+          <li><b>${tx(T('المهام','Tasks'))}</b> — ${tx(T('6–10 مهام حرجة مرتبطة بالجدارات','6–10 critical tasks tagged to competencies'))}</li>
+          <li><b>${tx(T('المهارات والمعارف','Skills & knowledge'))}</b> — ${tx(T('حسب رمز الجدارة والمستوى المستهدف','by competency code and target level'))}</li>
+          <li><b>${tx(T('القدرات والسلوكيات','Abilities & behaviours'))}</b> — ${tx(T('مؤشرات قابلة للملاحظة','observable indicators'))}</li>
+          <li><b>${tx(T('المسار','Pathway'))}</b> — ${tx(T('طرق الدخول والبرامج والشهادات والمدة المعتادة للوصول إلى المستوى 4','entry routes, programs, certifications, typical time to Level 4'))}</li>
+        </ul></div>
+      <div class="card"><h4>${tx(T('جداول المواءمة','Crosswalks'))}</h4><p>${tx(T('تُربط المصفوفة بأطر اليونسكو للجدارات، وتصنيف المهارات لدى المنتدى الاقتصادي العالمي، وإطار SFIA، ليتمكن الشركاء من ترجمة مستوياتهم إلى المعيار الوطني.','The matrix maps to UNESCO competency frameworks, the WEF skills taxonomy and SFIA, so partners can translate their levels into the national standard.'))}</p></div>
+    </div>
+  </div></section>`);
+
+  /* ---------- 4. needs ---------- */
+  m.push(`<section class="band" id="needs" aria-labelledby="h-needs"><div class="wrap">
+    ${head('needs', T('4 · تقييم الاحتياج','4 · Needs assessment'), T('قياس الفجوة بدل افتراضها','Measure the gap instead of assuming it'),
+      T('منهجية تثلّث الطلب والعرض والإتقان المقيس، ثم ترتّب الفجوات حسب أهميتها، فيتبع الاستثمار الدليلَ لا أعدادَ الملتحقين.','The method triangulates demand, supply and measured proficiency, then ranks gaps by criticality — so investment follows evidence, not enrolment.'),
+      T('أين الفجوات تحديدًا، وما حجمها، وأيها الأهم؟','Where exactly are the gaps, how big are they, and which matter most?'))}
+    <div class="sub-h"><h3>${tx(T('دورة التقييم السنوية','The annual assessment cycle'))}</h3></div>
+    <ol class="steps">${CYCLE.map(([a, b]) => `<li><b>${tx(a)}</b><span>${tx(b)}</span></li>`).join('')}</ol>
+    <p class="loop">${tx(T('تتكرر الدورة سنويًا؛ وتصبح نتائج كل موجة خط أساس الموجة التالية. «استشراف المهارات» وفق منظمة العمل الدولية: ','The cycle repeats annually; each wave becomes the next baseline. “Skills anticipation” per the ILO: '))}${cite('undesa')}</p>
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('الأدوات ومصادر البيانات','Instruments and data sources'))}</h3><p>${tx(T('تشكّل منهجية اليونسكو لتقييم الجاهزية المرجع للطبقة الوطنية بأبعادها الخمسة، ويعزل مؤشر صندوق النقد الدولي رأس المال البشري وسياسات سوق العمل بعدًا مستقلًا.','UNESCO RAM anchors the national layer with its five dimensions; the IMF index isolates human capital and labour-market policy as its own dimension.'))} ${cite('ram', 'imf')}</p></div>
+      ${table([T('الأداة','Instrument'), T('ما تقيسه','Measures'), T('المستجيب / المالك','Respondent / owner'), T('الدورية','Cadence')], INSTR.map(r => tr([`<b>${tx(r[0])}</b>`, tx(r[1]), tx(r[2]), tx(r[3])])))}
+    </div>
+
+    <div class="block grid2" style="align-items:start">
+      <div class="formula">
+        <h3>${tx(T('احتساب الفجوة','Gap scoring'))}</h3>
+        <div class="eq">G<sub>r,c</sub> = max(0, L<sup>req</sup><sub>r,c</sub> − L<sup>cur</sup><sub>r,c</sub>) × W<sub>c</sub> × N<sub>r</sub></div>
+        <dl>
+          <dt>L<sup>req</sup></dt><dd>${tx(T('المستوى المستهدف من المصفوفة','target level from the matrix'))}</dd>
+          <dt>L<sup>cur</sup></dt><dd>${tx(T('الوسيط المتحقق منه للمستوى الحالي','validated median current level'))}</dd>
+          <dt>W</dt><dd>${tx(T('وزن الأهمية (1–3) تحدده القيادة','criticality weight (1–3), set with leadership'))}</dd>
+          <dt>N</dt><dd>${tx(T('عدد الشاغلين المطلوبين للدور','headcount needed in the role'))}</dd>
+        </dl>
+        <p class="src">${tx(T('مجموع الجدارات = فجوة الدور؛ ومجموع الأدوار = فجوة الجهة والفجوة الوطنية التي يتتبعها المؤشر 5.','Summed over competencies = role gap; over roles = the entity and national gap KPI 5 tracks.'))}</p>
+      </div>
+      <div>
+        <div class="sub-h"><h3>${tx(T('قواعد ترتيب الأولويات','Prioritisation rules'))}</h3></div>
+        <div class="mx">
+          <div class="ax ay">${tx(T('الأهمية ↑','Criticality ↑'))}</div>
+          <div class="q">${qHtml(QUADS[1])}</div><div class="q hot">${qHtml(QUADS[0])}</div>
+          <div class="ax ay"></div>
+          <div class="q">${qHtml(QUADS[3])}</div><div class="q">${qHtml(QUADS[2])}</div>
+          <div></div><div class="ax" style="grid-column:span 2">${tx(T('حجم الفجوة ←','Gap size →'))}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block grid2">
+      <div class="card"><h4>${tx(T('التقسيمات التي تعرضها المنصة','Segmentation the portal shows'))}</h4>
+        <ul class="list-clean">
+          <li><b>${tx(T('القطاع العام مقابل الخاص','Public vs private'))}</b> — ${tx(T('خريطتان منفصلتان؛ فجوات الحكومة توجّه برامج الأكاديمية، وفجوات القطاع الخاص توجّه الاستثمار المشترك والمسارات المدعومة من «هدف».','separate heat maps; government gaps drive Academy programs, private gaps drive co-investment and HRDF-supported pathways.'))}</li>
+          <li><b>${tx(T('القطاع','Sector'))}</b> — ${tx(T('الصحة، الطاقة، المالية، التعليم، البلديات والخدمات الحكومية.','health, energy, finance, education, municipal and government services.'))}</li>
+          <li><b>${tx(T('المستوى','Level'))}</b> — ${tx(T('ثقافة، ممارس، مختص، خبير، قيادة.','literacy, practitioner, specialist, expert, leadership.'))}</li>
+          <li><b>${tx(T('الفئات','Demographics'))}</b> — ${tx(T('الجنس والمنطقة لتتبع مؤشرات الشمول.','gender and region, to track inclusion KPIs.'))}</li>
+        </ul></div>
+      <div class="card"><h4>${tx(T('حوكمة البيانات','Data governance'))}</h4><p>${tx(T('تبقى النتائج الفردية لدى الجهة، ولا تنشر المنصة إلا نتائج مجمّعة، بحد أدنى لحجم الخلية يُحدَّد مع مستشاري حماية البيانات الشخصية. تحصل كل جهة على ملف فجواتها مقارنةً بنظيراتها في القطاع.','Individual results stay with the entity; the portal publishes aggregates only, with a minimum cell size set with data-protection counsel. Each entity receives its own gap profile against sector peers.'))}</p></div>
+    </div>
+  </div></section>`);
+
+  /* ---------- 5. roadmap ---------- */
+  m.push(`<section class="band" id="roadmap" aria-labelledby="h-roadmap"><div class="wrap">
+    ${head('roadmap', T('5 · التنفيذ','5 · Execution'), T('المرحلة الأولى تبدأ الآن: خطوط الأساس قبل التوسع','Phase 1 starts now: baselines before scale'),
+      T('تنقل الخارطة الاستثمار من التوعية الشاملة — التي تحققت إلى حد كبير عبر «سماي» — إلى مسارات المختصين والخبراء حسب الدور، وهي الطبقة التي يعتمد عليها مستهدف 20,000 ومحور المواهب في المؤشرات الدولية.','The roadmap shifts investment from mass literacy, largely delivered through SAMAI, to role-based specialist and expert pipelines — the tier the 20,000 target and the talent indices depend on.'),
+      T('ماذا نفعل، وبأي ترتيب، وكيف نعرف أنه ينجح؟','What do we do, in what order, and how do we know it is working?'))}
+    <div class="road">${PHASES.map(p => `<div class="ph${p.now ? ' now' : ''}">${p.now ? `<span class="here">${tx(T('نحن هنا','You are here'))}</span>` : ''}<div class="tag">${tx(T('المرحلة','Phase'))} ${p.n}</div><h4>${tx(p.name)}</h4><div class="when">${tx(p.when)}</div><ul>${p.items.map(i => `<li>${tx(i)}</li>`).join('')}</ul></div>`).join('')}</div>
+    <div class="gates" aria-hidden="false">${GATES.map(([a, b]) => `<div class="gate-slot"><div class="gate"><div class="d"></div><b>${tx(a)}</b><span>${tx(b)}</span></div></div>`).join('')}<div></div></div>
+    <p class="loop">${tx(T('لا تتوسع أي مرحلة قبل اجتياز بوابتها: تُطلق ميزانية المرحلة الثانية بعد اعتماد خطوط الأساس فقط.','No phase scales before its gate: Phase 2 funding is released only once Wave 1 baselines are approved.'))}</p>
+
+    <div class="block">
+      <div class="sub-h"><h3>${tx(T('إطار المبادرات','Initiative framework'))}</h3><p>${tx(T('كل مبادرة مرتبطة بالطبقة التي تخدمها، وبمربع الفجوة، وبالمؤشرات التي تحركها.','Each initiative is tied to the tier it serves, its gap quadrant and the KPIs it moves.'))}</p></div>
+      ${table([T('المبادرة','Initiative'), T('الطبقة','Tier'), T('مربع الفجوة','Gap quadrant'), T('المؤشرات','KPIs'), T('نموذج التنفيذ','Delivery'), T('المرحلة','Phase')], INITS.map(r => tr([`<b>${tx(r[0])}</b>`, tx(r[1]), tx(r[2]), `<span class="num" dir="ltr">${r[3]}</span>`, tx(r[4]), `<span class="num">${tx(r[5])}</span>`])))}
+      <p class="src">${tx(T('خيارات الشراكة متاحة: نما تحالف ITU لمهارات الذكاء الاصطناعي من 25 شريكًا مؤسسًا إلى أكثر من 70 جهة في عامه الأول، وأطلقت اليونسكو RAM 2.0 في الرياض في سبتمبر 2026. ','Partnership options are live: ITU’s AI Skills Coalition grew from 25 founding partners to 70+ organisations in its first year, and UNESCO launched RAM 2.0 in Riyadh in September 2026. '))}${cite('itu', 'ram2')}</p>
+    </div>
+
+    <div class="block grid2" style="align-items:start">
+      <div class="card"><h4>${tx(T('حوكمة التنفيذ','Execution governance'))}</h4>
+        <ul class="list-clean">
+          <li><b>${tx(T('التوجيه:','Steering:'))}</b> ${tx(T('مراجعة ربع سنوية من قيادة قطاع بناء القدرات مقابل لوحة المؤشرات، وتُسجَّل قرارات البوابات في المنصة.','quarterly review by Capacity Building Sector leadership against the KPI scorecard; gate decisions recorded on the portal.'))}</li>
+          <li><b>${tx(T('قاعدة التمويل:','Funding rule:'))}</b> ${tx(T('تُموَّل البرامج بقدر الفجوة المرجّحة التي تسدها، لا بعدد الملتحقين.','programs are funded in proportion to the weighted gap they close, not enrolment volume.'))}</li>
+          <li><b>${tx(T('التصحيح:','Course correction:'))}</b> ${tx(T('أي مبادرة متأخرة ربعين متتاليين عن مؤشرها الرئيس يُعاد تصميمها أو تُوقف.','any initiative two quarters off track on its lead KPI is redesigned or retired.'))}</li>
+        </ul></div>
+      <div>
+        <div class="sub-h"><h3>${tx(T('المخاطر الرئيسة','Key risks'))}</h3></div>
+        ${table([T('الخطر','Risk'), T('المعالجة','Mitigation')], RISKS.map(([a, b]) => tr([`<b>${tx(a)}</b>`, tx(b)])))}
+      </div>
+    </div>
+  </div></section>`);
+
+  /* ---------- sources ---------- */
+  m.push(`<section class="band sources" id="sources" aria-labelledby="h-sources"><div class="wrap">
+    ${head('sources', T('المرجعية','Evidence'), T('المصادر والمنهجية','Sources and method'),
+      T('يظهر لكل رقم ناشره وسنة إصداره. قبل الإطلاق الرسمي تُستبدل التغطيات الصحفية بالمصادر الأولية (سدايا، واس، الجهة الناشرة للمؤشر)، وتُميَّز أي قيمة أقدم من آخر إصدار لمؤشرها.','Every figure shows its publisher and edition. Before official launch, press coverage is replaced by primary sources (SDAIA, SPA, the index publisher), and any figure older than its index’s latest edition is flagged.'),
+      T('هل يمكن التحقق من كل رقم؟','Can every figure be checked?'))}
+    <div class="callout" style="margin:0 0 28px"><b>${tx(T('أولوية التحقق قبل الإطلاق: ','Verify before launch: '))}</b>${tx(T('درجة المملكة في مؤشر صندوق النقد الدولي (مصدر ثانوي حاليًا)، ومقاييس مؤشر ستانفورد 2026 (من التغطية الصحفية للتقرير)، وتوفر إصدار أحدث من مؤشر Tortoise بعد 2024.','the IMF AIPI Saudi score (currently secondary), Stanford AI Index 2026 country metrics (from press coverage of the report), and whether Tortoise has published a post-2024 edition.'))}</div>
+    <ol>${SRC_ORDER.map(k => `<li><a href="${SRC[k].u}" target="_blank" rel="noopener">${SRC[k].t}</a><span>${SRC[k].p}</span></li>`).join('')}</ol>
+  </div></section>`);
+
+  m.push(`<footer><div class="wrap">${tx(T('قطاع بناء القدرات · الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا) · إدارة التخطيط. وثيقة عمل لأغراض التخطيط؛ المستهدفات المقترحة بانتظار الاعتماد.','Capacity Building Sector · Saudi Data & AI Authority (SDAIA) · Planning Department. Working reference for planning; proposed targets pending approval.'))} · ${tx(UI.asof)}</div></footer>`);
+
+  document.getElementById('main').innerHTML = m.join('');
+  labelButtons();
+  observe();
+}
+
+function qHtml(q) { return `<b>${tx(q.n)}</b><span>${tx(q.d)}</span>`; }
+
+/* ---------------- interactions ---------------- */
+const root = document.documentElement;
+try { const t = localStorage.getItem('plan-theme'); if (t) root.setAttribute('data-theme', t); } catch (e) {}
+const isDark = () => { const t = root.getAttribute('data-theme'); return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; };
+function labelButtons() {
+  document.querySelectorAll('[data-theme-toggle]').forEach(b => { b.textContent = isDark() ? tx(UI.themeLight) : tx(UI.themeDark); });
+  document.querySelectorAll('[data-lang-toggle]').forEach(b => { b.textContent = tx(UI.langBtn); b.lang = lang === 'ar' ? 'en' : 'ar'; });
+}
+document.addEventListener('click', e => {
+  const th = e.target.closest('[data-theme-toggle]');
+  if (th) { const n = isDark() ? 'light' : 'dark'; root.setAttribute('data-theme', n); try { localStorage.setItem('plan-theme', n); } catch (er) {} labelButtons(); return; }
+  const lg = e.target.closest('[data-lang-toggle]');
+  if (lg) { const y = scrollY; lang = lang === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('plan-lang', lang); } catch (er) {} render(); scrollTo(0, y); return; }
+  const k = e.target.closest('[data-kpi]');
+  if (k) { const y = scrollY; kpiFilter = k.dataset.kpi; render(); scrollTo(0, y); return; }
+  const r = e.target.closest('[data-role]');
+  if (r) { const y = scrollY; roleFilter = r.dataset.role; render(); scrollTo(0, y); }
+});
+
+let io;
+function observe() {
+  if (io) io.disconnect();
+  if (!('IntersectionObserver' in window)) return;
+  io = new IntersectionObserver(entries => {
     entries.forEach(en => {
       if (!en.isIntersecting) return;
-      links.forEach(a => a.setAttribute('aria-current', a.dataset.id === en.target.id ? 'true' : 'false'));
-      const t = document.querySelector(`#topbar [data-id="${en.target.id}"]`); if (t && t.scrollIntoView && window.innerWidth <= 960) t.scrollIntoView({ block: 'nearest', inline: 'center' });
+      const id = en.target.id;
+      document.querySelectorAll('[data-id]').forEach(a => a.setAttribute('aria-current', a.dataset.id === id ? 'true' : 'false'));
     });
-  }, { rootMargin: '-35% 0px -60% 0px' });
+  }, { rootMargin: '-40% 0px -55% 0px' });
   SECTIONS.forEach(([id]) => { const el = document.getElementById(id); if (el) io.observe(el); });
+}
 
-  /* ---------- tooltip ---------- */
-  const tip = $('#tip');
-  function showTip(html, x, y) {
-    tip.innerHTML = html; tip.classList.add('on');
-    const w = tip.offsetWidth, h = tip.offsetHeight;
-    let L = x + 14, T = y - h - 12;
-    if (L + w > innerWidth - 8) L = x - w - 14;
-    if (T < 8) T = y + 16;
-    tip.style.left = L + 'px'; tip.style.top = T + 'px';
-  }
-  function hideTip() { tip.classList.remove('on'); }
-  document.addEventListener('mousemove', e => { const t = e.target.closest('[data-tip]'); if (t) showTip(t.getAttribute('data-tip'), e.clientX, e.clientY); else if (!e.target.closest('[data-cross]')) hideTip(); });
-  document.addEventListener('focusin', e => { const t = e.target.closest('[data-tip]'); if (t) { const r = t.getBoundingClientRect(); showTip(t.getAttribute('data-tip'), r.left + r.width / 2, r.top); } });
-  document.addEventListener('focusout', hideTip);
-
-  /* ---------- static content ---------- */
-  const E = X.edition;
-  $('#edition').textContent = `${E.label}. Evidence current to ${E.asof}; SDAIA tier KPIs as of ${E.tiersAsof}.`;
-  $('#railEdition').textContent = `${E.label}. Evidence to ${E.asof}; tier KPIs ${E.tiersAsof}.`;
-
-  $('#kpis').innerHTML = X.kpis.map(k => `<div class="kpi" data-tone="${k.tone}"><div class="k">${esc(k.k)}</div><div class="v">${esc(k.v)}</div><div class="s">${esc(k.sub)}</div><div class="src">${esc(k.src)}</div></div>`).join('');
-  $('#insights').innerHTML = X.insights.map(i => `<li><b>${esc(i.t)}</b><span>${esc(i.b)}</span></li>`).join('');
-  $('#decisions').innerHTML = X.decisions.map(d => `<div class="dec"><b>${esc(d.t)}</b><p>${esc(d.b)}</p><small>Horizon: ${esc(d.h)}</small></div>`).join('');
-
-  /* needs cards */
-  const F = X.forecast, i30 = F.years.indexOf(2030), i35 = F.years.indexOf(2035), stock = F.stockNow;
-  const scColor = { Constrained: '--ramp-1', Central: '--ramp-2', Accelerated: '--ramp-3' };
-  $('#needCards').innerHTML = Object.keys(F.scenarios).map(s => {
-    const v30 = F.scenarios[s][i30], v35 = F.scenarios[s][i35];
-    return `<div><div class="sc"><i style="background:var(${scColor[s]})"></i>${s} case</div>
-      <div class="big">${fmt(v30)}</div><div class="src">specialists needed by 2030 (${F.intensity[s]} of prof. &amp; tech. jobs by 2035, ${esc(F.bench[s])})</div>
-      <div class="row"><span>Net additions from today to 2030</span><b>+${fmt(v30 - stock)}</b></div>
-      <div class="row"><span>Per year, 2027–2030</span><b>${fmt(Math.round((v30 - stock) / 4))}</b></div>
-      <div class="row"><span>Official trajectory per year</span><b>${fmt(Math.round((F.target - stock) / 4))}</b></div>
-      <div class="row"><span>Needed by 2035</span><b>${fmt(v35)}</b></div>
-      <div class="row"><span>Above NSDAI target in 2030</span><b>+${Math.round((v30 / F.target - 1) * 100)}%</b></div></div>`;
-  }).join('');
-  $('#fcTable').innerHTML = `<table><thead><tr><th>Year</th>${Object.keys(F.scenarios).map(s => `<th class="n">${s}</th>`).join('')}<th class="n">SDAIA trajectory</th></tr></thead><tbody>${F.years.map((y, i) => `<tr><td>${y}</td>${Object.keys(F.scenarios).map(s => `<td class="n">${fmt(F.scenarios[s][i])}</td>`).join('')}<td class="n">${y <= 2030 ? fmt(F.trajectory[i]) : '—'}</td></tr>`).join('')}</tbody></table>`;
-  $('#fcLegend').innerHTML = Object.keys(F.scenarios).map(s => `<span><i class="line" style="background:var(${scColor[s]})"></i>${s}</span>`).join('') + `<span><i class="line" style="background:var(--ink)"></i>SDAIA trajectory to the 20,000 target</span><span><i class="dot" style="background:var(--accent)"></i>2026 actual (17,562)</span>`;
-
-  /* waffle */
-  const D = X.depth, per = D.total / 1000, on = Math.round(D.specialists / per);
-  const w = $('#waffle'); w.setAttribute('aria-label', `${on} of 1,000 squares are specialists: 17,562 of 1,581,605 across SDAIA's three tiers`);
-  w.innerHTML = Array.from({ length: 1000 }, (_, i) => `<i class="${i < on ? 'on' : ''}"></i>`).join('');
-
-  /* pipeline */
-  const pmax = Math.max(...X.pipeline.map(p => p.n));
-  $('#pipe').innerHTML = X.pipeline.map(p => `<li><div><div>${esc(p.stage)}</div><div class="tier">${esc(p.tier)}, ${esc(p.src)}</div><div class="bar"><span style="width:${Math.max(0.6, p.n / pmax * 100)}%"></span></div></div><div class="num">${fmt(p.n)}</div></li>`).join('');
-
-  /* bullets */
-  $('#bullets').innerHTML = X.employability.map(b => {
-    const sc = v => (v / 80 * 100) + '%';
-    return `<div class="bullet"><div class="bt"><span>${esc(b.k)}</span><span><b class="num" style="font-size:18px;color:var(--gap)">${b.v}%</b> <span class="muted">vs ${b.t}% target</span></span></div>
-      <div class="track" data-tip="<b>${esc(b.k)}</b><br>2025: ${b.v}%<br>2025 target: ${b.t}%${b.t2030 ? '<br>2030 target: ' + b.t2030 + '%' : ''}${b.prev ? '<br>2024: ' + b.prev + '%' : ''}" tabindex="0">
-        <div class="fill" style="width:${sc(b.v)}"></div><div class="mk" style="left:${sc(b.t)}"></div>${b.t2030 ? `<div class="mk t30" style="left:${sc(b.t2030)}"></div>` : ''}</div>
-      <div class="keys">Black mark: 2025 target${b.t2030 ? `. Grey mark: 2030 target (${b.t2030}%)` : ''}${b.prev ? `. 2024 result: ${b.prev}%` : ''}.</div></div>`;
-  }).join('') + '<p class="src mt">Vision 2030 Annual Report 2025. University graduate employment fell between 2024 and 2025 while the target rose.</p>';
-
-  /* sector columns */
-  $('#versus').innerHTML = ['gov', 'priv'].map(k => {
-    const s = X.sector[k];
-    return `<div class="vs-col" data-s="${k}"><header><span class="swatch" style="background:var(--${k})"></span><h3>${s.name}</h3></header>
-      <div class="stance">${esc(s.stance)}</div><p class="note">${esc(s.summary)}</p>
-      <div class="facts">${s.facts.map(f => `<div><b>${esc(f.v)}</b><span>${esc(f.k)}</span></div>`).join('')}</div>
-      <h4>Critical skill needs</h4><ul>${s.critical.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
-      <h4>What creates the demand</h4><ul>${s.drivers.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
-      <h4>Supply position</h4><p class="note">${esc(s.supply)}</p>
-      <h4>Where the gap is</h4><p class="note">${esc(s.gap)}</p></div>`;
-  }).join('');
-
-  const contrast = [
-    ['Demand driver', 'Regulation, mandates and national programmes', 'Competition, productivity and adoption'],
-    ['Dominant work', 'Govern data, protect privacy, assure AI, adopt at scale', 'Build, integrate, operate and sell AI'],
-    ['Signature roles', 'CDO, Data Protection Officer, AI governance specialist, AI office lead', 'GenAI and ML engineer, data scientist, MLOps engineer, solution architect'],
-    ['Needs unique to the sector', 'Privacy and data protection, open data, real-time operational vision', 'Industrial AI, Arabic NLP, data-centre engineering'],
-    ['Supply position', 'Strong for most critical needs', 'Moderate; scarcest at senior engineering level'],
-    ['Binding constraint', 'Leadership and AI-unit capacity: 23 AI units; 278 of 14,000 targeted leaders trained', 'Experienced engineers; only 19% of AI users fully trained by their employer'],
-    ['Planning lever', 'Mandated certification, NDMO and PDPL standards, SAMAI 2', 'Conversion programmes, procurement conditions, employer co-investment']
-  ];
-  $('#contrast').innerHTML = '<div>Dimension</div><div>Government</div><div>Private sector</div>' + contrast.map(r => `<div class="dim">${r[0]}</div><div data-s="Government">${esc(r[1])}</div><div data-s="Private sector">${esc(r[2])}</div>`).join('');
-
-  /* role register */
-  const lensOpts = [['all', 'All roles'], ['gov', 'Government-led'], ['priv', 'Private-led'], ['both', 'Both sectors']];
-  let lens = 'all';
-  $('#lens').innerHTML = lensOpts.map(([v, t]) => `<button type="button" data-v="${v}" aria-pressed="${v === 'all'}">${t}</button>`).join('');
-  $('#family').innerHTML = '<option value="">All families</option>' + X.families.map(f => `<option>${f}</option>`).join('');
-  $('#status').innerHTML = '<option value="">Any status</option>' + ['Emerging', 'Expanding', 'Reshaping'].map(f => `<option>${f}</option>`).join('');
-  const dots = (v, s) => v == null ? `<span class="dots" data-s="${s}" data-l="${s === 'gov' ? 'Gov' : 'Private'}"><span class="na">Not identified</span></span>` : `<span class="dots" data-s="${s}" data-l="${s === 'gov' ? 'Gov' : 'Private'}" aria-label="${['', 'Medium', 'High', 'Critical'][v]}">${[1, 2, 3].map(i => `<i class="${i <= v ? 'on' : ''}"></i>`).join('')}</span>`;
-  let current = 'agent';
-  function renderRegister() {
-    const fam = $('#family').value, st = $('#status').value, q = $('#q').value.trim().toLowerCase();
-    const rows = X.roles.filter(r => (lens === 'all' || r.lens === lens) && (!fam || r.f === fam) && (!st || r.st === st) && (!q || (r.n + ' ' + r.why + ' ' + r.s.join(' ')).toLowerCase().includes(q)));
-    $('#regCount').textContent = `${rows.length} of ${X.roles.length} roles`;
-    $('#register').innerHTML = `<div class="reg-head"><span>Role</span><span>Status</span><span>Government</span><span>Private</span><span>Priority</span><span>Domestic supply</span></div>` +
-      (rows.length ? rows.map(r => `<button type="button" class="reg-row" data-role="${r.id}" aria-current="${r.id === current}"><span class="rn">${esc(r.n)}<span class="rf">${esc(r.f)}, ${esc(r.hz)}</span></span><span><span class="pill" data-v="${r.st}">${r.st}</span></span>${dots(r.g, 'gov')}${dots(r.p, 'priv')}<span class="sup">${esc(r.pri)}</span><span class="sup" data-w="${r.sup}">${esc(r.sup)}</span></button>`).join('')
-        : `<div class="reg-empty">No roles match these filters. Clear the search or choose "All roles".</div>`);
-  }
-  $('#lens').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; lens = b.dataset.v; $('#lens').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderRegister(); });
-  ['#family', '#status'].forEach(s => $(s).addEventListener('change', renderRegister));
-  $('#q').addEventListener('input', renderRegister);
-  $('#register').addEventListener('click', e => { const r = e.target.closest('[data-role]'); if (!r) return; selectRole(r.dataset.role); document.getElementById('tska').scrollIntoView(); });
-
-  /* skills trajectory */
-  const arrows = {
-    rising: '<svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="var(--accent-wash)"/><path d="M6 14l5-5 5 5" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    stable: '<svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="var(--surface-2)"/><path d="M6 11h10" stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round"/></svg>',
-    declining: '<svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="var(--gap-wash)"/><path d="M6 8l5 5 5-5" fill="none" stroke="var(--gap)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-  };
-  const trajT = { rising: 'Rising: invest now', stable: 'Stable: re-specify', declining: 'Declining: stop expanding' };
-  const skItem = s => `<div class="sk"><b>${esc(s.s)}</b><div class="meta"><span>Saudi demand <b>${esc(s.sd)}</b></span><span>Global <b>${esc(s.gd)}</b></span>${s.hz !== '—' ? `<span>Horizon <b>${esc(s.hz)}</b></span>` : ''}</div><p>${esc(s.sa)}</p><details><summary>Evidence</summary><p>${esc(s.ev)}</p></details></div>`;
-  const skPanel = d => `<div class="panel"><h3>${arrows[d]}${trajT[d]}</h3>${d === 'rising' ? '<div class="rise">' : ''}${X.skills.filter(s => s.dir === d).map(skItem).join('')}${d === 'rising' ? '</div>' : ''}</div>`;
-  $('#traj').innerHTML = skPanel('rising') + `<div class="side">${skPanel('stable')}${skPanel('declining')}</div>`;
-
-  /* gap matrix */
-  const pris = ['Critical', 'High', 'Medium'], strs = ['Weak', 'Moderate', 'Strong'];
-  const hot = new Set(['Critical|Weak', 'Critical|Moderate', 'High|Weak']);
-  let m = '<div class="corner"></div>' + strs.map(s => `<div class="axh">Supply ${s.toLowerCase()}</div>`).join('');
-  pris.forEach(p => {
-    m += `<div class="ax">${p} need</div>`;
-    strs.forEach(s => {
-      const items = X.sectorSkills.filter(x => x.pri === p && x.str === s);
-      m += `<div class="cell ${hot.has(p + '|' + s) ? 'hot' : ''}" data-l="${p} need, supply ${s.toLowerCase()}">${items.length ? '' : '<span class="none">None rated here</span>'}${items.map(x => `<span class="chip" data-s="${x.sec}" title="${x.sec === 'gov' ? 'Government' : 'Private sector'}">${esc(x.s)}</span>`).join('')}</div>`;
-    });
-  });
-  $('#matrix').innerHTML = m;
-
-  /* TSKA */
-  $('#roleSel').innerHTML = X.families.map(f => `<optgroup label="${f}">${X.roles.filter(r => r.f === f).map(r => `<option value="${r.id}">${esc(r.n)}</option>`).join('')}</optgroup>`).join('');
-  const intensity = v => v == null ? 'Not identified' : ['', 'Medium', 'High', 'Critical'][v];
-  function selectRole(id) {
-    current = id; const r = X.roles.find(x => x.id === id); if (!r) return;
-    $('#roleSel').value = id;
-    document.querySelectorAll('.reg-row').forEach(x => x.setAttribute('aria-current', x.dataset.role === id));
-    const col = (L, t, items) => `<div><h4><span>${L}</span>${t}</h4><ul>${items.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
-    $('#tskaCard').innerHTML = `<div class="tc-head"><div><span class="pill" data-v="${r.st}">${r.st}</span> <span class="muted" style="font-size:13.5px">${esc(r.f)}</span><h3 style="margin-top:8px">${esc(r.n)}</h3><p class="why">${esc(r.why)}</p></div>
-      <dl class="tc-meta"><dt>Government demand</dt><dd>${intensity(r.g)}</dd><dt>Private demand</dt><dd>${intensity(r.p)}</dd><dt>Priority</dt><dd>${esc(r.pri)}</dd><dt>Domestic supply</dt><dd>${esc(r.sup)}</dd><dt>Peak horizon</dt><dd>${esc(r.hz)}</dd></dl></div>
-      <div class="tc-grid">${col('T', 'Tasks', r.t)}${col('S', 'Skills', r.s)}${col('K', 'Knowledge', r.k)}${col('A', 'Abilities', r.a)}</div>
-      <div class="tc-foot"><div><b>Anchoring national frameworks</b><div class="tags">${r.fw.map(f => `<span class="tag">${esc(f)}</span>`).join('')}</div></div><div><b>Main pathway into the role</b>${esc(r.path)}</div></div>`;
-  }
-  $('#roleSel').addEventListener('change', e => selectRole(e.target.value));
-  $('#ladder').innerHTML = X.levels.map((l, i) => `<div><em>Level ${i + 1}</em><b>${l.l}</b><p>${esc(l.d)}</p><small>${esc(l.e)}</small></div>`).join('');
-
-  /* tracker */
-  const icon = {
-    met: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--good)"/><path d="M4.6 8.2l2.2 2.2 4.4-4.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    track: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.5V8l2.4 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
-    missed: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--critical)"/><path d="M5.4 5.4l5.2 5.2M10.6 5.4l-5.2 5.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>',
-    unmeasured: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.4 2"/><path d="M8 5v3.5M8 10.8v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
-  };
-  const stT = { met: 'Met', ahead: 'Ahead', track: 'On track', missed: 'Missed', behind: 'Off track', unmeasured: 'Not measured', unclear: 'Target unclear' };
-  icon.unclear = icon.unmeasured; icon.ahead = icon.met; icon.behind = icon.missed;
-  $('#tracker').innerHTML = '<div class="tr-row h"><span>National target</span><span>Delivered</span><span>Target</span><span>Status</span><span>Planning note</span></div>' +
-    X.targets.map(t => `<div class="tr-row"><span style="font-weight:500">${esc(t.t)}</span><span class="num">${esc(t.d)}</span><span>${esc(t.tg)}</span><span class="status" data-s="${t.st}">${icon[t.st]}${stT[t.st]}</span><span class="muted">${esc(t.note)}</span></div>`).join('');
-  /* SDAIA capability tiers */
-  $('#tiers').innerHTML = X.tiers.map(t => {
-    const pct = t.v / t.t * 100, mark = v => (v / t.t * 100) + '%';
-    return `<div class="tier"><div class="tier-h"><div><b>${esc(t.k)}</b> <span class="ar" lang="ar" dir="rtl">${esc(t.ar)}</span></div><span class="status" data-s="${t.st}">${icon[t.st]}${stT[t.st]}</span></div>
-      <div class="tier-v"><span class="num">${fmt(t.v)}</span><span class="muted">of ${fmt(t.t)} by 2030, <b>${pct < 10 ? pct.toFixed(1) : Math.round(pct)}%</b></span></div>
-      <div class="tier-track" tabindex="0" data-tip="<b>${esc(t.k)}</b><br>Achieved: ${fmt(t.v)}<br>${X.tierYears.map((y, i) => y + ' milestone: ' + fmt(t.path[i])).join('<br>')}"><div class="tier-fill" style="width:${Math.max(0.8, pct)}%"></div>${[1, 3].map(i => `<i style="left:${mark(t.path[i])}"></i>`).join('')}</div>
-      <div class="tier-ticks">${[1, 3].map(i => `<span style="left:${mark(t.path[i])}">${X.tierYears[i]}</span>`).join('')}<span class="end" style="left:100%">2030</span></div>
-      <p>${esc(t.note)} <span class="muted">${esc(t.wk)}.</span></p></div>`;
-  }).join('');
-  $('#blind').innerHTML = X.blindspots.map(b => `<li>${esc(b)}</li>`).join('');
-  $('#horizons').innerHTML = X.priorities.map((h, i) => `<div class="hz"><div class="hz-h"><span class="step">${i + 1}</span><div><b>${h.h}</b><small>${h.w}</small></div></div>${h.items.map(p => `<div class="pr"><b>${esc(p.t)}</b><p>${esc(p.b)}</p><small>${p.r}</small></div>`).join('')}</div>`).join('');
-
-  $('#ev').innerHTML = [[fmt(E.findings), `verified findings: ${E.confirmed} confirmed, ${E.corrected} corrected, ${E.disputed} disputed, ${E.unverifiable} unverifiable`], [E.gaps, `declared data gaps, ${E.gapsFilled} filled or partly filled`], [E.primary, 'primary official sources'], ['3', 'demand scenarios to 2035, with every assumption stated']].map(([v, k]) => `<div><b>${v}</b><span>${k}</span></div>`).join('');
-  $('#foot').innerHTML = `<p style="margin:0 0 6px">Data &amp; AI Workforce Capability, SDAIA Capacity Building Planning. ${esc(E.label)}. Evidence current to ${esc(E.asof)}; SDAIA tier KPIs as of ${esc(E.tiersAsof)}.</p><p style="margin:0">The role register, TSKA profiles and proficiency levels form the department's planning framework, version 1.0. Model scenarios are planning estimates, not forecasts. <a href="report.html">Full evidence report and sources</a>.</p>`;
-
-  /* ---------- charts (redrawn on resize/theme) ---------- */
-  function el(tag, attrs, parent) { const n = document.createElementNS(SVG, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (parent) parent.appendChild(n); return n; }
-  function txt(parent, x, y, s, attrs) { const t = el('text', Object.assign({ x, y }, attrs || {}), parent); t.textContent = s; return t; }
-
-  function gauge() {
-    const g = $('#gauge'), max = 50000, pct = v => (v / max * 100) + '%';
-    const S = F.scenarios, lo = S.Constrained[i30], mid = S.Central[i30], hi = S.Accelerated[i30];
-    g.setAttribute('aria-label', `Specialists trained: 17,562. NSDAI 2030 target: 20,000. Modelled 2030 need: ${fmt(lo)} to ${fmt(hi)}, central ${fmt(mid)}.`);
-    const filled = g.dataset.done ? pct(stock) : '0%';
-    g.innerHTML = `<div class="gauge-title"><span><b>Data &amp; AI specialists</b>: trained today against the 2030 target and modelled 2030 need</span><span class="muted">Scale 0–50,000</span></div>
-      <div class="g-plot">
-        <div class="g-track"></div>
-        <div class="g-band" style="left:${pct(lo)};width:calc(${pct(hi)} - ${pct(lo)})" data-tip="<b>Modelled 2030 need</b><br>Constrained ${fmt(lo)}<br>Central ${fmt(mid)}<br>Accelerated ${fmt(hi)}"></div>
-        <div class="g-fill" style="width:${filled}" data-tip="<b>Trained to date</b><br>17,562 specialists (Oct 2026)"></div>
-        <div class="g-tick" style="left:${pct(F.target)}" data-tip="<b>NSDAI target</b><br>20,000 by 2030"></div>
-        <div class="g-tick central" style="left:${pct(mid)}"></div>
-        <div class="g-lab up" style="left:0"><b>17,562</b>specialists today</div>
-        <div class="g-lab up r" style="left:${pct(hi)}"><b style="color:var(--gap)">${fmt(lo)}–${fmt(hi)}</b>modelled need by 2030, central ${fmt(mid)}</div>
-        <div class="g-axis">${[0, 10000, 30000, 40000, 50000].map(v => `<span style="left:${pct(v)}">${v ? v / 1000 + 'k' : ''}</span>`).join('')}</div>
-        <div class="g-lab down c" style="left:${pct(F.target)}"><b>20,000</b>NSDAI 2030 target</div>
-      </div>
-      <div class="gauge-note">At the central case the Kingdom needs about 2.1 times today's specialist stock by 2030. The 20,000 target covers barely half of that need.</div>`;
-    if (!g.dataset.done) requestAnimationFrame(() => requestAnimationFrame(() => { const f = g.querySelector('.g-fill'); if (f) f.style.width = pct(stock); g.dataset.done = 1; }));
-  }
-
-  function forecast() {
-    const box = $('#fcChart'); box.innerHTML = '';
-    const W = Math.max(300, box.clientWidth), H = W < 560 ? 280 : 340, m = { t: 14, r: W < 560 ? 84 : 112, b: 30, l: 50 };
-    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-label': 'Line chart of specialist demand scenarios 2025 to 2035 against the 20,000 NSDAI target' }, box);
-    const ymax = 150000, xs = i => m.l + i / (F.years.length - 1) * (W - m.l - m.r), ys = v => H - m.b - v / ymax * (H - m.t - m.b);
-    for (let v = 0; v <= ymax; v += 25000) { el('line', { x1: m.l, x2: W - m.r, y1: ys(v), y2: ys(v), stroke: css('--line'), 'stroke-width': 1 }, svg); txt(svg, m.l - 8, ys(v) + 4, v ? (v / 1000) + 'k' : '0', { 'text-anchor': 'end' }); }
-    F.years.forEach((y, i) => { if (W > 560 || i % 2 === 0) txt(svg, xs(i), H - 10, y, { 'text-anchor': 'middle' }); });
-    const i30x = xs(i30);
-    el('path', { d: F.trajectory.map((v, i) => (i ? 'L' : 'M') + xs(i).toFixed(1) + ' ' + ys(v).toFixed(1)).join(' '), fill: 'none', stroke: css('--ink'), 'stroke-width': 1.5 }, svg);
-    txt(svg, i30x + 6, ys(F.target) + 16, 'SDAIA target 20,000', { class: 'lbl2' });
-    const names = Object.keys(F.scenarios);
-    names.forEach(s => {
-      const d = F.scenarios[s].map((v, i) => (i ? 'L' : 'M') + xs(i).toFixed(1) + ' ' + ys(v).toFixed(1)).join(' ');
-      el('path', { d, fill: 'none', stroke: css(scColor[s]), 'stroke-width': s === 'Central' ? 2.5 : 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
-      const last = F.scenarios[s][F.years.length - 1];
-      const t = txt(svg, xs(F.years.length - 1) + 8, ys(last) + 4, s, { class: 'lbl' });
-      txt(svg, xs(F.years.length - 1) + 8, ys(last) + 18, fmt(last), { class: 'lbl2' });
-    });
-    const nowX = xs(1);
-    el('circle', { cx: nowX, cy: ys(stock), r: 5, fill: css('--accent'), stroke: css('--surface'), 'stroke-width': 2 }, svg);
-    txt(svg, nowX - 8, ys(stock) - 12, '2026 actual 17,562', { class: 'lbl', 'text-anchor': 'end' });
-    /* hover */
-    const cross = el('line', { y1: m.t, y2: H - m.b, stroke: css('--ink-3'), 'stroke-width': 1, opacity: 0 }, svg);
-    const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent', 'data-cross': 1 }, svg);
-    const move = e => {
-      const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width;
-      const i = Math.max(0, Math.min(F.years.length - 1, Math.round((x - m.l) / (W - m.l - m.r) * (F.years.length - 1))));
-      cross.setAttribute('x1', xs(i)); cross.setAttribute('x2', xs(i)); cross.setAttribute('opacity', 1);
-      showTip(`<b>${F.years[i]}</b><br>${names.map(s => `${s}: ${fmt(F.scenarios[s][i])}`).join('<br>')}${F.years[i] <= 2030 ? '<br>SDAIA trajectory: ' + fmt(F.trajectory[i]) : ''}`, e.clientX, e.clientY);
-    };
-    hit.addEventListener('mousemove', move);
-    hit.addEventListener('mouseleave', () => { cross.setAttribute('opacity', 0); hideTip(); });
-  }
-
-  function dumbbell() {
-    const box = $('#dumbbell'); box.innerHTML = '';
-    const W = Math.max(300, box.clientWidth), narrow = W < 380, rowH = 30, labW = narrow ? 0 : Math.min(230, W * 0.44), top = 26;
-    const rows = X.heat, H = top + rows.length * (narrow ? rowH + 16 : rowH) + 6;
-    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-label': 'Demand intensity by capability area for government and private sector' }, box);
-    const cols = ['Not identified', 'Medium', 'High', 'Critical'], x0 = labW + 14, x1 = W - 16, xs = i => x0 + i / 3 * (x1 - x0);
-    cols.forEach((c, i) => { txt(svg, xs(i), 14, (W < 520 && i === 0) ? 'None' : c, { 'text-anchor': i === 0 ? 'start' : i === 3 ? 'end' : 'middle' }); });
-    rows.forEach((r, j) => {
-      const yb = top + j * (narrow ? rowH + 16 : rowH), y = yb + (narrow ? 26 : rowH / 2);
-      if (narrow) txt(svg, 0, yb + 10, r.r, { class: 'lbl' }); else txt(svg, 0, y + 4, r.r, { class: 'lbl' });
-      el('line', { x1: x0, x2: x1, y1: y, y2: y, stroke: css('--line'), 'stroke-width': 1 }, svg);
-      const gx = xs(r.g || 0), px = xs(r.p || 0), same = (r.g || 0) === (r.p || 0);
-      if (r.g && r.p && !same) el('line', { x1: gx, x2: px, y1: y, y2: y, stroke: css('--ink-3'), 'stroke-width': 2 }, svg);
-      const dot = (x, v, k, dy) => {
-        const c = el('circle', { cx: x, cy: y + dy, r: 6, fill: v ? css('--' + k) : css('--surface'), stroke: v ? css('--surface') : css('--' + k), 'stroke-width': 2, tabindex: 0, 'data-tip': `<b>${esc(r.r)}</b><br>${k === 'gov' ? 'Government' : 'Private sector'}: ${v ? cols[v] : 'not identified'}` }, svg);
-        return c;
-      };
-      dot(gx, r.g, 'gov', same ? -4 : 0); dot(px, r.p, 'priv', same ? 4 : 0);
-    });
-  }
-
-  function adoption() {
-    const box = $('#adoption'); box.innerHTML = '';
-    const A = X.adoption, W = Math.max(280, box.clientWidth), rowH = 26, labW = Math.min(118, W * 0.34), H = A.cats.length * rowH + 22;
-    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-label': 'Share of establishments using AI by industry, 2024 and 2025' }, box);
-    const x0 = labW + 8, x1 = W - 44, xs = v => x0 + v / 70 * (x1 - x0);
-    [0, 20, 40, 60].forEach(v => { el('line', { x1: xs(v), x2: xs(v), y1: 0, y2: H - 18, stroke: css('--line') }, svg); txt(svg, xs(v), H - 4, v + '%', { 'text-anchor': 'middle' }); });
-    A.cats.forEach((c, i) => {
-      const y = i * rowH + rowH / 2, all = c === 'All sectors';
-      txt(svg, 0, y + 4, c, { class: 'lbl', 'font-weight': all ? 700 : 500 });
-      el('line', { x1: xs(A.y2024[i]), x2: xs(A.y2025[i]), y1: y, y2: y, stroke: css('--ink-3'), 'stroke-width': 2 }, svg);
-      el('circle', { cx: xs(A.y2024[i]), cy: y, r: 5, fill: css('--ramp-1'), stroke: css('--surface'), 'stroke-width': 2 }, svg);
-      el('circle', { cx: xs(A.y2025[i]), cy: y, r: 6, fill: css('--ramp-3'), stroke: css('--surface'), 'stroke-width': 2, tabindex: 0, 'data-tip': `<b>${c}</b><br>2024: ${A.y2024[i]}%<br>2025: ${A.y2025[i]}%` }, svg);
-      txt(svg, xs(A.y2025[i]) + 10, y + 4, A.y2025[i] + '%', { class: 'lbl2' });
-    });
-  }
-
-  function vacancy() {
-    const box = $('#vacancy'); box.innerHTML = '';
-    box.innerHTML = X.vacancyRole.map(v => `<div style="margin:10px 0"><div style="display:flex;justify-content:space-between;font-size:14px"><span>${esc(v.k)}</span><b class="num">${v.v}%</b></div><div style="height:10px;background:var(--surface-2);border-radius:3px;margin-top:4px"><div data-tip="<b>${esc(v.k)}</b><br>${v.v}% of AI-connected vacancies" style="height:100%;width:${v.v / 40 * 100}%;background:${v.k.startsWith('Build') ? 'var(--gap-fill)' : 'var(--ramp-2)'};border-radius:0 3px 3px 0"></div></div></div>`).join('') +
-      '<p style="font-size:14px;color:var(--ink-2);margin:12px 0 4px">Building models is the smallest share of demand. Most AI work in firms is using, implementing or selling it.</p>';
-  }
-
-  function drawCharts() { gauge(); forecast(); dumbbell(); adoption(); vacancy(); }
-
-  renderRegister();
-  selectRole(current);
-  drawCharts();
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawCharts, 150); });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { label(); drawCharts(); });
-})();
-
+render();
 </script>
 </body>
 </html>

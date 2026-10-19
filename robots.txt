@@ -1,4 +1,8 @@
+# robots.txt — Prof. Mamdouh Alenezi
+# Site: https://malenezi.github.io/malenezi/
 User-agent: *
 Allow: /
+Disallow: /malenezi/BackUp/
+Disallow: /malenezi/temp/
 
 Sitemap: https://malenezi.github.io/malenezi/sitemap.xml
