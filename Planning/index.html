@@ -418,10 +418,16 @@ const SRC = {
   imd26:   { u:'https://english.ajel.sa/business/saudi-arabia-advances-to-13th-globally-3rd-among-g20-economies-in-imd-world-competitiveness-yearbook-2026', p:'Ajel', t:'Saudi Arabia 13th globally, 3rd in G20: IMD World Competitiveness Yearbook 2026' },
   itu26:   { u:'https://www.zawya.com/en/business/technology-telecom/saudi-arabia-ranks-first-globally-in-2026-ict-development-index-329883', p:'Zawya / Saudi Gazette', t:'Saudi Arabia ranks first globally in 2026 ICT Development Index' },
   girai:   { u:'https://www.global-index.ai/downloads/Global-Index-on-Responsible-AI-2026.pdf', p:'Global Center on AI Governance', t:'Global Index on Responsible AI 2026 (2nd edition, 135 jurisdictions)' },
+  nosfEn:  { u:'https://sdaia.gov.sa/en/MediaCenter/KnowledgeCenter/ResearchLibrary/DataAIOccupationalStandardsFramework.pdf', p:'SDAIA', t:'Data & AI Occupational Standards Framework (English)' },
+  nosfAr:  { u:'https://sdaia.gov.sa/ar/MediaCenter/KnowledgeCenter/ResearchLibrary/DataAIOccupationalStandardsFramework.pdf', p:'سدايا', t:'إطار المعايير المهنية للبيانات والذكاء الاصطناعي (العربية)' },
+  apsfEn:  { u:'https://sdaia.gov.sa/en/MediaCenter/KnowledgeCenter/ResearchLibrary/Academic-Programs-Standards-Framework-Q3.pdf', p:'SDAIA', t:'National Academic Programs Standards Framework, 2nd ed. (English)' },
+  apsfAr:  { u:'https://sdaia.gov.sa/ar/MediaCenter/KnowledgeCenter/ResearchLibrary/Academic-Programs-Standards-Framework-Q3.pdf', p:'سدايا', t:'إطار معايير البرامج الأكاديمية الوطنية، الإصدار الثاني (العربية)' },
+  sdaiaSep:{ u:'https://sdaia.gov.sa/', p:'SDAIA', t:'SDAIA capacity-building figures, September 2026 (provided by SDAIA Academy)' },
   oxford2: { u:'https://alriyadhdaily.com/article/c5e6bddcf32443d7a8d65f357fb0874e', p:'Riyadh Daily', t:'Saudi Arabia tops MENA in Government AI Readiness Index 2025' }
 };
 const SRC_ORDER = Object.keys(SRC);
-const cite = (...keys) => keys.map(k => `<a class="cite" href="${SRC[k].u}" target="_blank" rel="noopener">${SRC[k].p}</a>`).join(lang === 'ar' ? '، ' : '; ');
+const LANGSRC = { nosf:['nosfAr','nosfEn'], apsf:['apsfAr','apsfEn'] };
+const cite = (...keys) => keys.map(k => LANGSRC[k] ? LANGSRC[k][lang === 'ar' ? 0 : 1] : k).map(k => `<a class="cite" href="${SRC[k].u}" target="_blank" rel="noopener">${SRC[k].p}</a>`).join(lang === 'ar' ? '، ' : '; ');
 const srcLine = (...keys) => `<p class="src">${tx(T('المصدر: ','Source: '))}${cite(...keys)}</p>`;
 
 const UI = {
@@ -448,15 +454,15 @@ const SECTIONS = [
 
 /* ---------------- data ---------------- */
 const TILES = [
-  { k:T('مختصون وخبراء مُبلَّغ عنهم','Specialists & experts reported'), v:'14,495', s:T('72% من مستهدف 20,000 لعام 2030 · يونيو 2026','72% of the 20,000 target for 2030 · June 2026'), tone:'good', src:['sdaiaJun'] },
-  { k:T('مستفيدون من برامج التدريب','Training beneficiaries'), v:'1.56M', s:T('تراكمي حتى يونيو 2026؛ «سماي» تجاوز مليونًا في 2025','Cumulative to June 2026; SAMAI passed 1M in 2025'), tone:'good', src:['sdaiaJun','moe'] },
-  { k:T('قيادات حكومية مدرّبة','Government leaders trained'), v:'278+', s:T('في البيانات والذكاء الاصطناعي · يونيو 2026','In Data & AI · June 2026'), src:['sdaiaJun'] },
+  { k:T('المختصون','Specialists'), v:'17,334', s:T('87% من مستهدف 20,000 لعام 2030 · سبتمبر 2026','87% of the 20,000 target for 2030 · September 2026'), tone:'good', src:['sdaiaSep'] },
+  { k:T('محو الأمية («سماي»)','Literacy (SAMAI)'), v:'1.4M', s:T('سبتمبر 2026 · تجاوز مستهدف المليون','September 2026 · past the one-million target'), tone:'good', src:['sdaiaSep'] },
+  { k:T('قيادات حكومية مدرّبة','Government leaders trained'), v:'278+', s:T('في البيانات والذكاء الاصطناعي · سبتمبر 2026','In Data & AI · September 2026'), src:['sdaiaSep'] },
   { k:T('ترتيب محور المواهب','Talent sub-pillar rank'), v:'60/83', s:T('مقابل المرتبة الأولى في الاستراتيجية الحكومية (Tortoise 2024)','vs 1st on government strategy (Tortoise 2024)'), tone:'gap', src:['argaam'] }
 ];
 
 const STORY = [
   [T('الطموح','Ambition'), T('20,000 مختص وخبير و40% من القوى العاملة بمهارات أساسية بحلول 2030.','20,000 specialists and experts; 40% of the workforce with basic skills by 2030.')],
-  [T('الزخم','Momentum'), T('1.56 مليون مستفيد و14,495 مختصًا وخبيرًا حتى يونيو 2026، والمرحلة الثانية من «سماي» مع 11 وزارة.','1.56M beneficiaries and 14,495 specialists and experts by June 2026; SAMAI phase 2 runs with 11 ministries.')],
+  [T('الزخم','Momentum'), T('17,334 مختصًا (87% من المستهدف) و1.4 مليون في «سماي» حتى سبتمبر 2026، والمرحلة الثانية من «سماي» مع 11 وزارة.','17,334 specialists (87% of target) and 1.4M through SAMAI by September 2026; SAMAI phase 2 runs with 11 ministries.')],
   [T('الموقع','Position'), T('ريادة عالمية في الاستراتيجية والتبنّي، وعمق المواهب هو الحلقة الأضعف.','World-leading on strategy and adoption; talent depth is the weakest link.')],
   [T('الفجوة','Gap'), T('الحجم لم يعد القيد؛ القيد هو الإتقان المُثبت في طبقة المختصين والخبراء، وتحويل المدخلات إلى مخرجات (الابتكار: المدخلات 30، المخرجات 62).','Volume is no longer the constraint; verified proficiency in the specialist and expert tier is — and converting inputs into outputs (innovation inputs 30th, outputs 62nd).')],
   [T('الاستجابة','Response'), T('خارطة مرحلية تنقل الاستثمار من التوعية الشاملة إلى مسارات مختصين حسب الدور.','A phased roadmap that shifts investment from mass literacy to role-based specialist pipelines.')]
@@ -473,9 +479,9 @@ const MANDATE = [
 ];
 
 const PROGRESS = [
-  { k:T('المختصون والخبراء','Specialists & experts'), v:14495, tgt:20000, fmt:'14,495', of:'20,000', s:T('مُبلَّغ عنه في يونيو 2026. يحتاج إلى مطابقة مع تعريف «المستوى 4 فأعلى المُثبت» قبل اعتماده خط أساس للمؤشر 1.','Reported June 2026. Must be reconciled to the “verified Level 4+” definition before it becomes the KPI 1 baseline.'), src:['sdaiaJun'] },
-  { k:T('محو الأمية («سماي»)','Literacy (SAMAI)'), v:1000000, tgt:1000000, fmt:'1M+', of:'1M', s:T('تحقق المستهدف في 2025؛ 1.56 مليون مستفيد إجمالًا حتى يونيو 2026. المستهدف الحاكم الآن 40% من القوى العاملة.','Target met in 2025; 1.56M total beneficiaries by June 2026. The governing target is now 40% of the workforce.'), src:['moe','sdaiaJun'] },
-  { k:T('القيادات الحكومية','Government leaders'), v:278, tgt:null, fmt:'278+', of:'—', s:T('مدرّبون في البيانات والذكاء الاصطناعي. لا يوجد مستهدف وطني معلن؛ المقترح: 100% من مستوى وكيل وزارة (المؤشر 10).','Trained in Data & AI. No published national target; proposed: 100% of deputy-minister level (KPI 10).'), src:['sdaiaJun'] }
+  { k:T('المختصون','Specialists'), v:17334, tgt:20000, fmt:'17,334', of:'20,000', s:T('سبتمبر 2026 — 87% من مستهدف 2030 (من 14,495 في يونيو). يُطابَق مع تعريف «المستوى 4 فأعلى المُثبت» قبل اعتماده خط أساس للمؤشر 1.','September 2026 — 87% of the 2030 target (up from 14,495 in June). Reconcile to the “verified Level 4+” definition before it becomes the KPI 1 baseline.'), src:['sdaiaSep'] },
+  { k:T('محو الأمية («سماي»)','Literacy (SAMAI)'), v:1400000, tgt:1000000, fmt:'1.4M', of:'1M', s:T('سبتمبر 2026 — تجاوز مستهدف المليون الأصلي. المستهدف الحاكم الآن 40% من القوى العاملة.','September 2026 — past the original one-million target. The governing target is now 40% of the workforce.'), src:['sdaiaSep','moe'] },
+  { k:T('القيادات الحكومية','Government leaders'), v:278, tgt:null, fmt:'278+', of:'—', s:T('سبتمبر 2026 (دون تغيير منذ يونيو). لا يوجد مستهدف وطني معلن؛ المقترح: 100% من مستوى وكيل وزارة (المؤشر 10).','September 2026 (unchanged since June). No published national target; proposed: 100% of deputy-minister level (KPI 10).'), src:['sdaiaSep'] }
 ];
 
 const PYRAMID = [
@@ -489,8 +495,8 @@ const PYRAMID = [
 const L = { o:T('مخرجات','Outcome'), p:T('خط الإمداد','Pipeline'), q:T('الجودة','Quality'), e:T('الكفاءة','Efficiency') };
 const W1 = T('الموجة الأولى','Wave 1');
 const KPIS = [
-  [1,'o',T('المختصون والخبراء المعتمدون','Certified specialists & experts'),T('سعوديون معتمدون في المستوى 4 فأعلى على المصفوفة الوطنية','Saudis certified at Level 4+ on the national matrix'),T('14,495 مُبلَّغ عنهم (يونيو 2026) — تتطلب المطابقة','14,495 reported (Jun 2026) — needs reconciliation'),'20,000',T('ربع سنوي','Quarterly'),'sdaiaJun'],
-  [2,'o',T('ثقافة البيانات والذكاء الاصطناعي في القوى العاملة','Workforce data & AI literacy'),T('نسبة القوى العاملة المجتازة لمعيار الثقافة','Share of workforce passing the literacy standard'),T('1.56 مليون مستفيد (يونيو 2026)','1.56M beneficiaries (Jun 2026)'),T('40% من القوى العاملة','40% of workforce'),T('نصف سنوي','Semi-annual'),'sdaiaJun'],
+  [1,'o',T('المختصون والخبراء المعتمدون','Certified specialists & experts'),T('سعوديون معتمدون في المستوى 4 فأعلى على المصفوفة الوطنية','Saudis certified at Level 4+ on the national matrix'),T('17,334 (سبتمبر 2026) — تتطلب المطابقة','17,334 (Sep 2026) — needs reconciliation'),'20,000',T('ربع سنوي','Quarterly'),'sdaiaSep'],
+  [2,'o',T('ثقافة البيانات والذكاء الاصطناعي في القوى العاملة','Workforce data & AI literacy'),T('نسبة القوى العاملة المجتازة لمعيار الثقافة','Share of workforce passing the literacy standard'),T('1.4 مليون عبر «سماي» (سبتمبر 2026)','1.4M via SAMAI (Sep 2026)'),T('40% من القوى العاملة','40% of workforce'),T('نصف سنوي','Semi-annual'),'sdaiaSep'],
   [3,'o',T('موقع المواهب عالميًا','Global AI talent position'),T('ترتيب محور المواهب في مؤشر Tortoise العالمي','Talent sub-pillar rank, Tortoise Global AI Index'),T('60 (2024)','60th (2024)'),T('ضمن أفضل 30','Top 30'),T('سنوي','Annual'),'argaam'],
   [4,'o',T('معدل شغل الأدوار الحرجة','Critical-role fill rate'),T('نسبة الوظائف الحكومية الممولة في البيانات والذكاء الاصطناعي المشغولة بسعوديين خلال 90 يومًا','Funded government Data & AI posts filled by Saudis within 90 days'),W1,'≥ 85%',T('نصف سنوي','Semi-annual'),null],
   [5,'p',T('مؤشر إغلاق الفجوات','Gap-closure index'),T('الانخفاض المرجّح في فجوة الإتقان المقيسة عبر الأدوار ذات الأولوية','Weighted reduction in assessed proficiency gap across priority roles'),W1,T('−50% عن خط الأساس','−50% vs baseline'),T('سنوي','Annual'),null],
@@ -498,7 +504,7 @@ const KPIS = [
   [7,'p',T('تغطية الجهات','Entity coverage'),T('الجهات الحكومية التي أكملت تقييم القدرات وخطتها','Government entities with a completed capability assessment and plan'),W1,T('100% من الجهات ذات الأولوية','100% of priority entities'),T('ربع سنوي','Quarterly'),null],
   [8,'p',T('المرأة في طبقة المختصين','Women in specialist tier'),T('نسبة النساء من المعتمدين في المستوى 4 فأعلى','Female share of Level 4+ certified'),T('32.3% من مبتكري ومؤلفي الذكاء الاصطناعي (ستانفورد 2026)','32.3% of AI inventors/authors (Stanford 2026)'),'≥ 35%',T('سنوي','Annual'),'eam'],
   [9,'q',T('معدل التطبيق الفعلي','Applied-capability rate'),T('خريجون نفّذوا مشروعًا أو حالة استخدام خلال 6 أشهر','Graduates deploying a project or use case within 6 months'),W1,'≥ 60%',T('نصف سنوي','Semi-annual'),null],
-  [10,'q',T('جاهزية القيادات','Leadership readiness'),T('قيادات عليا أكملت معيار القيادة التنفيذية للذكاء الاصطناعي','Senior leaders completing the AI executive standard'),T('278+ قيادي مدرّب (يونيو 2026)','278+ leaders trained (Jun 2026)'),T('100% من مستوى وكيل وزارة','100% of deputy-minister level'),T('سنوي','Annual'),'sdaiaJun'],
+  [10,'q',T('جاهزية القيادات','Leadership readiness'),T('قيادات عليا أكملت معيار القيادة التنفيذية للذكاء الاصطناعي','Senior leaders completing the AI executive standard'),T('278+ قيادي مدرّب (سبتمبر 2026)','278+ leaders trained (Sep 2026)'),T('100% من مستوى وكيل وزارة','100% of deputy-minister level'),T('سنوي','Annual'),'sdaiaSep'],
   [11,'q',T('رضا جهات التوظيف','Employer satisfaction'),T('تقييم جهات التوظيف لجاهزية الخريجين (1–5)','Employer rating of graduate job-readiness (1–5)'),W1,'≥ 4.2',T('سنوي','Annual'),null],
   [12,'e',T('تكلفة المختص المعتمد','Cost per certified specialist'),T('إنفاق البرامج ÷ اعتمادات المستوى 4 فأعلى','Program spend ÷ Level 4+ certifications'),W1,T('انخفاض سنوي','Falling year on year'),T('سنوي','Annual'),null]
 ];
@@ -529,8 +535,8 @@ const GII = [
 /* National evidence system */
 const EVID = [
   [T('التصنيف السعودي للمهارات','Saudi Skills Taxonomy'),T('وزارة الموارد البشرية','HRSD'),T('13,939 مهارة و2,047 مهنة، مرتبطة بالمهام ومستويات الإتقان — اللغة الموحدة بين سوق العمل والتعليم.','13,939 skills and 2,047 occupations linked to tasks and proficiency — the shared language of labour market and education.'),T('محدَّث 17 يونيو 2026','Updated 17 Jun 2026'),'set',['hrsdTax']],
-  [T('إطار المعايير المهنية الوطنية للبيانات والذكاء الاصطناعي','National Occupational Standard Framework — Data & AI'),T('سدايا','SDAIA'),T('المهام والجدارات والمتطلبات المهنية لكل مهنة في البيانات والذكاء الاصطناعي — مصدر ملفات الأدوار (TSKA).','Tasks, competencies and professional requirements per Data & AI occupation — the source for TSKA role profiles.'),T('إصدار ثانٍ مُعلن · يتطلب التحقق','2nd edition announced · verify'),'wait',[]],
-  [T('إطار معايير البرامج الأكاديمية الوطنية (الإصدار الثاني)','National Academic Programs Standards Framework (2nd ed.)'),T('سدايا','SDAIA'),T('مخرجات التعلم ووحدات المعرفة وجودة البرامج الجامعية — يحدد أين تكفي الشهادة وأين يلزم تدريب مكمّل.','Learning outcomes, knowledge units and programme quality — shows where degrees suffice and where top-up training is needed.'),T('ICAN 2026 · يتطلب التحقق','ICAN 2026 · verify'),'wait',[]],
+  [T('إطار المعايير المهنية الوطنية للبيانات والذكاء الاصطناعي','National Occupational Standard Framework — Data & AI'),T('سدايا','SDAIA'),T('المهام والجدارات والمتطلبات المهنية لكل مهنة في البيانات والذكاء الاصطناعي — مصدر ملفات الأدوار (TSKA).','Tasks, competencies and professional requirements per Data & AI occupation — the source for TSKA role profiles.'),T('منشور · سدايا','Published · SDAIA'),'set',['nosf']],
+  [T('إطار معايير البرامج الأكاديمية الوطنية (الإصدار الثاني)','National Academic Programs Standards Framework (2nd ed.)'),T('سدايا','SDAIA'),T('مخرجات التعلم ووحدات المعرفة وجودة البرامج الجامعية — يحدد أين تكفي الشهادة وأين يلزم تدريب مكمّل.','Learning outcomes, knowledge units and programme quality — shows where degrees suffice and where top-up training is needed.'),T('الإصدار الثاني · منشور','2nd edition · published'),'set',['apsf']],
   [T('منصة «أذكى إكس»','Athka X platform'),T('سدايا','SDAIA'),T('مسارات مهنية وسجل وطني للمهارات؛ حضوري وعن بُعد ومدمج وذاتي — طبقة التنفيذ وتسجيل الاعتمادات.','Professional pathways and a national skills record; in-person, remote, blended, self-paced — the delivery and credential layer.'),T('أُطلقت يناير 2026','Launched Jan 2026'),'set',['athka']],
   [T('المرصد الوطني للعمل','National Labor Observatory'),T('هدف','HRDF'),T('التوظيف والأجور حسب القطاع والمنطقة والفئة — إشارة الطلب الأساسية.','Employment and wages by sector, region and demographic — the primary demand signal.'),T('شهري وربع سنوي','Monthly & quarterly'),'set',['nlo']],
   [T('إحصاءات سوق العمل واستخدام التقنية في المنشآت','Labour-force & establishment ICT statistics'),T('الهيئة العامة للإحصاء','GASTAT'),T('خط الأساس للمشاركة والبطالة، وتبنّي الذكاء الاصطناعي في المنشآت.','Participation and unemployment baseline; AI adoption by establishments.'),T('ربع سنوي','Quarterly'),'set',[]],
@@ -824,7 +830,7 @@ function render() {
     <p class="src">${tx(T('صيغة مقترحة للرؤية والرسالة لاعتماد القيادة.','Proposed vision and mission, for leadership validation.'))} ${srcLine('nsdai').replace('<p class="src">','').replace('</p>','')}</p>
 
     <div class="block">
-      <div class="sub-h"><h3>${tx(T('التقدم نحو مستهدفات 2030 — يونيو 2026','Progress against 2030 targets — June 2026'))}</h3><p>${tx(T('الأرقام المعلنة تقيس حجم التدريب، ولا تثبت وحدها الإتقان المهني أو أثر التوظيف والإنتاجية؛ لذلك يُطابَق كل رقم مع تعريف مؤشره قبل اعتماده.','Published figures measure training scale. On their own they do not establish occupational proficiency, employment or productivity gains, so each is reconciled to its KPI definition before adoption.'))}</p></div>
+      <div class="sub-h"><h3>${tx(T('التقدم نحو مستهدفات 2030 — سبتمبر 2026','Progress against 2030 targets — September 2026'))}</h3><p>${tx(T('الأرقام المعلنة تقيس حجم التدريب، ولا تثبت وحدها الإتقان المهني أو أثر التوظيف والإنتاجية؛ لذلك يُطابَق كل رقم مع تعريف مؤشره قبل اعتماده.','Published figures measure training scale. On their own they do not establish occupational proficiency, employment or productivity gains, so each is reconciled to its KPI definition before adoption.'))}</p></div>
       <div class="meters">${PROGRESS.map(p => { const pct = p.tgt ? Math.min(100, Math.round(p.v / p.tgt * 100)) : 0; return `<div class="meter"><div class="k">${tx(p.k)}</div><div class="v"><span dir="ltr">${p.fmt}</span> <small dir="ltr">/ ${p.of}</small></div><div class="bar" role="img" aria-label="${p.tgt ? pct + '%' : tx(T('لا يوجد مستهدف معلن','No published target'))}"><i style="width:${pct}%"></i></div><div class="s">${tx(p.s)}</div><div class="src">${cite(...p.src)}</div></div>`; }).join('')}</div>
     </div>
 
@@ -855,7 +861,7 @@ function render() {
     ${head('evidence', T('2 · منظومة الأدلة الوطنية','2 · National evidence system'), T('لغة مهارات واحدة، وإشارة طلب واحدة','One skills language, one demand signal'),
       T('تملك المملكة الأصول اللازمة لتخطيط قائم على الأدلة: تصنيف وطني للمهارات، ومعايير مهنية للبيانات والذكاء الاصطناعي، ومرصد لسوق العمل، ومنصة تدريب بسجل مهارات. التحدي التالي هو ربطها في نموذج واحد متسق بدل تعريفات متفرقة بين الجهات.','The Kingdom already holds the assets for evidence-based planning: a national skills taxonomy, Data & AI occupational standards, a labour-market observatory, and a training platform with a skills record. The next challenge is connecting them into one harmonised model rather than definitions scattered across institutions.'),
       T('على أي أدلة نبني قرارات بناء القدرات؟','What evidence should capability decisions rest on?'))}
-    <div class="sub-h"><h3>${tx(T('سجل الأصول الوطنية','National asset register'))}</h3><p>${tx(T('الأخضر: أصل قائم ومنشور. الكهرماني: مُعلن ويحتاج التحقق من الإصدار والنص الرسمي قبل الاستشهاد به.','Green: live and published. Amber: announced; verify edition and official text before citing.'))}</p></div>
+    <div class="sub-h"><h3>${tx(T('سجل الأصول الوطنية','National asset register'))}</h3><p>${tx(T('جميع الأصول قائمة ومنشورة؛ يُفتح كل إطار بلغة الصفحة الحالية.','All assets are live and published; each framework opens in the page’s current language.'))}</p></div>
     ${table([T('الأصل','Asset'), T('المالك','Owner'), T('ما يقدمه للتخطيط','What it gives planning'), T('الحالة','Status')], EVID.map(([n, o, d, st, tone, s]) => tr([`<b>${tx(n)}</b>`, tx(o), `${tx(d)}${s.length ? `<div>${cite(...s)}</div>` : ''}`, `<span class="chip ${tone}">${tx(st)}</span>`])))}
 
     <div class="block">
@@ -1072,7 +1078,7 @@ function render() {
     ${head('sources', T('المرجعية','Evidence'), T('المصادر والمنهجية','Sources and method'),
       T('يظهر لكل رقم ناشره وسنة إصداره. قبل الإطلاق الرسمي تُستبدل التغطيات الصحفية بالمصادر الأولية (سدايا، واس، الجهة الناشرة للمؤشر)، وتُميَّز أي قيمة أقدم من آخر إصدار لمؤشرها.','Every figure shows its publisher and edition. Before official launch, press coverage is replaced by primary sources (SDAIA, SPA, the index publisher), and any figure older than its index’s latest edition is flagged.'),
       T('هل يمكن التحقق من كل رقم؟','Can every figure be checked?'))}
-    <div class="callout" style="margin:0 0 28px"><b>${tx(T('أولوية التحقق قبل الإطلاق: ','Verify before launch: '))}</b>${tx(T('أرقام التعرض للذكاء الاصطناعي المنسوبة لتقرير المادة الرابعة 2026 (45% · 80% · 30%)، وترتيب المملكة في مؤشر الذكاء الاصطناعي المسؤول 2026 (67)، والترتيب العام في مؤشر أكسفورد 2025 (15)، وإصدارات أطر سدايا المهنية والأكاديمية، ودرجة مؤشر صندوق النقد AIPI (مصدر ثانوي)، ومقاييس ستانفورد 2026 (من التغطية الصحفية)، وأي إصدار من مؤشر Tortoise بعد 2024. ويُطابَق رقم 14,495 مع تعريف «المستوى 4 فأعلى».','the AI-exposure figures attributed to the 2026 Article IV (45% · 80% · 30%), the Responsible AI Index 2026 rank (67th), Oxford 2025 overall rank (15th), the editions of SDAIA’s occupational and academic frameworks, the IMF AIPI score (secondary), Stanford 2026 metrics (from press coverage), and any post-2024 Tortoise edition. Reconcile the 14,495 figure to the Level 4+ definition.'))}</div>
+    <div class="callout" style="margin:0 0 28px"><b>${tx(T('أولوية التحقق قبل الإطلاق: ','Verify before launch: '))}</b>${tx(T('أرقام التعرض للذكاء الاصطناعي المنسوبة لتقرير المادة الرابعة 2026 (45% · 80% · 30%)، وترتيب المملكة في مؤشر الذكاء الاصطناعي المسؤول 2026 (67)، والترتيب العام في مؤشر أكسفورد 2025 (15)، ودرجة مؤشر صندوق النقد AIPI (مصدر ثانوي)، ومقاييس ستانفورد 2026 (من التغطية الصحفية)، وأي إصدار من مؤشر Tortoise بعد 2024. ويُطابَق رقم 17,334 مع تعريف «المستوى 4 فأعلى».','the AI-exposure figures attributed to the 2026 Article IV (45% · 80% · 30%), the Responsible AI Index 2026 rank (67th), Oxford 2025 overall rank (15th), the IMF AIPI score (secondary), Stanford 2026 metrics (from press coverage), and any post-2024 Tortoise edition. Reconcile the 17,334 figure to the Level 4+ definition.'))}</div>
     <ol>${SRC_ORDER.map(k => `<li><a href="${SRC[k].u}" target="_blank" rel="noopener">${SRC[k].t}</a><span>${SRC[k].p}</span></li>`).join('')}</ol>
   </div></section>`);
 
