@@ -86,3 +86,11 @@ PASS_DATED (نتيجة مؤرخة داخل النافذة) · PASS_YEAR_PINNED (
 ## 10. الحوكمة · Governance
 
 يُعاد تدقيق القصص المنشورة عند كل تعديل للسياسة، وتُدوَّن كل إضافة أو إزالة بجدول تدقيق مؤرخ يبيّن: الخريج، البرنامج، تاريخ الإتمام، النتيجة، تاريخها، الأشهر بعد الإتمام، رابط الدليل، سبب الاعتماد، درجة الثقة. الرقم الرسمي لمسار NVIDIA (232) لا يُرفع من مصادر مفتوحة. Published stories are re-audited on every policy change; every add/remove is logged in a dated audit table with the columns above. The official NVIDIA figure (232) is never raised from OSINT.
+
+---
+
+### ملحق — حكم 21 أكتوبر 2026 · Ruling, 21 October 2026
+
+**البرنامج الوسيط غير الأكاديمي:** لا يحجب التحاقُ الخريج ببرنامج تدريبي من جهة أخرى (مثل الأكاديمية السعودية الرقمية أو Le Wagon) بين إتمام برنامج الأكاديمية والتوظيف نسبةَ القصة إلى الأكاديمية، ما دامت بقية الشروط متحققة (التعيين مؤرخ بالشهر ضمن 14 شهرًا، ومرتبط بالتدريب، ولاحق للإتمام). تُذكر الواقعة في متن القصة. (أ. د. ممدوح العنزي)
+
+**Intervening non-Academy programme:** a training programme from another provider taken between completing the Academy programme and the hire does not block attribution, provided every other Policy v1.0 condition holds (month-dated hire within 14 months, related to the training, after completion). The intervening programme is stated in the story text. (Prof. Mamdouh Alenezi)

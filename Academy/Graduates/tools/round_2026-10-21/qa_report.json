@@ -1,0 +1,193 @@
+{
+ "shared_li": [],
+ "shared_gh": [],
+ "win_values": [
+  [
+   "ضمن النطاق",
+   2978
+  ],
+  [
+   "حدّي",
+   367
+  ],
+  [
+   "غير محدد",
+   180
+  ],
+  [
+   "قبل النطاق",
+   11
+  ],
+  [
+   "خارج النطاق",
+   1
+  ]
+ ],
+ "samename_new": [
+  [
+   3452,
+   "عبدالعزيز العنزي",
+   [
+    3215
+   ]
+  ],
+  [
+   3462,
+   "خالد الزهراني",
+   [
+    2208
+   ]
+  ],
+  [
+   3468,
+   "نوف العتيبي",
+   [
+    2246
+   ]
+  ],
+  [
+   3520,
+   "ماجد العتيبي",
+   [
+    1779
+   ]
+  ],
+  [
+   3522,
+   "ريم العنزي",
+   [
+    1771
+   ]
+  ]
+ ],
+ "stories": 190,
+ "dup_story_ids": [],
+ "no_logo": [
+  "meshal-alamr",
+  "fares-altoukhi",
+  "mohammed-almalki",
+  "maysam-almalah",
+  "alanoud-alotaibi",
+  "rayah-aldawsari",
+  "hassn-alqaeri",
+  "yasser-alshehri",
+  "nujud-senan",
+  "abdulrhman-alghamdi",
+  "adel-alwayili",
+  "lena-alshiddi"
+ ],
+ "no_photo": [
+  "reem-albalawi",
+  "jehad-aljazi",
+  "najd-alqahtani",
+  "jennan-sowayan",
+  "sultan-alsubaie",
+  "rand-alsaleh",
+  "joud-alghamdi",
+  "maria-a-alghamdi",
+  "lamia-alasmari"
+ ],
+ "prov_name_mismatch": [
+  [
+   "haya-albaqami",
+   "هيا البقمي",
+   2711,
+   "Maram Alshehri"
+  ],
+  [
+   "nujud-senan",
+   "نجود سنان",
+   2703,
+   "Nujud Senan"
+  ],
+  [
+   "hassan-abid",
+   "حسن عبدالباسط عابد",
+   522,
+   "Hassan Abdulbasit Abid"
+  ],
+  [
+   "noura-alghonaim",
+   "نورة غنيم الغنيم",
+   617,
+   "Noura Ghonaim AlGhonaim"
+  ],
+  [
+   "dina-bokhamseen",
+   "دينا بوخمسين",
+   2387,
+   "Dina Bokhamseen"
+  ]
+ ],
+ "story_keys": [
+  "achievements",
+  "categories",
+  "category",
+  "id",
+  "impact",
+  "links",
+  "name",
+  "nameEn",
+  "org",
+  "orgLogo",
+  "period",
+  "photo",
+  "program",
+  "provenance",
+  "quote",
+  "reviewFlag",
+  "role",
+  "story",
+  "year"
+ ],
+ "story_org_count": 111,
+ "story_years": [
+  [
+   2021,
+   30
+  ],
+  [
+   2022,
+   9
+  ],
+  [
+   2023,
+   34
+  ],
+  [
+   2024,
+   71
+  ],
+  [
+   2025,
+   30
+  ],
+  [
+   2026,
+   16
+  ]
+ ],
+ "quote_kinds": [
+  [
+   "draft",
+   167
+  ],
+  [
+   "verified",
+   23
+  ]
+ ],
+ "counts": {
+  "N": 3537,
+  "T": {
+   "ds": 1052,
+   "ai": 1668,
+   "other": 215,
+   "genai": 256,
+   "dmg": 332,
+   "coop": 14
+  },
+  "wl": 1660,
+  "uu": 2694
+ }
+}
