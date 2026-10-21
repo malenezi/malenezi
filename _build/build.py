@@ -599,6 +599,7 @@ def build_index(insights, pubs):
       <div class="btn-row">
         <a class="btn btn--solid" href="contact.html">Start a conversation</a>
         <a class="btn btn--ghost" href="myCV.pdf">{dl} Download CV</a>
+        <a class="btn btn--ghost" href="My_Resume.pdf">{dl} Download Resume</a>
       </div>
       {profiles}
     </div>
@@ -906,6 +907,7 @@ def build_leadership():
       <div class="btn-row">
         <a class="btn btn--solid" href="projects.html">Projects &amp; impact</a>
         <a class="btn btn--ghost" href="myCV.pdf">Download CV</a>
+        <a class="btn btn--ghost" href="My_Resume.pdf">Download Resume</a>
       </div>
     </div>
   </div>
@@ -1318,6 +1320,7 @@ def build_contact():
         </div>
         <div class="btn-row" style="margin-top:.9rem">
           <a class="btn btn--ghost" href="myCV.pdf">{dl} CV (English)</a>
+          <a class="btn btn--ghost" href="My_Resume.pdf">{dl} Resume</a>
           <a class="btn btn--ghost" href="myCV-Arabic.pdf">{dl} CV (Arabic)</a>
         </div>
         <h3 style="margin-top:2.6rem">Profiles</h3>
@@ -1459,6 +1462,7 @@ SITEMAP = [
     ("myblog/", "weekly", "0.8"),
     ("myCV.pdf", "monthly", "0.5"),
     ("myCV-Arabic.pdf", "monthly", "0.5"),
+    ("My_Resume.pdf", "monthly", "0.5"),
 ]
 # Pages that are translations of each other (hreflang cluster).
 LANG_PAIRS = {"": "en", ARABIC: "ar"}
