@@ -1,0 +1,29 @@
+alanoud-awaji | Alanoud Awaji | SDAIA T5 Data Science Bootcamp | Mar–Jun 2024 | NEW | story no (QA Globant)
+nabeel-bukhari | Nabeel B. | SDAIA–Oxford AI Applications Engineering Bootcamp | Aug–Oct 2025 | NEW | story no (NCA cyber GDP)
+abdallah-albadrani | Future AI Programmers Bootcamp Dec 2022–present | HOLD (start 2022, no completion)
+rzan-algarni | Rzan Algarni | Data Governance Bootcamp | Jan–Feb 2024 | NEW | story no (PIF BSM)
+islam-alharbi | Islam Alharbi | Traffic Management Technologies (T5 Zeham) Bootcamp | Jul–Oct 2024 | NEW | story no (intern)
+noura-almatrafi | Noura Almatrafi | ServiceNow Bootcamp | Aug–Oct 2025 | NEW
+ruba-abdullah-alfelaih | Ruba Alfelaih | Data Science Bootcamp (T5) | Sep–Dec 2023 | NEW | story no (hire Dec 2023 = completion month, confidential)
+batoolaalghamdi | Batool A. | T5 DS&AI Sep–Dec 2023 + ML Bootcamp Jan–Feb 2024 | NEW | story no
+layan-albarraq-4673a2310 | Layan Albarraq | Cloud systems management Bootcamp | Oct–Dec 2025 | NEW
+dalia-alfallaj | REJECT no SDAIA entry
+ruwayda-alshehri | Ruwayda Alshehri CDMP | Data Governance Bootcamp | May–Jun 2024 | NEW | story PENDING: ZATCA Adv Analytics Trainee Dec 2024 (+6), Specialist Aug 2025 (+14) — relatedness DG->analytics
+jana-alzamil-7a4318209 | Jana Alzamil | AI Application Building bootcamp | Jan 2025 | NEW
+donaalsalhi | Dona Alsalhi | SDAIA–Oxford AI Bootcamp | Aug–Oct 2025 | NEW | STORY: Newera.ai AI Engineer intern Nov 2025, AI Engineer I full-time Jan 2026 (+3)
+alialjanbi | Ali Aljanbi | SDAIA Cyber Security Bootcamp (SDAIA Academy) | Oct 2021–Apr 2022 | NEW out-of-window
+atheeralghamdi2 | Atheer A. | T5 Data Science Bootcamp | Dec 2021–Jan 2022 | NEW out-of-window
+maha-almutair | Maha A. | Data Science and AI Bootcamp (T5) | Sep–Dec 2023 | NEW
+lujeensendy | Lujeen Sendy | Advanced Pathways in AI Training Bootcamp | Nov 2024 | NEW
+qmaryamj | Maryam J. | Data Science and AI BootCamp (T5) | Jul–Oct 2024 | NEW
+rand-alfaifi | Rand Alfaifi | SDAIA Bootcamp (unnamed) | Oct–Dec 2025 | NEW
+afrah-almutairii | Afrah AlMutairi | Junior Data Scientist (T5 Bootcamp) | Sep–Dec 2021 | NEW out-of-window
+rayid-al-shammari-337272293 | Rayid Al Shammari | AI Professionals Bootcamp (AI Professional Trainee) | Dec 2025–Feb 2026 | NEW
+shroog-alshamrani-msc-b17ba1252 | Shroog Alshamrani MSc | LLM Bootcamp (LLM Trainee) | Jul–Sep 2024 | NEW | STORY: AI Specialist, Confidential Government, full-time Feb 2025 (+5)
+ali-al-ghamdi-0588372ba | Trainee SDAIA Mar–Jun 2024 unnamed | HOLD
+rama-alshehri | Rama Alshehri | COOP | Jun–Aug 2025 | NEW coop
+melafalkhathran | Melaf Al Khathran | COOP (IAM & Cloud Security) | Jan–May 2026 | NEW coop (ends May 2026)
+eyad-alfaifi | Eyad Alfaifi | COOP | Aug–Nov 2025 | NEW coop
+raghadalnamlah | Raghad Alnamlah | COOP | Jan–Apr 2026 | NEW coop
+norah-algarnas | Norah Algarnas ECBA | COOP | Aug–Oct 2025 | NEW coop
+danah-abdulrahman | COOP Aug 2026–present | SKIP ongoing
