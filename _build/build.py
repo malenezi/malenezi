@@ -366,9 +366,9 @@ RESEARCH_PROGRAMME = [
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
              7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
-# Google Scholar, read on 15 Oct 2026: 8,320 citations (7,631 since 2021),
+# Google Scholar, read on 26 Oct 2026: 8,416 citations (7,727 since 2021),
 # h-index 38 (34 since 2021), i10-index 101 (84 since 2021).
-CITATIONS = "8,300+"
+CITATIONS = "8,400+"
 H_INDEX = "38"
 I10_INDEX = "101"
 
@@ -385,7 +385,7 @@ def peer_reviewed(pubs):
 def metrics(pubs):
     c = peer_reviewed(pubs)
     return [
-        (CITATIONS, "Citations", "Google Scholar · 7,600+ since 2021"),
+        (CITATIONS, "Citations", "Google Scholar · 7,700+ since 2021"),
         (H_INDEX, "h-index", "Career total · 34 since 2021"),
         (I10_INDEX, "i10-index", "Career total · 84 since 2021"),
         (str(c["reviewed"]), "Publications", "Peer-reviewed"),
