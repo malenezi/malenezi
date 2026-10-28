@@ -161,6 +161,15 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
 .rec b{display:block;font-size:14.5px;color:var(--ink)}
 .rec p{font-size:13.5px;margin-top:.15rem}
 
+.cert-card{padding:1.5rem 1.6rem;display:flex;flex-direction:column;gap:.85rem}
+.cert-card .top{display:flex;align-items:center;gap:10px}
+.cert-card .top .sd-tag{margin-inline-start:auto}
+.cert-card .code{font-family:var(--font-mono);font-weight:700;color:var(--brand);direction:ltr}
+.cert-card h3{font-size:1.08rem;line-height:1.5}
+.cert-card .lbl{font-size:12px;font-weight:700;color:var(--ink-3);margin-bottom:.35rem}
+.cert-card ul{margin:0;padding-inline-start:1.1rem;display:grid;gap:.2rem;font-size:13.5px;color:var(--ink-2)}
+.cert-card .meta{display:grid;gap:.35rem;font-size:13.5px;color:var(--ink-2)}
+.cert-card .meta div{display:flex;gap:8px;align-items:flex-start}
 @media(max-width:640px){.step-card{padding:1.3rem 1.2rem}.journey-nav .pos{order:-1;width:100%;text-align:center}}
 </style>
 </head>
@@ -265,11 +274,23 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
   </div>
 </section>
 
-<!-- SKILLS MATRIX -->
-<section class="sd-section" id="skills">
+<!-- GENAI ACADEMY CERTIFICATIONS -->
+<section class="sd-section" id="certs">
   <div class="sd-container">
     <div class="sd-section__head">
-      <div class="sd-eyebrow"><span class="sec-num">05</span><span data-ar="الجدارات" data-en="Competencies"></span></div>
+      <div class="sd-eyebrow"><span class="sec-num">05</span><span data-ar="أكاديمية الذكاء الاصطناعي التوليدي" data-en="GenAI Academy"></span></div>
+      <h2 data-ar="شهادات NVIDIA المعتمدة" data-en="NVIDIA certifications"></h2>
+      <p data-ar="مسارات اعتماد بالشراكة مع NVIDIA تُقدَّم إلى جانب المسارات الأربعة: دورات تحضيرية ثم اختبار NVIDIA الرسمي. لا تدخل ضمن البرامج السبعة والثلاثين ولا في حساب الأيام التدريبية." data-en="Partner certification tracks offered alongside the four pathways: preparatory courses, then NVIDIA's official exam. They sit outside the 37 programs and the training-day count."></p>
+    </div>
+    <div id="certgrid" class="sd-grid sd-grid--2"></div>
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section class="sd-section sd-section--alt" id="skills">
+  <div class="sd-container">
+    <div class="sd-section__head">
+      <div class="sd-eyebrow"><span class="sec-num">06</span><span data-ar="الجدارات" data-en="Competencies"></span></div>
       <h2 data-ar="مصفوفة المهارات × البرامج" data-en="Skills × Programs matrix"></h2>
       <p data-ar="مستوى الإتقان لكل برنامج — I تعريف · D تطوير · M إتقان." data-en="Proficiency built per program — I Introduced · D Developed · M Mastered."></p>
     </div>
@@ -283,11 +304,11 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
 </section>
 
 <!-- NAMING + RECOMMENDATIONS -->
-<section class="sd-section sd-section--alt" id="design">
+<section class="sd-section" id="design">
   <div class="sd-container design-grid">
     <div>
       <div class="sd-section__head">
-        <div class="sd-eyebrow"><span class="sec-num">06</span><span data-ar="اصطلاح التسمية" data-en="Naming Convention"></span></div>
+        <div class="sd-eyebrow"><span class="sec-num">07</span><span data-ar="اصطلاح التسمية" data-en="Naming Convention"></span></div>
         <h2 data-ar="ترميز موحّد بمستوى مرجعي" data-en="A unified, reference-grade code"></h2>
       </div>
       <div class="sd-card sd-card--flat naming-card">
@@ -297,7 +318,7 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
     </div>
     <div>
       <div class="sd-section__head">
-        <div class="sd-eyebrow"><span class="sec-num">07</span><span data-ar="التحسين المستقبلي" data-en="Future Improvement"></span></div>
+        <div class="sd-eyebrow"><span class="sec-num">08</span><span data-ar="التحسين المستقبلي" data-en="Future Improvement"></span></div>
         <h2 data-ar="مبنية للتوسّع" data-en="Built to extend"></h2>
       </div>
       <div id="recs" class="recs"></div>
@@ -306,9 +327,10 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
 </section>
 </main>
 
-<footer class="sd-footer" data-note-ar="بنية تعلّم تراكمية معيارية · إصدار 27 أكتوبر 2026 · إصدار الكاتالوج 2026.2 · 37 برنامجًا · 132 يومًا تدريبيًا" data-note-en="Modular Stackable Learning Architecture · version 27 October 2026 · Catalog v2026.2 · 37 programs · 132 training days"></footer>
+<footer class="sd-footer" data-note-ar="بنية تعلّم تراكمية معيارية · إصدار 28 أكتوبر 2026 · إصدار الكاتالوج 2026.2 · 37 برنامجًا · 132 يومًا تدريبيًا" data-note-en="Modular Stackable Learning Architecture · version 28 October 2026 · Catalog v2026.2 · 37 programs · 132 training days"></footer>
 
-<script id="catalog-data" type="application/json">{
+<script id="catalog-data" type="application/json">
+{
  "academy": {
   "name_en": "SDAIA Academy",
   "name_ar": "أكاديمية سدايا",
@@ -3162,8 +3184,79 @@ html[data-theme="dark"] table.mx td .cell.M{background:#CFE3F7;color:#06162B}
     "RAI": "D"
    }
   }
+ ],
+ "certifications": [
+  {
+   "code": "NCA-ADS",
+   "new": true,
+   "name_en": "NVIDIA-Certified Associate: Accelerated Data Science",
+   "name_ar": "شهادة NVIDIA المعتمدة المشاركة: علم البيانات المسرَّع",
+   "format_en": "Self-paced NVIDIA DLI courses + proctored exam",
+   "format_ar": "دورات NVIDIA DLI ذاتية التعلّم + اختبار مراقَب",
+   "exam_en": "60 min · 50–60 questions · English · valid 2 years",
+   "exam_ar": "60 دقيقة · 50–60 سؤالًا · بالإنجليزية · صالحة سنتين",
+   "desc_en": "The GenAI Academy's newest certification track. Learners work through NVIDIA's recommended self-paced courses on GPU-accelerated data science (RAPIDS, cuDF, cuML) and then sit NVIDIA's associate-level exam. It suits data scientists, analysts and data or ML engineers who already process large datasets.",
+   "desc_ar": "أحدث مسارات الاعتماد في أكاديمية الذكاء الاصطناعي التوليدي. يُتمّ المتدرب دورات NVIDIA الموصى بها ذاتية التعلّم في علم البيانات المسرَّع بوحدات المعالجة الرسومية (RAPIDS وcuDF وcuML)، ثم يجتاز اختبار NVIDIA بمستوى «مشارك». يناسب علماء البيانات ومحلليها ومهندسي البيانات وتعلم الآلة الذين يعالجون مجموعات بيانات كبيرة.",
+   "domains_en": [
+    "Data manipulation and preparation 23%",
+    "Machine learning with RAPIDS 16%",
+    "Pipelines and workflow automation 13%",
+    "Descriptive analysis and visualization 13%",
+    "Foundations of accelerated data science 12%",
+    "Introductory MLOps 10%",
+    "Advanced data structures 7%",
+    "Software and environment management 6%"
+   ],
+   "domains_ar": [
+    "معالجة البيانات وتهيئتها 23%",
+    "تعلم الآلة باستخدام RAPIDS 16%",
+    "خطوط المعالجة وأتمتة سير العمل 13%",
+    "التحليل الوصفي والتصوّر 13%",
+    "أساسيات علم البيانات المسرَّع 12%",
+    "مبادئ MLOps 10%",
+    "هياكل البيانات المتقدمة 7%",
+    "إدارة البرمجيات والبيئات 6%"
+   ],
+   "courses_en": [
+    "Accelerating End-to-End Data Science Workflows",
+    "Accelerated Machine Learning for Time Series Forecasting",
+    "Best Practices in Feature Engineering for Tabular Data with GPU Acceleration"
+   ],
+   "pathway_en": "Complements the Data Scientist Track.",
+   "pathway_ar": "مكمّل لمسار عالم البيانات."
+  },
+  {
+   "code": "NCA-GENL",
+   "new": false,
+   "name_en": "NVIDIA-Certified Associate: Generative AI LLMs",
+   "name_ar": "شهادة NVIDIA المعتمدة المشاركة: الذكاء الاصطناعي التوليدي والنماذج اللغوية الكبيرة",
+   "format_en": "Professional Training Program in LLMs (5 NVIDIA DLI courses) + proctored exam",
+   "format_ar": "التدريب الاحترافي في النماذج اللغوية الكبيرة (5 دورات NVIDIA DLI) + اختبار مراقَب",
+   "exam_en": "60 min · 50–60 questions · English · valid 2 years",
+   "exam_ar": "60 دقيقة · 50–60 سؤالًا · بالإنجليزية · صالحة سنتين",
+   "desc_en": "The GenAI Academy's established track, delivered in partnership with NVIDIA. Learners complete five specialised NVIDIA courses on large language models and then sit NVIDIA's associate-level exam in generative AI and LLMs.",
+   "desc_ar": "المسار الراسخ في أكاديمية الذكاء الاصطناعي التوليدي بالشراكة مع NVIDIA. يُتمّ المتدرب خمس دورات متخصصة من NVIDIA في النماذج اللغوية الكبيرة، ثم يجتاز اختبار NVIDIA بمستوى «مشارك» في الذكاء الاصطناعي التوليدي والنماذج اللغوية الكبيرة.",
+   "domains_en": [
+    "Core machine learning and AI knowledge 30%",
+    "Software development 24%",
+    "Experimentation 22%",
+    "Data analysis 14%",
+    "Trustworthy AI 10%"
+   ],
+   "domains_ar": [
+    "أساسيات تعلم الآلة والذكاء الاصطناعي 30%",
+    "تطوير البرمجيات 24%",
+    "التجريب 22%",
+    "تحليل البيانات 14%",
+    "الذكاء الاصطناعي الجدير بالثقة 10%"
+   ],
+   "courses_en": [],
+   "pathway_en": "Complements the AI Engineer Track.",
+   "pathway_ar": "مكمّل لمسار مهندس الذكاء الاصطناعي."
+  }
  ]
-}</script>
+}
+</script>
 <script>
 'use strict';
 const CATALOG = JSON.parse(document.getElementById('catalog-data').textContent);
@@ -3394,14 +3487,30 @@ function renderRecs() {
   $('#recs').innerHTML = R.map(([ic, te, ta, de, da]) => `<div class="sd-card sd-card--flat rec"><span class="sd-iconbox sd-iconbox--sm tint-blue">${I(ic, 'i-sm')}</span><div><b>${T(ta, te)}</b><p>${T(da, de)}</p></div></div>`).join('');
 }
 
+/* ---------- GenAI Academy certifications ---------- */
+function renderCerts() {
+  $('#certgrid').innerHTML = (CATALOG.certifications || []).map(c => `<article class="sd-card sd-card--flat cert-card">
+      <div class="top"><span class="sd-iconbox sd-iconbox--sm tint-blue">${I('award', 'i-sm')}</span><span class="code">${esc(c.code)}</span>${c.new ? `<span class="sd-tag sd-tag--brand">${T('مسار جديد', 'New track')}</span>` : ''}</div>
+      <h3>${L(c.name_en, c.name_ar)}</h3>
+      <p class="desc">${L(c.desc_en, c.desc_ar)}</p>
+      <div class="meta">
+        <div>${I('book-open', 'i-sm')}<span>${L(c.format_en, c.format_ar)}</span></div>
+        <div>${I('badge-check', 'i-sm')}<span>${L(c.exam_en, c.exam_ar)}</span></div>
+        <div>${I('route', 'i-sm')}<span>${L(c.pathway_en, c.pathway_ar)}</span></div>
+      </div>
+      <div><div class="lbl">${T('مجالات الاختبار', 'Exam domains')}</div><ul>${L(c.domains_en, c.domains_ar).map(x => `<li>${esc(x).replace(/ (\d+%)$/, ' — <bdi dir="ltr">$1</bdi>')}</li>`).join('')}</ul></div>
+      ${c.courses_en.length ? `<div><div class="lbl">${T('دورات NVIDIA الموصى بها', 'Recommended NVIDIA courses')}</div><ul>${c.courses_en.map(x => `<li dir="ltr">${esc(x)}</li>`).join('')}</ul></div>` : ''}
+    </article>`).join('');
+}
+
 /* ---------- in-page nav ---------- */
 function renderNav() {
-  const Lk = [['tracks', 'Pathways', 'المسارات', 'route'], ['levels', 'Levels', 'المستويات', 'layers'], ['journey', 'Journey', 'الرحلة', 'milestone'], ['catalog', 'Catalog', 'الكاتالوج', 'layout-grid'], ['skills', 'Skills', 'المهارات', 'sparkles'], ['design', 'Design', 'التصميم', 'pencil-ruler']];
+  const Lk = [['tracks', 'Pathways', 'المسارات', 'route'], ['levels', 'Levels', 'المستويات', 'layers'], ['journey', 'Journey', 'الرحلة', 'milestone'], ['catalog', 'Catalog', 'الكاتالوج', 'layout-grid'], ['certs', 'NVIDIA', 'شهادات NVIDIA', 'award'], ['skills', 'Skills', 'المهارات', 'sparkles'], ['design', 'Design', 'التصميم', 'pencil-ruler']];
   $('#navlinks').innerHTML = Lk.map(([id, e, a, ic]) => `<a href="#${id}">${I(ic)}<span>${T(a, e)}</span></a>`).join('');
 }
 
 function renderAll() {
-  renderStats(); renderTracks(); renderLevels(); renderStep(); renderFilters(); renderCatalog(); renderMatrix(); renderNaming(); renderRecs(); renderNav();
+  renderStats(); renderTracks(); renderLevels(); renderStep(); renderFilters(); renderCatalog(); renderCerts(); renderMatrix(); renderNaming(); renderRecs(); renderNav();
 }
 
 const toJourney = () => { const y = $('#journey').getBoundingClientRect().top + window.scrollY - 64; window.scrollTo({ top: y, behavior: 'smooth' }); };
