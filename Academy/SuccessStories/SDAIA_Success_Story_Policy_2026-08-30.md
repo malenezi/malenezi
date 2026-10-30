@@ -1,3 +1,5 @@
+> **⚠ ملغاة — حلّ محلها الإصدار 2.0 (30 أكتوبر 2026): `SDAIA_Success_Story_Policy_v2_2026-10-30.md`. · SUPERSEDED by Version 2.0 (30 October 2026).**
+
 # سياسة اعتماد قصص نجاح خريجي أكاديمية سدايا — الإصدار 1.0
 # SDAIA Academy Graduate Success-Story Policy — Version 1.0
 

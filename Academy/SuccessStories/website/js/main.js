@@ -113,14 +113,14 @@ function quoteBlock(s, variant) {
   const qen = SDAIA.lang === 'en' && !!q.textEn;
   const tag = draft
     ? `<span class="q-tag q-tag--draft">${I('pencil', 'i-sm')}${T('مسودة اقتباس — بانتظار الاعتماد', 'Draft quote — pending approval')}</span>`
-    : `<span class="q-tag q-tag--verified">${I('badge-check', 'i-sm')}${T('اقتباس معتمد للنشر', 'Approved for publication')}</span>`;
+    : '';
   const cite = (variant === 'modal' && !draft && q.source)
     ? `<figcaption class="q-cite ar">${esc(q.source)}</figcaption>` : '';
   return `
     <figure class="story-quote story-quote--${variant}${draft ? ' is-draft' : ''}">
       ${I('quote', 'q-mark')}
       <blockquote class="q-text ${qen ? 'en' : 'ar'}"${qen ? ' dir="ltr"' : ''}>${esc(qen ? q.textEn : q.text)}</blockquote>
-      <div class="q-foot">${tag}</div>
+      ${tag ? `<div class="q-foot">${tag}</div>` : ''}
       ${cite}
     </figure>`;
 }

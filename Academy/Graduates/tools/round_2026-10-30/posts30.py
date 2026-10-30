@@ -1,0 +1,22 @@
+# slug, name, programme, post-date, post path
+POSTS=[
+('ruba-alajlan-586b55306','Ruba Alajlan','Computer Vision Systems Development','2026-10-20','ruba-alajlan-586b55306_computer-vision-was-on-the-agenda-laptop-ugcPost-7518245306975596544-t-f1'),
+('hassan-almakinah-33b00b332','Hassan Almakinah','LLM Application Engineering','2026-10-13','hassan-almakinah-33b00b332_aelaeraepaexaeyaetaeyaerabraebaexaepaeyaep-share-7515688225949184000-z6CK'),
+('raid-almousa-8b5b842b6','Raid Almousa','Developing Generative AI Solutions','2026-10-29','raid-almousa-8b5b842b6_sdaia-sdaiaacademy-generativeai-share-7521570663468261376-Nw3K'),
+('layanaldbays','Layan Aldbays','Applied NLP','2026-10-28','layanaldbays_sdaia-sdaiaacademy-nlp-ugcPost-7521298571426664451-_Wgl'),
+('deema-alharbi-b7362a236','Deema Alharbi','Modern Data Engineering for AI Systems','2026-10-28','deema-alharbi-b7362a236_sdaiaacademy-dataengineering-share-7521199039229595648-aZcY'),
+('shahad-altamimi-9465b52b1','Shahad Altamimi','Prompt Engineering & Responsible AI Use','2026-10-28','shahad-altamimi-9465b52b1_sdaia-promptengineering-responsibleai-ugcPost-7521098663180505088-8RU3'),
+('sama-almunifi-5394472a2','Sama Almunifi','Modern Data Engineering for AI Systems','2026-10-26','sama-almunifi-5394472a2_im-happy-to-share-that-ive-obtained-a-new-ugcPost-7520462308280602624-cCHw'),
+('alanoud-abaalkhail','Alanoud Abaalkhail','Modern Data Engineering for AI Systems','2026-10-26','alanoud-abaalkhail_sdaia-dataengineering-dbt-share-7520457608122556416-qg6M'),
+('ghala-a-670a62380','Ghala Alshreef','Developing Generative AI Solutions','2026-10-26','ghala-a-670a62380_sdaia-rag-sdaiaacademy-ugcPost-7520447011993763840-v_R0'),
+('aljaze-rassam-430a3931a','Aljaze Rassam','Developing Generative AI Solutions','2026-10-26','aljaze-rassam-430a3931a_im-pleased-to-have-completed-sdaia-academy-share-7520405669838041089-SdLN'),
+('munirah-bin-dukhayn-951440282','Munirah Bin Dukhayn','LLM Applications Engineering','2026-10-26','munirah-bin-dukhayn-951440282_aelaeraepaexaeyaetaeyaerabraebaexaepaeyaep-ugcPost-7520344958642581504-nHxz'),
+('mashael-alotaibi-1m2','Mashael Alotaibi','Time Series Analysis & Forecasting','2026-10-25','mashael-alotaibi-1m2_aebaexaepaeyaep-aelaeraepaexaeyaetaeyaerabraebaexaepaeyaep-ugcPost-7520069805970763777-8cZU'),
+('ahmedbahwerth','Ahmad Bahwarith','Time Series Analysis & Forecasting','2026-10-22','ahmedbahwerth_sdaia-timeseries-forecasting-share-7519070874386259970-kyOE'),
+('norah-turki-209135386','Norah Turki','Time Series Analysis & Forecasting','2026-10-23','norah-turki-209135386_sdaiaacademy-dataanalysis-timeseriesanalysis-share-7519523830047064064-_R29'),
+('aseel-alghamdi-6a1539353','Aseel Alghamdi','Applied NLP','2026-10-21','aseel-alghamdi-6a1539353_aepaesaeyaeraepaejabraepaesaepaedaefaeuaepaehaey-ugcPost-7518655435202142208-RWbC'),
+('deema-alharbi-b7362a236','Deema Alharbi','Advanced Machine Learning Methods','2026-10-17','deema-alharbi-b7362a236_sdaia-machinelearning-datascience-ugcPost-7517291315022241793-HFbw'),
+('allolo-albasri-9b30b7345','Allolo Albasri','Advanced Machine Learning Methods','2026-10-17','allolo-albasri-9b30b7345_sdaia-machinelearning-artificialintelligence-share-7517289063935090688-LBJO'),
+('amer-m-alrukhimi-97a700316','Amer M. Alrukhimi','GenAI Solutions + AI Agent Systems + Prompt Eng + CV for Developers','2026-08-18','amer-m-alrukhimi-97a700316_sdaia-sdaiaacademy-artificialintelligence-ugcPost-7495425375460823040-530g'),
+('reem-al-anzi-6b76463a6','Reem Al Anzi','A/B Testing & Causal Inference + Applied NLP','2026-10-20','reem-al-anzi-6b76463a6_sdaia-artificialintelligence-nlp-ugcPost-7518202466795192320-LgaO'),
+]

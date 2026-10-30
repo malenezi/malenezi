@@ -42,7 +42,7 @@ html[data-theme="dark"] .year-title { color: #fff; }
 .card-name-alt { display: block; font-size: 12.5px; color: var(--ink-3); margin-bottom: .3rem; }
 .card-role { font-size: 13.5px; color: var(--brand); font-weight: 600; margin: 0 0 .55rem; }
 .card-org { display: flex; align-items: center; gap: .55rem; font-size: 13.5px; color: var(--ink-2); margin-bottom: .7rem; min-height: 26px; }
-.card-org img { height: 22px; width: auto; max-width: 88px; object-fit: contain; background: #fff; border-radius: 4px; padding: 1px 3px; }
+.card-org img { height: 34px; width: auto; max-width: 140px; object-fit: contain; background: #fff; border-radius: 4px; padding: 1px 3px; }
 .card-impact { font-size: 14px; color: var(--ink-2); margin: 0 0 1rem; flex: 1; }
 .card-meta { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1rem; }
 .card-actions { display: flex; gap: .6rem; align-items: center; }
@@ -74,7 +74,7 @@ html[data-theme="dark"] .year-title { color: #fff; }
 .modal-body { padding: 1.8rem 2.2rem 2.2rem; }
 .m-org { display: flex; align-items: center; gap: .7rem; font-weight: 600; color: var(--brand-ink); margin-bottom: 1.2rem; }
 html[data-theme="dark"] .m-org { color: #fff; }
-.m-org img { height: 30px; width: auto; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 2px 5px; }
+.m-org img { height: 46px; width: auto; max-width: 190px; object-fit: contain; background: #fff; border-radius: 6px; padding: 2px 5px; }
 .modal-body h3 { font-size: 1rem; color: var(--brand-ink); margin: 1.5rem 0 .6rem; display: flex; align-items: center; gap: 8px; }
 html[data-theme="dark"] .modal-body h3 { color: #fff; }
 .modal-body h3 .i { width: 17px; height: 17px; color: var(--accent); }
