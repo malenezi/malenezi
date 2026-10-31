@@ -366,7 +366,7 @@ RESEARCH_PROGRAMME = [
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
              7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
-# Google Scholar, read on 26 Oct 2026: 8,416 citations (7,727 since 2021),
+# Google Scholar, read on 31 Oct 2026: 8,451 citations (7,763 since 2021),
 # h-index 38 (34 since 2021), i10-index 101 (84 since 2021).
 CITATIONS = "8,400+"
 H_INDEX = "38"
