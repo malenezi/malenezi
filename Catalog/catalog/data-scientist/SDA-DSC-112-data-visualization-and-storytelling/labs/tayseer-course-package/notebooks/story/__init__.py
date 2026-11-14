@@ -1,1 +1,0 @@
-# Tayseer narrative package

@@ -3,468 +3,571 @@
   "title": "Data Science and Engineering in 2027: Nine Skills That Matter When AI Writes the Code",
   "url": "https://medium.com/@malenezi/data-science-and-engineering-in-2027-nine-skills-that-matter-when-ai-writes-the-code-80e2b779d24c",
   "date": "November 13, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent",
+  "summary": "Most organisations now use AI; few can show what it earned. Nine skills for data scientists and engineers that close that gap."
  },
  {
   "title": "متى يمكننا أن نثق بوكيل ذكاء اصطناعي ونفوّضه سلطة اتخاذ القرارات الهندسية وتنفيذها بصورة مستقلة؟",
   "url": "https://www.linkedin.com/pulse/%D9%85%D8%AA%D9%89-%D9%8A%D9%85%D9%83%D9%86%D9%86%D8%A7-%D8%A3%D9%86-%D9%86%D8%AB%D9%82-%D8%A8%D9%88%D9%83%D9%8A%D9%84-%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%88%D9%86%D9%81%D9%88%D8%B6%D9%87-%D8%B3%D9%84%D8%B7%D8%A9-%D8%A7%D8%AA%D8%AE%D8%A7%D8%B0-alenezi-g9oaf/",
   "date": "November 11, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "agentic"
  },
  {
   "title": "Stop Reviewing Agent Output. Start Governing Agent Actions.",
   "url": "https://medium.com/@malenezi/stop-reviewing-agent-output-start-governing-agent-actions-cddf62006222",
   "date": "November 9, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "Human oversight of coding agents needs a new unit of analysis: the action an agent takes, not the output it produces.",
+  "featured": true
  },
  {
   "title": "Four Disciplines That Turn Agentic AI into Enterprise Capability",
   "url": "https://medium.com/@malenezi/four-disciplines-that-turn-agentic-ai-into-enterprise-capability-a46822b33216",
   "date": "November 3, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "Agentic AI is an operating-model problem before it is a technology problem. Four disciplines separate the pilots that ship from the ones that stall.",
+  "featured": true
  },
  {
   "title": "حين تُقاس الحياة بأثرها في الآخرين: ما الذي سيبقى من نجاحنا؟",
   "url": "https://www.linkedin.com/pulse/%D8%AD%D9%8A%D9%86-%D8%AA%D9%82%D8%A7%D8%B3-%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A8%D8%A3%D8%AB%D8%B1%D9%87%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%A2%D8%AE%D8%B1%D9%8A%D9%86-%D9%85%D8%A7-%D8%A7%D9%84%D8%B0%D9%8A-%D8%B3%D9%8A%D8%A8%D9%82%D9%89-%D9%85%D9%86-%D9%86%D8%AC%D8%A7%D8%AD%D9%86%D8%A7-alenezi-psdnf/",
   "date": "November 2, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "حين يصبح الذكاء الاصطناعي شيخاً وحيداً: هل نكسب المعرفة ونخسر الإنسان؟",
   "url": "https://www.linkedin.com/pulse/%D8%AD%D9%8A%D9%86-%D9%8A%D8%B5%D8%A8%D8%AD-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%B4%D9%8A%D8%AE%D8%A7-%D9%88%D8%AD%D9%8A%D8%AF%D8%A7-%D9%87%D9%84-%D9%86%D9%83%D8%B3%D8%A8-%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D9%81%D8%A9-%D9%88%D9%86%D8%AE%D8%B3%D8%B1-alenezi-r5wkf/",
   "date": "October 31, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "Your AI Agents Don’t Need a Smarter Model. They Need Your Analyst’s Memory.",
   "url": "https://medium.com/@malenezi/your-ai-agents-dont-need-a-smarter-model-they-need-your-analyst-s-memory-d60302afa07b",
   "date": "October 31, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "Context engineering is data engineering under a new name: turning tribal knowledge into governed context matters more than a smarter model."
  },
  {
   "title": "استخدام الذكاء الاصطناعي لم يعد ميزة تنافسية!",
   "url": "https://www.linkedin.com/pulse/%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%84%D9%85-%D9%8A%D8%B9%D8%AF-%D9%85%D9%8A%D8%B2%D8%A9-%D8%AA%D9%86%D8%A7%D9%81%D8%B3%D9%8A%D8%A9-prof-mamdouh-alenezi-exzzf/",
   "date": "October 26, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "strategy",
+  "summary": "استخدام الذكاء الاصطناعي صار مهارة أساسية كإتقان Word وExcel؛ الميزة اليوم لمن يحقق به نتائج استثنائية، لا لمن يستخدمه فحسب.",
+  "featured": true
  },
  {
   "title": "AI Engineering Is Not What You Think",
   "url": "https://medium.com/@malenezi/ai-engineering-is-not-what-you-think-0102fd01caba",
   "date": "October 25, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "AI projects rarely fail because the model is weak. They fail between a convincing demo and a dependable system, and closing that gap is the engineering job."
  },
  {
   "title": "العمل المتقن لا يتحدث عن نفسه دائمًا",
   "url": "https://www.linkedin.com/pulse/%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D9%85%D8%AA%D9%82%D9%86-%D9%84%D8%A7-%D9%8A%D8%AA%D8%AD%D8%AF%D8%AB-%D8%B9%D9%86-%D9%86%D9%81%D8%B3%D9%87-%D8%AF%D8%A7%D8%A6%D9%85%D8%A7-prof-mamdouh-alenezi-cf0sf/",
   "date": "October 24, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "Software Engineering Was About Coding. Let’s Stop Pretending Otherwise.",
   "url": "https://medium.com/@malenezi/software-engineering-was-about-coding-lets-stop-pretending-otherwise-7aa4fbf85724",
   "date": "October 22, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "An uncomfortable look at what AI means for the profession, and what the next generation of engineers must learn instead."
  },
  {
   "title": "الذكاء الاصطناعي يكتب أسرع مما نفهم: كيف ننتقل من إنتاج المحتوى إلى صناعة القرار؟",
   "url": "https://www.linkedin.com/pulse/%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%8A%D9%83%D8%AA%D8%A8-%D8%A3%D8%B3%D8%B1%D8%B9-%D9%85%D9%85%D8%A7-%D9%86%D9%81%D9%87%D9%85-%D9%83%D9%8A%D9%81-%D9%86%D9%86%D8%AA%D9%82%D9%84-%D9%85%D9%86-%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-alenezi-jxrhf/",
   "date": "October 15, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "strategy"
  },
  {
   "title": "الذكاء الاصطناعي لا يكتفي بالإجابة: عصر جديد من القرارات المؤسسية",
   "url": "https://www.linkedin.com/pulse/%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%84%D8%A7-%D9%8A%D9%83%D8%AA%D9%81%D9%8A-%D8%A8%D8%A7%D9%84%D8%A5%D8%AC%D8%A7%D8%A8%D8%A9-%D8%B9%D8%B5%D8%B1-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%85%D9%86-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-alenezi-wq7uf/",
   "date": "October 11, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "strategy"
  },
  {
   "title": "Your AI Models Will Change. Your Institutional Memory Should Survive.",
   "url": "https://medium.com/@malenezi/your-ai-models-will-change-your-institutional-memory-should-survive-022b1f868ec3",
   "date": "October 9, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "Models will be replaced; what an organisation knows should not be. A design for portable, governed institutional memory.",
+  "featured": true
  },
  {
   "title": "ما بعد البرمجة التوليدية: نحو منظومة مؤسسية متكاملة بالذكاء الاصطناعي",
   "url": "https://www.linkedin.com/pulse/%D9%85%D8%A7-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D8%A9-%D8%A7%D9%84%D8%AA%D9%88%D9%84%D9%8A%D8%AF%D9%8A%D8%A9-%D9%86%D8%AD%D9%88-%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9-%D9%85%D8%A4%D8%B3%D8%B3%D9%8A%D8%A9-%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-alenezi-usonf/",
   "date": "October 2, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "strategy"
  },
  {
   "title": "Harness, Loop, Graph: The Agent Stack Nobody Draws Correctly",
   "url": "https://medium.com/@malenezi/harness-loop-graph-the-agent-stack-nobody-draws-correctly-aa919163b57e",
   "date": "September 27, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "Harness, loop and graph are one architecture, not three buzzwords: where the popular explanations contradict each other and what to build."
  },
  {
   "title": "وكلاء الذكاء الاصطناعي: الموجة التي قد تعيد تشكيل الشركات الناشئة",
   "url": "https://www.linkedin.com/pulse/%D9%88%D9%83%D9%84%D8%A7%D8%A1-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AA%D9%8A-%D9%82%D8%AF-%D8%AA%D8%B9%D9%8A%D8%AF-%D8%AA%D8%B4%D9%83%D9%8A%D9%84-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-alenezi-vin9f/",
   "date": "September 25, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "ماذا يفعل الذكاء الاصطناعي فعلياً بطريقة تفكير الإنسان وتعلمه؟",
   "url": "https://www.linkedin.com/pulse/%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D9%81%D8%B9%D9%84-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%81%D8%B9%D9%84%D9%8A%D8%A7-%D8%A8%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%AA%D9%81%D9%83%D9%8A%D8%B1-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86-alenezi-pbkve/",
   "date": "September 18, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "The Agentic Enterprise: Why AI Agents Will Redesign How Organizations Work",
   "url": "https://medium.com/@malenezi/the-agentic-enterprise-why-ai-agents-will-redesign-how-organizations-work-951bf5fcfeeb",
   "date": "September 12, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "The next phase of AI is defined less by better chatbots than by organisations willing to redesign how work gets done."
  },
  {
   "title": "هل سيأخذ الذكاء الاصطناعي وظائفنا؟",
   "url": "https://www.linkedin.com/pulse/%D9%87%D9%84-%D8%B3%D9%8A%D8%A3%D8%AE%D8%B0-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%88%D8%B8%D8%A7%D8%A6%D9%81%D9%86%D8%A7-prof-mamdouh-alenezi-xqzlf/",
   "date": "September 11, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "هل يختفي مهندس البرمجيات؟ أم أننا سنرى تمخض مهنة جديدة؟",
   "url": "https://www.linkedin.com/pulse/%D9%87%D9%84-%D9%8A%D8%AE%D8%AA%D9%81%D9%8A-%D9%85%D9%87%D9%86%D8%AF%D8%B3-%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A7%D8%AA-%D8%A3%D9%85-%D8%A3%D9%86%D9%86%D8%A7-%D8%B3%D9%86%D8%B1%D9%89-%D8%AA%D9%85%D8%AE%D8%B6-%D9%85%D9%87%D9%86%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-alenezi-lgcdf/",
   "date": "September 7, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "هل نحن أمام نهاية عصر البرمجة كما نعرفها؟",
   "url": "https://www.linkedin.com/pulse/%D9%87%D9%84-%D9%86%D8%AD%D9%86-%D8%A3%D9%85%D8%A7%D9%85-%D9%86%D9%87%D8%A7%D9%8A%D8%A9-%D8%B9%D8%B5%D8%B1-%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D8%A9-%D9%83%D9%85%D8%A7-%D9%86%D8%B9%D8%B1%D9%81%D9%87%D8%A7-prof-mamdouh-alenezi-7daqf/",
   "date": "August 16, 2026",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "agentic"
  },
  {
   "title": "From Code Producers to System Stewards: Rebuilding the BSSE for the Agentic AI Era",
   "url": "https://medium.com/@malenezi/from-code-producers-to-system-stewards-rebuilding-the-bsse-for-the-agentic-ai-era-ca846735978b",
   "date": "August 30, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent",
+  "summary": "Software engineering education should not turn into AI education. It should prepare graduates to steward systems, not only produce code.",
+  "featured": true
  },
  {
   "title": "The Absorption Problem: Why Enterprises, Not Engineers, Are the Real Bottleneck in AI",
   "url": "https://medium.com/@malenezi/the-absorption-problem-why-enterprises-not-engineers-are-the-real-bottleneck-in-ai-3199f5769f98",
   "date": "August 29, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "After a decade of worrying about the AI skills gap, the harder constraint is the enterprise's own capacity to absorb what engineers can now build.",
+  "featured": true
  },
  {
   "title": "The Vibe Coding Honeymoon Is Over. What Comes Next Will Define a Generation of Engineers",
   "url": "https://medium.com/@malenezi/the-vibe-coding-honeymoon-is-over-what-comes-next-will-define-a-generation-of-engineers-66e8ae741c04",
   "date": "August 13, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "AI-native software engineering needs governance, not only velocity, and that changes how engineers have to be trained."
  },
  {
   "title": "Ontology-Driven Enterprise Architecture for AI-Powered Software Delivery",
   "url": "https://medium.com/@malenezi/ontology-driven-enterprise-architecture-for-ai-powered-software-delivery-58d6bfa38b3a",
   "date": "February 21, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "AI-enabled delivery pulls enterprise architecture into a new operating reality built on shared, continuously maintained meaning."
  },
  {
   "title": "Enterprise AI Strategy 2026: Scale the Meaning, Not Just the Model",
   "url": "https://medium.com/@malenezi/enterprise-ai-strategy-2026-scale-the-meaning-not-just-the-model-d7b0a1052d50",
   "date": "January 20, 2026",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "Enterprise AI is moving from the lab into the operating core. Scaling it depends on shared meaning as much as on models."
  },
  {
   "title": "من اللمعان إلى الاحتراق ثم الاتزان: كيف غيّرت عشر عادات مساري المهني",
   "url": "https://medium.com/@malenezi/من-اللمعان-إلى-الاحتراق-ثم-الاتزان-كيف-غيّرت-عشر-عادات-مساري-المهني-85ed20acfbf2",
   "date": "November 19, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "leadership"
  },
  {
   "title": "The Golden Rule of AI Implementation: Transform the Business First, Then Adopt AI",
   "url": "https://medium.com/@malenezi/the-golden-rule-of-ai-implementation-transform-the-business-first-then-adopt-ai-494e25fb7773",
   "date": "October 6, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "Organisations that skip business transformation end up with expensive AI experiments. Transform the business first, then adopt AI."
  },
  {
   "title": "A New Paradigm Shift in Software Engineering: From Typists to Conductors",
   "url": "https://medium.com/@malenezi/a-new-paradigm-shift-in-software-engineering-from-typists-to-conductors-91bbc168b51b",
   "date": "October 2, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "A shift in who writes the program: engineers move from typing code to directing the systems that write it."
  },
  {
   "title": "Vibe coding is engineering — treat prompts like source code",
   "url": "https://medium.com/@malenezi/vibe-coding-is-engineering-treat-prompts-like-source-code-f69266a89b6b",
   "date": "September 18, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "One long, hopeful prompt is not engineering. Prompts deserve the same discipline as source code."
  },
  {
   "title": "How Mature Is Your Organization’s AI Strategy? A Five-Stage Roadmap to True Transformation",
   "url": "https://medium.com/@malenezi/how-mature-is-your-organizations-ai-strategy-a-five-stage-roadmap-to-true-transformation-934dd205e056",
   "date": "June 16, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy"
  },
  {
   "title": "Rethinking Requirements in DevOps: From Static Documents to Living Systems",
   "url": "https://medium.com/@malenezi/rethinking-requirements-in-devops-from-static-documents-to-living-systems-aa238b2f7bf0",
   "date": "May 12, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice",
+  "summary": "How modern teams engineer requirements continuously, and why that is reshaping software delivery."
  },
  {
   "title": "Goal-Oriented Architectures: The Backbone of Agentic AI Systems",
   "url": "https://medium.com/@malenezi/goal-oriented-architectures-the-backbone-of-agentic-ai-systems-495f8542c077",
   "date": "April 14, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic"
  },
  {
   "title": "The Rise of Agentic AI in Smart Cities: Rethinking Transportation for a Smarter Future",
   "url": "https://medium.com/@malenezi/the-rise-of-agentic-ai-in-smart-cities-rethinking-transportation-for-a-smarter-future-eb7d5a8cc779",
   "date": "April 6, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "agentic"
  },
  {
   "title": "وكلاء الذكاء الاصطناعي الرأسي (Vertical Agentic AI): كيف سيعيدون تشكيل مشهد الشركات الناشئة؟",
   "url": "https://www.linkedin.com/pulse/%D9%88%D9%83%D9%84%D8%A7%D8%A1-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3%D9%8A-vertical-agentic-ai-%D9%83%D9%8A%D9%81-alenezi-dpngf/",
   "date": "February 17, 2025",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "The AI Revolution, Take Two: From Giant Brains to Nimble Specialists and Beyond",
   "url": "https://medium.com/@malenezi/the-ai-revolution-take-two-from-giant-brains-to-nimble-specialists-and-beyond-a7fbb0dd5bca",
   "date": "February 13, 2025",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy"
  },
  {
   "title": "5 Essential Secure Coding Practices Every Software Engineer Should Know",
   "url": "https://medium.com/@malenezi/5-essential-secure-coding-practices-every-software-engineer-should-know-98609ac79de2",
   "date": "November 17, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Software Refactoring in the Era of AI: Beyond Code Generation",
   "url": "https://medium.com/@malenezi/software-refactoring-in-the-era-of-ai-beyond-code-generation-1f1bda94fd87",
   "date": "October 6, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Beyond Agile and DevOps: Evolving Software Development",
   "url": "https://www.linkedin.com/pulse/beyond-agile-devops-evolving-software-development-alenezi-1ms6f/",
   "date": "September 29, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Breaking Boundaries: AI Creates New Types of Work",
   "url": "https://www.linkedin.com/pulse/breaking-boundaries-ai-creates-new-types-work-prof-mamdouh-alenezi-rspsf/",
   "date": "September 22, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "Modern Integration Governance: A Strategy for Success",
   "url": "https://medium.com/@malenezi/modern-integration-governance-a-strategy-for-success-a5e23a06c59f",
   "date": "September 18, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "strategy"
  },
  {
   "title": "Understanding and Managing Technical Debt: A Necessary Evil in Software Development",
   "url": "https://www.linkedin.com/pulse/understanding-managing-technical-debt-necessary-evil-software-4xiwf/",
   "date": "September 15, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Software Development Team Excellence: A Guide to Effective Learning and Development",
   "url": "https://www.linkedin.com/pulse/software-development-team-excellence-guide-effective-learning-zjmmf/",
   "date": "September 9, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "Embracing Systems Thinking in Software Engineering Education: A Path to Managing Complexity",
   "url": "https://medium.com/@malenezi/embracing-systems-thinking-in-software-engineering-education-a-path-to-managing-complexity-b8942a8a13af",
   "date": "September 1, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent"
  },
  {
   "title": "Software That Thinks: A Guide to Building Intelligent, AI-Powered Systems",
   "url": "https://www.linkedin.com/pulse/software-thinks-guide-building-intelligent-ai-powered-alenezi-ffdkf/",
   "date": "August 29, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "agentic"
  },
  {
   "title": "Science-Based Approaches to Addressing Software Bugs Effectively",
   "url": "https://www.linkedin.com/pulse/science-based-approaches-addressing-software-bugs-alenezi-9nlnf/",
   "date": "August 26, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "The Future of Software Delivery: Trends and Technologies Shaping Tomorrow",
   "url": "https://www.linkedin.com/pulse/future-software-delivery-trends-technologies-shaping-tomorrow-ge5hf/",
   "date": "July 31, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Human Capability Development Program: Priorities for 2024 and 2025",
   "url": "https://medium.com/@malenezi/human-capability-development-program-priorities-for-2024-and-2025-f737978bd248",
   "date": "July 16, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent"
  },
  {
   "title": "Platform Engineering: The Future of Software Delivery",
   "url": "https://medium.com/@malenezi/platform-engineering-the-future-of-software-delivery-85da17deb474",
   "date": "July 16, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Bridging the Gap Between University Graduates and Job Market Requirements: A Disruptive Movement in Training in Saudi Arabia",
   "url": "https://www.linkedin.com/pulse/bridging-gap-between-university-graduates-job-market-movement-wnmkf/",
   "date": "July 13, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "The University Rankings Conundrum: Should Institutions Chase Metrics or Stay True to Their Mission?",
   "url": "https://medium.com/@malenezi/the-university-rankings-conundrum-should-institutions-chase-metrics-or-stay-true-to-their-mission-3af202491675",
   "date": "July 1, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent"
  },
  {
   "title": "Bridging the Gap: Universities and the Job Market",
   "url": "https://medium.com/@malenezi/bridging-the-gap-universities-and-the-job-market-16e8fa14699f",
   "date": "June 26, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent"
  },
  {
   "title": "From Productivity to Effectiveness: A New Era for Software Engineering",
   "url": "https://www.linkedin.com/pulse/from-productivity-effectiveness-new-era-software-alenezi-tudhf/",
   "date": "June 16, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Human-Centric Software Development: The Key to Success",
   "url": "https://www.linkedin.com/pulse/human-centric-software-development-key-success-prof-mamdouh-alenezi-yvv9f/",
   "date": "June 2, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "The Power of \"Be, Do, Have\" in Software Development: Unlocking Team Dynamics",
   "url": "https://www.linkedin.com/pulse/power-do-have-software-development-unlocking-team-dynamics-alenezi-fmp0f/",
   "date": "May 22, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "The Art of Accurate Sprint Estimation: Navigating the Challenges of Software Development",
   "url": "https://medium.com/@malenezi/the-art-of-accurate-sprint-estimation-navigating-the-challenges-of-software-development-6a7099a00c78",
   "date": "May 9, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Embracing Holistic Leadership in Higher Education",
   "url": "https://www.linkedin.com/pulse/embracing-holistic-leadership-higher-education-prof-mamdouh-alenezi-djakf",
   "date": "May 1, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "The Future of Software Entrepreneurship: How AI is Revolutionizing the Industry",
   "url": "https://medium.com/@malenezi/the-future-of-software-entrepreneurship-how-ai-is-revolutionizing-the-industry-e04e1e496987",
   "date": "April 28, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "leadership"
  },
  {
   "title": "The Power of Imagination in Software Entrepreneurship",
   "url": "https://medium.com/@malenezi/the-power-of-imagination-in-software-entrepreneurship-558269996409",
   "date": "April 26, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "leadership"
  },
  {
   "title": "7 Essential DevOps Tips to Boost Efficiency, Quality, and Reliability in 2024",
   "url": "https://www.linkedin.com/pulse/7-essential-devops-tips-boost-efficiency-quality-2024-alenezi-f24ef/",
   "date": "April 23, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Moving Beyond Agile: Embracing a New Paradigm for Product Development",
   "url": "https://medium.com/@malenezi/moving-beyond-agile-embracing-a-new-paradigm-for-product-development-8ac8c9d99fb1",
   "date": "April 22, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Transforming Government Services in Saudi Arabia: Strategies for Success in the Digital Age",
   "url": "https://www.linkedin.com/pulse/transforming-government-services-saudi-arabia-success-alenezi-woawf/",
   "date": "April 14, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "strategy"
  },
  {
   "title": "Optimizing Human Factors in DevOps: Enhancing Collaboration, Communication, and Performance",
   "url": "https://medium.com/@malenezi/optimizing-human-factors-in-devops-enhancing-collaboration-communication-and-performance-13d6bb237381",
   "date": "April 10, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Rethinking Human-Centered Software Engineering in the Age of Digital Transformation",
   "url": "https://medium.com/@malenezi/rethinking-human-centered-software-engineering-in-the-age-of-digital-transformation-5a9801c7df61",
   "date": "April 4, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "practice"
  },
  {
   "title": "Shaping the Future of Software Engineering in Saudi Arabia: A Visionary Approach",
   "url": "https://medium.com/@malenezi/shaping-the-future-of-software-engineering-in-saudi-arabia-a-visionary-approach-fc3e258c3832",
   "date": "April 1, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "talent"
  },
  {
   "title": "Unlocking Success: 6 Principles for Strategic Organization of Digital Product Management",
   "url": "https://www.linkedin.com/pulse/unlocking-success-6-principles-strategic-organization-alenezi-ucbdf/",
   "date": "March 26, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "Modern Software Construction: Faster Development or Complicated Ecosystem?",
   "url": "https://www.linkedin.com/pulse/modern-software-construction-faster-development-prof-mamdouh-alenezi-4oqpf/",
   "date": "March 15, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Entrepreneurship and the Digital Economy: Thriving in the 21st Century",
   "url": "https://medium.com/@malenezi/entrepreneurship-and-the-digital-economy-thriving-in-the-21st-century-8d2e315a690e",
   "date": "March 9, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "leadership"
  },
  {
   "title": "Agility vs. Planning: Finding the Right Balance in Digital Entrepreneurship",
   "url": "https://medium.com/@malenezi/agility-vs-planning-finding-the-right-balance-in-digital-entrepreneurship-937a6dca961c",
   "date": "February 28, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "leadership"
  },
  {
   "title": "Scaling Digital Entrepreneurship and Rethinking Business Models",
   "url": "https://medium.com/@malenezi/scaling-digital-entrepreneurship-and-rethinking-business-models-d07c64e5221f",
   "date": "February 28, 2024",
-  "source": "Medium"
+  "source": "Medium",
+  "theme": "leadership"
  },
  {
   "title": "Navigating Conflicting Viewpoints in Product Management: Strategies for Success",
   "url": "https://www.linkedin.com/pulse/navigating-conflicting-viewpoints-product-management-success-alenezi-l7hhf/",
   "date": "February 27, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "Navigating Riyadh's Traffic with Google Maps and AI: A Game-Changing Combination",
   "url": "https://www.linkedin.com/pulse/navigating-riyadhs-traffic-google-maps-ai-combination-alenezi-3wakf/",
   "date": "February 17, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "strategy"
  },
  {
   "title": "AI Insight: The Key to Unlocking Human Potential",
   "url": "https://www.linkedin.com/pulse/ai-insight-key-unlocking-human-potential-prof-mamdouh-alenezi-cfksf/",
   "date": "February 8, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "talent"
  },
  {
   "title": "The Unique Role of Data and AI Product Managers in Shaping the Future of Business",
   "url": "https://www.linkedin.com/pulse/unique-role-data-ai-product-managers-shaping-future-business-alenezi-pjevf/",
   "date": "January 2, 2024",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "Navigating the Uncharted Waters of Product Management in Tech Startups: A Focus on Market Research and Data Analysis",
   "url": "https://www.linkedin.com/pulse/navigating-uncharted-waters-product-management-tech-startups-alenezi-6vwif/",
   "date": "December 24, 2023",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "leadership"
  },
  {
   "title": "Intersections between DevOps and Digital Transformation",
   "url": "https://www.linkedin.com/pulse/intersections-between-devops-digital-transformation-alenezi-zkiyf/",
   "date": "December 19, 2023",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  },
  {
   "title": "Revolutionizing Software Engineering: The Power of AutoML",
   "url": "https://www.linkedin.com/pulse/revolutionizing-software-engineering-power-automl-alenezi-r4enf/",
   "date": "December 17, 2023",
-  "source": "LinkedIn"
+  "source": "LinkedIn",
+  "theme": "practice"
  }
 ]

@@ -349,3 +349,21 @@ a.card:hover h3{color:var(--accent)}
   body{background:#fff;font-size:11pt}
   a{color:#000;text-decoration:none}
 }
+
+/* ---------- cases, speaker kit, insight themes (Nov 2026) ---------- */
+[hidden]{display:none!important}
+.case__dl{display:grid;gap:.95rem;margin:1.1rem 0 0}
+.case__dl dt{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.case__dl dd{margin:.25rem 0 0;color:var(--ink-2);font-size:.95rem}
+.copy-btn{margin-top:1rem}
+.btn-row .copy-btn{margin-top:0}
+.bio .lede{margin-top:1.2rem;max-width:none}
+@media print{
+  .site-foot,.skip{display:none!important}
+  .bio{padding:0}
+  .bio h1{font-size:22pt}
+  .bio .lede,.bio p,.bio li{font-size:10pt;line-height:1.45}
+  .bio h2{font-size:12pt!important;margin-top:12pt!important}
+}
+.grid--pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.grid--pair{grid-template-columns:1fr}}

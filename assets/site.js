@@ -48,6 +48,45 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---- copy-to-clipboard buttons (speaker kit) and print button ---- */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-copy]"), function (b) {
+    var label = b.textContent;
+    b.addEventListener("click", function () {
+      var el = document.querySelector(b.getAttribute("data-copy"));
+      if (!el || !navigator.clipboard) return;
+      navigator.clipboard.writeText(el.innerText.trim()).then(function () {
+        b.textContent = "Copied";
+        setTimeout(function () { b.textContent = label; }, 1600);
+      });
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-print]"), function (b) {
+    b.addEventListener("click", function () { window.print(); });
+  });
+
+  /* ---- insights: filter by theme ---- */
+  var tchips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-theme]"));
+  if (tchips.length) {
+    var tcount = document.getElementById("theme-count");
+    var tbase = tcount ? tcount.textContent : "";
+    tchips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var theme = chip.getAttribute("data-theme"), shown = 0;
+        tchips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
+        Array.prototype.forEach.call(document.querySelectorAll(".ins-year"), function (group) {
+          var any = false;
+          Array.prototype.forEach.call(group.querySelectorAll("[data-theme-item]"), function (li) {
+            var ok = theme === "all" || li.getAttribute("data-theme-item") === theme;
+            li.hidden = !ok;
+            if (ok) { any = true; shown++; }
+          });
+          group.hidden = !any;
+        });
+        if (tcount) tcount.textContent = theme === "all" ? tbase : shown + (shown === 1 ? " essay" : " essays") + " in this theme.";
+      });
+    });
+  }
+
   /* ---- publications: search + filter ---- */
   var list = document.getElementById("pub-list");
   var dataEl = document.getElementById("pub-data");
