@@ -19,16 +19,6 @@ and publish on software security, AI-native and agentic software engineering, an
 | `contact.html` | Contact details, profiles, CV downloads |
 | `myblog/` | Insights — essays published on Medium and LinkedIn |
 
-## How the site is built
-
-Plain static HTML, no framework and no build dependencies at runtime. Shared styles live in
-`assets/site.css` and behaviour in `assets/site.js`.
-
-Page content is generated from one shared shell so every page stays consistent:
-
-```bash
-python3 _build/build.py
-```
 
 Content data lives in `data/`:
 
