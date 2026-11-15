@@ -20,17 +20,6 @@ and publish on software security, AI-native and agentic software engineering, an
 | `myblog/` | Insights — essays published on Medium and LinkedIn |
 
 
-Content data lives in `data/`:
-
-* `data/publications.json` — every journal article, conference paper, book chapter and preprint
-  (`kind` is one of `journal`, `conference`, `chapter`, `preprint`; only the first three count as
-  peer-reviewed in the headline metrics)
-* `data/insights.json` — published essays
-
-Edit the data files (or the content constants in `_build/build.py`), re-run the build, and commit.
-Headline counts (publication totals, kind breakdown) are derived from `data/publications.json` at build
-time — they are not typed into the pages, so adding a publication updates every page that cites a total.
-
 ## Profiles
 
 | | |
