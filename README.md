@@ -2,19 +2,21 @@
 
 Personal website — [malenezi.github.io/malenezi](https://malenezi.github.io/malenezi/)
 
-**General Manager, SDAIA Academy** at the Saudi Data & Artificial Intelligence Authority, Riyadh.
-Full Professor of Software Engineering. I lead national capability development for data and AI,
-and publish on software security, AI-native and agentic software engineering, and engineering education.
+**AI Capability, Technology Governance & Institutional Transformation Executive.**
+General Manager, SDAIA Academy, at the Saudi Data & Artificial Intelligence Authority, Riyadh, and
+Full Professor of Software Engineering. I build and govern national AI and technology capability
+institutions, and publish on AI-native and agentic software engineering, software security and
+engineering education.
 
 ## Site structure
 
 | Page | Purpose |
 |---|---|
-| `index.html` | Home — positioning, metrics, focus areas, selected impact, recent work |
-| `about.html` | Extended biography, competencies, education, certifications |
-| `leadership.html` | Executive and academic roles, consulting, teaching, supervision, committees |
+| `index.html` | Home — executive positioning, key results, expertise, selected executive results, academic standing |
+| `about.html` | Executive biography, expertise, education, certifications |
+| `leadership.html` | Executive experience — scope and results per role, advisory work, teaching, supervision |
 | `publications.html` | The 2026 AI-native SE research programme, plus a searchable list of all publications |
-| `projects.html` | Programmes, institutional systems, governance work, funded research |
+| `projects.html` | Impact — six cases, institution building, technology and AI governance, programmes, funded research |
 | `speaking.html` | Conference chairing, committees, peer review, workshops, writing |
 | `contact.html` | Contact details, profiles, CV downloads |
 | `myblog/` | Insights — essays published on Medium and LinkedIn |
