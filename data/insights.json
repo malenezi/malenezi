@@ -1,5 +1,29 @@
 [
  {
+  "title": "Your AI Coding Agent Shouldn’t Decide When Code Is Ready to Ship",
+  "url": "https://medium.com/@malenezi/your-ai-coding-agent-shouldnt-decide-when-code-is-ready-to-ship-f162fb9d724d",
+  "date": "November 16, 2026",
+  "source": "Medium",
+  "theme": "practice",
+  "summary": "How to turn “audit and fix this repo” into a production-readiness gate you can trust, using a local MCP server, a bounded repair loop, and tools that do not hallucinate."
+ },
+ {
+  "title": "من تبنّي الذكاء الاصطناعي إلى تحقيق القيمة: لماذا تحتاج المؤسسات إلى إعادة تصميم اقتصادياتها ونماذج عملها؟",
+  "url": "https://www.linkedin.com/pulse/%D9%85%D9%86-%D8%AA%D8%A8%D9%86%D9%8A-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%A5%D9%84%D9%89-%D8%AA%D8%AD%D9%82%D9%8A%D9%82-%D8%A7%D9%84%D9%82%D9%8A%D9%85%D8%A9-%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC-alenezi-8jqzf/",
+  "date": "November 14, 2026",
+  "source": "LinkedIn",
+  "theme": "strategy",
+  "summary": "لم تعد المشكلة في قدرة المؤسسات على الوصول إلى نماذج الذكاء الاصطناعي، بل في قدرتها على تحويل هذه النماذج إلى قيمة اقتصادية وتشغيلية واستراتيجية قابلة للقياس والاستدامة."
+ },
+ {
+  "title": "Why Your AI Scorecard Looks Great and Nothing Has Changed",
+  "url": "https://medium.com/@malenezi/why-your-ai-scorecard-looks-great-and-nothing-has-changed-f5b756974307",
+  "date": "November 14, 2026",
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "Enterprises count what they bought and what they taught. Real adoption only shows up in the work."
+ },
+ {
   "title": "Data Science and Engineering in 2027: Nine Skills That Matter When AI Writes the Code",
   "url": "https://medium.com/@malenezi/data-science-and-engineering-in-2027-nine-skills-that-matter-when-ai-writes-the-code-80e2b779d24c",
   "date": "November 13, 2026",
