@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://malenezi.github.io/malenezi/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://malenezi.github.io/malenezi/"/>
@@ -52,13 +52,13 @@
   </url>
   <url>
     <loc>https://malenezi.github.io/malenezi/publications.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://malenezi.github.io/malenezi/projects.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://malenezi.github.io/malenezi/projects.html"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://malenezi.github.io/malenezi/speaking.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -94,13 +94,13 @@
   </url>
   <url>
     <loc>https://malenezi.github.io/malenezi/myblog/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://malenezi.github.io/malenezi/myCV.pdf</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -112,7 +112,7 @@
   </url>
   <url>
     <loc>https://malenezi.github.io/malenezi/My_Resume.pdf</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

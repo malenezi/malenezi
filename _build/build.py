@@ -397,6 +397,10 @@ SELECTED_PUBS = [
 # The 2026 single-author working-paper series on AI-native and agentic software
 # engineering — the current research programme, published as arXiv preprints.
 RESEARCH_PROGRAMME = [
+    ("AI Code Review Requires Revision-Aware Evidence of Concern Resolution", "arXiv:2611.23275",
+     "A position paper: closing a thread or editing a commented line does not establish repair. Models "
+     "review concerns as persistent verification obligations and introduces REVAL, a lightweight procedure "
+     "that revalidates revision-specific evidence whenever its dependencies change."),
     ("How AI Changes DevOps Performance: A Mechanism-Based Simulation", "arXiv:2609.32414",
      "Separates AI-generated code from agentic AI and simulates their effect on all five DORA metrics — "
      "showing that delivery performance responds to AI through queueing, batching and oversight, not only "
@@ -435,7 +439,7 @@ RESEARCH_PROGRAMME = [
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
              7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
-# Google Scholar, read on 17 Nov 2026: 8,575 citations (7,884 since 2021),
+# Google Scholar, read on 21 Nov 2026: 8,596 citations (7,905 since 2021),
 # h-index 38 (34 since 2021), i10-index 101 (84 since 2021).
 CITATIONS = "8,500+"
 H_INDEX = "38"
@@ -454,7 +458,7 @@ def peer_reviewed(pubs):
 def metrics(pubs):
     c = peer_reviewed(pubs)
     return [
-        (CITATIONS, "Citations", "Google Scholar · 7,800+ since 2021"),
+        (CITATIONS, "Citations", "Google Scholar · 7,900+ since 2021"),
         (H_INDEX, "h-index", "Career total · 34 since 2021"),
         (I10_INDEX, "i10-index", "Career total · 84 since 2021"),
         (str(c["reviewed"]), "Publications", "Peer-reviewed"),

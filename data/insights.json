@@ -1,5 +1,21 @@
 [
  {
+  "title": "The AI Execution Gap: Why Strategies Fail After the Pilot",
+  "url": "https://medium.com/@malenezi/the-ai-execution-gap-why-strategies-fail-after-the-pilot-951b92528e33",
+  "date": "November 20, 2026",
+  "source": "Medium",
+  "theme": "strategy",
+  "summary": "Most organizations now have an AI leader, an AI budget and a list of pilots. Far fewer have results. The difference is rarely the model."
+ },
+ {
+  "title": "The Real Reason AI Pilots Never Make It to Production",
+  "url": "https://medium.com/@malenezi/the-real-reason-ai-pilots-never-make-it-to-production-f7846c9d19f5",
+  "date": "November 18, 2026",
+  "source": "Medium",
+  "theme": "agentic",
+  "summary": "Agentic AI pilots don’t die because the model is weak. They die because nobody built a way for the organization to trust what the agent does next."
+ },
+ {
   "title": "Your AI Coding Agent Shouldn’t Decide When Code Is Ready to Ship",
   "url": "https://medium.com/@malenezi/your-ai-coding-agent-shouldnt-decide-when-code-is-ready-to-ship-f162fb9d724d",
   "date": "November 16, 2026",
