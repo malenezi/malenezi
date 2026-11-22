@@ -288,11 +288,14 @@ def shell(B, slug, en_slug, title, desc, og_title, body):
           "knowsLanguage": ["ar", "en"],
           "sameAs": [site] + [u for n, u, _ in B.PROFILES if n in ("Google Scholar", "LinkedIn", "ORCID", "X")]}
     nav = [(LEAD, "القيادة والخبرات", ""), (PROJ, "المشاريع والأثر", ""),
-           ("publications.html", "الأبحاث", ' hreflang="en"'), ("myCV-Arabic.pdf", "السيرة الذاتية", "")]
+           ("publications.html", "الأبحاث", ' hreflang="en"'),
+           ("ai-strategy/", "استراتيجية الذكاء الاصطناعي", ' hreflang="en"'),
+           ("myCV-Arabic.pdf", "السيرة الذاتية", "")]
     nav_html = "".join('<li><a href="{h}"{x}{cur}>{t}</a></li>'.format(
         h=h, t=t, x=x, cur=' aria-current="page"' if h == slug else "") for h, t, x in nav)
     foot = [(HOME, "الرئيسية", ""), (LEAD, "القيادة والخبرات", ""), (PROJ, "المشاريع والأثر", ""),
             ("publications.html", "الأبحاث", ' hreflang="en"'), ("speaking.html", "المشاركات", ' hreflang="en"'),
+            ("ai-strategy/", "استراتيجية الذكاء الاصطناعي", ' hreflang="en"'),
             ("myblog/", "المقالات", ""), ("contact.html", "تواصل", ' hreflang="en"'),
             (en_slug, "English", ' hreflang="en" lang="en"')]
     foot_html = "".join('<li><a href="{h}"{x}>{t}</a></li>'.format(h=h, t=t, x=x) for h, t, x in foot)

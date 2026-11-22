@@ -69,12 +69,14 @@ NAV = [
     ("leadership.html", "Experience"),
     ("projects.html", "Impact"),
     ("publications.html", "Research"),
+    ("ai-strategy/", "AI Strategy"),   # flagship reference page, built by _build/ai_strategy.py
     ("speaking.html", "Speaking"),
 ]
 
 PERSON_LD = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": SITE + "#person",
     "name": "Mamdouh Alenezi",
     "honorificPrefix": "Prof.",
     "honorificSuffix": "Ph.D.",
@@ -93,7 +95,7 @@ PERSON_LD = {
     ],
     "address": {"@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA"},
     "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Agentic AI",
-                   "AI-Native Software Engineering", "AI Governance", "Technology Governance",
+                   "AI-Native Software Engineering", "AI Strategy", "AI Governance", "Technology Governance",
                    "Enterprise Architecture", "Institution Building", "Accreditation",
                    "Digital Transformation", "Software Security", "Capability Development",
                    "Higher Education"],
@@ -112,10 +114,11 @@ def profile_links(keys=None, cls="profiles"):
 
 
 def shell(slug, title, description, body, base="", extra_head="", extra_ld=None, og_image="images/newprofile.png"):
-    canonical = SITE + ("" if slug == "index.html" else slug)
+    # Directory pages (myblog/, ai-strategy/) are canonical at the folder URL, not .../index.html.
+    canonical = SITE + (slug[:-len("index.html")] if slug.endswith("index.html") else slug)
     nav = "".join(
         '<li><a href="{b}{h}"{cur}>{t}</a></li>'.format(
-            b=base, h=h, t=t, cur=' aria-current="page"' if h == slug else "")
+            b=base, h=h, t=t, cur=' aria-current="page"' if h in (slug, slug[:-len("index.html")]) else "")
         for h, t in NAV)
     ld = [PERSON_LD] + (extra_ld or [])
     ld_tags = "\n".join(
@@ -828,6 +831,20 @@ def build_index(insights, pubs):
       <a class="btn btn--solid" href="projects.html#cases">Read six cases in detail {arrow}</a>
       <a class="btn btn--ghost" href="leadership.html">Full experience record {arrow}</a>
       <a class="btn btn--ghost" href="bio.html">One-page executive bio {arrow}</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="callout reveal">
+      <span class="eyebrow" style="color:rgba(255,255,255,.75);margin:0">Executive reference &middot; AI strategy</span>
+      <h2>AI Strategy, with evidence.</h2>
+      <p>Most organizations use AI; few can show what it earned. A working reference for executives: what the research says, nine frameworks and what each is for, six documented cases, and seven tools for prioritization, business cases, sourcing and governance.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" href="ai-strategy/">Open the AI Strategy reference {arrow}</a>
+        <a class="btn btn--ghost" href="ai-strategy/#tools">Go straight to the tools</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1669,6 +1686,7 @@ def build_insights(insights):
       <p>If you read nothing else: why enterprises, not engineers, are the bottleneck in AI; how agents should be governed; and what that means for institutions and for education.</p>
     </div>
     <div class="grid grid--3">{featured}</div>
+    <p style="margin-top:1.8rem;color:var(--ink-2)">For the argument in one place, with sources and working tools, see the <a href="../ai-strategy/"><strong style="color:inherit">AI Strategy executive reference</strong></a>.</p>
   </div>
 </section>
 
@@ -1778,6 +1796,7 @@ def build_404():
     <div class="btn-row" style="margin-top:1.6rem">
       <a class="btn btn--solid" href="/malenezi/">Home</a>
       <a class="btn btn--ghost" href="/malenezi/publications.html">Publications</a>
+      <a class="btn btn--ghost" href="/malenezi/ai-strategy/">AI Strategy reference</a>
       <a class="btn btn--ghost" href="/malenezi/leadership.html">Experience</a>
       <a class="btn btn--ghost" href="/malenezi/contact.html">Contact</a>
     </div>
@@ -1803,6 +1822,7 @@ SITEMAP = [
     ("leadership.html", "monthly", "0.8"),
     ("leadership_arabic.html", "monthly", "0.7"),
     ("publications.html", "weekly", "0.9"),
+    ("ai-strategy/", "monthly", "0.9"),
     ("projects.html", "monthly", "0.7"),
     ("projects_arabic.html", "monthly", "0.7"),
     ("bio.html", "monthly", "0.7"),
@@ -1897,6 +1917,10 @@ def main():
     write("Links.html", redirect("index.html", "Links"))
 
     write("bio.html", build_bio(pubs))
+
+    # Flagship reference page: content in data/ai-strategy.json, rendered by _build/ai_strategy.py.
+    import ai_strategy
+    write(ai_strategy.SLUG, ai_strategy.build(sys.modules[__name__], insights))
 
     # Arabic pages share this module's data and metrics, so the numbers cannot drift.
     import arabic

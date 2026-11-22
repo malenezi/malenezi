@@ -1,0 +1,935 @@
+{
+ "gap": [
+  {
+   "pct": 89,
+   "label": "use AI regularly in at least one business function",
+   "approx": true
+  },
+  {
+   "pct": 44,
+   "label": "say AI is scaling across their enterprise",
+   "approx": false
+  },
+  {
+   "pct": 37,
+   "label": "attribute at least some EBIT impact to AI",
+   "approx": false
+  },
+  {
+   "pct": 6,
+   "label": "attribute 5% or more of EBIT to AI",
+   "approx": true
+  }
+ ],
+ "evidence": [
+  {
+   "theme": "value",
+   "figure": "37%",
+   "finding": "of respondents attribute at least some EBIT impact to AI, essentially unchanged from 2025, even though 44% now say AI is scaling across their enterprise (up from 38%). About 6% qualify as high performers.",
+   "source": "McKinsey, The state of AI in 2026",
+   "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+   "method": "Global survey of 1,719 participants in 97 nations, fielded 4 May to 8 June 2026 and weighted by share of global GDP. Nearly three-quarters of high performers have fundamentally redesigned workflows, against about a quarter of the rest. 80% of respondents say AI improved their own productivity.",
+   "caveat": "Self-reported by executives. High performers are those who attribute at least 5% of EBIT to AI and call its impact significant."
+  },
+  {
+   "theme": "value",
+   "figure": "5% → 48%",
+   "finding": "of companies generating meaningful value from AI, 2025 to 2026. The share BCG calls “future-built” rose from 5% to 7.5%.",
+   "source": "BCG, Build for the Future 2025 and Applied AI Index 2026",
+   "url": "https://www.bcg.com/publications/2026/the-formula-for-agentic-ai-value",
+   "method": "2026 index: survey of about 1,330 senior executives across 20-plus sectors. In 2025, 60% of companies reported minimal gains.",
+   "caveat": "The 2026 figure combines “future-built” (7.5%) and “scaling” (41%) companies, so it is not a like-for-like comparison with the 5%. Consulting-firm survey."
+  },
+  {
+   "theme": "failure",
+   "figure": ">80%",
+   "finding": "of AI projects fail by some estimates, about twice the rate of IT projects without AI.",
+   "source": "RAND, Root Causes of Failure for AI Projects, 2024",
+   "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+   "method": "RAND interviewed 65 experienced data scientists and engineers to explain why projects fail, and identified five root causes. The most common is leadership misunderstanding or miscommunicating the problem to be solved.",
+   "caveat": "The 80% is an outside estimate that RAND cites, not a rate RAND measured. The value of the study is the causes."
+  },
+  {
+   "theme": "failure",
+   "figure": "95%",
+   "finding": "of organizations studied saw no measurable profit-and-loss return from generative AI. About 5% of custom enterprise tools reached production.",
+   "source": "MIT Project NANDA, The GenAI Divide, July 2025",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "method": "Review of more than 300 public AI initiatives plus executive interviews and a survey, January to June 2025. The authors attribute the gap to tools that do not learn or fit real workflows, and found the clearest returns in back-office work.",
+   "caveat": "Labelled preliminary by its authors, with a strict definition of success. Widely quoted and widely contested. Treat as directional."
+  },
+  {
+   "theme": "failure",
+   "figure": "42%",
+   "finding": "of companies abandoned most of their AI initiatives before production, up from 17% a year earlier. On average 46% of proofs of concept were scrapped.",
+   "source": "S&P Global Market Intelligence, 2025",
+   "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results",
+   "method": "Survey of more than 1,000 respondents in North America and Europe.",
+   "caveat": "Abandonment is not always failure. Stopping weak projects early is what disciplined portfolio management looks like."
+  },
+  {
+   "theme": "scaling",
+   "figure": "22%",
+   "finding": "of organizations have scaled AI across multiple business units or adopted an AI-first approach. About 11% could not say what their functions spent on AI.",
+   "source": "Gartner C-suite survey, September 2026",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/gartner-survey-finds-only-22-percent-of-organizations-have-successfully-scaled-ai-across-multiple-business-units",
+   "method": "1,303 respondents at organizations with at least $50 million in revenue, January to April 2026. The most widely pursued use cases were rarely the ones with the best reported returns.",
+   "caveat": "Gartner’s release does not define the threshold for a “positive return”."
+  },
+  {
+   "theme": "scaling",
+   "figure": "28%",
+   "finding": "of AI use cases in infrastructure and operations fully succeed and meet ROI expectations. 20% fail outright.",
+   "source": "Gartner I&O survey, April 2026",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2026-04-07-gartner-says-artificial-intelligence-projects-in-infrastructure-and-operations-stall-ahead-of-meaningful-roi-returns",
+   "method": "782 infrastructure and operations leaders, November to December 2025. Success was credited to integration with existing workflows and full executive support; 38% named data quality or availability as a direct cause of failure.",
+   "caveat": "Covers IT infrastructure and operations only. It is often misquoted as a figure for all AI use cases."
+  },
+  {
+   "theme": "scaling",
+   "figure": "25%",
+   "finding": "of organizations have moved 40% or more of their AI pilots into production. 34% are using AI to change products, processes or business models in depth.",
+   "source": "Deloitte, State of AI in the Enterprise 2026",
+   "url": "https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html",
+   "method": "3,235 director-to-C-suite leaders in 24 countries, August to September 2025. Two-thirds report productivity gains; 37% use AI with little or no change to existing processes.",
+   "caveat": "Respondents were chosen for direct involvement in AI, so the sample leans toward more active organizations."
+  },
+  {
+   "theme": "agents",
+   "figure": "1 in 5",
+   "finding": "companies has a mature governance model for autonomous AI agents, while close to three-quarters plan to deploy agents within two years.",
+   "source": "Deloitte, State of AI in the Enterprise 2026",
+   "url": "https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html",
+   "method": "Same survey as above. BCG’s 2026 index reports a similar gap: 42% expect to give agents real decision authority by 2030, and 5% have the full set of controls in place.",
+   "caveat": "“Mature” is self-assessed."
+  },
+  {
+   "theme": "agents",
+   "figure": "40%",
+   "finding": "of respondents at organizations with more than $1 billion in revenue are scaling AI agents in at least one function, up from 27%. At smaller organizations the share is flat at 22%.",
+   "source": "McKinsey, The state of AI in 2026",
+   "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+   "method": "Same 2026 survey as the EBIT figure. About two in ten respondents report agents scaling across the whole organization, and 32% have declined to buy a software product because they could build it with agentic coding tools.",
+   "caveat": "Scaling in one function is not enterprise-wide scaling. The gap by company size suggests agent scale currently depends on resources and engineering depth."
+  },
+  {
+   "theme": "adoption",
+   "figure": "280×",
+   "finding": "fall in the cost of querying a model at GPT-3.5 level, from $20 to $0.07 per million tokens between November 2022 and October 2024.",
+   "source": "Stanford HAI, AI Index 2025",
+   "url": "https://hai.stanford.edu/ai-index/2025-ai-index-report",
+   "method": "Compiled from Epoch AI and Artificial Analysis pricing data, holding benchmark performance constant.",
+   "caveat": "Measures a fixed capability level. Frontier-model and agentic workloads cost far more per task."
+  },
+  {
+   "theme": "adoption",
+   "figure": "53%",
+   "finding": "population-level adoption of generative AI within three years, faster than the personal computer or the internet. Reported AI incidents reached a record 362 in 2025.",
+   "source": "Stanford HAI, AI Index 2026",
+   "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+   "method": "Annual independent compilation of third-party data. The 2025 edition recorded 78% of organizations using AI in 2024, up from 55%.",
+   "caveat": "Adoption counts use, not value. Incident counts depend on what gets reported."
+  }
+ ],
+ "terms": [
+  {
+   "term": "AI strategy",
+   "question": "Where will AI change our economics, and what will we fund to make that happen?",
+   "facts": {
+    "Owner": "CEO and executive committee",
+    "Produces": "Ambition, a prioritized portfolio, an investment envelope, success measures",
+    "Horizon": "One to three years, refreshed at least annually",
+    "Missing looks like": "Many pilots, no shared definition of success, spending nobody can total"
+   }
+  },
+  {
+   "term": "AI transformation",
+   "question": "How must work, roles and operating model change so the value shows up?",
+   "facts": {
+    "Owner": "Business unit leaders with a transformation office",
+    "Produces": "Redesigned workflows, new roles and skills, changed incentives",
+    "Horizon": "Multi-year and continuous",
+    "Missing looks like": "Tools deployed onto unchanged processes, time saved that never becomes results"
+   }
+  },
+  {
+   "term": "AI governance",
+   "question": "Who may decide what, under which controls, and who answers for the outcome?",
+   "facts": {
+    "Owner": "Board, risk and compliance, and a named accountable executive",
+    "Produces": "Decision rights, an AI inventory, risk assessments, monitoring, audit evidence",
+    "Horizon": "Standing function",
+    "Missing looks like": "Shadow AI, agents acting without limits, liability discovered after an incident"
+   }
+  },
+  {
+   "term": "AI implementation",
+   "question": "How do we build, integrate, run and improve each system?",
+   "facts": {
+    "Owner": "Product, data and engineering teams with the business owner",
+    "Produces": "Working systems in production, pipelines, evaluations, run books",
+    "Horizon": "Weeks to quarters per release",
+    "Missing looks like": "Demos that impress and never reach production"
+   }
+  }
+ ],
+ "frameworks": [
+  {
+   "name": "MIT CISR Enterprise AI Maturity",
+   "question": "Where are we, and what does the next stage take?",
+   "summary": "A four-stage model built on a 2022 survey of 721 companies and updated in 2025. Enterprises in the first two stages performed below their industry’s financial average; those in stages three and four performed well above it. The largest gain comes from moving between stage two and stage three.",
+   "elements": [
+    "Stage 1: Experiment and prepare",
+    "Stage 2: Build pilots and capabilities",
+    "Stage 3: Develop AI ways of working",
+    "Stage 4: Become AI future-ready"
+   ],
+   "detail": "Four challenges block the move from stage 2 to stage 3: <b>strategy</b> (tie investment to goals and measurable value), <b>systems</b> (modular, interoperable platforms and data), <b>synchronization</b> (AI-ready people and redesigned work) and <b>stewardship</b> (compliant, human-centred, transparent practice by design).",
+   "use": "Board-level diagnosis and for arguing that more pilots will not close the gap.",
+   "limit": "The financial link is a correlation from survey data that mostly predates generative AI.",
+   "sources": [
+    [
+     "MIT CISR research briefing, December 2024",
+     "https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian"
+    ],
+    [
+     "2025 update, MIT Sloan summary",
+     "https://mitsloan.mit.edu/ideas-made-to-matter/how-to-boost-your-organizations-ai-maturity-level"
+    ]
+   ]
+  },
+  {
+   "name": "RAND root causes of failure",
+   "question": "Why do AI projects fail, and what prevents it?",
+   "summary": "Drawn from interviews with 65 experienced practitioners. Useful as a pre-mortem checklist for any proposed initiative.",
+   "elements": [
+    "Leaders misunderstand or miscommunicate the problem AI is meant to solve",
+    "The organization lacks the data needed to train an effective model",
+    "Teams chase the newest technology instead of the user’s problem",
+    "Infrastructure to manage data and deploy models is underfunded",
+    "AI is applied to problems that are too hard for it"
+   ],
+   "detail": "RAND’s advice to leaders follows from the list: make sure technical staff understand the purpose, commit to each problem for long enough, and invest in data and deployment infrastructure before models.",
+   "use": "Reviewing a business case before approval.",
+   "limit": "Qualitative and practitioner-side. It explains causes, it does not measure rates.",
+   "sources": [
+    [
+     "RAND research report RR-A2680-1, 2024",
+     "https://www.rand.org/pubs/research_reports/RRA2680-1.html"
+    ]
+   ]
+  },
+  {
+   "name": "BCG 10-20-70",
+   "question": "Where should the effort and money go?",
+   "summary": "BCG’s rule of thumb from its client work: about 10% of the value of AI comes from algorithms, 20% from technology and data, and 70% from people, organization and process. It pairs with three value plays of rising ambition.",
+   "elements": [
+    "Deploy: everyday productivity tools",
+    "Reshape: redesign whole functions and workflows",
+    "Invent: new products, services and business models"
+   ],
+   "detail": "BCG reports that leading companies expect most of their AI value from reshaping and inventing, and plan to upskill more than half their workforce.",
+   "use": "Challenging a budget that is mostly licences and infrastructure.",
+   "limit": "A heuristic from one firm’s engagements, not a measured constant.",
+   "sources": [
+    [
+     "BCG, The Formula for Agentic AI Value, 2026",
+     "https://www.bcg.com/publications/2026/the-formula-for-agentic-ai-value"
+    ],
+    [
+     "BCG, The Widening AI Value Gap, 2025",
+     "https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings"
+    ]
+   ]
+  },
+  {
+   "name": "McKinsey agentic organization",
+   "question": "What does the organization look like when agents do real work?",
+   "summary": "A proposed operating paradigm in which people work alongside virtual and physical AI agents. McKinsey argues the shift is to rebuild workflows around agents, and not to bolt agents onto existing processes.",
+   "elements": [
+    "Business model",
+    "Operating model",
+    "Governance",
+    "Workforce, people and culture",
+    "Technology and data"
+   ],
+   "detail": "On governance the article is specific: periodic, paper-based review cannot keep up with agents that run continuously, so controls have to be embedded and real-time, with humans holding final accountability.",
+   "use": "Structuring a leadership discussion on agentic AI across more than technology.",
+   "limit": "A forward-looking thesis from consulting experience. Evidence at scale is still thin.",
+   "sources": [
+    [
+     "McKinsey, The agentic organization, 2025",
+     "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era"
+    ]
+   ]
+  },
+  {
+   "name": "NIST AI Risk Management Framework",
+   "question": "How do we run AI risk management day to day?",
+   "summary": "A voluntary framework from the US National Institute of Standards and Technology. It is a method, not a certification. A companion profile covers generative AI.",
+   "elements": [
+    "Govern: policies, accountability, culture and oversight",
+    "Map: context, intended use, stakeholders and impacts",
+    "Measure: test, evaluate and monitor risks",
+    "Manage: prioritize, respond and track residual risk"
+   ],
+   "detail": "Govern cuts across the other three functions. NIST notes that version 1.0 is under revision.",
+   "use": "The operating method for your risk process, whatever your jurisdiction.",
+   "limit": "It is not an enterprise strategy and gives no certificate to show a regulator or customer.",
+   "sources": [
+    [
+     "NIST AI RMF",
+     "https://www.nist.gov/itl/ai-risk-management-framework"
+    ],
+    [
+     "AI RMF 1.0 (PDF)",
+     "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"
+    ]
+   ]
+  },
+  {
+   "name": "ISO/IEC 42001",
+   "question": "How do we prove we manage AI responsibly?",
+   "summary": "The international, certifiable standard for an AI management system, published in 2023. It follows the same management-system structure as ISO/IEC 27001: leadership commitment, defined roles, risk and impact assessment, operational controls and continual improvement.",
+   "elements": [
+    "Policy, scope and leadership",
+    "Roles and responsibilities",
+    "AI risk and impact assessment",
+    "Operational controls across the AI life cycle",
+    "Monitoring, audit and improvement"
+   ],
+   "detail": "A practical combination used by many organizations: run risk with the NIST method, hold it inside an ISO/IEC 42001 management system, and map legal duties such as the EU AI Act into that system so one control satisfies several requirements.",
+   "use": "Institutional governance that customers, partners and auditors can verify.",
+   "limit": "Certifies that a management system exists and works. It does not certify that any individual AI system is safe or valuable.",
+   "sources": [
+    [
+     "ISO/IEC 42001:2023",
+     "https://www.iso.org/standard/42001"
+    ]
+   ]
+  },
+  {
+   "name": "EU AI Act",
+   "question": "What are we legally required to do?",
+   "summary": "Binding, risk-tiered law for providers and deployers of AI in the EU market. Some practices are prohibited, high-risk uses such as hiring, credit and critical infrastructure carry heavy obligations, and many other systems carry transparency duties.",
+   "elements": [
+    "Prohibited practices",
+    "High-risk systems",
+    "Transparency obligations",
+    "General-purpose AI model obligations"
+   ],
+   "detail": "Amendments that entered into force on 27 July 2026 postponed the high-risk obligations: 2 December 2027 for stand-alone systems and 2 August 2028 for AI embedded in regulated products. The transparency obligations largely kept their 2026 schedule. See the dates in the governance tool.",
+   "use": "The legal baseline for anything that touches EU residents or markets, and a reference model for risk tiers elsewhere.",
+   "limit": "A compliance floor. Meeting it says nothing about whether the AI creates value.",
+   "sources": [
+    [
+     "Regulation (EU) 2024/1689",
+     "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    ],
+    [
+     "2026 amendments summarized",
+     "https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act"
+    ]
+   ]
+  },
+  {
+   "name": "OECD principles and classification",
+   "question": "How do we describe and compare AI systems and their impact?",
+   "summary": "Two instruments. The OECD AI Principles, adopted in 2019 and updated in 2024, are the most widely endorsed policy reference for trustworthy AI. The 2022 classification framework describes any AI system along five dimensions.",
+   "elements": [
+    "People and planet",
+    "Economic context",
+    "Data and input",
+    "AI model",
+    "Task and output"
+   ],
+   "detail": "The five principles: inclusive growth and well-being; human rights and democratic values, including fairness and privacy; transparency and explainability; robustness, security and safety; accountability.",
+   "use": "Policy work, national strategies, and a common vocabulary for impact assessment.",
+   "limit": "High level by design. It tells you what to consider, not how to implement it.",
+   "sources": [
+    [
+     "OECD AI Principles",
+     "https://oecd.ai/en/ai-principles"
+    ],
+    [
+     "Classification framework, 2022",
+     "https://www.oecd.org/en/publications/oecd-framework-for-the-classification-of-ai-systems_cb6d9eca-en.html"
+    ]
+   ]
+  },
+  {
+   "name": "Gartner AI maturity model",
+   "question": "How do we benchmark capability across functions?",
+   "summary": "Gartner’s long-standing model places organizations on five levels. Its current assessment toolkit scores seven pillars: strategy, data, governance, engineering, operating model, culture, and AI product and value.",
+   "elements": [
+    "Level 1: Awareness",
+    "Level 2: Active",
+    "Level 3: Operational",
+    "Level 4: Systemic",
+    "Level 5: Transformational"
+   ],
+   "detail": "Gartner’s 2025 research found that 45% of high-maturity organizations keep AI initiatives in production for three years or more, and 91% have appointed dedicated AI leaders.",
+   "use": "A structured gap analysis by capability when you need more granularity than four stages.",
+   "limit": "The full instrument and benchmarks sit behind a client subscription.",
+   "sources": [
+    [
+     "Gartner AI maturity assessment",
+     "https://www.gartner.com/en/chief-information-officer/research/ai-maturity-model-toolkit"
+    ],
+    [
+     "Gartner maturity survey, 2025",
+     "https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years"
+    ]
+   ]
+  }
+ ],
+ "dimensions": [
+  {
+   "name": "Strategic alignment",
+   "scope": "Objectives and positioning",
+   "decision": "Which corporate objectives is AI meant to move, and by how much?",
+   "produces": "A short statement of AI ambition tied to named corporate goals.",
+   "fails": "An “AI vision” nobody can connect to the plan the board already approved."
+  },
+  {
+   "name": "AI opportunity",
+   "scope": "Value pools and problems",
+   "decision": "Where are decisions slow, costly or inaccurate enough that AI changes the economics?",
+   "produces": "An opportunity map built top-down from strategy and bottom-up from operations.",
+   "fails": "A list of use cases gathered from vendors."
+  },
+  {
+   "name": "Portfolio prioritization",
+   "scope": "Value, feasibility, risk",
+   "decision": "Which ten to twenty use cases get funded first, and which are stopped?",
+   "produces": "A scored, ranked portfolio with explicit gates.",
+   "fails": "Everything is a priority, so nothing reaches production."
+  },
+  {
+   "name": "Operating model",
+   "scope": "Central, federated or local",
+   "decision": "Who builds, who owns and who runs AI?",
+   "produces": "A defined model, usually federated: central standards and platforms, business ownership of outcomes.",
+   "fails": "A central lab the business ignores, or business units duplicating each other."
+  },
+  {
+   "name": "Data strategy",
+   "scope": "Quality, ownership, access",
+   "decision": "Is the data each priority use case needs available, good enough and lawful to use?",
+   "produces": "Use-case-specific data readiness assessments and named data owners.",
+   "fails": "A generic data-quality program with no link to any use case."
+  },
+  {
+   "name": "Technology architecture",
+   "scope": "Platforms, models, integration",
+   "decision": "What shared platform lets teams build once and reuse?",
+   "produces": "Reference architecture and sourcing position for models, platforms and agents.",
+   "fails": "A different stack for every pilot and no route to production."
+  },
+  {
+   "name": "Talent and capabilities",
+   "scope": "Leaders, builders, users",
+   "decision": "Which skills do leaders, specialists and the wider workforce need, and how will they get them?",
+   "produces": "A capability plan covering leadership fluency, technical roles and workforce adoption.",
+   "fails": "Training everyone on prompts while no role or workflow changes."
+  },
+  {
+   "name": "Governance and risk",
+   "scope": "Accountability and controls",
+   "decision": "Who approves, who monitors, and who can switch a system off?",
+   "produces": "Decision rights, an AI inventory, risk tiers and continuous monitoring.",
+   "fails": "A policy document with no owner and no evidence."
+  },
+  {
+   "name": "Investment strategy",
+   "scope": "Funding and economics",
+   "decision": "What is the three-year commitment, and how is it released?",
+   "produces": "A staged funding model tied to evidence at each gate.",
+   "fails": "Annual budgeting that starves what works and keeps funding what does not."
+  },
+  {
+   "name": "Execution roadmap",
+   "scope": "Pilot, industrialize, scale",
+   "decision": "What ships in which quarter, and what must be true first?",
+   "produces": "A sequenced roadmap with dependencies and owners.",
+   "fails": "Pilots with no plan for integration, support or adoption."
+  },
+  {
+   "name": "Performance measurement",
+   "scope": "Outcomes, adoption, ROI",
+   "decision": "How will the board know AI is delivering?",
+   "produces": "A scorecard of realized value against pre-agreed baselines.",
+   "fails": "Counting pilots, licences and people trained."
+  },
+  {
+   "name": "Continuous adaptation",
+   "scope": "Models, markets, learning",
+   "decision": "How often is the strategy revisited as models, costs and rules change?",
+   "produces": "A review cadence and triggers for changing course.",
+   "fails": "A three-year plan written once for a technology that changes quarterly."
+  }
+ ],
+ "eu_timeline": [
+  {
+   "date": "2024-08-01",
+   "label": "1 August 2024",
+   "text": "The Act enters into force."
+  },
+  {
+   "date": "2025-02-02",
+   "label": "2 February 2025",
+   "text": "Prohibited practices and AI literacy duties apply."
+  },
+  {
+   "date": "2025-08-02",
+   "label": "2 August 2025",
+   "text": "Obligations for general-purpose AI models and the governance structure apply."
+  },
+  {
+   "date": "2026-08-02",
+   "label": "2 August 2026",
+   "text": "Transparency obligations apply to systems placed on the market from this date."
+  },
+  {
+   "date": "2026-12-02",
+   "label": "2 December 2026",
+   "text": "Content-marking deadline for generative systems already on the market, and the prohibitions added in 2026 apply."
+  },
+  {
+   "date": "2027-12-02",
+   "label": "2 December 2027",
+   "text": "Obligations for stand-alone high-risk systems (Annex III), moved from August 2026."
+  },
+  {
+   "date": "2028-08-02",
+   "label": "2 August 2028",
+   "text": "Obligations for high-risk AI embedded in regulated products (Annex I)."
+  }
+ ],
+ "scorecard": [
+  {
+   "dimension": "Business value",
+   "measure": "Realized benefits against the approved baseline",
+   "not": "Projected benefits"
+  },
+  {
+   "dimension": "Productivity",
+   "measure": "Hours released and actually redeployed",
+   "not": "Hours “saved” in theory"
+  },
+  {
+   "dimension": "Portfolio",
+   "measure": "Share of funded use cases in production",
+   "not": "Number of pilots"
+  },
+  {
+   "dimension": "Adoption",
+   "measure": "Active use inside redesigned workflows",
+   "not": "Licences issued"
+  },
+  {
+   "dimension": "Data",
+   "measure": "Priority use cases with fit-for-purpose data",
+   "not": "Volume of data held"
+  },
+  {
+   "dimension": "Governance",
+   "measure": "Systems with a completed risk assessment and an owner",
+   "not": "Policies published"
+  },
+  {
+   "dimension": "Talent",
+   "measure": "Critical roles filled and skills demonstrated",
+   "not": "People trained"
+  },
+  {
+   "dimension": "Transformation",
+   "measure": "Targeted workflows redesigned end to end",
+   "not": "Tools deployed"
+  }
+ ],
+ "roadmap": [
+  {
+   "phase": "Diagnose",
+   "months": "Months 1 to 2",
+   "steps": [
+    "Assess maturity across the twelve dimensions",
+    "Review corporate objectives and constraints",
+    "Establish baselines for the outcomes you intend to move",
+    "Agree the level of ambition"
+   ],
+   "deliverable": "A maturity assessment and a stated ambition",
+   "gate": "Agreement in the executive team on what success means, in numbers."
+  },
+  {
+   "phase": "Design",
+   "months": "Months 3 to 4",
+   "steps": [
+    "Score and rank the portfolio",
+    "Choose the operating model",
+    "Set architecture and sourcing positions",
+    "Define decision rights and risk tiers",
+    "Build the three-year business case"
+   ],
+   "deliverable": "An approved strategy and investment plan",
+   "gate": "Named executive owners for every funded use case."
+  },
+  {
+   "phase": "Build foundations",
+   "months": "Months 5 to 6",
+   "steps": [
+    "Stand up leadership and accountability",
+    "Prepare data and shared platforms for the first use cases",
+    "Start workforce capability building",
+    "Launch the initial use cases"
+   ],
+   "deliverable": "Working foundations and first releases",
+   "gate": "Data readiness confirmed for each launched use case."
+  },
+  {
+   "phase": "Industrialize",
+   "months": "Months 7 to 9",
+   "steps": [
+    "Integrate AI into redesigned workflows",
+    "Validate performance and controls",
+    "Set up production monitoring",
+    "Scale what works and measure realized value"
+   ],
+   "deliverable": "A production portfolio",
+   "gate": "Evidence of realized, not projected, value."
+  },
+  {
+   "phase": "Scale and adapt",
+   "months": "Months 10 to 12",
+   "steps": [
+    "Extend across business units",
+    "Retire what has not delivered",
+    "Rebalance investment",
+    "Introduce agentic systems where controls are ready",
+    "Refresh the roadmap"
+   ],
+   "deliverable": "A value-realization report to the board",
+   "gate": "A decision on year-two funding based on results."
+  }
+ ],
+ "cases": [
+  {
+   "kind": "scaled",
+   "name": "DBS Bank",
+   "tag": "Measured value",
+   "story": "DBS reports that its data and AI work delivered more than S$750 million of economic value in 2024, over double the prior year, from more than 1,500 models across more than 370 use cases. It is one of few companies to publish a figure for AI value.",
+   "lesson": "Decide how you will measure value before you scale, then publish the number internally every year.",
+   "url": "https://www.dbs.com/annualreports/2024/innovating-impactful-solutions-for-customers.html",
+   "source": "DBS Annual Report 2024"
+  },
+  {
+   "kind": "scaled",
+   "name": "Guardian Life",
+   "tag": "From pilot to scale",
+   "story": "MIT CISR describes how Guardian tracks each initiative from hypothesis to pilot to scale. Automating request-for-proposal and quoting work cut turnaround from about a week to 24 hours. Risk, legal and compliance sit inside governance, with a fast-track architecture board.",
+   "lesson": "A value-tracking discipline and embedded control functions are what let a pilot become a platform.",
+   "url": "https://mitsloan.mit.edu/ideas-made-to-matter/how-to-boost-your-organizations-ai-maturity-level",
+   "source": "MIT Sloan on MIT CISR research, 2025"
+  },
+  {
+   "kind": "scaled",
+   "name": "Italgas",
+   "tag": "Operations and people",
+   "story": "Europe’s largest gas distributor digitized assets from 2017 and built a shared data platform. One tool accelerated construction projects by 40% and cut inspections by 80%. Each sprint has a C-level sponsor, and the company delivered 30,000 hours of AI and data training in 2024.",
+   "lesson": "Years of data and platform work came first. Executive sponsorship is attached to each product, not to the program in general.",
+   "url": "https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer",
+   "source": "MIT CISR research briefing, August 2025"
+  },
+  {
+   "kind": "caution",
+   "name": "Klarna",
+   "tag": "Cost was the only measure",
+   "story": "In 2024 Klarna said its AI assistant handled two-thirds of customer chats in its first month, the work of about 700 agents. In May 2025 its chief executive said cost had weighed too heavily in the evaluation, that quality had suffered, and that the company was hiring people for customer service again.",
+   "lesson": "Efficiency is a valid goal and a poor sole measure. Put quality and customer outcomes on the scorecard from day one.",
+   "url": "https://www.bloomberg.com/news/articles/2025-05-08/klarna-turns-from-ai-to-real-person-customer-service",
+   "source": "Bloomberg, May 2025"
+  },
+  {
+   "kind": "caution",
+   "name": "Air Canada",
+   "tag": "Accountability",
+   "story": "A customer relied on wrong information about bereavement fares from the airline’s website chatbot. In February 2024 a British Columbia tribunal held the airline liable for negligent misrepresentation and rejected the argument that the chatbot was responsible for its own words.",
+   "lesson": "You are accountable for what your AI tells customers. Someone must own its accuracy.",
+   "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do",
+   "source": "Moffatt v. Air Canada, 2024 BCCRT 149"
+  },
+  {
+   "kind": "caution",
+   "name": "Zillow Offers",
+   "tag": "Model risk at scale",
+   "story": "Zillow bought homes at prices set with the help of its forecasting models. In November 2021 it wound the business down, citing the unpredictability of home-price forecasting, wrote down about $304 million of inventory that quarter and cut roughly a quarter of its workforce.",
+   "lesson": "When a model’s output commits capital automatically, limits and stress tests belong in the strategy, not in a later review.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1617640/000161764021000087/z-20210930.htm",
+   "source": "Zillow Group Form 10-Q, Q3 2021"
+  }
+ ],
+ "priorities": [
+  {
+   "title": "Agree what success means before any build",
+   "text": "RAND’s leading cause of failure is leadership misunderstanding or miscommunicating the problem. Gartner’s successful teams credit full executive support and realistic business cases. Write the outcome, the baseline and the owner down first."
+  },
+  {
+   "title": "Judge data readiness per use case",
+   "text": "Data that is ready for one use case is not ready for another. In Gartner’s 2026 operations survey, 38% of leaders named data quality or availability as a direct cause of failure. Assess it for each priority use case and fund the gap."
+  },
+  {
+   "title": "Redesign workflows, do not add tools to them",
+   "text": "Nearly three-quarters of McKinsey’s 2026 high performers have fundamentally redesigned workflows, against about a quarter of everyone else. Deloitte finds 37% of organizations using AI with little or no process change. BCG puts 70% of the value in people and process."
+  },
+  {
+   "title": "Build governance as operating infrastructure",
+   "text": "Run risk with the NIST method, hold it in an ISO/IEC 42001 management system, and map legal duties into it once. Keep a simple matrix of control, evidence and requirement satisfied, so an audit is a lookup."
+  },
+  {
+   "title": "Prepare for agents by fixing controls first",
+   "text": "Large organizations are scaling agents quickly and few have mature governance for them. Identity, permissions, approval points, limits, logs and a tested stop come before autonomy in production."
+  },
+  {
+   "title": "Manage AI as a portfolio and measure realized value",
+   "text": "Gartner’s high performers track returns continuously, reallocate, and stop what underperforms. The cost of intelligence has collapsed, which makes disciplined choice of where to use it the scarce skill."
+  }
+ ],
+ "scope": [
+  {
+   "row": "Purpose",
+   "enterprise": "Business value and competitive advantage",
+   "national": "Economic, societal and security value for a country"
+  },
+  {
+   "row": "Data",
+   "enterprise": "Enterprise data and its governance",
+   "national": "National data infrastructure and sharing rules"
+  },
+  {
+   "row": "People",
+   "enterprise": "Workforce transformation",
+   "national": "National talent pipeline and education"
+  },
+  {
+   "row": "Control",
+   "enterprise": "Enterprise governance and compliance",
+   "national": "Regulation and institutions"
+  },
+  {
+   "row": "Innovation",
+   "enterprise": "AI-enabled products and services",
+   "national": "A national ecosystem of research, startups and compute"
+  },
+  {
+   "row": "Measure of success",
+   "enterprise": "Financial return and realized benefits",
+   "national": "Productivity, GDP contribution and public value"
+  }
+ ],
+ "source_types": {
+  "research": "Research",
+  "standard": "Standard",
+  "law": "Law",
+  "survey": "Industry survey",
+  "practice": "Practitioner",
+  "case": "Case record"
+ },
+ "sources": [
+  {
+   "type": "research",
+   "publisher": "RAND Corporation",
+   "title": "The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed (2024)",
+   "note": "Interviews with 65 practitioners; five root causes.",
+   "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html"
+  },
+  {
+   "type": "research",
+   "publisher": "MIT CISR",
+   "title": "Building Enterprise AI Maturity (December 2024)",
+   "note": "Four-stage maturity model from a survey of 721 companies.",
+   "url": "https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian"
+  },
+  {
+   "type": "research",
+   "publisher": "MIT CISR",
+   "title": "Grow Enterprise AI Maturity for Bottom-Line Impact (August 2025)",
+   "note": "Four scaling challenges; Guardian and Italgas cases.",
+   "url": "https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer"
+  },
+  {
+   "type": "research",
+   "publisher": "MIT Sloan",
+   "title": "How to boost your organization’s AI maturity level",
+   "note": "Readable summary of the 2025 MIT CISR update.",
+   "url": "https://mitsloan.mit.edu/ideas-made-to-matter/how-to-boost-your-organizations-ai-maturity-level"
+  },
+  {
+   "type": "research",
+   "publisher": "Stanford HAI",
+   "title": "AI Index Report 2026",
+   "note": "Independent annual compilation on capability, adoption, investment and policy.",
+   "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+  },
+  {
+   "type": "research",
+   "publisher": "Stanford HAI",
+   "title": "AI Index Report 2025",
+   "note": "Source for the 280-fold inference cost decline and 78% organizational use.",
+   "url": "https://hai.stanford.edu/ai-index/2025-ai-index-report"
+  },
+  {
+   "type": "research",
+   "publisher": "MIT Project NANDA",
+   "title": "The GenAI Divide: State of AI in Business 2025 (as reported by Fortune)",
+   "note": "Preliminary study behind the 95% figure. Read the method before quoting it.",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/"
+  },
+  {
+   "type": "standard",
+   "publisher": "NIST",
+   "title": "AI Risk Management Framework",
+   "note": "Govern, Map, Measure, Manage. Voluntary; includes a generative AI profile.",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+  },
+  {
+   "type": "standard",
+   "publisher": "NIST",
+   "title": "AI RMF 1.0 (NIST AI 100-1, PDF)",
+   "note": "The framework document.",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"
+  },
+  {
+   "type": "standard",
+   "publisher": "ISO/IEC",
+   "title": "ISO/IEC 42001:2023, AI management systems",
+   "note": "Certifiable management-system standard. Related: ISO/IEC 23894 on AI risk and ISO/IEC 22989 on terminology.",
+   "url": "https://www.iso.org/standard/42001"
+  },
+  {
+   "type": "standard",
+   "publisher": "OECD",
+   "title": "OECD AI Principles (2019, updated 2024)",
+   "note": "Five values-based principles and five recommendations for policymakers.",
+   "url": "https://oecd.ai/en/ai-principles"
+  },
+  {
+   "type": "standard",
+   "publisher": "OECD",
+   "title": "Framework for the Classification of AI Systems (2022)",
+   "note": "Five dimensions for describing a system and its context.",
+   "url": "https://www.oecd.org/en/publications/oecd-framework-for-the-classification-of-ai-systems_cb6d9eca-en.html"
+  },
+  {
+   "type": "law",
+   "publisher": "European Union",
+   "title": "Regulation (EU) 2024/1689, the AI Act",
+   "note": "Official text on EUR-Lex.",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  },
+  {
+   "type": "law",
+   "publisher": "White & Case",
+   "title": "EU AI Omnibus enters into force, amending the AI Act (July 2026)",
+   "note": "Summary of Regulation (EU) 2026/1744 and the new high-risk dates.",
+   "url": "https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act"
+  },
+  {
+   "type": "survey",
+   "publisher": "McKinsey",
+   "title": "The state of AI in 2026: On the road to ROI (August 2026)",
+   "note": "Global survey of 1,719 participants in 97 nations. Source for the figures on scaling, EBIT impact, agents and high performers.",
+   "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+  },
+  {
+   "type": "survey",
+   "publisher": "S&P Global Market Intelligence",
+   "title": "Generative AI shows rapid growth but yields mixed results (October 2025)",
+   "note": "Source for the 42% abandonment figure.",
+   "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results"
+  },
+  {
+   "type": "survey",
+   "publisher": "Gartner",
+   "title": "Only 22% of organizations have scaled AI across multiple business units (September 2026)",
+   "note": "C-suite survey of 1,303 respondents.",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/gartner-survey-finds-only-22-percent-of-organizations-have-successfully-scaled-ai-across-multiple-business-units"
+  },
+  {
+   "type": "survey",
+   "publisher": "Gartner",
+   "title": "AI projects in I&O stall ahead of meaningful ROI (April 2026)",
+   "note": "Survey of 782 infrastructure and operations leaders.",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2026-04-07-gartner-says-artificial-intelligence-projects-in-infrastructure-and-operations-stall-ahead-of-meaningful-roi-returns"
+  },
+  {
+   "type": "survey",
+   "publisher": "Deloitte",
+   "title": "State of AI in the Enterprise 2026: The untapped edge",
+   "note": "Survey of 3,235 leaders in 24 countries.",
+   "url": "https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html"
+  },
+  {
+   "type": "survey",
+   "publisher": "BCG",
+   "title": "The Formula for Agentic AI Value: Applied AI Index 2026",
+   "note": "About 1,330 executives; the 10-20-70 model.",
+   "url": "https://www.bcg.com/publications/2026/the-formula-for-agentic-ai-value"
+  },
+  {
+   "type": "survey",
+   "publisher": "BCG",
+   "title": "The Widening AI Value Gap: Build for the Future 2025",
+   "note": "Source for the 5% “future-built” and 60% figures.",
+   "url": "https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings"
+  },
+  {
+   "type": "practice",
+   "publisher": "McKinsey",
+   "title": "The agentic organization: contours of the next paradigm for the AI era",
+   "note": "Five pillars of an organization built around agents.",
+   "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era"
+  },
+  {
+   "type": "practice",
+   "publisher": "World Economic Forum",
+   "title": "AI in Action: Beyond Experimentation to Transform Industry (2025)",
+   "note": "Cross-industry white paper produced with Accenture.",
+   "url": "https://www.weforum.org/publications/industries-in-the-intelligent-age-white-paper-series/cross-industry"
+  },
+  {
+   "type": "practice",
+   "publisher": "Gartner",
+   "title": "AI maturity assessment",
+   "note": "Seven-pillar diagnostic; full version for clients.",
+   "url": "https://www.gartner.com/en/chief-information-officer/research/ai-maturity-model-toolkit"
+  },
+  {
+   "type": "case",
+   "publisher": "DBS Group",
+   "title": "Annual Report 2024",
+   "note": "Published AI economic value figure.",
+   "url": "https://www.dbs.com/annualreports/2024/innovating-impactful-solutions-for-customers.html"
+  },
+  {
+   "type": "case",
+   "publisher": "Civil Resolution Tribunal of British Columbia",
+   "title": "Moffatt v. Air Canada, 2024 BCCRT 149",
+   "note": "Decision text.",
+   "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do"
+  },
+  {
+   "type": "case",
+   "publisher": "US Securities and Exchange Commission",
+   "title": "Zillow Group Form 10-Q, third quarter 2021",
+   "note": "Wind-down of Zillow Offers.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1617640/000161764021000087/z-20210930.htm"
+  },
+  {
+   "type": "case",
+   "publisher": "Bloomberg",
+   "title": "Klarna turns from AI to real-person customer service (May 2025)",
+   "note": "Interview with the chief executive.",
+   "url": "https://www.bloomberg.com/news/articles/2025-05-08/klarna-turns-from-ai-to-real-person-customer-service"
+  }
+ ]
+}

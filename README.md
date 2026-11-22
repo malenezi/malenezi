@@ -20,6 +20,7 @@ engineering education.
 | `speaking.html` | Conference chairing, committees, peer review, workshops, writing |
 | `contact.html` | Contact details, profiles, CV downloads |
 | `myblog/` | Insights — essays published on Medium and LinkedIn |
+| `ai-strategy/` | AI Strategy executive reference — evidence, frameworks, cases and seven working tools (`_build/ai_strategy.py`, `data/ai-strategy.json`) |
 
 
 ## Profiles
